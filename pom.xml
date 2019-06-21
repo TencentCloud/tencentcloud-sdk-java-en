@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.tencentcloudapi</groupId>
-  <artifactId>tencentcloud-sdk-java</artifactId>
-  <version>3.0.73</version>
+  <artifactId>tencentcloud-sdk-java-en</artifactId>
+  <version>3.0.0</version>
   <packaging>jar</packaging>
-  <name>tencentcloud-sdk-java</name>
+  <name>tencentcloud-sdk-java-en</name>
   <url>https://cloud.tencent.com/</url>
-  <description>Tencent Cloud Open API SDK for Java</description>
+  <description>Tencent Cloud API SDK for Java</description>
   <dependencies>
     <dependency>
       <groupId>com.squareup.okhttp</groupId>
@@ -27,7 +27,7 @@
   </dependencies>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!--先屏蔽javadoc的严谨告警，后续在优化 -->
+    <!--FIXME: Ignore java doc warning -->
     <additionalparam>-Xdoclint:none</additionalparam>
   </properties>
   <build>
@@ -116,9 +116,9 @@
     </license>
   </licenses>
   <scm>
-    <connection>scm:git:https://github.com/TencentCloud/tencentcloud-sdk-java.git</connection>
-    <developerConnection>scm:git:https://github.com/TencentCloud/tencentcloud-sdk-java.git</developerConnection>
-    <url>https://github.com/TencentCloud/tencentcloud-sdk-java</url>
+    <connection>scm:git:https://github.com/TencentCloud/tencentcloud-sdk-java-en.git</connection>
+    <developerConnection>scm:git:https://github.com/TencentCloud/tencentcloud-sdk-java-en.git</developerConnection>
+    <url>https://github.com/TencentCloud/tencentcloud-sdk-java-en</url>
   </scm>
   <developers>
     <developer>
