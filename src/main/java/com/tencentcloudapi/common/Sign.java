@@ -28,20 +28,9 @@ import javax.xml.bind.DatatypeConverter;
 
 import com.tencentcloudapi.common.exception.TencentCloudSDKException;;
 
-/**
- * 签名工具类
- */
 public class Sign {
     private final static Charset UTF8 = StandardCharsets.UTF_8;
     
-    /**
-     * 
-     * @param sigStr
-     * @param secretKey
-     * @param sigMethod
-     * @return string  sign string
-     * @throws SdkException
-     */
     public static String sign(String secretKey, String sigStr, String sigMethod) throws TencentCloudSDKException 
     {
     	String sig = null;

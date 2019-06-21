@@ -28,12 +28,9 @@ import com.squareup.okhttp.RequestBody;
 import java.util.concurrent.TimeUnit;
 import java.io.IOException;;
 
-/**
- * http连接类
- */
 public class HttpConnection {
 	
-	private OkHttpClient client;
+    private OkHttpClient client;
 	
     public HttpConnection(Integer connTimeout, Integer readTimeout, Integer writeTimeout) {
     	this.client = new OkHttpClient();

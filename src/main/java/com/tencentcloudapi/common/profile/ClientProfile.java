@@ -17,48 +17,25 @@
 
 package com.tencentcloudapi.common.profile;
 
-/**
- * client选项类
- * @author Administrator
- *
- */
 public class ClientProfile {
 	
-	/**
-	 * HmacSHA1签名方法
-	 */
     public static final String SIGN_SHA1 = "HmacSHA1";
     
-    /**
-     * HmacSHA256签名方法
-     */
     public static final String SIGN_SHA256 = "HmacSHA256";
     
-    /**
-     * Signature Version 3
-     */
+    // Signature version 3
     public static final String SIGN_TC3_256 = "TC3-HMAC-SHA256";
     
+    private HttpProfile httpProfile;
+	
+    private String signMethod;
+	
     /**
-     * http相关选项，请参考HttpProfile
+     * If payload is NOT involved in signing process, true means will ignore payload,
+     * default is false.
      */
-	private HttpProfile httpProfile;
+    private boolean unsignedPayload;
 	
-	/**
-	 * 签名方法
-	 */
-	private String signMethod;
-	
-	/**
-	 * If payload is NOT involved in signing process, true means will ignore payload,
-	 * default is false.
-	 */
-	private boolean unsignedPayload;
-	
-	/**
-	 * @param signMethod  签名方法
-	 * @param httpProfile HttpProfile实例
-	 */
     public ClientProfile(String signMethod, HttpProfile httpProfile) {
         if (signMethod == null || signMethod.isEmpty()) {
             signMethod = SIGN_TC3_256;
@@ -76,34 +53,18 @@ public class ClientProfile {
 		this(ClientProfile.SIGN_TC3_256, new HttpProfile());
 	}
 	
-	/**
-	 * 设置签名方法
-	 * @param signMethod
-	 */
 	public void setSignMethod(String signMethod) {
 		this.signMethod = signMethod;
 	}
 	
-	/**
-	 * 设置http选项
-	 * @param httpProfile 参考HttpProfile
-	 */
 	public void setHttpProfile(HttpProfile httpProfile) {
 		this.httpProfile = httpProfile;
 	}
 	
-	/**
-	 * 获取签名方法
-	 * @return 签名方法
-	 */
 	public String getSignMethod() {
 		return this.signMethod;
 	}
 	
-	/**
-	 * 获取HttpProfile实例
-	 * @return HttpProfile实例
-	 */
 	public HttpProfile getHttpProfile() {
 		return this.httpProfile;
 	}

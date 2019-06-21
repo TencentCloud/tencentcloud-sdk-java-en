@@ -17,19 +17,12 @@
 
 package com.tencentcloudapi.common.exception;
 
-/**
- * 腾讯云api sdk异常类
- */
 public class TencentCloudSDKException extends Exception {
 
-	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * 请求Id,发起请求前的异常这个字段为空
+	 * Request UUID, will be null if request is not sent or received successfully.
 	 */
 	private String requestId;
 	
@@ -38,17 +31,10 @@ public class TencentCloudSDKException extends Exception {
 	 */
 	private String errorCode;
     
-	/**
-	 * @param message 异常信息
-	 */
     public TencentCloudSDKException(String message) {
     	this(message, "");
     }
     
-    /**
-     * @param message 异常信息
-     * @param requestId 请求id
-     */
     public TencentCloudSDKException(String message, String requestId) {
     	super(message);
     	this.requestId = requestId;
@@ -60,10 +46,6 @@ public class TencentCloudSDKException extends Exception {
         this.errorCode = errorCode;
     }
     
-    /**
-     * 获取请求id
-     * @return requestId
-     */
     public String getRequestId() {
     	return requestId;
     }
@@ -76,10 +58,6 @@ public class TencentCloudSDKException extends Exception {
 //        return errorCode;
 //    }
     
-    /**
-     * 格式化输出异常信息
-     * @return 异常信息
-     */
     public String toString() {
     	return "[TencentCloudSDKException]" + "message:" + this.getMessage() + " requestId:" + this.getRequestId();
     }

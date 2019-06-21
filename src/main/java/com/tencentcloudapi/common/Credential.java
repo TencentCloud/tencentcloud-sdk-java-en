@@ -17,91 +17,54 @@
 
 package com.tencentcloudapi.common;
 
-/**
- * 认证相关信息类
- */
 public class Credential {
 	
 	/**
-	 * secretId,在控制台申请
+	 * You can create or retrieve it from Tencent Cloud Management Console, Access Management product.
 	 */
 	private String secretId;
 	
 	/**
-	 * secretKey,在控制台申请
+	 * You can create or retrieve it from Tencent Cloud Management Console, Access Management product.
 	 */
 	private String secretKey;
 	
 	/**
-	 * token
+	 * Temporary token, should be used along with temporary secret id and secret key.
 	 */
 	private String token;
 	
-	/**
-	 * @param secretId 在控制台申请
-	 * @param secretKey 在控制台申请
-	 */
 	public Credential(String secretId, String secretKey) {
 		this(secretId, secretKey, "");
 	}
 	
-	/**
-	 * @param secretId 在控制台申请
-	 * @param secretKey 在控制台申请
-	 * @param token
-	 */
 	public Credential(String secretId, String secretKey, String token) {
 		this.secretId = secretId;
 		this.secretKey = secretKey;
 		this.token = token;
 	}
 	
-	/**
-	 * 设置secretId
-	 * @param secretId
-	 */
 	public void setSecretId(String secretId) {
 		this.secretId = secretId;
 	}
 	
-	/**
-	 * 设置secretKey
-	 * @param secretKey
-	 */
 	public void setSecretKey(String secretKey) {
 		this.secretKey = secretKey;
 	}
 	
-	/**
-	 * 设置token
-	 * @param token
-	 */
 	public void setToken(String token) {
 		this.token = token;
 	}
 	
-	/**
-	 * 获取secretId
-	 * @return secretId
-	 */
 	public String getSecretId() {
 		return this.secretId;
 	}
 	
-	/**
-	 * 获取secretKey
-	 * @return secretKey
-	 */
 	public String getSecretKey() {
 		return this.secretKey;
 	}
 	
-	/**
-	 * 获取token
-	 * @return token
-	 */
 	public String getToken() {
 		return this.token;
 	}
-	
 }

@@ -50,13 +50,10 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.JsonSyntaxException;
 
-/**
- * 抽象client类
- */
 abstract public class AbstractClient {
 
     public static final int HTTP_RSP_OK = 200;
-    public static final String SDK_VERSION = "SDK_JAVA_3.0.73";
+    public static final String SDK_VERSION = "SDK_JAVA_EN_3.0.0";
 
 
     private Credential credential;
@@ -86,59 +83,26 @@ abstract public class AbstractClient {
         warmup();
     }
 
-    /**
-     * 设置产品地域
-     * 
-     * @param region
-     *            产品地域
-     */
     public void setRegion(String region) {
         this.region = region;
     }
 
-    /**
-     * 返回产品地域
-     * 
-     * @return 地域名称
-     */
     public String getRegion() {
         return this.region;
     }
 
-    /**
-     * 设置配置实例
-     * 
-     * @param profile
-     *            配置实例
-     */
     public void setClientProfile(ClientProfile profile) {
         this.profile = profile;
     }
 
-    /**
-     * 获取配置实例
-     * 
-     * @return 配置实例
-     */
     public ClientProfile getClientProfile() {
         return this.profile;
     }
 
-    /**
-     * 设置认证信息实例
-     * 
-     * @param credential
-     *            认证信息实例
-     */
     public void setCredential(Credential credential) {
         this.credential = credential;
     }
 
-    /**
-     * 获取认证信息实例
-     * 
-     * @return 认证信息实例
-     */
     public Credential getCredential() {
         return this.credential;
     }

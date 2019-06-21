@@ -26,9 +26,6 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * 抽象model类
- */
 abstract public class AbstractModel {
     // any stores customized parameters which are not documented.
     // You should make sure it can be correctly serialized to json string.
@@ -84,11 +81,7 @@ abstract public class AbstractModel {
     }
     
     /**
-     * 序列化函数，将对象数据转化为json格式的string
-     * 
-     * @param obj
-     *            集成自AbstractModel的子类实例
-     * @return json格式的string
+     * Serialize AbstractModel object to Json string.
      */
     public static <O extends AbstractModel> String toJsonString(O obj) {
         return toJsonObject(obj).toString();
@@ -131,13 +124,7 @@ abstract public class AbstractModel {
     }
 
     /**
-     * 序列化函数，根据传入的json格式的string实例化一个cls对象返回
-     * 
-     * @param json
-     *            json格式的string
-     * @param cls
-     *            与json匹配的类对象
-     * @return cls的实例
+     * Deserialize from Json string to specified AbstractModel object
      */
     public static <O> O fromJsonString(String json, Class<O> cls) {
         Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
