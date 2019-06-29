@@ -144,7 +144,6 @@ abstract public class AbstractModel {
     /**
      * Get customized key value pairs from this model.
      * 
-     * @return
      */
     public HashMap<String, Object> any() {
         return this.customizedParams;
