@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class SyncImagesRequest  extends AbstractModel{
 
     /**
-    * 镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br><li>镜像大小小于50GB。<br>镜像状态请参考[镜像数据表](/document/api/213/9452#image_state)。
+    * Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
     */
     @SerializedName("ImageIds")
     @Expose
     private String [] ImageIds;
 
     /**
-    * 目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+    * List of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
     */
     @SerializedName("DestinationRegions")
     @Expose
     private String [] DestinationRegions;
 
     /**
-     * 获取镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br><li>镜像大小小于50GB。<br>镜像状态请参考[镜像数据表](/document/api/213/9452#image_state)。
-     * @return ImageIds 镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br><li>镜像大小小于50GB。<br>镜像状态请参考[镜像数据表](/document/api/213/9452#image_state)。
+     * Obtain image ID list. Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
+     * @return ImageIds Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
      */
     public String [] getImageIds() {
         return this.ImageIds;
     }
 
     /**
-     * 设置镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br><li>镜像大小小于50GB。<br>镜像状态请参考[镜像数据表](/document/api/213/9452#image_state)。
-     * @param ImageIds 镜像ID列表 ，镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。<br>镜像ID必须满足限制：<br><li>镜像ID对应的镜像状态必须为`NORMAL`。<br><li>镜像大小小于50GB。<br>镜像状态请参考[镜像数据表](/document/api/213/9452#image_state)。
+     * Set up image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
+     * @param ImageIds Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
      */
     public void setImageIds(String [] ImageIds) {
         this.ImageIds = ImageIds;
     }
 
     /**
-     * 获取目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
-     * @return DestinationRegions 目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+     * List of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
+     * @return DestinationRegions List of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
      */
     public String [] getDestinationRegions() {
         return this.DestinationRegions;
     }
 
     /**
-     * 设置目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
-     * @param DestinationRegions 目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+     * Set up the list of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
+     * @param DestinationRegions The list of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
      */
     public void setDestinationRegions(String [] DestinationRegions) {
         this.DestinationRegions = DestinationRegions;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "ImageIds.", this.ImageIds);

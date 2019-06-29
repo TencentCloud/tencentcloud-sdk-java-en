@@ -23,168 +23,168 @@ import java.util.HashMap;
 public class CreateDisasterRecoverGroupResponse  extends AbstractModel{
 
     /**
-    * 分散置放群组ID列表。
+    * List of spread placement group IDs.
     */
     @SerializedName("DisasterRecoverGroupId")
     @Expose
     private String DisasterRecoverGroupId;
 
     /**
-    * 分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
+    * Type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
     */
     @SerializedName("Type")
     @Expose
     private String Type;
 
     /**
-    * 分散置放群组名称，长度1-60个字符，支持中、英文。
+    * Name of a spread placement group with a length of 1-60 characters.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * 置放群组内可容纳的云主机数量。
+    * Maximum number of CVMs in a placement group.
     */
     @SerializedName("CvmQuotaTotal")
     @Expose
     private Integer CvmQuotaTotal;
 
     /**
-    * 置放群组内已有的云主机数量。
+    * Number of CVMs in a placement group.
     */
     @SerializedName("CurrentNum")
     @Expose
     private Integer CurrentNum;
 
     /**
-    * 置放群组创建时间。
+    * Creation time of a placement group.
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取分散置放群组ID列表。
-     * @return DisasterRecoverGroupId 分散置放群组ID列表。
+     * Get List of spread placement group IDs.
+     * @return DisasterRecoverGroupId List of spread placement group IDs.
      */
     public String getDisasterRecoverGroupId() {
         return this.DisasterRecoverGroupId;
     }
 
     /**
-     * 设置分散置放群组ID列表。
-     * @param DisasterRecoverGroupId 分散置放群组ID列表。
+     * Set List of spread placement group IDs.
+     * @param DisasterRecoverGroupId List of spread placement group IDs.
      */
     public void setDisasterRecoverGroupId(String DisasterRecoverGroupId) {
         this.DisasterRecoverGroupId = DisasterRecoverGroupId;
     }
 
     /**
-     * 获取分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
-     * @return Type 分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
+     * Get type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
+     * @return Type Type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
      */
     public String getType() {
         return this.Type;
     }
 
     /**
-     * 设置分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
-     * @param Type 分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
+     * Set type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
+     * @param Type Type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
      */
     public void setType(String Type) {
         this.Type = Type;
     }
 
     /**
-     * 获取分散置放群组名称，长度1-60个字符，支持中、英文。
-     * @return Name 分散置放群组名称，长度1-60个字符，支持中、英文。
+     * Get name of a spread placement group with a length of 1-60 characters.
+     * @return Name Name of a spread placement group with a length of 1-60 characters.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置分散置放群组名称，长度1-60个字符，支持中、英文。
-     * @param Name 分散置放群组名称，长度1-60个字符，支持中、英文。
+     * Set name of a spread placement group with a length of 1-60 characters.
+     * @param Name Name of a spread placement group with a length of 1-60 characters.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取置放群组内可容纳的云主机数量。
-     * @return CvmQuotaTotal 置放群组内可容纳的云主机数量。
+     * Get maximum number of CVMs in a placement group.
+     * @return CvmQuotaTotal Maximum number of CVMs in a placement group.
      */
     public Integer getCvmQuotaTotal() {
         return this.CvmQuotaTotal;
     }
 
     /**
-     * 设置置放群组内可容纳的云主机数量。
-     * @param CvmQuotaTotal 置放群组内可容纳的云主机数量。
+     * Set maximum number of CVMs in a placement group.
+     * @param CvmQuotaTotal Maximum number of CVMs in a placement group.
      */
     public void setCvmQuotaTotal(Integer CvmQuotaTotal) {
         this.CvmQuotaTotal = CvmQuotaTotal;
     }
 
     /**
-     * 获取置放群组内已有的云主机数量。
-     * @return CurrentNum 置放群组内已有的云主机数量。
+     * Get number of CVMs in a placement group.
+     * @return CurrentNum Number of CVMs in a placement group.
      */
     public Integer getCurrentNum() {
         return this.CurrentNum;
     }
 
     /**
-     * 设置置放群组内已有的云主机数量。
-     * @param CurrentNum 置放群组内已有的云主机数量。
+     * Number of CVMs in a placement group.
+     * @param CurrentNum Number of CVMs in a placement group.
      */
     public void setCurrentNum(Integer CurrentNum) {
         this.CurrentNum = CurrentNum;
     }
 
     /**
-     * 获取置放群组创建时间。
-     * @return CreateTime 置放群组创建时间。
+     * Get creation time of a placement group.
+     * @return CreateTime Creation time of a placement group.
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * 设置置放群组创建时间。
-     * @param CreateTime 置放群组创建时间。
+     * Set creation time of a placement group.
+     * @param CreateTime Creation time of a placement group.
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DisasterRecoverGroupId", this.DisasterRecoverGroupId);

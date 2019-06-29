@@ -23,145 +23,145 @@ import java.util.HashMap;
 public class MetricAlarm  extends AbstractModel{
 
     /**
-    * 比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
+    * Comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
     */
     @SerializedName("ComparisonOperator")
     @Expose
     private String ComparisonOperator;
 
     /**
-    * 指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li>
+    * Name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
     */
     @SerializedName("MetricName")
     @Expose
     private String MetricName;
 
     /**
-    * 告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+    * Alarm threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
     */
     @SerializedName("Threshold")
     @Expose
     private Integer Threshold;
 
     /**
-    * 时间周期，单位：秒，取值枚举值为60、300。
+    * Time period, unit: sec, enumerated value: 60, 300.
     */
     @SerializedName("Period")
     @Expose
     private Integer Period;
 
     /**
-    * 重复次数。取值范围 [1, 10]
+    * Repeat times. Value range: [1, 10]
     */
     @SerializedName("ContinuousTime")
     @Expose
     private Integer ContinuousTime;
 
     /**
-    * 统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
+    * Statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
     */
     @SerializedName("Statistic")
     @Expose
     private String Statistic;
 
     /**
-     * 获取比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
-     * @return ComparisonOperator 比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
+     * Obtain the comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
+     * @return ComparisonOperator Comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
      */
     public String getComparisonOperator() {
         return this.ComparisonOperator;
     }
 
     /**
-     * 设置比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
-     * @param ComparisonOperator 比较运算符，可选值：<br><li>GREATER_THAN：大于</li><li>GREATER_THAN_OR_EQUAL_TO：大于或等于</li><li>LESS_THAN：小于</li><li> LESS_THAN_OR_EQUAL_TO：小于或等于</li><li> EQUAL_TO：等于</li> <li>NOT_EQUAL_TO：不等于</li>
+     * Configure the comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
+     * @param ComparisonOperator Comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
      */
     public void setComparisonOperator(String ComparisonOperator) {
         this.ComparisonOperator = ComparisonOperator;
     }
 
     /**
-     * 获取指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li>
-     * @return MetricName 指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li>
+     * Obtain the name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
+     * Name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
      */
     public String getMetricName() {
         return this.MetricName;
     }
 
     /**
-     * 设置指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li>
-     * @param MetricName 指标名称，可选字段如下：<br><li>CPU_UTILIZATION：CPU利用率</li><li>MEM_UTILIZATION：内存利用率</li><li>LAN_TRAFFIC_OUT：内网出带宽</li><li>LAN_TRAFFIC_IN：内网入带宽</li><li>WAN_TRAFFIC_OUT：外网出带宽</li><li>WAN_TRAFFIC_IN：外网入带宽</li>
+     * Configure the name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
+     * Name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
      */
     public void setMetricName(String MetricName) {
         this.MetricName = MetricName;
     }
 
     /**
-     * 获取告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li>
-     * @return Threshold 告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+     * Obtain the alarmed threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
+     * @return Threshold Alarm threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
      */
     public Integer getThreshold() {
         return this.Threshold;
     }
 
     /**
-     * 设置告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li>
-     * @param Threshold 告警阈值：<br><li>CPU_UTILIZATION：[1, 100]，单位：%</li><li>MEM_UTILIZATION：[1, 100]，单位：%</li><li>LAN_TRAFFIC_OUT：>0，单位：Mbps </li><li>LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+     * Configure the alarmed threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
+     * @param Threshold Alarm threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
      */
     public void setThreshold(Integer Threshold) {
         this.Threshold = Threshold;
     }
 
     /**
-     * 获取时间周期，单位：秒，取值枚举值为60、300。
-     * @return Period 时间周期，单位：秒，取值枚举值为60、300。
+     * Obtain the time period, unit: sec, enumerated value: 60, 300.
+     * @return Period Time period, unit: sec, enumerated value: 60, 300.
      */
     public Integer getPeriod() {
         return this.Period;
     }
 
     /**
-     * 设置时间周期，单位：秒，取值枚举值为60、300。
-     * @param Period 时间周期，单位：秒，取值枚举值为60、300。
+     * Configure the time period, unit: sec, enumerated value: 60, 300.
+     * @param Period Time period, unit: sec, enumerated value: 60, 300.
      */
     public void setPeriod(Integer Period) {
         this.Period = Period;
     }
 
     /**
-     * 获取重复次数。取值范围 [1, 10]
-     * @return ContinuousTime 重复次数。取值范围 [1, 10]
+     * Obtain the repeat times. Value range: [1, 10]
+     * @return ContinuousTime Repeat times. Value range: [1, 10]
      */
     public Integer getContinuousTime() {
         return this.ContinuousTime;
     }
 
     /**
-     * 设置重复次数。取值范围 [1, 10]
-     * @param ContinuousTime 重复次数。取值范围 [1, 10]
+     * Configure the repeat times. Value range: [1, 10]
+     * @param ContinuousTime Repeat times. Value range: [1, 10]
      */
     public void setContinuousTime(Integer ContinuousTime) {
         this.ContinuousTime = ContinuousTime;
     }
 
     /**
-     * 获取统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
-     * @return Statistic 统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
+     * Obtain the statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
+     * @return Statistic Statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
      */
     public String getStatistic() {
         return this.Statistic;
     }
 
     /**
-     * 设置统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
-     * @param Statistic 统计类型，可选字段如下：<br><li>AVERAGE：平均值</li><li>MAXIMUM：最大值<li>MINIMUM：最小值</li><br> 默认取值：AVERAGE
+     * Configure the statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
+     * @param Statistic Statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
      */
     public void setStatistic(String Statistic) {
         this.Statistic = Statistic;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ComparisonOperator", this.ComparisonOperator);

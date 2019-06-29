@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class AttachUserPolicyRequest  extends AbstractModel{
 
     /**
-    * 策略 id
+    * Policy ID
     */
     @SerializedName("PolicyId")
     @Expose
     private Long PolicyId;
 
     /**
-    * 子账号 uin
+    * Sub-account UIN
     */
     @SerializedName("AttachUin")
     @Expose
     private Long AttachUin;
 
     /**
-     * 获取策略 id
-     * @return PolicyId 策略 id
+     * Getting Policy ID
+     * @return PolicyId Policy ID
      */
     public Long getPolicyId() {
         return this.PolicyId;
     }
 
     /**
-     * 设置策略 id
-     * @param PolicyId 策略 id
+     * Configuring Policy ID
+     * @param PolicyId Policy ID
      */
     public void setPolicyId(Long PolicyId) {
         this.PolicyId = PolicyId;
     }
 
     /**
-     * 获取子账号 uin
-     * @return AttachUin 子账号 uin
+     * Getting Sub-account UIN
+     * @return AttachUin Sub-account UIN
      */
     public Long getAttachUin() {
         return this.AttachUin;
     }
 
     /**
-     * 设置子账号 uin
-     * @param AttachUin 子账号 uin
+     * Configuring Sub-account UIN
+     * @param AttachUin Sub-account UIN
      */
     public void setAttachUin(Long AttachUin) {
         this.AttachUin = AttachUin;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

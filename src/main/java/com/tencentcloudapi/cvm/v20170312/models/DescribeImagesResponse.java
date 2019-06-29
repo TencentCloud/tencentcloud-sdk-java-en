@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeImagesResponse  extends AbstractModel{
 
     /**
-    * 一个关于镜像详细信息的结构体，主要包括镜像的主要状态与属性。
+    * An array of detailed information of an image, including the main statuses and attributes of the image.
     */
     @SerializedName("ImageSet")
     @Expose
     private Image [] ImageSet;
 
     /**
-    * 符合要求的镜像数量。
+    * Number of images satisfying the filter conditions.
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取一个关于镜像详细信息的结构体，主要包括镜像的主要状态与属性。
-     * @return ImageSet 一个关于镜像详细信息的结构体，主要包括镜像的主要状态与属性。
+     * obtain An array of detailed information of an image, including the main statuses and attributes of the image.
+     * @return ImageSet An array of detailed information of an image, including the main statuses and attributes of the image.
      */
     public Image [] getImageSet() {
         return this.ImageSet;
     }
 
     /**
-     * 设置一个关于镜像详细信息的结构体，主要包括镜像的主要状态与属性。
-     * @param ImageSet 一个关于镜像详细信息的结构体，主要包括镜像的主要状态与属性。
+     * Set an array of detailed information of an image, including the main statuses and attributes of the image.
+     * @param ImageSet An array of detailed information of an image, including the main statuses and attributes of the image.
      */
     public void setImageSet(Image [] ImageSet) {
         this.ImageSet = ImageSet;
     }
 
     /**
-     * 获取符合要求的镜像数量。
-     * @return TotalCount 符合要求的镜像数量。
+     * Obtain Number of images satisfying the filter conditions.
+     * @return TotalCount Number of images satisfying the filter conditions.
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置符合要求的镜像数量。
-     * @param TotalCount 符合要求的镜像数量。
+     * Set number of images satisfying the filter conditions.
+     * @param TotalCount Number of images satisfying the filter conditions.
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request which is gotten from each request and it is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "ImageSet.", this.ImageSet);

@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeAutoScalingActivitiesResponse  extends AbstractModel{
 
     /**
-    * 符合条件的伸缩活动数量。
+    * Number of scaling activities that meet the condition.
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 符合条件的伸缩活动信息集合。
+    * Information of scaling activities configurations matching the condition.
     */
     @SerializedName("ActivitySet")
     @Expose
     private Activity [] ActivitySet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取符合条件的伸缩活动数量。
-     * @return TotalCount 符合条件的伸缩活动数量。
+     * Obtain number of scaling activities that meet the condition.
+     * @return TotalCount Number of scaling activities that meet the condition.
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置符合条件的伸缩活动数量。
-     * @param TotalCount 符合条件的伸缩活动数量。
+     * Set number of scaling activities that meet the condition.
+     * @param TotalCount Number of scaling activities that meet the condition.
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取符合条件的伸缩活动信息集合。
-     * @return ActivitySet 符合条件的伸缩活动信息集合。
+     * Obtain information of scaling activities configurations matching the condition.
+     * @return ActivitySet Information of scaling activities configurations matching the condition.
      */
     public Activity [] getActivitySet() {
         return this.ActivitySet;
     }
 
     /**
-     * 设置符合条件的伸缩活动信息集合。
-     * @param ActivitySet 符合条件的伸缩活动信息集合。
+     * Set information of scaling activities configurations matching the condition.
+     * @param ActivitySet Information of scaling activities configurations matching the condition.
      */
     public void setActivitySet(Activity [] ActivitySet) {
         this.ActivitySet = ActivitySet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * set the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

@@ -23,420 +23,375 @@ import java.util.HashMap;
 public class CreateAutoScalingGroupRequest  extends AbstractModel{
 
     /**
-    * 伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超55个字节。
+    * Scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
     */
     @SerializedName("AutoScalingGroupName")
     @Expose
     private String AutoScalingGroupName;
 
     /**
-    * 启动配置ID
+    * Launch configuration ID
     */
     @SerializedName("LaunchConfigurationId")
     @Expose
     private String LaunchConfigurationId;
 
     /**
-    * 最大实例数，取值范围为0-2000。
+    * Max instance number, value range between 0-2000.
     */
     @SerializedName("MaxSize")
     @Expose
     private Integer MaxSize;
 
     /**
-    * 最小实例数，取值范围为0-2000。
+    * Min instance number, value range between 0-2000.
     */
     @SerializedName("MinSize")
     @Expose
     private Integer MinSize;
 
     /**
-    * VPC ID，基础网络则填空字符串
+    * VPC ID, enter an empty string for Basic Network
     */
     @SerializedName("VpcId")
     @Expose
     private String VpcId;
 
     /**
-    * 默认冷却时间，单位秒，默认值为300
+    * Default cooldown period (in seconds), default value is 300. 
     */
     @SerializedName("DefaultCooldown")
     @Expose
     private Integer DefaultCooldown;
 
     /**
-    * 期望实例数，大小介于最小实例数和最大实例数之间
+    * Desired instance number, value should be between the max and min number. 
     */
     @SerializedName("DesiredCapacity")
     @Expose
     private Integer DesiredCapacity;
 
     /**
-    * 传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+    * List of traditional load balancer IDs. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
     */
     @SerializedName("LoadBalancerIds")
     @Expose
     private String [] LoadBalancerIds;
 
     /**
-    * 项目ID
+    * Project ID.
     */
     @SerializedName("ProjectId")
     @Expose
     private Integer ProjectId;
 
     /**
-    * 应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+    * List of application-based load balancers. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
     */
     @SerializedName("ForwardLoadBalancers")
     @Expose
     private ForwardLoadBalancer [] ForwardLoadBalancers;
 
     /**
-    * 子网ID列表，VPC场景下必须指定子网
+    * List of subnet IDs. You must specify subnets when creating a scaling group under a VPC. 
     */
     @SerializedName("SubnetIds")
     @Expose
     private String [] SubnetIds;
 
     /**
-    * 销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。
-<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。
-<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。
+    * Termination policies. The number of policies is limited to 1. Values include OLDEST_INSTANCE and NEWEST_INSTANCE. Default value is OLDEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
     */
     @SerializedName("TerminationPolicies")
     @Expose
     private String [] TerminationPolicies;
 
     /**
-    * 可用区列表，基础网络场景下必须指定可用区
+    * List of availability zones. You must specify availability zones when creating a scaling group under a VPC.
     */
     @SerializedName("Zones")
     @Expose
     private String [] Zones;
 
     /**
-    * 重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
-<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
-<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
+    * Retry policy, value includes IMMEDIATE_RETRY and INCREMENTAL_INTERVALS. Default value is   IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately. Retry again quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: Retry in incrementing intervals. As the number of consecutive failures increases, the intervals between each attempt increases gradually. Interval ranges from seconds to 1 day.
     */
     @SerializedName("RetryPolicy")
     @Expose
     private String RetryPolicy;
 
     /**
-    * 可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。
-
-可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。
-如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。
+    * Availability zone validation policy. Values include ALL and ANY. Default value is ANY. <br><li> ALL: All availability zones(Zone) or subnets(SubnetId) can be used or validation fails<br><li> ANY: Any one of availability zones(Zone) or subnets(SubnetId) can be used or validation fails Common reasons why availability zones or subnet are unavailable: CVM instance type in the availability zone is sold out; CBS cloud disk in the availability zone is sold out; the availability zone has insufficient quota or the subnet IP is insufficient. If the availability zone or subnet in Zones/SubnetIds does not exist, the validation will fail regardless of the value of ZonesCheckPolicy.
     */
     @SerializedName("ZonesCheckPolicy")
     @Expose
     private String ZonesCheckPolicy;
 
     /**
-    * 标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例，
+    * Tag description list. This parameter is used to bind a tag to a scaling group, it also binds the tag to the associated instance.
     */
     @SerializedName("Tags")
     @Expose
     private Tag [] Tags;
 
     /**
-     * 获取伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超55个字节。
-     * @return AutoScalingGroupName 伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超55个字节。
+     * Get scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
+     * @return AutoScalingGroupName Scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
      */
     public String getAutoScalingGroupName() {
         return this.AutoScalingGroupName;
     }
 
     /**
-     * 设置伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超55个字节。
-     * @param AutoScalingGroupName 伸缩组名称，在您账号中必须唯一。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超55个字节。
+     * Set scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
+     * @param AutoScalingGroupName Scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
      */
     public void setAutoScalingGroupName(String AutoScalingGroupName) {
         this.AutoScalingGroupName = AutoScalingGroupName;
     }
 
     /**
-     * 获取启动配置ID
-     * @return LaunchConfigurationId 启动配置ID
+     * Get launch configuration ID.
+     * @return LaunchConfigurationId Launch configuration ID.
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * 设置启动配置ID
-     * @param LaunchConfigurationId 启动配置ID
+     * Set launch configuration ID.
+     * @param LaunchConfigurationId Launch configuration ID.
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * 获取最大实例数，取值范围为0-2000。
-     * @return MaxSize 最大实例数，取值范围为0-2000。
+     * Get max instance number, value range between 0-2000.
+     * @return MaxSize Max instance number, value range between 0-2000.
      */
     public Integer getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * 设置最大实例数，取值范围为0-2000。
-     * @param MaxSize 最大实例数，取值范围为0-2000。
+     * Set max instance number, value range between 0-2000.
+     * @param MaxSize Max instance number, value range between 0-2000.
      */
     public void setMaxSize(Integer MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * 获取最小实例数，取值范围为0-2000。
-     * @return MinSize 最小实例数，取值范围为0-2000。
+     * Get min instance number, value range between 0-2000.
+     * @return MinSize Min instance number, value range between 0-2000.
      */
     public Integer getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * 设置最小实例数，取值范围为0-2000。
-     * @param MinSize 最小实例数，取值范围为0-2000。
+     * Set min instance number, value range between 0-2000.
+     * @param MinSize Min instance number, value range between 0-2000.
      */
     public void setMinSize(Integer MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * 获取VPC ID，基础网络则填空字符串
-     * @return VpcId VPC ID，基础网络则填空字符串
+     * Get VPC ID, enter an empty string for Basic Network
+     * @return VpcId VPC ID, enter an empty string for Basic Network
      */
     public String getVpcId() {
         return this.VpcId;
     }
 
     /**
-     * 设置VPC ID，基础网络则填空字符串
-     * @param VpcId VPC ID，基础网络则填空字符串
+     * Set VPC ID, enter an empty string for Basic Network
+     * @param VpcId VPC ID, enter an empty string for Basic Network
      */
     public void setVpcId(String VpcId) {
         this.VpcId = VpcId;
     }
 
     /**
-     * 获取默认冷却时间，单位秒，默认值为300
-     * @return DefaultCooldown 默认冷却时间，单位秒，默认值为300
+     * Get default cooldown period (in seconds), default value is 300. 
+     * @return DefaultCooldown Default cooldown period (in seconds), default value is 300. 
      */
     public Integer getDefaultCooldown() {
         return this.DefaultCooldown;
     }
 
     /**
-     * 设置默认冷却时间，单位秒，默认值为300
-     * @param DefaultCooldown 默认冷却时间，单位秒，默认值为300
+     * Set default cooldown period (in seconds), default value is 300. 
+     * @param DefaultCooldown Default cooldown period (in seconds), default value is 300. 
      */
     public void setDefaultCooldown(Integer DefaultCooldown) {
         this.DefaultCooldown = DefaultCooldown;
     }
 
     /**
-     * 获取期望实例数，大小介于最小实例数和最大实例数之间
-     * @return DesiredCapacity 期望实例数，大小介于最小实例数和最大实例数之间
+     * Get desired instance number, value should be between the max and min number. 
+     * @return DesiredCapacity Desired instance number, value should be between the max and min number. 
      */
     public Integer getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * 设置期望实例数，大小介于最小实例数和最大实例数之间
-     * @param DesiredCapacity 期望实例数，大小介于最小实例数和最大实例数之间
+     * Set desired instance number, value should be between the max and min number. 
+     * @param DesiredCapacity Desired instance number, value should be between the max and min number. 
      */
     public void setDesiredCapacity(Integer DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * 获取传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-     * @return LoadBalancerIds 传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+     * Get list of traditional load balancer IDs. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
+     * @return LoadBalancerIds List of traditional load balancer IDs. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
      */
     public String [] getLoadBalancerIds() {
         return this.LoadBalancerIds;
     }
 
     /**
-     * 设置传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-     * @param LoadBalancerIds 传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+     * Set list of traditional load balancer IDs. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
+     * @param LoadBalancerIds List of traditional load balancer IDs. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
      */
     public void setLoadBalancerIds(String [] LoadBalancerIds) {
         this.LoadBalancerIds = LoadBalancerIds;
     }
 
     /**
-     * 获取项目ID
-     * @return ProjectId 项目ID
+     * Get project ID
+     * @return ProjectId Project ID.
      */
     public Integer getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * 设置项目ID
-     * @param ProjectId 项目ID
+     * Set project ID.
+     * @param ProjectId Project ID.
      */
     public void setProjectId(Integer ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * 获取应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-     * @return ForwardLoadBalancers 应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+     * Get list of application-based load balancers. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
+     * @return ForwardLoadBalancers ID List of application-based load balancers. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
      */
     public ForwardLoadBalancer [] getForwardLoadBalancers() {
         return this.ForwardLoadBalancers;
     }
 
     /**
-     * 设置应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-     * @param ForwardLoadBalancers 应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+     * Set list of application-based load balancers. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
+     * @param ForwardLoadBalancers List of application-based load balancers. Currently limited to 1. You cannot specify both LoadBalancerIds and ForwardLoadBalancers.
      */
     public void setForwardLoadBalancers(ForwardLoadBalancer [] ForwardLoadBalancers) {
         this.ForwardLoadBalancers = ForwardLoadBalancers;
     }
 
     /**
-     * 获取子网ID列表，VPC场景下必须指定子网
-     * @return SubnetIds 子网ID列表，VPC场景下必须指定子网
+     * Get list of subnet IDs. You must specify subnets when creating a scaling group under a VPC. 
+     * @return SubnetIds List of subnet IDs. You must specify subnets when creating a scaling group under a VPC. 
      */
     public String [] getSubnetIds() {
         return this.SubnetIds;
     }
 
     /**
-     * 设置子网ID列表，VPC场景下必须指定子网
-     * @param SubnetIds 子网ID列表，VPC场景下必须指定子网
+     * Set list of subnet IDs. You must specify subnets when creating a scaling group under a VPC. 
+     * @param SubnetIds List of subnet IDs. You must specify subnets when creating a scaling group under a VPC. 
      */
     public void setSubnetIds(String [] SubnetIds) {
         this.SubnetIds = SubnetIds;
     }
 
     /**
-     * 获取销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。
-<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。
-<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。
-     * @return TerminationPolicies 销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。
-<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。
-<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。
+     * Get Termination policies. The number of policies is limited to 1. Values include OLDEST_INSTANCE and NEWEST_INSTANCE. Default value is OLDEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
+     * @return TerminationPolicies Termination policies. The number of policies is limited to 1. Values include OLDEST_INSTANCE and NEWEST_INSTANCE. Default value is OLDEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
      */
     public String [] getTerminationPolicies() {
         return this.TerminationPolicies;
     }
 
     /**
-     * 设置销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。
-<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。
-<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。
-     * @param TerminationPolicies 销毁策略，目前长度上限为1。取值包括 OLDEST_INSTANCE 和 NEWEST_INSTANCE，默认取值为 OLDEST_INSTANCE。
-<br><li> OLDEST_INSTANCE 优先销毁伸缩组中最旧的实例。
-<br><li> NEWEST_INSTANCE，优先销毁伸缩组中最新的实例。
+     * Set Termination policies. The number of policies is limited to 1. Values include OLDEST_INSTANCE and NEWEST_INSTANCE. Default value is OLDEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
+     * @param TerminationPolicies Termination policies. The number of policies is limited to 1. Values include OLDEST_INSTANCE and NEWEST_INSTANCE. Default value is OLDEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
      */
     public void setTerminationPolicies(String [] TerminationPolicies) {
         this.TerminationPolicies = TerminationPolicies;
     }
 
     /**
-     * 获取可用区列表，基础网络场景下必须指定可用区
-     * @return Zones 可用区列表，基础网络场景下必须指定可用区
+     * Get List of availability zones. You must specify availability zones when creating a scaling group under a VPC.
+     * @return Zones List of availability zones. You must specify availability zones when creating a scaling group under a VPC.
      */
     public String [] getZones() {
         return this.Zones;
     }
 
     /**
-     * 设置可用区列表，基础网络场景下必须指定可用区
-     * @param Zones 可用区列表，基础网络场景下必须指定可用区
+     * Set List of availability zones. You must specify availability zones when creating a scaling group under a VPC.
+     * @param Zones List of availability zones. You must specify availability zones when creating a scaling group under a VPC.
      */
     public void setZones(String [] Zones) {
         this.Zones = Zones;
     }
 
     /**
-     * 获取重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
-<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
-<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
-     * @return RetryPolicy 重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
-<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
-<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
+     * Get Retry policy, value includes IMMEDIATE_RETRY and INCREMENTAL_INTERVALS. Default value is   IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately. Retry again quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: Retry in incrementing intervals. As the number of consecutive failures increases, the intervals between each attempt increases gradually. Interval ranges from seconds to 1 day.
+     * @return RetryPolicy Retry policy, value includes IMMEDIATE_RETRY and INCREMENTAL_INTERVALS. Default value is   IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately. Retry again quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: Retry in incrementing intervals. As the number of consecutive failures increases, the intervals between each attempt increases gradually. Interval ranges from seconds to 1 day.
      */
     public String getRetryPolicy() {
         return this.RetryPolicy;
     }
 
     /**
-     * 设置重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
-<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
-<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
-     * @param RetryPolicy 重试策略，取值包括 IMMEDIATE_RETRY 和 INCREMENTAL_INTERVALS，默认取值为 IMMEDIATE_RETRY。
-<br><li> IMMEDIATE_RETRY，立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
-<br><li> INCREMENTAL_INTERVALS，间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
+     * Set Retry policy, value includes IMMEDIATE_RETRY and INCREMENTAL_INTERVALS. Default value is   IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately. Retry again quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: Retry in incrementing intervals. As the number of consecutive failures increases, the intervals between each attempt increases gradually. Interval ranges from seconds to 1 day.
+     * @param RetryPolicy Retry policy, value includes IMMEDIATE_RETRY and INCREMENTAL_INTERVALS. Default value is   IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately. Retry again quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: Retry in incrementing intervals. As the number of consecutive failures increases, the intervals between each attempt increases gradually. Interval ranges from seconds to 1 day.
      */
     public void setRetryPolicy(String RetryPolicy) {
         this.RetryPolicy = RetryPolicy;
     }
 
     /**
-     * 获取可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。
-
-可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。
-如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。
-     * @return ZonesCheckPolicy 可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。
-
-可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。
-如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。
+     * Get Availability zone validation policy. Values include ALL and ANY. Default value is ANY. <br><li> ALL: All availability zones(Zone) or subnets(SubnetId) can be used or validation fails<br><li> ANY: Any one of availability zones(Zone) or subnets(SubnetId) can be used or validation fails Common reasons why availability zones or subnet are unavailable: CVM instance type in the availability zone is sold out; CBS cloud disk in the availability zone is sold out; the availability zone has insufficient quota or the subnet IP is insufficient. If the availability zone or subnet in Zones/SubnetIds does not exist, the validation will fail regardless of the value of ZonesCheckPolicy.
+     * @return ZonesCheckPolicy Availability zone validation policy. Values include ALL and ANY. Default value is ANY. <br><li> ALL: All availability zones(Zone) or subnets(SubnetId) can be used or validation fails<br><li> ANY: Any one of availability zones(Zone) or subnets(SubnetId) can be used or validation fails Common reasons why availability zones or subnet are unavailable: CVM instance type in the availability zone is sold out; CBS cloud disk in the availability zone is sold out; the availability zone has insufficient quota or the subnet IP is insufficient. If the availability zone or subnet in Zones/SubnetIds does not exist, the validation will fail regardless of the value of ZonesCheckPolicy.
      */
     public String getZonesCheckPolicy() {
         return this.ZonesCheckPolicy;
     }
 
     /**
-     * 设置可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。
-
-可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。
-如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。
-     * @param ZonesCheckPolicy 可用区校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有可用区（Zone）或子网（SubnetId）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个可用区（Zone）或子网（SubnetId）可用则通过校验，否则校验报错。
-
-可用区或子网不可用的常见原因包括该可用区CVM实例类型售罄、该可用区CBS云盘售罄、该可用区配额不足、该子网IP不足等。
-如果 Zones/SubnetIds 中可用区或者子网不存在，则无论 ZonesCheckPolicy 采用何种取值，都会校验报错。
+     * Set Availability zone validation policy. Values include ALL and ANY. Default value is ANY. <br><li> ALL: All availability zones(Zone) or subnets(SubnetId) can be used or validation fails<br><li> ANY: Any one of availability zones(Zone) or subnets(SubnetId) can be used or validation fails Common reasons why availability zones or subnet are unavailable: CVM instance type in the availability zone is sold out; CBS cloud disk in the availability zone is sold out; the availability zone has insufficient quota or the subnet IP is insufficient. If the availability zone or subnet in Zones/SubnetIds does not exist, the validation will fail regardless of the value of ZonesCheckPolicy.
+     * @param ZonesCheckPolicy Availability zone validation policy. Values include ALL and ANY. Default value is ANY. <br><li> ALL: All availability zones(Zone) or subnets(SubnetId) can be used or validation fails<br><li> ANY: Any one of availability zones(Zone) or subnets(SubnetId) can be used or validation fails Common reasons why availability zones or subnet are unavailable: CVM instance type in the availability zone is sold out; CBS cloud disk in the availability zone is sold out; the availability zone has insufficient quota or the subnet IP is insufficient. If the availability zone or subnet in Zones/SubnetIds does not exist, the validation will fail regardless of the value of ZonesCheckPolicy.
      */
     public void setZonesCheckPolicy(String ZonesCheckPolicy) {
         this.ZonesCheckPolicy = ZonesCheckPolicy;
     }
 
     /**
-     * 获取标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例，
-     * @return Tags 标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例，
+     * Get Tag description list. This parameter is used to bind a tag to a scaling group, it also binds the tag to the associated instance.
+     * @return Tags Tag description list. This parameter is used to bind a tag to a scaling group, it also binds the tag to the associated instance.
      */
     public Tag [] getTags() {
         return this.Tags;
     }
 
     /**
-     * 设置标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例，
-     * @param Tags 标签描述列表。通过指定该参数可以支持绑定标签到伸缩组。同时绑定标签到相应的资源实例，
+     * Set Tag description list. This parameter is used to bind a tag to a scaling group, it also binds the tag to the associated instance.
+     * @param Tags Tag description list. This parameter is used to bind a tag to a scaling group, it also binds the tag to the associated instance.
      */
     public void setTags(Tag [] Tags) {
         this.Tags = Tags;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupName", this.AutoScalingGroupName);

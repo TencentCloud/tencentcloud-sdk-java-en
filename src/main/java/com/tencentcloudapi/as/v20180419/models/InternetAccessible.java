@@ -23,91 +23,76 @@ import java.util.HashMap;
 public class InternetAccessible  extends AbstractModel{
 
     /**
-    * 网络计费类型。取值范围：<br><li>BANDWIDTH_PREPAID：预付费按带宽结算<br><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费<br><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费<br><li>BANDWIDTH_PACKAGE：带宽包用户<br>默认取值：TRAFFIC_POSTPAID_BY_HOUR。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: TRAFFIC_POSTPAID_BY_HOUR. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("InternetChargeType")
     @Expose
     private String InternetChargeType;
 
     /**
-    * 公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。
-注意：此字段可能返回 null，表示取不到有效值。
+    * The maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/17156). Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("InternetMaxBandwidthOut")
     @Expose
     private Integer InternetMaxBandwidthOut;
 
     /**
-    * 是否分配公网IP。取值范围：<br><li>TRUE：表示分配公网IP<br><li>FALSE：表示不分配公网IP<br><br>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Whether to assign public IP. Value range:<br><li>TRUE：Assign public IP.<br><li>FALSE: Do not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("PublicIpAssigned")
     @Expose
     private Boolean PublicIpAssigned;
 
     /**
-     * 获取网络计费类型。取值范围：<br><li>BANDWIDTH_PREPAID：预付费按带宽结算<br><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费<br><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费<br><li>BANDWIDTH_PACKAGE：带宽包用户<br>默认取值：TRAFFIC_POSTPAID_BY_HOUR。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return InternetChargeType 网络计费类型。取值范围：<br><li>BANDWIDTH_PREPAID：预付费按带宽结算<br><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费<br><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费<br><li>BANDWIDTH_PACKAGE：带宽包用户<br>默认取值：TRAFFIC_POSTPAID_BY_HOUR。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain the network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: TRAFFIC_POSTPAID_BY_HOUR. Note: This field may return null, indicating that no valid value was found.
+     * @return InternetChargeType Network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: TRAFFIC_POSTPAID_BY_HOUR. Note: This field may return null, indicating that no valid value was found.
      */
     public String getInternetChargeType() {
         return this.InternetChargeType;
     }
 
     /**
-     * 设置网络计费类型。取值范围：<br><li>BANDWIDTH_PREPAID：预付费按带宽结算<br><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费<br><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费<br><li>BANDWIDTH_PACKAGE：带宽包用户<br>默认取值：TRAFFIC_POSTPAID_BY_HOUR。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param InternetChargeType 网络计费类型。取值范围：<br><li>BANDWIDTH_PREPAID：预付费按带宽结算<br><li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费<br><li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费<br><li>BANDWIDTH_PACKAGE：带宽包用户<br>默认取值：TRAFFIC_POSTPAID_BY_HOUR。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configure the network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: TRAFFIC_POSTPAID_BY_HOUR. Note: This field may return null, indicating that no valid value was found.
+     * @param InternetChargeType Network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: TRAFFIC_POSTPAID_BY_HOUR. Note: This field may return null, indicating that no valid value was found.
      */
     public void setInternetChargeType(String InternetChargeType) {
         this.InternetChargeType = InternetChargeType;
     }
 
     /**
-     * 获取公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain the maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/17156). Note: This field may return null, indicating that no valid value was found.
+     * @return InternetMaxBandwidthOut The maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/17156). Note: This field may return null, indicating that no valid value was found.
      */
     public Integer getInternetMaxBandwidthOut() {
         return this.InternetMaxBandwidthOut;
     }
 
     /**
-     * 设置公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param InternetMaxBandwidthOut 公网出带宽上限，单位：Mbps。默认值：0Mbps。不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configure the maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/17156). Note: This field may return null, indicating that no valid value was found.
+     * @param InternetMaxBandwidthOut The maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/17156). Note: This field may return null, indicating that no valid value was found.
      */
     public void setInternetMaxBandwidthOut(Integer InternetMaxBandwidthOut) {
         this.InternetMaxBandwidthOut = InternetMaxBandwidthOut;
     }
 
     /**
-     * 获取是否分配公网IP。取值范围：<br><li>TRUE：表示分配公网IP<br><li>FALSE：表示不分配公网IP<br><br>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return PublicIpAssigned 是否分配公网IP。取值范围：<br><li>TRUE：表示分配公网IP<br><li>FALSE：表示不分配公网IP<br><br>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain whether to assign public IP. Value range:<br><li>TRUE: Assign public IP.<br><li>FALSE: Not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned. Note: This field may return null, indicating that no valid value was found.
+     * @return PublicIpAssigned Whether to assign public IP. Value range:<br><li>TRUE: Assign public IP.<br><li>FALSE: Not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned. Note: This field may return null, indicating that no valid value was found.
      */
     public Boolean getPublicIpAssigned() {
         return this.PublicIpAssigned;
     }
 
     /**
-     * 设置是否分配公网IP。取值范围：<br><li>TRUE：表示分配公网IP<br><li>FALSE：表示不分配公网IP<br><br>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param PublicIpAssigned 是否分配公网IP。取值范围：<br><li>TRUE：表示分配公网IP<br><li>FALSE：表示不分配公网IP<br><br>当公网带宽大于0Mbps时，可自由选择开通与否，默认开通公网IP；当公网带宽为0，则不允许分配公网IP。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configure whether to assign public IP. Value range:<br><li>TRUE: Assign public IP.<br><li>FALSE: Not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned. Note: This field may return null, indicating that no valid value was found.
+     * @param PublicIpAssigned Whether to assign public IP. Value range:<br><li>TRUE: Assign public IP.<br><li>FALSE: Not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned. Note: This field may return null, indicating that no valid value was found.
      */
     public void setPublicIpAssigned(Boolean PublicIpAssigned) {
         this.PublicIpAssigned = PublicIpAssigned;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InternetChargeType", this.InternetChargeType);

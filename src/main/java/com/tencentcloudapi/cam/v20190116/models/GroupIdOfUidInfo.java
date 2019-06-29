@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class GroupIdOfUidInfo  extends AbstractModel{
 
     /**
-    * 子用户 UID
+    * Sub-user UID
     */
     @SerializedName("Uid")
     @Expose
     private Long Uid;
 
     /**
-    * 用户组 ID
+    * User group ID
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-     * 获取子用户 UID
-     * @return Uid 子用户 UID
+     * Obtain sub-user UID
+     * @return Uid Sub-user User ID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * 设置子用户 UID
-     * @param Uid 子用户 UID
+     * Configure Sub-user UID
+     * @param Uid sub-user UID
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * 获取用户组 ID
-     * @return GroupId 用户组 ID
+     * Obtain user group ID
+     * @return GroupId user group ID
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * 设置用户组 ID
-     * @param GroupId 用户组 ID
+     * Set user group ID
+     * @param GroupId user group ID
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uid", this.Uid);

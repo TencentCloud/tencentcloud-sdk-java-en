@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class InquiryPriceResetInstancesInternetMaxBandwidthRequest  extends AbstractModel{
 
     /**
-    * 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。
+    * Get ID(s) of one or more instances you are working with, which can be obtained from field value `InstanceId` in the returned result of API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728). The maximum number of instances in a batch for each request is 100, however this API does not support batch adjustment of bandwidths with the `BANDWIDTH_PREPAID` and the `BANDWIDTH_POSTPAID_BY_HOUR` billing method at the same time.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 公网出带宽配置。不同机型带宽上限范围不一致，具体限制详见带宽限制对账表。暂时只支持`InternetMaxBandwidthOut`参数。
+    * The outbound bandwidth configuration of the public network. The bandwidth cap varies with different models. For more information, please see the bandwidth limits page. Only the parameter `InternetMaxBandwidthOut` is supported.
     */
     @SerializedName("InternetAccessible")
     @Expose
     private InternetAccessible InternetAccessible;
 
     /**
-    * 带宽生效的起始时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。起始时间不能早于当前时间。如果起始时间是今天则新设置的带宽立即生效。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
+    * The date from which the bandwidth takes effect. Format: `YYYY-MM-DD`, such as `2016-10-30`. The start date cannot be earlier than the current date. If the start date is today, the newly set bandwidth takes effect immediately. This parameter is only valid for the prepaid bandwidth, error code will be returned by this API if other billing methods selected.
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * 带宽生效的终止时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。新设置的带宽的有效期包含终止时间此日期。终止时间不能晚于包年包月实例的到期时间。实例的到期时间可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`ExpiredTime`获取。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
+    * The date until which the bandwidth is effective. Format: `YYYY-MM-DD`, such as `2016-10-30`. The validity period of the newly set bandwidth includes the end date. The end date cannot be later than the expiry date of the prepaid instance. The expiry date of an instance can be obtained with API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) by `ExpiredTime` field in API response. This parameter is only valid for the prepaid bandwidth. error code will be returned by this API if other billing methods selected.
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-     * 获取一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。
-     * @return InstanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。
+     * Get ID(s) of one or more instances you are working with, which can be obtained from field value `InstanceId` in the returned result of API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728). The maximum number of instances in a batch for each request is 100, however this API does not support batch adjustment of bandwidths with the `BANDWIDTH_PREPAID` and the `BANDWIDTH_POSTPAID_BY_HOUR` billing method at the same time.
+     * @return InstanceIds ID(s) of one or more instances you are working with, which can be obtained from field value `InstanceId` in the returned result of API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728). The maximum number of instances in a batch for each request is 100, however this API does not support batch adjustment of bandwidths with the `BANDWIDTH_PREPAID` and the `BANDWIDTH_POSTPAID_BY_HOUR` billing method at the same time.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。
-     * @param InstanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。
+     * Set ID(s) of one or more instances you are working with, which can be obtained from field value `InstanceId` in the returned result of API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728). The maximum number of instances in a batch for each request is 100, however this API does not support batch adjustment of bandwidths with the `BANDWIDTH_PREPAID` and the `BANDWIDTH_POSTPAID_BY_HOUR` billing method at the same time.
+     * @param InstanceIds ID(s) of one or more instances you are working with, which can be obtained from field value `InstanceId` in the returned result of API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728). The maximum number of instances in a batch for each request is 100, however this API does not support batch adjustment of bandwidths with the `BANDWIDTH_PREPAID` and the `BANDWIDTH_POSTPAID_BY_HOUR` billing method at the same time.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取公网出带宽配置。不同机型带宽上限范围不一致，具体限制详见带宽限制对账表。暂时只支持`InternetMaxBandwidthOut`参数。
-     * @return InternetAccessible 公网出带宽配置。不同机型带宽上限范围不一致，具体限制详见带宽限制对账表。暂时只支持`InternetMaxBandwidthOut`参数。
+     * Get the outbound bandwidth configuration of the public network. The bandwidth cap varies with different models. For more information, please see the bandwidth limits page. Only the parameter `InternetMaxBandwidthOut` is supported.
+     * @return InternetAccessible The outbound bandwidth configuration of the public network. The bandwidth cap varies with different models. For more information, please see the bandwidth limits page. Only the parameter `InternetMaxBandwidthOut` is supported.
      */
     public InternetAccessible getInternetAccessible() {
         return this.InternetAccessible;
     }
 
     /**
-     * 设置公网出带宽配置。不同机型带宽上限范围不一致，具体限制详见带宽限制对账表。暂时只支持`InternetMaxBandwidthOut`参数。
-     * @param InternetAccessible 公网出带宽配置。不同机型带宽上限范围不一致，具体限制详见带宽限制对账表。暂时只支持`InternetMaxBandwidthOut`参数。
+     * Set the outbound bandwidth configuration of the public network. The bandwidth cap varies with different models. For more information, please see the bandwidth limits page. Only the parameter `InternetMaxBandwidthOut` is supported.
+     * @param InternetAccessible The outbound bandwidth configuration of the public network. The bandwidth cap varies with different models. For more information, please see the bandwidth limits page. Only the parameter `InternetMaxBandwidthOut` is supported.
      */
     public void setInternetAccessible(InternetAccessible InternetAccessible) {
         this.InternetAccessible = InternetAccessible;
     }
 
     /**
-     * 获取带宽生效的起始时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。起始时间不能早于当前时间。如果起始时间是今天则新设置的带宽立即生效。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
-     * @return StartTime 带宽生效的起始时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。起始时间不能早于当前时间。如果起始时间是今天则新设置的带宽立即生效。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
+     * Get the date from which the bandwidth takes effect. Format: `YYYY-MM-DD`, such as `2016-10-30`. The start date cannot be earlier than the current date. If the start date is today, the newly set bandwidth takes effect immediately. This parameter is only valid for the prepaid bandwidth, error code will be returned by this API if other billing methods selected.
+     * @return StartTime The date from which the bandwidth takes effect. Format: `YYYY-MM-DD`, such as `2016-10-30`. The start date cannot be earlier than the current date. If the start date is today, the newly set bandwidth takes effect immediately. This parameter is only valid for the prepaid bandwidth, error code will be returned by this API if other billing methods selected.
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * 设置带宽生效的起始时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。起始时间不能早于当前时间。如果起始时间是今天则新设置的带宽立即生效。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
-     * @param StartTime 带宽生效的起始时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。起始时间不能早于当前时间。如果起始时间是今天则新设置的带宽立即生效。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
+     * Set the date from which the bandwidth takes effect. Format: `YYYY-MM-DD`, such as `2016-10-30`. The start date cannot be earlier than the current date. If the start date is today, the newly set bandwidth takes effect immediately. This parameter is only valid for the prepaid bandwidth, error code will be returned by this API if other billing methods selected.
+     * @param StartTime The date from which the bandwidth takes effect. Format: `YYYY-MM-DD`, such as `2016-10-30`. The start date cannot be earlier than the current date. If the start date is today, the newly set bandwidth takes effect immediately. This parameter is only valid for the prepaid bandwidth, error code will be returned by this API if other billing methods selected.
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * 获取带宽生效的终止时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。新设置的带宽的有效期包含终止时间此日期。终止时间不能晚于包年包月实例的到期时间。实例的到期时间可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`ExpiredTime`获取。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
-     * @return EndTime 带宽生效的终止时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。新设置的带宽的有效期包含终止时间此日期。终止时间不能晚于包年包月实例的到期时间。实例的到期时间可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`ExpiredTime`获取。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
+     * Get the date until which the bandwidth is effective. Format: `YYYY-MM-DD`, such as `2016-10-30`. The validity period of the newly set bandwidth includes the end date. The end date cannot be later than the expiry date of the prepaid instance. The expiry date of an instance can be obtained with API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) by `ExpiredTime` field in API response. This parameter is only valid for the prepaid bandwidth. error code will be returned by this API if other billing methods selected.
+     * @return EndTime The date until which the bandwidth is effective. Format: `YYYY-MM-DD`, such as `2016-10-30`. The validity period of the newly set bandwidth includes the end date. The end date cannot be later than the expiry date of the prepaid instance. The expiry date of an instance can be obtained with API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) by `ExpiredTime` field in API response. This parameter is only valid for the prepaid bandwidth. error code will be returned by this API if other billing methods selected.
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * 设置带宽生效的终止时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。新设置的带宽的有效期包含终止时间此日期。终止时间不能晚于包年包月实例的到期时间。实例的到期时间可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`ExpiredTime`获取。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
-     * @param EndTime 带宽生效的终止时间。格式：`YYYY-MM-DD`，例如：`2016-10-30`。新设置的带宽的有效期包含终止时间此日期。终止时间不能晚于包年包月实例的到期时间。实例的到期时间可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`ExpiredTime`获取。该参数只对包年包月带宽有效，其他模式带宽不支持该参数，否则接口会以相应错误码返回。
+     * Set the date until which the bandwidth is effective. Format: `YYYY-MM-DD`, such as `2016-10-30`. The validity period of the newly set bandwidth includes the end date. The end date cannot be later than the expiry date of the prepaid instance. The expiry date of an instance can be obtained with API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) by `ExpiredTime` field in API response. This parameter is only valid for the prepaid bandwidth. error code will be returned by this API if other billing methods selected.
+     * @param EndTime The date until which the bandwidth is effective. Format: `YYYY-MM-DD`, such as `2016-10-30`. The validity period of the newly set bandwidth includes the end date. The end date cannot be later than the expiry date of the prepaid instance. The expiry date of an instance can be obtained with API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) by `ExpiredTime` field in API response. This parameter is only valid for the prepaid bandwidth. error code will be returned by this API if other billing methods selected.
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class GetGroupRequest  extends AbstractModel{
 
     /**
-    * 用户组 ID
+    * User Group ID
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-     * 获取用户组 ID
-     * @return GroupId 用户组 ID
+     * Getting User Group ID
+     * @return GroupId User Group ID
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * 设置用户组 ID
-     * @param GroupId 用户组 ID
+     * Configuring User Group ID
+     * @param GroupId User Group ID
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupId", this.GroupId);

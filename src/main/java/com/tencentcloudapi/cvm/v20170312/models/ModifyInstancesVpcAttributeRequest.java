@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class ModifyInstancesVpcAttributeRequest  extends AbstractModel{
 
     /**
-    * 待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
+    * IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 私有网络相关信息配置。通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。不指定`PrivateIpAddresses`时随机分配私有网络子网IP。
+    * Configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
     */
     @SerializedName("VirtualPrivateCloud")
     @Expose
     private VirtualPrivateCloud VirtualPrivateCloud;
 
     /**
-    * 是否对运行中的实例选择强制关机。默认为TRUE。
+    * Indicate whether a forced shutdown is performed to running instances. Default is TRUE. 
     */
     @SerializedName("ForceStop")
     @Expose
     private Boolean ForceStop;
 
     /**
-    * 是否保留主机名。默认为FALSE。
+    * Indicate whether save the name of CVM.Default is FALSE.
     */
     @SerializedName("ReserveHostName")
     @Expose
     private Boolean ReserveHostName;
 
     /**
-     * 获取待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
-     * @return InstanceIds 待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
+     * IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * @return InstanceIds  of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
-     * @param InstanceIds 待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。
+     * IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * @param InstanceIds of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取私有网络相关信息配置。通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。不指定`PrivateIpAddresses`时随机分配私有网络子网IP。
-     * @return VirtualPrivateCloud 私有网络相关信息配置。通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。不指定`PrivateIpAddresses`时随机分配私有网络子网IP。
+     * Obtaining the configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
+     * @return VirtualPrivateCloud Configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
      */
     public VirtualPrivateCloud getVirtualPrivateCloud() {
         return this.VirtualPrivateCloud;
     }
 
     /**
-     * 设置私有网络相关信息配置。通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。不指定`PrivateIpAddresses`时随机分配私有网络子网IP。
-     * @param VirtualPrivateCloud 私有网络相关信息配置。通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。可通过`PrivateIpAddresses`指定私有网络子网IP，若需指定则所有已指定的实例均需要指定子网IP，此时`InstanceIds`与`PrivateIpAddresses`一一对应。不指定`PrivateIpAddresses`时随机分配私有网络子网IP。
+     * Setting the configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
+     * @param VirtualPrivateCloud Configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
      */
     public void setVirtualPrivateCloud(VirtualPrivateCloud VirtualPrivateCloud) {
         this.VirtualPrivateCloud = VirtualPrivateCloud;
     }
 
     /**
-     * 获取是否对运行中的实例选择强制关机。默认为TRUE。
-     * @return ForceStop 是否对运行中的实例选择强制关机。默认为TRUE。
+     * Obtaining whether to force shutdown is performed to running instances. Default is TRUE
+     * @return ForceStop Indicate  whether a forced shutdown is performed to running instances. Default is TRUE.
      */
     public Boolean getForceStop() {
         return this.ForceStop;
     }
 
     /**
-     * 设置是否对运行中的实例选择强制关机。默认为TRUE。
-     * @param ForceStop 是否对运行中的实例选择强制关机。默认为TRUE。
+     * Setting whether a forced shutdown is performed to running instances. Default is TRUE.
+     * @param ForceStop Indicate whether a forced shutdown is performed to running instances. Default is TRUE.
      */
     public void setForceStop(Boolean ForceStop) {
         this.ForceStop = ForceStop;
     }
 
     /**
-     * 获取是否保留主机名。默认为FALSE。
-     * @return ReserveHostName 是否保留主机名。默认为FALSE。
+     * Obtaining whether to save the CVM name.Default is FALSE.
+     * @return ReserveHostName Whether to save the CVM name.Default is FALSE.
      */
     public Boolean getReserveHostName() {
         return this.ReserveHostName;
     }
 
     /**
-     * 设置是否保留主机名。默认为FALSE。
-     * @param ReserveHostName 是否保留主机名。默认为FALSE。
+     * Setting whether to save the CVM name.Default is FALSE.
+     * @param ReserveHostName Whether to save the CVM name.Default is FALSE.
      */
     public void setReserveHostName(Boolean ReserveHostName) {
         this.ReserveHostName = ReserveHostName;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

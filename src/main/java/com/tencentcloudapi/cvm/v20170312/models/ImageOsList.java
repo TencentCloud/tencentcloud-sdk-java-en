@@ -23,63 +23,53 @@ import java.util.HashMap;
 public class ImageOsList  extends AbstractModel{
 
     /**
-    * 支持的windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Windows")
     @Expose
     private String [] Windows;
 
     /**
-    * 支持的linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
+    * Supported Linux operating systems.Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Linux")
     @Expose
     private String [] Linux;
 
     /**
-     * 获取支持的windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Windows 支持的windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
+     * @return Windows Supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
      */
     public String [] getWindows() {
         return this.Windows;
     }
 
     /**
-     * 设置支持的windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Windows 支持的windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
+     * @param Windows Supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
      */
     public void setWindows(String [] Windows) {
         this.Windows = Windows;
     }
 
     /**
-     * 获取支持的linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Linux 支持的linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get supported Linux operating systemsNote: This field may return null, indicating that no valid value was found.
+     * @return Linux supported Windows operating systemsNote: This field may return null, indicating that no valid value was found.
      */
     public String [] getLinux() {
         return this.Linux;
     }
 
     /**
-     * 设置支持的linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Linux 支持的linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set supported Linux operating systemsNote: This field may return null, indicating that no valid value was found.
+     * @param Linux Supported Linux operating systemsNote: This field may return null, indicating that no valid value was found.
      */
     public void setLinux(String [] Linux) {
         this.Linux = Linux;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "Windows.", this.Windows);

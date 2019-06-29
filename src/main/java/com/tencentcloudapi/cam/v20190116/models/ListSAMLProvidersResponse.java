@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ListSAMLProvidersResponse  extends AbstractModel{
 
     /**
-    * SAML身份提供商总数
+    * Total number of SAML identity provider
     */
     @SerializedName("TotalCount")
     @Expose
     private Long TotalCount;
 
     /**
-    * SAML身份提供商列表
+    * List of SAML identity provider
     */
     @SerializedName("SAMLProviderSet")
     @Expose
     private SAMLProviderInfo [] SAMLProviderSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取SAML身份提供商总数
-     * @return TotalCount SAML身份提供商总数
+     * Getting total number of SAML identity provider
+     * @return TotalCount total number of SAML identity provider
      */
     public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置SAML身份提供商总数
-     * @param TotalCount SAML身份提供商总数
+     * Configuring total number of SAML identity provider
+     * @param TotalCount total number of SAML identity provider.
      */
     public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取SAML身份提供商列表
-     * @return SAMLProviderSet SAML身份提供商列表
+     * Obtain SAML identity provider list.
+     * @return SAMLProviderSet SAML identity provider list.
      */
     public SAMLProviderInfo [] getSAMLProviderSet() {
         return this.SAMLProviderSet;
     }
 
     /**
-     * 设置SAML身份提供商列表
-     * @param SAMLProviderSet SAML身份提供商列表
+     * Configuring SAML identity provider list.
+     * @param SAMLProviderSet SAML identity provider list.
      */
     public void setSAMLProviderSet(SAMLProviderInfo [] SAMLProviderSet) {
         this.SAMLProviderSet = SAMLProviderSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Getting unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

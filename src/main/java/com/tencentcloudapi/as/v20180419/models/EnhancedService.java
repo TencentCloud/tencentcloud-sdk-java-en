@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class EnhancedService  extends AbstractModel{
 
     /**
-    * 开启云安全服务。若不指定该参数，则默认开启云安全服务。
+    * Enables cloud security service. If this parameter is not specified, the cloud security service is enabled by default.
     */
     @SerializedName("SecurityService")
     @Expose
     private RunSecurityServiceEnabled SecurityService;
 
     /**
-    * 开启云监控服务。若不指定该参数，则默认开启云监控服务。
+    * Enables cloud monitor service. If this parameter is not specified, the cloud monitor service is enabled by default.
     */
     @SerializedName("MonitorService")
     @Expose
     private RunMonitorServiceEnabled MonitorService;
 
     /**
-     * 获取开启云安全服务。若不指定该参数，则默认开启云安全服务。
-     * @return SecurityService 开启云安全服务。若不指定该参数，则默认开启云安全服务。
+     * Get the cloud security service on. If this parameter is not specified, the cloud security service is enabled by default.
+     * @return SecurityService Enables cloud security service. If this parameter is not specified, the cloud security service is enabled by default.
      */
     public RunSecurityServiceEnabled getSecurityService() {
         return this.SecurityService;
     }
 
     /**
-     * 设置开启云安全服务。若不指定该参数，则默认开启云安全服务。
-     * @param SecurityService 开启云安全服务。若不指定该参数，则默认开启云安全服务。
+     * Set to turn on cloud security services. If this parameter is not specified, the cloud security service is enabled by default.
+     * @param SecurityService Enables cloud security service. If this parameter is not specified, the cloud security service is enabled by default.
      */
     public void setSecurityService(RunSecurityServiceEnabled SecurityService) {
         this.SecurityService = SecurityService;
     }
 
     /**
-     * 获取开启云监控服务。若不指定该参数，则默认开启云监控服务。
-     * @return MonitorService 开启云监控服务。若不指定该参数，则默认开启云监控服务。
+     * Get the cloud monitor service on. If this parameter is not specified, the cloud monitor service is enabled by default.
+     * @return MonitorService Enables cloud monitor service. If this parameter is not specified, the cloud monitor service is enabled by default.
      */
     public RunMonitorServiceEnabled getMonitorService() {
         return this.MonitorService;
     }
 
     /**
-     * 设置开启云监控服务。若不指定该参数，则默认开启云监控服务。
-     * @param MonitorService 开启云监控服务。若不指定该参数，则默认开启云监控服务。
+     * Set to turn on cloud monitor service. If this parameter is not specified, the cloud monitor service is enabled by default.
+     * @param MonitorService Enables cloud monitor service. If this parameter is not specified, the cloud monitor service is enabled by default.
      */
     public void setMonitorService(RunMonitorServiceEnabled MonitorService) {
         this.MonitorService = MonitorService;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "SecurityService.", this.SecurityService);

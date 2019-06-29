@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class ForwardLoadBalancer  extends AbstractModel{
 
     /**
-    * 负载均衡器ID
+    * ID of Load balancer.
     */
     @SerializedName("LoadBalancerId")
     @Expose
     private String LoadBalancerId;
 
     /**
-    * 应用型负载均衡监听器 ID
+    * ID of the application-based load balancer listener.
     */
     @SerializedName("ListenerId")
     @Expose
     private String ListenerId;
 
     /**
-    * 目标规则属性列表
+    * List of target rule attributes.
     */
     @SerializedName("TargetAttributes")
     @Expose
     private TargetAttribute [] TargetAttributes;
 
     /**
-    * 转发规则ID
+    * ID of forwarding rule.
     */
     @SerializedName("LocationId")
     @Expose
     private String LocationId;
 
     /**
-     * 获取负载均衡器ID
-     * @return LoadBalancerId 负载均衡器ID
+     * Obtain the ID of Load balancer.
+     * @return LoadBalancerId ID of Load balancer.
      */
     public String getLoadBalancerId() {
         return this.LoadBalancerId;
     }
 
     /**
-     * 设置负载均衡器ID
-     * @param LoadBalancerId 负载均衡器ID
+     * Configure the ID of Load balancer.
+     * @param LoadBalancerId ID of Load balancer.
      */
     public void setLoadBalancerId(String LoadBalancerId) {
         this.LoadBalancerId = LoadBalancerId;
     }
 
     /**
-     * 获取应用型负载均衡监听器 ID
-     * @return ListenerId 应用型负载均衡监听器 ID
+     * Obtain an ID of the application-based load balancer listener.
+     * @return ListenerId ID of the application-based load balancer listener.
      */
     public String getListenerId() {
         return this.ListenerId;
     }
 
     /**
-     * 设置应用型负载均衡监听器 ID
-     * @param ListenerId 应用型负载均衡监听器 ID
+     * Configure an ID of the application-based load balancer listener.
+     * @param ListenerId ID of the application-based load balancer listener.
      */
     public void setListenerId(String ListenerId) {
         this.ListenerId = ListenerId;
     }
 
     /**
-     * 获取目标规则属性列表
-     * @return TargetAttributes 目标规则属性列表
+     * Obtain a list of target rule attributes.
+     * @return TargetAttributes List of target rule attributes.
      */
     public TargetAttribute [] getTargetAttributes() {
         return this.TargetAttributes;
     }
 
     /**
-     * 设置目标规则属性列表
-     * @param TargetAttributes 目标规则属性列表
+     * Configure a list of target rule attributes.
+     * @param TargetAttributes List of target rule attributes.
      */
     public void setTargetAttributes(TargetAttribute [] TargetAttributes) {
         this.TargetAttributes = TargetAttributes;
     }
 
     /**
-     * 获取转发规则ID
-     * @return LocationId 转发规则ID
+     * Obtain the ID of forwarding rule.
+     * @return LocationId ID of forwarding rule.
      */
     public String getLocationId() {
         return this.LocationId;
     }
 
     /**
-     * 设置转发规则ID
-     * @param LocationId 转发规则ID
+     * Configure the ID of forwarding rule.
+     * @param LocationId ID of forwarding rule.
      */
     public void setLocationId(String LocationId) {
         this.LocationId = LocationId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LoadBalancerId", this.LoadBalancerId);

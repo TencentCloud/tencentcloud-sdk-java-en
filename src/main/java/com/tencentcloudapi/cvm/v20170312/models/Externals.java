@@ -23,91 +23,76 @@ import java.util.HashMap;
 public class Externals  extends AbstractModel{
 
     /**
-    * 释放地址
-注意：此字段可能返回 null，表示取不到有效值。
+    * Release addressNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("ReleaseAddress")
     @Expose
     private Boolean ReleaseAddress;
 
     /**
-    * 不支持的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
+    * Network types that are not supportedNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("UnsupportNetworks")
     @Expose
     private String [] UnsupportNetworks;
 
     /**
-    * HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
+    * Attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("StorageBlockAttr")
     @Expose
     private StorageBlock StorageBlockAttr;
 
     /**
-     * 获取释放地址
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return ReleaseAddress 释放地址
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get release addressNote: This field may return null, indicating that no valid value was found.
+     * @return ReleaseAddress Release addressNote: This field may return null, indicating that no valid value was found.
      */
     public Boolean getReleaseAddress() {
         return this.ReleaseAddress;
     }
 
     /**
-     * 设置释放地址
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param ReleaseAddress 释放地址
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set release addressNote: This field may return null, indicating that no valid value was found.
+     * @param ReleaseAddress Release addressNote: This field may return null, indicating that no valid value was found.
      */
     public void setReleaseAddress(Boolean ReleaseAddress) {
         this.ReleaseAddress = ReleaseAddress;
     }
 
     /**
-     * 获取不支持的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return UnsupportNetworks 不支持的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get network types that are not supportedNote: This field may return null, indicating that no valid value was found.
+     * @return UnsupportNetworks Network types that are not supportedNote: This field may return null, indicating that no valid value was found.
      */
     public String [] getUnsupportNetworks() {
         return this.UnsupportNetworks;
     }
 
     /**
-     * 设置不支持的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param UnsupportNetworks 不支持的网络类型
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set network types that are not supportedNote: This field may return null, indicating that no valid value was found.
+     * @param UnsupportNetworks Network types that are not supportedNote: This field may return null, indicating that no valid value was found.
      */
     public void setUnsupportNetworks(String [] UnsupportNetworks) {
         this.UnsupportNetworks = UnsupportNetworks;
     }
 
     /**
-     * 获取HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return StorageBlockAttr HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * @return StorageBlockAttr Attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
      */
     public StorageBlock getStorageBlockAttr() {
         return this.StorageBlockAttr;
     }
 
     /**
-     * 设置HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param StorageBlockAttr HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * @param StorageBlockAttr Attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
      */
     public void setStorageBlockAttr(StorageBlock StorageBlockAttr) {
         this.StorageBlockAttr = StorageBlockAttr;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ReleaseAddress", this.ReleaseAddress);

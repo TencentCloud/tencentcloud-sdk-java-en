@@ -23,168 +23,168 @@ import java.util.HashMap;
 public class CreateLifecycleHookRequest  extends AbstractModel{
 
     /**
-    * 伸缩组ID
+    * Scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
+    * Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
     */
     @SerializedName("LifecycleHookName")
     @Expose
     private String LifecycleHookName;
 
     /**
-    * 进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+    * Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
     */
     @SerializedName("LifecycleTransition")
     @Expose
     private String LifecycleTransition;
 
     /**
-    * 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
+    * Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
     */
     @SerializedName("DefaultResult")
     @Expose
     private String DefaultResult;
 
     /**
-    * 生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
+    * Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
     */
     @SerializedName("HeartbeatTimeout")
     @Expose
     private Integer HeartbeatTimeout;
 
     /**
-    * 弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
+    * Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
     */
     @SerializedName("NotificationMetadata")
     @Expose
     private String NotificationMetadata;
 
     /**
-    * 通知目标
+    * Notification target
     */
     @SerializedName("NotificationTarget")
     @Expose
     private NotificationTarget NotificationTarget;
 
     /**
-     * 获取伸缩组ID
-     * @return AutoScalingGroupId 伸缩组ID
+     * Get Scaling group ID
+     * @return AutoScalingGroupId Scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID
-     * @param AutoScalingGroupId 伸缩组ID
+     * Set Scaling group ID
+     * @param AutoScalingGroupId Scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
-     * @return LifecycleHookName 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
+     * Get Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
+     * @return LifecycleHookName Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
      */
     public String getLifecycleHookName() {
         return this.LifecycleHookName;
     }
 
     /**
-     * 设置生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
-     * @param LifecycleHookName 生命周期挂钩名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超128个字节。
+     * Set Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
+     * @param LifecycleHookName Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
      */
     public void setLifecycleHookName(String LifecycleHookName) {
         this.LifecycleHookName = LifecycleHookName;
     }
 
     /**
-     * 获取进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
-     * @return LifecycleTransition 进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+     * Get Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
+     * @return LifecycleTransition Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
      */
     public String getLifecycleTransition() {
         return this.LifecycleTransition;
     }
 
     /**
-     * 设置进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
-     * @param LifecycleTransition 进行生命周期挂钩的场景，取值范围包括“INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+     * Set Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
+     * @param LifecycleTransition Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
      */
     public void setLifecycleTransition(String LifecycleTransition) {
         this.LifecycleTransition = LifecycleTransition;
     }
 
     /**
-     * 获取定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
-     * @return DefaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
+     * Get Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
+     * @return DefaultResult Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
      */
     public String getDefaultResult() {
         return this.DefaultResult;
     }
 
     /**
-     * 设置定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
-     * @param DefaultResult 定义伸缩组在生命周期挂钩超时的情况下应采取的操作，取值范围是“CONTINUE”或“ABANDON”，默认值为“CONTINUE”
+     * Set Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
+     * @param DefaultResult Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
      */
     public void setDefaultResult(String DefaultResult) {
         this.DefaultResult = DefaultResult;
     }
 
     /**
-     * 获取生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
-     * @return HeartbeatTimeout 生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
+     * Get Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
+     * @return HeartbeatTimeout Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
      */
     public Integer getHeartbeatTimeout() {
         return this.HeartbeatTimeout;
     }
 
     /**
-     * 设置生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
-     * @param HeartbeatTimeout 生命周期挂钩超时之前可以经过的最长时间（以秒为单位），范围从30到3600秒，默认值为300秒
+     * Set Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
+     * @param HeartbeatTimeout Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
      */
     public void setHeartbeatTimeout(Integer HeartbeatTimeout) {
         this.HeartbeatTimeout = HeartbeatTimeout;
     }
 
     /**
-     * 获取弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
-     * @return NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
+     * Get Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
+     * @return NotificationMetadata Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
      */
     public String getNotificationMetadata() {
         return this.NotificationMetadata;
     }
 
     /**
-     * 设置弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
-     * @param NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为''。最大长度不能超过1024个字节。
+     * Set Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
+     * @param NotificationMetadata Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
      */
     public void setNotificationMetadata(String NotificationMetadata) {
         this.NotificationMetadata = NotificationMetadata;
     }
 
     /**
-     * 获取通知目标
-     * @return NotificationTarget 通知目标
+     * Get notification target
+     * @return NotificationTarget Notification target
      */
     public NotificationTarget getNotificationTarget() {
         return this.NotificationTarget;
     }
 
     /**
-     * 设置通知目标
-     * @param NotificationTarget 通知目标
+     * Set notification target
+     * @param NotificationTarget Notification target
      */
     public void setNotificationTarget(NotificationTarget NotificationTarget) {
         this.NotificationTarget = NotificationTarget;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

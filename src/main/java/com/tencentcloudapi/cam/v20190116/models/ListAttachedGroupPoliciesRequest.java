@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ListAttachedGroupPoliciesRequest  extends AbstractModel{
 
     /**
-    * 用户组 id
+    * User group ID
     */
     @SerializedName("TargetGroupId")
     @Expose
     private Long TargetGroupId;
 
     /**
-    * 页码，默认值是 1，从 1 开始
+    * Page number. Default value is 1; starting from 1
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * 每页大小，默认值是 20
+    * Per page size. Default value is 20
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-     * 获取用户组 id
-     * @return TargetGroupId 用户组 id
+     * Obtain user group ID
+     * @return TargetGroupId user group ID
      */
     public Long getTargetGroupId() {
         return this.TargetGroupId;
     }
 
     /**
-     * 设置用户组 id
-     * @param TargetGroupId 用户组 id
+     * Set user group ID
+     * @param TargetGroupId user group ID
      */
     public void setTargetGroupId(Long TargetGroupId) {
         this.TargetGroupId = TargetGroupId;
     }
 
     /**
-     * 获取页码，默认值是 1，从 1 开始
-     * @return Page 页码，默认值是 1，从 1 开始
+     * Obtain page number. Default value is 1; starting from 1
+     * @return Page page number. Default value is 1; starting from 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * 设置页码，默认值是 1，从 1 开始
-     * @param Page 页码，默认值是 1，从 1 开始
+     * Set page number. Default value is 1; starting from 1
+     * @param Page page number. Default value is 1; starting from 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * 获取每页大小，默认值是 20
-     * @return Rp 每页大小，默认值是 20
+     * Obtain each page size. Default value is 20
+     * @return Rp each page size. Default value is 20
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * 设置每页大小，默认值是 20
-     * @param Rp 每页大小，默认值是 20
+     * Set each page size. Default value is 20
+     * @param Rp each page size. Default value is 20
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TargetGroupId", this.TargetGroupId);

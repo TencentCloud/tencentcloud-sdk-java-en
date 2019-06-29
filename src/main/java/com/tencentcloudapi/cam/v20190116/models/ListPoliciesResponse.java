@@ -23,134 +23,99 @@ import java.util.HashMap;
 public class ListPoliciesResponse  extends AbstractModel{
 
     /**
-    * 策略总数
+    * Total policy number
     */
     @SerializedName("TotalNum")
     @Expose
     private Long TotalNum;
 
     /**
-    * 策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中： 
-policyId：策略 id 
-policyName：策略名
-addTime：策略创建时间
-type：1 表示自定义策略，2 表示预设策略 
-description：策略描述 
-createMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略
+    * Policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. policyId: policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
     */
     @SerializedName("List")
     @Expose
     private StrategyInfo [] List;
 
     /**
-    * 保留字段
-注意：此字段可能返回 null，表示取不到有效值。
+    * Reserved fieldNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("ServiceTypeList")
     @Expose
     private String [] ServiceTypeList;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取策略总数
-     * @return TotalNum 策略总数
+     * Getting total number of policies
+     * @return TotalNum total number of policies
      */
     public Long getTotalNum() {
         return this.TotalNum;
     }
 
     /**
-     * 设置策略总数
-     * @param TotalNum 策略总数
+     * Configuring total number of policies
+     * @param TotalNum total number of policies
      */
     public void setTotalNum(Long TotalNum) {
         this.TotalNum = TotalNum;
     }
 
     /**
-     * 获取策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中： 
-policyId：策略 id 
-policyName：策略名
-addTime：策略创建时间
-type：1 表示自定义策略，2 表示预设策略 
-description：策略描述 
-createMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略
-     * @return List 策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中： 
-policyId：策略 id 
-policyName：策略名
-addTime：策略创建时间
-type：1 表示自定义策略，2 表示预设策略 
-description：策略描述 
-createMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略
+     * Getting policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. Among which: policyId：policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
+     * @return List policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. Among which:  policyId: policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
      */
     public StrategyInfo [] getList() {
         return this.List;
     }
 
     /**
-     * 设置策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中： 
-policyId：策略 id 
-policyName：策略名
-addTime：策略创建时间
-type：1 表示自定义策略，2 表示预设策略 
-description：策略描述 
-createMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略
-     * @param List 策略数组，数组每个成员包括 policyId、policyName、addTime、type、description、 createMode 字段。其中： 
-policyId：策略 id 
-policyName：策略名
-addTime：策略创建时间
-type：1 表示自定义策略，2 表示预设策略 
-description：策略描述 
-createMode：1 表示按业务权限创建的策略，其他值表示可以查看策略语法和通过策略语法更新策略
+     * Set policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. Among which: policyId：policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
+     * @param List policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. Among which:  policyId：policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
      */
     public void setList(StrategyInfo [] List) {
         this.List = List;
     }
 
     /**
-     * 获取保留字段
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return ServiceTypeList 保留字段
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting reserved fieldNote: This field may return null, indicating that no valid value was found.
+     * @return ServiceTypeList reserved fieldsNote: This field may return null, indicating that no valid value was found.
      */
     public String [] getServiceTypeList() {
         return this.ServiceTypeList;
     }
 
     /**
-     * 设置保留字段
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param ServiceTypeList 保留字段
-注意：此字段可能返回 null，表示取不到有效值。
+     * Setting reserved fieldsNote: This field may return null, indicating that no valid value was found.
+     * @param ServiceTypeList reserved fieldsNote: This field may return null, indicating that no valid value was found.
      */
     public void setServiceTypeList(String [] ServiceTypeList) {
         this.ServiceTypeList = ServiceTypeList;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalNum", this.TotalNum);

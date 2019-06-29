@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DescribeInstanceVncUrlRequest  extends AbstractModel{
 
     /**
-    * 一个操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
+    * ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-     * 获取一个操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
-     * @return InstanceId 一个操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
+     * Obtain ID of instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * @return InstanceIds ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * 设置一个操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
-     * @param InstanceId 一个操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
+     * Set ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * @param InstanceIds ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);

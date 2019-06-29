@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class CreatePolicyRequest  extends AbstractModel{
 
     /**
-    * 策略名
+    * Policy Name
     */
     @SerializedName("PolicyName")
     @Expose
     private String PolicyName;
 
     /**
-    * 策略文档
+    * Policy Documentation
     */
     @SerializedName("PolicyDocument")
     @Expose
     private String PolicyDocument;
 
     /**
-    * 策略描述
+    * Policy Description
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-     * 获取策略名
-     * @return PolicyName 策略名
+     * Getting Policy Name
+     * @return PolicyName Policy Name
      */
     public String getPolicyName() {
         return this.PolicyName;
     }
 
     /**
-     * 设置策略名
-     * @param PolicyName 策略名
+     * Configuring Policy Name
+     * @param PolicyName Policy Name
      */
     public void setPolicyName(String PolicyName) {
         this.PolicyName = PolicyName;
     }
 
     /**
-     * 获取策略文档
-     * @return PolicyDocument 策略文档
+     * Getting Policy Documentation
+     * @return PolicyDocument Policy Documentation
      */
     public String getPolicyDocument() {
         return this.PolicyDocument;
     }
 
     /**
-     * 设置策略文档
-     * @param PolicyDocument 策略文档
+     * Configuring Policy Documentation
+     * @param PolicyDocument Policy Documentation
      */
     public void setPolicyDocument(String PolicyDocument) {
         this.PolicyDocument = PolicyDocument;
     }
 
     /**
-     * 获取策略描述
-     * @return Description 策略描述
+     * Getting Policy Description
+     * @return Description Policy Description
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * 设置策略描述
-     * @param Description 策略描述
+     * Configuring Policy Description
+     * @param Description Policy Description
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyName", this.PolicyName);

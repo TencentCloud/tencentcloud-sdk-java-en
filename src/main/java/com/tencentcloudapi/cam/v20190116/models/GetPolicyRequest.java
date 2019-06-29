@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class GetPolicyRequest  extends AbstractModel{
 
     /**
-    * 策略Id
+    * Policy ID
     */
     @SerializedName("PolicyId")
     @Expose
     private Long PolicyId;
 
     /**
-     * 获取策略Id
-     * @return PolicyId 策略Id
+     * Getting Policy ID
+     * @return PolicyId Policy ID
      */
     public Long getPolicyId() {
         return this.PolicyId;
     }
 
     /**
-     * 设置策略Id
-     * @param PolicyId 策略Id
+     * Configuring Policy ID
+     * @param PolicyId Policy ID
      */
     public void setPolicyId(Long PolicyId) {
         this.PolicyId = PolicyId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

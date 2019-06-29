@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InstanceFamilyConfig  extends AbstractModel{
 
     /**
-    * 机型族名称的中文全称。
+    * Chinese full name of a model family
     */
     @SerializedName("InstanceFamilyName")
     @Expose
     private String InstanceFamilyName;
 
     /**
-    * 机型族名称的英文简称。
+    * English acronym of a model family
     */
     @SerializedName("InstanceFamily")
     @Expose
     private String InstanceFamily;
 
     /**
-     * 获取机型族名称的中文全称。
-     * @return InstanceFamilyName 机型族名称的中文全称。
+     * Get Chinese full name of a model family
+     * @return InstanceFamilyName Chinese full name of a model family
      */
     public String getInstanceFamilyName() {
         return this.InstanceFamilyName;
     }
 
     /**
-     * 设置机型族名称的中文全称。
-     * @param InstanceFamilyName 机型族名称的中文全称。
+     * Set Chinese full name of a model family
+     * @param InstanceFamilyName Chinese full name of a model family
      */
     public void setInstanceFamilyName(String InstanceFamilyName) {
         this.InstanceFamilyName = InstanceFamilyName;
     }
 
     /**
-     * 获取机型族名称的英文简称。
-     * @return InstanceFamily 机型族名称的英文简称。
+     * Get English acronym of a model family
+     * @return InstanceFamily English acronym of a model family
      */
     public String getInstanceFamily() {
         return this.InstanceFamily;
     }
 
     /**
-     * 设置机型族名称的英文简称。
-     * @param InstanceFamily 机型族名称的英文简称。
+     * Set English acronym of a model family
+     * @param InstanceFamily English acronym of a model family
      */
     public void setInstanceFamily(String InstanceFamily) {
         this.InstanceFamily = InstanceFamily;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internally realized, users have no permission for it 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceFamilyName", this.InstanceFamilyName);

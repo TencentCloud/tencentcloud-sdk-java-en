@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DetachInstancesRequest  extends AbstractModel{
 
     /**
-    * 伸缩组ID
+    * ID of Scaling group.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * CVM实例ID列表
+    * List of CVM instance IDs.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-     * 获取伸缩组ID
-     * @return AutoScalingGroupId 伸缩组ID
+     * Obtain the ID of Scaling group.
+     * @return AutoScalingGroupId ID of Scaling group.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID
-     * @param AutoScalingGroupId 伸缩组ID
+     * Configure the ID of Scaling group.
+     * @param AutoScalingGroupId ID of Scaling group.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取CVM实例ID列表
-     * @return InstanceIds CVM实例ID列表
+     * Obtain the list of CVM instance IDs.
+     * @return InstanceIds List of CVM instance IDs
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置CVM实例ID列表
-     * @param InstanceIds CVM实例ID列表
+     * Configure the list of CVM instance IDs.
+     * @param InstanceIds List of CVM instance IDs
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

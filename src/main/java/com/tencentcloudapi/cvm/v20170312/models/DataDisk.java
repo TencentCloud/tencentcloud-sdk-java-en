@@ -23,152 +23,142 @@ import java.util.HashMap;
 public class DataDisk  extends AbstractModel{
 
     /**
-    * 数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[CVM实例配置](/document/product/213/2177)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
+    * Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
     */
     @SerializedName("DiskSize")
     @Expose
     private Integer DiskSize;
 
     /**
-    * 数据盘类型。数据盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
+    * Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
     */
     @SerializedName("DiskType")
     @Expose
     private String DiskType;
 
     /**
-    * 数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
+    * ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
     */
     @SerializedName("DiskId")
     @Expose
     private String DiskId;
 
     /**
-    * 数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Whether terminate data disk with CVM. Value:
+<li>True: terminate data disk with CVM, only postpaid mode disk supported
+<li>FALSE: Keep data disk when CVM is terminated<br>
+Default: TRUE<br>
+This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("DeleteWithInstance")
     @Expose
     private Boolean DeleteWithInstance;
 
     /**
-    * 数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("SnapshotId")
     @Expose
     private String SnapshotId;
 
     /**
-     * 获取数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[CVM实例配置](/document/product/213/2177)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
-     * @return DiskSize 数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[CVM实例配置](/document/product/213/2177)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
+     * Get Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
+     * @return DiskSize Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
      */
     public Integer getDiskSize() {
         return this.DiskSize;
     }
 
     /**
-     * 设置数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[CVM实例配置](/document/product/213/2177)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
-     * @param DiskSize 数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[CVM实例配置](/document/product/213/2177)。默认值为0，表示不购买数据盘。更多限制详见产品文档。
+     * Set Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
+     * @param DiskSize Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
      */
     public void setDiskSize(Integer DiskSize) {
         this.DiskSize = DiskSize;
     }
 
     /**
-     * 获取数据盘类型。数据盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
-     * @return DiskType 数据盘类型。数据盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
+     * Get Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
+     * @return DiskType Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
      */
     public String getDiskType() {
         return this.DiskType;
     }
 
     /**
-     * 设置数据盘类型。数据盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
-     * @param DiskType 数据盘类型。数据盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。
+     * Set Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
+     * @param DiskType Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
      */
     public void setDiskType(String DiskType) {
         this.DiskType = DiskType;
     }
 
     /**
-     * 获取数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
-     * @return DiskId 数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
+     * Get ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
+     * @return DiskId ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
      */
     public String getDiskId() {
         return this.DiskId;
     }
 
     /**
-     * 设置数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
-     * @param DiskId 数据盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
+     * Set ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
+     * @param DiskId ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
      */
     public void setDiskId(String DiskId) {
         this.DiskId = DiskId;
     }
 
     /**
-     * 获取数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return DeleteWithInstance 数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get Whether terminate data disk with CVM. Value:
+<li>True: terminate data disk with CVM, only postpaid mode disk supported
+<li>FALSE: Keep data disk when CVM is terminated<br>
+Default: TRUE<br>
+This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
+     * @return DeleteWithInstance Whether terminate data disk with CVM. Value:
+<li>True: terminate data disk with CVM, only postpaid mode disk supported
+<li>FALSE: Keep data disk when CVM is terminated<br>
+Default: TRUE<br>
+This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
      */
     public Boolean getDeleteWithInstance() {
         return this.DeleteWithInstance;
     }
 
     /**
-     * 设置数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param DeleteWithInstance 数据盘是否随子机销毁。取值范围：
-<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘
-<li>FALSE：子机销毁时，保留数据盘<br>
-默认取值：TRUE<br>
-该参数目前仅用于 `RunInstances` 接口。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set Whether terminate data disk with CVM. Value:
+<li>True: terminate data disk with CVM, only postpaid mode disk supported
+<li>FALSE: Keep data disk when CVM is terminated<br>
+Default: TRUE<br>
+This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
+     * @param DeleteWithInstance Whether terminate data disk with CVM. Value:
+<li>True: terminate data disk with CVM, only postpaid mode disk supported
+<li>FALSE: Keep data disk when CVM is terminated<br>
+Default: TRUE<br>
+This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
      */
     public void setDeleteWithInstance(Boolean DeleteWithInstance) {
         this.DeleteWithInstance = DeleteWithInstance;
     }
 
     /**
-     * 获取数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return SnapshotId 数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
+     * @return SnapshotId Data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
      */
     public String getSnapshotId() {
         return this.SnapshotId;
     }
 
     /**
-     * 设置数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param SnapshotId 数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
+     * @param SnapshotId Data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
      */
     public void setSnapshotId(String SnapshotId) {
         this.SnapshotId = SnapshotId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DiskSize", this.DiskSize);

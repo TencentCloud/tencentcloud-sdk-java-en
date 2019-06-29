@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteImagesRequest  extends AbstractModel{
 
     /**
-    * 准备删除的镜像Id列表
+    * The list of IDs of the instances to be deleted
     */
     @SerializedName("ImageIds")
     @Expose
     private String [] ImageIds;
 
     /**
-     * 获取准备删除的镜像Id列表
-     * @return ImageIds 准备删除的镜像Id列表
+     * Get the list of IDs of the instances to be deleted
+     * @return ImageIds The list of IDs of the instances to be deleted
      */
     public String [] getImageIds() {
         return this.ImageIds;
     }
 
     /**
-     * 设置准备删除的镜像Id列表
-     * @param ImageIds 准备删除的镜像Id列表
+     * Set the list of IDs of the instances to be deleted
+     * @param ImageIds The list of IDs of the instances to be deleted
      */
     public void setImageIds(String [] ImageIds) {
         this.ImageIds = ImageIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "ImageIds.", this.ImageIds);

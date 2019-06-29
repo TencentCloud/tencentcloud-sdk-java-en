@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeZonesResponse  extends AbstractModel{
 
     /**
-    * 可用区数量。
+    * Number of Availability Zones
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 可用区列表信息。
+    * List of Availability zone
     */
     @SerializedName("ZoneSet")
     @Expose
     private ZoneInfo [] ZoneSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取可用区数量。
-     * @return TotalCount 可用区数量。
+     * Get number of Availability Zones.
+     * @return TotalCount Number of Availability Zones.
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置可用区数量。
-     * @param TotalCount 可用区数量。
+     * Set number of Availability Zones.
+     * @param TotalCount Number of Availability Zones.
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取可用区列表信息。
-     * @return ZoneSet 可用区列表信息。
+     * Get list of Availability Zones.
+     * @return ZoneSet List of Availability Zones.
      */
     public ZoneInfo [] getZoneSet() {
         return this.ZoneSet;
     }
 
     /**
-     * 设置可用区列表信息。
-     * @param ZoneSet 可用区列表信息。
+     * Set list of Availability Zones.
+     * @param ZoneSet List of Availability Zones.
      */
     public void setZoneSet(ZoneInfo [] ZoneSet) {
         this.ZoneSet = ZoneSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId Get Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

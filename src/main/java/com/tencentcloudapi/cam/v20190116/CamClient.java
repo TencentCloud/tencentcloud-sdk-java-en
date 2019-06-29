@@ -30,26 +30,26 @@ public class CamClient extends AbstractClient{
     private static String version = "2019-01-16";
 
     /**
-     * 构造client
-     * @param credential 认证信息实例
-     * @param region	产品地域
+     * Creating Client
+     * @param credential Security credentials
+     * @param region Availability regions
      */
     public CamClient(Credential credential, String region) {
         this(credential, region, new ClientProfile());
     }
 
     /**
-     * 构造client
-     * @param credential 认证信息实例
-     * @param region	产品地域
-     * @param profile 配置实例
+     * Creating Client
+     * @param credential Security credentials
+     * @param region Availability regions
+     * @param profile Configured instances
      */
     public CamClient(Credential credential, String region, ClientProfile profile) {
         super(CamClient.endpoint, CamClient.version, credential, region, profile);
     }
 
     /**
-     *添加子用户
+     *Adding Sub-accounts
      * @param req AddUserRequest
      * @return AddUserResponse
      * @throws TencentCloudSDKException
@@ -67,9 +67,9 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *用户加入到用户组
+     *Adding Users to User Group
      * @param req AddUserToGroupRequest
-     * @return AddUserToGroupResponse
+     * @return AddUserResponse
      * @throws TencentCloudSDKException
      */
     public AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest req) throws TencentCloudSDKException{
@@ -85,7 +85,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（AttachGroupPolicy）可用于绑定策略到用户组。
+     *This API (AttachGroupPolicy) associates a policy to a user group.
      * @param req AttachGroupPolicyRequest
      * @return AttachGroupPolicyResponse
      * @throws TencentCloudSDKException
@@ -103,7 +103,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（AttachUserPolicy）可用于绑定到用户的策略。
+     *This API (AttachUserPolicy) associates a policy to a user.
      * @param req AttachUserPolicyRequest
      * @return AttachUserPolicyResponse
      * @throws TencentCloudSDKException
@@ -121,7 +121,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *创建用户组
+     *Creating a User Group
      * @param req CreateGroupRequest
      * @return CreateGroupResponse
      * @throws TencentCloudSDKException
@@ -139,7 +139,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（CreatePolicy）可用于创建策略。
+     *This API (CreatePolicy) creates a policy.
      * @param req CreatePolicyRequest
      * @return CreatePolicyResponse
      * @throws TencentCloudSDKException
@@ -157,7 +157,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *创建SAML身份提供商
+     *Creating SAML IdP
      * @param req CreateSAMLProviderRequest
      * @return CreateSAMLProviderResponse
      * @throws TencentCloudSDKException
@@ -175,7 +175,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *删除用户组
+     *Deleting a User Group
      * @param req DeleteGroupRequest
      * @return DeleteGroupResponse
      * @throws TencentCloudSDKException
@@ -193,7 +193,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（DeletePolicy）可用于删除策略。
+     *This API (DeletePolicy) deletes a policy.
      * @param req DeletePolicyRequest
      * @return DeletePolicyResponse
      * @throws TencentCloudSDKException
@@ -211,7 +211,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *删除SAML身份提供商
+     *Deleting SAML IdP
      * @param req DeleteSAMLProviderRequest
      * @return DeleteSAMLProviderResponse
      * @throws TencentCloudSDKException
@@ -229,8 +229,8 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *删除子用户
-     * @param req DeleteUserRequest
+     *Deleting a Sub-user
+     * @param req DeleteGroupRequest
      * @return DeleteUserResponse
      * @throws TencentCloudSDKException
      */
@@ -247,7 +247,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（DetachGroupPolicy）可用于解除绑定到用户组的策略。
+     *This API (DetachGroupPolicy) detaches a policy from a user group.
      * @param req DetachGroupPolicyRequest
      * @return DetachGroupPolicyResponse
      * @throws TencentCloudSDKException
@@ -265,7 +265,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（DetachUserPolicy）可用于解除绑定到用户的策略。
+     *This API (DetachUserPolicy) detaches a policy from a user.
      * @param req DetachUserPolicyRequest
      * @return DetachUserPolicyResponse
      * @throws TencentCloudSDKException
@@ -283,7 +283,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *查询用户组详情
+     *Querying User Group Details
      * @param req GetGroupRequest
      * @return GetGroupResponse
      * @throws TencentCloudSDKException
@@ -301,7 +301,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（GetPolicy）可用于查询查看策略详情。
+     *This API (GetPolicy) queries policy details.
      * @param req GetPolicyRequest
      * @return GetPolicyResponse
      * @throws TencentCloudSDKException
@@ -319,7 +319,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *查询SAML身份提供商详情
+     *Querying SAML IdP Details
      * @param req GetSAMLProviderRequest
      * @return GetSAMLProviderResponse
      * @throws TencentCloudSDKException
@@ -337,9 +337,9 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *查询子用户
+     *Querying Sub-users
      * @param req GetUserRequest
-     * @return GetUserResponse
+     * @return AddUserResponse
      * @throws TencentCloudSDKException
      */
     public GetUserResponse GetUser(GetUserRequest req) throws TencentCloudSDKException{
@@ -355,7 +355,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（ListAttachedGroupPolicies）可用于查询用户组关联的策略列表。
+     *This API (ListAttachedGroupPolicies) queries the list of policies associated with a user group.
      * @param req ListAttachedGroupPoliciesRequest
      * @return ListAttachedGroupPoliciesResponse
      * @throws TencentCloudSDKException
@@ -373,7 +373,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（ListAttachedUserPolicies）可用于查询子账号关联的策略列表。
+     *This API (ListAttachedUserPolicies) queries the list of policies associated with a sub-user.
      * @param req ListAttachedUserPoliciesRequest
      * @return ListAttachedUserPoliciesResponse
      * @throws TencentCloudSDKException
@@ -391,7 +391,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（ListEntitiesForPolicy）可用于查询策略关联的实体列表。
+     *This API (ListEntitiesForPolicy) queries the list of instances associated with a policy.
      * @param req ListEntitiesForPolicyRequest
      * @return ListEntitiesForPolicyResponse
      * @throws TencentCloudSDKException
@@ -409,7 +409,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *查询用户组列表
+     *Querying List of User Groups
      * @param req ListGroupsRequest
      * @return ListGroupsResponse
      * @throws TencentCloudSDKException
@@ -427,7 +427,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *列出用户关联的用户组
+     *Getting a List of User Groups Associated with a User
      * @param req ListGroupsForUserRequest
      * @return ListGroupsForUserResponse
      * @throws TencentCloudSDKException
@@ -445,7 +445,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（ListPolicies）可用于查询策略列表
+     *This API (ListPolicies) queries a list of policies.
      * @param req ListPoliciesRequest
      * @return ListPoliciesResponse
      * @throws TencentCloudSDKException
@@ -463,7 +463,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *查询SAML身份提供商列表
+     *Querying a List of SAML IdPs
      * @param req ListSAMLProvidersRequest
      * @return ListSAMLProvidersResponse
      * @throws TencentCloudSDKException
@@ -481,7 +481,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *拉取子用户
+     *Getting a List of Sub-users
      * @param req ListUsersRequest
      * @return ListUsersResponse
      * @throws TencentCloudSDKException
@@ -499,7 +499,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *查询用户组关联的用户列表
+     *Querying List of Users Associated with a User Group
      * @param req ListUsersForGroupRequest
      * @return ListUsersForGroupResponse
      * @throws TencentCloudSDKException
@@ -517,7 +517,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *从用户组删除用户
+     *Deleting Users from User Group 
      * @param req RemoveUserFromGroupRequest
      * @return RemoveUserFromGroupResponse
      * @throws TencentCloudSDKException
@@ -535,7 +535,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *更新用户组
+     *Updating User Group Information
      * @param req UpdateGroupRequest
      * @return UpdateGroupResponse
      * @throws TencentCloudSDKException
@@ -553,7 +553,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *本接口（UpdatePolicy ）可用于更新策略。
+     *This API (UpdatePolicy) updates a policy.
      * @param req UpdatePolicyRequest
      * @return UpdatePolicyResponse
      * @throws TencentCloudSDKException
@@ -571,7 +571,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *更新SAML身份提供商信息
+     *Updating SAML IdP Information
      * @param req UpdateSAMLProviderRequest
      * @return UpdateSAMLProviderResponse
      * @throws TencentCloudSDKException
@@ -589,7 +589,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *更新子用户
+     *Updating Sub-user Information
      * @param req UpdateUserRequest
      * @return UpdateUserResponse
      * @throws TencentCloudSDKException

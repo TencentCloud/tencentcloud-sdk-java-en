@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ImportKeyPairResponse  extends AbstractModel{
 
     /**
-    * 密钥对ID。
+    * Key pair ID.
     */
     @SerializedName("KeyId")
     @Expose
     private String KeyId;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取密钥对ID。
-     * @return KeyId 密钥对ID。
+     * Get key pair ID.
+     * @return KeyId Key Pair ID.
      */
     public String getKeyId() {
         return this.KeyId;
     }
 
     /**
-     * 设置密钥对ID。
-     * @param KeyId 密钥对ID。
+     * Set key pair ID.
+     * @param KeyId Key Pair ID.
      */
     public void setKeyId(String KeyId) {
         this.KeyId = KeyId;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "KeyId", this.KeyId);

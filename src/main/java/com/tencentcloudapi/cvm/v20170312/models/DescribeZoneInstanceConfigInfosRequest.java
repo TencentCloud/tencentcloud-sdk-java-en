@@ -23,70 +23,70 @@ import java.util.HashMap;
 public class DescribeZoneInstanceConfigInfosRequest  extends AbstractModel{
 
     /**
-    * 过滤条件。
+    * Filter conditions.
 
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
 
-<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
+<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
 
-<li> instance-type - String - 是否必填：否 - （过滤条件）按照机型过滤。按照实例机型过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 DescribeInstanceTypeConfigs 来获得最新的规格表或参见实例类型描述。若不指定该参数，则默认机型为S1.SMALL1。</li>
+<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
 
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示CDH付费，即只对CDH计费，不对CDH上的实例计费。 )  </li>
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-     * 获取过滤条件。
+     * Get filter conditions.  
 
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
 
-<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
+<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
 
-<li> instance-type - String - 是否必填：否 - （过滤条件）按照机型过滤。按照实例机型过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 DescribeInstanceTypeConfigs 来获得最新的规格表或参见实例类型描述。若不指定该参数，则默认机型为S1.SMALL1。</li>
+<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
 
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示CDH付费，即只对CDH计费，不对CDH上的实例计费。 )  </li>
-     * @return Filters 过滤条件。
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
+     * @return Filters Filter Conditions
 
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
 
-<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
+<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
 
-<li> instance-type - String - 是否必填：否 - （过滤条件）按照机型过滤。按照实例机型过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 DescribeInstanceTypeConfigs 来获得最新的规格表或参见实例类型描述。若不指定该参数，则默认机型为S1.SMALL1。</li>
+<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
 
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示CDH付费，即只对CDH计费，不对CDH上的实例计费。 )  </li>
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
+     * Set filter conditions
 
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
 
-<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
+<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
 
-<li> instance-type - String - 是否必填：否 - （过滤条件）按照机型过滤。按照实例机型过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 DescribeInstanceTypeConfigs 来获得最新的规格表或参见实例类型描述。若不指定该参数，则默认机型为S1.SMALL1。</li>
+<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
 
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示CDH付费，即只对CDH计费，不对CDH上的实例计费。 )  </li>
-     * @param Filters 过滤条件。
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
+     * @param Filters Filter conditions.
 
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
 
-<li> instance-family String - 是否必填：否 -（过滤条件）按照机型系列过滤。按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
+<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
 
-<li> instance-type - String - 是否必填：否 - （过滤条件）按照机型过滤。按照实例机型过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 DescribeInstanceTypeConfigs 来获得最新的规格表或参见实例类型描述。若不指定该参数，则默认机型为S1.SMALL1。</li>
+<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
 
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示CDH付费，即只对CDH计费，不对CDH上的实例计费。 )  </li>
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Filters.", this.Filters);

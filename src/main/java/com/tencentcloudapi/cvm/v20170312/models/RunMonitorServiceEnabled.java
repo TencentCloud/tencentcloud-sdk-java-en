@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class RunMonitorServiceEnabled  extends AbstractModel{
 
     /**
-    * 是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。
+    * Whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE
     */
     @SerializedName("Enabled")
     @Expose
     private Boolean Enabled;
 
     /**
-     * 获取是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。
-     * @return Enabled 是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。
+     * Obtain whether to enable [Cloud Monitor](/document/product/248) service.<br><li>Whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>FALSE: Do not enable<br><br>Default: TRUE
+     * @return Enabled Whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE
      */
     public Boolean getEnabled() {
         return this.Enabled;
     }
 
     /**
-     * 设置是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。
-     * @param Enabled 是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。
+     * Configure whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE
+     * @param Enabled Whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE
      */
     public void setEnabled(Boolean Enabled) {
         this.Enabled = Enabled;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Enabled", this.Enabled);

@@ -23,191 +23,191 @@ import java.util.HashMap;
 public class CreateScheduledActionRequest  extends AbstractModel{
 
     /**
-    * 伸缩组ID
+    * Scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 定时任务名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。同一伸缩组下必须唯一。
+    * Scheduled action name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters. It must be unique in the scaling group. 
     */
     @SerializedName("ScheduledActionName")
     @Expose
     private String ScheduledActionName;
 
     /**
-    * 当定时任务触发时，设置的伸缩组最大实例数。
+    * The maximum number of instances when a scheduled action is triggered.
     */
     @SerializedName("MaxSize")
     @Expose
     private Integer MaxSize;
 
     /**
-    * 当定时任务触发时，设置的伸缩组最小实例数。
+    * The minimum number of instances when a scheduled action is triggered.
     */
     @SerializedName("MinSize")
     @Expose
     private Integer MinSize;
 
     /**
-    * 当定时任务触发时，设置的伸缩组期望实例数。
+    * The desired number of instances when a scheduled action is triggered.
     */
     @SerializedName("DesiredCapacity")
     @Expose
     private Integer DesiredCapacity;
 
     /**
-    * 定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+    * Scheduled action start time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * 定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br><br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。
+    * Scheduled action end time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.<br><br>This parameter should be used with `Recurrence`. Scheduled action expires at end time. 
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-    * 定时任务的重复方式。为标准[Cron](https://zh.wikipedia.org/wiki/Cron)格式<br><br>此参数与`EndTime`需要同时指定。
+    * Repetition mode of the scheduled action, which is in the standard [Cron](https://zh.wikipedia.org/wiki/Cron) format.<br><br>This parameter should be used with `EndTime`. 
     */
     @SerializedName("Recurrence")
     @Expose
     private String Recurrence;
 
     /**
-     * 获取伸缩组ID
-     * @return AutoScalingGroupId 伸缩组ID
+     * Get scaling group ID
+     * @return AutoScalingGroupId Scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID
-     * @param AutoScalingGroupId 伸缩组ID
+     * Set scaling group ID
+     * @param AutoScalingGroupId Scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取定时任务名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。同一伸缩组下必须唯一。
-     * @return ScheduledActionName 定时任务名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。同一伸缩组下必须唯一。
+     * Get scheduled action name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters. It must be unique in the scaling group. 
+     * @return ScheduledActionName Scheduled action name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters. It must be unique in the scaling group. 
      */
     public String getScheduledActionName() {
         return this.ScheduledActionName;
     }
 
     /**
-     * 设置定时任务名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。同一伸缩组下必须唯一。
-     * @param ScheduledActionName 定时任务名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。同一伸缩组下必须唯一。
+     * Set scheduled action name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters. It must be unique in the scaling group. 
+     * @param ScheduledActionName Scheduled action name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters. It must be unique in the scaling group. 
      */
     public void setScheduledActionName(String ScheduledActionName) {
         this.ScheduledActionName = ScheduledActionName;
     }
 
     /**
-     * 获取当定时任务触发时，设置的伸缩组最大实例数。
-     * @return MaxSize 当定时任务触发时，设置的伸缩组最大实例数。
+     * Get the maximum number of instances when a scheduled action is triggered.
+     * @return MaxSize The maximum number of instances when a scheduled action is triggered.
      */
     public Integer getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * 设置当定时任务触发时，设置的伸缩组最大实例数。
-     * @param MaxSize 当定时任务触发时，设置的伸缩组最大实例数。
+     * Set the maximum number of instances when a scheduled action is triggered.
+     * @param MaxSize The maximum number of instances when a scheduled action is triggered.
      */
     public void setMaxSize(Integer MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * 获取当定时任务触发时，设置的伸缩组最小实例数。
-     * @return MinSize 当定时任务触发时，设置的伸缩组最小实例数。
+     * Get the minimum number of instances when a scheduled action is triggered.
+     * @return MinSize The minimum number of instances when a scheduled action is triggered.
      */
     public Integer getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * 设置当定时任务触发时，设置的伸缩组最小实例数。
-     * @param MinSize 当定时任务触发时，设置的伸缩组最小实例数。
+     * Set the minimum number of instances when a scheduled action is triggered.
+     * @param MinSize The minimum number of instances when a scheduled action is triggered.
      */
     public void setMinSize(Integer MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * 获取当定时任务触发时，设置的伸缩组期望实例数。
-     * @return DesiredCapacity 当定时任务触发时，设置的伸缩组期望实例数。
+     * Get the desired number of instances when a scheduled action is triggered.
+     * @return DesiredCapacity The desired number of instances when a scheduled action is triggered.
      */
     public Integer getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * 设置当定时任务触发时，设置的伸缩组期望实例数。
-     * @param DesiredCapacity 当定时任务触发时，设置的伸缩组期望实例数。
+     * Set the desired number of instances when a scheduled action is triggered.
+     * @param DesiredCapacity The desired number of instances when a scheduled action is triggered.
      */
     public void setDesiredCapacity(Integer DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * 获取定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-     * @return StartTime 定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+     * Get scheduled action start time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * @return StartTime scheduled action start time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * 设置定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-     * @param StartTime 定时任务的首次触发时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+     * Set scheduled action start time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * @param StartTime scheduled action start time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * 获取定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br><br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。
-     * @return EndTime 定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br><br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。
+     * Get scheduled action end time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.<br><br>This parameter should be used with `Recurrence`. Scheduled action expires at end time. 
+     * @return EndTime scheduled action end time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.<br><br>This parameter should be used with `Recurrence`. Scheduled action expires at end time. 
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * 设置定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br><br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。
-     * @param EndTime 定时任务的结束时间，取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。<br><br>此参数与`Recurrence`需要同时指定，到达结束时间之后，定时任务将不再生效。
+     * Set scheduled action end time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.<br><br>This parameter should be used with `Recurrence`. Scheduled action expires at end time. 
+     * @param EndTime scheduled action end time. Value: `北京时间` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.<br><br>This parameter should be used with `Recurrence`. Scheduled action expires at end time. 
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * 获取定时任务的重复方式。为标准[Cron](https://zh.wikipedia.org/wiki/Cron)格式<br><br>此参数与`EndTime`需要同时指定。
-     * @return Recurrence 定时任务的重复方式。为标准[Cron](https://zh.wikipedia.org/wiki/Cron)格式<br><br>此参数与`EndTime`需要同时指定。
+     * Get repetition mode of the scheduled action, which is in the standard [Cron](https://zh.wikipedia.org/wiki/Cron) format.<br><br>This parameter should be used with `EndTime`. 
+     * @return Recurrence Repetition mode of the scheduled action, which is in the standard [Cron](https://zh.wikipedia.org/wiki/Cron) format.<br><br>This parameter should be used with `EndTime`. 
      */
     public String getRecurrence() {
         return this.Recurrence;
     }
 
     /**
-     * 设置定时任务的重复方式。为标准[Cron](https://zh.wikipedia.org/wiki/Cron)格式<br><br>此参数与`EndTime`需要同时指定。
-     * @param Recurrence 定时任务的重复方式。为标准[Cron](https://zh.wikipedia.org/wiki/Cron)格式<br><br>此参数与`EndTime`需要同时指定。
+     * Set repetition mode of the scheduled action, which is in the standard [Cron](https://zh.wikipedia.org/wiki/Cron) format.<br><br>This parameter should be used with `EndTime`. 
+     * @param Recurrence Repetition mode of the scheduled action, which is in the standard [Cron](https://zh.wikipedia.org/wiki/Cron) format.<br><br>This parameter should be used with `EndTime`. 
      */
     public void setRecurrence(String Recurrence) {
         this.Recurrence = Recurrence;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

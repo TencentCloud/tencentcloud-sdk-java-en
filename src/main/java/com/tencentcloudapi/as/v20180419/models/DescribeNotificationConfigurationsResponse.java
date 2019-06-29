@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeNotificationConfigurationsResponse  extends AbstractModel{
 
     /**
-    * 符合条件的通知数量。
+    * Number of notifications matching the filter condition.
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 弹性伸缩事件通知详细信息列表。
+    * List of scaling group notifications details.
     */
     @SerializedName("AutoScalingNotificationSet")
     @Expose
     private AutoScalingNotification [] AutoScalingNotificationSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取符合条件的通知数量。
-     * @return TotalCount 符合条件的通知数量。
+     * Obtain number of notifications matching the filter condition.
+     * @return TotalCount Number of notifications matching the filter condition.
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置符合条件的通知数量。
-     * @param TotalCount 符合条件的通知数量。
+     * Set number of notifications matching the filter condition.
+     * @param TotalCount Number of notifications matching the filter condition.
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取弹性伸缩事件通知详细信息列表。
-     * @return AutoScalingNotificationSet 弹性伸缩事件通知详细信息列表。
+     * Obtain list of scaling group notifications details.
+     * @return AutoScalingNotificationSet List of scaling group notifications details.
      */
     public AutoScalingNotification [] getAutoScalingNotificationSet() {
         return this.AutoScalingNotificationSet;
     }
 
     /**
-     * 设置弹性伸缩事件通知详细信息列表。
-     * @param AutoScalingNotificationSet 弹性伸缩事件通知详细信息列表。
+     * Set list of scaling group notifications details.
+     * @param AutoScalingNotificationSet List of scaling group notifications details.
      */
     public void setAutoScalingNotificationSet(AutoScalingNotification [] AutoScalingNotificationSet) {
         this.AutoScalingNotificationSet = AutoScalingNotificationSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * set the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

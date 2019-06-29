@@ -23,283 +23,283 @@ import java.util.HashMap;
 public class Instance  extends AbstractModel{
 
     /**
-    * 实例ID
+    * Instance ID.
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * 伸缩组ID
+    * Scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 启动配置ID
+    * ID of Launch configuration.
     */
     @SerializedName("LaunchConfigurationId")
     @Expose
     private String LaunchConfigurationId;
 
     /**
-    * 启动配置名称
+    * Name of Launch configuration.
     */
     @SerializedName("LaunchConfigurationName")
     @Expose
     private String LaunchConfigurationName;
 
     /**
-    * 生命周期状态，取值包括IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB等
+    * Lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
     */
     @SerializedName("LifeCycleState")
     @Expose
     private String LifeCycleState;
 
     /**
-    * 健康状态，取值包括HEALTHY和UNHEALTHY
+    * Health status. Possible values: HEALTHY and UNHEALTHY.
     */
     @SerializedName("HealthStatus")
     @Expose
     private String HealthStatus;
 
     /**
-    * 是否加入缩容保护
+    * Indicates whether to protect the instance from scaling down.
     */
     @SerializedName("ProtectedFromScaleIn")
     @Expose
     private Boolean ProtectedFromScaleIn;
 
     /**
-    * 可用区
+    * Availability Zone.
     */
     @SerializedName("Zone")
     @Expose
     private String Zone;
 
     /**
-    * 创建类型，取值包括AUTO_CREATION, MANUAL_ATTACHING。
+    * Creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
     */
     @SerializedName("CreationType")
     @Expose
     private String CreationType;
 
     /**
-    * 实例加入时间
+    * The time when the instance is added.
     */
     @SerializedName("AddTime")
     @Expose
     private String AddTime;
 
     /**
-    * 实例类型
+    * Instance Type.
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-    * 版本号
+    * Version No.
     */
     @SerializedName("VersionNumber")
     @Expose
     private Integer VersionNumber;
 
     /**
-     * 获取实例ID
-     * @return InstanceId 实例ID
+     * Obtain an instance ID.
+     * @return InstanceId Instance ID.
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * 设置实例ID
-     * @param InstanceId 实例ID
+     * Configure an instance ID.
+     * @param InstanceId Instance ID.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * 获取伸缩组ID
-     * @return AutoScalingGroupId 伸缩组ID
+     * Obtain a scaling group ID.
+     * @return AutoScalingGroupId Scaling group ID.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID
-     * @param AutoScalingGroupId 伸缩组ID
+     * Configure a scaling group ID.
+     * @param AutoScalingGroupId Scaling group ID.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取启动配置ID
-     * @return LaunchConfigurationId 启动配置ID
+     * Obtain the ID of Launch configuration.
+     * @return LaunchConfigurationId ID of Launch configuration.
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * 设置启动配置ID
-     * @param LaunchConfigurationId 启动配置ID
+     * Configure the ID of Launch configuration.
+     * @param LaunchConfigurationId ID of Launch configuration.
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * 获取启动配置名称
-     * @return LaunchConfigurationName 启动配置名称
+     * Obtain the name of Launch configuration.
+     * @return LaunchConfigurationName Name of Launch configuration.
      */
     public String getLaunchConfigurationName() {
         return this.LaunchConfigurationName;
     }
 
     /**
-     * 设置启动配置名称
-     * @param LaunchConfigurationName 启动配置名称
+     * Configure the name of Launch configuration.
+     * @param LaunchConfigurationName Name of Launch configuration.
      */
     public void setLaunchConfigurationName(String LaunchConfigurationName) {
         this.LaunchConfigurationName = LaunchConfigurationName;
     }
 
     /**
-     * 获取生命周期状态，取值包括IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB等
-     * @return LifeCycleState 生命周期状态，取值包括IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB等
+     * Obtain a lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
+     * @return LifeCycleState Lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
      */
     public String getLifeCycleState() {
         return this.LifeCycleState;
     }
 
     /**
-     * 设置生命周期状态，取值包括IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB等
-     * @param LifeCycleState 生命周期状态，取值包括IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB等
+     * Configure a lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
+     * @param LifeCycleState Lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
      */
     public void setLifeCycleState(String LifeCycleState) {
         this.LifeCycleState = LifeCycleState;
     }
 
     /**
-     * 获取健康状态，取值包括HEALTHY和UNHEALTHY
-     * @return HealthStatus 健康状态，取值包括HEALTHY和UNHEALTHY
+     * Obtain a health status. Possible values: HEALTHY and UNHEALTHY.
+     * @return HealthStatus Health status. Possible values: HEALTHY and UNHEALTHY.
      */
     public String getHealthStatus() {
         return this.HealthStatus;
     }
 
     /**
-     * 设置健康状态，取值包括HEALTHY和UNHEALTHY
-     * @param HealthStatus 健康状态，取值包括HEALTHY和UNHEALTHY
+     * Configure a health status. Possible values: HEALTHY and UNHEALTHY.
+     * @param HealthStatus Health status. Possible values: HEALTHY and UNHEALTHY.
      */
     public void setHealthStatus(String HealthStatus) {
         this.HealthStatus = HealthStatus;
     }
 
     /**
-     * 获取是否加入缩容保护
-     * @return ProtectedFromScaleIn 是否加入缩容保护
+     * Obtain whether to protect the instance from scaling down is enable.
+     * @return ProtectedFromScaleIn Indicates whether to protect the instance from scaling down.
      */
     public Boolean getProtectedFromScaleIn() {
         return this.ProtectedFromScaleIn;
     }
 
     /**
-     * 设置是否加入缩容保护
-     * @param ProtectedFromScaleIn 是否加入缩容保护
+     * Configure whether to protect the instance from scaling down is enable.
+     * @param ProtectedFromScaleIn Indicates whether to protect the instance from scaling down.
      */
     public void setProtectedFromScaleIn(Boolean ProtectedFromScaleIn) {
         this.ProtectedFromScaleIn = ProtectedFromScaleIn;
     }
 
     /**
-     * 获取可用区
-     * @return Zone 可用区
+     * Obtain the Availability Zone.
+     * @return Zone Availability Zone.
      */
     public String getZone() {
         return this.Zone;
     }
 
     /**
-     * 设置可用区
-     * @param Zone 可用区
+     * Configure the Availability Zone.
+     * @param Zone Availability Zone.
      */
     public void setZone(String Zone) {
         this.Zone = Zone;
     }
 
     /**
-     * 获取创建类型，取值包括AUTO_CREATION, MANUAL_ATTACHING。
-     * @return CreationType 创建类型，取值包括AUTO_CREATION, MANUAL_ATTACHING。
+     * Obtain a creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
+     * Creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
      */
     public String getCreationType() {
         return this.CreationType;
     }
 
     /**
-     * 设置创建类型，取值包括AUTO_CREATION, MANUAL_ATTACHING。
-     * @param CreationType 创建类型，取值包括AUTO_CREATION, MANUAL_ATTACHING。
+     * Configure a creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
+     * Creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
      */
     public void setCreationType(String CreationType) {
         this.CreationType = CreationType;
     }
 
     /**
-     * 获取实例加入时间
-     * @return AddTime 实例加入时间
+     * Obtain the time when the instance is added.
+     * @return AddTime The time when the instance is added.
      */
     public String getAddTime() {
         return this.AddTime;
     }
 
     /**
-     * 设置实例加入时间
-     * @param AddTime 实例加入时间
+     * Configure the time when the instance is added.
+     * @param AddTime The time when the instance is added.
      */
     public void setAddTime(String AddTime) {
         this.AddTime = AddTime;
     }
 
     /**
-     * 获取实例类型
-     * @return InstanceType 实例类型
+     * Obtain the Instance Type.
+     * @return InstanceType Instance Type.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * 设置实例类型
-     * @param InstanceType 实例类型
+     * Configure the Instance Type.
+     * @param Instance Type Instance Type.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * 获取版本号
-     * @return VersionNumber 版本号
+     * Obtain the Version No.
+     * @return VersionNumber Version No.
      */
     public Integer getVersionNumber() {
         return this.VersionNumber;
     }
 
     /**
-     * 设置版本号
-     * @param VersionNumber 版本号
+     * Configure the Version No.
+     * @param VersionNumber Version No.
      */
     public void setVersionNumber(Integer VersionNumber) {
         this.VersionNumber = VersionNumber;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);

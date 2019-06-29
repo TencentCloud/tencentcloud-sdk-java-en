@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ModifyLoadBalancersRequest  extends AbstractModel{
 
     /**
-    * 伸缩组ID
+    * Scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+    * ID list of Traditional CLB: Currently the maximum length is 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
     */
     @SerializedName("LoadBalancerIds")
     @Expose
     private String [] LoadBalancerIds;
 
     /**
-    * 应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+    * ID list of Application CLB: Currently the maximum length is 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
     */
     @SerializedName("ForwardLoadBalancers")
     @Expose
     private ForwardLoadBalancer [] ForwardLoadBalancers;
 
     /**
-     * 获取伸缩组ID
-     * @return AutoScalingGroupId 伸缩组ID
+     * Obtain Scaling Group ID.
+     * @return AutoScalingGroupId Scaling Group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID
-     * @param AutoScalingGroupId 伸缩组ID
+     * Set Scaling Group ID
+     * @param AutoScalingGroupId Scaling Group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-     * @return LoadBalancerIds 传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+     * Obtain ID list of Traditional CLB: Currently the maximum length is 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+     * @return LoadBalancerIDs ID List of Traditional CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
      */
     public String [] getLoadBalancerIds() {
         return this.LoadBalancerIds;
     }
 
     /**
-     * 设置传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-     * @param LoadBalancerIds 传统负载均衡器ID列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+     * Set ID List of Traditional CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+     * @return LoadBalancerIDs ID List of Traditional CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
      */
     public void setLoadBalancerIds(String [] LoadBalancerIds) {
         this.LoadBalancerIds = LoadBalancerIds;
     }
 
     /**
-     * 获取应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-     * @return ForwardLoadBalancers 应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+     * Obtain ID list of Application CLB: Currently the maximum length is 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+     * @return ForwardLoadBalancers ID List of Application CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
      */
     public ForwardLoadBalancer [] getForwardLoadBalancers() {
         return this.ForwardLoadBalancers;
     }
 
     /**
-     * 设置应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
-     * @param ForwardLoadBalancers 应用型负载均衡器列表，目前长度上限为1，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个
+     * Set ID List of Application CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+     * @return ForwardLoadBalancers ID List of Application CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
      */
     public void setForwardLoadBalancers(ForwardLoadBalancer [] ForwardLoadBalancers) {
         this.ForwardLoadBalancers = ForwardLoadBalancers;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

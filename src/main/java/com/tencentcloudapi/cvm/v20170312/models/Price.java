@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class Price  extends AbstractModel{
 
     /**
-    * 描述了实例价格。
+    * Instance price
     */
     @SerializedName("InstancePrice")
     @Expose
     private ItemPrice InstancePrice;
 
     /**
-    * 描述了网络价格。
+    * Network price
     */
     @SerializedName("BandwidthPrice")
     @Expose
     private ItemPrice BandwidthPrice;
 
     /**
-     * 获取描述了实例价格。
-     * @return InstancePrice 描述了实例价格。
+     * Obtain instance price.
+     * Instance price
      */
     public ItemPrice getInstancePrice() {
         return this.InstancePrice;
     }
 
     /**
-     * 设置描述了实例价格。
-     * @param InstancePrice 描述了实例价格。
+     * Setting instance price
+     * @param InstancePrice Instance price.
      */
     public void setInstancePrice(ItemPrice InstancePrice) {
         this.InstancePrice = InstancePrice;
     }
 
     /**
-     * 获取描述了网络价格。
-     * @return BandwidthPrice 描述了网络价格。
+     * Obtain Network price
+     * @return BandwidthPrice Network price
      */
     public ItemPrice getBandwidthPrice() {
         return this.BandwidthPrice;
     }
 
     /**
-     * 设置描述了网络价格。
-     * @param BandwidthPrice 描述了网络价格。
+     * Set the Network price
+     * @param BandwidthPrice Network price
      */
     public void setBandwidthPrice(ItemPrice BandwidthPrice) {
         this.BandwidthPrice = BandwidthPrice;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "InstancePrice.", this.InstancePrice);

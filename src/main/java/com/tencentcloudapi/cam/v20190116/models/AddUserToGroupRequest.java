@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class AddUserToGroupRequest  extends AbstractModel{
 
     /**
-    * 添加的子用户 UID 和用户组 ID 关联关系
+    * How sub-user UIDs are associated with the ID of the user group they are added to.
     */
     @SerializedName("Info")
     @Expose
     private GroupIdOfUidInfo [] Info;
 
     /**
-     * 获取添加的子用户 UID 和用户组 ID 关联关系
-     * @return Info 添加的子用户 UID 和用户组 ID 关联关系
+     * Getting information about how sub-user UIDs are associated with the ID of the user group they are added to.
+     * @return Info how sub-user UIDs are associated with the ID of the user group they are added to.
      */
     public GroupIdOfUidInfo [] getInfo() {
         return this.Info;
     }
 
     /**
-     * 设置添加的子用户 UID 和用户组 ID 关联关系
-     * @param Info 添加的子用户 UID 和用户组 ID 关联关系
+     * Configuring how sub-user UIDs are associated with the ID of the user group they are added to
+     * @param Info how sub-user UIDs are associated with the ID of the user group they are added to
      */
     public void setInfo(GroupIdOfUidInfo [] Info) {
         this.Info = Info;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Info.", this.Info);

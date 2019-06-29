@@ -23,86 +23,86 @@ import java.util.HashMap;
 public class NotificationTarget  extends AbstractModel{
 
     /**
-    * 目标类型，取值范围包括`CMQ_QUEUE`、`CMQ_TOPIC`。
-<li> CMQ_QUEUE，指腾讯云消息队列-队列模型。</li>
-<li> CMQ_TOPIC，指腾讯云消息队列-主题模型。</li>
+    * Target type.The value range includes `CMQ_QUEUE`,`CMQ_TOPIC`.
+<li> CMQ_QUEUE，Tencent Cloud Message Queue - Queue Model.</li>
+<li> CMQ_TOPIC，Tencent Cloud Message Queue - Topic Model.</li>
     */
     @SerializedName("TargetType")
     @Expose
     private String TargetType;
 
     /**
-    * 队列名称，如果`TargetType`取值为`CMQ_QUEUE`，则本字段必填。
+    * Queue name.If `CMQ_QUEUE` has value `TargetType`,this field must be set.
     */
     @SerializedName("QueueName")
     @Expose
     private String QueueName;
 
     /**
-    * 主题名称，如果`TargetType`取值为`CMQ_TOPIC`，则本字段必填。
+    * Topic name.If `TargetType` has value `CMQ_TOPIC`,this field must be set.
     */
     @SerializedName("TopicName")
     @Expose
     private String TopicName;
 
     /**
-     * 获取目标类型，取值范围包括`CMQ_QUEUE`、`CMQ_TOPIC`。
-<li> CMQ_QUEUE，指腾讯云消息队列-队列模型。</li>
-<li> CMQ_TOPIC，指腾讯云消息队列-主题模型。</li>
-     * @return TargetType 目标类型，取值范围包括`CMQ_QUEUE`、`CMQ_TOPIC`。
-<li> CMQ_QUEUE，指腾讯云消息队列-队列模型。</li>
-<li> CMQ_TOPIC，指腾讯云消息队列-主题模型。</li>
+     * Obtain target type,The value range includes `CMQ_QUEUE`,`CMQ_TOPIC`.
+<li> CMQ_QUEUE，Tencent Cloud Message Queue - Queue Model.</li>
+<li> CMQ_TOPIC，Tencent Cloud Message Queue - Topic Model.</li>
+     * @return TargetType Target type.The value range includes `CMQ_QUEUE`,`CMQ_TOPIC`.
+<li> CMQ_QUEUE，Tencent Cloud Message Queue - Queue Model.</li>
+<li> CMQ_TOPIC，Tencent Cloud Message Queue - Topic Model.</li>
      */
     public String getTargetType() {
         return this.TargetType;
     }
 
     /**
-     * 设置目标类型，取值范围包括`CMQ_QUEUE`、`CMQ_TOPIC`。
-<li> CMQ_QUEUE，指腾讯云消息队列-队列模型。</li>
-<li> CMQ_TOPIC，指腾讯云消息队列-主题模型。</li>
-     * @param TargetType 目标类型，取值范围包括`CMQ_QUEUE`、`CMQ_TOPIC`。
-<li> CMQ_QUEUE，指腾讯云消息队列-队列模型。</li>
-<li> CMQ_TOPIC，指腾讯云消息队列-主题模型。</li>
+     * Set target type.The value range includes `CMQ_QUEUE`,`CMQ_TOPIC`.
+<li> CMQ_QUEUE，Tencent Cloud Message Queue - Queue Model.</li>
+<li> CMQ_TOPIC，Tencent Cloud Message Queue - Topic Model.</li>
+     * @param TargetType Target type.The value range includes `CMQ_QUEUE`,`CMQ_TOPIC`.
+<li> CMQ_QUEUE，Tencent Cloud Message Queue - Queue Model.</li>
+<li> CMQ_TOPIC，Tencent Cloud Message Queue - Topic Model.</li>
      */
     public void setTargetType(String TargetType) {
         this.TargetType = TargetType;
     }
 
     /**
-     * 获取队列名称，如果`TargetType`取值为`CMQ_QUEUE`，则本字段必填。
-     * @return QueueName 队列名称，如果`TargetType`取值为`CMQ_QUEUE`，则本字段必填。
+     * Obtain queue name,If `TargetType` value equal to `CMQ_QUEUE` , field must be filled.
+     * @return QueueName Queue name,If `TargetType` value equal to `CMQ_QUEUE`,this field must be filled.
      */
     public String getQueueName() {
         return this.QueueName;
     }
 
     /**
-     * 设置队列名称，如果`TargetType`取值为`CMQ_QUEUE`，则本字段必填。
-     * @param QueueName 队列名称，如果`TargetType`取值为`CMQ_QUEUE`，则本字段必填。
+     * Set queue name,If `TargetType` value equal to `CMQ_QUEUE`,this field must be filled.
+     * @param QueueName Queue name,If `TargetType` value equal to `CMQ_QUEUE`,this field must be filled.
      */
     public void setQueueName(String QueueName) {
         this.QueueName = QueueName;
     }
 
     /**
-     * 获取主题名称，如果`TargetType`取值为`CMQ_TOPIC`，则本字段必填。
-     * @return TopicName 主题名称，如果`TargetType`取值为`CMQ_TOPIC`，则本字段必填。
+     * Obtain topic name,If `TargetType` value equal to `CMQ_TOPIC`,this field must be filled.
+     * @return TopicName Topic name,If `TargetType` value equal to `CMQ_TOPIC`,this field must be filled.
      */
     public String getTopicName() {
         return this.TopicName;
     }
 
     /**
-     * 设置主题名称，如果`TargetType`取值为`CMQ_TOPIC`，则本字段必填。
-     * @param TopicName 主题名称，如果`TargetType`取值为`CMQ_TOPIC`，则本字段必填。
+     * Set topic name,If `TargetType` value equal to `CMQ_TOPIC`,this field must be filled.
+     * @param TopicName Topic name,If `TargetType` value equal to `CMQ_TOPIC`,this field must be filled.
      */
     public void setTopicName(String TopicName) {
         this.TopicName = TopicName;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TargetType", this.TargetType);

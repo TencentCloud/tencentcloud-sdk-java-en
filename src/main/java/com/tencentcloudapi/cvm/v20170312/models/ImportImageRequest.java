@@ -23,191 +23,191 @@ import java.util.HashMap;
 public class ImportImageRequest  extends AbstractModel{
 
     /**
-    * 导入镜像的操作系统架构，`x86_64` 或 `i386`
+    * The operating system architecture of the imported image, `x86_64` or `i386`
     */
     @SerializedName("Architecture")
     @Expose
     private String Architecture;
 
     /**
-    * 导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
+    * The operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
     */
     @SerializedName("OsType")
     @Expose
     private String OsType;
 
     /**
-    * 导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
+    * The operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
     */
     @SerializedName("OsVersion")
     @Expose
     private String OsVersion;
 
     /**
-    * 导入镜像存放的cos地址
+    * The image address on COS where the imported image is stored
     */
     @SerializedName("ImageUrl")
     @Expose
     private String ImageUrl;
 
     /**
-    * 镜像名称
+    * Image name
     */
     @SerializedName("ImageName")
     @Expose
     private String ImageName;
 
     /**
-    * 镜像描述
+    * Image description
     */
     @SerializedName("ImageDescription")
     @Expose
     private String ImageDescription;
 
     /**
-    * 只检查参数，不执行任务
+    * Perform dry-run
     */
     @SerializedName("DryRun")
     @Expose
     private Boolean DryRun;
 
     /**
-    * 是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
+    * Indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
     */
     @SerializedName("Force")
     @Expose
     private Boolean Force;
 
     /**
-     * 获取导入镜像的操作系统架构，`x86_64` 或 `i386`
-     * @return Architecture 导入镜像的操作系统架构，`x86_64` 或 `i386`
+     * Get the operating system architecture of the imported image, `x86_64` or `i386`
+     * @return Architecture The operating system architecture of the imported image, `x86_64` or `i386`
      */
     public String getArchitecture() {
         return this.Architecture;
     }
 
     /**
-     * 设置导入镜像的操作系统架构，`x86_64` 或 `i386`
-     * @param Architecture 导入镜像的操作系统架构，`x86_64` 或 `i386`
+     * Set the operating system architecture of the imported image, `x86_64` or `i386`
+     * @param Architecture The operating system architecture of the imported image, `x86_64` or `i386`
      */
     public void setArchitecture(String Architecture) {
         this.Architecture = Architecture;
     }
 
     /**
-     * 获取导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
-     * @return OsType 导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
+     * Get the operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
+     * @return OsType The operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
      */
     public String getOsType() {
         return this.OsType;
     }
 
     /**
-     * 设置导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
-     * @param OsType 导入镜像的操作系统类型，通过`DescribeImportImageOs`获取
+     * Set the operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
+     * @param OsType The operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
      */
     public void setOsType(String OsType) {
         this.OsType = OsType;
     }
 
     /**
-     * 获取导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
-     * @return OsVersion 导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
+     * Get the operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
+     * @return OsVersion The operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
      */
     public String getOsVersion() {
         return this.OsVersion;
     }
 
     /**
-     * 设置导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
-     * @param OsVersion 导入镜像的操作系统版本，通过`DescribeImportImageOs`获取
+     * Set the operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
+     * @param OsVersion The operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
      */
     public void setOsVersion(String OsVersion) {
         this.OsVersion = OsVersion;
     }
 
     /**
-     * 获取导入镜像存放的cos地址
-     * @return ImageUrl 导入镜像存放的cos地址
+     * Get the image address on COS where the imported image is stored
+     * @return ImageUrl The image address on COS where the imported image is stored
      */
     public String getImageUrl() {
         return this.ImageUrl;
     }
 
     /**
-     * 设置导入镜像存放的cos地址
-     * @param ImageUrl 导入镜像存放的cos地址
+     * Set the image address on COS where the imported image is stored
+     * @param ImageUrl The image address on COS where the imported image is stored
      */
     public void setImageUrl(String ImageUrl) {
         this.ImageUrl = ImageUrl;
     }
 
     /**
-     * 获取镜像名称
-     * @return ImageName 镜像名称
+     * Get image name
+     * @return ImageName Image name
      */
     public String getImageName() {
         return this.ImageName;
     }
 
     /**
-     * 设置镜像名称
-     * @param ImageName 镜像名称
+     * Set image name
+     * @param ImageName Image name
      */
     public void setImageName(String ImageName) {
         this.ImageName = ImageName;
     }
 
     /**
-     * 获取镜像描述
-     * @return ImageDescription 镜像描述
+     * Get image description
+     * @return ImageDescription Image description
      */
     public String getImageDescription() {
         return this.ImageDescription;
     }
 
     /**
-     * 设置镜像描述
-     * @param ImageDescription 镜像描述
+     * Set image description
+     * @param ImageDescription Image description
      */
     public void setImageDescription(String ImageDescription) {
         this.ImageDescription = ImageDescription;
     }
 
     /**
-     * 获取只检查参数，不执行任务
-     * @return DryRun 只检查参数，不执行任务
+     * Get perform dry-run
+     * @return DryRun Perform dry-run
      */
     public Boolean getDryRun() {
         return this.DryRun;
     }
 
     /**
-     * 设置只检查参数，不执行任务
-     * @param DryRun 只检查参数，不执行任务
+     * Set perform dry-run
+     * @param DryRun Perform dry-run
      */
     public void setDryRun(Boolean DryRun) {
         this.DryRun = DryRun;
     }
 
     /**
-     * 获取是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
-     * @return Force 是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
+     * Get indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
+     * @return Force Indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
      */
     public Boolean getForce() {
         return this.Force;
     }
 
     /**
-     * 设置是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
-     * @param Force 是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)
+     * Set indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
+     * @param Force Indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
      */
     public void setForce(Boolean Force) {
         this.Force = Force;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Architecture", this.Architecture);

@@ -23,191 +23,191 @@ import java.util.HashMap;
 public class ScalingPolicy  extends AbstractModel{
 
     /**
-    * 伸缩组ID。
+    * Scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 告警触发策略ID。
+    * Alert trigger policy ID
     */
     @SerializedName("AutoScalingPolicyId")
     @Expose
     private String AutoScalingPolicyId;
 
     /**
-    * 告警触发策略名称。
+    * Alert trigger policy name
     */
     @SerializedName("ScalingPolicyName")
     @Expose
     private String ScalingPolicyName;
 
     /**
-    * 告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+    * After an alert is triggered,the method to change expected instance number. Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
     */
     @SerializedName("AdjustmentType")
     @Expose
     private String AdjustmentType;
 
     /**
-    * 告警触发后，期望实例数的调整值。
+    * After an alert is triggered,the adjusted value of desired number of instances.
     */
     @SerializedName("AdjustmentValue")
     @Expose
     private Integer AdjustmentValue;
 
     /**
-    * 冷却时间。
+    * Cooldown period
     */
     @SerializedName("Cooldown")
     @Expose
     private Integer Cooldown;
 
     /**
-    * 告警监控指标。
+    * Alert monitor metrics.
     */
     @SerializedName("MetricAlarm")
     @Expose
     private MetricAlarm MetricAlarm;
 
     /**
-    * 通知组ID，即为用户组ID集合。
+    * ID of notification group, which is the collection of user group IDs.
     */
     @SerializedName("NotificationUserGroupIds")
     @Expose
     private String [] NotificationUserGroupIds;
 
     /**
-     * 获取伸缩组ID。
-     * @return AutoScalingGroupId 伸缩组ID。
+     * Obtain the scaling group ID
+     * @return AutoScalingGroupId Scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID。
-     * @param AutoScalingGroupId 伸缩组ID。
+     * Configure the scaling group ID
+     * @param AutoScalingGroupId Scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取告警触发策略ID。
-     * @return AutoScalingPolicyId 告警触发策略ID。
+     * Obtain the alert trigger policy ID
+     * @return AutoScalingPolicyId Alert trigger policy ID
      */
     public String getAutoScalingPolicyId() {
         return this.AutoScalingPolicyId;
     }
 
     /**
-     * 设置告警触发策略ID。
-     * @param AutoScalingPolicyId 告警触发策略ID。
+     * Set alert trigger policy ID
+     * @param AutoScalingPolicyId alert trigger policy ID
      */
     public void setAutoScalingPolicyId(String AutoScalingPolicyId) {
         this.AutoScalingPolicyId = AutoScalingPolicyId;
     }
 
     /**
-     * 获取告警触发策略名称。
-     * @return ScalingPolicyName 告警触发策略名称。
+     * Obtain alert trigger policy ID
+     * @return ScalingPolicyName alert trigger policy name
      */
     public String getScalingPolicyName() {
         return this.ScalingPolicyName;
     }
 
     /**
-     * 设置告警触发策略名称。
-     * @param ScalingPolicyName 告警触发策略名称。
+     * Set the alert trigger policy name
+     * @param ScalingPolicyName alert trigger policy name
      */
     public void setScalingPolicyName(String ScalingPolicyName) {
         this.ScalingPolicyName = ScalingPolicyName;
     }
 
     /**
-     * 获取告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
-     * @return AdjustmentType 告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+     * Obtain the method to modify expected instance number after an alert is triggered.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
+     * @return AdjustmentType After an alert is triggered, the method to modify expected instance number.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
      */
     public String getAdjustmentType() {
         return this.AdjustmentType;
     }
 
     /**
-     * 设置告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
-     * @param AdjustmentType 告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+     * After an alert is triggered,the method to change expected instance number. Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
+     * @return AdjustmentType After an alert is triggered, the method to modify expected instance number.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
      */
     public void setAdjustmentType(String AdjustmentType) {
         this.AdjustmentType = AdjustmentType;
     }
 
     /**
-     * 获取告警触发后，期望实例数的调整值。
-     * @return AdjustmentValue 告警触发后，期望实例数的调整值。
+     * Obtain the adjusted value of expected number of instances after alert is triggered.
+     * @return AdjustmentValue After an alert is triggered, the adjusted expected instance number. Value:
      */
     public Integer getAdjustmentValue() {
         return this.AdjustmentValue;
     }
 
     /**
-     * 设置告警触发后，期望实例数的调整值。
-     * @param AdjustmentValue 告警触发后，期望实例数的调整值。
+     * Set the adjusted value of expected number of instances after alert is triggered.
+     * @return AdjustmentValue After an alert is triggered, the adjusted expected instance number. Value:
      */
     public void setAdjustmentValue(Integer AdjustmentValue) {
         this.AdjustmentValue = AdjustmentValue;
     }
 
     /**
-     * 获取冷却时间。
-     * @return Cooldown 冷却时间。
+     * Obtain the cooldown time
+     * @return Cooldown cool down time, in seconds.
      */
     public Integer getCooldown() {
         return this.Cooldown;
     }
 
     /**
-     * 设置冷却时间。
-     * @param Cooldown 冷却时间。
+     * Set the cooldown time
+     * @param Cooldown cool down time, in seconds.
      */
     public void setCooldown(Integer Cooldown) {
         this.Cooldown = Cooldown;
     }
 
     /**
-     * 获取告警监控指标。
-     * @return MetricAlarm 告警监控指标。
+     * Obtain alert/monitor metrics.
+     * @return MetricAlarm alert/monitor metrics.
      */
     public MetricAlarm getMetricAlarm() {
         return this.MetricAlarm;
     }
 
     /**
-     * 设置告警监控指标。
-     * @param MetricAlarm 告警监控指标。
+     * Set alert/monitor metrics.
+     * @param MetricAlarm alert/monitor metrics.
      */
     public void setMetricAlarm(MetricAlarm MetricAlarm) {
         this.MetricAlarm = MetricAlarm;
     }
 
     /**
-     * 获取通知组ID，即为用户组ID集合。
-     * @return NotificationUserGroupIds 通知组ID，即为用户组ID集合。
+     * Obtain notification group ID,which is the collection of user groups.
+     * @return NotificationUserGroupIds Notification group ID,which is the collection of user groups.
      */
     public String [] getNotificationUserGroupIds() {
         return this.NotificationUserGroupIds;
     }
 
     /**
-     * 设置通知组ID，即为用户组ID集合。
-     * @param NotificationUserGroupIds 通知组ID，即为用户组ID集合。
+     * Set notification group ID,which is the collection of user groups.
+     * @param NotificationUserGroupIds Notification group ID,which is the collection of user groups.
      */
     public void setNotificationUserGroupIds(String [] NotificationUserGroupIds) {
         this.NotificationUserGroupIds = NotificationUserGroupIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

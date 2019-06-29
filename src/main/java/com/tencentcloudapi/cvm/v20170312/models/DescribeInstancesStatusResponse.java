@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeInstancesStatusResponse  extends AbstractModel{
 
     /**
-    * 符合条件的实例状态数量。
+    * Number of instance statues matching the filter condition.
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * [实例状态](https://cloud.tencent.com/document/api/213/15738) 列表。
+    * [instance status](https://cloud.tencent.com/document/api/213/15728) list.
     */
     @SerializedName("InstanceStatusSet")
     @Expose
     private InstanceStatus [] InstanceStatusSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取符合条件的实例状态数量。
-     * @return TotalCount 符合条件的实例状态数量。
+     * Obtain number of instance statues matching the filter condition.
+     * @return TotalCount Number of instance statues matching the filter condition.
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置符合条件的实例状态数量。
-     * @param TotalCount 符合条件的实例状态数量。
+     * Set number of instance statues matching the filter condition.
+     * @param TotalCount Number of instance statues matching the filter condition.
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取[实例状态](https://cloud.tencent.com/document/api/213/15738) 列表。
-     * @return InstanceStatusSet [实例状态](https://cloud.tencent.com/document/api/213/15738) 列表。
+     * Obtain [instance status](https://cloud.tencent.com/document/api/213/15728) list.
+     * @return InstanceStatusSet [instance status](https://cloud.tencent.com/document/api/213/15728) list.
      */
     public InstanceStatus [] getInstanceStatusSet() {
         return this.InstanceStatusSet;
     }
 
     /**
-     * 设置[实例状态](https://cloud.tencent.com/document/api/213/15738) 列表。
-     * @param InstanceStatusSet [实例状态](https://cloud.tencent.com/document/api/213/15738) 列表。
+     * Set [instance status](https://cloud.tencent.com/document/api/213/15728) list.
+     * @param InstanceStatusSet [instance status](https://cloud.tencent.com/document/api/213/15728) list.
      */
     public void setInstanceStatusSet(InstanceStatus [] InstanceStatusSet) {
         this.InstanceStatusSet = InstanceStatusSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

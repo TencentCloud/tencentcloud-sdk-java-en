@@ -23,311 +23,306 @@ import java.util.HashMap;
 public class HostItem  extends AbstractModel{
 
     /**
-    * cdh实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+    * Location of the CDH instance. This parameter is used to specify the availability zone and project to which the instance belongs.
     */
     @SerializedName("Placement")
     @Expose
     private Placement Placement;
 
     /**
-    * cdh实例id
+    * CDH instance ID
     */
     @SerializedName("HostId")
     @Expose
     private String HostId;
 
     /**
-    * cdh实例类型
+    * CDH instance type
     */
     @SerializedName("HostType")
     @Expose
     private String HostType;
 
     /**
-    * cdh实例名称
+    * CDH instance name
     */
     @SerializedName("HostName")
     @Expose
     private String HostName;
 
     /**
-    * cdh实例付费模式
+    * Billing type of a CDH instance
     */
     @SerializedName("HostChargeType")
     @Expose
     private String HostChargeType;
 
     /**
-    * cdh实例自动续费标记
+    * Auto renewal flag of a CDH instance
     */
     @SerializedName("RenewFlag")
     @Expose
     private String RenewFlag;
 
     /**
-    * cdh实例创建时间
+    * Creation time of a CDH instance
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * cdh实例过期时间
+    * Expiration time of a CDH instance
     */
     @SerializedName("ExpiredTime")
     @Expose
     private String ExpiredTime;
 
     /**
-    * cdh实例上已创建云子机的实例id列表
+    * List of IDs of CVM instances created on CDH
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * cdh实例状态
+    * CDH instance status
     */
     @SerializedName("HostState")
     @Expose
     private String HostState;
 
     /**
-    * cdh实例ip
+    * CDH instance IP
     */
     @SerializedName("HostIp")
     @Expose
     private String HostIp;
 
     /**
-    * cdh实例资源信息
+    * The resource information of a CDH instance
     */
     @SerializedName("HostResource")
     @Expose
     private HostResource HostResource;
 
     /**
-    * 专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("CageId")
     @Expose
     private String CageId;
 
     /**
-     * 获取cdh实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-     * @return Placement cdh实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+     * Get location of the CDH instance. This parameter is used to specify the availability zone and project to which the instance belongs.
+     * @return Placement Location of CDH instance. This parameter is used to specify the availability zone, project and other attributes of the instance.
      */
     public Placement getPlacement() {
         return this.Placement;
     }
 
     /**
-     * 设置cdh实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-     * @param Placement cdh实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+     * Set location of the CDH instance. This parameter is used to specify the availability zone and project to which the instance belongs.
+     * @param Placement Location of CDH instance. This parameter is used to specify the availability zone, project and other attributes of the instance.
      */
     public void setPlacement(Placement Placement) {
         this.Placement = Placement;
     }
 
     /**
-     * 获取cdh实例id
-     * @return HostId cdh实例id
+     * Get CDH instance ID
+     * @return HostId CDH instance ID
      */
     public String getHostId() {
         return this.HostId;
     }
 
     /**
-     * 设置cdh实例id
-     * @param HostId cdh实例id
+     * Set CDH instance ID
+     * @param HostId CDH instance ID
      */
     public void setHostId(String HostId) {
         this.HostId = HostId;
     }
 
     /**
-     * 获取cdh实例类型
-     * @return HostType cdh实例类型
+     * Get CDH instance type
+     * @return HostType CDH instance type
      */
     public String getHostType() {
         return this.HostType;
     }
 
     /**
-     * 设置cdh实例类型
-     * @param HostType cdh实例类型
+     * Set CDH instance type
+     * @param HostType CDH instance type
      */
     public void setHostType(String HostType) {
         this.HostType = HostType;
     }
 
     /**
-     * 获取cdh实例名称
-     * @return HostName cdh实例名称
+     * Get CDH instance name
+     * @return HostName CDH instance name
      */
     public String getHostName() {
         return this.HostName;
     }
 
     /**
-     * 设置cdh实例名称
-     * @param HostName cdh实例名称
+     * Set CDH instance name
+     * @param HostName CDH instance name
      */
     public void setHostName(String HostName) {
         this.HostName = HostName;
     }
 
     /**
-     * 获取cdh实例付费模式
-     * @return HostChargeType cdh实例付费模式
+     * Get billing type of a CDH instance
+     * @return HostChargeType Billing type of a CDH instance
      */
     public String getHostChargeType() {
         return this.HostChargeType;
     }
 
     /**
-     * 设置cdh实例付费模式
-     * @param HostChargeType cdh实例付费模式
+     * Set billing type of a CDH instance
+     * @param HostChargeType Billing type of a CDH instance
      */
     public void setHostChargeType(String HostChargeType) {
         this.HostChargeType = HostChargeType;
     }
 
     /**
-     * 获取cdh实例自动续费标记
-     * @return RenewFlag cdh实例自动续费标记
+     * Get auto renewal flag of a CDH instance
+     * @return RenewFlag Auto renewal flag of a CDH instance
      */
     public String getRenewFlag() {
         return this.RenewFlag;
     }
 
     /**
-     * 设置cdh实例自动续费标记
-     * @param RenewFlag cdh实例自动续费标记
+     * Set auto renewal flag of a CDH instance
+     * @param RenewFlag Auto renewal flag of a CDH instance
      */
     public void setRenewFlag(String RenewFlag) {
         this.RenewFlag = RenewFlag;
     }
 
     /**
-     * 获取cdh实例创建时间
-     * @return CreatedTime cdh实例创建时间
+     * Get creation time of a CDH instance
+     * @return CreatedTime Creation time of a CDH instance
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置cdh实例创建时间
-     * @param CreatedTime cdh实例创建时间
+     * Set creation time of a CDH instance
+     * @param CreatedTime Creation time of a CDH instance
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 获取cdh实例过期时间
-     * @return ExpiredTime cdh实例过期时间
+     * Get expiration time of a CDH instance
+     * @return ExpiredTime Expiration time of a CDH instance
      */
     public String getExpiredTime() {
         return this.ExpiredTime;
     }
 
     /**
-     * 设置cdh实例过期时间
-     * @param ExpiredTime cdh实例过期时间
+     * Set expiration time of a CDH instance
+     * @param ExpiredTime Expiration time of a CDH instance
      */
     public void setExpiredTime(String ExpiredTime) {
         this.ExpiredTime = ExpiredTime;
     }
 
     /**
-     * 获取cdh实例上已创建云子机的实例id列表
-     * @return InstanceIds cdh实例上已创建云子机的实例id列表
+     * Get list of IDs of CVM instances created on CDH
+     * @return InstanceIds List of IDs of CVM instances created on CDH
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置cdh实例上已创建云子机的实例id列表
-     * @param InstanceIds cdh实例上已创建云子机的实例id列表
+     * Set list of IDs of CVM instances created on CDH
+     * @param InstanceIds List of IDs of CVM instances created on CDH
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取cdh实例状态
-     * @return HostState cdh实例状态
+     * Get CDH instance status
+     * @return HostState CDH instance status
      */
     public String getHostState() {
         return this.HostState;
     }
 
     /**
-     * 设置cdh实例状态
-     * @param HostState cdh实例状态
+     * Set CDH instance status
+     * @param HostState CDH instance status
      */
     public void setHostState(String HostState) {
         this.HostState = HostState;
     }
 
     /**
-     * 获取cdh实例ip
-     * @return HostIp cdh实例ip
+     * Get CDH instance IP
+     * @return HostIp CDH instance IP
      */
     public String getHostIp() {
         return this.HostIp;
     }
 
     /**
-     * 设置cdh实例ip
-     * @param HostIp cdh实例ip
+     * Set CDH instance IP
+     * @param HostIp CDH instance IP
      */
     public void setHostIp(String HostIp) {
         this.HostIp = HostIp;
     }
 
     /**
-     * 获取cdh实例资源信息
-     * @return HostResource cdh实例资源信息
+     * Get the resource information of a CDH instance
+     * @return HostResource The resource information of a CDH instance
      */
     public HostResource getHostResource() {
         return this.HostResource;
     }
 
     /**
-     * 设置cdh实例资源信息
-     * @param HostResource cdh实例资源信息
+     * Set the resource information of a CDH instance
+     * @param HostResource The resource information of a CDH instance
      */
     public void setHostResource(HostResource HostResource) {
         this.HostResource = HostResource;
     }
 
     /**
-     * 获取专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return CageId 专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
+     * @return CageId Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
      */
     public String getCageId() {
         return this.CageId;
     }
 
     /**
-     * 设置专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param CageId 专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
+     * @param CageId Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
      */
     public void setCageId(String CageId) {
         this.CageId = CageId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Placement.", this.Placement);

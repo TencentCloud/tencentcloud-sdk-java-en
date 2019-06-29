@@ -23,178 +23,168 @@ import java.util.HashMap;
 public class DisasterRecoverGroup  extends AbstractModel{
 
     /**
-    * 分散置放群组id。
+    * ID of a spread placement group.
     */
     @SerializedName("DisasterRecoverGroupId")
     @Expose
     private String DisasterRecoverGroupId;
 
     /**
-    * 分散置放群组名称，长度1-60个字符。
+    * Name of spread placement group, name between 1 and 60 characters long.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * 分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
+    * Type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
     */
     @SerializedName("Type")
     @Expose
     private String Type;
 
     /**
-    * 分散置放群组内最大容纳云主机数量。
+    * Maximum number of CVMs that can be hosted in a spread placement group.
     */
     @SerializedName("CvmQuotaTotal")
     @Expose
     private Integer CvmQuotaTotal;
 
     /**
-    * 分散置放群组内云主机当前数量。
+    * Current number of CVMs hosted in a spread placement group.
     */
     @SerializedName("CurrentNum")
     @Expose
     private Integer CurrentNum;
 
     /**
-    * 分散置放群组内，云主机id列表。
-注意：此字段可能返回 null，表示取不到有效值。
+    * List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Creation time of a spread placement group. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-     * 获取分散置放群组id。
-     * @return DisasterRecoverGroupId 分散置放群组id。
+     * Get ID of a spread placement group.
+     * @return DisasterRecoverGroupId ID of a spread placement group.
      */
     public String getDisasterRecoverGroupId() {
         return this.DisasterRecoverGroupId;
     }
 
     /**
-     * 设置分散置放群组id。
-     * @param DisasterRecoverGroupId 分散置放群组id。
+     * Set ID of a spread placement group.
+     * @param DisasterRecoverGroupId ID of a spread placement group.
      */
     public void setDisasterRecoverGroupId(String DisasterRecoverGroupId) {
         this.DisasterRecoverGroupId = DisasterRecoverGroupId;
     }
 
     /**
-     * 获取分散置放群组名称，长度1-60个字符。
-     * @return Name 分散置放群组名称，长度1-60个字符。
+     * Name of a spread placement group with a length of 1-60 characters.
+     * @return Name Name of spread placement group, group name between 1 and 60 characters long.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置分散置放群组名称，长度1-60个字符。
-     * @param Name 分散置放群组名称，长度1-60个字符。
+     * Name of a spread placement group with a length of 1-60 characters.
+     * @param Name Name of spread placement group, group name between 1 and 60 characters long.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
-     * @return Type 分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
+     * Get type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
+     * @return Type Type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
      */
     public String getType() {
         return this.Type;
     }
 
     /**
-     * 设置分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
-     * @param Type 分散置放群组类型，取值范围：<br><li>HOST：物理机<br><li>SW：交换机<br><li>RACK：机架
+     * Set type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
+     * @param Type Type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
      */
     public void setType(String Type) {
         this.Type = Type;
     }
 
     /**
-     * 获取分散置放群组内最大容纳云主机数量。
-     * @return CvmQuotaTotal 分散置放群组内最大容纳云主机数量。
+     * Get maximum number of CVMs that can be hosted in a spread placement group.
+     * @return CvmQuotaTotal Maximum number of CVMs that can be hosted in a spread placement group.
      */
     public Integer getCvmQuotaTotal() {
         return this.CvmQuotaTotal;
     }
 
     /**
-     * 设置分散置放群组内最大容纳云主机数量。
-     * @param CvmQuotaTotal 分散置放群组内最大容纳云主机数量。
+     * Set maximum number of CVMs that can be hosted in a spread placement group.
+     * @param CvmQuotaTotal Maximum number of CVMs that can be hosted in a spread placement group.
      */
     public void setCvmQuotaTotal(Integer CvmQuotaTotal) {
         this.CvmQuotaTotal = CvmQuotaTotal;
     }
 
     /**
-     * 获取分散置放群组内云主机当前数量。
-     * @return CurrentNum 分散置放群组内云主机当前数量。
+     * Get number of CVMs hosted in a spread placement group.
+     * @return CurrentNum Current number of CVMs hosted in a spread placement group.
      */
     public Integer getCurrentNum() {
         return this.CurrentNum;
     }
 
     /**
-     * 设置分散置放群组内云主机当前数量。
-     * @param CurrentNum 分散置放群组内云主机当前数量。
+     * Set number of CVMs hosted in a spread placement group.
+     * @param CurrentNum Current number of CVMs hosted in a spread placement group.
      */
     public void setCurrentNum(Integer CurrentNum) {
         this.CurrentNum = CurrentNum;
     }
 
     /**
-     * 获取分散置放群组内，云主机id列表。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return InstanceIds 分散置放群组内，云主机id列表。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get list of IDs of CVMs in a spread placement group. Note: This field may return null, indicating that no valid value was found.
+     * @return InstanceIds List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置分散置放群组内，云主机id列表。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param InstanceIds 分散置放群组内，云主机id列表。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set list of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
+     * @param InstanceIds List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return CreateTime 分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get creation time of a spread placement group. Note: This field may return null, indicating that no valid value was found.
+     * @return CreateTime List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * 设置分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param CreateTime 分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set creation time of a spread placement group. Note: This field may return null, indicating that no valid value was found.
+     * @param CreateTime List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DisasterRecoverGroupId", this.DisasterRecoverGroupId);

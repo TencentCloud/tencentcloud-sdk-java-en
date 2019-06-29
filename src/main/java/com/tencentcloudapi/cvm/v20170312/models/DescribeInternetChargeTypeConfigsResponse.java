@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeInternetChargeTypeConfigsResponse  extends AbstractModel{
 
     /**
-    * 网络计费类型配置。
+    * Network charging type configuration.
     */
     @SerializedName("InternetChargeTypeConfigSet")
     @Expose
     private InternetChargeTypeConfig [] InternetChargeTypeConfigSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取网络计费类型配置。
-     * @return InternetChargeTypeConfigSet 网络计费类型配置。
+     * Obtain the network charging type configuration.
+     * @return InternetChargeTypeConfigSet Network charging type configuration.
      */
     public InternetChargeTypeConfig [] getInternetChargeTypeConfigSet() {
         return this.InternetChargeTypeConfigSet;
     }
 
     /**
-     * 设置网络计费类型配置。
-     * @param InternetChargeTypeConfigSet 网络计费类型配置。
+     * Set the network charging type configuration.
+     * @param InternetChargeTypeConfigSet Network charging type configuration.
      */
     public void setInternetChargeTypeConfigSet(InternetChargeTypeConfig [] InternetChargeTypeConfigSet) {
         this.InternetChargeTypeConfigSet = InternetChargeTypeConfigSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "InternetChargeTypeConfigSet.", this.InternetChargeTypeConfigSet);

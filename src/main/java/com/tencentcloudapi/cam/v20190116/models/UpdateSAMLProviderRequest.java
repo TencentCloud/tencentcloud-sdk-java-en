@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class UpdateSAMLProviderRequest  extends AbstractModel{
 
     /**
-    * SAML身份提供商名称
+    * SAML IdP name
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * SAML身份提供商描述
+    * SAML IdP description
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * SAML身份提供商Base64编码的元数据文档
+    * Base64-encoded metadata document of the SAML IdP
     */
     @SerializedName("SAMLMetadataDocument")
     @Expose
     private String SAMLMetadataDocument;
 
     /**
-     * 获取SAML身份提供商名称
-     * @return Name SAML身份提供商名称
+     * Getting SAML IdP Name
+     * @return Name SAML IdP Name
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置SAML身份提供商名称
-     * @param Name SAML身份提供商名称
+     * Configuring SAML IdP Name
+     * @param Name SAML IdP Name
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取SAML身份提供商描述
-     * @return Description SAML身份提供商描述
+     * Getting SAML IdP Description
+     * @return Description SAML IdP Description
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * 设置SAML身份提供商描述
-     * @param Description SAML身份提供商描述
+     * Configuring SAML IdP Description
+     * @param Description SAML IdP Description
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * 获取SAML身份提供商Base64编码的元数据文档
-     * @return SAMLMetadataDocument SAML身份提供商Base64编码的元数据文档
+     * Getting base64-encoded metadata document of the SAML IdP
+     * @return SAMLMetadataDocument base64-encoded metadata document of the SAML IdP
      */
     public String getSAMLMetadataDocument() {
         return this.SAMLMetadataDocument;
     }
 
     /**
-     * 设置SAML身份提供商Base64编码的元数据文档
-     * @param SAMLMetadataDocument SAML身份提供商Base64编码的元数据文档
+     * Configuring base64-encoded metadata document of the SAML IdP
+     * @param SAMLMetadataDocument base64-encoded metadata document of the SAML IdP
      */
     public void setSAMLMetadataDocument(String SAMLMetadataDocument) {
         this.SAMLMetadataDocument = SAMLMetadataDocument;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

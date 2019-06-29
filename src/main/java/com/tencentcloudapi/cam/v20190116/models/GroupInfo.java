@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class GroupInfo  extends AbstractModel{
 
     /**
-    * 用户组 ID。
+    * User group ID.
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-    * 用户组名称。
+    * User group name.
     */
     @SerializedName("GroupName")
     @Expose
     private String GroupName;
 
     /**
-    * 用户组创建时间。
+    * User group creation time.
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * 用户组描述。
+    * User group description.
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-     * 获取用户组 ID。
-     * @return GroupId 用户组 ID。
+     * Obtain user group ID.
+     * @return GroupId user group ID.
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * 设置用户组 ID。
-     * @param GroupId 用户组 ID。
+     * Set user group ID.
+     * @param GroupId user group ID.
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * 获取用户组名称。
-     * @return GroupName 用户组名称。
+     * Obtain user group name.
+     * @return GroupName user group name.
      */
     public String getGroupName() {
         return this.GroupName;
     }
 
     /**
-     * 设置用户组名称。
-     * @param GroupName 用户组名称。
+     * Set user group name.
+     * @param GroupName user group name.
      */
     public void setGroupName(String GroupName) {
         this.GroupName = GroupName;
     }
 
     /**
-     * 获取用户组创建时间。
-     * @return CreateTime 用户组创建时间。
+     * Obtain user group creation time.
+     * @return CreateTime user group creation time.
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * 设置用户组创建时间。
-     * @param CreateTime 用户组创建时间。
+     * Set user group creation time.
+     * @param CreateTime user group creation time.
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * 获取用户组描述。
-     * @return Remark 用户组描述。
+     * Obtain user group description.
+     * @return Remark user group description.
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * 设置用户组描述。
-     * @param Remark 用户组描述。
+     * Set user group description.
+     * @param Remark user group description.
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupId", this.GroupId);

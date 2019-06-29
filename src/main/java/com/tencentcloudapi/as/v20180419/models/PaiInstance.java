@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class PaiInstance  extends AbstractModel{
 
     /**
-    * 实例ID
+    * Instance ID
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * 实例域名
+    * Instance Domain name
     */
     @SerializedName("DomainName")
     @Expose
     private String DomainName;
 
     /**
-     * 获取实例ID
-     * @return InstanceId 实例ID
+     * Obtain Instance ID
+     * @return InstanceId Instance ID
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * 设置实例ID
-     * @param InstanceId 实例ID
+     * Set Instance ID
+     * @param InstanceId Instance ID
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * 获取实例域名
-     * @return DomainName 实例域名
+     * Obtain Instance domain name
+     * @return DomainName Instance domain name
      */
     public String getDomainName() {
         return this.DomainName;
     }
 
     /**
-     * 设置实例域名
-     * @param DomainName 实例域名
+     * Set Instance domain name
+     * @param DomainName Instance domain name
      */
     public void setDomainName(String DomainName) {
         this.DomainName = DomainName;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);

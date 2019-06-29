@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ActionTimer  extends AbstractModel{
 
     /**
-    * 扩展数据
+    * Extended data
     */
     @SerializedName("Externals")
     @Expose
     private Externals Externals;
 
     /**
-    * 定时器名称，目前仅支持销毁一个值：TerminateInstances。
+    * Timer name. Only "TerminateInstances" is supported.
     */
     @SerializedName("TimerAction")
     @Expose
     private String TimerAction;
 
     /**
-    * 执行时间，格式形如：2018-5-29 11:26:40,执行时间必须大于当前时间5分钟。
+    * Execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40.
     */
     @SerializedName("ActionTime")
     @Expose
     private String ActionTime;
 
     /**
-     * 获取扩展数据
-     * @return Externals 扩展数据
+     * Get extended data
+     * @return Externals extended data
      */
     public Externals getExternals() {
         return this.Externals;
     }
 
     /**
-     * 设置扩展数据
-     * @param Externals 扩展数据
+     * set extended data
+     * @param Externals extended data
      */
     public void setExternals(Externals Externals) {
         this.Externals = Externals;
     }
 
     /**
-     * 获取定时器名称，目前仅支持销毁一个值：TerminateInstances。
-     * @return TimerAction 定时器名称，目前仅支持销毁一个值：TerminateInstances。
+     * Get Timer name. Only "TerminateInstances" is supported.
+     * @return TimerAction Timer name. Only "TerminateInstances" is supported.
      */
     public String getTimerAction() {
         return this.TimerAction;
     }
 
     /**
-     * 设置定时器名称，目前仅支持销毁一个值：TerminateInstances。
-     * @param TimerAction 定时器名称，目前仅支持销毁一个值：TerminateInstances。
+     * Set Timer name. Only "TerminateInstances" is supported.
+     * @param TimerAction Timer name. Only "TerminateInstances" is supported.
      */
     public void setTimerAction(String TimerAction) {
         this.TimerAction = TimerAction;
     }
 
     /**
-     * 获取执行时间，格式形如：2018-5-29 11:26:40,执行时间必须大于当前时间5分钟。
-     * @return ActionTime 执行时间，格式形如：2018-5-29 11:26:40,执行时间必须大于当前时间5分钟。
+     * Get execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40.
+     * @return ActionTime Execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40
      */
     public String getActionTime() {
         return this.ActionTime;
     }
 
     /**
-     * 设置执行时间，格式形如：2018-5-29 11:26:40,执行时间必须大于当前时间5分钟。
-     * @param ActionTime 执行时间，格式形如：2018-5-29 11:26:40,执行时间必须大于当前时间5分钟。
+     * Set Execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40.
+     * @param ActionTime Execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40.
      */
     public void setActionTime(String ActionTime) {
         this.ActionTime = ActionTime;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internally realized, users have no permission for it 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Externals.", this.Externals);

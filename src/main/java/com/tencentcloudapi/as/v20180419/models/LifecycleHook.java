@@ -23,214 +23,214 @@ import java.util.HashMap;
 public class LifecycleHook  extends AbstractModel{
 
     /**
-    * 生命周期挂钩ID
+    * Lifecycle hook ID.
     */
     @SerializedName("LifecycleHookId")
     @Expose
     private String LifecycleHookId;
 
     /**
-    * 生命周期挂钩名称
+    * Lifecycle hook name.
     */
     @SerializedName("LifecycleHookName")
     @Expose
     private String LifecycleHookName;
 
     /**
-    * 伸缩组ID
+    * Scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 生命周期挂钩默认结果
+    * Lifecycle hook results by default.
     */
     @SerializedName("DefaultResult")
     @Expose
     private String DefaultResult;
 
     /**
-    * 生命周期挂钩等待超时时间
+    * Waiting timeout of lifecycle hook.
     */
     @SerializedName("HeartbeatTimeout")
     @Expose
     private Integer HeartbeatTimeout;
 
     /**
-    * 生命周期挂钩适用场景
+    * Scenario of lifecycle hook.
     */
     @SerializedName("LifecycleTransition")
     @Expose
     private String LifecycleTransition;
 
     /**
-    * 通知目标的附加信息
+    * Extra information of informing target.
     */
     @SerializedName("NotificationMetadata")
     @Expose
     private String NotificationMetadata;
 
     /**
-    * 创建时间
+    * Creation time.
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * 通知目标
+    * Inform target.
     */
     @SerializedName("NotificationTarget")
     @Expose
     private NotificationTarget NotificationTarget;
 
     /**
-     * 获取生命周期挂钩ID
-     * @return LifecycleHookId 生命周期挂钩ID
+     * Obtain the lifecycle hook ID.
+     * @return LifecycleHookId Lifecycle hook ID.
      */
     public String getLifecycleHookId() {
         return this.LifecycleHookId;
     }
 
     /**
-     * 设置生命周期挂钩ID
-     * @param LifecycleHookId 生命周期挂钩ID
+     * Configure the lifecycle hook ID.
+     * @param LifecycleHookId Lifecycle hook ID.
      */
     public void setLifecycleHookId(String LifecycleHookId) {
         this.LifecycleHookId = LifecycleHookId;
     }
 
     /**
-     * 获取生命周期挂钩名称
-     * @return LifecycleHookName 生命周期挂钩名称
+     * Obtain the lifecycle hook name.
+     * @return LifecycleHookName Lifecycle hook name.
      */
     public String getLifecycleHookName() {
         return this.LifecycleHookName;
     }
 
     /**
-     * 设置生命周期挂钩名称
-     * @param LifecycleHookName 生命周期挂钩名称
+     * Configure the lifecycle hook name.
+     * @param LifecycleHookName Lifecycle hook name.
      */
     public void setLifecycleHookName(String LifecycleHookName) {
         this.LifecycleHookName = LifecycleHookName;
     }
 
     /**
-     * 获取伸缩组ID
-     * @return AutoScalingGroupId 伸缩组ID
+     * Obtain the scaling group ID.
+     * @return AutoScalingGroupId Scaling group ID.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID
-     * @param AutoScalingGroupId 伸缩组ID
+     * Configure the scaling group ID.
+     * @param AutoScalingGroupId Scaling group ID.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取生命周期挂钩默认结果
-     * @return DefaultResult 生命周期挂钩默认结果
+     * Obtain the lifecycle hook results by default.
+     * @return DefaultResult Lifecycle hook results by default.
      */
     public String getDefaultResult() {
         return this.DefaultResult;
     }
 
     /**
-     * 设置生命周期挂钩默认结果
-     * @param DefaultResult 生命周期挂钩默认结果
+     * Configure the lifecycle hook results by default.
+     * @param DefaultResult Lifecycle hook results by default.
      */
     public void setDefaultResult(String DefaultResult) {
         this.DefaultResult = DefaultResult;
     }
 
     /**
-     * 获取生命周期挂钩等待超时时间
-     * @return HeartbeatTimeout 生命周期挂钩等待超时时间
+     * Obtain the waiting timeout of lifecycle hook.
+     * @return HeartbeatTimeout Waiting timeout of lifecycle hook.
      */
     public Integer getHeartbeatTimeout() {
         return this.HeartbeatTimeout;
     }
 
     /**
-     * 设置生命周期挂钩等待超时时间
-     * @param HeartbeatTimeout 生命周期挂钩等待超时时间
+     * Configure the waiting timeout of lifecycle hook.
+     * @param HeartbeatTimeout Waiting timeout of lifecycle hook.
      */
     public void setHeartbeatTimeout(Integer HeartbeatTimeout) {
         this.HeartbeatTimeout = HeartbeatTimeout;
     }
 
     /**
-     * 获取生命周期挂钩适用场景
-     * @return LifecycleTransition 生命周期挂钩适用场景
+     * Obtain the scenario of lifecycle hook.
+     * @return LifecycleTransition Scenario of lifecycle hook.
      */
     public String getLifecycleTransition() {
         return this.LifecycleTransition;
     }
 
     /**
-     * 设置生命周期挂钩适用场景
-     * @param LifecycleTransition 生命周期挂钩适用场景
+     * Configure the scenario of lifecycle hook.
+     * @param LifecycleTransition Scenario of lifecycle hook.
      */
     public void setLifecycleTransition(String LifecycleTransition) {
         this.LifecycleTransition = LifecycleTransition;
     }
 
     /**
-     * 获取通知目标的附加信息
-     * @return NotificationMetadata 通知目标的附加信息
+     * Obtain the extra information of informing target.
+     * @return NotificationMetadata Extra information of informing target.
      */
     public String getNotificationMetadata() {
         return this.NotificationMetadata;
     }
 
     /**
-     * 设置通知目标的附加信息
-     * @param NotificationMetadata 通知目标的附加信息
+     * Configure the extra information of informing target.
+     * @param NotificationMetadata Extra information of informing target.
      */
     public void setNotificationMetadata(String NotificationMetadata) {
         this.NotificationMetadata = NotificationMetadata;
     }
 
     /**
-     * 获取创建时间
-     * @return CreatedTime 创建时间
+     * Obtain the creation time.
+     * @return CreatedTime Creation time.
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置创建时间
-     * @param CreatedTime 创建时间
+     * Configure the creation time.
+     * @param CreatedTime Creation time.
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 获取通知目标
-     * @return NotificationTarget 通知目标
+     * Obtain the Informed target.
+     * @return NotificationTarget Inform target.
      */
     public NotificationTarget getNotificationTarget() {
         return this.NotificationTarget;
     }
 
     /**
-     * 设置通知目标
-     * @param NotificationTarget 通知目标
+     * Configure the Informed target.
+     * @param NotificationTarget Inform target.
      */
     public void setNotificationTarget(NotificationTarget NotificationTarget) {
         this.NotificationTarget = NotificationTarget;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LifecycleHookId", this.LifecycleHookId);

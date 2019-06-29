@@ -23,288 +23,283 @@ import java.util.HashMap;
 public class InstanceTypeQuotaItem  extends AbstractModel{
 
     /**
-    * 可用区。
+    * Availability Zone
     */
     @SerializedName("Zone")
     @Expose
     private String Zone;
 
     /**
-    * 实例机型。
+    * Instance model.
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-    * 实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对CDH计费，不对CDH上的实例计费。
+    * Instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
     */
     @SerializedName("InstanceChargeType")
     @Expose
     private String InstanceChargeType;
 
     /**
-    * 网卡类型，例如：25代表25G网卡
+    *  ENI type. For example, 25 represents an ENI of 25 GB.
     */
     @SerializedName("NetworkCard")
     @Expose
     private Integer NetworkCard;
 
     /**
-    * 扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Scaled attributes. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Externals")
     @Expose
     private Externals Externals;
 
     /**
-    * 实例的CPU核数，单位：核。
+    * Number of CPU cores in an instance (in core).
     */
     @SerializedName("Cpu")
     @Expose
     private Integer Cpu;
 
     /**
-    * 实例内存容量，单位：`GB`。
+    * Size of the memory of instance, in `GB`.
     */
     @SerializedName("Memory")
     @Expose
     private Integer Memory;
 
     /**
-    * 实例机型系列。
+    * Instance model series.
     */
     @SerializedName("InstanceFamily")
     @Expose
     private String InstanceFamily;
 
     /**
-    * 机型名称。
+    * Model name.
     */
     @SerializedName("TypeName")
     @Expose
     private String TypeName;
 
     /**
-    * 本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
+    * List of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
     */
     @SerializedName("LocalDiskTypeList")
     @Expose
     private LocalDiskType [] LocalDiskTypeList;
 
     /**
-    * 实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。
+    * Sell instance or not. Value range: <br><li>SELL：instance can be sold.<br><li>SOLD_OUT：instance is sold out.
     */
     @SerializedName("Status")
     @Expose
     private String Status;
 
     /**
-    * 实例的售卖价格。
+    * Price of an instance.
     */
     @SerializedName("Price")
     @Expose
     private ItemPrice Price;
 
     /**
-     * 获取可用区。
-     * @return Zone 可用区。
+     * Obtain the Availability Zone.
+     * @return Zone Availability Zone.
      */
     public String getZone() {
         return this.Zone;
     }
 
     /**
-     * 设置可用区。
-     * @param Zone 可用区。
+     * Configure the Availability Zone.
+     * @param Zone Availability Zone.
      */
     public void setZone(String Zone) {
         this.Zone = Zone;
     }
 
     /**
-     * 获取实例机型。
-     * @return InstanceType 实例机型。
+     * Obtain the instance model.
+     * @return InstanceType Instance model.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * 设置实例机型。
-     * @param InstanceType 实例机型。
+     * Configure the instance model.
+     * @param InstanceType Instance model.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * 获取实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对CDH计费，不对CDH上的实例计费。
-     * @return InstanceChargeType 实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对CDH计费，不对CDH上的实例计费。
+     * Get instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
+     * @return InstanceChargeType Instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
      */
     public String getInstanceChargeType() {
         return this.InstanceChargeType;
     }
 
     /**
-     * 设置实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对CDH计费，不对CDH上的实例计费。
-     * @param InstanceChargeType 实例计费模式。取值范围： <br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费<br><li>CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对CDH计费，不对CDH上的实例计费。
+     * Set instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
+     * @param InstanceChargeType Instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
      */
     public void setInstanceChargeType(String InstanceChargeType) {
         this.InstanceChargeType = InstanceChargeType;
     }
 
     /**
-     * 获取网卡类型，例如：25代表25G网卡
-     * @return NetworkCard 网卡类型，例如：25代表25G网卡
+     * Get ENI type. For example, 25 represents an ENI of 25 GB.
+     * @return NetworkCard ENI type. For example, 25 represents an ENI of 25 GB.
      */
     public Integer getNetworkCard() {
         return this.NetworkCard;
     }
 
     /**
-     * 设置网卡类型，例如：25代表25G网卡
-     * @param NetworkCard 网卡类型，例如：25代表25G网卡
+     * Set ENI type. For example, 25 represents an ENI of 25 GB.
+     * @param NetworkCard ENI type. For example, 25 represents an ENI of 25 GB.
      */
     public void setNetworkCard(Integer NetworkCard) {
         this.NetworkCard = NetworkCard;
     }
 
     /**
-     * 获取扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Externals 扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set scaled attributes. Note: This field may return null, indicating that no valid value was found.
+     * @return Externals Scaled attributes. Note: This field may return null, indicating that no valid value was found.
      */
     public Externals getExternals() {
         return this.Externals;
     }
 
     /**
-     * 设置扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Externals 扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set scaled attributes. Note: This field may return null, indicating that no valid value was found.
+     * @param Externals Scaled attributes. Note: This field may return null, indicating that no valid value was found.
      */
     public void setExternals(Externals Externals) {
         this.Externals = Externals;
     }
 
     /**
-     * 获取实例的CPU核数，单位：核。
-     * @return Cpu 实例的CPU核数，单位：核。
+     * Get number of CPU cores in an instance (in core).
+     * @return Cpu number of CPU cores in an instance (in core).
      */
     public Integer getCpu() {
         return this.Cpu;
     }
 
     /**
-     * 设置实例的CPU核数，单位：核。
-     * @param Cpu 实例的CPU核数，单位：核。
+     * Set number of CPU cores in an instance (in core).
+     * @param Cpu number of CPU cores in an instance (in core).
      */
     public void setCpu(Integer Cpu) {
         this.Cpu = Cpu;
     }
 
     /**
-     * 获取实例内存容量，单位：`GB`。
-     * @return Memory 实例内存容量，单位：`GB`。
+     * Get instance memory capacity (in `GB`).
+     * @return Memory Instance memory capacity (in `GB`).
      */
     public Integer getMemory() {
         return this.Memory;
     }
 
     /**
-     * 设置实例内存容量，单位：`GB`。
-     * @param Memory 实例内存容量，单位：`GB`。
+     * Set instance memory capacity (in `GB`).
+     * @param Memory Instance memory capacity (in `GB`).
      */
     public void setMemory(Integer Memory) {
         this.Memory = Memory;
     }
 
     /**
-     * 获取实例机型系列。
-     * @return InstanceFamily 实例机型系列。
+     * Obtain the list of instance model series.
+     * @return InstanceFamily Instance model series.
      */
     public String getInstanceFamily() {
         return this.InstanceFamily;
     }
 
     /**
-     * 设置实例机型系列。
-     * @param InstanceFamily 实例机型系列。
+     * Configure the instance model series.
+     * @param InstanceFamily instance model series.
      */
     public void setInstanceFamily(String InstanceFamily) {
         this.InstanceFamily = InstanceFamily;
     }
 
     /**
-     * 获取机型名称。
-     * @return TypeName 机型名称。
+     * Get model name.
+     * @return TypeName Model name.
      */
     public String getTypeName() {
         return this.TypeName;
     }
 
     /**
-     * 设置机型名称。
-     * @param TypeName 机型名称。
+     * Set model name.
+     * @param TypeName Model name.
      */
     public void setTypeName(String TypeName) {
         this.TypeName = TypeName;
     }
 
     /**
-     * 获取本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
-     * @return LocalDiskTypeList 本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
+     * Get list of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
+     * @return LocalDiskTypeList List of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
      */
     public LocalDiskType [] getLocalDiskTypeList() {
         return this.LocalDiskTypeList;
     }
 
     /**
-     * 设置本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
-     * @param LocalDiskTypeList 本地磁盘规格列表。当该参数返回为空值时，表示当前情况下无法创建本地盘。
+     * Set list of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
+     * @param LocalDiskTypeList list of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
      */
     public void setLocalDiskTypeList(LocalDiskType [] LocalDiskTypeList) {
         this.LocalDiskTypeList = LocalDiskTypeList;
     }
 
     /**
-     * 获取实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。
-     * @return Status 实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。
+     * Get whether an instance is sold. Value range: <br><li>SELL：indicates the instance can be sold or not.<br><li>SOLD_OUT：indicates the instance is sold out.
+     * @return Status whether an instance is sold. Value range: <br><li>SELL：indicates the instance can be sold or not.<br><li>SOLD_OUT：indicates the instance is sold out.
      */
     public String getStatus() {
         return this.Status;
     }
 
     /**
-     * 设置实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。
-     * @param Status 实例是否售卖。取值范围： <br><li>SELL：表示实例可购买<br><li>SOLD_OUT：表示实例已售罄。
+     * Set whether an instance is sold. Value range: <br><li>SELL：indicates the instance can be sold or not.<br><li>SOLD_OUT：indicates the instance is sold out.
+     * @param Status whether an instance is sold. Value range: <br><li>SELL：indicates the instance can be sold or not.<br><li>SOLD_OUT：indicates the instance is sold out.
      */
     public void setStatus(String Status) {
         this.Status = Status;
     }
 
     /**
-     * 获取实例的售卖价格。
-     * @return Price 实例的售卖价格。
+     * Get price of an instance.
+     * @return Price price of an instance.
      */
     public ItemPrice getPrice() {
         return this.Price;
     }
 
     /**
-     * 设置实例的售卖价格。
-     * @param Price 实例的售卖价格。
+     * Set price of an instance.
+     * @param Price price of an instance.
      */
     public void setPrice(ItemPrice Price) {
         this.Price = Price;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Zone", this.Zone);

@@ -23,122 +23,122 @@ import java.util.HashMap;
 public class DescribeAccountLimitsResponse  extends AbstractModel{
 
     /**
-    * 用户账户被允许创建的启动配置最大数量
+    * The maximum number of launch configurations that can be created under your account
     */
     @SerializedName("MaxNumberOfLaunchConfigurations")
     @Expose
     private Integer MaxNumberOfLaunchConfigurations;
 
     /**
-    * 用户账户启动配置的当前数量
+    * The number of existing launch configurations under your account
     */
     @SerializedName("NumberOfLaunchConfigurations")
     @Expose
     private Integer NumberOfLaunchConfigurations;
 
     /**
-    * 用户账户被允许创建的伸缩组最大数量
+    * The maximum number of scaling groups that can be created under your account
     */
     @SerializedName("MaxNumberOfAutoScalingGroups")
     @Expose
     private Integer MaxNumberOfAutoScalingGroups;
 
     /**
-    * 用户账户伸缩组的当前数量
+    * The number of existing scaling groups under your account
     */
     @SerializedName("NumberOfAutoScalingGroups")
     @Expose
     private Integer NumberOfAutoScalingGroups;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取用户账户被允许创建的启动配置最大数量
-     * @return MaxNumberOfLaunchConfigurations 用户账户被允许创建的启动配置最大数量
+     * Obtain the maximum number of launch configurations that can be created under your account
+     * @return MaxNumberOfLaunchConfigurations The maximum number of launch configurations that can be created under your account
      */
     public Integer getMaxNumberOfLaunchConfigurations() {
         return this.MaxNumberOfLaunchConfigurations;
     }
 
     /**
-     * 设置用户账户被允许创建的启动配置最大数量
-     * @param MaxNumberOfLaunchConfigurations 用户账户被允许创建的启动配置最大数量
+     * Set the maximum number of launch configurations that can be created under your account
+     * @param MaxNumberOfLaunchConfigurations The maximum number of launch configurations that can be created under your account
      */
     public void setMaxNumberOfLaunchConfigurations(Integer MaxNumberOfLaunchConfigurations) {
         this.MaxNumberOfLaunchConfigurations = MaxNumberOfLaunchConfigurations;
     }
 
     /**
-     * 获取用户账户启动配置的当前数量
-     * @return NumberOfLaunchConfigurations 用户账户启动配置的当前数量
+     * Obtain the number of existing launch configurations under your account
+     * @return NumberOfLaunchConfigurations The number of existing launch configurations under your account
      */
     public Integer getNumberOfLaunchConfigurations() {
         return this.NumberOfLaunchConfigurations;
     }
 
     /**
-     * 设置用户账户启动配置的当前数量
-     * @param NumberOfLaunchConfigurations 用户账户启动配置的当前数量
+     * Set the number of existing launch configurations under your account
+     * @param NumberOfLaunchConfigurations The number of existing launch configurations under your account
      */
     public void setNumberOfLaunchConfigurations(Integer NumberOfLaunchConfigurations) {
         this.NumberOfLaunchConfigurations = NumberOfLaunchConfigurations;
     }
 
     /**
-     * 获取用户账户被允许创建的伸缩组最大数量
-     * @return MaxNumberOfAutoScalingGroups 用户账户被允许创建的伸缩组最大数量
+     * Obtain the number of existing scaling groups under your account
+     * @return MaxNumberOfAutoScalingGroups The maximum number of scaling groups that can be created under your account
      */
     public Integer getMaxNumberOfAutoScalingGroups() {
         return this.MaxNumberOfAutoScalingGroups;
     }
 
     /**
-     * 设置用户账户被允许创建的伸缩组最大数量
-     * @param MaxNumberOfAutoScalingGroups 用户账户被允许创建的伸缩组最大数量
+     * Set the maximum number of scaling groups that can be created under your account
+     * @param MaxNumberOfAutoScalingGroups The maximum number of scaling groups that can be created under your account
      */
     public void setMaxNumberOfAutoScalingGroups(Integer MaxNumberOfAutoScalingGroups) {
         this.MaxNumberOfAutoScalingGroups = MaxNumberOfAutoScalingGroups;
     }
 
     /**
-     * 获取用户账户伸缩组的当前数量
-     * @return NumberOfAutoScalingGroups 用户账户伸缩组的当前数量
+     * Obtain the number of existing scaling groups under your account
+     * @return NumberOfAutoScalingGroups The number of existing scaling groups under your account
      */
     public Integer getNumberOfAutoScalingGroups() {
         return this.NumberOfAutoScalingGroups;
     }
 
     /**
-     * 设置用户账户伸缩组的当前数量
-     * @param NumberOfAutoScalingGroups 用户账户伸缩组的当前数量
+     * Set the number of existing scaling groups under your account
+     * @param NumberOfAutoScalingGroups The number of existing scaling groups under your account
      */
     public void setNumberOfAutoScalingGroups(Integer NumberOfAutoScalingGroups) {
         this.NumberOfAutoScalingGroups = NumberOfAutoScalingGroups;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "MaxNumberOfLaunchConfigurations", this.MaxNumberOfLaunchConfigurations);

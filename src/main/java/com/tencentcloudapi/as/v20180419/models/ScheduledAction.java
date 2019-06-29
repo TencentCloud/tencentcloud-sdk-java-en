@@ -23,237 +23,237 @@ import java.util.HashMap;
 public class ScheduledAction  extends AbstractModel{
 
     /**
-    * 定时任务ID。
+    * Scheduled action ID
     */
     @SerializedName("ScheduledActionId")
     @Expose
     private String ScheduledActionId;
 
     /**
-    * 定时任务名称。
+    * scheduled action name
     */
     @SerializedName("ScheduledActionName")
     @Expose
     private String ScheduledActionName;
 
     /**
-    * 定时任务所在伸缩组ID。
+    * ID of the scaling group that scheduled action belong to.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+    * Scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * 定时任务的重复方式。
+    * Repeat method of scheduled action
     */
     @SerializedName("Recurrence")
     @Expose
     private String Recurrence;
 
     /**
-    * 定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+    * Scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-    * 定时任务设置的最大实例数。
+    * Maximum number of instances set by scheduled action
     */
     @SerializedName("MaxSize")
     @Expose
     private Integer MaxSize;
 
     /**
-    * 定时任务设置的期望实例数。
+    * Desired number of instances set by scheduled action
     */
     @SerializedName("DesiredCapacity")
     @Expose
     private Integer DesiredCapacity;
 
     /**
-    * 定时任务设置的最小实例数。
+    * Minimum number of instances set by scheduled action
     */
     @SerializedName("MinSize")
     @Expose
     private Integer MinSize;
 
     /**
-    * 定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+    * scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-     * 获取定时任务ID。
-     * @return ScheduledActionId 定时任务ID。
+     * Get scheduled action ID
+     * @return ScheduledActionId Scheduled action ID
      */
     public String getScheduledActionId() {
         return this.ScheduledActionId;
     }
 
     /**
-     * 设置定时任务ID。
-     * @param ScheduledActionId 定时任务ID。
+     * Set scheduled action ID
+     * @param ScheduledActionId Scheduled action ID
      */
     public void setScheduledActionId(String ScheduledActionId) {
         this.ScheduledActionId = ScheduledActionId;
     }
 
     /**
-     * 获取定时任务名称。
-     * @return ScheduledActionName 定时任务名称。
+     * Get scheduled action name
+     * @return ScheduledActionId Scheduled action name
      */
     public String getScheduledActionName() {
         return this.ScheduledActionName;
     }
 
     /**
-     * 设置定时任务名称。
-     * @param ScheduledActionName 定时任务名称。
+     * Set scheduled action name
+     * @param ScheduledActionId Scheduled action name
      */
     public void setScheduledActionName(String ScheduledActionName) {
         this.ScheduledActionName = ScheduledActionName;
     }
 
     /**
-     * 获取定时任务所在伸缩组ID。
-     * @return AutoScalingGroupId 定时任务所在伸缩组ID。
+     * Obtain ID of the scaling group that the scheduled action belong to.
+     * @return AutoScalingGroupId ID of the scaling group that the scheduled action belong to.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置定时任务所在伸缩组ID。
-     * @param AutoScalingGroupId 定时任务所在伸缩组ID。
+     * Set ID of the scaling group that the scheduled action belong to.
+     * @param AutoScalingGroupId Scaling group ID that the scheduled action belong to.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-     * @return StartTime 定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+     * Obtain scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * @return StartTime Scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * 设置定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-     * @param StartTime 定时任务的开始时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+     * Set the scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * @param StartTime The scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * 获取定时任务的重复方式。
-     * @return Recurrence 定时任务的重复方式。
+     * Obtain the recurrence of scheduled action
+     * @return Recurrence The recurrence of scheduled action
      */
     public String getRecurrence() {
         return this.Recurrence;
     }
 
     /**
-     * 设置定时任务的重复方式。
-     * @param Recurrence 定时任务的重复方式。
+     * Set the recurrence of scheduled action
+     * @param Recurrence The recurrence of scheduled action
      */
     public void setRecurrence(String Recurrence) {
         this.Recurrence = Recurrence;
     }
 
     /**
-     * 获取定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-     * @return EndTime 定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+     * Set the scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * @return EndTime Scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * 设置定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
-     * @param EndTime 定时任务的结束时间。取值为`北京时间`（UTC+8），按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ss+08:00`。
+     * Set the scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * @param EndTime Scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * 获取定时任务设置的最大实例数。
-     * @return MaxSize 定时任务设置的最大实例数。
+     * Obtain the maximum number of instances set by scheduled action
+     * @return MaxSize The maximum number of instances set by scheduled action
      */
     public Integer getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * 设置定时任务设置的最大实例数。
-     * @param MaxSize 定时任务设置的最大实例数。
+     * Set the maximum number of instances set by scheduled action
+     * @param MaxSize The maximum number of instances set by scheduled action
      */
     public void setMaxSize(Integer MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * 获取定时任务设置的期望实例数。
-     * @return DesiredCapacity 定时任务设置的期望实例数。
+     * Obtain the desired number of instances set by scheduled action
+     * @return DesiredCapacity The desired number of instances set by scheduled action
      */
     public Integer getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * 设置定时任务设置的期望实例数。
-     * @param DesiredCapacity 定时任务设置的期望实例数。
+     * Set the desired number of instances set by scheduled action
+     * @param DesiredCapacity The desired number of instances set by scheduled action
      */
     public void setDesiredCapacity(Integer DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * 获取定时任务设置的最小实例数。
-     * @return MinSize 定时任务设置的最小实例数。
+     * Obtain the minimum number of instances set by scheduled action
+     * @return MinSize The minimum number of instances set by scheduled action
      */
     public Integer getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * 设置定时任务设置的最小实例数。
-     * @param MinSize 定时任务设置的最小实例数。
+     * Set the minimum number of instances set by scheduled action
+     * @param MinSize The minimum number of instances set by scheduled action
      */
     public void setMinSize(Integer MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * 获取定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-     * @return CreatedTime 定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+     * Obtain scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
+     * @return CreatedTime Scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-     * @param CreatedTime 定时任务的创建时间。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set the scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
+     * @param CreatedTime Scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ScheduledActionId", this.ScheduledActionId);

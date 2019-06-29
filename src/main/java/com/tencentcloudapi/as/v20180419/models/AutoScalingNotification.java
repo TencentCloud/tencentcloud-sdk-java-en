@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class AutoScalingNotification  extends AbstractModel{
 
     /**
-    * 伸缩组ID。
+    * Scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 用户组ID列表。
+    * List of user group IDs
     */
     @SerializedName("NotificationUserGroupIds")
     @Expose
     private String [] NotificationUserGroupIds;
 
     /**
-    * 通知事件列表。
+    * List of event notifications
     */
     @SerializedName("NotificationTypes")
     @Expose
     private String [] NotificationTypes;
 
     /**
-    * 事件通知ID。
+    * Event notification ID
     */
     @SerializedName("AutoScalingNotificationId")
     @Expose
     private String AutoScalingNotificationId;
 
     /**
-     * 获取伸缩组ID。
-     * @return AutoScalingGroupId 伸缩组ID。
+     * Get scaling group ID
+     * @return AutoScalingGroupId Scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID。
-     * @param AutoScalingGroupId 伸缩组ID。
+     * Set Scaling group ID
+     * @param AutoScalingGroupId Scaling Group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取用户组ID列表。
-     * @return NotificationUserGroupIds 用户组ID列表。
+     * Get List of user group IDs
+     * @return NotificationUserGroupIds List of user group IDs
      */
     public String [] getNotificationUserGroupIds() {
         return this.NotificationUserGroupIds;
     }
 
     /**
-     * 设置用户组ID列表。
-     * @param NotificationUserGroupIds 用户组ID列表。
+     * Set List of user group IDs
+     * @param NotificationUserGroupIds List of user group IDs
      */
     public void setNotificationUserGroupIds(String [] NotificationUserGroupIds) {
         this.NotificationUserGroupIds = NotificationUserGroupIds;
     }
 
     /**
-     * 获取通知事件列表。
-     * @return NotificationTypes 通知事件列表。
+     * Get List of event notifications
+     * @return NotificationTypes List of event notifications
      */
     public String [] getNotificationTypes() {
         return this.NotificationTypes;
     }
 
     /**
-     * 设置通知事件列表。
-     * @param NotificationTypes 通知事件列表。
+     * Set List of event notifications
+     * @param NotificationTypes List of event notifications
      */
     public void setNotificationTypes(String [] NotificationTypes) {
         this.NotificationTypes = NotificationTypes;
     }
 
     /**
-     * 获取事件通知ID。
-     * @return AutoScalingNotificationId 事件通知ID。
+     * Get Event notification ID
+     * @return AutoScalingNotificationId Event notification ID
      */
     public String getAutoScalingNotificationId() {
         return this.AutoScalingNotificationId;
     }
 
     /**
-     * 设置事件通知ID。
-     * @param AutoScalingNotificationId 事件通知ID。
+     * Set Event notification ID
+     * @param AutoScalingNotificationId Event notification ID
      */
     public void setAutoScalingNotificationId(String AutoScalingNotificationId) {
         this.AutoScalingNotificationId = AutoScalingNotificationId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

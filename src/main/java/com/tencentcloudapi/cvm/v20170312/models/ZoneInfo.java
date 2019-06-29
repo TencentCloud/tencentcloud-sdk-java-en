@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class ZoneInfo  extends AbstractModel{
 
     /**
-    * 可用区名称，例如，ap-guangzhou-3
+    * Availability zone name. For example, ap-guangzhou-3
     */
     @SerializedName("Zone")
     @Expose
     private String Zone;
 
     /**
-    * 可用区描述，例如，广州三区
+    * Availability zone description. For example, Guangzhou Zone 3
     */
     @SerializedName("ZoneName")
     @Expose
     private String ZoneName;
 
     /**
-    * 可用区ID
+    * Availability zone ID
     */
     @SerializedName("ZoneId")
     @Expose
     private String ZoneId;
 
     /**
-    * 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+    * Availability zone status, including AVAILABLE and UNAVAILABLE. `AVAILABLE`: Available. `UNAVAILABLE`: Not available.
     */
     @SerializedName("ZoneState")
     @Expose
     private String ZoneState;
 
     /**
-     * 获取可用区名称，例如，ap-guangzhou-3
-     * @return Zone 可用区名称，例如，ap-guangzhou-3
+     * Obtain Availability zone name. For example, ap-guangzhou-3
+     * @return Zone Name of availability zone, e.g. ap-guangzhou-3
      */
     public String getZone() {
         return this.Zone;
     }
 
     /**
-     * 设置可用区名称，例如，ap-guangzhou-3
-     * @param Zone 可用区名称，例如，ap-guangzhou-3
+     * Set availability zone name. For example, ap-guangzhou-3
+     * @param Zone Name of availability zone, e.g. ap-guangzhou-3
      */
     public void setZone(String Zone) {
         this.Zone = Zone;
     }
 
     /**
-     * 获取可用区描述，例如，广州三区
-     * @return ZoneName 可用区描述，例如，广州三区
+     * Obtain availability zone description. For example, Guangzhou Zone 3
+     * @return ZoneName Description of availability zone, e.g. ap-guangzhou-3
      */
     public String getZoneName() {
         return this.ZoneName;
     }
 
     /**
-     * 设置可用区描述，例如，广州三区
-     * @param ZoneName 可用区描述，例如，广州三区
+     * Set availability zone description. For example, Guangzhou Zone 3
+     * @param ZoneName Availability zone description. For example, Guangzhou Zone 3
      */
     public void setZoneName(String ZoneName) {
         this.ZoneName = ZoneName;
     }
 
     /**
-     * 获取可用区ID
-     * @return ZoneId 可用区ID
+     * Obtain ID of availability zone.
+     * @return ZoneId ID of availability zone.
      */
     public String getZoneId() {
         return this.ZoneId;
     }
 
     /**
-     * 设置可用区ID
-     * @param ZoneId 可用区ID
+     * Set availability zone.
+     * @param ZoneId ID of availability zone.
      */
     public void setZoneId(String ZoneId) {
         this.ZoneId = ZoneId;
     }
 
     /**
-     * 获取可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
-     * @return ZoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+     * Obtain availability zone status, including AVAILABLE and UNAVAILABLE. `AVAILABLE`: Available. `UNAVAILABLE`: Not available.
+     * @return ZoneState Availability zone status, including AVAILABLE and UNAVAILABLE. `AVAILABLE`: Available. `UNAVAILABLE`: Not available.
      */
     public String getZoneState() {
         return this.ZoneState;
     }
 
     /**
-     * 设置可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
-     * @param ZoneState 可用区状态，包含AVAILABLE和UNAVAILABLE。AVAILABLE代表可用，UNAVAILABLE代表不可用。
+     * Set availability zone status, including AVAILABLE and UNAVAILABLE. `AVAILABLE`: Available. `UNAVAILABLE`: Not available.
+     * @param ZoneState Availability zone status, including AVAILABLE and UNAVAILABLE. `AVAILABLE`: Available. `UNAVAILABLE`: Not available.
      */
     public void setZoneState(String ZoneState) {
         this.ZoneState = ZoneState;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Zone", this.Zone);

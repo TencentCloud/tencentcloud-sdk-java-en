@@ -23,91 +23,76 @@ import java.util.HashMap;
 public class StorageBlock  extends AbstractModel{
 
     /**
-    * HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
+    * Type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Type")
     @Expose
     private String Type;
 
     /**
-    * HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
+    * Minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("MinSize")
     @Expose
     private Integer MinSize;
 
     /**
-    * HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
+    * Maximum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("MaxSize")
     @Expose
     private Integer MaxSize;
 
     /**
-     * 获取HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Type HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
+     * @return Type type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
      */
     public String getType() {
         return this.Type;
     }
 
     /**
-     * 设置HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Type HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set up type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
+     * @param Type type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
      */
     public void setType(String Type) {
         this.Type = Type;
     }
 
     /**
-     * 获取HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return MinSize HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * @return MinSize minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
      */
     public Integer getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * 设置HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param MinSize HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set up minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * Minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
      */
     public void setMinSize(Integer MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * 获取HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return MaxSize HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain maximum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * @return MaxSize maximum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
      */
     public Integer getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * 设置HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param MaxSize HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set up maximum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * @param MaxSize Maximum size of local HDD storage.Note: This field may return null, indicating that no valid value was found.
      */
     public void setMaxSize(Integer MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Type", this.Type);

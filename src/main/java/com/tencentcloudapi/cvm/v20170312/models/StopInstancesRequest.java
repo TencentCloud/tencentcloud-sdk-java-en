@@ -23,109 +23,99 @@ import java.util.HashMap;
 public class StopInstancesRequest  extends AbstractModel{
 
     /**
-    * 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+    * ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 是否在正常关闭失败后选择强制关闭实例。取值范围：<br><li>TRUE：表示在正常关闭失败后进行强制关闭<br><li>FALSE：表示在正常关闭失败后不进行强制关闭<br><br>默认取值：FALSE。
+    * Whether to perform a forced shutdown on the instance in case of a failure of normal shutdown.<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown in case of a failed normal shutdown.<br><br>Default: FALSE.
     */
     @SerializedName("ForceStop")
     @Expose
     private Boolean ForceStop;
 
     /**
-    * 实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭<br><li>HARD：直接强制关闭<br><li>SOFT：仅软关机<br>默认取值：SOFT。
+    * Instance shutdown mode. Value range:<br><li>SOFT_FIRST: Perform a forced shutdown in case of a failure of the normal shutdown.<br><li>HARD: Perform a forced shutdown directly.<br><li>SOFT: Soft shutdown.<br>Default value: SOFT.
     */
     @SerializedName("StopType")
     @Expose
     private String StopType;
 
     /**
-    * 按量计费实例关机收费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<br>默认取值：KEEP_CHARGING。
-该参数只针对部分按量计费云硬盘实例生效，详情参考[按量计费实例关机不收费说明](https://cloud.tencent.com/document/product/213/19918)
+    * Shutdown billing mode for a pay-as-you-go instance. Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<br>Default: KEEP_CHARGING. This parameter is only valid for part of pay-as-you-go cloud disk instances. For more information, see [No Charges When Shut down for Pay-as-You-Go Instances Details](https://intl.cloud.tencent.com/document/product/213/19918).
     */
     @SerializedName("StoppedMode")
     @Expose
     private String StoppedMode;
 
     /**
-     * 获取一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
-     * @return InstanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+     * To obtain ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 1.
+     * @return InstanceIds ID(s) of one or more instances you are working with, which can be obtained from field value `InstanceId` in the returned result of API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728). The maximum number of instances in a batch for each request is 100.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
-     * @param InstanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+     * Set ID(s) of one or more instances you are working with, which can be obtained from field value `InstanceId` in the returned result of API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728). The maximum number of instances in a batch for each request is 100.
+     * @param Instance Ids of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取是否在正常关闭失败后选择强制关闭实例。取值范围：<br><li>TRUE：表示在正常关闭失败后进行强制关闭<br><li>FALSE：表示在正常关闭失败后不进行强制关闭<br><br>默认取值：FALSE。
-     * @return ForceStop 是否在正常关闭失败后选择强制关闭实例。取值范围：<br><li>TRUE：表示在正常关闭失败后进行强制关闭<br><li>FALSE：表示在正常关闭失败后不进行强制关闭<br><br>默认取值：FALSE。
+     * Whether to perform a forced shutdown on the instance in case of a failure of normal shutdown.<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.
+     * @return ForceStop Whether to perform a forced shutdown on the instance in case of a failure of normal shutdown.<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.
      */
     public Boolean getForceStop() {
         return this.ForceStop;
     }
 
     /**
-     * 设置是否在正常关闭失败后选择强制关闭实例。取值范围：<br><li>TRUE：表示在正常关闭失败后进行强制关闭<br><li>FALSE：表示在正常关闭失败后不进行强制关闭<br><br>默认取值：FALSE。
-     * @param ForceStop 是否在正常关闭失败后选择强制关闭实例。取值范围：<br><li>TRUE：表示在正常关闭失败后进行强制关闭<br><li>FALSE：表示在正常关闭失败后不进行强制关闭<br><br>默认取值：FALSE。
+     * Configure whether to perform a forced shutdown on the instance in case of a failure of normal shutdown.<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.
+     * @param ForceStop Whether to perform a forced shutdown on the instance in case of a failure of normal shutdown.<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.
      */
     public void setForceStop(Boolean ForceStop) {
         this.ForceStop = ForceStop;
     }
 
     /**
-     * 获取实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭<br><li>HARD：直接强制关闭<br><li>SOFT：仅软关机<br>默认取值：SOFT。
-     * @return StopType 实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭<br><li>HARD：直接强制关闭<br><li>SOFT：仅软关机<br>默认取值：SOFT。
+     * Obtain instance shutdown mode. Value range:<br><li>SOFT_FIRST: Perform a forced shutdown in case of a failure of the normal shutdown.<br><li>HARD: Perform a forced shutdown directly.<br><li>SOFT: Soft shutdown.<br>Default value: SOFT.
+     * @return StopType Instance shutdown mode. Value range:<br><li>SOFT_FIRST: Perform a forced shutdown in case of a failure of the normal shutdown.<br><li>HARD: Perform a forced shutdown directly.<br><li>SOFT: Soft shutdown.<br>Default value: SOFT.
      */
     public String getStopType() {
         return this.StopType;
     }
 
     /**
-     * 设置实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭<br><li>HARD：直接强制关闭<br><li>SOFT：仅软关机<br>默认取值：SOFT。
-     * @param StopType 实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭<br><li>HARD：直接强制关闭<br><li>SOFT：仅软关机<br>默认取值：SOFT。
+     * Instance shutdown mode. Value range:<br><li>SOFT_FIRST: Perform a forced shutdown in case of a failure of the normal shutdown.<br><li>HARD: Perform a forced shutdown directly.<br><li>SOFT: Soft shutdown.<br>Default value: SOFT.
+     * @param StopType Instance shutdown mode. Value range:<br><li>SOFT_FIRST: Perform a forced shutdown in case of a failure of the normal shutdown.<br><li>HARD: Perform a forced shutdown directly.<br><li>SOFT: Soft shutdown.<br>Default value: SOFT.
      */
     public void setStopType(String StopType) {
         this.StopType = StopType;
     }
 
     /**
-     * 获取按量计费实例关机收费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<br>默认取值：KEEP_CHARGING。
-该参数只针对部分按量计费云硬盘实例生效，详情参考[按量计费实例关机不收费说明](https://cloud.tencent.com/document/product/213/19918)
-     * @return StoppedMode 按量计费实例关机收费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<br>默认取值：KEEP_CHARGING。
-该参数只针对部分按量计费云硬盘实例生效，详情参考[按量计费实例关机不收费说明](https://cloud.tencent.com/document/product/213/19918)
+     * Shutdown billing mode for a pay-as-you-go instance. Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<br>Default: KEEP_CHARGING. This parameter is only valid for part of pay-as-you-go cloud disk instances. For more information, see [No Charges When Shut down for Pay-as-You-Go Instances Details](https://intl.cloud.tencent.com/document/product/213/19918).
+     * @return StoppedMode Shutdown billing mode for pay-as-you-go instances. Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<br>Default: KEEP_CHARGING. This parameter is only valid for part of pay-as-you-go cloud disk instances. For more information, see [No Charges When Shut down for Pay-as-You-Go Instances Details](https://intl.cloud.tencent.com/document/product/213/19918).
      */
     public String getStoppedMode() {
         return this.StoppedMode;
     }
 
     /**
-     * 设置按量计费实例关机收费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<br>默认取值：KEEP_CHARGING。
-该参数只针对部分按量计费云硬盘实例生效，详情参考[按量计费实例关机不收费说明](https://cloud.tencent.com/document/product/213/19918)
-     * @param StoppedMode 按量计费实例关机收费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<br>默认取值：KEEP_CHARGING。
-该参数只针对部分按量计费云硬盘实例生效，详情参考[按量计费实例关机不收费说明](https://cloud.tencent.com/document/product/213/19918)
+     * Configure Shutdown billing mode for pay-as-you-go instances. Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<br>Default: KEEP_CHARGING. This parameter is only valid for part of pay-as-you-go cloud disk instances. For more information, see [No Charges When Shut down for Pay-as-You-Go Instances Details](https://intl.cloud.tencent.com/document/product/213/19918).
+     * @param StoppedMode Shutdown billing mode for pay-as-you-go instances. Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<br>Default: KEEP_CHARGING. This parameter is only valid for part of pay-as-you-go cloud disk instances. For more information, see [No Charges When Shut down for Pay-as-You-Go Instances Details](https://intl.cloud.tencent.com/document/product/213/19918).
      */
     public void setStoppedMode(String StoppedMode) {
         this.StoppedMode = StoppedMode;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

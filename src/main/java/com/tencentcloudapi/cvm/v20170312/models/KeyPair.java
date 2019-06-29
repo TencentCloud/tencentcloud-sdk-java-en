@@ -23,191 +23,191 @@ import java.util.HashMap;
 public class KeyPair  extends AbstractModel{
 
     /**
-    * 密钥对的`ID`，是密钥对的唯一标识。
+    * Key pair `ID` is the unique identifier of key pair and cannot be modified.
     */
     @SerializedName("KeyId")
     @Expose
     private String KeyId;
 
     /**
-    * 密钥对名称。
+    * Key pair name.
     */
     @SerializedName("KeyName")
     @Expose
     private String KeyName;
 
     /**
-    * 密钥对所属的项目`ID`。
+    * `ID` of the project to which a key pair belongs.
     */
     @SerializedName("ProjectId")
     @Expose
     private Integer ProjectId;
 
     /**
-    * 密钥对描述信息。
+    * Key pair description.
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * 密钥对的纯文本公钥。
+    * The public key (in plain text) of the key pair.
     */
     @SerializedName("PublicKey")
     @Expose
     private String PublicKey;
 
     /**
-    * 密钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。
+    * The private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
     */
     @SerializedName("PrivateKey")
     @Expose
     private String PrivateKey;
 
     /**
-    * 密钥关联的实例`ID`列表。
+    * The list of `ID` of instances associated with the key.
     */
     @SerializedName("AssociatedInstanceIds")
     @Expose
     private String [] AssociatedInstanceIds;
 
     /**
-    * 创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+    * Creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-     * 获取密钥对的`ID`，是密钥对的唯一标识。
-     * @return KeyId 密钥对的`ID`，是密钥对的唯一标识。
+     * Get key pair `ID` is the unique identifier of key pair and cannot be modified.
+     * @return KeyId Key pair `ID` is the unique identifier of key pair and cannot be modified.
      */
     public String getKeyId() {
         return this.KeyId;
     }
 
     /**
-     * 设置密钥对的`ID`，是密钥对的唯一标识。
-     * @param KeyId 密钥对的`ID`，是密钥对的唯一标识。
+     * Set key pair `ID` is the unique identifier of key pair and cannot be modified.
+     * @param KeyId Key pair `ID` is the unique identifier of key pair and cannot be modified.
      */
     public void setKeyId(String KeyId) {
         this.KeyId = KeyId;
     }
 
     /**
-     * 获取密钥对名称。
-     * @return KeyName 密钥对名称。
+     * Get key pair name.
+     * @return KeyName key pair name.
      */
     public String getKeyName() {
         return this.KeyName;
     }
 
     /**
-     * 设置密钥对名称。
-     * @param KeyName 密钥对名称。
+     * Set key pair name.
+     * @param KeyName key pair name.
      */
     public void setKeyName(String KeyName) {
         this.KeyName = KeyName;
     }
 
     /**
-     * 获取密钥对所属的项目`ID`。
-     * @return ProjectId 密钥对所属的项目`ID`。
+     * Get `ID` of the project to which a key pair belongs.
+     * @return ProjectId `ID` of the project to which a key pair belongs.
      */
     public Integer getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * 设置密钥对所属的项目`ID`。
-     * @param ProjectId 密钥对所属的项目`ID`。
+     * Set `ID` of the project to which a key pair belongs.
+     * @param ProjectId ID of the project belongs.
      */
     public void setProjectId(Integer ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * 获取密钥对描述信息。
-     * @return Description 密钥对描述信息。
+     * Get projectId ID of the project belongs.
+     * @return Description projectId ID of the project belongs.
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * 设置密钥对描述信息。
-     * @param Description 密钥对描述信息。
+     * Set projectId ID of the project belongs.
+     * @param Description projectId ID of the project belongs.
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * 获取密钥对的纯文本公钥。
-     * @return PublicKey 密钥对的纯文本公钥。
+     * Get the public key (in plain text) of the key pair.
+     * @return PublicKey the public key (in plain text) of the key pair.
      */
     public String getPublicKey() {
         return this.PublicKey;
     }
 
     /**
-     * 设置密钥对的纯文本公钥。
-     * @param PublicKey 密钥对的纯文本公钥。
+     * Set the public key (in plain text) of the key pair.
+     * @param PublicKey The public key (in plain text) of the key pair.
      */
     public void setPublicKey(String PublicKey) {
         this.PublicKey = PublicKey;
     }
 
     /**
-     * 获取密钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。
-     * @return PrivateKey 密钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。
+     * Get the private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
+     * @return PrivateKey the private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
      */
     public String getPrivateKey() {
         return this.PrivateKey;
     }
 
     /**
-     * 设置密钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。
-     * @param PrivateKey 密钥对的纯文本私钥。腾讯云不会保管私钥，请用户自行妥善保存。
+     * Set the private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
+     * @param PrivateKey the private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
      */
     public void setPrivateKey(String PrivateKey) {
         this.PrivateKey = PrivateKey;
     }
 
     /**
-     * 获取密钥关联的实例`ID`列表。
-     * @return AssociatedInstanceIds 密钥关联的实例`ID`列表。
+     * Get the list of `IDs` of instances associated with the key.
+     * @return AssociatedInstanceIds the list of `IDs` of instances associated with the key.
      */
     public String [] getAssociatedInstanceIds() {
         return this.AssociatedInstanceIds;
     }
 
     /**
-     * 设置密钥关联的实例`ID`列表。
-     * @param AssociatedInstanceIds 密钥关联的实例`ID`列表。
+     * Set the list of `IDs` of instances associated with the key.
+     * @param AssociatedInstanceIds the list of `IDs` of instances associated with the key.
      */
     public void setAssociatedInstanceIds(String [] AssociatedInstanceIds) {
         this.AssociatedInstanceIds = AssociatedInstanceIds;
     }
 
     /**
-     * 获取创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @return CreatedTime 创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
+     * @return CreatedTime creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @param CreatedTime 创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
+     * @param CreatedTime creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "KeyId", this.KeyId);

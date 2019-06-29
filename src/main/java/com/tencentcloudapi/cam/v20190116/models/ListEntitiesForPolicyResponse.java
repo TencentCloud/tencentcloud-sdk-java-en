@@ -23,86 +23,76 @@ import java.util.HashMap;
 public class ListEntitiesForPolicyResponse  extends AbstractModel{
 
     /**
-    * 实体总数
-注意：此字段可能返回 null，表示取不到有效值。
+    * Number of entitiesNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("TotalNum")
     @Expose
     private Long TotalNum;
 
     /**
-    * 实体列表
-注意：此字段可能返回 null，表示取不到有效值。
+    * List of entitiesNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("List")
     @Expose
     private AttachEntityOfPolicy [] List;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取实体总数
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return TotalNum 实体总数
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain number of entities.Note: This field may return null, indicating that no valid value was found.
+     * @return TotalNum total number of entitiesNote: This field may return null, indicating that no valid value was found.
      */
     public Long getTotalNum() {
         return this.TotalNum;
     }
 
     /**
-     * 设置实体总数
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param TotalNum 实体总数
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set total number of entitiesNote: This field may return null, indicating that no valid value was found.
+     * @param TotalNum total number of entitiesNote: This field may return null, indicating that no valid value was found.
      */
     public void setTotalNum(Long TotalNum) {
         this.TotalNum = TotalNum;
     }
 
     /**
-     * 获取实体列表
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return List 实体列表
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain list of entitiesNote: This field may return null, indicating that no valid value was found.
+     * @return List list of entitiesNote: This field may return null, indicating that no valid value was found.
      */
     public AttachEntityOfPolicy [] getList() {
         return this.List;
     }
 
     /**
-     * 设置实体列表
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param List 实体列表
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set list of entitiesNote: This field may return null, indicating that no valid value was found.
+     * @param List list of entitiesNote: This field may return null, indicating that no valid value was found.
      */
     public void setList(AttachEntityOfPolicy [] List) {
         this.List = List;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalNum", this.TotalNum);

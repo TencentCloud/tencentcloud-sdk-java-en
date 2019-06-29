@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class PreviewPaiDomainNameResponse  extends AbstractModel{
 
     /**
-    * 可用的PAI域名
+    * Available PAI domain name
     */
     @SerializedName("DomainName")
     @Expose
     private String DomainName;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取可用的PAI域名
-     * @return DomainName 可用的PAI域名
+     * Obtain available PAI domain name
+     * @return DomainName Available PAI domain name
      */
     public String getDomainName() {
         return this.DomainName;
     }
 
     /**
-     * 设置可用的PAI域名
-     * @param DomainName 可用的PAI域名
+     * Set available PAI domain name
+     * @param DomainName Available PAI domain name
      */
     public void setDomainName(String DomainName) {
         this.DomainName = DomainName;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * set the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DomainName", this.DomainName);

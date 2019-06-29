@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class SystemDisk  extends AbstractModel{
 
     /**
-    * 系统盘类型。系统盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><br>默认取值：CLOUD_BASIC。
+    * System disk types. For information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177).<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: Premium Cloud Storage
     */
     @SerializedName("DiskType")
     @Expose
     private String DiskType;
 
     /**
-    * 系统盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
+    * ID of system disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now. 
     */
     @SerializedName("DiskId")
     @Expose
     private String DiskId;
 
     /**
-    * 系统盘大小，单位：GB。默认值为 50
+    * Size of system disk, in GB. Default: 50 GB.
     */
     @SerializedName("DiskSize")
     @Expose
     private Integer DiskSize;
 
     /**
-     * 获取系统盘类型。系统盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><br>默认取值：CLOUD_BASIC。
-     * @return DiskType 系统盘类型。系统盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><br>默认取值：CLOUD_BASIC。
+     * Obtain type of system disk. For information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177). Values:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: CLOUD_BASIC
+     * @return DiskType For information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177).<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: CLOUD_BASIC
      */
     public String getDiskType() {
         return this.DiskType;
     }
 
     /**
-     * 设置系统盘类型。系统盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><br>默认取值：CLOUD_BASIC。
-     * @param DiskType 系统盘类型。系统盘类型限制详见[CVM实例配置](/document/product/213/2177)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><br>默认取值：CLOUD_BASIC。
+     * Set up type of system disks. For more information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177).<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: CLOUD_BASIC
+     * @param DiskType For information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177).<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: CLOUD_BASIC
      */
     public void setDiskType(String DiskType) {
         this.DiskType = DiskType;
     }
 
     /**
-     * 获取系统盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
-     * @return DiskId 系统盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
+     * Obtain ID of system disk. 
+     * @return DiskId System disk ID. LOCAL_BASIC and LOCAL_SSD don’t have IDs and thus don’t support this parameter for now.
      */
     public String getDiskId() {
         return this.DiskId;
     }
 
     /**
-     * 设置系统盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
-     * @param DiskId 系统盘ID。LOCAL_BASIC 和 LOCAL_SSD 类型没有ID。暂时不支持该参数。
+     * Configure System disk ID. LOCAL_BASIC and LOCAL_SSD don’t have IDs and thus don’t support this parameter for now.
+     * @param DiskId System disk ID. LOCAL_BASIC and LOCAL_SSD don’t have IDs and thus don’t support this parameter for now.
      */
     public void setDiskId(String DiskId) {
         this.DiskId = DiskId;
     }
 
     /**
-     * 获取系统盘大小，单位：GB。默认值为 50
-     * @return DiskSize 系统盘大小，单位：GB。默认值为 50
+     * Obtain size of system disk, in GB. Default: 50 GB.
+     * @return DiskSize size of system disk, in GB. Default: 50 GB.
      */
     public Integer getDiskSize() {
         return this.DiskSize;
     }
 
     /**
-     * 设置系统盘大小，单位：GB。默认值为 50
-     * @param DiskSize 系统盘大小，单位：GB。默认值为 50
+     * Configure size of system disk, in GB. Default: 50 GB.
+     * @param DiskSize size of system disk, in GB. Default: 50 GB.
      */
     public void setDiskSize(Integer DiskSize) {
         this.DiskSize = DiskSize;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DiskType", this.DiskType);

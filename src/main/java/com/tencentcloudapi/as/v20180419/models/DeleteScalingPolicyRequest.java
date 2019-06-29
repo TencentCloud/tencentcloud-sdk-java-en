@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteScalingPolicyRequest  extends AbstractModel{
 
     /**
-    * 待删除的告警策略ID。
+    * ID of the alarm policy to be deleted.
     */
     @SerializedName("AutoScalingPolicyId")
     @Expose
     private String AutoScalingPolicyId;
 
     /**
-     * 获取待删除的告警策略ID。
-     * @return AutoScalingPolicyId 待删除的告警策略ID。
+     * Obtain the ID of the alarm policy to be deleted
+     * @return AutoScalingPolicyId ID of the alarm policy to be deleted.
      */
     public String getAutoScalingPolicyId() {
         return this.AutoScalingPolicyId;
     }
 
     /**
-     * 设置待删除的告警策略ID。
-     * @param AutoScalingPolicyId 待删除的告警策略ID。
+     * Set ID of the alarm policy to be deleted.
+     * @param AutoScalingPolicyId ID of the alarm policy to be deleted.
      */
     public void setAutoScalingPolicyId(String AutoScalingPolicyId) {
         this.AutoScalingPolicyId = AutoScalingPolicyId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingPolicyId", this.AutoScalingPolicyId);

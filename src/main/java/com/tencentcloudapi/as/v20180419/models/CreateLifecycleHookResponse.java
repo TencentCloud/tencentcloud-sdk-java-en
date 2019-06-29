@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateLifecycleHookResponse  extends AbstractModel{
 
     /**
-    * 生命周期挂钩ID
+    * Lifecycle hook ID
     */
     @SerializedName("LifecycleHookId")
     @Expose
     private String LifecycleHookId;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取生命周期挂钩ID
-     * @return LifecycleHookId 生命周期挂钩ID
+     * Get Lifecycle hook ID
+     * @return LifecycleHookId Lifecycle hook ID
      */
     public String getLifecycleHookId() {
         return this.LifecycleHookId;
     }
 
     /**
-     * 设置生命周期挂钩ID
-     * @param LifecycleHookId 生命周期挂钩ID
+     * Set Lifecycle hook ID
+     * @param LifecycleHookId Lifecycle hook ID
      */
     public void setLifecycleHookId(String LifecycleHookId) {
         this.LifecycleHookId = LifecycleHookId;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LifecycleHookId", this.LifecycleHookId);

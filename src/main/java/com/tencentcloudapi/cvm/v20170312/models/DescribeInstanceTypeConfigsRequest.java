@@ -23,45 +23,45 @@ import java.util.HashMap;
 public class DescribeInstanceTypeConfigsRequest  extends AbstractModel{
 
     /**
-    * 过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照[可用区](https://cloud.tencent.com/document/api/213/9452#zone)过滤。</li>
-<li> instance-family - String - 是否必填：否 -（过滤条件）按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。
+    * Filter conditions
+<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
+<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
+the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-     * 获取过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照[可用区](https://cloud.tencent.com/document/api/213/9452#zone)过滤。</li>
-<li> instance-family - String - 是否必填：否 -（过滤条件）按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。
-     * @return Filters 过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照[可用区](https://cloud.tencent.com/document/api/213/9452#zone)过滤。</li>
-<li> instance-family - String - 是否必填：否 -（过滤条件）按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。
+     * Obtain filter conditions
+<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
+<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
+the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
+     * @return Filters filter conditions
+<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
+<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
+the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照[可用区](https://cloud.tencent.com/document/api/213/9452#zone)过滤。</li>
-<li> instance-family - String - 是否必填：否 -（过滤条件）按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。
-     * @param Filters 过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照[可用区](https://cloud.tencent.com/document/api/213/9452#zone)过滤。</li>
-<li> instance-family - String - 是否必填：否 -（过滤条件）按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。
+     * Set filter conditions
+<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
+<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
+the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
+     * @param Filters filter conditions
+<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
+<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
+the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Filters.", this.Filters);

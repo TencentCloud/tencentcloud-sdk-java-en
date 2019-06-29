@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeInstancesOperationLimitResponse  extends AbstractModel{
 
     /**
-    * 该参数表示调整配置操作（降配）限制次数查询。
+    * The parameter meaning query limit of adjusting configuration(scaling down)
     */
     @SerializedName("InstanceOperationLimitSet")
     @Expose
     private OperationCountLimit [] InstanceOperationLimitSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取该参数表示调整配置操作（降配）限制次数查询。
-     * @return InstanceOperationLimitSet 该参数表示调整配置操作（降配）限制次数查询。
+     * Obtain the parameter meaning query limit of adjusting configuration(scaling down)
+     * @return InstanceOperationLimitSet The parameter means query limit of adjusting configuration(scaling down)
      */
     public OperationCountLimit [] getInstanceOperationLimitSet() {
         return this.InstanceOperationLimitSet;
     }
 
     /**
-     * 设置该参数表示调整配置操作（降配）限制次数查询。
-     * @param InstanceOperationLimitSet 该参数表示调整配置操作（降配）限制次数查询。
+     * Set the parameter means query limit of adjusting configuration(scaling down)
+     * @param InstanceOperationLimitSet The parameter means query limit of adjusting configuration(scaling down)
      */
     public void setInstanceOperationLimitSet(OperationCountLimit [] InstanceOperationLimitSet) {
         this.InstanceOperationLimitSet = InstanceOperationLimitSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "InstanceOperationLimitSet.", this.InstanceOperationLimitSet);

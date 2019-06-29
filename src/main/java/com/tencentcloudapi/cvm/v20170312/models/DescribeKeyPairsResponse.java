@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeKeyPairsResponse  extends AbstractModel{
 
     /**
-    * 符合条件的密钥对数量。
+    * The number of key pairs matching the filter condition.
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 密钥对详细信息列表。
+    * List of details of key pairs.
     */
     @SerializedName("KeyPairSet")
     @Expose
     private KeyPair [] KeyPairSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取符合条件的密钥对数量。
-     * @return TotalCount 符合条件的密钥对数量。
+     * Obtain the number of key pairs matching the filter condition.
+     * @return TotalCount The number of key pairs matching the filter condition.
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置符合条件的密钥对数量。
-     * @param TotalCount 符合条件的密钥对数量。
+     * Set the number of key pairs matching the filter condition.
+     * @param TotalCount The number of key pairs matching the filter condition.
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取密钥对详细信息列表。
-     * @return KeyPairSet 密钥对详细信息列表。
+     * Obtain the list of details of key pairs.
+     * @return KeyPairSet The list of details of key pairs.
      */
     public KeyPair [] getKeyPairSet() {
         return this.KeyPairSet;
     }
 
     /**
-     * 设置密钥对详细信息列表。
-     * @param KeyPairSet 密钥对详细信息列表。
+     * Set the list of details of key pairs.
+     * @param KeyPairSet The list of details of key pairs.
      */
     public void setKeyPairSet(KeyPair [] KeyPairSet) {
         this.KeyPairSet = KeyPairSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

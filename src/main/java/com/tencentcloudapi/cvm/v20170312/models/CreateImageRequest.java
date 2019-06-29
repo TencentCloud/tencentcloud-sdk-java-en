@@ -23,214 +23,214 @@ import java.util.HashMap;
 public class CreateImageRequest  extends AbstractModel{
 
     /**
-    * 镜像名称
+    * Image name
     */
     @SerializedName("ImageName")
     @Expose
     private String ImageName;
 
     /**
-    * 需要制作镜像的实例ID
+    * Instance ID used to create an image
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * 镜像描述
+    * Image description
     */
     @SerializedName("ImageDescription")
     @Expose
     private String ImageDescription;
 
     /**
-    * 软关机失败时是否执行强制关机以制作镜像
+    * Indicates whether to perform a forced shutdown to create an image when soft shutdown fails
     */
     @SerializedName("ForcePoweroff")
     @Expose
     private String ForcePoweroff;
 
     /**
-    * 创建Windows镜像时是否启用Sysprep
+    * whether enable Sysprep when creating a Windows image
     */
     @SerializedName("Sysprep")
     @Expose
     private String Sysprep;
 
     /**
-    * 实例处于运行中时，是否允许关机执行制作镜像任务。
+    * whether allow shutdown a running instance to create an image
     */
     @SerializedName("Reboot")
     @Expose
     private String Reboot;
 
     /**
-    * 实例需要制作镜像的数据盘Id
+    * Data disk ID used to create an image
     */
     @SerializedName("DataDiskIds")
     @Expose
     private String [] DataDiskIds;
 
     /**
-    * 需要制作镜像的快照Id,必须包含一个系统盘快照
+    * Snapshot ID used to create an image, a system disk snapshot must be included
     */
     @SerializedName("SnapshotIds")
     @Expose
     private String [] SnapshotIds;
 
     /**
-    * 检测请求的合法性，但不会对操作的资源产生任何影响
+    * Detect validity of the request, without any impact on the detected resources
     */
     @SerializedName("DryRun")
     @Expose
     private Boolean DryRun;
 
     /**
-     * 获取镜像名称
-     * @return ImageName 镜像名称
+     * Get Image name
+     * @return ImageName Image name
      */
     public String getImageName() {
         return this.ImageName;
     }
 
     /**
-     * 设置镜像名称
-     * @param ImageName 镜像名称
+     * Set Image name
+     * @param ImageName Image name
      */
     public void setImageName(String ImageName) {
         this.ImageName = ImageName;
     }
 
     /**
-     * 获取需要制作镜像的实例ID
-     * @return InstanceId 需要制作镜像的实例ID
+     * Get Instance ID used to create an image
+     * @return InstanceId Instance ID used to create an image
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * 设置需要制作镜像的实例ID
-     * @param InstanceId 需要制作镜像的实例ID
+     * Set Instance ID used to create an image
+     * @param InstanceId Instance ID used to create an image
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * 获取镜像描述
-     * @return ImageDescription 镜像描述
+     * Get Image description
+     * @return ImageDescription Image description
      */
     public String getImageDescription() {
         return this.ImageDescription;
     }
 
     /**
-     * 设置镜像描述
-     * @param ImageDescription 镜像描述
+     * Set Image description
+     * @param ImageDescription Image description
      */
     public void setImageDescription(String ImageDescription) {
         this.ImageDescription = ImageDescription;
     }
 
     /**
-     * 获取软关机失败时是否执行强制关机以制作镜像
-     * @return ForcePoweroff 软关机失败时是否执行强制关机以制作镜像
+     * Get whether to perform a forced shutdown to create an image when soft shutdown fails
+     * @return ForcePoweroff whether to perform a forced shutdown to create an image when soft shutdown fails
      */
     public String getForcePoweroff() {
         return this.ForcePoweroff;
     }
 
     /**
-     * 设置软关机失败时是否执行强制关机以制作镜像
-     * @param ForcePoweroff 软关机失败时是否执行强制关机以制作镜像
+     * Set whether to perform a forced shutdown to create an image when soft shutdown fails
+     * @param ForcePoweroff whether to perform a forced shutdown to create an image when soft shutdown fails
      */
     public void setForcePoweroff(String ForcePoweroff) {
         this.ForcePoweroff = ForcePoweroff;
     }
 
     /**
-     * 获取创建Windows镜像时是否启用Sysprep
-     * @return Sysprep 创建Windows镜像时是否启用Sysprep
+     * Get whether enable Sysprep when creating a Windows image
+     * @return Sysprep whether enable Sysprep when creating a Windows image
      */
     public String getSysprep() {
         return this.Sysprep;
     }
 
     /**
-     * 设置创建Windows镜像时是否启用Sysprep
-     * @param Sysprep 创建Windows镜像时是否启用Sysprep
+     * Set whether enable Sysprep when creating a Windows image
+     * @param Sysprep whether enable Sysprep when creating a Windows image
      */
     public void setSysprep(String Sysprep) {
         this.Sysprep = Sysprep;
     }
 
     /**
-     * 获取实例处于运行中时，是否允许关机执行制作镜像任务。
-     * @return Reboot 实例处于运行中时，是否允许关机执行制作镜像任务。
+     * Get whether allow shutdown a running instance to create an image
+     * @return Reboot whether allow shutdown a running instance to create an image
      */
     public String getReboot() {
         return this.Reboot;
     }
 
     /**
-     * 设置实例处于运行中时，是否允许关机执行制作镜像任务。
-     * @param Reboot 实例处于运行中时，是否允许关机执行制作镜像任务。
+     * Set whether allow shutdown a running instance to create an image
+     * @param Reboot whether allow shutdown a running instance to create an image
      */
     public void setReboot(String Reboot) {
         this.Reboot = Reboot;
     }
 
     /**
-     * 获取实例需要制作镜像的数据盘Id
-     * @return DataDiskIds 实例需要制作镜像的数据盘Id
+     * Get Instance ID used to create an image
+     * @return DataDiskIds Data disk ID used to create an image
      */
     public String [] getDataDiskIds() {
         return this.DataDiskIds;
     }
 
     /**
-     * 设置实例需要制作镜像的数据盘Id
-     * @param DataDiskIds 实例需要制作镜像的数据盘Id
+     * Set Data disk ID used to create an image
+     * @param DataDiskIds Data disk ID used to create an image
      */
     public void setDataDiskIds(String [] DataDiskIds) {
         this.DataDiskIds = DataDiskIds;
     }
 
     /**
-     * 获取需要制作镜像的快照Id,必须包含一个系统盘快照
-     * @return SnapshotIds 需要制作镜像的快照Id,必须包含一个系统盘快照
+     * Get Snapshot ID used to create an image, a system disk snapshot must be included
+     * @return SnapshotIds Snapshot ID used to create an image, a system disk snapshot must be included
      */
     public String [] getSnapshotIds() {
         return this.SnapshotIds;
     }
 
     /**
-     * 设置需要制作镜像的快照Id,必须包含一个系统盘快照
-     * @param SnapshotIds 需要制作镜像的快照Id,必须包含一个系统盘快照
+     * Set Snapshot ID used to create an image, a system disk snapshot must be included
+     * @param SnapshotIds Snapshot ID used to create an image, a system disk snapshot must be included
      */
     public void setSnapshotIds(String [] SnapshotIds) {
         this.SnapshotIds = SnapshotIds;
     }
 
     /**
-     * 获取检测请求的合法性，但不会对操作的资源产生任何影响
-     * @return DryRun 检测请求的合法性，但不会对操作的资源产生任何影响
+     * Get Detect validity of the request, without any impact on the detected resources
+     * @return DryRun Detect validity of the request, without any impact on the detected resources
      */
     public Boolean getDryRun() {
         return this.DryRun;
     }
 
     /**
-     * 设置检测请求的合法性，但不会对操作的资源产生任何影响
-     * @param DryRun 检测请求的合法性，但不会对操作的资源产生任何影响
+     * Set Detect validity of the request, without any impact on the detected resources
+     * @param DryRun Detect validity of the request, without any impact on the detected resources
      */
     public void setDryRun(Boolean DryRun) {
         this.DryRun = DryRun;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ImageName", this.ImageName);

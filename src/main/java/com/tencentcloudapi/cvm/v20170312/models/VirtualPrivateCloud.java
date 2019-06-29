@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class VirtualPrivateCloud  extends AbstractModel{
 
     /**
-    * 私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。
+    * Private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
     */
     @SerializedName("VpcId")
     @Expose
     private String VpcId;
 
     /**
-    * 私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。
+    * Private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
     */
     @SerializedName("SubnetId")
     @Expose
     private String SubnetId;
 
     /**
-    * 是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>TRUE：表示用作公网网关<br><li>FALSE：表示不用作公网网关<br><br>默认取值：FALSE。
+    * The public gateway can be used only when the instance has a public IP and resides in a VPC. Value range:<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
     */
     @SerializedName("AsVpcGateway")
     @Expose
     private Boolean AsVpcGateway;
 
     /**
-    * 私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。
+    * Array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
     */
     @SerializedName("PrivateIpAddresses")
     @Expose
     private String [] PrivateIpAddresses;
 
     /**
-     * 获取私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。
-     * @return VpcId 私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。
+     * Obtain private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+     * @return VpcId Private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
      */
     public String getVpcId() {
         return this.VpcId;
     }
 
     /**
-     * 设置私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。
-     * @param VpcId 私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。
+     * Set private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+     * @param VpcId Private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
      */
     public void setVpcId(String VpcId) {
         this.VpcId = VpcId;
     }
 
     /**
-     * 获取私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。
-     * @return SubnetId 私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。
+     * Obtain private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+     * @return SubnetId Private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
      */
     public String getSubnetId() {
         return this.SubnetId;
     }
 
     /**
-     * 设置私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。
-     * @param SubnetId 私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。
+     * Set private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+     * @param SubnetId Private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
      */
     public void setSubnetId(String SubnetId) {
         this.SubnetId = SubnetId;
     }
 
     /**
-     * 获取是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>TRUE：表示用作公网网关<br><li>FALSE：表示不用作公网网关<br><br>默认取值：FALSE。
-     * @return AsVpcGateway 是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>TRUE：表示用作公网网关<br><li>FALSE：表示不用作公网网关<br><br>默认取值：FALSE。
+     * Obtain whether used as a public gateway. The public gateway can be used only when the instance has a public IP and is in VPC. Value range:<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
+     * @return AsVpcGateway Whether used as a public gateway. The public gateway can be used only when the instance has a public IP and resides in a VPC. Value range:<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
      */
     public Boolean getAsVpcGateway() {
         return this.AsVpcGateway;
     }
 
     /**
-     * 设置是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>TRUE：表示用作公网网关<br><li>FALSE：表示不用作公网网关<br><br>默认取值：FALSE。
-     * @param AsVpcGateway 是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>TRUE：表示用作公网网关<br><li>FALSE：表示不用作公网网关<br><br>默认取值：FALSE。
+     * Set whether used as a public gateway. The public gateway can be used only when the instance has a public IP and resides in a VPC. Value range<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
+     * @param AsVpcGateway Whether used as a public gateway. The public gateway can be used only when the instance has a public IP and resides in a VPC. Value range<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
      */
     public void setAsVpcGateway(Boolean AsVpcGateway) {
         this.AsVpcGateway = AsVpcGateway;
     }
 
     /**
-     * 获取私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。
-     * @return PrivateIpAddresses 私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。
+     * Obtain array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
+     * @return PrivateIpAddresses Array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
      */
     public String [] getPrivateIpAddresses() {
         return this.PrivateIpAddresses;
     }
 
     /**
-     * 设置私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。
-     * @param PrivateIpAddresses 私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。
+     * Set array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
+     * @param PrivateIpAddresses Array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
      */
     public void setPrivateIpAddresses(String [] PrivateIpAddresses) {
         this.PrivateIpAddresses = PrivateIpAddresses;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "VpcId", this.VpcId);

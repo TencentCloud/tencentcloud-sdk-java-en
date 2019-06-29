@@ -23,168 +23,168 @@ import java.util.HashMap;
 public class AllocateHostsRequest  extends AbstractModel{
 
     /**
-    * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+    * Placement Location of instance. This parameter is used to specify the availability zone, project and other attributes of the instance
     */
     @SerializedName("Placement")
     @Expose
     private Placement Placement;
 
     /**
-    * 用于保证请求幂等性的字符串。
+    * A string to ensure the idempotency of the request,
     */
     @SerializedName("ClientToken")
     @Expose
     private String ClientToken;
 
     /**
-    * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+    * Set relevant parameter for the prepaid mode. This parameter can specify the purchased usage period, set automatic renewal, and other attributes of prepaid instance. This parameter is mandatory if the billing method of the instance is prepaid
     */
     @SerializedName("HostChargePrepaid")
     @Expose
     private ChargePrepaid HostChargePrepaid;
 
     /**
-    * 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
+    * Instance billing model, only prepaid supported.
     */
     @SerializedName("HostChargeType")
     @Expose
     private String HostChargeType;
 
     /**
-    * CDH实例机型，默认为：'HS1'。
+    * CDH instance model, default: 'HS1'.
     */
     @SerializedName("HostType")
     @Expose
     private String HostType;
 
     /**
-    * 购买CDH实例数量。
+    * Amount of CDH instances purchased 
     */
     @SerializedName("HostCount")
     @Expose
     private Integer HostCount;
 
     /**
-    * 标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例。
+    * Tag description. This parameter can be used to bind a tag to a resource instance.
     */
     @SerializedName("TagSpecification")
     @Expose
     private TagSpecification [] TagSpecification;
 
     /**
-     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+     * Get location of instance. This parameter is used to specify the availability zone and project to which the instance belongs.
+     * @return Placement Placement location of instance. This parameter is used to specify the availability zone and project of instance.
      */
     public Placement getPlacement() {
         return this.Placement;
     }
 
     /**
-     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-     * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+     * Set location of instance. This parameter is used to specify availability zone,  project of instance.
+     * @param Placement location of instance. This parameter is used to specify the availability zone and project of instance.
      */
     public void setPlacement(Placement Placement) {
         this.Placement = Placement;
     }
 
     /**
-     * 获取用于保证请求幂等性的字符串。
-     * @return ClientToken 用于保证请求幂等性的字符串。
+     * Get a string to ensure the idempotency of the request
+     * @return ClientToken A string to ensure the idempotency of the request.
      */
     public String getClientToken() {
         return this.ClientToken;
     }
 
     /**
-     * 设置用于保证请求幂等性的字符串。
-     * @param ClientToken 用于保证请求幂等性的字符串。
+     * Set A string to ensure the idempotency of the request.
+     * @param ClientToken A string to ensure the idempotency of the request.
      */
     public void setClientToken(String ClientToken) {
         this.ClientToken = ClientToken;
     }
 
     /**
-     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-     * @return HostChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+     * Get prepaid mode parameter settings. This parameter can specify the usage period, set automatic renewal, and other attributes of the prepaid instance purchased. This parameter is mandatory if the billing method of the specified instance is prepaid.
+     * @return HostChargePrepaid prepaid mode parameter setting. This parameter can specify the usage period, set automatic renewal, and other attributes of the prepaid instance purchased. This parameter is mandatory if the billing method of the specified instance is prepaid.
      */
     public ChargePrepaid getHostChargePrepaid() {
         return this.HostChargePrepaid;
     }
 
     /**
-     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-     * @param HostChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+     * Set prepaid mode parameter. This parameter can specify the usage period, set automatic renewal, and other attributes of the prepaid instance purchased. This parameter is mandatory if the billing method of the specified instance is prepaid.
+     * @param HostChargePrepaid Set prepaid mode parameter. This parameter can specify the usage period, set automatic renewal, and other attributes of the prepaid instance purchased. This parameter is mandatory if the billing method of the specified instance is prepaid.
      */
     public void setHostChargePrepaid(ChargePrepaid HostChargePrepaid) {
         this.HostChargePrepaid = HostChargePrepaid;
     }
 
     /**
-     * 获取实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
-     * @return HostChargeType 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
+     * Get instance billing mode. Only PREPAID mode is supported.
+     * @return HostChargeType instance billing mode. Only PREPAID mode is supported.
      */
     public String getHostChargeType() {
         return this.HostChargeType;
     }
 
     /**
-     * 设置实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
-     * @param HostChargeType 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。
+     * Set instance billing mode. Only PREPAID mode is supported.
+     * @param HostChargeType Instance billing mode. Only PREPAID mode is supported.
      */
     public void setHostChargeType(String HostChargeType) {
         this.HostChargeType = HostChargeType;
     }
 
     /**
-     * 获取CDH实例机型，默认为：'HS1'。
-     * @return HostType CDH实例机型，默认为：'HS1'。
+     * Get CDH instance mode, default 'HS1'.
+     * @return HostType CDH instance mode, default 'HS1'.
      */
     public String getHostType() {
         return this.HostType;
     }
 
     /**
-     * 设置CDH实例机型，默认为：'HS1'。
-     * @param HostType CDH实例机型，默认为：'HS1'。
+     * Set CDH instance mode, default 'HS1'.
+     * @param HostType CDH instance mode, default 'HS1'.
      */
     public void setHostType(String HostType) {
         this.HostType = HostType;
     }
 
     /**
-     * 获取购买CDH实例数量。
-     * @return HostCount 购买CDH实例数量。
+     * Get number of CDH instances purchased.
+     * @return HostCount number of CDH instances purchased.
      */
     public Integer getHostCount() {
         return this.HostCount;
     }
 
     /**
-     * 设置购买CDH实例数量。
-     * @param HostCount 购买CDH实例数量。
+     * Set number of CDH instances purchased.
+     * @param HostCount number of CDH instances purchased.
      */
     public void setHostCount(Integer HostCount) {
         this.HostCount = HostCount;
     }
 
     /**
-     * 获取标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例。
-     * @return TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例。
+     * Get tag description list. This parameter is used to bind a tag to a resource instance. 
+     * @return TagSpecification Tag description list. This parameter is used to bind a tag to a resource instance.
      */
     public TagSpecification [] getTagSpecification() {
         return this.TagSpecification;
     }
 
     /**
-     * 设置标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例。
-     * @param TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例。
+     * Set tag description list. This parameter is used to bind a tag to a resource instance.
+     * @param TagSpecification Tag description list. This parameter is used to bind a tag to a resource instance.
      */
     public void setTagSpecification(TagSpecification [] TagSpecification) {
         this.TagSpecification = TagSpecification;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Placement.", this.Placement);

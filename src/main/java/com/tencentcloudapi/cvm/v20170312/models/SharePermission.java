@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class SharePermission  extends AbstractModel{
 
     /**
-    * 镜像分享时间
+    * The time when the image is shared
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * 镜像分享的账户ID
+    * ID of the account to which the image is shared
     */
     @SerializedName("AccountId")
     @Expose
     private String AccountId;
 
     /**
-     * 获取镜像分享时间
-     * @return CreatedTime 镜像分享时间
+     * Obtain the time when the image is shared
+     * @return CreatedTime The time when the image is shared
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置镜像分享时间
-     * @param CreatedTime 镜像分享时间
+     * Configure the time when the image is shared
+     * @param CreatedTime The time when the image is shared
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 获取镜像分享的账户ID
-     * @return AccountId 镜像分享的账户ID
+     * Obtain ID of the account to which the image is shared
+     * @return AccountId ID of the account to which the image is shared
      */
     public String getAccountId() {
         return this.AccountId;
     }
 
     /**
-     * 设置镜像分享的账户ID
-     * @param AccountId 镜像分享的账户ID
+     * Configure ID of the account to which the image is shared
+     * @param AccountId ID of the account to which the image is shared
      */
     public void setAccountId(String AccountId) {
         this.AccountId = AccountId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "CreatedTime", this.CreatedTime);

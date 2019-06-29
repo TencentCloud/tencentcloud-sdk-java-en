@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateScheduledActionResponse  extends AbstractModel{
 
     /**
-    * 定时任务ID
+    * Scheduled action ID
     */
     @SerializedName("ScheduledActionId")
     @Expose
     private String ScheduledActionId;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取定时任务ID
-     * @return ScheduledActionId 定时任务ID
+     * Get scheduled action ID
+     * @return ScheduledActionId Scheduled action ID
      */
     public String getScheduledActionId() {
         return this.ScheduledActionId;
     }
 
     /**
-     * 设置定时任务ID
-     * @param ScheduledActionId 定时任务ID
+     * Set scheduled action ID
+     * @param ScheduledActionId Scheduled action ID
      */
     public void setScheduledActionId(String ScheduledActionId) {
         this.ScheduledActionId = ScheduledActionId;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ScheduledActionId", this.ScheduledActionId);

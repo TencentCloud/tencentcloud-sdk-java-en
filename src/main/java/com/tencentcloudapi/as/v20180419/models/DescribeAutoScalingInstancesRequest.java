@@ -23,114 +23,114 @@ import java.util.HashMap;
 public class DescribeAutoScalingInstancesRequest  extends AbstractModel{
 
     /**
-    * 待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。
+    * IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 过滤条件。
-<li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
+    * Filter conditions.
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Offset")
     @Expose
     private Integer Offset;
 
     /**
-    * 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Limit")
     @Expose
     private Integer Limit;
 
     /**
-     * 获取待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。
-     * @return InstanceIds 待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。
+     * Obtain IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
+     * @return InstanceIds IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。
-     * @param InstanceIds 待查询云服务器（CVM）的实例ID。参数不支持同时指定InstanceIds和Filters。
+     * Set IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
+     * @param InstanceIds IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取过滤条件。
-<li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
-     * @return Filters 过滤条件。
-<li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
+     * Obtain filter conditions.
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
+     * @return Filters Filter conditions.
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-<li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
-     * @param Filters 过滤条件。
-<li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
+     * Set filter conditions.
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
+     * @param Filters conditions.
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 获取偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getOffset() {
         return this.Offset;
     }
 
     /**
-     * 设置偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Offset Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * 获取返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getLimit() {
         return this.Limit;
     }
 
     /**
-     * 设置返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setLimit(Integer Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

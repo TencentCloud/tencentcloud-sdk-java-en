@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeImageSharePermissionResponse  extends AbstractModel{
 
     /**
-    * 镜像共享信息
+    * Information on image sharing
     */
     @SerializedName("SharePermissionSet")
     @Expose
     private SharePermission [] SharePermissionSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取镜像共享信息
-     * @return SharePermissionSet 镜像共享信息
+     * Obtain Information on image sharing
+     * @return SharePermissionSet information on image sharing
      */
     public SharePermission [] getSharePermissionSet() {
         return this.SharePermissionSet;
     }
 
     /**
-     * 设置镜像共享信息
-     * @param SharePermissionSet 镜像共享信息
+     * set information on image sharing
+     * @param SharePermissionSet information on image sharing
      */
     public void setSharePermissionSet(SharePermission [] SharePermissionSet) {
         this.SharePermissionSet = SharePermissionSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * obtain the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * @return RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "SharePermissionSet.", this.SharePermissionSet);

@@ -23,119 +23,119 @@ import java.util.HashMap;
 public class DescribeScalingPoliciesRequest  extends AbstractModel{
 
     /**
-    * 按照一个或者多个告警策略ID查询。告警策略ID形如：asp-i9vkg894。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
+    * ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
     */
     @SerializedName("AutoScalingPolicyIds")
     @Expose
     private String [] AutoScalingPolicyIds;
 
     /**
-    * 过滤条件。
-<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
+    * Filter conditions.
+<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+<li> scaling-policy-name - String - Required: No - (Filter condition) Filter by Alarm policy name.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Limit")
     @Expose
     private Integer Limit;
 
     /**
-    * 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Offset")
     @Expose
     private Integer Offset;
 
     /**
-     * 获取按照一个或者多个告警策略ID查询。告警策略ID形如：asp-i9vkg894。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
-     * @return AutoScalingPolicyIds 按照一个或者多个告警策略ID查询。告警策略ID形如：asp-i9vkg894。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
+     * Obtain ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
+     * @return AutoScalingPolicyIds ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
      */
     public String [] getAutoScalingPolicyIds() {
         return this.AutoScalingPolicyIds;
     }
 
     /**
-     * 设置按照一个或者多个告警策略ID查询。告警策略ID形如：asp-i9vkg894。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
-     * @param AutoScalingPolicyIds 按照一个或者多个告警策略ID查询。告警策略ID形如：asp-i9vkg894。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
+     * Set ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
+     * @param AutoScalingPolicyIds ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
      */
     public void setAutoScalingPolicyIds(String [] AutoScalingPolicyIds) {
         this.AutoScalingPolicyIds = AutoScalingPolicyIds;
     }
 
     /**
-     * 获取过滤条件。
-<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
-     * @return Filters 过滤条件。
-<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
+     * Get filter conditions.
+<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+<li> scaling-policy-name - String - Required: No - (Filter condition) Filter by Alarm policy name.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
+     * @return Filters Filter Conditions
+<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
-     * @param Filters 过滤条件。
-<li> auto-scaling-policy-id - String - 是否必填：否 -（过滤条件）按照告警策略ID过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> scaling-policy-name - String - 是否必填：否 -（过滤条件）按照告警策略名称过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。
+     * Set filter conditions
+<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
+     * @param Filters Filter conditions.
+<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 获取返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getLimit() {
         return this.Limit;
     }
 
     /**
-     * 设置返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setLimit(Integer Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * 获取偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @return Offset Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getOffset() {
         return this.Offset;
     }
 
     /**
-     * 设置偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Offset Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "AutoScalingPolicyIds.", this.AutoScalingPolicyIds);

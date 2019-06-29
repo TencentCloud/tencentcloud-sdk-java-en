@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateNotificationConfigurationResponse  extends AbstractModel{
 
     /**
-    * 通知ID。
+    * Notification ID
     */
     @SerializedName("AutoScalingNotificationId")
     @Expose
     private String AutoScalingNotificationId;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取通知ID。
-     * @return AutoScalingNotificationId 通知ID。
+     * Get Notification ID
+     * @return AutoScalingNotificationId Notification ID
      */
     public String getAutoScalingNotificationId() {
         return this.AutoScalingNotificationId;
     }
 
     /**
-     * 设置通知ID。
-     * @param AutoScalingNotificationId 通知ID。
+     * Set Notification ID
+     * @param AutoScalingNotificationId Notification ID
      */
     public void setAutoScalingNotificationId(String AutoScalingNotificationId) {
         this.AutoScalingNotificationId = AutoScalingNotificationId;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingNotificationId", this.AutoScalingNotificationId);

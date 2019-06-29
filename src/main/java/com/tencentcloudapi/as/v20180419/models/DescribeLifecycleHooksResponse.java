@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeLifecycleHooksResponse  extends AbstractModel{
 
     /**
-    * 生命周期挂钩数组
+    * Lifecycle hook Set
     */
     @SerializedName("LifecycleHookSet")
     @Expose
     private LifecycleHook [] LifecycleHookSet;
 
     /**
-    * 总体数量
+    * TotalCount.
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取生命周期挂钩数组
-     * @return LifecycleHookSet 生命周期挂钩数组
+     * Obtain Lifecycle hook Set
+     * @return LifecycleHookSet Lifecycle hook Set
      */
     public LifecycleHook [] getLifecycleHookSet() {
         return this.LifecycleHookSet;
     }
 
     /**
-     * 设置生命周期挂钩数组
-     * @param LifecycleHookSet 生命周期挂钩数组
+     * Set Lifecycle hook Set
+     * @param LifecycleHookSet Lifecycle hook Set
      */
     public void setLifecycleHookSet(LifecycleHook [] LifecycleHookSet) {
         this.LifecycleHookSet = LifecycleHookSet;
     }
 
     /**
-     * 获取总体数量
-     * @return TotalCount 总体数量
+     * Obtain number of TotalCount.
+     * @return TotalCount Number of TotalCount.
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置总体数量
-     * @param TotalCount 总体数量
+     * Set number of TotalCount.
+     * @param TotalCount Number of TotalCount.
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * set the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "LifecycleHookSet.", this.LifecycleHookSet);

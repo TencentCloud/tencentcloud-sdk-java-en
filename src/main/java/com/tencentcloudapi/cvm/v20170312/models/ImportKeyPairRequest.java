@@ -23,86 +23,76 @@ import java.util.HashMap;
 public class ImportKeyPairRequest  extends AbstractModel{
 
     /**
-    * 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+    * Name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
     */
     @SerializedName("KeyName")
     @Expose
     private String KeyName;
 
     /**
-    * 密钥对创建后所属的[项目](/document/product/378/10863)ID。<br><br>可以通过以下方式获取项目ID：<br><li>通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID。<br><li>通过调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的 `projectId ` 获取项目ID。
-
-如果是默认项目，直接填0就可以。
+    * The ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
     */
     @SerializedName("ProjectId")
     @Expose
     private Integer ProjectId;
 
     /**
-    * 密钥对的公钥内容，`OpenSSH RSA` 格式。
+    * The public key (in plain text) of the key pair, `OpenSSH RSA` format
     */
     @SerializedName("PublicKey")
     @Expose
     private String PublicKey;
 
     /**
-     * 获取密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
-     * @return KeyName 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+     * Get name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
+     * @return KeyName Name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
      */
     public String getKeyName() {
         return this.KeyName;
     }
 
     /**
-     * 设置密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
-     * @param KeyName 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+     * Set name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
+     * @param KeyName Name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
      */
     public void setKeyName(String KeyName) {
         this.KeyName = KeyName;
     }
 
     /**
-     * 获取密钥对创建后所属的[项目](/document/product/378/10863)ID。<br><br>可以通过以下方式获取项目ID：<br><li>通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID。<br><li>通过调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的 `projectId ` 获取项目ID。
-
-如果是默认项目，直接填0就可以。
-     * @return ProjectId 密钥对创建后所属的[项目](/document/product/378/10863)ID。<br><br>可以通过以下方式获取项目ID：<br><li>通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID。<br><li>通过调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的 `projectId ` 获取项目ID。
-
-如果是默认项目，直接填0就可以。
+     * Get the ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
+     * @return ProjectId The ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
      */
     public Integer getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * 设置密钥对创建后所属的[项目](/document/product/378/10863)ID。<br><br>可以通过以下方式获取项目ID：<br><li>通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID。<br><li>通过调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的 `projectId ` 获取项目ID。
-
-如果是默认项目，直接填0就可以。
-     * @param ProjectId 密钥对创建后所属的[项目](/document/product/378/10863)ID。<br><br>可以通过以下方式获取项目ID：<br><li>通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID。<br><li>通过调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的 `projectId ` 获取项目ID。
-
-如果是默认项目，直接填0就可以。
+     * Set the ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
+     * @param ProjectId The ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
      */
     public void setProjectId(Integer ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * 获取密钥对的公钥内容，`OpenSSH RSA` 格式。
-     * @return PublicKey 密钥对的公钥内容，`OpenSSH RSA` 格式。
+     * Get the public key (in plain text) of the key pair, `OpenSSH RSA` format.
+     * @return PublicKey The public key (in plain text) of the key pair, `OpenSSH RSA` format.
      */
     public String getPublicKey() {
         return this.PublicKey;
     }
 
     /**
-     * 设置密钥对的公钥内容，`OpenSSH RSA` 格式。
-     * @param PublicKey 密钥对的公钥内容，`OpenSSH RSA` 格式。
+     * Set the public key (in plain text) of the key pair, `OpenSSH RSA` format.
+     * @param PublicKey The public key (in plain text) of the key pair, `OpenSSH RSA` format.
      */
     public void setPublicKey(String PublicKey) {
         this.PublicKey = PublicKey;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "KeyName", this.KeyName);

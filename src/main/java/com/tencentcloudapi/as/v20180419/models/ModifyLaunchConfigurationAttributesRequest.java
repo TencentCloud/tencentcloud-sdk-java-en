@@ -23,175 +23,145 @@ import java.util.HashMap;
 public class ModifyLaunchConfigurationAttributesRequest  extends AbstractModel{
 
     /**
-    * 启动配置ID
+    * Launch configuration ID.
     */
     @SerializedName("LaunchConfigurationId")
     @Expose
     private String LaunchConfigurationId;
 
     /**
-    * 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
+    * Specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string, retrieve filed [1].</li>
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * 实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
+    * List of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
     */
     @SerializedName("InstanceTypes")
     @Expose
     private String [] InstanceTypes;
 
     /**
-    * 实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
+    * The validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
     */
     @SerializedName("InstanceTypesCheckPolicy")
     @Expose
     private String InstanceTypesCheckPolicy;
 
     /**
-    * 启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
+    * Launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
     */
     @SerializedName("LaunchConfigurationName")
     @Expose
     private String LaunchConfigurationName;
 
     /**
-    * 经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串
+    * The customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
     */
     @SerializedName("UserData")
     @Expose
     private String UserData;
 
     /**
-     * 获取启动配置ID
-     * @return LaunchConfigurationId 启动配置ID
+     * Obtain the launch configuration ID.
+     * @return LaunchConfigurationId Launch configuration ID.
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * 设置启动配置ID
-     * @param LaunchConfigurationId 启动配置ID
+     * Configure the launch configuration ID.
+     * @param LaunchConfigurationId Launch configuration ID.
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
-     * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
+     * Obtain the specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string, retrieve filed `ImageId`.</li>
+     * @return ImageId Specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string,retrieve filed `ImageId`.</li>
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
-     * @param ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
+     * Configure the specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string,retrieve filed `ImageId`.</li>
+     * @param ImageId Specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string,retrieve filed `ImageId`.</li>
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * 获取实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
-     * @return InstanceTypes 实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
+     * Obtain the list of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
+     * @return InstanceTypes List of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
      */
     public String [] getInstanceTypes() {
         return this.InstanceTypes;
     }
 
     /**
-     * 设置实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
-     * @param InstanceTypes 实例类型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-启动配置，通过 InstanceType 表示单一实例类型，通过 InstanceTypes 表示多实例类型。指定 InstanceTypes 成功启动配置后，原有的 InstanceType 自动失效。
+     * Configure the list of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
+     * @param InstanceTypes List of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
      */
     public void setInstanceTypes(String [] InstanceTypes) {
         this.InstanceTypes = InstanceTypes;
     }
 
     /**
-     * 获取实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
-     * @return InstanceTypesCheckPolicy 实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
+     * Obtain the validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
+     * @return InstanceTypesCheckPolicy The validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
      */
     public String getInstanceTypesCheckPolicy() {
         return this.InstanceTypesCheckPolicy;
     }
 
     /**
-     * 设置实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
-     * @param InstanceTypesCheckPolicy 实例类型校验策略，在实际修改 InstanceTypes 时发挥作用，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
+     * Configure the validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
+     * @param InstanceTypesCheckPolicy The validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
      */
     public void setInstanceTypesCheckPolicy(String InstanceTypesCheckPolicy) {
         this.InstanceTypesCheckPolicy = InstanceTypesCheckPolicy;
     }
 
     /**
-     * 获取启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
-     * @return LaunchConfigurationName 启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
+     * Obtain the launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
+     * @return LaunchConfigurationName Launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
      */
     public String getLaunchConfigurationName() {
         return this.LaunchConfigurationName;
     }
 
     /**
-     * 设置启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
-     * @param LaunchConfigurationName 启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
+     * Configure the launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
+     * @param LaunchConfigurationName Launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
      */
     public void setLaunchConfigurationName(String LaunchConfigurationName) {
         this.LaunchConfigurationName = LaunchConfigurationName;
     }
 
     /**
-     * 获取经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串
-     * @return UserData 经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串
+     * Obtain the customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
+     * @return UserData The customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
      */
     public String getUserData() {
         return this.UserData;
     }
 
     /**
-     * 设置经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串
-     * @param UserData 经过 Base64 编码后的自定义数据，最大长度不超过16KB。如果要清空UserData，则指定其为空字符串
+     * Configure the customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
+     * @param UserData The customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
      */
     public void setUserData(String UserData) {
         this.UserData = UserData;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LaunchConfigurationId", this.LaunchConfigurationId);

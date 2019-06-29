@@ -23,260 +23,260 @@ import java.util.HashMap;
 public class CreatePaiInstanceRequest  extends AbstractModel{
 
     /**
-    * PAI实例的域名。
+    * PAI instance domain name
     */
     @SerializedName("DomainName")
     @Expose
     private String DomainName;
 
     /**
-    * 公网带宽相关信息设置。
+    * Public network bandwidth configuration information
     */
     @SerializedName("InternetAccessible")
     @Expose
     private InternetAccessible InternetAccessible;
 
     /**
-    * 启动脚本的base64编码字符串。
+    * Init script base64 encoded string
     */
     @SerializedName("InitScript")
     @Expose
     private String InitScript;
 
     /**
-    * 可用区列表。
+    * List of availability zones.
     */
     @SerializedName("Zones")
     @Expose
     private String [] Zones;
 
     /**
-    * VpcId。
+    * vpcId
     */
     @SerializedName("VpcId")
     @Expose
     private String VpcId;
 
     /**
-    * 子网列表。
+    * List of subnets
     */
     @SerializedName("SubnetIds")
     @Expose
     private String [] SubnetIds;
 
     /**
-    * 实例显示名称。
+    * Displayed name of an instance
     */
     @SerializedName("InstanceName")
     @Expose
     private String InstanceName;
 
     /**
-    * 实例机型列表。
+    * List of instance models
     */
     @SerializedName("InstanceTypes")
     @Expose
     private String [] InstanceTypes;
 
     /**
-    * 实例登录设置。
+    * Instance Login settings
     */
     @SerializedName("LoginSettings")
     @Expose
     private LoginSettings LoginSettings;
 
     /**
-    * 实例计费类型。
+    * Instance billing mode
     */
     @SerializedName("InstanceChargeType")
     @Expose
     private String InstanceChargeType;
 
     /**
-    * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+    * Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
     */
     @SerializedName("InstanceChargePrepaid")
     @Expose
     private InstanceChargePrepaid InstanceChargePrepaid;
 
     /**
-     * 获取PAI实例的域名。
-     * @return DomainName PAI实例的域名。
+     * Get PAI instance domain name
+     * @return DomainName PAI instance domain name
      */
     public String getDomainName() {
         return this.DomainName;
     }
 
     /**
-     * 设置PAI实例的域名。
-     * @param DomainName PAI实例的域名。
+     * Get PAI instance domain name
+     * @param DomainName PAI instance domain name
      */
     public void setDomainName(String DomainName) {
         this.DomainName = DomainName;
     }
 
     /**
-     * 获取公网带宽相关信息设置。
-     * @return InternetAccessible 公网带宽相关信息设置。
+     * Get Public network bandwidth configuration information
+     * @return InternetAccessible Public network bandwidth configuration information
      */
     public InternetAccessible getInternetAccessible() {
         return this.InternetAccessible;
     }
 
     /**
-     * 设置公网带宽相关信息设置。
-     * @param InternetAccessible 公网带宽相关信息设置。
+     * Set Public network bandwidth configuration information
+     * @param InternetAccessible Public network bandwidth configuration information
      */
     public void setInternetAccessible(InternetAccessible InternetAccessible) {
         this.InternetAccessible = InternetAccessible;
     }
 
     /**
-     * 获取启动脚本的base64编码字符串。
-     * @return InitScript 启动脚本的base64编码字符串。
+     * Get Init script base64 encoded string
+     * @return InitScript Init script base64 encoded string
      */
     public String getInitScript() {
         return this.InitScript;
     }
 
     /**
-     * 设置启动脚本的base64编码字符串。
-     * @param InitScript 启动脚本的base64编码字符串。
+     * Set Init script base64 encoded string
+     * @param InitScript Init script base64 encoded string
      */
     public void setInitScript(String InitScript) {
         this.InitScript = InitScript;
     }
 
     /**
-     * 获取可用区列表。
-     * @return Zones 可用区列表。
+     * Get list of availability zones.
+     * @return Zones List of availability zones.
      */
     public String [] getZones() {
         return this.Zones;
     }
 
     /**
-     * 设置可用区列表。
-     * @param Zones 可用区列表。
+     * Set list of availability zones.
+     * @param Zones list of availability zones
      */
     public void setZones(String [] Zones) {
         this.Zones = Zones;
     }
 
     /**
-     * 获取VpcId。
-     * @return VpcId VpcId。
+     * Get Vpcid
+     * @return VpcId VpcId
      */
     public String getVpcId() {
         return this.VpcId;
     }
 
     /**
-     * 设置VpcId。
-     * @param VpcId VpcId。
+     * Set Vpcid
+     * @param VpcId VpcId
      */
     public void setVpcId(String VpcId) {
         this.VpcId = VpcId;
     }
 
     /**
-     * 获取子网列表。
-     * @return SubnetIds 子网列表。
+     * Get List of subnets
+     * @return SubnetIds List of subnets
      */
     public String [] getSubnetIds() {
         return this.SubnetIds;
     }
 
     /**
-     * 设置子网列表。
-     * @param SubnetIds 子网列表。
+     * Set List of subnets
+     * @param SubnetIds List of subnets
      */
     public void setSubnetIds(String [] SubnetIds) {
         this.SubnetIds = SubnetIds;
     }
 
     /**
-     * 获取实例显示名称。
-     * @return InstanceName 实例显示名称。
+     * Get Displayed name of an instance.
+     * @return InstanceName Displayed name of an instance.
      */
     public String getInstanceName() {
         return this.InstanceName;
     }
 
     /**
-     * 设置实例显示名称。
-     * @param InstanceName 实例显示名称。
+     * Set Displayed name of an instance.
+     * @param InstanceName The displayed name of the instance.
      */
     public void setInstanceName(String InstanceName) {
         this.InstanceName = InstanceName;
     }
 
     /**
-     * 获取实例机型列表。
-     * @return InstanceTypes 实例机型列表。
+     * Get list of instance models
+     * @return InstanceTypes List of instance models
      */
     public String [] getInstanceTypes() {
         return this.InstanceTypes;
     }
 
     /**
-     * 设置实例机型列表。
-     * @param InstanceTypes 实例机型列表。
+     * Set list of instance models
+     * @param InstanceTypes List of instance models
      */
     public void setInstanceTypes(String [] InstanceTypes) {
         this.InstanceTypes = InstanceTypes;
     }
 
     /**
-     * 获取实例登录设置。
-     * @return LoginSettings 实例登录设置。
+     * Get instance login settings
+     * @return LoginSettings instance login settings
      */
     public LoginSettings getLoginSettings() {
         return this.LoginSettings;
     }
 
     /**
-     * 设置实例登录设置。
-     * @param LoginSettings 实例登录设置。
+     * Set instance login settings
+     * @param LoginSettings instance login settings
      */
     public void setLoginSettings(LoginSettings LoginSettings) {
         this.LoginSettings = LoginSettings;
     }
 
     /**
-     * 获取实例计费类型。
-     * @return InstanceChargeType 实例计费类型。
+     * Get instance billing mode
+     * @return InstanceChargeType instance billing mode
      */
     public String getInstanceChargeType() {
         return this.InstanceChargeType;
     }
 
     /**
-     * 设置实例计费类型。
-     * @param InstanceChargeType 实例计费类型。
+     * Set instance billing mode
+     * @param InstanceChargeType instance billing mode
      */
     public void setInstanceChargeType(String InstanceChargeType) {
         this.InstanceChargeType = InstanceChargeType;
     }
 
     /**
-     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-     * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+     * Get Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
+     * @return InstanceChargePrepaid Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
      */
     public InstanceChargePrepaid getInstanceChargePrepaid() {
         return this.InstanceChargePrepaid;
     }
 
     /**
-     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+     * Set Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
+     * @param InstanceChargePrepaid Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
      */
     public void setInstanceChargePrepaid(InstanceChargePrepaid InstanceChargePrepaid) {
         this.InstanceChargePrepaid = InstanceChargePrepaid;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DomainName", this.DomainName);

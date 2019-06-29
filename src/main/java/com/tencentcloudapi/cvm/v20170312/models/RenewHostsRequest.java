@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class RenewHostsRequest  extends AbstractModel{
 
     /**
-    * 一个或多个待操作的CDH实例ID。
+    * ID(s) of one or more CDH instances you are working with.
     */
     @SerializedName("HostIds")
     @Expose
     private String [] HostIds;
 
     /**
-    * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+    * Relevant parameter settings for the prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
     */
     @SerializedName("HostChargePrepaid")
     @Expose
     private ChargePrepaid HostChargePrepaid;
 
     /**
-     * 获取一个或多个待操作的CDH实例ID。
-     * @return HostIds 一个或多个待操作的CDH实例ID。
+     * Obtaining ID(s) of one or more CDH instances you are working with.
+     * @return HostIds ID(s) of one or more CDH instance to be operated.
      */
     public String [] getHostIds() {
         return this.HostIds;
     }
 
     /**
-     * 设置一个或多个待操作的CDH实例ID。
-     * @param HostIds 一个或多个待操作的CDH实例ID。
+     * Setting ID(s) of one or more CDH instances you are working with.
+     * @param HostIds ID(s) of one or more CDH instance to be operated.
      */
     public void setHostIds(String [] HostIds) {
         this.HostIds = HostIds;
     }
 
     /**
-     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-     * @return HostChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+     * Obtain relevant parameter settings for the prepaid mode: this parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
+     * @return HostChargePrepaid Relevant parameter settings for the prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
      */
     public ChargePrepaid getHostChargePrepaid() {
         return this.HostChargePrepaid;
     }
 
     /**
-     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-     * @param HostChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
+     * Configure relevant parameter settings for the prepaid mode: this parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
+     * @param HostChargePrepaid Relevant parameter settings for the prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
      */
     public void setHostChargePrepaid(ChargePrepaid HostChargePrepaid) {
         this.HostChargePrepaid = HostChargePrepaid;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "HostIds.", this.HostIds);

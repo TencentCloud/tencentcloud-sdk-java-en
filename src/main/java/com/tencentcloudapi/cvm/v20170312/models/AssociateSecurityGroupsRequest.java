@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class AssociateSecurityGroupsRequest  extends AbstractModel{
 
     /**
-    * 要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
+    * the`安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
     */
     @SerializedName("SecurityGroupIds")
     @Expose
     private String [] SecurityGroupIds;
 
     /**
-    * 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
+    * associated`实例ID`，such as ins-lesecurk，multiple instances association is supported.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-     * 获取要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
-     * @return SecurityGroupIds 要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
+     * Get `安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
+     * @return SecurityGroupIds `安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
      */
     public String [] getSecurityGroupIds() {
         return this.SecurityGroupIds;
     }
 
     /**
-     * 设置要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
-     * @param SecurityGroupIds 要绑定的`安全组ID`，类似sg-efil73jd，只支持绑定单个安全组。
+     * set `安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
+     * @param SecurityGroupIds `安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
      */
     public void setSecurityGroupIds(String [] SecurityGroupIds) {
         this.SecurityGroupIds = SecurityGroupIds;
     }
 
     /**
-     * 获取被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
-     * @return InstanceIds 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
+     * Get associated `实例ID`，such as ins-lesecurk，multiple instances association is supported.
+     * @return InstanceIds associated `实例ID`，such as ins-lesecurk，multiple instances association is supported.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
-     * @param InstanceIds 被绑定的`实例ID`，类似ins-lesecurk，支持指定多个实例。
+     * set associated `实例ID`，such as ins-lesecurk，multiple instances association is supported.
+     * @param InstanceIds associated `实例ID`，such as ins-lesecurk，multiple instances association is supported.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "SecurityGroupIds.", this.SecurityGroupIds);

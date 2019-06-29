@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class UpdateGroupRequest  extends AbstractModel{
 
     /**
-    * 用户组 ID
+    * User group ID
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-    * 用户组名
+    * User group name
     */
     @SerializedName("GroupName")
     @Expose
     private String GroupName;
 
     /**
-    * 用户组描述
+    * User group description
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-     * 获取用户组 ID
-     * @return GroupId 用户组 ID
+     * Obtain user group ID
+     * @return GroupId user group ID
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * 设置用户组 ID
-     * @param GroupId 用户组 ID
+     * Set user group ID
+     * @param GroupId user group ID
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * 获取用户组名
-     * @return GroupName 用户组名
+     * Get user group name
+     * @return GroupName name of the user group
      */
     public String getGroupName() {
         return this.GroupName;
     }
 
     /**
-     * 设置用户组名
-     * @param GroupName 用户组名
+     * Set user group name
+     * @param GroupName name of the user group
      */
     public void setGroupName(String GroupName) {
         this.GroupName = GroupName;
     }
 
     /**
-     * 获取用户组描述
-     * @return Remark 用户组描述
+     * Obtain user group description
+     * @return Remark user group description
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * 设置用户组描述
-     * @param Remark 用户组描述
+     * Set user group description
+     * @param Remark user group description
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupId", this.GroupId);

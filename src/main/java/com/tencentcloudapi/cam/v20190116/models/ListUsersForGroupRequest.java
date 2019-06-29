@@ -8,7 +8,7 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * Unless required by applicable law or agreed to in writing, software
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ListUsersForGroupRequest  extends AbstractModel{
 
     /**
-    * 用户组 ID。
+    * User group ID.
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-    * 页码。默认为1。
+    * Page number. Default is 1.
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * 每页数量。默认为20。
+    * Number each page. Default is 20.
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-     * 获取用户组 ID。
-     * @return GroupId 用户组 ID。
+     * Obtain user group ID
+     * @return GroupId user group ID.
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * 设置用户组 ID。
-     * @param GroupId 用户组 ID。
+     * Set user group ID.
+     * @param GroupId user group ID.
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * 获取页码。默认为1。
-     * @return Page 页码。默认为1。
+     * Obtain page number. Default is 1.
+     * @return Page page number. Default is 1.
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * 设置页码。默认为1。
-     * @param Page 页码。默认为1。
+     * Set page number. Default is 1.
+     * @param Page page number. Default is 1.
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * 获取每页数量。默认为20。
-     * @return Rp 每页数量。默认为20。
+     * Obtain number per page. Default is 20.
+     * @return Rp number per page. Default is 20.
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * 设置每页数量。默认为20。
-     * @param Rp 每页数量。默认为20。
+     * Set number per page. Default is 20.
+     * @param Rp number per page. Default is 20.
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupId", this.GroupId);

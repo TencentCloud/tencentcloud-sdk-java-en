@@ -23,173 +23,168 @@ import java.util.HashMap;
 public class ModifyScalingPolicyRequest  extends AbstractModel{
 
     /**
-    * 告警策略ID。
+    * Alert policy ID.
     */
     @SerializedName("AutoScalingPolicyId")
     @Expose
     private String AutoScalingPolicyId;
 
     /**
-    * 告警策略名称。
+    * Alert policy name.
     */
     @SerializedName("ScalingPolicyName")
     @Expose
     private String ScalingPolicyName;
 
     /**
-    * 告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+    * After an alert is triggered,the method to change expected instance number. Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust to desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
     */
     @SerializedName("AdjustmentType")
     @Expose
     private String AdjustmentType;
 
     /**
-    * 告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。
+    * After an alert is triggered, the adjusted number of expected instances.Value:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY， a positive AdjustmentValue value means the number of instances will be increased after the alert is triggered; a negative AdjustmentValue value means the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY， an AdjustmentValue value is the number of expected instances after alert is triggered. It must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY， a positive AdjustmentValue value is the percentage that the number of expected instances will increase by,a negative value is that the number of expected instances will decrease by after alert is triggered. Its unit is %.
     */
     @SerializedName("AdjustmentValue")
     @Expose
     private Integer AdjustmentValue;
 
     /**
-    * 冷却时间，单位为秒。
+    * Cool down time. In seconds.
     */
     @SerializedName("Cooldown")
     @Expose
     private Integer Cooldown;
 
     /**
-    * 告警监控指标。
+    * Metrics for alert monitoring.
     */
     @SerializedName("MetricAlarm")
     @Expose
     private MetricAlarm MetricAlarm;
 
     /**
-    * 通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
-如果需要清空通知用户组，需要在列表中传入特定字符串 "NULL"。
+    * ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404). When an alert user group needs to be cleared, a string “NULL” must be put into the list.
     */
     @SerializedName("NotificationUserGroupIds")
     @Expose
     private String [] NotificationUserGroupIds;
 
     /**
-     * 获取告警策略ID。
-     * @return AutoScalingPolicyId 告警策略ID。
+     * Obtain alert policy ID.
+     * @return AutoScalingPolicyId Alert policy ID.
      */
     public String getAutoScalingPolicyId() {
         return this.AutoScalingPolicyId;
     }
 
     /**
-     * 设置告警策略ID。
-     * @param AutoScalingPolicyId 告警策略ID。
+     * Set Alert policy ID.
+     * @param AutoScalingPolicyId Alert policy ID.
      */
     public void setAutoScalingPolicyId(String AutoScalingPolicyId) {
         this.AutoScalingPolicyId = AutoScalingPolicyId;
     }
 
     /**
-     * 获取告警策略名称。
-     * @return ScalingPolicyName 告警策略名称。
+     * Obtain alert policy name.
+     * @return ScalingPolicyName alert policy name.
      */
     public String getScalingPolicyName() {
         return this.ScalingPolicyName;
     }
 
     /**
-     * 设置告警策略名称。
-     * @param ScalingPolicyName 告警策略名称。
+     * Set alert policy name.
+     * | scalingPolicyName | Name of the user-defined alarm policy.
      */
     public void setScalingPolicyName(String ScalingPolicyName) {
         this.ScalingPolicyName = ScalingPolicyName;
     }
 
     /**
-     * 获取告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
-     * @return AdjustmentType 告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+     * Obtain the method to modify expected instance number after an alert is triggered.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
+     * @return AdjustmentType After an alert is triggered, the method to modify expected instance number.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
      */
     public String getAdjustmentType() {
         return this.AdjustmentType;
     }
 
     /**
-     * 设置告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
-     * @param AdjustmentType 告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+     * Set the method to modify expected instance number after an alert is triggered.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
+     * @param AdjustmentType After an alert is triggered, the method to modify expected instance number.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
      */
     public void setAdjustmentType(String AdjustmentType) {
         this.AdjustmentType = AdjustmentType;
     }
 
     /**
-     * 获取告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。
-     * @return AdjustmentValue 告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。
+     * Obtain new value of expected instance number after an alert is triggered.Value:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY， a positive AdjustmentValue value means the number of instances will be increased after the alert is triggered; a negative AdjustmentValue value means the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY， an AdjustmentValue value is the number of expected instances after alert is triggered. It must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY， a positive AdjustmentValue value is the percentage that the number of expected instances will increase by,a negative value is that the number of expected instances will decrease by after alert is triggered. Its unit is %.
+     * @return AdjustmentValue After an alert is triggered, the adjusted expected instance number. Value:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY， a positive AdjustmentValue value means the number of instances will be increased after the alert is triggered; a negative AdjustmentValue value means the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY， an AdjustmentValue value is the number of expected instances after alert is triggered. It must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY， a positive AdjustmentValue value is the percentage that the number of expected instances will increase by,a negative value is that the number of expected instances will decrease by after alert is triggered. Its unit is %.
      */
     public Integer getAdjustmentValue() {
         return this.AdjustmentValue;
     }
 
     /**
-     * 设置告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。
-     * @param AdjustmentValue 告警触发后，期望实例数的调整值。取值：<br><li>当 AdjustmentType 为 CHANGE_IN_CAPACITY 时，AdjustmentValue 为正数表示告警触发后增加实例，为负数表示告警触发后减少实例 </li> <li> 当 AdjustmentType 为 EXACT_CAPACITY 时，AdjustmentValue 的值即为告警触发后新的期望实例数，需要大于或等于0 </li> <li> 当 AdjustmentType 为 PERCENT_CHANGE_IN_CAPACITY 时，AdjusmentValue 为正数表示告警触发后按百分比增加实例，为负数表示告警触发后按百分比减少实例，单位是：%。
+     * After an alert is triggered, the adjusted expected instance number. Value:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY， a positive AdjustmentValue value means the number of instances will be increased after the alert is triggered; a negative AdjustmentValue value means the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY， an AdjustmentValue value is the number of expected instances after alert is triggered. It must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY， a positive AdjustmentValue value is the percentage that the number of expected instances will increase by,a negative value is that the number of expected instances will decrease by after alert is triggered. Its unit is %.
+     * @param AdjustmentValue After an alert is triggered, the adjusted expected instance number. Value:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY， a positive AdjustmentValue value means the number of instances will be increased after the alert is triggered; a negative AdjustmentValue value means the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY， an AdjustmentValue value is the number of expected instances after alert is triggered. It must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY， a positive AdjustmentValue value is the percentage that the number of expected instances will increase by,a negative value is that the number of expected instances will decrease by after alert is triggered. Its unit is %.
      */
     public void setAdjustmentValue(Integer AdjustmentValue) {
         this.AdjustmentValue = AdjustmentValue;
     }
 
     /**
-     * 获取冷却时间，单位为秒。
-     * @return Cooldown 冷却时间，单位为秒。
+     * Obtain cool down time, in seconds.
+     * @return Cooldown cool down time, in seconds.
      */
     public Integer getCooldown() {
         return this.Cooldown;
     }
 
     /**
-     * 设置冷却时间，单位为秒。
-     * @param Cooldown 冷却时间，单位为秒。
+     * Set cool down time, in seconds.
+     * @param Cooldown cool down time, in seconds.
      */
     public void setCooldown(Integer Cooldown) {
         this.Cooldown = Cooldown;
     }
 
     /**
-     * 获取告警监控指标。
-     * @return MetricAlarm 告警监控指标。
+     * Obtain alert monitoring metrics.
+     * @return MetricAlarm Alert monitoring metrics.
      */
     public MetricAlarm getMetricAlarm() {
         return this.MetricAlarm;
     }
 
     /**
-     * 设置告警监控指标。
-     * @param MetricAlarm 告警监控指标。
+     * Set alert monitoring metrics.
+     * @param MetricAlarm Alert monitoring metrics.
      */
     public void setMetricAlarm(MetricAlarm MetricAlarm) {
         this.MetricAlarm = MetricAlarm;
     }
 
     /**
-     * 获取通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
-如果需要清空通知用户组，需要在列表中传入特定字符串 "NULL"。
-     * @return NotificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
-如果需要清空通知用户组，需要在列表中传入特定字符串 "NULL"。
+     * ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404). When an alert user group needs to be cleared, a string “NULL” must be put into the list.
+     * ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404). When an alert user group needs to be cleared, a string “NULL” must be put into the list.
      */
     public String [] getNotificationUserGroupIds() {
         return this.NotificationUserGroupIds;
     }
 
     /**
-     * 设置通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
-如果需要清空通知用户组，需要在列表中传入特定字符串 "NULL"。
-     * @param NotificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
-如果需要清空通知用户组，需要在列表中传入特定字符串 "NULL"。
+     * ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404). When an alert user group needs to be cleared, a string “NULL” must be put into the list.
+     * ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404). When an alert user group needs to be cleared, a string “NULL” must be put into the list.
      */
     public void setNotificationUserGroupIds(String [] NotificationUserGroupIds) {
         this.NotificationUserGroupIds = NotificationUserGroupIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingPolicyId", this.AutoScalingPolicyId);

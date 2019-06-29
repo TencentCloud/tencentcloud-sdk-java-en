@@ -23,191 +23,191 @@ import java.util.HashMap;
 public class SubAccountInfo  extends AbstractModel{
 
     /**
-    * 子用户用户 ID
+    * Sub-user user ID
     */
     @SerializedName("Uin")
     @Expose
     private Long Uin;
 
     /**
-    * 子用户用户名
+    * Sub-user username
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * 子用户 UID
+    * Sub-user UID
     */
     @SerializedName("Uid")
     @Expose
     private Long Uid;
 
     /**
-    * 子用户备注
+    * Sub-user note
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-    * 子用户能否登录控制台
+    * Whether sub-user can login to Console
     */
     @SerializedName("ConsoleLogin")
     @Expose
     private Long ConsoleLogin;
 
     /**
-    * 手机号
+    * Mobile number
     */
     @SerializedName("PhoneNum")
     @Expose
     private String PhoneNum;
 
     /**
-    * 区号
+    * Area code
     */
     @SerializedName("CountryCode")
     @Expose
     private String CountryCode;
 
     /**
-    * 邮箱
+    * Email
     */
     @SerializedName("Email")
     @Expose
     private String Email;
 
     /**
-     * 获取子用户用户 ID
-     * @return Uin 子用户用户 ID
+     * Obtain sub-user user ID
+     * @return Uin sub-user user ID
      */
     public Long getUin() {
         return this.Uin;
     }
 
     /**
-     * 设置子用户用户 ID
-     * @param Uin 子用户用户 ID
+     * Set up sub-user user ID
+     * @param Uin sub-user user ID
      */
     public void setUin(Long Uin) {
         this.Uin = Uin;
     }
 
     /**
-     * 获取子用户用户名
-     * @return Name 子用户用户名
+     * Obtain sub-user username
+     * @return Name sub-user username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置子用户用户名
-     * @param Name 子用户用户名
+     * Set sub-user username
+     * @param Name sub-user username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取子用户 UID
-     * @return Uid 子用户 UID
+     * Obtain sub-user UID
+     * @return Uin sub-user ID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * 设置子用户 UID
-     * @param Uid 子用户 UID
+     * Set sub-user UID
+     * @param Uid sub-user UID
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * 获取子用户备注
-     * @return Remark 子用户备注
+     * Obtain sub-user note
+     * @return Remark sub-user note
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * 设置子用户备注
-     * @param Remark 子用户备注
+     * Set up sub-user note
+     * @param Remark sub-user note
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * 获取子用户能否登录控制台
-     * @return ConsoleLogin 子用户能否登录控制台
+     * Get whether sub-user can log in to the console 
+     * @return ConsoleLogin Whether the sub-user can log in to the Console
      */
     public Long getConsoleLogin() {
         return this.ConsoleLogin;
     }
 
     /**
-     * 设置子用户能否登录控制台
-     * @param ConsoleLogin 子用户能否登录控制台
+     * Set whether sub-user can log in to Console
+     * @param ConsoleLogin whether sub-user can log in to Console
      */
     public void setConsoleLogin(Long ConsoleLogin) {
         this.ConsoleLogin = ConsoleLogin;
     }
 
     /**
-     * 获取手机号
-     * @return PhoneNum 手机号
+     * Obtain mobile number 
+     * @return PhoneNum mobile number
      */
     public String getPhoneNum() {
         return this.PhoneNum;
     }
 
     /**
-     * 设置手机号
-     * @param PhoneNum 手机号
+     * Set mobile number
+     * @param PhoneNum set mobile phone number.
      */
     public void setPhoneNum(String PhoneNum) {
         this.PhoneNum = PhoneNum;
     }
 
     /**
-     * 获取区号
-     * @return CountryCode 区号
+     * Obtain area code
+     * @return CountryCode area code
      */
     public String getCountryCode() {
         return this.CountryCode;
     }
 
     /**
-     * 设置区号
-     * @param CountryCode 区号
+     * Set area code
+     * @param CountryCode area code
      */
     public void setCountryCode(String CountryCode) {
         this.CountryCode = CountryCode;
     }
 
     /**
-     * 获取邮箱
-     * @return Email 邮箱
+     * Obtain email
+     * @return Email email
      */
     public String getEmail() {
         return this.Email;
     }
 
     /**
-     * 设置邮箱
-     * @param Email 邮箱
+     * Configure Mailbox
+     * @param Email mailbox
      */
     public void setEmail(String Email) {
         this.Email = Email;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uin", this.Uin);

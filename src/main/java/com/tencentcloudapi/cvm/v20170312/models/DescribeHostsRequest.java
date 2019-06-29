@@ -23,101 +23,101 @@ import java.util.HashMap;
 public class DescribeHostsRequest  extends AbstractModel{
 
     /**
-    * 过滤条件。
-<li> zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li>
-<li> host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li>
-<li> host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中|LAUNCH_FAILURE：创建失败|RUNNING：运行中|EXPIRED：已过期）</li>
+    * Filter conditions
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
+<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * 偏移量，默认为0。
+    * Offset. Default is 0.
     */
     @SerializedName("Offset")
     @Expose
     private Integer Offset;
 
     /**
-    * 返回数量，默认为20，最大值为100。
+    * <**ECI**>
     */
     @SerializedName("Limit")
     @Expose
     private Integer Limit;
 
     /**
-     * 获取过滤条件。
-<li> zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li>
-<li> host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li>
-<li> host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中|LAUNCH_FAILURE：创建失败|RUNNING：运行中|EXPIRED：已过期）</li>
-     * @return Filters 过滤条件。
-<li> zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li>
-<li> host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li>
-<li> host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中|LAUNCH_FAILURE：创建失败|RUNNING：运行中|EXPIRED：已过期）</li>
+     * Get filter condition.
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
+<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
+     * @return Filters Filter condition.
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
+<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-<li> zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li>
-<li> host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li>
-<li> host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中|LAUNCH_FAILURE：创建失败|RUNNING：运行中|EXPIRED：已过期）</li>
-     * @param Filters 过滤条件。
-<li> zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li>
-<li> host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li>
-<li> host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中|LAUNCH_FAILURE：创建失败|RUNNING：运行中|EXPIRED：已过期）</li>
+     * Set filter condition.
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
+<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
+     * @param Filters Filter condition.
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
+<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
+<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 获取偏移量，默认为0。
-     * @return Offset 偏移量，默认为0。
+     * Get Offset. Default is 0.
+     * @return Offset Offset. Default is 0.
      */
     public Integer getOffset() {
         return this.Offset;
     }
 
     /**
-     * 设置偏移量，默认为0。
-     * @param Offset 偏移量，默认为0。
+     * Set Offset. Default is 0.
+     * @param Offset Offset. Default is 0.
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * 获取返回数量，默认为20，最大值为100。
-     * @return Limit 返回数量，默认为20，最大值为100。
+     * Get Number of values to be returned. Default is 20. Maximum is 100
+     * @return Limit Number of values to be returned. Default is 20. Maximum is 100
      */
     public Integer getLimit() {
         return this.Limit;
     }
 
     /**
-     * 设置返回数量，默认为20，最大值为100。
-     * @param Limit 返回数量，默认为20，最大值为100。
+     * Set Number of values to be returned. Default is 20. Maximum is 100
+     * @param Limit Number of values to be returned. Default is 20. Maximum is 100
      */
     public void setLimit(Integer Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Filters.", this.Filters);

@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeHostsResponse  extends AbstractModel{
 
     /**
-    * 符合查询条件的cdh实例总数
+    * Total number of placement groups of an user
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * cdh实例详细信息列表
+    * Details of a CDH instance
     */
     @SerializedName("HostSet")
     @Expose
     private HostItem [] HostSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取符合查询条件的cdh实例总数
-     * @return TotalCount 符合查询条件的cdh实例总数
+     * Get Total number of placement groups of an user
+     * @return TotalCount Total number of placement groups of an user
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置符合查询条件的cdh实例总数
-     * @param TotalCount 符合查询条件的cdh实例总数
+     * Set Total number of placement groups of an user
+     * @param TotalCount Total number of placement groups of an user
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取cdh实例详细信息列表
-     * @return HostSet cdh实例详细信息列表
+     * Get Details of a CDH instance
+     * @return HostSet Details of a CDH instance
      */
     public HostItem [] getHostSet() {
         return this.HostSet;
     }
 
     /**
-     * 设置cdh实例详细信息列表
-     * @param HostSet cdh实例详细信息列表
+     * Set Details of a CDH instance
+     * @param HostSet Details of a CDH instance
      */
     public void setHostSet(HostItem [] HostSet) {
         this.HostSet = HostSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

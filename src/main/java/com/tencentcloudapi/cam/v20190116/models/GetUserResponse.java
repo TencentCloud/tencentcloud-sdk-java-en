@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * you may not use this file except in compliance with the License.
  *
  *    http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -23,214 +23,214 @@ import java.util.HashMap;
 public class GetUserResponse  extends AbstractModel{
 
     /**
-    * 子用户用户 ID
+    * Sub-user User ID
     */
     @SerializedName("Uin")
     @Expose
     private Long Uin;
 
     /**
-    * 子用户用户名
+    * Sub-user username
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * 子用户 UID
+    * Sub-user UID
     */
     @SerializedName("Uid")
     @Expose
     private Long Uid;
 
     /**
-    * 子用户备注
+    * Sub-user note
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-    * 子用户能否登录控制台
+    * Whether sub-user can login to Console
     */
     @SerializedName("ConsoleLogin")
     @Expose
     private Long ConsoleLogin;
 
     /**
-    * 手机号
+    * Mobile number
     */
     @SerializedName("PhoneNum")
     @Expose
     private String PhoneNum;
 
     /**
-    * 区号
+    * Area Code
     */
     @SerializedName("CountryCode")
     @Expose
     private String CountryCode;
 
     /**
-    * 邮箱
+    * Email
     */
     @SerializedName("Email")
     @Expose
     private String Email;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取子用户用户 ID
-     * @return Uin 子用户用户 ID
+     * Obtain sub-user User ID
+     * @return Uin Sub-user User ID
      */
     public Long getUin() {
         return this.Uin;
     }
 
     /**
-     * 设置子用户用户 ID
-     * @param Uin 子用户用户 ID
+     * Set up sub-user User ID
+     * @param Uin Sub-user User ID
      */
     public void setUin(Long Uin) {
         this.Uin = Uin;
     }
 
     /**
-     * 获取子用户用户名
-     * @return Name 子用户用户名
+     * Obtain sub-user username
+     * @return Name sub-user username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置子用户用户名
-     * @param Name 子用户用户名
+     * Set sub-user username
+     * @param Name sub-user username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取子用户 UID
-     * @return Uid 子用户 UID
+     * Obtain sub-user UID
+     * @return Uid Sub-user User ID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * 设置子用户 UID
-     * @param Uid 子用户 UID
+     * Configuring Sub-user UID
+     * @param Uid sub-user UID
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * 获取子用户备注
-     * @return Remark 子用户备注
+     * Obtain sub-user note
+     * @return Remark sub-user note
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * 设置子用户备注
-     * @param Remark 子用户备注
+     * Set up sub-user note
+     * @param Remark sub-user note
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * 获取子用户能否登录控制台
-     * @return ConsoleLogin 子用户能否登录控制台
+     * Get whether sub-user can log in to the console 
+     * @return ConsoleLogin whether sub-user can log in to Console
      */
     public Long getConsoleLogin() {
         return this.ConsoleLogin;
     }
 
     /**
-     * 设置子用户能否登录控制台
-     * @param ConsoleLogin 子用户能否登录控制台
+     * Set whether sub-user can log in to the console
+     * @param ConsoleLogin whether sub-user can log in to the console
      */
     public void setConsoleLogin(Long ConsoleLogin) {
         this.ConsoleLogin = ConsoleLogin;
     }
 
     /**
-     * 获取手机号
-     * @return PhoneNum 手机号
+     * Obtain mobile number 
+     * @return PhoneNum mobile number
      */
     public String getPhoneNum() {
         return this.PhoneNum;
     }
 
     /**
-     * 设置手机号
-     * @param PhoneNum 手机号
+     * Set mobile number
+     * @param PhoneNum mobile number
      */
     public void setPhoneNum(String PhoneNum) {
         this.PhoneNum = PhoneNum;
     }
 
     /**
-     * 获取区号
-     * @return CountryCode 区号
+     * Obtain area code
+     * @return CountryCode area code
      */
     public String getCountryCode() {
         return this.CountryCode;
     }
 
     /**
-     * 设置区号
-     * @param CountryCode 区号
+     * Set area code
+     * @param CountryCode area code
      */
     public void setCountryCode(String CountryCode) {
         this.CountryCode = CountryCode;
     }
 
     /**
-     * 获取邮箱
-     * @return Email 邮箱
+     * Obtain email
+     * @return Email email
      */
     public String getEmail() {
         return this.Email;
     }
 
     /**
-     * 设置邮箱
-     * @param Email 邮箱
+     * Configure mailbox
+     * @param Email mailbox
      */
     public void setEmail(String Email) {
         this.Email = Email;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of request, which will be returned for each request. and is required for each troubleshooting case.
+     * @return RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uin", this.Uin);

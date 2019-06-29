@@ -23,420 +23,375 @@ import java.util.HashMap;
 public class CreateLaunchConfigurationRequest  extends AbstractModel{
 
     /**
-    * 启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
+    * Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
     */
     @SerializedName("LaunchConfigurationName")
     @Expose
     private String LaunchConfigurationName;
 
     /**
-    * 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
+    * Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * 实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的`projectId`字段来获取。不填为默认项目。
+    * Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
     */
     @SerializedName("ProjectId")
     @Expose
     private Integer ProjectId;
 
     /**
-    * 实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
+    * Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-    * 实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
+    * Instance’s system disk configuration. If not specified, the default value will be assigned.
     */
     @SerializedName("SystemDisk")
     @Expose
     private SystemDisk SystemDisk;
 
     /**
-    * 实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，最多支持指定11块数据盘。
+    * Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
     */
     @SerializedName("DataDisks")
     @Expose
     private DataDisk [] DataDisks;
 
     /**
-    * 公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
+    * Public network bandwidth configuration. If not specified, the default public network bandwidth is 0 Mbps.
     */
     @SerializedName("InternetAccessible")
     @Expose
     private InternetAccessible InternetAccessible;
 
     /**
-    * 实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
+    * Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
     */
     @SerializedName("LoginSettings")
     @Expose
     private LoginSettings LoginSettings;
 
     /**
-    * 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。若不指定该参数，则默认不绑定安全组。
+    * The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
     */
     @SerializedName("SecurityGroupIds")
     @Expose
     private String [] SecurityGroupIds;
 
     /**
-    * 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+    * Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
     */
     @SerializedName("EnhancedService")
     @Expose
     private EnhancedService EnhancedService;
 
     /**
-    * 经过 Base64 编码后的自定义数据，最大长度不超过16KB。
+    * Base64-encoded custom data of up to 16 KB.
     */
     @SerializedName("UserData")
     @Expose
     private String UserData;
 
     /**
-    * 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
+    * Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
     */
     @SerializedName("InstanceChargeType")
     @Expose
     private String InstanceChargeType;
 
     /**
-    * 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
+    * Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
     */
     @SerializedName("InstanceMarketOptions")
     @Expose
     private InstanceMarketOptionsRequest InstanceMarketOptions;
 
     /**
-    * 实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
+    * List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
     */
     @SerializedName("InstanceTypes")
     @Expose
     private String [] InstanceTypes;
 
     /**
-    * 实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
+    * Instance type validation policy. Values include ALL and ANY. Default value is ANY. <br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
     */
     @SerializedName("InstanceTypesCheckPolicy")
     @Expose
     private String InstanceTypesCheckPolicy;
 
     /**
-    * 标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
+    * Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
     */
     @SerializedName("InstanceTags")
     @Expose
     private InstanceTag [] InstanceTags;
 
     /**
-     * 获取启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
-     * @return LaunchConfigurationName 启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
+     * Get Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
+     * @return LaunchConfigurationName Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
      */
     public String getLaunchConfigurationName() {
         return this.LaunchConfigurationName;
     }
 
     /**
-     * 设置启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
-     * @param LaunchConfigurationName 启动配置显示名称。名称仅支持中文、英文、数字、下划线、分隔符"-"、小数点，最大长度不能超60个字节。
+     * Set Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
+     * @param LaunchConfigurationName Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
      */
     public void setLaunchConfigurationName(String LaunchConfigurationName) {
         this.LaunchConfigurationName = LaunchConfigurationName;
     }
 
     /**
-     * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
-     * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
+     * Get Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public image</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
+     * @return ImageId Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public image</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
-     * @param ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-8toqc6s3`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
+     * Set Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public Images</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
+     * @param ImageId Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public Images</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * 获取实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的`projectId`字段来获取。不填为默认项目。
-     * @return ProjectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的`projectId`字段来获取。不填为默认项目。
+     * Get Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
+     * @return ProjectId  Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
      */
     public Integer getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * 设置实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的`projectId`字段来获取。不填为默认项目。
-     * @param ProjectId 实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/378/4400) 的返回值中的`projectId`字段来获取。不填为默认项目。
+     * Set Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
+     * @param ProjectId  Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
      */
     public void setProjectId(Integer ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * 获取实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
-     * @return InstanceType 实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
+     * Get Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * @return InstanceType Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * 设置实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
-     * @param InstanceType 实例机型。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
+     * Set Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * @param InstanceType Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * 获取实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
-     * @return SystemDisk 实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
+     * Get Instance’s system disk configuration. If not specified, the default value will be assigned.
+     * @return SystemDisk Instance’s system disk configuration. If not specified, the default value will be assigned.
      */
     public SystemDisk getSystemDisk() {
         return this.SystemDisk;
     }
 
     /**
-     * 设置实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
-     * @param SystemDisk 实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。
+     * Set Instance’s system disk configuration. If not specified, the default value will be assigned.
+     * @param SystemDisk Instance’s system disk configuration. If not specified, the default value will be assigned.
      */
     public void setSystemDisk(SystemDisk SystemDisk) {
         this.SystemDisk = SystemDisk;
     }
 
     /**
-     * 获取实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，最多支持指定11块数据盘。
-     * @return DataDisks 实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，最多支持指定11块数据盘。
+     * Get Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
+     * @return DataDisks Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
      */
     public DataDisk [] getDataDisks() {
         return this.DataDisks;
     }
 
     /**
-     * 设置实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，最多支持指定11块数据盘。
-     * @param DataDisks 实例数据盘配置信息。若不指定该参数，则默认不购买数据盘，最多支持指定11块数据盘。
+     * Set Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
+     * @param DataDisks Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
      */
     public void setDataDisks(DataDisk [] DataDisks) {
         this.DataDisks = DataDisks;
     }
 
     /**
-     * 获取公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
-     * @return InternetAccessible 公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
+     * Get Public network bandwidth configuration. If not specified, the default public network bandwidth is 0 Mbps.
+     * @return InternetAccessible Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
      */
     public InternetAccessible getInternetAccessible() {
         return this.InternetAccessible;
     }
 
     /**
-     * 设置公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
-     * @param InternetAccessible 公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。
+     * Set Public network bandwidth configuration. If not specified, the default public network bandwidth is 0 Mbps.
+     * @param InternetAccessible Public network bandwidth configuration. If not specified, the default public network bandwidth is 0 Mbps.
      */
     public void setInternetAccessible(InternetAccessible InternetAccessible) {
         this.InternetAccessible = InternetAccessible;
     }
 
     /**
-     * 获取实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
-     * @return LoginSettings 实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
+     * Get Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
+     * @return LoginSettings Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
      */
     public LoginSettings getLoginSettings() {
         return this.LoginSettings;
     }
 
     /**
-     * 设置实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
-     * @param LoginSettings 实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
+     * Set Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
+     * @param LoginSettings Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
      */
     public void setLoginSettings(LoginSettings LoginSettings) {
         this.LoginSettings = LoginSettings;
     }
 
     /**
-     * 获取实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。若不指定该参数，则默认不绑定安全组。
-     * @return SecurityGroupIds 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。若不指定该参数，则默认不绑定安全组。
+     * Get The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
+     * @return SecurityGroupIds The security group to which the instance belongs. The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
      */
     public String [] getSecurityGroupIds() {
         return this.SecurityGroupIds;
     }
 
     /**
-     * 设置实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。若不指定该参数，则默认不绑定安全组。
-     * @param SecurityGroupIds 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的`SecurityGroupId`字段来获取。若不指定该参数，则默认不绑定安全组。
+     * Set The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
+     * @param SecurityGroupIds The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
      */
     public void setSecurityGroupIds(String [] SecurityGroupIds) {
         this.SecurityGroupIds = SecurityGroupIds;
     }
 
     /**
-     * 获取增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
-     * @return EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+     * Get Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
+     * @return EnhancedService Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
      */
     public EnhancedService getEnhancedService() {
         return this.EnhancedService;
     }
 
     /**
-     * 设置增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
-     * @param EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+     * Set Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
+     * @param EnhancedService Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
      */
     public void setEnhancedService(EnhancedService EnhancedService) {
         this.EnhancedService = EnhancedService;
     }
 
     /**
-     * 获取经过 Base64 编码后的自定义数据，最大长度不超过16KB。
-     * @return UserData 经过 Base64 编码后的自定义数据，最大长度不超过16KB。
+     * Get Base64-encoded custom data of up to 16 KB.
+     * @return UserData Base64-encoded custom data of up to 16 KB.
      */
     public String getUserData() {
         return this.UserData;
     }
 
     /**
-     * 设置经过 Base64 编码后的自定义数据，最大长度不超过16KB。
-     * @param UserData 经过 Base64 编码后的自定义数据，最大长度不超过16KB。
+     * Set Base64-encoded custom data of up to 16 KB.
+     * @param UserData Base64-encoded custom data of up to 16 KB.
      */
     public void setUserData(String UserData) {
         this.UserData = UserData;
     }
 
     /**
-     * 获取实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
-     * @return InstanceChargeType 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
+     * Get Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
+     * @return InstanceChargeType Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
      */
     public String getInstanceChargeType() {
         return this.InstanceChargeType;
     }
 
     /**
-     * 设置实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
-     * @param InstanceChargeType 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
+     * Set Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
+     * @param InstanceChargeType Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
      */
     public void setInstanceChargeType(String InstanceChargeType) {
         this.InstanceChargeType = InstanceChargeType;
     }
 
     /**
-     * 获取实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
-     * @return InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
+     * Get Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
+     * @return InstanceMarketOptions Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
      */
     public InstanceMarketOptionsRequest getInstanceMarketOptions() {
         return this.InstanceMarketOptions;
     }
 
     /**
-     * 设置实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
-     * @param InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
+     * Set Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
+     * @param InstanceMarketOptions Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
      */
     public void setInstanceMarketOptions(InstanceMarketOptionsRequest InstanceMarketOptions) {
         this.InstanceMarketOptions = InstanceMarketOptions;
     }
 
     /**
-     * 获取实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
-     * @return InstanceTypes 实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
+     * Get List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * @return InstanceTypes List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
      */
     public String [] getInstanceTypes() {
         return this.InstanceTypes;
     }
 
     /**
-     * 设置实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
-     * @param InstanceTypes 实例机型列表，不同实例机型指定了不同的资源规格，最多支持5种实例机型。
-`InstanceType`和`InstanceTypes`参数互斥，二者必填一个且只能填写一个。
+     * Set List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * @param InstanceTypes List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
      */
     public void setInstanceTypes(String [] InstanceTypes) {
         this.InstanceTypes = InstanceTypes;
     }
 
     /**
-     * 获取实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
-     * @return InstanceTypesCheckPolicy 实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
+     * Get Instance type validation policy. Values include ALL and ANY. Default value is ANY. <br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
+     * @return InstanceTypesCheckPolicy Instance type validation policy. Values include ALL and ANY. Default value is ANY.<br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
      */
     public String getInstanceTypesCheckPolicy() {
         return this.InstanceTypesCheckPolicy;
     }
 
     /**
-     * 设置实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
-     * @param InstanceTypesCheckPolicy 实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
-<br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
-<br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
-
-实例类型不可用的常见原因包括该实例类型售罄、对应云盘售罄等。
-如果 InstanceTypes 中一款机型不存在或者已下线，则无论 InstanceTypesCheckPolicy 采用何种取值，都会校验报错。
+     * Set Instance type validation policy. Values include ALL and ANY. Default value is ANY.<br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
+     * @param InstanceTypesCheckPolicy Instance type validation policy. Values include ALL and ANY. Default value is ANY.<br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
      */
     public void setInstanceTypesCheckPolicy(String InstanceTypesCheckPolicy) {
         this.InstanceTypesCheckPolicy = InstanceTypesCheckPolicy;
     }
 
     /**
-     * 获取标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
-     * @return InstanceTags 标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
+     * Get Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
+     * @return InstanceTags Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
      */
     public InstanceTag [] getInstanceTags() {
         return this.InstanceTags;
     }
 
     /**
-     * 设置标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
-     * @param InstanceTags 标签列表。通过指定该参数，可以为扩容的实例绑定标签。最多支持指定10个标签。
+     * Set Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
+     * @param InstanceTags Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
      */
     public void setInstanceTags(InstanceTag [] InstanceTags) {
         this.InstanceTags = InstanceTags;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LaunchConfigurationName", this.LaunchConfigurationName);

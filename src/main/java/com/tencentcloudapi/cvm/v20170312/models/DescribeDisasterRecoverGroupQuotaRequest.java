@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class DescribeDisasterRecoverGroupQuotaRequest  extends AbstractModel{
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
 

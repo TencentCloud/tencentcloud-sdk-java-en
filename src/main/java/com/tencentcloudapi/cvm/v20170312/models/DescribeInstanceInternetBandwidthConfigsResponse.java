@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeInstanceInternetBandwidthConfigsResponse  extends AbstractModel{
 
     /**
-    * 带宽配置信息列表。
+    * List of bandwidth configurations.
     */
     @SerializedName("InternetBandwidthConfigSet")
     @Expose
     private InternetBandwidthConfig [] InternetBandwidthConfigSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取带宽配置信息列表。
-     * @return InternetBandwidthConfigSet 带宽配置信息列表。
+     * Obtain list of bandwidth configurations.
+     * @return InternetBandwidthConfigSet List of bandwidth configurations.
      */
     public InternetBandwidthConfig [] getInternetBandwidthConfigSet() {
         return this.InternetBandwidthConfigSet;
     }
 
     /**
-     * 设置带宽配置信息列表。
-     * @param InternetBandwidthConfigSet 带宽配置信息列表。
+     * Set list of bandwidth configurations.
+     * @param InternetBandwidthConfigSet List of bandwidth configurations.
      */
     public void setInternetBandwidthConfigSet(InternetBandwidthConfig [] InternetBandwidthConfigSet) {
         this.InternetBandwidthConfigSet = InternetBandwidthConfigSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "InternetBandwidthConfigSet.", this.InternetBandwidthConfigSet);

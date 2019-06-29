@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeAutoScalingGroupsResponse  extends AbstractModel{
 
     /**
-    * 伸缩组详细信息列表。
+    * List of scaling group details.
     */
     @SerializedName("AutoScalingGroupSet")
     @Expose
     private AutoScalingGroup [] AutoScalingGroupSet;
 
     /**
-    * 符合条件的伸缩组数量。
+    * Number of scaling groups that meet the condition.
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取伸缩组详细信息列表。
-     * @return AutoScalingGroupSet 伸缩组详细信息列表。
+     * Obtain list of scaling group details.
+     * @return AutoScalingGroupSet List of scaling group details.
      */
     public AutoScalingGroup [] getAutoScalingGroupSet() {
         return this.AutoScalingGroupSet;
     }
 
     /**
-     * 设置伸缩组详细信息列表。
-     * @param AutoScalingGroupSet 伸缩组详细信息列表。
+     * Set list of scaling group details.
+     * @param AutoScalingGroupSet List of scaling group details.
      */
     public void setAutoScalingGroupSet(AutoScalingGroup [] AutoScalingGroupSet) {
         this.AutoScalingGroupSet = AutoScalingGroupSet;
     }
 
     /**
-     * 获取符合条件的伸缩组数量。
-     * @return TotalCount 符合条件的伸缩组数量。
+     * Obtain number of scaling groups that meet the condition.
+     * @return TotalCount Number of scaling groups that meet the condition.
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置符合条件的伸缩组数量。
-     * @param TotalCount 符合条件的伸缩组数量。
+     * Set number of scaling groups that meet the condition.
+     * @param TotalCount Number of scaling groups that meet the condition.
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "AutoScalingGroupSet.", this.AutoScalingGroupSet);

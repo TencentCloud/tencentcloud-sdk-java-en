@@ -23,145 +23,145 @@ import java.util.HashMap;
 public class DescribeDisasterRecoverGroupQuotaResponse  extends AbstractModel{
 
     /**
-    * 可创建置放群组数量的上限。
+    * The maximum number of placement groups that can be created.
     */
     @SerializedName("GroupQuota")
     @Expose
     private Integer GroupQuota;
 
     /**
-    * 当前用户已经创建的置放群组数量。
+    * The number of placement groups that have been created by the current user.
     */
     @SerializedName("CurrentNum")
     @Expose
     private Integer CurrentNum;
 
     /**
-    * 物理机类型容灾组内实例的配额数。
+    * Quota of instances in a physical-machine-type disaster recovery group.
     */
     @SerializedName("CvmInHostGroupQuota")
     @Expose
     private Integer CvmInHostGroupQuota;
 
     /**
-    * 交换机类型容灾组内实例的配额数。
+    * Quota of instances in a switch disaster recovery group.
     */
     @SerializedName("CvmInSwGroupQuota")
     @Expose
     private Integer CvmInSwGroupQuota;
 
     /**
-    * 机架类型容灾组内实例的配额数。
+    * Quota of instances in a rack-type disaster recovery group.
     */
     @SerializedName("CvmInRackGroupQuota")
     @Expose
     private Integer CvmInRackGroupQuota;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取可创建置放群组数量的上限。
-     * @return GroupQuota 可创建置放群组数量的上限。
+     * Get The maximum number of placement groups that can be created.
+     * @return GroupQuota The maximum number of placement groups that can be created.
      */
     public Integer getGroupQuota() {
         return this.GroupQuota;
     }
 
     /**
-     * 设置可创建置放群组数量的上限。
-     * @param GroupQuota 可创建置放群组数量的上限。
+     * Set The maximum number of placement groups that can be created.
+     * @param GroupQuota The maximum number of placement groups that can be created.
      */
     public void setGroupQuota(Integer GroupQuota) {
         this.GroupQuota = GroupQuota;
     }
 
     /**
-     * 获取当前用户已经创建的置放群组数量。
-     * @return CurrentNum 当前用户已经创建的置放群组数量。
+     * Get The number of placement groups that have been created by the current user.
+     * @return CurrentNum The number of placement groups that have been created by the current user.
      */
     public Integer getCurrentNum() {
         return this.CurrentNum;
     }
 
     /**
-     * 设置当前用户已经创建的置放群组数量。
-     * @param CurrentNum 当前用户已经创建的置放群组数量。
+     * Set The number of placement groups that have been created by the current user.
+     * @param CurrentNum The number of placement groups that have been created by the current user.
      */
     public void setCurrentNum(Integer CurrentNum) {
         this.CurrentNum = CurrentNum;
     }
 
     /**
-     * 获取物理机类型容灾组内实例的配额数。
-     * @return CvmInHostGroupQuota 物理机类型容灾组内实例的配额数。
+     * Get Quota of instances in a physical-machine-type disaster recovery group.
+     * @return CvmInHostGroupQuota Quota of instances in a physical-machine-type disaster recovery group.
      */
     public Integer getCvmInHostGroupQuota() {
         return this.CvmInHostGroupQuota;
     }
 
     /**
-     * 设置物理机类型容灾组内实例的配额数。
-     * @param CvmInHostGroupQuota 物理机类型容灾组内实例的配额数。
+     * Set Quota of instances in a physical-machine-type disaster recovery group.
+     * @param CvmInHostGroupQuota Quota of instances in a physical-machine-type disaster recovery group.
      */
     public void setCvmInHostGroupQuota(Integer CvmInHostGroupQuota) {
         this.CvmInHostGroupQuota = CvmInHostGroupQuota;
     }
 
     /**
-     * 获取交换机类型容灾组内实例的配额数。
-     * @return CvmInSwGroupQuota 交换机类型容灾组内实例的配额数。
+     * Get Quota of instances in a switch disaster recovery group.
+     * @return CvmInSwGroupQuota Quota of instances in a switch disaster recovery group.
      */
     public Integer getCvmInSwGroupQuota() {
         return this.CvmInSwGroupQuota;
     }
 
     /**
-     * 设置交换机类型容灾组内实例的配额数。
-     * @param CvmInSwGroupQuota 交换机类型容灾组内实例的配额数。
+     * Set Quota of instances in a switch disaster recovery group.
+     * @param CvmInSwGroupQuota Quota of instances in a switch disaster recovery group.
      */
     public void setCvmInSwGroupQuota(Integer CvmInSwGroupQuota) {
         this.CvmInSwGroupQuota = CvmInSwGroupQuota;
     }
 
     /**
-     * 获取机架类型容灾组内实例的配额数。
-     * @return CvmInRackGroupQuota 机架类型容灾组内实例的配额数。
+     * Get Quota of instances in a switch disaster recovery group.
+     * @return CvmInRackGroupQuota Quota of instances in a rack-type disaster recovery group.
      */
     public Integer getCvmInRackGroupQuota() {
         return this.CvmInRackGroupQuota;
     }
 
     /**
-     * 设置机架类型容灾组内实例的配额数。
-     * @param CvmInRackGroupQuota 机架类型容灾组内实例的配额数。
+     * Set Quota of instances in a rack-type disaster recovery group.
+     * @param CvmInRackGroupQuota Quota of instances in a rack-type disaster recovery group.
      */
     public void setCvmInRackGroupQuota(Integer CvmInRackGroupQuota) {
         this.CvmInRackGroupQuota = CvmInRackGroupQuota;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupQuota", this.GroupQuota);

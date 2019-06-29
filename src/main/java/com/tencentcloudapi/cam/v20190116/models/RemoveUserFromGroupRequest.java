@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class RemoveUserFromGroupRequest  extends AbstractModel{
 
     /**
-    * 要删除的用户 UID和用户组 ID对应数组
+    * UID of the user to be removed and the array corresponding to the user group ID
     */
     @SerializedName("Info")
     @Expose
     private GroupIdOfUidInfo [] Info;
 
     /**
-     * 获取要删除的用户 UID和用户组 ID对应数组
-     * @return Info 要删除的用户 UID和用户组 ID对应数组
+     * Obtain UID of the user to be removed and the array corresponding to the user group ID
+     * @return Info UID of the user to be removed and the array corresponding to the user group ID
      */
     public GroupIdOfUidInfo [] getInfo() {
         return this.Info;
     }
 
     /**
-     * 设置要删除的用户 UID和用户组 ID对应数组
-     * @param Info 要删除的用户 UID和用户组 ID对应数组
+     * Configure UID of the user to be removed and the array corresponding to the user group ID
+     * @param Info UID of the user to be removed and the array corresponding to the user group ID
      */
     public void setInfo(GroupIdOfUidInfo [] Info) {
         this.Info = Info;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Info.", this.Info);

@@ -23,58 +23,53 @@ import java.util.HashMap;
 public class InstanceMarketOptionsRequest  extends AbstractModel{
 
     /**
-    * 竞价相关选项
+    * Spot-related options.
     */
     @SerializedName("SpotOptions")
     @Expose
     private SpotMarketOptions SpotOptions;
 
     /**
-    * 市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
+    * Market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("MarketType")
     @Expose
     private String MarketType;
 
     /**
-     * 获取竞价相关选项
-     * @return SpotOptions 竞价相关选项
+     * Obtain the spot-related options.
+     * @return SpotOptions Spot-related options.
      */
     public SpotMarketOptions getSpotOptions() {
         return this.SpotOptions;
     }
 
     /**
-     * 设置竞价相关选项
-     * @param SpotOptions 竞价相关选项
+     * Configure the spot-related options.
+     * @param SpotOptions Spot-related options.
      */
     public void setSpotOptions(SpotMarketOptions SpotOptions) {
         this.SpotOptions = SpotOptions;
     }
 
     /**
-     * 获取市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return MarketType 市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain the market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
+     * @return MarketType Market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
      */
     public String getMarketType() {
         return this.MarketType;
     }
 
     /**
-     * 设置市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param MarketType 市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configure the market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
+     * @param MarketType Market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
      */
     public void setMarketType(String MarketType) {
         this.MarketType = MarketType;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "SpotOptions.", this.SpotOptions);

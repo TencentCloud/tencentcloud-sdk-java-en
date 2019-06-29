@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DisassociateSecurityGroupsRequest  extends AbstractModel{
 
     /**
-    * 要解绑的`安全组ID`，类似sg-efil73jd，只支持解绑单个安全组。
+    * Specify security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
     */
     @SerializedName("SecurityGroupIds")
     @Expose
     private String [] SecurityGroupIds;
 
     /**
-    * 被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例 。
+    * Specify CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-     * 获取要解绑的`安全组ID`，类似sg-efil73jd，只支持解绑单个安全组。
-     * @return SecurityGroupIds 要解绑的`安全组ID`，类似sg-efil73jd，只支持解绑单个安全组。
+     * Get security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
+     * @return SecurityGroupIds security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
      */
     public String [] getSecurityGroupIds() {
         return this.SecurityGroupIds;
     }
 
     /**
-     * 设置要解绑的`安全组ID`，类似sg-efil73jd，只支持解绑单个安全组。
-     * @param SecurityGroupIds 要解绑的`安全组ID`，类似sg-efil73jd，只支持解绑单个安全组。
+     * Set security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
+     * @param SecurityGroupIds security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
      */
     public void setSecurityGroupIds(String [] SecurityGroupIds) {
         this.SecurityGroupIds = SecurityGroupIds;
     }
 
     /**
-     * 获取被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例 。
-     * @return InstanceIds 被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例 。
+     * Get CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
+     * @return InstanceIds CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例 。
-     * @param InstanceIds 被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例 。
+     * Set CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
+     * @param InstanceIds CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "SecurityGroupIds.", this.SecurityGroupIds);

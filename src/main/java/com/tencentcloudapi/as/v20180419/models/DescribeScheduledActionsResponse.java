@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeScheduledActionsResponse  extends AbstractModel{
 
     /**
-    * 符合条件的定时任务数量。
+    * Number of scheduled tasks that meet the condition.
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 定时任务详细信息列表。
+    * List of scheduled task details.
     */
     @SerializedName("ScheduledActionSet")
     @Expose
     private ScheduledAction [] ScheduledActionSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取符合条件的定时任务数量。
-     * @return TotalCount 符合条件的定时任务数量。
+     * Obtain the number of scheduled tasks that meet the condition.
+     * @return TotalCount Number of scheduled tasks that meet the condition.
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置符合条件的定时任务数量。
-     * @param TotalCount 符合条件的定时任务数量。
+     * Configure the number of scheduled tasks that meet the condition.
+     * @param TotalCount Number of scheduled tasks that meet the condition.
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取定时任务详细信息列表。
-     * @return ScheduledActionSet 定时任务详细信息列表。
+     * Obtain the list of scheduled task details.
+     * @return ScheduledActionSet List of scheduled task details.
      */
     public ScheduledAction [] getScheduledActionSet() {
         return this.ScheduledActionSet;
     }
 
     /**
-     * 设置定时任务详细信息列表。
-     * @param ScheduledActionSet 定时任务详细信息列表。
+     * Configure the list of scheduled task details.
+     * @param ScheduledActionSet List of scheduled task details.
      */
     public void setScheduledActionSet(ScheduledAction [] ScheduledActionSet) {
         this.ScheduledActionSet = ScheduledActionSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

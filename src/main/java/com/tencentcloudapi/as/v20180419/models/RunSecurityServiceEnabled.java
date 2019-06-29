@@ -23,35 +23,30 @@ import java.util.HashMap;
 public class RunSecurityServiceEnabled  extends AbstractModel{
 
     /**
-    * 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Enable or disable [Cloud security](https://cloud.tencent.com/document/product/296)service.Value:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Enabled")
     @Expose
     private Boolean Enabled;
 
     /**
-     * 获取是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Enabled 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain setting of enable/disable [Cloud security] (https://cloud.tencent.com/document/product/296) service.Value:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
+     * @return Enabled Enabled or not [Cloud Security](https://cloud.tencent.com/document/product/296). Value range:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
      */
     public Boolean getEnabled() {
         return this.Enabled;
     }
 
     /**
-     * 设置是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Enabled 是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set Enabled or not [Cloud security](https://cloud.tencent.com/document/product/296) service.Value range:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
+     * @param Enabled Enable or disable [Cloud security](https://cloud.tencent.com/document/product/296) service. Value range:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
      */
     public void setEnabled(Boolean Enabled) {
         this.Enabled = Enabled;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Enabled", this.Enabled);

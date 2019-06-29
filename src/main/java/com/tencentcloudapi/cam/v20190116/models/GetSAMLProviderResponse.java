@@ -23,145 +23,145 @@ import java.util.HashMap;
 public class GetSAMLProviderResponse  extends AbstractModel{
 
     /**
-    * SAML身份提供商名称
+    * SAML IdP Name
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * SAML身份提供商描述
+    * SAML IdP Description
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * SAML身份提供商创建时间
+    * SAML IdP Creation Time
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * SAML身份提供商上次修改时间
+    * SAML IdP Latest Modified Time
     */
     @SerializedName("ModifyTime")
     @Expose
     private String ModifyTime;
 
     /**
-    * SAML身份提供商元数据文档
+    * SAML IdP Metadata Document
     */
     @SerializedName("SAMLMetadata")
     @Expose
     private String SAMLMetadata;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取SAML身份提供商名称
-     * @return Name SAML身份提供商名称
+     * Getting SAML IdP Name
+     * @return Name SAML IdP Name
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置SAML身份提供商名称
-     * @param Name SAML身份提供商名称
+     * Configuring SAML IdP Name
+     * @param Name SAML IdP Name
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取SAML身份提供商描述
-     * @return Description SAML身份提供商描述
+     * SAML IdP Description
+     * @return Description SAML IdP Description
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * 设置SAML身份提供商描述
-     * @param Description SAML身份提供商描述
+     * SAML IdP Description
+     * @param Description SAML IdP description
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * 获取SAML身份提供商创建时间
-     * @return CreateTime SAML身份提供商创建时间
+     * Getting SAML IdP Creation Time
+     * @return CreateTime  SAML IdP creation time
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * 设置SAML身份提供商创建时间
-     * @param CreateTime SAML身份提供商创建时间
+     * Setting SAML IdP Creation Time
+     * @param CreateTime  SAML IdP creation time
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * 获取SAML身份提供商上次修改时间
-     * @return ModifyTime SAML身份提供商上次修改时间
+     * Getting SAML IdP Latest Modified Time
+     * @return ModifyTime SAML IdP last modified time.
      */
     public String getModifyTime() {
         return this.ModifyTime;
     }
 
     /**
-     * 设置SAML身份提供商上次修改时间
-     * @param ModifyTime SAML身份提供商上次修改时间
+     * Configuring SAML IdP Latest Modified Time
+     * @param ModifyTime SAML IdP lastest modified time
      */
     public void setModifyTime(String ModifyTime) {
         this.ModifyTime = ModifyTime;
     }
 
     /**
-     * 获取SAML身份提供商元数据文档
-     * @return SAMLMetadata SAML身份提供商元数据文档
+     * Getting SAML IdP Metadata File
+     * @return SAMLMetadata SAML IdP metadata file
      */
     public String getSAMLMetadata() {
         return this.SAMLMetadata;
     }
 
     /**
-     * 设置SAML身份提供商元数据文档
-     * @param SAMLMetadata SAML身份提供商元数据文档
+     * Configuring SAML IdP Metadata File
+     * @param SAMLMetadata SAML IdP metadata file
      */
     public void setSAMLMetadata(String SAMLMetadata) {
         this.SAMLMetadata = SAMLMetadata;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Getting RequestId, the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configuring RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. 
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

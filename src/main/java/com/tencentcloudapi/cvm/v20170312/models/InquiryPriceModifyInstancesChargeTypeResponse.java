@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InquiryPriceModifyInstancesChargeTypeResponse  extends AbstractModel{
 
     /**
-    * 该参数表示对应配置实例转换计费模式的价格。
+    * Indicates the price for the switched billing method of an instance with specified configuration.
     */
     @SerializedName("Price")
     @Expose
     private Price Price;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取该参数表示对应配置实例转换计费模式的价格。
-     * @return Price 该参数表示对应配置实例转换计费模式的价格。
+     * Get indicates the price for the switched billing method of an instance with specified configuration.
+     * @return Price Indicates the price for the switched billing method of an instance with specified configuration.
      */
     public Price getPrice() {
         return this.Price;
     }
 
     /**
-     * 设置该参数表示对应配置实例转换计费模式的价格。
-     * @param Price 该参数表示对应配置实例转换计费模式的价格。
+     * Set indicates the price for the switched billing method of an instance with specified configuration.
+     * @param Price Indicates the price for the switched billing method of an instance with specified configuration.
      */
     public void setPrice(Price Price) {
         this.Price = Price;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Price.", this.Price);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ModifyDisasterRecoverGroupAttributeRequest  extends AbstractModel{
 
     /**
-    * 分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+    * Spread placement group ID, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
     */
     @SerializedName("DisasterRecoverGroupId")
     @Expose
     private String DisasterRecoverGroupId;
 
     /**
-    * 分散置放群组名称，长度1-60个字符，支持中、英文。
+    * Name of a spread placement group with a length of 1-60 characters.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-     * 获取分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
-     * @return DisasterRecoverGroupId 分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+     * Get ID of a spread placement group, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
+     * @return DisasterRecoverGroupId ID of a spread placement group, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
      */
     public String getDisasterRecoverGroupId() {
         return this.DisasterRecoverGroupId;
     }
 
     /**
-     * 设置分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
-     * @param DisasterRecoverGroupId 分散置放群组ID，可使用[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+     * Set ID of a spread placement group, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
+     * @param DisasterRecoverGroupId ID of a spread placement group, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
      */
     public void setDisasterRecoverGroupId(String DisasterRecoverGroupId) {
         this.DisasterRecoverGroupId = DisasterRecoverGroupId;
     }
 
     /**
-     * 获取分散置放群组名称，长度1-60个字符，支持中、英文。
-     * @return Name 分散置放群组名称，长度1-60个字符，支持中、英文。
+     * Get name of a spread placement group with a length of 1-60 characters.
+     * @return Name Name of spread placement group, group name between 1 and 60 characters long (Chinese or English).
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置分散置放群组名称，长度1-60个字符，支持中、英文。
-     * @param Name 分散置放群组名称，长度1-60个字符，支持中、英文。
+     * Set name of a spread placement group with a length of 1-60 characters.
+     * @param Name Name of spread placement group, group name between 1 and 60 characters long (Chinese or English).
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internally realized, users have no permission for it 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DisasterRecoverGroupId", this.DisasterRecoverGroupId);

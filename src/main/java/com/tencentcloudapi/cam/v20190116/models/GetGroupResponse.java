@@ -23,168 +23,168 @@ import java.util.HashMap;
 public class GetGroupResponse  extends AbstractModel{
 
     /**
-    * 用户组 ID
+    * User group ID
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-    * 用户组名称
+    * User Group Name
     */
     @SerializedName("GroupName")
     @Expose
     private String GroupName;
 
     /**
-    * 用户组成员数量
+    * Number of Members in User Group
     */
     @SerializedName("GroupNum")
     @Expose
     private Long GroupNum;
 
     /**
-    * 用户组描述
+    * User Group Description.
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-    * 用户组创建时间
+    * User Group Creation Time.
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * 用户组成员信息
+    * User Group Member Information
     */
     @SerializedName("UserInfo")
     @Expose
     private GroupMemberInfo [] UserInfo;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取用户组 ID
-     * @return GroupId 用户组 ID
+     * Getting user group ID
+     * @return GroupId user group ID
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * 设置用户组 ID
-     * @param GroupId 用户组 ID
+     * Setting user group ID
+     * @param GroupId user group ID.
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * 获取用户组名称
-     * @return GroupName 用户组名称
+     * Obtaining user group name.
+     * @return GroupName user group name.
      */
     public String getGroupName() {
         return this.GroupName;
     }
 
     /**
-     * 设置用户组名称
-     * @param GroupName 用户组名称
+     * Creating user group name.
+     * @param GroupName user group name.
      */
     public void setGroupName(String GroupName) {
         this.GroupName = GroupName;
     }
 
     /**
-     * 获取用户组成员数量
-     * @return GroupNum 用户组成员数量
+     * Getting the number of members in the user group
+     * @return GroupNum Number of members in the user group
      */
     public Long getGroupNum() {
         return this.GroupNum;
     }
 
     /**
-     * 设置用户组成员数量
-     * @param GroupNum 用户组成员数量
+     * Setting the number of members allowed in the user group
+     * @param GroupNum The number of members allowed in the user group
      */
     public void setGroupNum(Long GroupNum) {
         this.GroupNum = GroupNum;
     }
 
     /**
-     * 获取用户组描述
-     * @return Remark 用户组描述
+     * Obtaining user group description.
+     * @return Remark user group description.
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * 设置用户组描述
-     * @param Remark 用户组描述
+     * Setting user group description.
+     * @param Remark user group description.
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * 获取用户组创建时间
-     * @return CreateTime 用户组创建时间
+     * Obtaining user group creation time.
+     * @return CreateTime user group creation time.
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * 设置用户组创建时间
-     * @param CreateTime 用户组创建时间
+     * Setting user group creation time.
+     * @param CreateTime user group creation time.
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * 获取用户组成员信息
-     * @return UserInfo 用户组成员信息
+     * Getting user group member information
+     * @return UserInfo user group member information
      */
     public GroupMemberInfo [] getUserInfo() {
         return this.UserInfo;
     }
 
     /**
-     * 设置用户组成员信息
-     * @param UserInfo 用户组成员信息
+     * Configuring user group member information settings
+     * @param UserInfo user group member information
      */
     public void setUserInfo(GroupMemberInfo [] UserInfo) {
         this.UserInfo = UserInfo;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Getting unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId, the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configuring RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. 
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupId", this.GroupId);

@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class OperationCountLimit  extends AbstractModel{
 
     /**
-    * 实例操作。
+    * The opeartion of instance
     */
     @SerializedName("Operation")
     @Expose
     private String Operation;
 
     /**
-    * 实例ID。
+    * Instance ID
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * 当前已使用次数，如果返回值为-1表示该操作无次数限制。
+    * The number have been used, -1 in return means no number limited of this operation.
     */
     @SerializedName("CurrentCount")
     @Expose
     private Integer CurrentCount;
 
     /**
-    * 操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
+    * Maximum number of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
     */
     @SerializedName("LimitCount")
     @Expose
     private Integer LimitCount;
 
     /**
-     * 获取实例操作。
-     * @return Operation 实例操作。
+     * Obtain the instance
+     * @return Operation The opeartion of instance.
      */
     public String getOperation() {
         return this.Operation;
     }
 
     /**
-     * 设置实例操作。
-     * @param Operation 实例操作。
+     * The operation of setting instance
+     * @param Operation The opeartion of instance.
      */
     public void setOperation(String Operation) {
         this.Operation = Operation;
     }
 
     /**
-     * 获取实例ID。
-     * @return InstanceId 实例ID。
+     * Obtain instance ID
+     * @return InstanceIds instance IDs
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * 设置实例ID。
-     * @param InstanceId 实例ID。
+     * Setting the ID of instance
+     * @param InstanceId instance IDs
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * 获取当前已使用次数，如果返回值为-1表示该操作无次数限制。
-     * @return CurrentCount 当前已使用次数，如果返回值为-1表示该操作无次数限制。
+     * Getting the number have been used, -1 in return means no number limited of this operation.
+     * @return CurrentCount the number have been used, -1 in return means no number limited of this operation.
      */
     public Integer getCurrentCount() {
         return this.CurrentCount;
     }
 
     /**
-     * 设置当前已使用次数，如果返回值为-1表示该操作无次数限制。
-     * @param CurrentCount 当前已使用次数，如果返回值为-1表示该操作无次数限制。
+     * Setting the number have been used, -1 in return means no number limited of this operation.
+     * @param CurrentCount the number have been used, -1 in return means no number limited of this operation.
      */
     public void setCurrentCount(Integer CurrentCount) {
         this.CurrentCount = CurrentCount;
     }
 
     /**
-     * 获取操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
-     * @return LimitCount 操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
+     * Geting the maximum amount of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
+     * @return LimitCount The maximum amount of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
      */
     public Integer getLimitCount() {
         return this.LimitCount;
     }
 
     /**
-     * 设置操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
-     * @param LimitCount 操作次数最高额度，如果返回值为-1表示该操作无次数限制，如果返回值为0表示不支持调整配置。
+     * Setting the maximum amount of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
+     * @param LimitCount The maximum amount of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
      */
     public void setLimitCount(Integer LimitCount) {
         this.LimitCount = LimitCount;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Operation", this.Operation);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class RebootInstancesRequest  extends AbstractModel{
 
     /**
-    * 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+    * ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 是否在正常重启失败后选择强制重启实例。取值范围：<br><li>TRUE：表示在正常重启失败后进行强制重启<br><li>FALSE：表示在正常重启失败后不进行强制重启<br><br>默认取值：FALSE。
+    * Whether to perform a forced restart on the instance in case of a failure of normal restart.<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart on the instance in case of a failure of normal restart<br><br>Default: FALSE.
     */
     @SerializedName("ForceReboot")
     @Expose
     private Boolean ForceReboot;
 
     /**
-     * 获取一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
-     * @return InstanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+     * To obtain ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * @return InstanceIds ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
-     * @param InstanceIds 一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。
+     * To configure ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * @param Instance Ids of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取是否在正常重启失败后选择强制重启实例。取值范围：<br><li>TRUE：表示在正常重启失败后进行强制重启<br><li>FALSE：表示在正常重启失败后不进行强制重启<br><br>默认取值：FALSE。
-     * @return ForceReboot 是否在正常重启失败后选择强制重启实例。取值范围：<br><li>TRUE：表示在正常重启失败后进行强制重启<br><li>FALSE：表示在正常重启失败后不进行强制重启<br><br>默认取值：FALSE。
+     * Obtaining whether to perform a forced shutdown on the instance in case of a failure of normal restart.<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart in case of a ffail normal restart<br><br>Default: FALSE.
+     * @return ForceReboot  Whether to perform a forced restart in case of a failure of noral restart.<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart in case of a failed normal restart.<br><br>Default: FALSE.
      */
     public Boolean getForceReboot() {
         return this.ForceReboot;
     }
 
     /**
-     * 设置是否在正常重启失败后选择强制重启实例。取值范围：<br><li>TRUE：表示在正常重启失败后进行强制重启<br><li>FALSE：表示在正常重启失败后不进行强制重启<br><br>默认取值：FALSE。
-     * @param ForceReboot 是否在正常重启失败后选择强制重启实例。取值范围：<br><li>TRUE：表示在正常重启失败后进行强制重启<br><li>FALSE：表示在正常重启失败后不进行强制重启<br><br>默认取值：FALSE。
+     * Setting whether to perform a forced restart on the instance in case of a failure of normal restart.value range:<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart in case of a failed normal restart.<br><br>Default: FALSE.
+     * @param ForceReboot whether to perform a forced restart on the instance in case of a failure of normal restart.value range:<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart in case of a failed normal restart.<br><br>Default: FALSE.
      */
     public void setForceReboot(Boolean ForceReboot) {
         this.ForceReboot = ForceReboot;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

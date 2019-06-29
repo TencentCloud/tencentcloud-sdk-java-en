@@ -23,142 +23,122 @@ import java.util.HashMap;
 public class AttachPolicyInfo  extends AbstractModel{
 
     /**
-    * 策略id
+    * Policy ID
     */
     @SerializedName("PolicyId")
     @Expose
     private Long PolicyId;
 
     /**
-    * 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
+    * Policy NameNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("PolicyName")
     @Expose
     private String PolicyName;
 
     /**
-    * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+    * Policy Created TimeNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("AddTime")
     @Expose
     private String AddTime;
 
     /**
-    * 创建来源，1 通过控制台创建, 2 通过策略语法创建。
-注意：此字段可能返回 null，表示取不到有效值。
+    * How Policy Created: 1. Via console; 2. Via syntax Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("CreateMode")
     @Expose
     private Long CreateMode;
 
     /**
-    * 取值为user和QCS
-注意：此字段可能返回 null，表示取不到有效值。
+    * Valid values: user, QCSNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("PolicyType")
     @Expose
     private String PolicyType;
 
     /**
-     * 获取策略id
-     * @return PolicyId 策略id
+     * Getting Policy ID
+     * @return PolicyId Policy ID
      */
     public Long getPolicyId() {
         return this.PolicyId;
     }
 
     /**
-     * 设置策略id
-     * @param PolicyId 策略id
+     * Configuring Policy ID
+     * @param PolicyId Policy ID
      */
     public void setPolicyId(Long PolicyId) {
         this.PolicyId = PolicyId;
     }
 
     /**
-     * 获取策略名称
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return PolicyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting Policy NameNote: This field may return null, indicating that no valid value was found.
+     * @return PolicyName Policy NameNote: This field may return null, indicating that no valid value was found.
      */
     public String getPolicyName() {
         return this.PolicyName;
     }
 
     /**
-     * 设置策略名称
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param PolicyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring Policy NameNote: This field may return null, indicating that no valid value was found.
+     * @param PolicyName Policy NameNote: This field may return null, indicating that no valid value was found.
      */
     public void setPolicyName(String PolicyName) {
         this.PolicyName = PolicyName;
     }
 
     /**
-     * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return AddTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting Policy Created TimeNote: This field may return null, indicating that no valid value was found.
+     * @return AddTime Policy Created TimeNote: This field may return null, indicating that no valid value was found.
      */
     public String getAddTime() {
         return this.AddTime;
     }
 
     /**
-     * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param AddTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring Policy Created TimeNote: This field may return null, indicating that no valid value was found.
+     * @param AddTime Policy created timeNote: This field may return null, indicating that no valid value was found.
      */
     public void setAddTime(String AddTime) {
         this.AddTime = AddTime;
     }
 
     /**
-     * 获取创建来源，1 通过控制台创建, 2 通过策略语法创建。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
-注意：此字段可能返回 null，表示取不到有效值。
+     * How Policy Created: 1. Via console; 2. Via syntax Note: This field may return null, indicating that no valid value was found.
+     * @return CreateMode How Policy Created: 1. Via console; 2. Via syntax Note: This field may return null, indicating that no valid value was found.
      */
     public Long getCreateMode() {
         return this.CreateMode;
     }
 
     /**
-     * 设置创建来源，1 通过控制台创建, 2 通过策略语法创建。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring How Policy Created: 1. Via console; 2. Via syntax Note: This field may return null, indicating that no valid value was found.
+     * @param CreateMode How Policy Created: 1. Via console; 2. Via syntax Note: This field may return null, indicating that no valid value was found.
      */
     public void setCreateMode(Long CreateMode) {
         this.CreateMode = CreateMode;
     }
 
     /**
-     * 获取取值为user和QCS
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return PolicyType 取值为user和QCS
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting valid values: user, QCSNote: This field may return null, indicating that no valid value was found.
+     * @return PolicyType Valid values: user, QCSNote: This field may return null, indicating that no valid value was found.
      */
     public String getPolicyType() {
         return this.PolicyType;
     }
 
     /**
-     * 设置取值为user和QCS
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param PolicyType 取值为user和QCS
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring valid values: user, QCSNote: This field may return null, indicating that no valid value was found.
+     * @param PolicyType Valid values: user, QCSNote: This field may return null, indicating that no valid value was found.
      */
     public void setPolicyType(String PolicyType) {
         this.PolicyType = PolicyType;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

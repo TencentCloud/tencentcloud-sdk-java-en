@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeInstanceVncUrlResponse  extends AbstractModel{
 
     /**
-    * 实例的管理终端地址。
+    * the address of management terminal of instance.
     */
     @SerializedName("InstanceVncUrl")
     @Expose
     private String InstanceVncUrl;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取实例的管理终端地址。
-     * @return InstanceVncUrl 实例的管理终端地址。
+     * Obtain the address of management terminal of instance.
+     * @return InstanceVncUrl the address of management terminal of instance.
      */
     public String getInstanceVncUrl() {
         return this.InstanceVncUrl;
     }
 
     /**
-     * 设置实例的管理终端地址。
-     * @param InstanceVncUrl 实例的管理终端地址。
+     * Set the address of management terminal of instance.
+     * @param InstanceVncUrl the address of management terminal of instance.
      */
     public void setInstanceVncUrl(String InstanceVncUrl) {
         this.InstanceVncUrl = InstanceVncUrl;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceVncUrl", this.InstanceVncUrl);

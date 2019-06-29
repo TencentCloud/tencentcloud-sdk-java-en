@@ -23,86 +23,76 @@ import java.util.HashMap;
 public class Snapshot  extends AbstractModel{
 
     /**
-    * 快照Id。
+    * Snapshot ID.
     */
     @SerializedName("SnapshotId")
     @Expose
     private String SnapshotId;
 
     /**
-    * 创建此快照的云硬盘类型。取值范围：
-SYSTEM_DISK：系统盘
-DATA_DISK：数据盘。
+    * Type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
     */
     @SerializedName("DiskUsage")
     @Expose
     private String DiskUsage;
 
     /**
-    * 创建此快照的云硬盘大小，单位GB。
+    * Size of the cloud disk used to create this snapshot (in GB).
     */
     @SerializedName("DiskSize")
     @Expose
     private Integer DiskSize;
 
     /**
-     * 获取快照Id。
-     * @return SnapshotId 快照Id。
+     * Obtain Snapshot ID.
+     * @return SnapshotId Snapshot ID.
      */
     public String getSnapshotId() {
         return this.SnapshotId;
     }
 
     /**
-     * 设置快照Id。
-     * @param SnapshotId 快照Id。
+     * Configure Snapshot ID.
+     * @param SnapshotId Snapshot ID.
      */
     public void setSnapshotId(String SnapshotId) {
         this.SnapshotId = SnapshotId;
     }
 
     /**
-     * 获取创建此快照的云硬盘类型。取值范围：
-SYSTEM_DISK：系统盘
-DATA_DISK：数据盘。
-     * @return DiskUsage 创建此快照的云硬盘类型。取值范围：
-SYSTEM_DISK：系统盘
-DATA_DISK：数据盘。
+     * Obtain type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
+     * @return DiskUsage Type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
      */
     public String getDiskUsage() {
         return this.DiskUsage;
     }
 
     /**
-     * 设置创建此快照的云硬盘类型。取值范围：
-SYSTEM_DISK：系统盘
-DATA_DISK：数据盘。
-     * @param DiskUsage 创建此快照的云硬盘类型。取值范围：
-SYSTEM_DISK：系统盘
-DATA_DISK：数据盘。
+     * Configure type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
+     * @param DiskUsage Type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
      */
     public void setDiskUsage(String DiskUsage) {
         this.DiskUsage = DiskUsage;
     }
 
     /**
-     * 获取创建此快照的云硬盘大小，单位GB。
-     * @return DiskSize 创建此快照的云硬盘大小，单位GB。
+     * Size of the cloud disk used to create this snapshot (in GB).
+     * @return DiskSize Size of the cloud disk used to create this snapshot (in GB).
      */
     public Integer getDiskSize() {
         return this.DiskSize;
     }
 
     /**
-     * 设置创建此快照的云硬盘大小，单位GB。
-     * @param DiskSize 创建此快照的云硬盘大小，单位GB。
+     * Size of the cloud disk used to create this snapshot (in GB).
+     * @param DiskSize Size of the cloud disk used to create the snapshot.
      */
     public void setDiskSize(Integer DiskSize) {
         this.DiskSize = DiskSize;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "SnapshotId", this.SnapshotId);

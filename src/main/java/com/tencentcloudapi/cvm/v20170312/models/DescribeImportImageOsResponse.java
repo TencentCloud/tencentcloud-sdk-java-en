@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeImportImageOsResponse  extends AbstractModel{
 
     /**
-    * 支持的导入镜像的操作系统类型。
+    * Supported operating system types of imported images 
     */
     @SerializedName("ImportImageOsListSupported")
     @Expose
     private ImageOsList ImportImageOsListSupported;
 
     /**
-    * 支持的导入镜像的操作系统版本。
+    * Supported operating system versions of imported images 
     */
     @SerializedName("ImportImageOsVersionSet")
     @Expose
     private OsVersion [] ImportImageOsVersionSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取支持的导入镜像的操作系统类型。
-     * @return ImportImageOsListSupported 支持的导入镜像的操作系统类型。
+     * Obtain supported operating system types of imported images 
+     * @return ImportImageOsListSupported Supported operating system types of imported images |
      */
     public ImageOsList getImportImageOsListSupported() {
         return this.ImportImageOsListSupported;
     }
 
     /**
-     * 设置支持的导入镜像的操作系统类型。
-     * @param ImportImageOsListSupported 支持的导入镜像的操作系统类型。
+     * Set Supported operating system types of imported images 
+     * @param ImportImageOsListSupported Supported operating system types of imported images |
      */
     public void setImportImageOsListSupported(ImageOsList ImportImageOsListSupported) {
         this.ImportImageOsListSupported = ImportImageOsListSupported;
     }
 
     /**
-     * 获取支持的导入镜像的操作系统版本。
-     * @return ImportImageOsVersionSet 支持的导入镜像的操作系统版本。
+     * Obtain supported operating system versions of imported images 
+     * @return ImportImageOsVersionSet Supported operating system versions of imported images 
      */
     public OsVersion [] getImportImageOsVersionSet() {
         return this.ImportImageOsVersionSet;
     }
 
     /**
-     * 设置支持的导入镜像的操作系统版本。
-     * @param ImportImageOsVersionSet 支持的导入镜像的操作系统版本。
+     * Set supported operating system versions of imported images 
+     * @param ImportImageOsVersionSet Supported operating system versions of imported images 
      */
     public void setImportImageOsVersionSet(OsVersion [] ImportImageOsVersionSet) {
         this.ImportImageOsVersionSet = ImportImageOsVersionSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     *  Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "ImportImageOsListSupported.", this.ImportImageOsListSupported);

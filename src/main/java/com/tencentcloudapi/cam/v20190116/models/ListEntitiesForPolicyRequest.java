@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class ListEntitiesForPolicyRequest  extends AbstractModel{
 
     /**
-    * 策略 id
+    * Policy ID
     */
     @SerializedName("PolicyId")
     @Expose
     private Long PolicyId;
 
     /**
-    * 页码，默认值是 1，从 1 开始
+    * Page number, which starts from 1. Default is 1.
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * 每页大小，默认值是 20
+    * Number of entries per page; 20 by default
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-    * 可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'
+    * Valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
     */
     @SerializedName("EntityFilter")
     @Expose
     private String EntityFilter;
 
     /**
-     * 获取策略 id
-     * @return PolicyId 策略 id
+     * Getting Policy ID
+     * @return PolicyId Policy ID
      */
     public Long getPolicyId() {
         return this.PolicyId;
     }
 
     /**
-     * 设置策略 id
-     * @param PolicyId 策略 id
+     * Configuring Policy ID
+     * @param PolicyId Policy ID
      */
     public void setPolicyId(Long PolicyId) {
         this.PolicyId = PolicyId;
     }
 
     /**
-     * 获取页码，默认值是 1，从 1 开始
-     * @return Page 页码，默认值是 1，从 1 开始
+     * Obtain page number, which starts from 1. Default is 1.
+     * @return Page page number. Default value is 1; starting from 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * 设置页码，默认值是 1，从 1 开始
-     * @param Page 页码，默认值是 1，从 1 开始
+     * Set page number. Default value is 1; starting from 1
+     * @param Page page number. Default value is 1; starting from 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * 获取每页大小，默认值是 20
-     * @return Rp 每页大小，默认值是 20
+     * Obtain each page size. Default value is 20
+     * @return Rp each page size. Default value is 20
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * 设置每页大小，默认值是 20
-     * @param Rp 每页大小，默认值是 20
+     * Set each page size. Default value is 20
+     * @param Rp the number of entries per page; 20 by default
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * 获取可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'
-     * @return EntityFilter 可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'
+     * Obtain valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
+     * @return EntityFilter Valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
      */
     public String getEntityFilter() {
         return this.EntityFilter;
     }
 
     /**
-     * 设置可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'
-     * @param EntityFilter 可取值 'All'、'User'、'Group' 和 'Role'，'All' 表示获取所有实体类型，'User' 表示只获取子账号，'Group' 表示只获取用户组，'Role' 表示只获取角色，默认取 'All'
+     * Set valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
+     * @param EntityFilter valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
      */
     public void setEntityFilter(String EntityFilter) {
         this.EntityFilter = EntityFilter;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

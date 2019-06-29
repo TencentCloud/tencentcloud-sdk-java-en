@@ -23,139 +23,139 @@ import java.util.HashMap;
 public class DescribeLifecycleHooksRequest  extends AbstractModel{
 
     /**
-    * 按照一个或者多个生命周期挂钩ID查询。生命周期挂钩ID形如：`ash-8azjzxcl`。每次请求的上限为100。参数不支持同时指定`LifecycleHookIds`和`Filters`。
+    * ID(s) of the Lifecycle hook to be queried, such as `ash-8azjzxcl`. A maximum of 100 instances are allowed for each request. You cannot specify both `LifecycleHookIds` and `Filters`.
     */
     @SerializedName("LifecycleHookIds")
     @Expose
     private String [] LifecycleHookIds;
 
     /**
-    * 过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LifecycleHookIds `和`Filters`。
+    * Filter conditions
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+Filter conditions
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Limit")
     @Expose
     private Integer Limit;
 
     /**
-    * 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Offset")
     @Expose
     private Integer Offset;
 
     /**
-     * 获取按照一个或者多个生命周期挂钩ID查询。生命周期挂钩ID形如：`ash-8azjzxcl`。每次请求的上限为100。参数不支持同时指定`LifecycleHookIds`和`Filters`。
-     * @return LifecycleHookIds 按照一个或者多个生命周期挂钩ID查询。生命周期挂钩ID形如：`ash-8azjzxcl`。每次请求的上限为100。参数不支持同时指定`LifecycleHookIds`和`Filters`。
+     * Get queries according to one or more lifecycle hook ID(s), such as `ash-8azjzxcl`. A maximum of 100 lifecycle hook IDs are allowed for each request.You cannot specify both `LifecycleHookIds` and `Filters`.
+     * @return LifecycleHookIds Queries according to one or more lifecycle hook ID(s), such as `ash-8azjzxcl`. A maximum of 100 lifecycle hook IDs are allowed for each request.You cannot specify both `LifecycleHookIds` and `Filters`.
      */
     public String [] getLifecycleHookIds() {
         return this.LifecycleHookIds;
     }
 
     /**
-     * 设置按照一个或者多个生命周期挂钩ID查询。生命周期挂钩ID形如：`ash-8azjzxcl`。每次请求的上限为100。参数不支持同时指定`LifecycleHookIds`和`Filters`。
-     * @param LifecycleHookIds 按照一个或者多个生命周期挂钩ID查询。生命周期挂钩ID形如：`ash-8azjzxcl`。每次请求的上限为100。参数不支持同时指定`LifecycleHookIds`和`Filters`。
+     * Set queries according to one or more lifecycle hook ID(s), such as `ash-8azjzxcl`. A maximum of 100 lifecycle hook IDs are allowed for each request.You cannot specify both `LifecycleHookIds` and `Filters`.
+     * @param LifecycleHookIds Queries according to one or more lifecycle hook ID(s), such as `ash-8azjzxcl`. A maximum of 100 lifecycle hook IDs are allowed for each request.You cannot specify both `LifecycleHookIds` and `Filters`.
      */
     public void setLifecycleHookIds(String [] LifecycleHookIds) {
         this.LifecycleHookIds = LifecycleHookIds;
     }
 
     /**
-     * 获取过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LifecycleHookIds `和`Filters`。
-     * @return Filters 过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LifecycleHookIds `和`Filters`。
+     * Get filter conditions.
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+Filter conditions.
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
+     * @return Filters Filter Conditions.
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+Filter conditions.
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LifecycleHookIds `和`Filters`。
-     * @param Filters 过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-过滤条件。
-<li> lifecycle-hook-id - String - 是否必填：否 -（过滤条件）按照生命周期挂钩ID过滤。</li>
-<li> lifecycle-hook-name - String - 是否必填：否 -（过滤条件）按照生命周期挂钩名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LifecycleHookIds `和`Filters`。
+     * Set filter conditions.
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+Filter conditions
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
+     * @param Filters Filter conditions.
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+Filter conditions
+<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 获取返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Get number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getLimit() {
         return this.Limit;
     }
 
     /**
-     * 设置返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setLimit(Integer Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * 获取偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Get offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @return Offset Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getOffset() {
         return this.Offset;
     }
 
     /**
-     * 设置偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "LifecycleHookIds.", this.LifecycleHookIds);

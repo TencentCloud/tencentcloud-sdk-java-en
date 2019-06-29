@@ -23,145 +23,145 @@ import java.util.HashMap;
 public class InstanceTypeConfig  extends AbstractModel{
 
     /**
-    * 可用区。
+    * Availability Zone
     */
     @SerializedName("Zone")
     @Expose
     private String Zone;
 
     /**
-    * 实例机型。
+    * Instance model.
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-    * 实例机型系列。
+    * Instance model series.
     */
     @SerializedName("InstanceFamily")
     @Expose
     private String InstanceFamily;
 
     /**
-    * GPU核数，单位：核。
+    * Number of GPU cores (in core).
     */
     @SerializedName("GPU")
     @Expose
     private Integer GPU;
 
     /**
-    * CPU核数，单位：核。
+    * Number of CPU cores (in core).
     */
     @SerializedName("CPU")
     @Expose
     private Integer CPU;
 
     /**
-    * 内存容量，单位：`GB`。
+    * Memory size (in `GB`).
     */
     @SerializedName("Memory")
     @Expose
     private Integer Memory;
 
     /**
-     * 获取可用区。
-     * @return Zone 可用区。
+     * Get availability zone.
+     * @return Zone availability zone.
      */
     public String getZone() {
         return this.Zone;
     }
 
     /**
-     * 设置可用区。
-     * @param Zone 可用区。
+     * Set availability zone.
+     * @param Zone availability zone.
      */
     public void setZone(String Zone) {
         this.Zone = Zone;
     }
 
     /**
-     * 获取实例机型。
-     * @return InstanceType 实例机型。
+     * Get instance model.
+     * @return InstanceType instance model.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * 设置实例机型。
-     * @param InstanceType 实例机型。
+     * Set instance model.
+     * @param InstanceType instance model.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * 获取实例机型系列。
-     * @return InstanceFamily 实例机型系列。
+     * Get instance model series.
+     * @return InstanceFamily Instance model series.
      */
     public String getInstanceFamily() {
         return this.InstanceFamily;
     }
 
     /**
-     * 设置实例机型系列。
-     * @param InstanceFamily 实例机型系列。
+     * Set instance model series.
+     * @param InstanceFamily Instance model series.
      */
     public void setInstanceFamily(String InstanceFamily) {
         this.InstanceFamily = InstanceFamily;
     }
 
     /**
-     * 获取GPU核数，单位：核。
-     * @return GPU GPU核数，单位：核。
+     * Get number of GPU cores (in core).
+     * @return GPU Number of cores of GPU, in core.
      */
     public Integer getGPU() {
         return this.GPU;
     }
 
     /**
-     * 设置GPU核数，单位：核。
-     * @param GPU GPU核数，单位：核。
+     * Set number of GPU cores (in core).
+     * @param GPU Number of cores of GPU, in core.
      */
     public void setGPU(Integer GPU) {
         this.GPU = GPU;
     }
 
     /**
-     * 获取CPU核数，单位：核。
-     * @return CPU CPU核数，单位：核。
+     * Get number of CPU cores (in core).
+     * @return CPU Number of cores of GPU, in core.
      */
     public Integer getCPU() {
         return this.CPU;
     }
 
     /**
-     * 设置CPU核数，单位：核。
-     * @param CPU CPU核数，单位：核。
+     * Set number of CPU cores (in core).
+     * @param CPU Number of cores of GPU, in core.
      */
     public void setCPU(Integer CPU) {
         this.CPU = CPU;
     }
 
     /**
-     * 获取内存容量，单位：`GB`。
-     * @return Memory 内存容量，单位：`GB`。
+     * Get memory size (in `GB`).
+     * @return Memory Memory size (in `GB`).
      */
     public Integer getMemory() {
         return this.Memory;
     }
 
     /**
-     * 设置内存容量，单位：`GB`。
-     * @param Memory 内存容量，单位：`GB`。
+     * Set memory size (in `GB`).
+     * @param Memory Memory size (in `GB`).
      */
     public void setMemory(Integer Memory) {
         this.Memory = Memory;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internally realized, users have no permission for it 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Zone", this.Zone);

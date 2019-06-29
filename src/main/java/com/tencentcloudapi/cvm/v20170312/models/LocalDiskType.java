@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class LocalDiskType  extends AbstractModel{
 
     /**
-    * 本地磁盘类型。
+    * Type of a local disk.
     */
     @SerializedName("Type")
     @Expose
     private String Type;
 
     /**
-    * 本地磁盘属性。
+    * Attributes of a local disk.
     */
     @SerializedName("PartitionType")
     @Expose
     private String PartitionType;
 
     /**
-    * 本地磁盘最小值。
+    * Minimum size of a local disk.
     */
     @SerializedName("MinSize")
     @Expose
     private Integer MinSize;
 
     /**
-    * 本地磁盘最大值。
+    * Maximum size of a local disk.
     */
     @SerializedName("MaxSize")
     @Expose
     private Integer MaxSize;
 
     /**
-     * 获取本地磁盘类型。
-     * @return Type 本地磁盘类型。
+     * Get type of a local disk.
+     * @return Type type of a local disk.
      */
     public String getType() {
         return this.Type;
     }
 
     /**
-     * 设置本地磁盘类型。
-     * @param Type 本地磁盘类型。
+     * Set type of a local disk.
+     * @param Type type of a local disk.
      */
     public void setType(String Type) {
         this.Type = Type;
     }
 
     /**
-     * 获取本地磁盘属性。
-     * @return PartitionType 本地磁盘属性。
+     * Get attributes of a local disk.
+     * @return PartitionType Attributes of a local disk.
      */
     public String getPartitionType() {
         return this.PartitionType;
     }
 
     /**
-     * 设置本地磁盘属性。
-     * @param PartitionType 本地磁盘属性。
+     * Set attributes of a local disk.
+     * @param PartitionType Attributes of a local disk.
      */
     public void setPartitionType(String PartitionType) {
         this.PartitionType = PartitionType;
     }
 
     /**
-     * 获取本地磁盘最小值。
-     * @return MinSize 本地磁盘最小值。
+     * Get minimum size of a local disk.
+     * @return MinSize minimum size of a local disk.
      */
     public Integer getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * 设置本地磁盘最小值。
-     * @param MinSize 本地磁盘最小值。
+     * Set minimum size of a local disk.
+     * @param MinSize minimum size of a local disk.
      */
     public void setMinSize(Integer MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * 获取本地磁盘最大值。
-     * @return MaxSize 本地磁盘最大值。
+     * Get maximum size of a local disk.
+     * @return MaxSize maximum size of a local disk.
      */
     public Integer getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * 设置本地磁盘最大值。
-     * @param MaxSize 本地磁盘最大值。
+     * maximum size of a local disk.
+     * @param MaxSize maximum size of a local disk.
      */
     public void setMaxSize(Integer MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internally realized, users have no permission for it 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Type", this.Type);

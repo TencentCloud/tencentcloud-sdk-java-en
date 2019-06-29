@@ -23,68 +23,63 @@ import java.util.HashMap;
 public class CreateKeyPairRequest  extends AbstractModel{
 
     /**
-    * 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+    * Name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
     */
     @SerializedName("KeyName")
     @Expose
     private String KeyName;
 
     /**
-    * 密钥对创建后所属的项目ID。
-可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
+    * The project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
+<li>Query the project ID via the project list.
+<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
     */
     @SerializedName("ProjectId")
     @Expose
     private Integer ProjectId;
 
     /**
-     * 获取密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
-     * @return KeyName 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+     * Get name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
+     * @return KeyName Name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
      */
     public String getKeyName() {
         return this.KeyName;
     }
 
     /**
-     * 设置密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
-     * @param KeyName 密钥对名称，可由数字，字母和下划线组成，长度不超过25个字符。
+     * Set name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
+     * @param KeyName Name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
      */
     public void setKeyName(String KeyName) {
         this.KeyName = KeyName;
     }
 
     /**
-     * 获取密钥对创建后所属的项目ID。
-可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
-     * @return ProjectId 密钥对创建后所属的项目ID。
-可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
+     * Get the project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
+<li>Query the project ID via the project list.
+<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
+     * @return ProjectId The project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
+<li>Query the project ID via the project list.
+<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
      */
     public Integer getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * 设置密钥对创建后所属的项目ID。
-可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
-     * @param ProjectId 密钥对创建后所属的项目ID。
-可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
+     * Set the project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
+<li>Query the project ID via the project list.
+<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
+     * @param ProjectId The project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
+<li>Query the project ID via the project list.
+<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
      */
     public void setProjectId(Integer ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "KeyName", this.KeyName);

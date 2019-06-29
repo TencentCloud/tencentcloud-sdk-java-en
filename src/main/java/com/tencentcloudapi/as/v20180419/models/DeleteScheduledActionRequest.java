@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteScheduledActionRequest  extends AbstractModel{
 
     /**
-    * 待删除的定时任务ID。
+    * ID of the scheduled task to be deleted.
     */
     @SerializedName("ScheduledActionId")
     @Expose
     private String ScheduledActionId;
 
     /**
-     * 获取待删除的定时任务ID。
-     * @return ScheduledActionId 待删除的定时任务ID。
+     * Obtain ID of the scheduled task to be deleted.
+     * @return ScheduledActionId ID of the scheduled task to be deleted.
      */
     public String getScheduledActionId() {
         return this.ScheduledActionId;
     }
 
     /**
-     * 设置待删除的定时任务ID。
-     * @param ScheduledActionId 待删除的定时任务ID。
+     * Set ID of the scheduled task to be deleted.
+     * @param ScheduledActionId ID of the scheduled task to be deleted.
      */
     public void setScheduledActionId(String ScheduledActionId) {
         this.ScheduledActionId = ScheduledActionId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ScheduledActionId", this.ScheduledActionId);

@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class DescribeInternetChargeTypeConfigsRequest  extends AbstractModel{
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
 

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateGroupRequest  extends AbstractModel{
 
     /**
-    * 用户组名
+    * User Group Name
     */
     @SerializedName("GroupName")
     @Expose
     private String GroupName;
 
     /**
-    * 用户组描述
+    * User Group Description
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-     * 获取用户组名
-     * @return GroupName 用户组名
+     * Getting User Group Name
+     * @return GroupName Name of the user group
      */
     public String getGroupName() {
         return this.GroupName;
     }
 
     /**
-     * 设置用户组名
-     * @param GroupName 用户组名
+     * Configuring User Group Name
+     * @param GroupName Name of the user group
      */
     public void setGroupName(String GroupName) {
         this.GroupName = GroupName;
     }
 
     /**
-     * 获取用户组描述
-     * @return Remark 用户组描述
+     * Getting User Group Description
+     * @return Remark User group description
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * 设置用户组描述
-     * @param Remark 用户组描述
+     * Configuring User Group Description
+     * @param Remark User group description
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupName", this.GroupName);

@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class CompleteLifecycleActionRequest  extends AbstractModel{
 
     /**
-    * 生命周期挂钩ID
+    * Lifecycle hook ID
     */
     @SerializedName("LifecycleHookId")
     @Expose
     private String LifecycleHookId;
 
     /**
-    * 生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
+    * Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
     */
     @SerializedName("LifecycleActionResult")
     @Expose
     private String LifecycleActionResult;
 
     /**
-    * 实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
+    * Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * “InstanceId”和“LifecycleActionToken”必须填充其中一个
+    * Must enter either “InstanceId” or “LifecycleActionToken”
     */
     @SerializedName("LifecycleActionToken")
     @Expose
     private String LifecycleActionToken;
 
     /**
-     * 获取生命周期挂钩ID
-     * @return LifecycleHookId 生命周期挂钩ID
+     * Get Lifecycle hook ID
+     * @return LifecycleHookId Lifecycle hook ID
      */
     public String getLifecycleHookId() {
         return this.LifecycleHookId;
     }
 
     /**
-     * 设置生命周期挂钩ID
-     * @param LifecycleHookId 生命周期挂钩ID
+     * Set Lifecycle hook ID
+     * @param LifecycleHookId Lifecycle hook ID
      */
     public void setLifecycleHookId(String LifecycleHookId) {
         this.LifecycleHookId = LifecycleHookId;
     }
 
     /**
-     * 获取生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
-     * @return LifecycleActionResult 生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
+     * Get Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
+     * @return LifecycleActionResult Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
      */
     public String getLifecycleActionResult() {
         return this.LifecycleActionResult;
     }
 
     /**
-     * 设置生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
-     * @param LifecycleActionResult 生命周期动作的结果，取值范围为“CONTINUE”或“ABANDON”
+     * Set Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
+     * @param LifecycleActionResult Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
      */
     public void setLifecycleActionResult(String LifecycleActionResult) {
         this.LifecycleActionResult = LifecycleActionResult;
     }
 
     /**
-     * 获取实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
-     * @return InstanceId 实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
+     * Get Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
+     * @return InstanceId Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * 设置实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
-     * @param InstanceId 实例ID，“InstanceId”和“LifecycleActionToken”必须填充其中一个
+     * Set Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
+     * @param InstanceId Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * 获取“InstanceId”和“LifecycleActionToken”必须填充其中一个
-     * @return LifecycleActionToken “InstanceId”和“LifecycleActionToken”必须填充其中一个
+     * Get Must enter either “InstanceId” or “LifecycleActionToken”
+     * @return LifecycleActionToken Must enter either “InstanceId” or “LifecycleActionToken”
      */
     public String getLifecycleActionToken() {
         return this.LifecycleActionToken;
     }
 
     /**
-     * 设置“InstanceId”和“LifecycleActionToken”必须填充其中一个
-     * @param LifecycleActionToken “InstanceId”和“LifecycleActionToken”必须填充其中一个
+     * Set Must enter either “InstanceId” or “LifecycleActionToken”
+     * @param LifecycleActionToken
      */
     public void setLifecycleActionToken(String LifecycleActionToken) {
         this.LifecycleActionToken = LifecycleActionToken;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LifecycleHookId", this.LifecycleHookId);

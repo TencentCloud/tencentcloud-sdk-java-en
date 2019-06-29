@@ -23,569 +23,559 @@ import java.util.HashMap;
 public class Instance  extends AbstractModel{
 
     /**
-    * 实例所在的位置。
+    * Location of an instance.
     */
     @SerializedName("Placement")
     @Expose
     private Placement Placement;
 
     /**
-    * 实例`ID`。
+    * Instances`ID`.
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * 实例机型。
+    *  Instance model.
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-    * 实例的CPU核数，单位：核。
+    *  Number of CPU cores in an instance (in core).
     */
     @SerializedName("CPU")
     @Expose
     private Integer CPU;
 
     /**
-    * 实例内存容量，单位：`GB`。
+    * Volume of the instance memory, in `GB`.
     */
     @SerializedName("Memory")
     @Expose
     private Integer Memory;
 
     /**
-    * 实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例<br><li>EXPIRED：表示过期的实例<br><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
+    * Instance business status. range:<br><li>NORMAL: indicates the instance in the normal status<br><li>EXPIRED: indicates the expired instance <br><li>PROTECTIVELY_ISOLATED: indicates the instance that is safely isolated.
     */
     @SerializedName("RestrictState")
     @Expose
     private String RestrictState;
 
     /**
-    * 实例名称。
+    * Instance Name
     */
     @SerializedName("InstanceName")
     @Expose
     private String InstanceName;
 
     /**
-    * 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。
+    * Instance billing mode. Range:<br><li>`PREPAID`： prepaid, that is annually/monthly subscription<br><li>`POSTPAID_BY_HOUR`： postpaid, that is billed by volume<br><li>`CDHPAID`：`CDH`paid, that is only paid for `CDH`, not for the instance on `CDH`.
     */
     @SerializedName("InstanceChargeType")
     @Expose
     private String InstanceChargeType;
 
     /**
-    * 实例系统盘信息。
+    *  Information of the instance's system disk.
     */
     @SerializedName("SystemDisk")
     @Expose
     private SystemDisk SystemDisk;
 
     /**
-    * 实例数据盘信息。只包含随实例购买的数据盘。
+    *  Information of the instance's system disk. Only including the data disks purchased along with the instance. 
     */
     @SerializedName("DataDisks")
     @Expose
     private DataDisk [] DataDisks;
 
     /**
-    * 实例主网卡的内网`IP`列表。
+    * Instance main network card’s intranet `IP` list.
     */
     @SerializedName("PrivateIpAddresses")
     @Expose
     private String [] PrivateIpAddresses;
 
     /**
-    * 实例主网卡的公网`IP`列表。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Instance main network card’s extranet `IP` list. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("PublicIpAddresses")
     @Expose
     private String [] PublicIpAddresses;
 
     /**
-    * 实例带宽信息。
+    *  Instance bandwidth information.
     */
     @SerializedName("InternetAccessible")
     @Expose
     private InternetAccessible InternetAccessible;
 
     /**
-    * 实例所属虚拟私有网络信息。
+    *  Information of the VPC to which the instance belongs.
     */
     @SerializedName("VirtualPrivateCloud")
     @Expose
     private VirtualPrivateCloud VirtualPrivateCloud;
 
     /**
-    * 生产实例所使用的镜像`ID`。
+    *  of the image used by the production instance.
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * 自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
+    * Auto renewal flag. Supported values:<br><li>`NOTIFY_AND_MANUAL_RENEW`: Notify expiry but not renew automatically<br><li>`NOTIFY_AND_AUTO_RENEW`: Notify expiry and renew automatically<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`: Neither notify expiry nor renew automatically
     */
     @SerializedName("RenewFlag")
     @Expose
     private String RenewFlag;
 
     /**
-    * 创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+    * Creation time. Displayed in a format that conforms to `ISO8601`, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * 到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+    * Expire time. Displayed in a format that conforms to `ISO8601`, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
     */
     @SerializedName("ExpiredTime")
     @Expose
     private String ExpiredTime;
 
     /**
-    * 操作系统名称。
+    * Operating system name
     */
     @SerializedName("OsName")
     @Expose
     private String OsName;
 
     /**
-    * 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。
+    * The security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If this parameter is not specified, the defaul security group will be bounded.
     */
     @SerializedName("SecurityGroupIds")
     @Expose
     private String [] SecurityGroupIds;
 
     /**
-    * 实例登录设置。目前只返回实例所关联的密钥。
+    * Login settings of the instance. Only the key associated with the instance is returned.
     */
     @SerializedName("LoginSettings")
     @Expose
     private LoginSettings LoginSettings;
 
     /**
-    * 实例状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>RUNNING：表示运行中<br></li><li>STOPPED：表示关机<br></li><li>STARTING：表示开机中<br></li><li>STOPPING：表示关机中<br></li><li>REBOOTING：表示重启中<br></li><li>SHUTDOWN：表示停止待销毁<br></li><li>TERMINATING：表示销毁中。<br></li>
+    * Instance status. Supported values: <br><li>PENDING: Creating<br></li><li>LAUNCH_FAILED: Creation failed<br></li><li>RUNNING: Running<br></li><li>STOPPED: Shut down<br></li><li>STARTING: Starting up<br></li><li>STOPPING: Shutting down<br></li><li>REBOOTING: Restarting<br></li><li>SHUTDOWN: To be terminated<br></li><li>TERMINATING: Terminating<br></li>
     */
     @SerializedName("InstanceState")
     @Expose
     private String InstanceState;
 
     /**
-    * 实例关联的标签列表。
+    * Associated instances’ tag list
     */
     @SerializedName("Tags")
     @Expose
     private Tag [] Tags;
 
     /**
-    * 实例的关机计费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件<br>
+    * Instance shutdown billing mode Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<li>NOT_APPLICABLE：Instance is not shutdown or not suitable for stop billing after shut down<br>
     */
     @SerializedName("StopChargingMode")
     @Expose
     private String StopChargingMode;
 
     /**
-     * 获取实例所在的位置。
-     * @return Placement 实例所在的位置。
+     * Get the location of the instance.
+     * @return Placement location of the instance.
      */
     public Placement getPlacement() {
         return this.Placement;
     }
 
     /**
-     * 设置实例所在的位置。
-     * @param Placement 实例所在的位置。
+     * Set the location of the instance.
+     * @param Placement location of the instance.
      */
     public void setPlacement(Placement Placement) {
         this.Placement = Placement;
     }
 
     /**
-     * 获取实例`ID`。
-     * @return InstanceId 实例`ID`。
+     * Get instance`ID`
+     * @return InstanceId Instance`ID`
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * 设置实例`ID`。
-     * @param InstanceId 实例`ID`。
+     * Set instance`ID`.
+     * @param InstanceId Instance `ID`.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * 获取实例机型。
-     * @return InstanceType 实例机型。
+     * Obtain the instance model
+     * @return InstanceType instance model.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * 设置实例机型。
-     * @param InstanceType 实例机型。
+     * Set instance model.
+     * @param InstanceType instance model.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * 获取实例的CPU核数，单位：核。
-     * @return CPU 实例的CPU核数，单位：核。
+     * Get number of CPU cores in an instance (in core).
+     * @return CPU Number of CPU cores in an instance (in core).
      */
     public Integer getCPU() {
         return this.CPU;
     }
 
     /**
-     * 设置实例的CPU核数，单位：核。
-     * @param CPU 实例的CPU核数，单位：核。
+     * Set number of CPU cores in an instance (in core).
+     * @param CPU Number of CPU cores in the instance (in core).
      */
     public void setCPU(Integer CPU) {
         this.CPU = CPU;
     }
 
     /**
-     * 获取实例内存容量，单位：`GB`。
-     * @return Memory 实例内存容量，单位：`GB`。
+     * Obtain instance memory capacity.(in `GB`).
+     * @return Memory Instance memory volume.(in `GB`).
      */
     public Integer getMemory() {
         return this.Memory;
     }
 
     /**
-     * 设置实例内存容量，单位：`GB`。
-     * @param Memory 实例内存容量，单位：`GB`。
+     * Set instance memory volume.(in `GB`)
+     * @param Memory Instance memory capacity (in `GB`).
      */
     public void setMemory(Integer Memory) {
         this.Memory = Memory;
     }
 
     /**
-     * 获取实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例<br><li>EXPIRED：表示过期的实例<br><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
-     * @return RestrictState 实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例<br><li>EXPIRED：表示过期的实例<br><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
+     * Obtain instance business status: Value range:<br><li>NORMAL: Instance is normal<br><li>EXPIRED: Instance has expired<br><li>PROTECTIVELY_ISOLATED: Instance is isolated 
+     * @return RestrictState Instance business status. Value range:<br><li>NORMAL: Instance is normal<br><li>EXPIRED: Instance has expired<br><li>PROTECTIVELY_ISOLATED: Instance is isolated 
      */
     public String getRestrictState() {
         return this.RestrictState;
     }
 
     /**
-     * 设置实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例<br><li>EXPIRED：表示过期的实例<br><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
-     * @param RestrictState 实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例<br><li>EXPIRED：表示过期的实例<br><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。
+     * Set instance business status. Value range:<br><li>NORMAL: Instance is normal<br><li>EXPIRED: Instance has expired<br><li>PROTECTIVELY_ISOLATED: Instance is isolated 
+     * @param RestrictState Instance busniess mode. Range:<br><li>NORMAL: Instance is normal<br><li>EXPIRED: Instance has expired<br><li>PROTECTIVELY_ISOLATED: Instance is isolated 
      */
     public void setRestrictState(String RestrictState) {
         this.RestrictState = RestrictState;
     }
 
     /**
-     * 获取实例名称。
-     * @return InstanceName 实例名称。
+     * Obtain the name of the instance.
+     * @return InstanceName Name of an instance.
      */
     public String getInstanceName() {
         return this.InstanceName;
     }
 
     /**
-     * 设置实例名称。
-     * @param InstanceName 实例名称。
+     * Set the name of an instance.
+     * @param InstanceName Name of the instance.
      */
     public void setInstanceName(String InstanceName) {
         this.InstanceName = InstanceName;
     }
 
     /**
-     * 获取实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。
-     * @return InstanceChargeType 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。
+     * Obtain instance billing method. Value range: <br><li>`PREPAID`: Prepaid. Monthly subscription.<br><li>`POSTPAID_BY_HOUR`:Postpaid. Bilied by volume.<br><li>`CDHPAID`: `CDH` Paid, that is only paid for `CDH`, not for instance on `CDH`.
+     * @return InstanceChargeType Billing mode of instance.Value range:<br><li>`PREPAID`: Prepaid. Monthly subscription.<br><li>`POSTPAID_BY_HOUR`: Postpaid, billing by volume.<br><li>`CDHPAID`: `CDH`Paid, that is only paid for `CDH`, not for instance on `CDH`.
      */
     public String getInstanceChargeType() {
         return this.InstanceChargeType;
     }
 
     /**
-     * 设置实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。
-     * @param InstanceChargeType 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。
+     * Set instance billing method. Value range: <br><li>`PREPAID`: Prepaid. Monthly subscription.<br><li>`POSTPAID_BY_HOUR`: Postpaid, billing by volume.<br><li>`CDHPAID`: `CDH`Paid, that is only paid for `CDH`, not for instance on `CDH`.
+     * @param InstanceChargeType Instance billing method. Value range: <br><li>`PREPAID`: Prepaid. Monthly subscription.<br><li>`POSTPAID_BY_HOUR`: Postpaid, billing by volume.<br><li>`CDHPAID`: `CDH`Paid, that is only paid for `CDH`, not for instance on `CDH`.
      */
     public void setInstanceChargeType(String InstanceChargeType) {
         this.InstanceChargeType = InstanceChargeType;
     }
 
     /**
-     * 获取实例系统盘信息。
-     * @return SystemDisk 实例系统盘信息。
+     * Obtain information of the instance's system disk.
+     * @return SystemDisk Information of the instance's system disk.
      */
     public SystemDisk getSystemDisk() {
         return this.SystemDisk;
     }
 
     /**
-     * 设置实例系统盘信息。
-     * @param SystemDisk 实例系统盘信息。
+     * Set information of the instance's system disk.
+     * @param SystemDisk Information of the instance's system disk.
      */
     public void setSystemDisk(SystemDisk SystemDisk) {
         this.SystemDisk = SystemDisk;
     }
 
     /**
-     * 获取实例数据盘信息。只包含随实例购买的数据盘。
-     * @return DataDisks 实例数据盘信息。只包含随实例购买的数据盘。
+     * Obtain information of the instance's system disk. Only include data disk brought with the instance.
+     * @return DataDisks Information of the instance's system disk. Only include data disk brought with the instance.
      */
     public DataDisk [] getDataDisks() {
         return this.DataDisks;
     }
 
     /**
-     * 设置实例数据盘信息。只包含随实例购买的数据盘。
-     * @param DataDisks 实例数据盘信息。只包含随实例购买的数据盘。
+     * Set information of the instance's system disk. Only include data disk brought with the instance.
+     * @param DataDisks information of the instance's system disk. Only include data disk brought with the instance.
      */
     public void setDataDisks(DataDisk [] DataDisks) {
         this.DataDisks = DataDisks;
     }
 
     /**
-     * 获取实例主网卡的内网`IP`列表。
-     * @return PrivateIpAddresses 实例主网卡的内网`IP`列表。
+     * Obtain the list of private `IPs``IP` of the instance's primary ENI.
+     * @return PrivateIpAddresses the list of private `IPs``IP` of the instance's primary ENI.
      */
     public String [] getPrivateIpAddresses() {
         return this.PrivateIpAddresses;
     }
 
     /**
-     * 设置实例主网卡的内网`IP`列表。
-     * @param PrivateIpAddresses 实例主网卡的内网`IP`列表。
+     * Set the list of private `IPs``IP` of the instance's primary ENI.
+     * @param PrivateIpAddresses the list of private `IPs``IP` of the instance's primary ENI.
      */
     public void setPrivateIpAddresses(String [] PrivateIpAddresses) {
         this.PrivateIpAddresses = PrivateIpAddresses;
     }
 
     /**
-     * 获取实例主网卡的公网`IP`列表。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return PublicIpAddresses 实例主网卡的公网`IP`列表。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain the list of private `IPs``IP` of the instance's primary ENI. Note: This field may return null, indicating that no valid value was found.
+     * @return PublicIpAddresses The list of public `IPs``IP` of the instance's primary ENI. Note: This field may return null, indicating that no valid value was found.
      */
     public String [] getPublicIpAddresses() {
         return this.PublicIpAddresses;
     }
 
     /**
-     * 设置实例主网卡的公网`IP`列表。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param PublicIpAddresses 实例主网卡的公网`IP`列表。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set the list of public `IPs``IP` of the instance's primary ENI. Note: This field may return null, indicating that no valid value was found.
+     * @param PublicIpAddresses The list of public `IPs``IP` of the instance's primary ENI. Note: This field may return null, indicating that no valid value was found.
      */
     public void setPublicIpAddresses(String [] PublicIpAddresses) {
         this.PublicIpAddresses = PublicIpAddresses;
     }
 
     /**
-     * 获取实例带宽信息。
-     * @return InternetAccessible 实例带宽信息。
+     * Obtain the bandwidth information of instance.
+     * @return InternetAccessible The bandwidth information of instance.
      */
     public InternetAccessible getInternetAccessible() {
         return this.InternetAccessible;
     }
 
     /**
-     * 设置实例带宽信息。
-     * @param InternetAccessible 实例带宽信息。
+     * Set the bandwidth information of instance.
+     * @param InternetAccessible the bandwidth information of instance.
      */
     public void setInternetAccessible(InternetAccessible InternetAccessible) {
         this.InternetAccessible = InternetAccessible;
     }
 
     /**
-     * 获取实例所属虚拟私有网络信息。
-     * @return VirtualPrivateCloud 实例所属虚拟私有网络信息。
+     *  Obtain the information of the VPC to which the instance belongs.
+     * @return VirtualPrivateCloud the information of the VPC to which the instance belongs.
      */
     public VirtualPrivateCloud getVirtualPrivateCloud() {
         return this.VirtualPrivateCloud;
     }
 
     /**
-     * 设置实例所属虚拟私有网络信息。
-     * @param VirtualPrivateCloud 实例所属虚拟私有网络信息。
+     * Set information of the VPC to which the instance belongs.
+     * @param VirtualPrivateCloud information of the VPC to which the instance belongs.
      */
     public void setVirtualPrivateCloud(VirtualPrivateCloud VirtualPrivateCloud) {
         this.VirtualPrivateCloud = VirtualPrivateCloud;
     }
 
     /**
-     * 获取生产实例所使用的镜像`ID`。
-     * @return ImageId 生产实例所使用的镜像`ID`。
+     * Obtain the image`ID` used by the production instance.
+     * @return ImageId the image`ID` used by the production instance.
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * 设置生产实例所使用的镜像`ID`。
-     * @param ImageId 生产实例所使用的镜像`ID`。
+     * Set the image`ID` used by the production instance.
+     * @param ImageId the image`ID` used by the production instance.
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * 获取自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
-     * @return RenewFlag 自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
+     * Obtain subscription sign. Value range:<br><li>`NOTIFY_AND_MANUAL_RENEW`: Notify expiry but not renew automatically<br><li>`NOTIFY_AND_AUTO_RENEW`: Notify expiry and renew automatically<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`: Do not notify expiry and do not renew automatically
+     * @return RenewFlag Sign of Auto-renewal. Value of range:<br><li>`NOTIFY_AND_MANUAL_RENEW`: Notify expiry but not renew automatically<br><li>`NOTIFY_AND_AUTO_RENEW`: Notify expiry and renew automatically<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`: Do not notify expiry and do not renew automatically
      */
     public String getRenewFlag() {
         return this.RenewFlag;
     }
 
     /**
-     * 设置自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
-     * @param RenewFlag 自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。
+     * Set the sign of Auto-renewal. Value of range:<br><li>`NOTIFY_AND_MANUAL_RENEW`: Notify expiry but not renew automatically<br><li>`NOTIFY_AND_AUTO_RENEW`: Notify expiry and renew automatically<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`: Do not notify expiry and do not renew automatically
+     * @param RenewFlag The sign of Auto-renewal. Value of range:<br><li>`NOTIFY_AND_MANUAL_RENEW`: Notify expiry but not renew automatically<br><li>`NOTIFY_AND_AUTO_RENEW`: Notify expiry and renew automatically<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`: Do not notify expiry and do not renew automatically
      */
     public void setRenewFlag(String RenewFlag) {
         this.RenewFlag = RenewFlag;
     }
 
     /**
-     * 获取创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @return CreatedTime 创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Obtain the creation time. Display as the `ISO8601` standard, and use `UTC` time, as the format as: `YYYY-MM-DDThh:mm:ssZ`.
+     * @return CreatedTime the creation time. Display as the `ISO8601` standard, and use `UTC` time, as the format as: `YYYY-MM-DDThh:mm:ssZ`.
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @param CreatedTime 创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set the creation time. Display as the `ISO8601` standard, and use `UTC` time, as the format as: `YYYY-MM-DDThh:mm:ssZ`.
+     * @param CreatedTime the creation time. Display as the `ISO8601` standard, and use `UTC` time, as the format as: `YYYY-MM-DDThh:mm:ssZ`.
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 获取到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @return ExpiredTime 到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Obtain the creation time. Display as the `ISO8601` standard, and use `UTC` time, as the format as: `YYYY-MM-DDThh:mm:ssZ`.
+     * @return ExpiredTime the creation time. Display as the `ISO8601` standard, and use `UTC` time, as the format as: `YYYY-MM-DDThh:mm:ssZ`.
      */
     public String getExpiredTime() {
         return this.ExpiredTime;
     }
 
     /**
-     * 设置到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @param ExpiredTime 到期时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set the creation time. Display as the `ISO8601` standard, and use `UTC` time, as the format as: `YYYY-MM-DDThh:mm:ssZ`.
+     * @param ExpiredTime the creation time. Display as the `ISO8601` standard, and use `UTC` time, as the format as: `YYYY-MM-DDThh:mm:ssZ`.
      */
     public void setExpiredTime(String ExpiredTime) {
         this.ExpiredTime = ExpiredTime;
     }
 
     /**
-     * 获取操作系统名称。
-     * @return OsName 操作系统名称。
+     * Obtain Operating system name
+     * @return OsName Operating system name
      */
     public String getOsName() {
         return this.OsName;
     }
 
     /**
-     * 设置操作系统名称。
-     * @param OsName 操作系统名称。
+     * Set operating system name
+     * @param OsName Operating system name
      */
     public void setOsName(String OsName) {
         this.OsName = OsName;
     }
 
     /**
-     * 获取实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。
-     * @return SecurityGroupIds 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。
+     * Obtain the security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808).
+     * @return SecurityGroupIds The security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). 
      */
     public String [] getSecurityGroupIds() {
         return this.SecurityGroupIds;
     }
 
     /**
-     * 设置实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。
-     * @param SecurityGroupIds 实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。
+     * Set up the security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808).
+     * @param SecurityGroupIds the security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). 
      */
     public void setSecurityGroupIds(String [] SecurityGroupIds) {
         this.SecurityGroupIds = SecurityGroupIds;
     }
 
     /**
-     * 获取实例登录设置。目前只返回实例所关联的密钥。
-     * @return LoginSettings 实例登录设置。目前只返回实例所关联的密钥。
+     * Obtain login settings of the instance. Only the key associated with the instance is returned.
+     * @return LoginSettings login settings of the instance. Only the key associated with the instance is returned.
      */
     public LoginSettings getLoginSettings() {
         return this.LoginSettings;
     }
 
     /**
-     * 设置实例登录设置。目前只返回实例所关联的密钥。
-     * @param LoginSettings 实例登录设置。目前只返回实例所关联的密钥。
+     * Set login settings of the instance. Only the key associated with the instance is returned.
+     * @param LoginSettings login settings of the instance. Only the key associated with the instance is returned.
      */
     public void setLoginSettings(LoginSettings LoginSettings) {
         this.LoginSettings = LoginSettings;
     }
 
     /**
-     * 获取实例状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>RUNNING：表示运行中<br></li><li>STOPPED：表示关机<br></li><li>STARTING：表示开机中<br></li><li>STOPPING：表示关机中<br></li><li>REBOOTING：表示重启中<br></li><li>SHUTDOWN：表示停止待销毁<br></li><li>TERMINATING：表示销毁中。<br></li>
-     * @return InstanceState 实例状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>RUNNING：表示运行中<br></li><li>STOPPED：表示关机<br></li><li>STARTING：表示开机中<br></li><li>STOPPING：表示关机中<br></li><li>REBOOTING：表示重启中<br></li><li>SHUTDOWN：表示停止待销毁<br></li><li>TERMINATING：表示销毁中。<br></li>
+     * Obtain instance status<br><li>PENDING: Creating<br></li><li>LAUNCH_FAILED: Creation failed<br></li><li>RUNNING: Running<br></li><li>STOPPED: Shut down<br></li><li>STARTING: Starting up<br></li><li>STOPPING: Shutting down<br></li><li>REBOOTING: Restarting<br></li><li>SHUTDOWN: To be terminated<br></li><li>TERMINATING: Terminating<br></li>
+     * @return InstanceState InstanceState. Value range:<br><li>PENDING: Creating<br></li><li>LAUNCH_FAILED: Creation failed<br></li><li>RUNNING: Running<br></li><li>STOPPED: Shut down<br></li><li>STARTING: Starting up<br></li><li>STOPPING: Shutting down<br></li><li>REBOOTING: Restarting<br></li><li>SHUTDOWN: To be terminated<br></li><li>TERMINATING: Terminating<br></li>
      */
     public String getInstanceState() {
         return this.InstanceState;
     }
 
     /**
-     * 设置实例状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>RUNNING：表示运行中<br></li><li>STOPPED：表示关机<br></li><li>STARTING：表示开机中<br></li><li>STOPPING：表示关机中<br></li><li>REBOOTING：表示重启中<br></li><li>SHUTDOWN：表示停止待销毁<br></li><li>TERMINATING：表示销毁中。<br></li>
-     * @param InstanceState 实例状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>RUNNING：表示运行中<br></li><li>STOPPED：表示关机<br></li><li>STARTING：表示开机中<br></li><li>STOPPING：表示关机中<br></li><li>REBOOTING：表示重启中<br></li><li>SHUTDOWN：表示停止待销毁<br></li><li>TERMINATING：表示销毁中。<br></li>
+     * Set instanceState InstanceState. Value range:<br><li>PENDING: Creating<br></li><li>LAUNCH_FAILED: Creation failed<br></li><li>RUNNING: Running<br></li><li>STOPPED: Shut down<br></li><li>STARTING: Starting up<br></li><li>STOPPING: Shutting down<br></li><li>REBOOTING: Restarting<br></li><li>SHUTDOWN: To be terminated<br></li><li>TERMINATING: Terminating<br></li>
+     * @param instanceState InstanceState. Value range:<br><li>PENDING: Creating<br></li><li>LAUNCH_FAILED: Creation failed<br></li><li>RUNNING: Running<br></li><li>STOPPED: Shut down<br></li><li>STARTING: Starting up<br></li><li>STOPPING: Shutting down<br></li><li>REBOOTING: Restarting<br></li><li>SHUTDOWN: To be terminated<br></li><li>TERMINATING: Terminating<br></li>
      */
     public void setInstanceState(String InstanceState) {
         this.InstanceState = InstanceState;
     }
 
     /**
-     * 获取实例关联的标签列表。
-     * @return Tags 实例关联的标签列表。
+     * Obtain associated tag list of the instance.
+     * @return Tags associated tag list of the instance.
      */
     public Tag [] getTags() {
         return this.Tags;
     }
 
     /**
-     * 设置实例关联的标签列表。
-     * @param Tags 实例关联的标签列表。
+     * Set associated tag list of the instance.
+     * @param Tags associated tag list of the instance.
      */
     public void setTags(Tag [] Tags) {
         this.Tags = Tags;
     }
 
     /**
-     * 获取实例的关机计费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件<br>
-     * @return StopChargingMode 实例的关机计费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件<br>
+     * Obtain the shutdown billing method of an instance. Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<li>NOT_APPLICABLE：Instance is not shut down or not applicable of the shutdown billing mode.<br>
+     * @return StopChargingMode  the shutdown billing mode of the instance. Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<li>NOT_APPLICABLE：Instance is not shut down or not applicable of the shutdown billing mode.<br>
      */
     public String getStopChargingMode() {
         return this.StopChargingMode;
     }
 
     /**
-     * 设置实例的关机计费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件<br>
-     * @param StopChargingMode 实例的关机计费模式。
-取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件<br>
+     * Set the shutdown billing mode of the instance. Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<li>NOT_APPLICABLE：Instance is not shut down or not applicable of the shutdown billing mode.<br>
+     * @param StopChargingMode shutdown billing mode of the instance. Value range:<br><li>KEEP_CHARGING: Keep charging after shutdown.<br><li>STOP_CHARGING: Stop charging after shutdown.<li>NOT_APPLICABLE：Instance is not shut down or not applicable of the shutdown billing mode.<br>
      */
     public void setStopChargingMode(String StopChargingMode) {
         this.StopChargingMode = StopChargingMode;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internally realized, users have no permission for it 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Placement.", this.Placement);

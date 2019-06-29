@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeletePolicyRequest  extends AbstractModel{
 
     /**
-    * 数组，数组成员是策略 id，支持批量删除策略
+    * Array. Array elements are policy IDs. Policies can be deleted in batch
     */
     @SerializedName("PolicyId")
     @Expose
     private Long [] PolicyId;
 
     /**
-     * 获取数组，数组成员是策略 id，支持批量删除策略
-     * @return PolicyId 数组，数组成员是策略 id，支持批量删除策略
+     * Getting Array. Array elements are policy IDs. Policies can be deleted in batch
+     * @return PolicyId Array. Array elements are policy IDs. Policies can be deleted in batch
      */
     public Long [] getPolicyId() {
         return this.PolicyId;
     }
 
     /**
-     * 设置数组，数组成员是策略 id，支持批量删除策略
-     * @param PolicyId 数组，数组成员是策略 id，支持批量删除策略
+     * Configuring an array. Array elements are policy IDs. Policies can be deleted in batch
+     * @param PolicyId Array. Array elements are policy IDs. Policies can be deleted in batch
      */
     public void setPolicyId(Long [] PolicyId) {
         this.PolicyId = PolicyId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "PolicyId.", this.PolicyId);

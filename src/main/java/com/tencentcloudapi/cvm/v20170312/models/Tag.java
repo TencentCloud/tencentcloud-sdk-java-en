@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class Tag  extends AbstractModel{
 
     /**
-    * 标签键
+    * Tag key.
     */
     @SerializedName("Key")
     @Expose
     private String Key;
 
     /**
-    * 标签值
+    * Tag value.
     */
     @SerializedName("Value")
     @Expose
     private String Value;
 
     /**
-     * 获取标签键
-     * @return Key 标签键
+     * Obtain tag key.
+     * @return Key tag key.
      */
     public String getKey() {
         return this.Key;
     }
 
     /**
-     * 设置标签键
-     * @param Key 标签键
+     * Set tag key.
+     * @param Key tag key.
      */
     public void setKey(String Key) {
         this.Key = Key;
     }
 
     /**
-     * 获取标签值
-     * @return Value 标签值
+     * Obtain tag key.
+     * @return Value tag key.
      */
     public String getValue() {
         return this.Value;
     }
 
     /**
-     * 设置标签值
-     * @param Value 标签值
+     * Set tag key.
+     * @param value tage value
      */
     public void setValue(String Value) {
         this.Value = Value;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Key", this.Key);

@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class SAMLProviderInfo  extends AbstractModel{
 
     /**
-    * SAML身份提供商名称
+    * SAML IdP name
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * SAML身份提供商描述
+    * SAML IdP description
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * SAML身份提供商创建时间
+    * SAML IdP Created Time
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * SAML身份提供商上次修改时间
+    * Last modified time of the SAML IdP
     */
     @SerializedName("ModifyTime")
     @Expose
     private String ModifyTime;
 
     /**
-     * 获取SAML身份提供商名称
-     * @return Name SAML身份提供商名称
+     * Getting SAML IdP Name
+     * @return Name SAML IdP Name
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置SAML身份提供商名称
-     * @param Name SAML身份提供商名称
+     * Configuring SAML IdP Name
+     * @param Name SAML IdP Name
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取SAML身份提供商描述
-     * @return Description SAML身份提供商描述
+     * Getting SAML IdP Description
+     * @return Description SAML IdP Description
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * 设置SAML身份提供商描述
-     * @param Description SAML身份提供商描述
+     * Configuring SAML IdP Description
+     * @param Description SAML IdP Description
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * 获取SAML身份提供商创建时间
-     * @return CreateTime SAML身份提供商创建时间
+     * Getting SAML IdP Created Time
+     * @return CreateTime SAML IdP Created Time
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * 设置SAML身份提供商创建时间
-     * @param CreateTime SAML身份提供商创建时间
+     * Setting SAML IdP Created Time
+     * @param CreateTime IdP Created Time
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * 获取SAML身份提供商上次修改时间
-     * @return ModifyTime SAML身份提供商上次修改时间
+     * Getting last modified time of SAML IdP
+     * @return ModifyTime last modified time of SAML IdP
      */
     public String getModifyTime() {
         return this.ModifyTime;
     }
 
     /**
-     * 设置SAML身份提供商上次修改时间
-     * @param ModifyTime SAML身份提供商上次修改时间
+     * Configuring last modified time of SAML IdP
+     * @param ModifyTime last modified time of SAML IdP
      */
     public void setModifyTime(String ModifyTime) {
         this.ModifyTime = ModifyTime;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

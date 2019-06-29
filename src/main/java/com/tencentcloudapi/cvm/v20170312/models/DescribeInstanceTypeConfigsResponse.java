@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeInstanceTypeConfigsResponse  extends AbstractModel{
 
     /**
-    * 实例机型配置列表。
+    * List of instance model configurations.
     */
     @SerializedName("InstanceTypeConfigSet")
     @Expose
     private InstanceTypeConfig [] InstanceTypeConfigSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取实例机型配置列表。
-     * @return InstanceTypeConfigSet 实例机型配置列表。
+     * Obtain the list of instance model configurations.
+     * @return InstanceTypeConfigSet List of instance model configurations.
      */
     public InstanceTypeConfig [] getInstanceTypeConfigSet() {
         return this.InstanceTypeConfigSet;
     }
 
     /**
-     * 设置实例机型配置列表。
-     * @param InstanceTypeConfigSet 实例机型配置列表。
+     * Set the list of instance model configurations.
+     * @param InstanceTypeConfigSet List of instance model configurations.
      */
     public void setInstanceTypeConfigSet(InstanceTypeConfig [] InstanceTypeConfigSet) {
         this.InstanceTypeConfigSet = InstanceTypeConfigSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "InstanceTypeConfigSet.", this.InstanceTypeConfigSet);

@@ -23,367 +23,352 @@ import java.util.HashMap;
 public class Image  extends AbstractModel{
 
     /**
-    * 镜像ID
+    * Image ID
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * 镜像操作系统
+    * Image's operating system
     */
     @SerializedName("OsName")
     @Expose
     private String OsName;
 
     /**
-    * 镜像类型
+    * Image type
     */
     @SerializedName("ImageType")
     @Expose
     private String ImageType;
 
     /**
-    * 镜像创建时间
+    * Creation time of image
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * 镜像名称
+    * Image name
     */
     @SerializedName("ImageName")
     @Expose
     private String ImageName;
 
     /**
-    * 镜像描述
+    * Image description
     */
     @SerializedName("ImageDescription")
     @Expose
     private String ImageDescription;
 
     /**
-    * 镜像大小
+    * Image size
     */
     @SerializedName("ImageSize")
     @Expose
     private Integer ImageSize;
 
     /**
-    * 镜像架构
+    * Image architecture
     */
     @SerializedName("Architecture")
     @Expose
     private String Architecture;
 
     /**
-    * 镜像状态
+    * Image status
     */
     @SerializedName("ImageState")
     @Expose
     private String ImageState;
 
     /**
-    * 镜像来源平台
+    * Image source platform
     */
     @SerializedName("Platform")
     @Expose
     private String Platform;
 
     /**
-    * 镜像创建者
+    * Image creator
     */
     @SerializedName("ImageCreator")
     @Expose
     private String ImageCreator;
 
     /**
-    * 镜像来源
+    * Image source
     */
     @SerializedName("ImageSource")
     @Expose
     private String ImageSource;
 
     /**
-    * 同步百分比
-注意：此字段可能返回 null，表示取不到有效值。
+    * Image sync percentageNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("SyncPercent")
     @Expose
     private Integer SyncPercent;
 
     /**
-    * 镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
+    * Whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("IsSupportCloudinit")
     @Expose
     private Boolean IsSupportCloudinit;
 
     /**
-    * 镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
+    * Details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("SnapshotSet")
     @Expose
     private Snapshot [] SnapshotSet;
 
     /**
-     * 获取镜像ID
-     * @return ImageId 镜像ID
+     * Get image ID
+     * @return ImageId Image ID
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * 设置镜像ID
-     * @param ImageId 镜像ID
+     * Set image ID
+     * @param ImageId Image ID
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * 获取镜像操作系统
-     * @return OsName 镜像操作系统
+     * Get image’s operating system
+     * @return OsName Image's operating system
      */
     public String getOsName() {
         return this.OsName;
     }
 
     /**
-     * 设置镜像操作系统
-     * @param OsName 镜像操作系统
+     * Set image’s operating system
+     * @param OsName Image's operating system
      */
     public void setOsName(String OsName) {
         this.OsName = OsName;
     }
 
     /**
-     * 获取镜像类型
-     * @return ImageType 镜像类型
+     * Get image type
+     * @return ImageType Image type
      */
     public String getImageType() {
         return this.ImageType;
     }
 
     /**
-     * 设置镜像类型
-     * @param ImageType 镜像类型
+     * Set image type
+     * @param ImageType Image type
      */
     public void setImageType(String ImageType) {
         this.ImageType = ImageType;
     }
 
     /**
-     * 获取镜像创建时间
-     * @return CreatedTime 镜像创建时间
+     * Get creation time of image
+     * @return CreatedTime Creation time of image
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置镜像创建时间
-     * @param CreatedTime 镜像创建时间
+     * Set creation time of image
+     * @param CreatedTime Creation time of image
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 获取镜像名称
-     * @return ImageName 镜像名称
+     * Get image name
+     * @return ImageName Image Name
      */
     public String getImageName() {
         return this.ImageName;
     }
 
     /**
-     * 设置镜像名称
-     * @param ImageName 镜像名称
+     * Set image name
+     * @param ImageName Image Name
      */
     public void setImageName(String ImageName) {
         this.ImageName = ImageName;
     }
 
     /**
-     * 获取镜像描述
-     * @return ImageDescription 镜像描述
+     * Get image description
+     * @return ImageDescription Image description
      */
     public String getImageDescription() {
         return this.ImageDescription;
     }
 
     /**
-     * 设置镜像描述
-     * @param ImageDescription 镜像描述
+     * Set image description
+     * @param ImageDescription Image description
      */
     public void setImageDescription(String ImageDescription) {
         this.ImageDescription = ImageDescription;
     }
 
     /**
-     * 获取镜像大小
-     * @return ImageSize 镜像大小
+     * Get image Size
+     * @return ImageSize Image size
      */
     public Integer getImageSize() {
         return this.ImageSize;
     }
 
     /**
-     * 设置镜像大小
-     * @param ImageSize 镜像大小
+     * Set image size
+     * @param ImageSize Image size
      */
     public void setImageSize(Integer ImageSize) {
         this.ImageSize = ImageSize;
     }
 
     /**
-     * 获取镜像架构
-     * @return Architecture 镜像架构
+     * Get image architecture
+     * @return Architecture Image architecture
      */
     public String getArchitecture() {
         return this.Architecture;
     }
 
     /**
-     * 设置镜像架构
-     * @param Architecture 镜像架构
+     * Set image architecture
+     * @param Architecture Image architecture
      */
     public void setArchitecture(String Architecture) {
         this.Architecture = Architecture;
     }
 
     /**
-     * 获取镜像状态
-     * @return ImageState 镜像状态
+     * Get image status
+     * @return ImageState Image status
      */
     public String getImageState() {
         return this.ImageState;
     }
 
     /**
-     * 设置镜像状态
-     * @param ImageState 镜像状态
+     * Set image status
+     * @param ImageState Image status
      */
     public void setImageState(String ImageState) {
         this.ImageState = ImageState;
     }
 
     /**
-     * 获取镜像来源平台
-     * @return Platform 镜像来源平台
+     * Get image source platform
+     * @return Platform Image source platform
      */
     public String getPlatform() {
         return this.Platform;
     }
 
     /**
-     * 设置镜像来源平台
-     * @param Platform 镜像来源平台
+     * Set image source platform
+     * @param Platform Image source Platform
      */
     public void setPlatform(String Platform) {
         this.Platform = Platform;
     }
 
     /**
-     * 获取镜像创建者
-     * @return ImageCreator 镜像创建者
+     * Get image creator
+     * @return ImageCreator Image creator
      */
     public String getImageCreator() {
         return this.ImageCreator;
     }
 
     /**
-     * 设置镜像创建者
-     * @param ImageCreator 镜像创建者
+     * Set image creator
+     * @param ImageCreator Image creator
      */
     public void setImageCreator(String ImageCreator) {
         this.ImageCreator = ImageCreator;
     }
 
     /**
-     * 获取镜像来源
-     * @return ImageSource 镜像来源
+     * Get image source
+     * @return ImageSource Image source
      */
     public String getImageSource() {
         return this.ImageSource;
     }
 
     /**
-     * 设置镜像来源
-     * @param ImageSource 镜像来源
+     * Set image source
+     * @param ImageSource Image source
      */
     public void setImageSource(String ImageSource) {
         this.ImageSource = ImageSource;
     }
 
     /**
-     * 获取同步百分比
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return SyncPercent 同步百分比
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get image sync percentageNote: This field may return null, indicating that no valid value was found.
+     * @return SyncPercent Image sync percentageNote: This field may return null, indicating that no valid value was found.
      */
     public Integer getSyncPercent() {
         return this.SyncPercent;
     }
 
     /**
-     * 设置同步百分比
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param SyncPercent 同步百分比
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set image sync percentageNote: This field may return null, indicating that no valid value was found.
+     * @param SyncPercent Image sync percentageNote: This field may return null, indicating that no valid value was found.
      */
     public void setSyncPercent(Integer SyncPercent) {
         this.SyncPercent = SyncPercent;
     }
 
     /**
-     * 获取镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return IsSupportCloudinit 镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
+     * @return IsSupportCloudinit Whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
      */
     public Boolean getIsSupportCloudinit() {
         return this.IsSupportCloudinit;
     }
 
     /**
-     * 设置镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param IsSupportCloudinit 镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
+     * @param IsSupportCloudinit Whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
      */
     public void setIsSupportCloudinit(Boolean IsSupportCloudinit) {
         this.IsSupportCloudinit = IsSupportCloudinit;
     }
 
     /**
-     * 获取镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return SnapshotSet 镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
+     * Get details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
+     * @return SnapshotSet Details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
      */
     public Snapshot [] getSnapshotSet() {
         return this.SnapshotSet;
     }
 
     /**
-     * 设置镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param SnapshotSet 镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
+     * Set details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
+     * @param SnapshotSet Details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
      */
     public void setSnapshotSet(Snapshot [] SnapshotSet) {
         this.SnapshotSet = SnapshotSet;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ImageId", this.ImageId);

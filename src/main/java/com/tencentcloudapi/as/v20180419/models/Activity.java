@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ *    http: //www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,318 +23,318 @@ import java.util.HashMap;
 public class Activity  extends AbstractModel{
 
     /**
-    * 伸缩组ID。
+    * Scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 伸缩活动ID。
+    * Scaling activity ID
     */
     @SerializedName("ActivityId")
     @Expose
     private String ActivityId;
 
     /**
-    * 伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例）
+    * Scaling activity type. Values as below: <br>
+<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
     */
     @SerializedName("ActivityType")
     @Expose
     private String ActivityType;
 
     /**
-    * 伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
+    * Scaling activity status. Values as below: <br>
+<li>INIT: Initializing
+<li>RUNNING: Running
+<li>SUCCESSFUL: Activity is successful
+<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
+<li>FAILED: Activity failed
+<li>CANCELLED: Activity is canceled
     */
     @SerializedName("StatusCode")
     @Expose
     private String StatusCode;
 
     /**
-    * 伸缩活动状态描述。
+    * Scaling activity status description
     */
     @SerializedName("StatusMessage")
     @Expose
     private String StatusMessage;
 
     /**
-    * 伸缩活动起因。
+    * Scaling activity cause
     */
     @SerializedName("Cause")
     @Expose
     private String Cause;
 
     /**
-    * 伸缩活动描述。
+    * Scaling activity description
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * 伸缩活动开始时间。
+    * Scaling activity start time
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * 伸缩活动结束时间。
+    * Scaling activity end time
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-    * 伸缩活动创建时间。
+    * Scaling activity creation time
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * 伸缩活动相关实例信息集合。
+    * Scaling activity related instance set
     */
     @SerializedName("ActivityRelatedInstanceSet")
     @Expose
     private ActivtyRelatedInstance [] ActivityRelatedInstanceSet;
 
     /**
-    * 伸缩活动状态简要描述。
+    * Scaling activity status short description
     */
     @SerializedName("StatusMessageSimplified")
     @Expose
     private String StatusMessageSimplified;
 
     /**
-     * 获取伸缩组ID。
-     * @return AutoScalingGroupId 伸缩组ID。
+     * Get scaling group ID
+     * @return AutoScalingGroupId Scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID。
-     * @param AutoScalingGroupId 伸缩组ID。
+     * Set scaling group ID
+     * @param AutoScalingGroupId Scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取伸缩活动ID。
-     * @return ActivityId 伸缩活动ID。
+     * Get scaling activity ID
+     * @return ActivityId Scaling activity ID
      */
     public String getActivityId() {
         return this.ActivityId;
     }
 
     /**
-     * 设置伸缩活动ID。
-     * @param ActivityId 伸缩活动ID。
+     * Set scaling activity ID
+     * @param ActivityId Scaling activity ID
      */
     public void setActivityId(String ActivityId) {
         this.ActivityId = ActivityId;
     }
 
     /**
-     * 获取伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例）
-     * @return ActivityType 伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例）
+     * Get scaling activity type. Values as below: <br>
+<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
+     * @return ActivityType Scaling activity type. Values as below: <br>
+<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
      */
     public String getActivityType() {
         return this.ActivityType;
     }
 
     /**
-     * 设置伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例）
-     * @param ActivityType 伸缩活动类型。取值如下：<br>
-<li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例）
+     * Set scaling activity type. Values as below: <br>
+<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
+     * @param ActivityType Scaling activity type. Values as below: <br>
+<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
      */
     public void setActivityType(String ActivityType) {
         this.ActivityType = ActivityType;
     }
 
     /**
-     * 获取伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
-     * @return StatusCode 伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
+     * Get scaling activity status. Values as below: <br>
+<li>INIT: Initializing
+<li>RUNNING: Running
+<li>SUCCESSFUL: Activity is successful
+<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
+<li>FAILED: Activity failed
+<li>CANCELLED: Activity is canceled
+     * @return StatusCode Scaling activity status. Values as below: <br>
+<li>INIT: Initializing
+<li>RUNNING: Running
+<li>SUCCESSFUL: Activity is successful
+<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
+<li>FAILED: Activity failed
+<li>CANCELLED: Activity is canceled
      */
     public String getStatusCode() {
         return this.StatusCode;
     }
 
     /**
-     * 设置伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
-     * @param StatusCode 伸缩活动状态。取值如下：<br>
-<li>INIT：初始化中
-<li>RUNNING：运行中
-<li>SUCCESSFUL：活动成功
-<li>PARTIALLY_SUCCESSFUL：活动部分成功
-<li>FAILED：活动失败
-<li>CANCELLED：活动取消
+     * Set scaling activity status. Values as below: <br>
+<li>INIT: Initializing
+<li>RUNNING: Running
+<li>SUCCESSFUL: Activity is successful
+<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
+<li>FAILED: Activity failed
+<li>CANCELLED: Activity is canceled
+     * @param StatusCode Scaling activity status. Values as below: <br>
+<li>INIT:  Initializing
+<li>RUNNING: Running
+<li>SUCCESSFUL: Activity is successful
+<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
+<li>FAILED: Activity failed
+<li>CANCELLED: Activity is canceled
      */
     public void setStatusCode(String StatusCode) {
         this.StatusCode = StatusCode;
     }
 
     /**
-     * 获取伸缩活动状态描述。
-     * @return StatusMessage 伸缩活动状态描述。
+     * Get scaling activity status description
+     * @return StatusMessage Scaling activity status description
      */
     public String getStatusMessage() {
         return this.StatusMessage;
     }
 
     /**
-     * 设置伸缩活动状态描述。
-     * @param StatusMessage 伸缩活动状态描述。
+     * Set scaling activity status description 
+     * @param StatusMessage Scaling activity status description
      */
     public void setStatusMessage(String StatusMessage) {
         this.StatusMessage = StatusMessage;
     }
 
     /**
-     * 获取伸缩活动起因。
-     * @return Cause 伸缩活动起因。
+     * Get the cause of the scaling activity
+     * @return Cause Scaling activity casue
      */
     public String getCause() {
         return this.Cause;
     }
 
     /**
-     * 设置伸缩活动起因。
-     * @param Cause 伸缩活动起因。
+     * Set the cause of the scaling activity
+     * @param Cause Scaling activity cause
      */
     public void setCause(String Cause) {
         this.Cause = Cause;
     }
 
     /**
-     * 获取伸缩活动描述。
-     * @return Description 伸缩活动描述。
+     * Get scaling activity description
+     * @return Description Scaling activity description
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * 设置伸缩活动描述。
-     * @param Description 伸缩活动描述。
+     * Set scaling activity description 
+     * @param Description Scaling activity description
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * 获取伸缩活动开始时间。
-     * @return StartTime 伸缩活动开始时间。
+     * Get the start time of the scaling activity
+     * @return StartTime Scaling activity start time
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * 设置伸缩活动开始时间。
-     * @param StartTime 伸缩活动开始时间。
+     * Set the start time of the scaling activity
+     * @param StartTime Scaling activity start time
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * 获取伸缩活动结束时间。
-     * @return EndTime 伸缩活动结束时间。
+     * Get the end time of the scaling activity
+     * @return EndTime Scaling activity end time
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * 设置伸缩活动结束时间。
-     * @param EndTime 伸缩活动结束时间。
+     * Set the end time of the scaling activity
+     * @param EndTime Scaling activity end time
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * 获取伸缩活动创建时间。
-     * @return CreatedTime 伸缩活动创建时间。
+     * Get the creation time of the scaling activity
+     * @return CreatedTime Scaling activity creation time
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置伸缩活动创建时间。
-     * @param CreatedTime 伸缩活动创建时间。
+     * Set the creation time of the scaling activity
+     * @param CreatedTime Scaling activity creation time
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 获取伸缩活动相关实例信息集合。
-     * @return ActivityRelatedInstanceSet 伸缩活动相关实例信息集合。
+     * Get the scaling activity related instance set
+     * @return ActivityRelatedInstanceSet Scaling activity related instance set
      */
     public ActivtyRelatedInstance [] getActivityRelatedInstanceSet() {
         return this.ActivityRelatedInstanceSet;
     }
 
     /**
-     * 设置伸缩活动相关实例信息集合。
-     * @param ActivityRelatedInstanceSet 伸缩活动相关实例信息集合。
+     * Set the scaling activity related instance set
+     * @param ActivityRelatedInstanceSet Scaling activity related instance set
      */
     public void setActivityRelatedInstanceSet(ActivtyRelatedInstance [] ActivityRelatedInstanceSet) {
         this.ActivityRelatedInstanceSet = ActivityRelatedInstanceSet;
     }
 
     /**
-     * 获取伸缩活动状态简要描述。
-     * @return StatusMessageSimplified 伸缩活动状态简要描述。
+     * Get the scaling activity status short description
+     * @return StatusMessageSimplified Scaling activity status short description
      */
     public String getStatusMessageSimplified() {
         return this.StatusMessageSimplified;
     }
 
     /**
-     * 设置伸缩活动状态简要描述。
-     * @param StatusMessageSimplified 伸缩活动状态简要描述。
+     * Set the scaling activity status short description
+     * @param StatusMessageSimplified Scaling activity status short description
      */
     public void setStatusMessageSimplified(String StatusMessageSimplified) {
         this.StatusMessageSimplified = StatusMessageSimplified;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

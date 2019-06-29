@@ -30,26 +30,26 @@ public class AsClient extends AbstractClient{
     private static String version = "2018-04-19";
 
     /**
-     * 构造client
-     * @param credential 认证信息实例
-     * @param region	产品地域
+     * Construct client
+     * @param credential client credentials
+     * @param region product region
      */
     public AsClient(Credential credential, String region) {
         this(credential, region, new ClientProfile());
     }
 
     /**
-     * 构造client
-     * @param credential 认证信息实例
-     * @param region	产品地域
-     * @param profile 配置实例
+     * Construct client
+     * @param credential client credentials
+     * @param region product region
+     * @param profile client profile
      */
     public AsClient(Credential credential, String region, ClientProfile profile) {
         super(AsClient.endpoint, AsClient.version, credential, region, profile);
     }
 
     /**
-     *本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。
+     *This API (AttachInstances) is used to add CVM instances to a scaling group.
 
      * @param req AttachInstancesRequest
      * @return AttachInstancesResponse
@@ -68,9 +68,9 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（CompleteLifecycleAction）用于完成生命周期动作。
+     *This API (CompleteLifecycleAction) is used to perform the action to complete the lifecycle.
 
-* 用户通过调用本接口，指定一个具体的生命周期挂钩的结果（“CONITNUE”或者“ABANDON”）。如果一直不调用本接口，则生命周期挂钩会在超时后按照“DefaultResult”进行处理。
+* The user can call this API to specify how a lifecycle hook is used (CONTINUE or ABANDON). If you do not call this API, the lifecycle hook will be processed according to “DefaultResult”. 
 
      * @param req CompleteLifecycleActionRequest
      * @return CompleteLifecycleActionResponse
@@ -89,7 +89,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（CreateAutoScalingGroup）用于创建伸缩组
+     *This API (CreateAutoScalingGroup) is used to create a scaling group.
      * @param req CreateAutoScalingGroupRequest
      * @return CreateAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -107,11 +107,11 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（CreateLaunchConfiguration）用于创建新的启动配置。
+     *This API (CreateLaunchConfiguration) is used to create a launch configuration.
 
-* 启动配置，可以通过 `ModifyLaunchConfigurationAttributes` 修改少量字段。如需使用新的启动配置，建议重新创建启动配置。
+* You can modify a limited number of fields of the launch configuration with  `ModifyLaunchConfigurationAttributes` . If you want to use a new launch configuration, you must create one.
 
-* 每个项目最多只能创建20个启动配置，详见[使用限制](https://cloud.tencent.com/document/product/377/3120)。
+* You can create 20 launch configurations for each project. For more information, see [Use Limits](https://cloud.tencent.com/document/product/377/3120).
 
      * @param req CreateLaunchConfigurationRequest
      * @return CreateLaunchConfigurationResponse
@@ -130,9 +130,9 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（CreateLifecycleHook）用于创建生命周期挂钩。
+     *This API (CreateLifeCycleHook) is used to create new lifecycle hooks.
 
-* 您可以为生命周期挂钩配置消息通知，弹性伸缩会通知您的CMQ消息队列，通知内容形如：
+* You can set notifications for lifecycle hooks. The notifications will be sent to your CMQ message queue. The format of the notification is as below: 
 
 ```
 {
@@ -166,7 +166,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（CreateNotificationConfiguration）用于创建通知。
+     *This API （CreateNotificationConfiguration）is used to create notification. 
      * @param req CreateNotificationConfigurationRequest
      * @return CreateNotificationConfigurationResponse
      * @throws TencentCloudSDKException
@@ -184,7 +184,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口 (CreatePaiInstance) 用于创建一个指定配置的PAI实例。
+     *This API (CreatePaiInstance) is used to create a Pai instance.
      * @param req CreatePaiInstanceRequest
      * @return CreatePaiInstanceResponse
      * @throws TencentCloudSDKException
@@ -202,7 +202,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（CreateScalingPolicy）用于创建告警触发策略。
+     *This API (CreateScalingPolicy) is used to create an alarm trigger policy.
      * @param req CreateScalingPolicyRequest
      * @return CreateScalingPolicyResponse
      * @throws TencentCloudSDKException
@@ -220,7 +220,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（CreateScheduledAction）用于创建定时任务。
+     *This API (CreateScheduledAction) is used to create a scheduled action.
      * @param req CreateScheduledActionRequest
      * @return CreateScheduledActionResponse
      * @throws TencentCloudSDKException
@@ -238,7 +238,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DeleteAutoScalingGroup）用于删除指定伸缩组，删除前提是伸缩组内无实例且当前未在执行伸缩活动。
+     *This API (DeleteAutoScalingGroup) is used to delete a scaling group. You can only delete a scaling group when no instance exists and no scaling activity is being executed in it.
      * @param req DeleteAutoScalingGroupRequest
      * @return DeleteAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -256,9 +256,9 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DeleteLaunchConfiguration）用于删除启动配置。
+     *This API (DeleteLaunchConfiguration) is used to delete a launch configuration.
 
-* 若启动配置在伸缩组中属于生效状态，则该启动配置不允许删除。
+* * If a launch configuration in the scaling group is in active status, then it cannot be deleted.
 
      * @param req DeleteLaunchConfigurationRequest
      * @return DeleteLaunchConfigurationResponse
@@ -277,7 +277,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DeleteLifecycleHook）用于删除生命周期挂钩。
+     *This API (DeleteLifeCycleHook) is used to delete a lifecycle hook.
      * @param req DeleteLifecycleHookRequest
      * @return DeleteLifecycleHookResponse
      * @throws TencentCloudSDKException
@@ -295,7 +295,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DeleteNotificationConfiguration）用于删除特定的通知。
+     *This API (DeleteNotificationConfiguration) is used to delete notifications. 
      * @param req DeleteNotificationConfigurationRequest
      * @return DeleteNotificationConfigurationResponse
      * @throws TencentCloudSDKException
@@ -313,7 +313,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DeleteScalingPolicy）用于删除告警触发策略。
+     *This API (DeleteScalingPolicy) is used to delete alarm trigger policies.
      * @param req DeleteScalingPolicyRequest
      * @return DeleteScalingPolicyResponse
      * @throws TencentCloudSDKException
@@ -331,7 +331,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DeleteScheduledAction）用于删除特定的定时任务。
+     *This API (DeleteScheduledAction) is used to delete a scheduled action.
      * @param req DeleteScheduledActionRequest
      * @return DeleteScheduledActionResponse
      * @throws TencentCloudSDKException
@@ -349,7 +349,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribeAccountLimits）用于查询用户账户在弹性伸缩中的资源限制。
+     *This API (DescribeAccountLimits) is used to query the limits on the resources for your account.
      * @param req DescribeAccountLimitsRequest
      * @return DescribeAccountLimitsResponse
      * @throws TencentCloudSDKException
@@ -367,7 +367,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribeAutoScalingActivities）用于查询伸缩组的伸缩活动记录。
+     *This API (DescribeScalingActivity) is used to query scaling activity logs of scaling groups.
      * @param req DescribeAutoScalingActivitiesRequest
      * @return DescribeAutoScalingActivitiesResponse
      * @throws TencentCloudSDKException
@@ -385,10 +385,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribeAutoScalingGroups）用于查询伸缩组信息。
+     *This API (DescribeAutoScalingGroups) is used to query the information of one or more scaling groups.
 
-* 可以根据伸缩组ID、伸缩组名称或者启动配置ID等信息来查询伸缩组的详细信息。过滤信息详细请见过滤器`Filter`。
-* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的伸缩组。
+* You can query the details of scaling groups according to ID, name, or launch configuration ID. For more information about filtering, see Filter `Filter`.
+* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of scaling groups are returned to the current user.
      * @param req DescribeAutoScalingGroupsRequest
      * @return DescribeAutoScalingGroupsResponse
      * @throws TencentCloudSDKException
@@ -406,10 +406,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribeAutoScalingInstances）用于查询弹性伸缩关联实例的信息。
+     *This API (DescribeAutoScalingInstances) is used to query the information of auto scaling instances.
 
-* 可以根据实例ID、伸缩组ID等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。
-* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。
+* You can query the details of instances according to ID or scaling group name. For more information about filtering, see Filter `Filter`.
+* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of instances are returned to the current user.
      * @param req DescribeAutoScalingInstancesRequest
      * @return DescribeAutoScalingInstancesResponse
      * @throws TencentCloudSDKException
@@ -427,10 +427,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribeLaunchConfigurations）用于查询启动配置的信息。
+     *This API (DescribeLaunchConfigurations) is used to query the information of one or more launch configurations.
 
-* 可以根据启动配置ID、启动配置名称等信息来查询启动配置的详细信息。过滤信息详细请见过滤器`Filter`。
-* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的启动配置。
+* You can query the details of launch configurations according to ID or name. For more information about filtering, see Filter `Filter`.
+* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of launch configurations are returned to the current user.
      * @param req DescribeLaunchConfigurationsRequest
      * @return DescribeLaunchConfigurationsResponse
      * @throws TencentCloudSDKException
@@ -448,10 +448,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribeLifecycleHooks）用于查询生命周期挂钩信息。
+     *This API (DescribeLifecycleHooks) is used to query the information of lifecycle hooks.
 
-* 可以根据伸缩组ID、生命周期挂钩ID或者生命周期挂钩名称等信息来查询生命周期挂钩的详细信息。过滤信息详细请见过滤器`Filter`。
-* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的生命周期挂钩。
+* You can query the details of lifecycle hooks according to scaling group ID, lifecycle hook ID or lifecycle hook name. For more information about filtering, see Filter `Filter`.
+* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of lifecycle hooks are returned to the current user.
      * @param req DescribeLifecycleHooksRequest
      * @return DescribeLifecycleHooksResponse
      * @throws TencentCloudSDKException
@@ -469,10 +469,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口 (DescribeNotificationConfigurations) 用于查询一个或多个通知的详细信息。
-
-可以根据通知ID、伸缩组ID等信息来查询通知的详细信息。过滤信息详细请见过滤器`Filter`。
-如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的通知。
+     *This API (DescribeNotificationConfigurations) is used to query the information of one or more notifications.  You can query the details of notifications according to notification ID or scaling group ID. For more information about filtering, see Filter `Filter`. If the parameter is empty, a certain number (specified by `Limit`, the default is 20) of notifications are returned to the current user.
      * @param req DescribeNotificationConfigurationsRequest
      * @return DescribeNotificationConfigurationsResponse
      * @throws TencentCloudSDKException
@@ -490,10 +487,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribePaiInstances）用于查询PAI实例信息。
+     *This API (DescribePaiInstances) is used to query the information of PAI instances.
 
-* 可以根据实例ID、实例域名等信息来查询PAI实例的详细信息。过滤信息详细请见过滤器`Filter`。
-* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的PAI实例。
+* You can query the details of PAI instances according to instance ID or instance domain name. For more information about filtering, see Filter `Filter`.
+* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of PAI instances are returned to the current user.
      * @param req DescribePaiInstancesRequest
      * @return DescribePaiInstancesResponse
      * @throws TencentCloudSDKException
@@ -511,7 +508,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribeScalingPolicies）用于查询告警触发策略。
+     *This API (DescribeScalingPolicies) is used to query alarm trigger policies.
      * @param req DescribeScalingPoliciesRequest
      * @return DescribeScalingPoliciesResponse
      * @throws TencentCloudSDKException
@@ -529,10 +526,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口 (DescribeScheduledActions) 用于查询一个或多个定时任务的详细信息。
+     *This API (DescribeScheduledActions) is used to query the details of one or more scheduled actions.
 
-* 可以根据定时任务ID、定时任务名称或者伸缩组ID等信息来查询定时任务的详细信息。过滤信息详细请见过滤器`Filter`。
-* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的定时任务。
+* You can query the details of scheduled actions according to its ID, name, or scaling group ID. For more information about filtering, see Filter `Filter`.
+* If the parameter is empty, a certain number (specified by `Limit`, the default is 20) of scheduled actions are returned to the current user.
      * @param req DescribeScheduledActionsRequest
      * @return DescribeScheduledActionsResponse
      * @throws TencentCloudSDKException
@@ -550,7 +547,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DetachInstances）用于从伸缩组移出 CVM 实例，本接口不会销毁实例。
+     *This API (DetachInstances) is used to remove CVM instances from a scaling group. Instances removed via this API will not be terminated.
      * @param req DetachInstancesRequest
      * @return DetachInstancesResponse
      * @throws TencentCloudSDKException
@@ -568,7 +565,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（DisableAutoScalingGroup）用于停用指定伸缩组。
+     *This API (DisableAutoScalingGroup) is used to disable a scaling group.
      * @param req DisableAutoScalingGroupRequest
      * @return DisableAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -586,7 +583,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（EnableAutoScalingGroup）用于启用指定伸缩组。
+     *This API (EnableAutoScalingGroup) is used to enable a scaling group.
      * @param req EnableAutoScalingGroupRequest
      * @return EnableAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -604,10 +601,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（ExecuteScalingPolicy）用于执行伸缩策略。
+     *This API (ExecuteScalingPolicy) is used to execute a scaling policy.
 
-* 可以根据伸缩策略ID执行伸缩策略。
-* 伸缩策略所属伸缩组处于伸缩活动时，会拒绝执行伸缩策略。
+* It will execute scaling policies according to the scaling policy ID.
+* If the scaling group the policy belongs to is already performing a scaling activity, it will reject executing the scaling policy. 
      * @param req ExecuteScalingPolicyRequest
      * @return ExecuteScalingPolicyResponse
      * @throws TencentCloudSDKException
@@ -625,7 +622,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（ModifyAutoScalingGroup）用于修改伸缩组。
+     *This API (ModifyAutoScalingGroup) is used to modify a scaling group.
      * @param req ModifyAutoScalingGroupRequest
      * @return ModifyAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -643,7 +640,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（ModifyDesiredCapacity）用于修改指定伸缩组的期望实例数
+     *This API (ModifyDesiredCapacity) is used to modify the desired number of instances for a scaling group.
      * @param req ModifyDesiredCapacityRequest
      * @return ModifyDesiredCapacityResponse
      * @throws TencentCloudSDKException
@@ -661,10 +658,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（ModifyLaunchConfigurationAttributes）用于修改启动配置部分属性。
+     *This API (ModifyLaunchConfigurationAttributes) is used to modify launch configuration attributes. 
 
-* 修改启动配置后，已经使用该启动配置扩容的存量实例不会发生变更，此后使用该启动配置的新增实例会按照新的配置进行扩容。
-* 本接口支持修改部分简单类型。
+* After the launch configuration is modified, the existing instances that have been created by it will not be changed, but new instances will be created according to the new configuration.
+* This API only supports modifying simple launch configurations. 
      * @param req ModifyLaunchConfigurationAttributesRequest
      * @return ModifyLaunchConfigurationAttributesResponse
      * @throws TencentCloudSDKException
@@ -682,11 +679,11 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（ModifyLoadBalancers）用于修改伸缩组的负载均衡器。
+     *This API (ModifyLoadBalancers) is used to modify the load balancer of a scaling group.
 
-* 本接口用于为伸缩组指定新的负载均衡器配置，采用“完全覆盖”风格，无论之前配置如何，统一按照接口参数配置为新的负载均衡器。
-* 如果要为伸缩组清空负载均衡器，则在调用本接口时仅指定伸缩组ID，不指定具体负载均衡器。
-* 本接口会立即修改伸缩组的负载均衡器，并生成一个伸缩活动，异步修改存量实例的负载均衡器。
+* This API can specify a new load balancer configuration for the scaling group. The new configuration overwrites the original load balancer configuration.
+* If you want to remove all load balancers from the scaling group, specify only the scaling group ID but not the specific load balancer when calling this API.
+* This API will immediately modify the load balancer of the scaling group and generate a scaling activity to asynchronously modify the load balancer of the existing instances.
      * @param req ModifyLoadBalancersRequest
      * @return ModifyLoadBalancersResponse
      * @throws TencentCloudSDKException
@@ -704,7 +701,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（ModifyNotificationConfiguration）用于修改通知。
+     *This API (ModifyNotificationConfiguration) is used to modify notifications. 
      * @param req ModifyNotificationConfigurationRequest
      * @return ModifyNotificationConfigurationResponse
      * @throws TencentCloudSDKException
@@ -722,7 +719,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（ModifyScalingPolicy）用于修改告警触发策略。
+     *This API (ModifyScalingPolicy) is used to modify alarm trigger policies.
      * @param req ModifyScalingPolicyRequest
      * @return ModifyScalingPolicyResponse
      * @throws TencentCloudSDKException
@@ -740,7 +737,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（ModifyScheduledAction）用于修改定时任务。
+     *This API (ModifyScheduledAction) is used to modify scheduled actions.
      * @param req ModifyScheduledActionRequest
      * @return ModifyScheduledActionResponse
      * @throws TencentCloudSDKException
@@ -758,7 +755,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（PreviewPaiDomainName）用于预览PAI实例域名。
+     *This API (PreviewPaiDomainName) is used to preview PAI domain names. 
 
      * @param req PreviewPaiDomainNameRequest
      * @return PreviewPaiDomainNameResponse
@@ -777,7 +774,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（RemoveInstances）用于从伸缩组删除 CVM 实例。根据当前的产品逻辑，如果实例由弹性伸缩自动创建，则实例会被销毁；如果实例系创建后加入伸缩组的，则会从伸缩组中移除，保留实例。
+     *This API (RemoveInstances) is used to delete CVM instances from a scaling group. Instances created automatically by Auto Scaling will be terminated, while those created and added to the scaling group will be removed and retained.
      * @param req RemoveInstancesRequest
      * @return RemoveInstancesResponse
      * @throws TencentCloudSDKException
@@ -795,8 +792,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（SetInstancesProtection）用于设置实例移除保护。
-子机设置为移除保护之后，当发生不健康替换、报警策略、期望值变更等触发缩容时，将不对此子机缩容操作。
+     *This API (SetInstancesProtection) is used to enable removal protection for an instance.  When an instance has removal protection enabled, it will not be removed when scaling is triggered due to situations such as replacement of unhealthy instances, alarm trigger policies or threshold changes. 
      * @param req SetInstancesProtectionRequest
      * @return SetInstancesProtectionResponse
      * @throws TencentCloudSDKException
@@ -814,10 +810,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（UpgradeLaunchConfiguration）用于升级启动配置。
+     *This API (UpgradeLaunchConfiguration) is used to upgrade launch configurations. 
 
-* 本接口用于升级启动配置，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。
-* 升级修改启动配置后，已经使用该启动配置扩容的存量实例不会发生变更，此后使用该启动配置的新增实例会按照新的配置进行扩容。
+* This API is used to upgrade launch configurations. The new configuration overwrites the original launch configuration. Default values will be used for optional fields that are left blank. 
+* After the launch configuration is upgraded and modified, the existing instances that have been created by it will not be changed, but new instances will be created according to the new configuration.
      * @param req UpgradeLaunchConfigurationRequest
      * @return UpgradeLaunchConfigurationResponse
      * @throws TencentCloudSDKException
@@ -835,9 +831,9 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *本接口（UpgradeLifecycleHook）用于升级生命周期挂钩。
+     *This API (UpgradeLifecycleHook) is used to upgrade lifecycle hooks.
 
-* 本接口用于升级生命周期挂钩，采用“完全覆盖”风格，无论之前参数如何，统一按照接口参数设置为新的配置。对于非必填字段，不填写则按照默认值赋值。
+* This API is used to upgrade lifecycle hooks. The new configuration overwrites the original configuration. Default values will be used for optional fields that are left blank. 
 
      * @param req UpgradeLifecycleHookRequest
      * @return UpgradeLifecycleHookResponse

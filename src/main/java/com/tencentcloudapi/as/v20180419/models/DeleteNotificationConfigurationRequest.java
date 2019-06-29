@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteNotificationConfigurationRequest  extends AbstractModel{
 
     /**
-    * 待删除的通知ID。
+    * ID of the notification to be deleted.
     */
     @SerializedName("AutoScalingNotificationId")
     @Expose
     private String AutoScalingNotificationId;
 
     /**
-     * 获取待删除的通知ID。
-     * @return AutoScalingNotificationId 待删除的通知ID。
+     * ID of the notification to be obtained.
+     * @return AutoScalingNotificationId ID of the notification to be deleted.
      */
     public String getAutoScalingNotificationId() {
         return this.AutoScalingNotificationId;
     }
 
     /**
-     * 设置待删除的通知ID。
-     * @param AutoScalingNotificationId 待删除的通知ID。
+     * Set ID of the notification to be deleted.
+     * @param AutoScalingNotificationId ID of the notification to be deleted.
      */
     public void setAutoScalingNotificationId(String AutoScalingNotificationId) {
         this.AutoScalingNotificationId = AutoScalingNotificationId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingNotificationId", this.AutoScalingNotificationId);

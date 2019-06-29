@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InquiryPriceResetInstancesInternetMaxBandwidthResponse  extends AbstractModel{
 
     /**
-    * 该参数表示带宽调整为对应大小之后的价格。
+    * Indicates the price of the adjusted bandwidth.
     */
     @SerializedName("Price")
     @Expose
     private Price Price;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取该参数表示带宽调整为对应大小之后的价格。
-     * @return Price 该参数表示带宽调整为对应大小之后的价格。
+     * Get indicates the price of the adjusted bandwidth.
+     * @return Price Indicates the price of the adjusted bandwidth.
      */
     public Price getPrice() {
         return this.Price;
     }
 
     /**
-     * 设置该参数表示带宽调整为对应大小之后的价格。
-     * @param Price 该参数表示带宽调整为对应大小之后的价格。
+     * Set indicates the price of the adjusted bandwidth.
+     * @param Price Indicates the price of the adjusted bandwidth.
      */
     public void setPrice(Price Price) {
         this.Price = Price;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Price.", this.Price);

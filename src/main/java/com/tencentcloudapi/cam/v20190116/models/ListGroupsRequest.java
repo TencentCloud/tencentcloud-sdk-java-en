@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ListGroupsRequest  extends AbstractModel{
 
     /**
-    * 页码。默认为1。
+    * Page number. Default is 1.
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * 每页数量。默认为20。
+    * Number each page. Default is 20.
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-    * 按用户组名称匹配。
+    * Filter by user group name.
     */
     @SerializedName("Keyword")
     @Expose
     private String Keyword;
 
     /**
-     * 获取页码。默认为1。
-     * @return Page 页码。默认为1。
+     * Obtain page number. Default is 1.
+     * @return Page page number. Default is 1.
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * 设置页码。默认为1。
-     * @param Page 页码。默认为1。
+     * Set page number. Default is 1.
+     * @param Page page number. Default is 1.
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * 获取每页数量。默认为20。
-     * @return Rp 每页数量。默认为20。
+     * Obtain number per page. Default is 20.
+     * @return Rp number per page. Default is 20.
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * 设置每页数量。默认为20。
-     * @param Rp 每页数量。默认为20。
+     * Set number per page. Default is 20.
+     * @param Rp number per page. Default is 20.
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * 获取按用户组名称匹配。
-     * @return Keyword 按用户组名称匹配。
+     * Obtain filter by user group name.
+     * @return Keyword filter by user group name.
      */
     public String getKeyword() {
         return this.Keyword;
     }
 
     /**
-     * 设置按用户组名称匹配。
-     * @param Keyword 按用户组名称匹配。
+     * Configure filter by user group name.
+     * @param Keyword filter by user group name.
      */
     public void setKeyword(String Keyword) {
         this.Keyword = Keyword;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Page", this.Page);

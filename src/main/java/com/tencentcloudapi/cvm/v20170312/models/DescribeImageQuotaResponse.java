@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeImageQuotaResponse  extends AbstractModel{
 
     /**
-    * 账户的镜像配额
+    * The image quota under an account
     */
     @SerializedName("ImageNumQuota")
     @Expose
     private Integer ImageNumQuota;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取账户的镜像配额
-     * @return ImageNumQuota 账户的镜像配额
+     * obtain the image quota of account
+     * @return ImageNumQuota the image quota of account
      */
     public Integer getImageNumQuota() {
         return this.ImageNumQuota;
     }
 
     /**
-     * 设置账户的镜像配额
-     * @param ImageNumQuota 账户的镜像配额
+     * set the image quota
+     * @param ImageNumQuota the image quota of account
      */
     public void setImageNumQuota(Integer ImageNumQuota) {
         this.ImageNumQuota = ImageNumQuota;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * set the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internally realized, users have no permission for it 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ImageNumQuota", this.ImageNumQuota);

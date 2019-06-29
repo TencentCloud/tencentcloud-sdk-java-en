@@ -23,106 +23,106 @@ import java.util.HashMap;
 public class ModifyNotificationConfigurationRequest  extends AbstractModel{
 
     /**
-    * 待修改的通知ID。
+    * ID of notification to be modified. 
     */
     @SerializedName("AutoScalingNotificationId")
     @Expose
     private String AutoScalingNotificationId;
 
     /**
-    * 通知类型，即为需要订阅的通知类型集合，取值范围如下：
-<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>
-<li>SCALE_OUT_FAILED：扩容失败</li>
-<li>SCALE_IN_SUCCESSFUL：缩容成功</li>
-<li>SCALE_IN_FAILED：缩容失败</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>
+    * Type of notification: grouping of notification types that could be subscribed. Value range is as below:
+<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
+<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
     */
     @SerializedName("NotificationTypes")
     @Expose
     private String [] NotificationTypes;
 
     /**
-    * 通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
+    * ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
     */
     @SerializedName("NotificationUserGroupIds")
     @Expose
     private String [] NotificationUserGroupIds;
 
     /**
-     * 获取待修改的通知ID。
-     * @return AutoScalingNotificationId 待修改的通知ID。
+     * Obtain the notification ID that is to be modified.
+     * @return AutoScalingNotificationId Notification ID to be modified.
      */
     public String getAutoScalingNotificationId() {
         return this.AutoScalingNotificationId;
     }
 
     /**
-     * 设置待修改的通知ID。
-     * @param AutoScalingNotificationId 待修改的通知ID。
+     * Set notification ID that will be modified.
+     * @param AutoScalingNotificationId Notification ID to be modified.
      */
     public void setAutoScalingNotificationId(String AutoScalingNotificationId) {
         this.AutoScalingNotificationId = AutoScalingNotificationId;
     }
 
     /**
-     * 获取通知类型，即为需要订阅的通知类型集合，取值范围如下：
-<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>
-<li>SCALE_OUT_FAILED：扩容失败</li>
-<li>SCALE_IN_SUCCESSFUL：缩容成功</li>
-<li>SCALE_IN_FAILED：缩容失败</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>
-     * @return NotificationTypes 通知类型，即为需要订阅的通知类型集合，取值范围如下：
-<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>
-<li>SCALE_OUT_FAILED：扩容失败</li>
-<li>SCALE_IN_SUCCESSFUL：缩容成功</li>
-<li>SCALE_IN_FAILED：缩容失败</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>
+     * Obtain the type of notification, which is grouping of notification types that could be subscribed. Value range is as below:
+<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
+<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
+     * @return NotificationTypes Type of notification: grouping of notification types that could be subscribed. Value range is as below:
+<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
+<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
      */
     public String [] getNotificationTypes() {
         return this.NotificationTypes;
     }
 
     /**
-     * 设置通知类型，即为需要订阅的通知类型集合，取值范围如下：
-<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>
-<li>SCALE_OUT_FAILED：扩容失败</li>
-<li>SCALE_IN_SUCCESSFUL：缩容成功</li>
-<li>SCALE_IN_FAILED：缩容失败</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>
-     * @param NotificationTypes 通知类型，即为需要订阅的通知类型集合，取值范围如下：
-<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>
-<li>SCALE_OUT_FAILED：扩容失败</li>
-<li>SCALE_IN_SUCCESSFUL：缩容成功</li>
-<li>SCALE_IN_FAILED：缩容失败</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>
+     * Set type of notification: grouping of notification types that could be subscribed. Value range is as below:
+<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
+<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
+     * @param NotificationTypes Type of notification: grouping of notification types that could be subscribed. Value range is as below:
+<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
+<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
+<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
      */
     public void setNotificationTypes(String [] NotificationTypes) {
         this.NotificationTypes = NotificationTypes;
     }
 
     /**
-     * 获取通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
-     * @return NotificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
+     * Obtain ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
+     * @return NotificationUserGroupIds ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
      */
     public String [] getNotificationUserGroupIds() {
         return this.NotificationUserGroupIds;
     }
 
     /**
-     * 设置通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
-     * @param NotificationUserGroupIds 通知组ID，即为用户组ID集合，用户组ID可以通过[DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404)查询。
+     * Set ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
+     * @param NotificationUserGroupIds ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
      */
     public void setNotificationUserGroupIds(String [] NotificationUserGroupIds) {
         this.NotificationUserGroupIds = NotificationUserGroupIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingNotificationId", this.AutoScalingNotificationId);

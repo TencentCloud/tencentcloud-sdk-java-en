@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ListUsersResponse  extends AbstractModel{
 
     /**
-    * 子用户信息
+    * Sub-user information
     */
     @SerializedName("Data")
     @Expose
     private SubAccountInfo [] Data;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of request, which will be returned for each request and is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取子用户信息
-     * @return Data 子用户信息
+     * Get sub-user information
+     * @return Data sub-user information
      */
     public SubAccountInfo [] getData() {
         return this.Data;
     }
 
     /**
-     * 设置子用户信息
-     * @param Data 子用户信息
+     * Configure sub-user information
+     * @param Data sub-user information 
      */
     public void setData(SubAccountInfo [] Data) {
         this.Data = Data;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get the unique ID of request, which will be returned for each request, and is required for each troubleshooting case.
+     * @return RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * @param RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Data.", this.Data);

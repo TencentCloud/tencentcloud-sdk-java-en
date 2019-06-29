@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeRegionsResponse  extends AbstractModel{
 
     /**
-    * 地域数量
+    * The number of regions
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 地域列表信息
+    * The list of regions
     */
     @SerializedName("RegionSet")
     @Expose
     private RegionInfo [] RegionSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取地域数量
-     * @return TotalCount 地域数量
+     * Obtain the list of regions
+     * @return TotalCount the number of regions
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置地域数量
-     * @param TotalCount 地域数量
+     * Set the number of regions
+     * @param TotalCount the number of regions
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取地域列表信息
-     * @return RegionSet 地域列表信息
+     * Obtain the list of regions
+     * @return RegionSet the list of regions
      */
     public RegionInfo [] getRegionSet() {
         return this.RegionSet;
     }
 
     /**
-     * 设置地域列表信息
-     * @param RegionSet 地域列表信息
+     * Set the list of regions
+     * @param RegionSet the list of regions
      */
     public void setRegionSet(RegionInfo [] RegionSet) {
         this.RegionSet = RegionSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

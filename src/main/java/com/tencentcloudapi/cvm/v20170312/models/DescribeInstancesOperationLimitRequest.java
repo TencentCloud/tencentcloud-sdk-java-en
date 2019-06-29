@@ -23,58 +23,58 @@ import java.util.HashMap;
 public class DescribeInstancesOperationLimitRequest  extends AbstractModel{
 
     /**
-    * 按照一个或者多个实例ID查询，可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/9388)API返回值中的InstanceId获取。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的id.N一节）。每次请求的实例的上限为100。
+    * Query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
+    * Instance operation
+<li> INSTANCE_DEGRADE：instance scaling down</li>
     */
     @SerializedName("Operation")
     @Expose
     private String Operation;
 
     /**
-     * 获取按照一个或者多个实例ID查询，可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/9388)API返回值中的InstanceId获取。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的id.N一节）。每次请求的实例的上限为100。
-     * @return InstanceIds 按照一个或者多个实例ID查询，可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/9388)API返回值中的InstanceId获取。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的id.N一节）。每次请求的实例的上限为100。
+     * Obtain query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
+     * @return InstanceIds Query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置按照一个或者多个实例ID查询，可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/9388)API返回值中的InstanceId获取。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的id.N一节）。每次请求的实例的上限为100。
-     * @param InstanceIds 按照一个或者多个实例ID查询，可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/9388)API返回值中的InstanceId获取。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的id.N一节）。每次请求的实例的上限为100。
+     * Set query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
+     * @param InstanceIds Query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
-     * @return Operation 实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
+     * Obtain instance operation
+<li> INSTANCE_DEGRADE：instance scaling down</li>
+     * @return Operation instance operaiton
+<li> INSTANCE_DEGRADE：instance scaling down</li>
      */
     public String getOperation() {
         return this.Operation;
     }
 
     /**
-     * 设置实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
-     * @param Operation 实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
+     * Set instance operation
+<li> INSTANCE_DEGRADE：instance scaling down</li>
+     * @param Operation instance operation
+<li> INSTANCE_DEGRADE：instance scaling down</li>
      */
     public void setOperation(String Operation) {
         this.Operation = Operation;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

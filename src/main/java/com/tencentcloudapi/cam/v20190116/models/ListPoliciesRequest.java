@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class ListPoliciesRequest  extends AbstractModel{
 
     /**
-    * 每页数量，默认值是 20，必须大于 0 且小于或等于 200
+    * Number of items on each page: must be greater than 0 and no greater than 200. The default is 20
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-    * 页码，默认值是 1，从 1开始，不能大于 200
+    * Page number: start from 1 and less than 200. Default is 1.
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * 可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
+    * Valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
     */
     @SerializedName("Scope")
     @Expose
     private String Scope;
 
     /**
-    * 按策略名匹配
+    * Filter by policy name.
     */
     @SerializedName("Keyword")
     @Expose
     private String Keyword;
 
     /**
-     * 获取每页数量，默认值是 20，必须大于 0 且小于或等于 200
-     * @return Rp 每页数量，默认值是 20，必须大于 0 且小于或等于 200
+     * Obtain the number of items on each page: must be greater than 0 and no greater than 200. The default is 20
+     * @return Rp number of items on each page: must be greater than 0 and no greater than 200. The default is 20
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * 设置每页数量，默认值是 20，必须大于 0 且小于或等于 200
-     * @param Rp 每页数量，默认值是 20，必须大于 0 且小于或等于 200
+     * Set the number of items on each page: must be greater than 0 and no greater than 200. The default is 20
+     * @param Rp the number of items on each page: must be greater than 0 and no greater than 200. The default is 20
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * 获取页码，默认值是 1，从 1开始，不能大于 200
-     * @return Page 页码，默认值是 1，从 1开始，不能大于 200
+     * Obtain page number, which starts from 1 and cannot be greater than 200. Default is 1
+     * @return Page page number, which starts from 1 and cannot be greater than 200. Default is 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * 设置页码，默认值是 1，从 1开始，不能大于 200
-     * @param Page 页码，默认值是 1，从 1开始，不能大于 200
+     * Set page number, which starts from 1 and cannot be greater than 200. Default is 1
+     * @param Page page number, which starts from 1 and cannot be greater than 200
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * 获取可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
-     * @return Scope 可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
+     * Obtain valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
+     * @return Scope valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
      */
     public String getScope() {
         return this.Scope;
     }
 
     /**
-     * 设置可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
-     * @param Scope 可取值 'All'、'QCS' 和 'Local'，'All' 获取所有策略，'QCS' 只获取预设策略，'Local' 只获取自定义策略，默认取 'All'
+     * Configure valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
+     * @param Scope valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
      */
     public void setScope(String Scope) {
         this.Scope = Scope;
     }
 
     /**
-     * 获取按策略名匹配
-     * @return Keyword 按策略名匹配
+     * Obtain filter by policy name
+     * @return Keyword filter by policy name
      */
     public String getKeyword() {
         return this.Keyword;
     }
 
     /**
-     * 设置按策略名匹配
-     * @param Keyword 按策略名匹配
+     * Configure filter by policy name
+     * @param Keyword filter by policy name
      */
     public void setKeyword(String Keyword) {
         this.Keyword = Keyword;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Rp", this.Rp);

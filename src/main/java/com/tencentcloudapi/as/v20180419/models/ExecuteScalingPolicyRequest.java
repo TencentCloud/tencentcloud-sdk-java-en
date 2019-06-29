@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ExecuteScalingPolicyRequest  extends AbstractModel{
 
     /**
-    * 告警伸缩策略ID
+    * Alarm scaling policy ID.
     */
     @SerializedName("AutoScalingPolicyId")
     @Expose
     private String AutoScalingPolicyId;
 
     /**
-    * 是否检查伸缩组活动处于冷却时间内，默认值为false
+    * Indicates whether check is enabled. The check monitors if scaling group activity is in cooldown period. The default value is false.
     */
     @SerializedName("HonorCooldown")
     @Expose
     private Boolean HonorCooldown;
 
     /**
-     * 获取告警伸缩策略ID
-     * @return AutoScalingPolicyId 告警伸缩策略ID
+     * Obtain the alarming scaling policy ID.
+     * @return AutoScalingPolicyId Alarm scaling policy ID.
      */
     public String getAutoScalingPolicyId() {
         return this.AutoScalingPolicyId;
     }
 
     /**
-     * 设置告警伸缩策略ID
-     * @param AutoScalingPolicyId 告警伸缩策略ID
+     * Configure the alarming scaling policy ID.
+     * @param AutoScalingPolicyId Alarm scaling policy ID.
      */
     public void setAutoScalingPolicyId(String AutoScalingPolicyId) {
         this.AutoScalingPolicyId = AutoScalingPolicyId;
     }
 
     /**
-     * 获取是否检查伸缩组活动处于冷却时间内，默认值为false
-     * @return HonorCooldown 是否检查伸缩组活动处于冷却时间内，默认值为false
+     * Obtain whether to check that the scaling group activity is in the cooldown period. The default value is false.
+     * @return HonorCooldown Indicates Whether check is enabled. The check monitors if scaling group activity is in cooldown. The default value is false.
      */
     public Boolean getHonorCooldown() {
         return this.HonorCooldown;
     }
 
     /**
-     * 设置是否检查伸缩组活动处于冷却时间内，默认值为false
-     * @param HonorCooldown 是否检查伸缩组活动处于冷却时间内，默认值为false
+     * Configure if check is enabled. The check monitors if scaling group activity is in cooldown period. The default value is false.
+     * @param HonorCooldown Indicates Whether check is enabled. The check monitors if scaling group activity is in cooldown period. The default value is false.
      */
     public void setHonorCooldown(Boolean HonorCooldown) {
         this.HonorCooldown = HonorCooldown;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingPolicyId", this.AutoScalingPolicyId);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeZoneInstanceConfigInfosResponse  extends AbstractModel{
 
     /**
-    * 可用区机型配置列表。
+    * Model information (instance model/quota information) in an availability zone.
     */
     @SerializedName("InstanceTypeQuotaSet")
     @Expose
     private InstanceTypeQuotaItem [] InstanceTypeQuotaSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取可用区机型配置列表。
-     * @return InstanceTypeQuotaSet 可用区机型配置列表。
+     * Get list of model information (instance model/quota information) in an availability zone.
+     * @return InstanceTypeQuotaSet List of model information in availability zone
      */
     public InstanceTypeQuotaItem [] getInstanceTypeQuotaSet() {
         return this.InstanceTypeQuotaSet;
     }
 
     /**
-     * 设置可用区机型配置列表。
-     * @param InstanceTypeQuotaSet 可用区机型配置列表。
+     * Set list of model information (instance model/quota information) in an availability zone.
+     * @return InstanceTypeQuotaSet List of model information in availability zone
      */
     public void setInstanceTypeQuotaSet(InstanceTypeQuotaItem [] InstanceTypeQuotaSet) {
         this.InstanceTypeQuotaSet = InstanceTypeQuotaSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "InstanceTypeQuotaSet.", this.InstanceTypeQuotaSet);

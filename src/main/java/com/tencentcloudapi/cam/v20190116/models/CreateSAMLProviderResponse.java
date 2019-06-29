@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateSAMLProviderResponse  extends AbstractModel{
 
     /**
-    * SAML身份提供商资源描述符
+    * SAML IdP's Resource Descriptor
     */
     @SerializedName("ProviderArn")
     @Expose
     private String ProviderArn;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取SAML身份提供商资源描述符
-     * @return ProviderArn SAML身份提供商资源描述符
+     * Getting SAML IdP's Resource Descriptor
+     * @return ProviderArn SAML IdP's resource descriptor
      */
     public String getProviderArn() {
         return this.ProviderArn;
     }
 
     /**
-     * 设置SAML身份提供商资源描述符
-     * @param ProviderArn SAML身份提供商资源描述符
+     * Configuring SAML IdP's Resource Descriptor
+     * @param ProviderArn SAML IdP's resource descriptor
      */
     public void setProviderArn(String ProviderArn) {
         this.ProviderArn = ProviderArn;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Getting RequestId, the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configuring RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ProviderArn", this.ProviderArn);

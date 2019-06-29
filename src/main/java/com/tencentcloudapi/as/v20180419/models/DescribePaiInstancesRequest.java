@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class DescribePaiInstancesRequest  extends AbstractModel{
 
     /**
-    * 依据PAI实例的实例ID进行查询。
+    * Query the details of PAI instances according to instance ID.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 过滤条件。
+    * Filter conditions.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * 返回数量，默认为20，最大值为100。
+    * Number of values to be returned. Default is 20. Maximum is 100.
     */
     @SerializedName("Limit")
     @Expose
     private Integer Limit;
 
     /**
-    * 偏移量，默认为0。
+    * Offset. Default is 0.
     */
     @SerializedName("Offset")
     @Expose
     private Integer Offset;
 
     /**
-     * 获取依据PAI实例的实例ID进行查询。
-     * @return InstanceIds 依据PAI实例的实例ID进行查询。
+     * Obtain query the details of PAI instances according to instance ID
+     * @return InstanceIds Query the details of PAI instances according to instance ID.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置依据PAI实例的实例ID进行查询。
-     * @param InstanceIds 依据PAI实例的实例ID进行查询。
+     * Set query the details of PAI instances according to instance ID
+     * @param InstanceIds Query the details of PAI instances according to instance ID.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取过滤条件。
-     * @return Filters 过滤条件。
+     * Obtain filter conditions.
+     * @return Filters Filter conditions.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-     * @param Filters 过滤条件。
+     * Set filter conditions.
+     * @param Filters Filter conditions.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 获取返回数量，默认为20，最大值为100。
-     * @return Limit 返回数量，默认为20，最大值为100。
+     * Obtain number of values to be returned. Default is 20. Maximum is 100.
+     * @return Limit Number of values to be returned. Default is 20. Maximum is 100.
      */
     public Integer getLimit() {
         return this.Limit;
     }
 
     /**
-     * 设置返回数量，默认为20，最大值为100。
-     * @param Limit 返回数量，默认为20，最大值为100。
+     * Set number of values to be returned. Default is 20. Maximum is 100.
+     * @param Limit Number of values to be returned. Default is 20. Maximum is 100.
      */
     public void setLimit(Integer Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * 获取偏移量，默认为0。
-     * @return Offset 偏移量，默认为0。
+     * Obtain offset. Default is 0.
+     * @return Offset Offset. Default is 0.
      */
     public Integer getOffset() {
         return this.Offset;
     }
 
     /**
-     * 设置偏移量，默认为0。
-     * @param Offset 偏移量，默认为0。
+     * Set offset. Default is 0.
+     * @param Offset Offset. Default is 0.
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

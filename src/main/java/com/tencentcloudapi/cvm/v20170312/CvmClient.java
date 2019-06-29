@@ -30,27 +30,27 @@ public class CvmClient extends AbstractClient{
     private static String version = "2017-03-12";
 
     /**
-     * 构造client
-     * @param credential 认证信息实例
-     * @param region	产品地域
+     * Construct client
+     * @param credential client credentials
+     * @param region product region
      */
     public CvmClient(Credential credential, String region) {
         this(credential, region, new ClientProfile());
     }
 
     /**
-     * 构造client
-     * @param credential 认证信息实例
-     * @param region	产品地域
-     * @param profile 配置实例
+     * Construct client
+     * @param credential client credentials
+     * @param region product region
+     * @param profile client profile
      */
     public CvmClient(Credential credential, String region, ClientProfile profile) {
         super(CvmClient.endpoint, CvmClient.version, credential, region, profile);
     }
 
     /**
-     *本接口 (AllocateHosts) 用于创建一个或多个指定配置的CDH实例。
-* 当HostChargeType为PREPAID时，必须指定HostChargePrepaid参数。
+     *This API (AllocateHosts) is used to create one or more CDH instances with specified configuration.
+* When HostChargeType is PREPAID, the HostChargePrepaid parameter must be specified.
      * @param req AllocateHostsRequest
      * @return AllocateHostsResponse
      * @throws TencentCloudSDKException
@@ -68,12 +68,12 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (AssociateInstancesKeyPairs) 用于将密钥绑定到实例上。
+     *This API (AssociateInstancesKeyPairs) is used to associate a key pair to an instance.
 
-* 将密钥的公钥写入到实例的`SSH`配置当中，用户就可以通过该密钥的私钥来登录实例。
-* 如果实例原来绑定过密钥，那么原来的密钥将失效。
-* 如果实例原来是通过密码登录，绑定密钥后无法使用密码登录。
-* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。
+* When the public key of a key pair is written to the`SSH`configuration of the instance, you can log in to the instance through the private key of the key pair.
+* If the instance has associated with a key, the old key will be invalid.
+* If the instance was originally logged in through a password, the password will become unavailable if the instance associate a key.
+* Batch operations are supported. The maximum number of instances in a batch for each request is 100. If any instance that does not allow batch operation, an [error code] is returned.
      * @param req AssociateInstancesKeyPairsRequest
      * @return AssociateInstancesKeyPairsResponse
      * @throws TencentCloudSDKException
@@ -91,7 +91,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (AssociateSecurityGroups) 用于绑定安全组到指定实例。
+     *This API (AssociateSecurityGroups) is used to associate a security group to a specified instance.
      * @param req AssociateSecurityGroupsRequest
      * @return AssociateSecurityGroupsResponse
      * @throws TencentCloudSDKException
@@ -109,7 +109,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (CreateDisasterRecoverGroup)用于创建[分散置放群组](https://cloud.tencent.com/document/product/213/15486)。创建好的置放群组，可在[创建实例](https://cloud.tencent.com/document/api/213/15730)时指定。
+     *This API (CreateDisasterRecoverGroup) is used to create[spread placement group](https://cloud.tencent.com/document/product/213/15486). You can assign an exist placement group when[create instance](https://cloud.tencent.com/document/api/213/15730).
      * @param req CreateDisasterRecoverGroupRequest
      * @return CreateDisasterRecoverGroupResponse
      * @throws TencentCloudSDKException
@@ -127,7 +127,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。
+     *This API (CreateImage) is used to create an new image from the system disk of an instance. The created image can be used to create instances.
      * @param req CreateImageRequest
      * @return CreateImageResponse
      * @throws TencentCloudSDKException
@@ -145,12 +145,12 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (CreateKeyPair) 用于创建一个 `OpenSSH RSA` 密钥对，可以用于登录 `Linux` 实例。
+     *This (CreateKeyPair) is used to create a `OpenSSH RSA` KeyPair，can be used to log in `Linux` instance.
 
-* 开发者只需指定密钥对名称，即可由系统自动创建密钥对，并返回所生成的密钥对的 `ID` 及其公钥、私钥的内容。
-* 密钥对名称不能和已经存在的密钥对的名称重复。
-* 私钥的内容可以保存到文件中作为 `SSH` 的一种认证方式。
-* 腾讯云不会保存用户的私钥，请妥善保管。
+* You only need to specify the KeyPair name, and the system can automatically create a KeyPair and return the KeyPair `ID` as well as its public and private keys.
+* The KeyPair name must be unique.
+* The content of private key can be saved to a file as an `SSH` authentication method.
+* Tencent Cloud does not preserve user's private key. Please keep it well.
      * @param req CreateKeyPairRequest
      * @return CreateKeyPairResponse
      * @throws TencentCloudSDKException
@@ -168,7 +168,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (DeleteDisasterRecoverGroups)用于删除[分散置放群组](https://cloud.tencent.com/document/product/213/15486)。只有空的置放群组才能被删除，非空的群组需要先销毁组内所有云主机，才能执行删除操作，不然会产生删除置放群组失败的错误。
+     *This API (DeleteDisasterRecoverGroups) is used to delete[spread placement group](https://cloud.tencent.com/document/product/213/15486). Only empty placement group will be deleted，non empty placement group need to terminate all the CVMs in the group before delete, otherwise the deletion may fail.
      * @param req DeleteDisasterRecoverGroupsRequest
      * @return DeleteDisasterRecoverGroupsResponse
      * @throws TencentCloudSDKException
@@ -186,11 +186,11 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口（DeleteImages）用于删除一个或多个镜像。
+     *This API (DeleteImages) is used to delete one or more images.
 
-* 当[镜像状态](https://cloud.tencent.com/document/api/213/9452#image_state)为`创建中`和`使用中`时, 不允许删除。镜像状态可以通过[DescribeImages](https://cloud.tencent.com/document/api/213/9418)获取。
-* 每个地域最多只支持创建10个自定义镜像，删除镜像可以释放账户的配额。
-* 当镜像正在被其它账户分享时，不允许删除。
+* when[image status](https://cloud.tencent.com/document/api/213/9452#image_state) are`创建中`and`使用中`, it’s not allowed to delete. You can get image status via[DescribeImages](https://cloud.tencent.com/document/api/213/9418).
+* A maximum of 10 custom images are allowed to be created for each region. Deletion of images can free the quota on account.
+* A shared image cannot be deleted.
      * @param req DeleteImagesRequest
      * @return DeleteImagesResponse
      * @throws TencentCloudSDKException
@@ -208,10 +208,10 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (DeleteKeyPairs) 用于删除已在腾讯云托管的密钥对。
+     *This API (DeleteKeyPairs) is used to delete the key pairs hosted in Tencent Cloud.
 
-* 可以同时删除多个密钥对。
-* 不能删除已被实例或镜像引用的密钥对，所以需要独立判断是否所有密钥对都被成功删除。
+* A shared image cannot be deleted.
+* The KeyPair referenced by an instance or image cannot be deleted. You need to verify whether all the key pairs have been deleted successfully.
      * @param req DeleteKeyPairsRequest
      * @return DeleteKeyPairsResponse
      * @throws TencentCloudSDKException
@@ -229,7 +229,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (DescribeDisasterRecoverGroupQuota)用于查询[分散置放群组](https://cloud.tencent.com/document/product/213/15486)配额。
+     *This API (DescribeDisasterRecoverGroupQuota) is used to query the quota of[spread placement group](https://cloud.tencent.com/document/product/213/15486).
      * @param req DescribeDisasterRecoverGroupQuotaRequest
      * @return DescribeDisasterRecoverGroupQuotaResponse
      * @throws TencentCloudSDKException
@@ -247,7 +247,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (DescribeDisasterRecoverGroups)用于查询[分散置放群组](https://cloud.tencent.com/document/product/213/15486)信息。
+     *This API (DescribeDisasterRecoverGroups)is used to query information of[spread placement group](https://cloud.tencent.com/document/product/213/15486).
      * @param req DescribeDisasterRecoverGroupsRequest
      * @return DescribeDisasterRecoverGroupsResponse
      * @throws TencentCloudSDKException
@@ -265,7 +265,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (DescribeHosts) 用于获取一个或多个CDH实例的详细信息。
+     *This API (DescribeHosts) is used to get the details of one or more CDH instances.
      * @param req DescribeHostsRequest
      * @return DescribeHostsResponse
      * @throws TencentCloudSDKException
@@ -283,7 +283,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口(DescribeImageQuota)用于查询用户帐号的镜像配额。
+     *This API (DescribeImageQuota) is used to query the image quota under the user account.
      * @param req DescribeImageQuotaRequest
      * @return DescribeImageQuotaResponse
      * @throws TencentCloudSDKException
@@ -301,7 +301,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribeImageSharePermission）用于查询镜像分享信息。
+     *This API (DescribeImageSharePermission) is used to query the information on image sharing.
      * @param req DescribeImageSharePermissionRequest
      * @return DescribeImageSharePermissionResponse
      * @throws TencentCloudSDKException
@@ -319,10 +319,10 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口(DescribeImages) 用于查看镜像列表。
+     *This API (DescribeImages) is used to view the image list.
 
-* 可以通过指定镜像ID来查询指定镜像的详细信息，或通过设定过滤器来查询满足过滤条件的镜像的详细信息。
-* 指定偏移(Offset)和限制(Limit)来选择结果中的一部分，默认返回满足条件的前20个镜像信息。
+* You can query the details of the specified images by specifying image IDs, or set filters to query the details of the images that satisfy the filter conditions.
+* You can specify Offset and Limit to select a part of the results. The information of the first 20 images satisfying the condition is returned by default.
      * @param req DescribeImagesRequest
      * @return DescribeImagesResponse
      * @throws TencentCloudSDKException
@@ -340,7 +340,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *查看可以导入的镜像操作系统信息。
+     *This API (DescribeImportImageOs) is used to view the operating system information of an imported image.
      * @param req DescribeImportImageOsRequest
      * @return DescribeImportImageOsResponse
      * @throws TencentCloudSDKException
@@ -358,7 +358,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口（DescribeInstanceFamilyConfigs）查询当前用户和地域所支持的机型族列表信息。
+     *This API (DescribeInstanceFamilyConfigs) is used to query the list of model families supported by the current user and region.
      * @param req DescribeInstanceFamilyConfigsRequest
      * @return DescribeInstanceFamilyConfigsResponse
      * @throws TencentCloudSDKException
@@ -376,10 +376,10 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (DescribeInstanceInternetBandwidthConfigs) 用于查询实例带宽配置。
+     *This API (DescribeInstanceInternetBandwidthConfigs) is used to query the instance bandwidth configuration.
 
-* 只支持查询`BANDWIDTH_PREPAID`计费模式的带宽配置。
-* 接口返回实例的所有带宽配置信息（包含历史的带宽配置信息）。
+* Only support query the bandwidth configuration of billing mode `BANDWIDTH_PREPAID`.
+* All bandwidth configuration information (including historical bandwidth configuration information) of an instance is returned via the API.
      * @param req DescribeInstanceInternetBandwidthConfigsRequest
      * @return DescribeInstanceInternetBandwidthConfigsResponse
      * @throws TencentCloudSDKException
@@ -397,10 +397,10 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 (DescribeInstanceTypeConfigs) 用于查询实例机型配置。
+     *This API (DescribeInstanceTypeConfigs) is used to query the instance model configuration.
 
-* 可以根据`zone`、`instance-family`来查询实例机型配置。过滤条件详见过滤器`Filter`。
-* 如果参数为空，返回指定地域的所有实例机型配置。
+* You can query instance specification via`zone` and `instance-family`. Check filter`Filter`.
+* If the parameter is empty, all instances specification under the specified region are returned.
      * @param req DescribeInstanceTypeConfigsRequest
      * @return DescribeInstanceTypeConfigsResponse
      * @throws TencentCloudSDKException
@@ -418,16 +418,13 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址。
+     *This API (DescribeInstanceVncUrl) is used to query the URL to the instance management client.
 
-* 处于 `STOPPED` 状态的机器无法使用此功能。
-* 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。
-* 管理终端地址一旦被访问，将自动失效，您需要重新查询。
-* 如果连接断开，每分钟内重新连接的次数不能超过 30 次。
-* 获取到 `InstanceVncUrl` 后，您需要在在链接 <https://img.qcloud.com/qcloud/app/active_vnc/index.html?> 末尾加上参数 `InstanceVncUrl=xxxx`  。
-  - 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。
-
-    最后组成的 URL 格式如下：
+* CVM under status `STOPPED` can not use this functionality.
+* The validity period of the management client URL is 15 sec. If the URL is not accessed within 15 sec after the API is called, it will become invalid automatically. You have to query a URL again.
+* Once the client URL is accessed, it will become invalid automatically. You have to query a URL again.
+* If the access is disconnected, reconnect attempts within one minute cannot exceed 30 times.
+* After get `InstanceVncUrl` ，need to add <https: //img.qcloud.com/qcloud/app/active_vnc/index.html?> parameter `InstanceVncUrl=xxxx`  at the end of link.  - Parameter `InstanceVncUrl` ：Successfully call API will return value of `InstanceVncUrl` .    The final URLs are in the following format:
 
 ```
 https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9
@@ -450,10 +447,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (DescribeInstances) 用于查询一个或多个实例的详细信息。
+     *This API (DescribeInstances) is used to query the details of one or more instances.
 
-* 可以根据实例`ID`、实例名称或者实例计费模式等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。
-* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。
+* You can query the details of an instance according to instance`ID`, instance name or billing method. See `Filter` for filtering information`Filter`.
+* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of instances are returned to the current user.
      * @param req DescribeInstancesRequest
      * @return DescribeInstancesResponse
      * @throws TencentCloudSDKException
@@ -471,9 +468,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口（DescribeInstancesOperationLimit）用于查询实例操作限制。
+     *This API（DescribeInstancesOperationLimit）is used to query operation limitation of instances.
 
-* 目前支持调整配置操作限制次数查询。
+* the query for adjusting the number of configuration operation limitation is supported
      * @param req DescribeInstancesOperationLimitRequest
      * @return DescribeInstancesOperationLimitResponse
      * @throws TencentCloudSDKException
@@ -491,10 +488,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (DescribeInstancesStatus) 用于查询一个或多个实例的状态。
+     *This API (DescribeInstancesStatus) is used to query the status of one or more instances.
 
-* 可以根据实例`ID`来查询实例的状态。
-* 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的实例状态。
+* You can query instance status via instance `ID`.
+* If the parameter is empty, a certain number (specified by `Limit`, the default is 20) of status are returned to the current user.
      * @param req DescribeInstancesStatusRequest
      * @return DescribeInstancesStatusResponse
      * @throws TencentCloudSDKException
@@ -512,7 +509,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口（DescribeInternetChargeTypeConfigs）用于查询网络的计费类型。
+     *This API (DescribeInternetChargeTypeConfigs) is used to query the network billing type.
      * @param req DescribeInternetChargeTypeConfigsRequest
      * @return DescribeInternetChargeTypeConfigsResponse
      * @throws TencentCloudSDKException
@@ -530,9 +527,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (DescribeKeyPairs) 用于查询密钥对信息。
+     *This API (DescribeKeyPairs) is used to query key pair information.
 
-* 密钥对是通过一种算法生成的一对密钥，在生成的密钥对中，一个向外界公开，称为公钥；另一个用户自己保留，称为私钥。密钥对的公钥内容可以通过这个接口查询，但私钥内容系统不保留。
+* A keyPair is a pair of keys generated with an algorithm. In the generated key pair, one key is open to the public and called public key, and the other key kept by users is called private key. The public key content of the key pair can be queried through this API, but the private key content is not retained by system.
      * @param req DescribeKeyPairsRequest
      * @return DescribeKeyPairsResponse
      * @throws TencentCloudSDKException
@@ -550,7 +547,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口(DescribeRegions)用于查询地域信息。
+     *This API (DescribeRegions) is used to query regions.
      * @param req DescribeRegionsRequest
      * @return DescribeRegionsResponse
      * @throws TencentCloudSDKException
@@ -568,7 +565,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口(DescribeZoneInstanceConfigInfos) 获取可用区的机型信息。
+     *This API (DescribeZoneInstanceConfigInfos) is used to obtain the model information in an availability zone.
      * @param req DescribeZoneInstanceConfigInfosRequest
      * @return DescribeZoneInstanceConfigInfosResponse
      * @throws TencentCloudSDKException
@@ -586,7 +583,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口(DescribeZones)用于查询可用区信息。
+     *This API (DescribeZones) is used to query availability zones.
      * @param req DescribeZonesRequest
      * @return DescribeZonesResponse
      * @throws TencentCloudSDKException
@@ -604,12 +601,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (DisassociateInstancesKeyPairs) 用于解除实例的密钥绑定关系。
+     *This API (DisassociateInstancesKeyPairs) is used to unbind a key pair from an instance.
 
-* 只支持[`STOPPED`](https://cloud.tencent.com/document/api/213/9452#INSTANCE_STATE)状态的`Linux`操作系统的实例。
-* 解绑密钥后，实例可以通过原来设置的密码登录。
-* 如果原来没有设置密码，解绑后将无法使用 `SSH` 登录。可以调用 [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/15736) 接口来设置登录密码。
-* 支持批量操作。每次请求批量实例的上限为100。如果批量实例存在不允许操作的实例，操作会以特定错误码返回。
+* Only support instances with operation system `Linux` and status [`STOPPED`](https://cloud.tencent.com/document/api/213/9452#INSTANCE_STATE).
+* After the key pair is unassociated, the instance can be logged in with the original password.
+* If password was not set before, you couldn’t use `SSH` to login after unassociated. Call API [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/15736) to set login password.
+* Batch operations are supported. The maximum number of instances in a batch for each request is 100. If any instance that does not allow batch operations, an [error code] is returned.
      * @param req DisassociateInstancesKeyPairsRequest
      * @return DisassociateInstancesKeyPairsResponse
      * @throws TencentCloudSDKException
@@ -627,7 +624,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (DisassociateSecurityGroups) 用于解绑实例的指定安全组。
+     *This API (DisassociateSecurityGroups) is used to disassociate a security group from specified instances.
      * @param req DisassociateSecurityGroupsRequest
      * @return DisassociateSecurityGroupsResponse
      * @throws TencentCloudSDKException
@@ -645,7 +642,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口(ImportImage)用于导入镜像，导入后的镜像可用于创建实例。
+     *This API (ImportImage) is used to import images that can be used to create instances.
      * @param req ImportImageRequest
      * @return ImportImageResponse
      * @throws TencentCloudSDKException
@@ -663,11 +660,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ImportKeyPair) 用于导入密钥对。
+     *This API (ImportKeyPair) is used to import key pairs.
 
-* 本接口的功能是将密钥对导入到用户账户，并不会自动绑定到实例。如需绑定可以使用[AssociasteInstancesKeyPair](https://cloud.tencent.com/document/api/213/9404)接口。
-* 需指定密钥对名称以及该密钥对的公钥文本。
-* 如果用户只有私钥，可以通过 `SSL` 工具将私钥转换成公钥后再导入。
+* This API is designed to import the key pair to the user account, instead of binding it to an instance automatically. You can bind the key pair to an instance using API [AssociasteInstancesKeyPair](https://cloud.tencent.com/document/api/213/9404).
+* The key pair name and the public key text of the key pair need to be specified.
+* If you have only the private key, you can convert the private key to a public key using `SSL` tool before importing it.
      * @param req ImportKeyPairRequest
      * @return ImportKeyPairResponse
      * @throws TencentCloudSDKException
@@ -685,10 +682,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (InquiryPriceModifyInstancesChargeType) 用于切换实例的计费模式询价。
+     *This API (InquiryPriceModifyInstancesChargeType) is used to inquire the price for the switched billing method of an instance.
 
-* 只支持从 `POSTPAID_BY_HOUR` 计费模式切换为`PREPAID`计费模式。
-* 关机不收费的实例、`BC1`和`BS1`机型族的实例、设置定时销毁的实例不支持该操作。
+* This API only supports switching the billing method from `POSTPAID_BY_HOUR` to `PREPAID`.
+* This operation is not supported for instances that are not charged for shutdown period, that belong to `BC1` and `BS1` model families, and that will be terminated at a certain time.
      * @param req InquiryPriceModifyInstancesChargeTypeRequest
      * @return InquiryPriceModifyInstancesChargeTypeResponse
      * @throws TencentCloudSDKException
@@ -706,9 +703,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (InquiryPriceRenewInstances) 用于续费包年包月实例询价。
+     *This API (InquiryPriceRenewInstances) is used to inquiry the price of prepaid instance renewal.
 
-* 只支持查询包年包月实例的续费价格。
+* Only supports querying the renewal price of the prepaid instances.
      * @param req InquiryPriceRenewInstancesRequest
      * @return InquiryPriceRenewInstancesResponse
      * @throws TencentCloudSDKException
@@ -726,7 +723,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (InquiryPriceResetInstance) 用于重装实例询价。* 如果指定了`ImageId`参数，则使用指定的镜像进行重装询价；否则按照当前实例使用的镜像进行重装询价。* 目前只支持[系统盘类型](/document/api/213/9452#block_device)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口实现`Linux`和`Windows`操作系统切换的重装询价。* 目前不支持海外地域的实例使用该接口实现`Linux`和`Windows`操作系统切换的重装询价。
+     *This API (InquiryPriceResetInstance) is used to inquire the prices of reinstalled instances.* If you have specified `ImageId` parameter, the price inquiry is performed with the specified image. Otherwise, the image used by the current instance is used.* You can use this API to inquire prices after the operating system switch between `Linux` and `Windows` only for the instances with a [system disk type](/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.* For the instances in overseas regions, this operation is not supported.
      * @param req InquiryPriceResetInstanceRequest
      * @return InquiryPriceResetInstanceResponse
      * @throws TencentCloudSDKException
@@ -744,14 +741,14 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (InquiryPriceResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限询价。
+     *This API (InquiryPriceResetInstancesInternetMaxBandwidth) is used to inquire the price of the adjusted public network bandwidth cap of an instance.
 
-* 不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。
-* 对于`BANDWIDTH_PREPAID`计费方式的带宽，需要输入参数`StartTime`和`EndTime`，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。
-* 对于 `TRAFFIC_POSTPAID_BY_HOUR`、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。
-* 接口不支持调整`BANDWIDTH_POSTPAID_BY_MONTH`计费方式的带宽。
-* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。
-* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整`TRAFFIC_POSTPAID_BY_HOUR`和`BANDWIDTH_PACKAGE`计费方式的带宽。
+* The bandwidth cap varies with different models. For details, please see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/509).
+* For a bandwidth with the `BANDWIDTH_PREPAID` billing mode, the parameters `StartTime` and `EndTime` need to be input to specify the validity period of the adjusted bandwidth. Bandwidth downgrade is not supported currently in this scenario. Since fee deduction is involved, make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
+* For a bandwidth with the `TRAFFIC_POSTPAID_BY_HOUR`, the `BANDWIDTH_POSTPAID_BY_HOUR`, or the `BANDWIDTH_PACKAGE` billing method, the adjustment of the bandwidth cap using this API takes effect in real time. Bandwidth upgrade and downgrade in the permitted range are supported, and the input of parameters `StartTime` and `EndTime` is not supported.
+* This API does not support adjusting a bandwidth with the `BANDWIDTH_POSTPAID_BY_MONTH` billing method.
+* This API does not support batch adjustment of bandwidths with the `BANDWIDTH_PREPAID` or the `BANDWIDTH_POSTPAID_BY_HOUR` billing method.
+* This API does not support batch adjustment of bandwidths with hybrid billing methods. For instance, it does not support adjusting bandwidths with the `TRAFFIC_POSTPAID_BY_HOUR` and the `BANDWIDTH_PACKAGE` billing methods at the same time.
      * @param req InquiryPriceResetInstancesInternetMaxBandwidthRequest
      * @return InquiryPriceResetInstancesInternetMaxBandwidthResponse
      * @throws TencentCloudSDKException
@@ -769,11 +766,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (InquiryPriceResetInstancesType) 用于调整实例的机型询价。
+     *This API (InquiryPriceResetInstancesType) is used to inquire the price of adjusting the model of an instance.
 
-* 目前只支持[系统盘类型](https://cloud.tencent.com/document/api/213/9452#block_device)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口进行调整机型询价。
-* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口调整机型询价。
-* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。
+* Currently, using this API for inquiring about the price of adjusting models is only supported for the instances with a [system disk type](https://cloud.tencent.com/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
+* Currently, using this API for inquiring about the price of adjusting models is only supported for the instances with a [system disk type](https://cloud.tencent.com/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
+* For prepaid instances, fee deduction will be involved in using this API, so make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
      * @param req InquiryPriceResetInstancesTypeRequest
      * @return InquiryPriceResetInstancesTypeResponse
      * @throws TencentCloudSDKException
@@ -791,10 +788,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (InquiryPriceResizeInstanceDisks) 用于扩容实例的数据盘询价。
+     *This API (InquiryPriceResizeInstanceDisks) is used to inquiry the price of data disk capacity expansion of the instance.
 
-* 目前只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）询价，且[数据盘类型](/document/api/213/9452#block_device)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`。
-* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口扩容数据盘询价。* 仅支持包年包月实例随机器购买的数据盘。* 目前只支持扩容一块数据盘询价。
+* Only in-elastic data disk is supported (which can be obtained from [`DescribeDisks`](https://intl.cloud.tencent.com/document/api/362/16315) in the returned value: `Portable` is `false` by the API ), and [Data disk type] (https://intl.cloud.tencent.com/document/api/213/9452#block_device) is: `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`. 
+* Currently, the [CDH](https://cloud.tencent.com/document/product/416) instance is not supported to use this API to inquiry the price of data disk capacity expansion.* Only data disks purchased along with prepaid instances are supported.* Inquiring the price of expanding the capacity of only one data disk is supported.
      * @param req InquiryPriceResizeInstanceDisksRequest
      * @return InquiryPriceResizeInstanceDisksResponse
      * @throws TencentCloudSDKException
@@ -812,7 +809,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口(InquiryPriceRunInstances)用于创建实例询价。本接口仅允许针对购买限制范围内的实例配置进行询价, 详见：[创建实例](https://cloud.tencent.com/document/api/213/15730)。
+     *This API (InquiryPriceRunInstances) is used to inquire the price for instance creation. With this API, you can only inquire the price according to the instance configuration within the range of purchase limits. For more information, please see [Create Instance](https://cloud.tencent.com/document/api/213/15730).
      * @param req InquiryPriceRunInstancesRequest
      * @return InquiryPriceRunInstancesResponse
      * @throws TencentCloudSDKException
@@ -830,7 +827,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ModifyDisasterRecoverGroupAttribute)用于修改[分散置放群组](https://cloud.tencent.com/document/product/213/15486)属性。
+     *This API (ModifyDisasterRecoverGroupAttribute) is used modify attribution of [spread placement group].
      * @param req ModifyDisasterRecoverGroupAttributeRequest
      * @return ModifyDisasterRecoverGroupAttributeResponse
      * @throws TencentCloudSDKException
@@ -848,7 +845,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口（ModifyHostsAttribute）用于修改CDH实例的属性，如实例名称和续费标记等。参数HostName和RenewFlag必须设置其中一个，但不能同时设置。
+     *This API (ModifyHostsAttribute) is used to modify the attributes of CDH instance, such as instance name and renewal flag. Either the parameter HostName or RenewFlag must be set, but not both.
      * @param req ModifyHostsAttributeRequest
      * @return ModifyHostsAttributeResponse
      * @throws TencentCloudSDKException
@@ -866,9 +863,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口（ModifyImageAttribute）用于修改镜像属性。
+     *This API (ModifyImageAttribute) is used to modify the image attributes.
 
-* 已分享的镜像无法修改属性。
+* Modifying attributes is not allowed for a shared image.
      * @param req ModifyImageAttributeRequest
      * @return ModifyImageAttributeResponse
      * @throws TencentCloudSDKException
@@ -886,12 +883,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口（ModifyImageSharePermission）用于修改镜像分享信息。
+     *This API (ModifyImageSharePermission) is used to modify the image sharing information.
 
-* 分享镜像后，被分享账户可以通过该镜像创建实例。
-* 每个自定义镜像最多可共享给50个账户。
-* 分享镜像无法更改名称，描述，仅可用于创建实例。
-* 只支持分享到对方账户相同地域。
+* The accounts to which an image is shared can create instances from this image.
+* Each custom image can be shared to a maximum of 50 accounts.
+* A shared image can only be used to create instances and its name and description cannot be changed.
+* An image can only be shared to the accounts in the same region with the source account.
 
      * @param req ModifyImageSharePermissionRequest
      * @return ModifyImageSharePermissionResponse
@@ -910,11 +907,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ModifyInstancesAttribute) 用于修改实例的属性（目前只支持修改实例的名称和关联的安全组）。
+     *This API (ModifyInstancesAttribute) is used to modify the attributes of an instance (only the modification to instance name is supported).
 
-* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为提交工单或是进行实例管理操作的依据。
-* 支持批量操作。每次请求批量实例的上限为100。
-* 修改关联安全组时，子机原来关联的安全组会被解绑。
+* "Instance name" is only used by users for their management. Tencent Cloud does not use the name as the basis for ticket submission or instance management.
+* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
+* The instance associated security group will be disassociated if the associated security group is modified.
      * @param req ModifyInstancesAttributeRequest
      * @return ModifyInstancesAttributeResponse
      * @throws TencentCloudSDKException
@@ -932,10 +929,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ModifyInstancesChargeType) 用于切换实例的计费模式。
+     *This API (ModifyInstancesChargeType) is used to switch the billing method of an instance.
 
-* 只支持从 `POSTPAID_BY_HOUR` 计费模式切换为`PREPAID`计费模式。
-* 关机不收费的实例、`BC1`和`BS1`机型族的实例、设置定时销毁的实例不支持该操作。
+* Only support switch billing mode from `POSTPAID_BY_HOUR` to `PREPAID`.
+* No charges when shut down instances, `BC1`and`BS1` type instances, instances will be terminated at a certain time are not supported.
      * @param req ModifyInstancesChargeTypeRequest
      * @return ModifyInstancesChargeTypeResponse
      * @throws TencentCloudSDKException
@@ -953,12 +950,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ModifyInstancesProject) 用于修改实例所属项目。
+     *This API (ModifyInstancesProject) is used to modify the project to which an instance belongs.
 
-* 项目为一个虚拟概念，用户可以在一个账户下面建立多个项目，每个项目中管理不同的资源；将多个不同实例分属到不同项目中，后续使用 [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口查询实例，项目ID可用于过滤结果。
-* 绑定负载均衡的实例不支持修改实例所属项目，请先使用[`DeregisterInstancesFromLoadBalancer`](https://cloud.tencent.com/document/api/214/1258)接口解绑负载均衡。
-* 修改实例所属项目会自动解关联实例原来关联的安全组，修改完成后可能使用[`ModifySecurityGroupsOfInstance`](https://cloud.tencent.com/document/api/213/1367)接口关联安全组。
-* 支持批量操作。每次请求批量实例的上限为100。
+* The project is a virtual concept. Users can create multiple projects under one account to manage different resources in each project, and assign the different instances to different projects. The API [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388) can be used to query instances and the project ID can be used to filter the results.
+* The project of the instances bound with load balancers cannot be modified until the load balancers are unbound using the API [`DeregisterInstancesFromLoadBalancer`](https://cloud.tencent.com/document/api/214/1258).
+* The security groups associated with the instances are automatically disassociated when the project of the instances is modified. You can use the API [`ModifySecurityGroupsOfInstance`](https://cloud.tencent.com/document/api/213/1367) to associate security groups after modification.
+* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
      * @param req ModifyInstancesProjectRequest
      * @return ModifyInstancesProjectResponse
      * @throws TencentCloudSDKException
@@ -976,10 +973,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ModifyInstancesRenewFlag) 用于修改包年包月实例续费标识。
+     *This API (ModifyInstancesRenewFlag) is used to modify the renewal flags of prepaid instances.
 
-* 实例被标识为自动续费后，每次在实例到期时，会自动续费一个月。
-* 支持批量操作。每次请求批量实例的上限为100。
+* Any instance marked "Auto Renewal" is automatically renewed for one month whenever it expires.
+* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
      * @param req ModifyInstancesRenewFlagRequest
      * @return ModifyInstancesRenewFlagResponse
      * @throws TencentCloudSDKException
@@ -997,9 +994,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口(ModifyInstancesVpcAttribute)用于修改实例vpc属性，如私有网络ip。
-* 此操作默认会关闭实例，完成后再启动。
-* 当指定私有网络ID和子网ID（子网必须在实例所在的可用区）与指定实例所在私有网络不一致时，会将实例迁移至指定的私有网络的子网下。执行此操作前请确保指定的实例上没有绑定[弹性网卡](https://cloud.tencent.com/document/product/576)和[负载均衡](https://cloud.tencent.com/document/product/214)。
+     *This API (ModifyInstancesVpcAttribute) is used to modify VPC attributes, such as IP
+* Instances are shut down by default when you perform this operation， and restart when completed.
+* when the VPC ID and subnet ID (the subnet must be in the same AZ with instance) are different with the VPC of the specified instance, will migrate the instances to the subnet of specified VPC. Please make sure there is no associated[ENI](https://cloud.tencent.com/document/product/576) and [Cloud Load Balancer](https://cloud.tencent.com/document/product/214) in specified instances.
      * @param req ModifyInstancesVpcAttributeRequest
      * @return ModifyInstancesVpcAttributeResponse
      * @throws TencentCloudSDKException
@@ -1017,11 +1014,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ModifyKeyPairAttribute) 用于修改密钥对属性。
+     *This API (ModifyKeyPairAttribute) is used to modify the attributes of key pairs.
 
-* 修改密钥对ID所指定的密钥对的名称和描述信息。
-* 密钥对名称不能和已经存在的密钥对的名称重复。
-* 密钥对ID是密钥对的唯一标识，不可修改。
+* This API modifies the name and description of the key pair identified by the key pair ID.
+* The KeyPair name must be unique.
+* Key pair ID is the unique identifier of key pair and cannot be modified.
      * @param req ModifyKeyPairAttributeRequest
      * @return ModifyKeyPairAttributeResponse
      * @throws TencentCloudSDKException
@@ -1039,12 +1036,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (RebootInstances) 用于重启实例。
+     *This API (RebootInstances) is used to restart an instance.
 
-* 只有状态为`RUNNING`的实例才可以进行此操作。
-* 接口调用成功时，实例会进入`REBOOTING`状态；重启实例成功时，实例会进入`RUNNING`状态。
-* 支持强制重启。强制重启的效果等同于关闭物理计算机的电源开关再重新启动。强制重启可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常重启时使用。
-* 支持批量操作，每次请求批量实例的上限为100。
+* This operation is only allowed for the instances with a status of `RUNNING`
+* When the API call is successful, the instance goes into the `REBOOTING` status. When restart successfully, it goes into the `RUNNING` status.
+* Forced restart is supported. Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
+* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
      * @param req RebootInstancesRequest
      * @return RebootInstancesResponse
      * @throws TencentCloudSDKException
@@ -1062,10 +1059,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (RenewHosts) 用于续费包年包月CDH实例。
+     *This API (RenewHosts) is used to renew the prepaid CDH instances.
 
-* 只支持操作包年包月实例，否则操作会以特定[错误码](#4.-.E9.94.99.E8.AF.AF.E7.A0.81)返回。
-* 续费时请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。
+* Only the prepaid instances are supported, otherwise a specific [error code](#4.-.E9.94.99.E8.AF.AF.E7.A0.81) will be returned.
+* Make sure the account balance is sufficient when renewing. You can query the account balance via the [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397) API.
      * @param req RenewHostsRequest
      * @return RenewHostsResponse
      * @throws TencentCloudSDKException
@@ -1083,10 +1080,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (RenewInstances) 用于续费包年包月实例。
+     *This API (RenewInstances) is used to renew prepaid instances.
 
-* 只支持操作包年包月实例。
-* 续费时请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。
+* Only the prepaid instances are supported.
+* Make sure the account balance is sufficient when renewing. You can query the account balance via the [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397) API.
      * @param req RenewInstancesRequest
      * @return RenewInstancesResponse
      * @throws TencentCloudSDKException
@@ -1104,14 +1101,14 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ResetInstance) 用于重装指定实例上的操作系统。
+     *This API (ResetInstance) is used to reinstall the operating system for the specified instance.
 
-* 如果指定了`ImageId`参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。
-* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。
-* `Linux`和`Windows`系统互相切换时，该实例系统盘`ID`将发生变化，系统盘关联快照将无法回滚、恢复数据。
-* 密码不指定将会通过站内信下发随机密码。
-* 目前只支持[系统盘类型](https://cloud.tencent.com/document/api/213/9452#block_device)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口实现`Linux`和`Windows`操作系统切换。
-* 目前不支持海外地域的实例使用该接口实现`Linux`和`Windows`操作系统切换。
+* If you have specified `ImageId` parameter, the re-installation is performed with the specified image. Otherwise, the image used by the current instance is used.
+* The system disk will be formatted and reset. Please ensure that there is no important file in the system disk.
+* As the operating system is switched between `Linux` and `Windows`, the system disk `ID` of the instance will change, and the snapshot associated with the system disk can't be used to roll back and recover data.
+* If no password is specified, a password is issued randomly via internal message.
+* You can use this API to inquire prices after the operating system switch between `Linux` and `Windows` only for the instances with a [system disk type](https://cloud.tencent.com/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
+* For the instances in overseas regions, this operation is not supported.
      * @param req ResetInstanceRequest
      * @return ResetInstanceResponse
      * @throws TencentCloudSDKException
@@ -1129,14 +1126,14 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限。
+     *This API (ResetInstancesInternetMaxBandwidth) is used to adjust the public network bandwidth cap of an instance.
 
-* 不同机型带宽上限范围不一致，具体限制详见[购买网络带宽](https://cloud.tencent.com/document/product/213/509)。
-* 对于 `BANDWIDTH_PREPAID` 计费方式的带宽，需要输入参数 `StartTime` 和 `EndTime` ，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过 [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397) 接口查询账户余额。
-* 对于 `TRAFFIC_POSTPAID_BY_HOUR` 、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。
-* 接口不支持调整 `BANDWIDTH_POSTPAID_BY_MONTH` 计费方式的带宽。
-* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。
-* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整 `TRAFFIC_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽。
+* The bandwidth cap varies with different models. For details, please see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/509).
+* For a bandwidth with the `BANDWIDTH_PREPAID` billing method, the parameters `StartTime` and `EndTime` need to be input to specify the validity period of the adjusted bandwidth. Bandwidth downgrade is not supported currently in this scenario. Since fee deduction is involved, make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
+* For a bandwidth with the `TRAFFIC_POSTPAID_BY_HOUR`, the `BANDWIDTH_POSTPAID_BY_HOUR`, or the `BANDWIDTH_PACKAGE` billing method, the adjustment of the bandwidth cap using this API takes effect in real time. Bandwidth upgrade and downgrade in the permitted range are supported, and the input of parameters `StartTime` and `EndTime` is not supported.
+* This API does not support adjusting a bandwidth with the `BANDWIDTH_POSTPAID_BY_MONTH` billing method.
+* This API does not support batch adjustment of bandwidths with the `BANDWIDTH_PREPAID` or the `BANDWIDTH_POSTPAID_BY_HOUR` billing method.
+* This API does not support batch adjustment of bandwidths with hybrid billing methods. For instance, it does not support adjusting bandwidths with the `TRAFFIC_POSTPAID_BY_HOUR` and the `BANDWIDTH_PACKAGE` billing methods at the same time.
      * @param req ResetInstancesInternetMaxBandwidthRequest
      * @return ResetInstancesInternetMaxBandwidthResponse
      * @throws TencentCloudSDKException
@@ -1154,11 +1151,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ResetInstancesPassword) 用于将实例操作系统的密码重置为用户指定的密码。
+     *This API (ResetInstancesPassword) is used to reset the password of the instance operating system to a user-defined one.
 
-* 只修改管理员帐号的密码。实例的操作系统不同，管理员帐号也会不一样(`Windows`为`Administrator`，`Ubuntu`为`ubuntu`，其它系统为`root`)。
-* 重置处于运行中状态的实例，需要显式指定强制关机参数`ForceStop`。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。
-* 支持批量操作。将多个实例操作系统的密码重置为相同的密码。每次请求批量实例的上限为100。
+* This API only modifies the password of administrator account. The administrator account ID varies with the operating system of instance (e.g., `Administrator` for `Windows`, `ubuntu` for `Ubuntu`, and `root` for other systems).
+* To reset the password for a running instance, you need to explicitly specify the parameter `ForceStop` for a forced shutdown. If not, you can only reset password for the instances that have been shut down.
+* The bandwidth cap varies with different models. For details, please see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/509).
      * @param req ResetInstancesPasswordRequest
      * @return ResetInstancesPasswordResponse
      * @throws TencentCloudSDKException
@@ -1176,9 +1173,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ResetInstancesType) 用于调整实例的机型。
-* 目前只支持[系统盘类型](/document/api/213/9452#block_device)是`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`类型的实例使用该接口进行机型调整。
-* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口调整机型。对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。
+     *This API (ResetInstancesType) is used to adjust the model of an instance.
+* Using this API for adjusting models is only supported for the instances with a [system disk type](/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
+* Currently, using this API for adjusting mode is not supported for the [CDH](https://cloud.tencent.com/document/product/416) instances. For prepaid instances, fee deduction will be involved in using this API, so make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
      * @param req ResetInstancesTypeRequest
      * @return ResetInstancesTypeResponse
      * @throws TencentCloudSDKException
@@ -1196,12 +1193,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (ResizeInstanceDisks) 用于扩容实例的数据盘。
+     *This API (ResizeInstanceDisks) is used to expand the capacity of the data disk of an instance.
 
-* 目前只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性），且[数据盘类型](/document/api/213/9452#block_device)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`。
-* 目前不支持[CDH](https://cloud.tencent.com/document/product/416)实例使用该接口扩容数据盘。
-* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397)接口查询账户余额。
-* 目前只支持扩容一块数据盘。
+* Only in-elastic data disk is supported (which can be obtained from [`DescribeDisks`](https://intl.cloud.tencent.com/document/api/362/16315) in the returned value: `Portable` is `false` by the API ), and [Data disk type] (https://intl.cloud.tencent.com/document/api/213/9452#block_device) is: `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`. 
+* Currently, the [CDH](https://cloud.tencent.com/document/product/416) instance is not supported to use this API to inquiry the price of data disk capacity expansion.
+* For prepaid instances, fee deduction will be involved in using this API, so make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
+* Only one data disk is allowed for capacity expansion.
      * @param req ResizeInstanceDisksRequest
      * @return ResizeInstanceDisksResponse
      * @throws TencentCloudSDKException
@@ -1219,12 +1216,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (RunInstances) 用于创建一个或多个指定配置的实例。
+     *This API (RunInstances) is used to create one or more instances with specified configuration.
 
-* 实例创建成功后将自动开机启动，[实例状态](/document/api/213/9452#instance_state)变为“运行中”。
-* 预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。
-* 本接口允许购买的实例数量遵循[CVM实例购买限制](https://cloud.tencent.com/document/product/213/2664)，所创建的实例和官网入口创建的实例共用配额。
-* 本接口为异步接口，当创建请求下发成功后会返回一个实例`ID`列表，此时实例的创建并立即未完成。在此期间实例的状态将会处于“准备中”，可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口查询对应实例的状态，来判断创建有没有最终成功。如果实例的状态由“准备中”变为“运行中”，则为创建成功。
+* After the instance is created successfully, it will start on boot and the [instance status](/document/api/213/9452#instance_state) will become "running".
+* For prepaid instances, the required amount will be pre-deducted; for postpaid instances billed on an hourly basis, the amount equal to an hourly rate of the instance will be pre-frozen. Make sure your account balance is sufficient before calling this API.
+* The instances allowed to be purchased by this API are subject to the number limit described in the [Restrictions on CVM Instance Purchase] (https://cloud.tencent.com/document/product/213/2664), and share the quota with the instances created by the official website entry.
+* This API is an asynchronous API. An instance `ID` list will be returned when the creation request is issued successfully, but the instance is not created immediately. During this period, the status of the instance is "Pending". You can call API [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) to query the status of the instance to check whether it is created. If the status changes from "Pending" to "Running", the instance is created successfully.
      * @param req RunInstancesRequest
      * @return RunInstancesResponse
      * @throws TencentCloudSDKException
@@ -1242,11 +1239,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (StartInstances) 用于启动一个或多个实例。
+     *This API (StartInstances) is used to start one or more instances.
 
-* 只有状态为`STOPPED`的实例才可以进行此操作。
-* 接口调用成功时，实例会进入`STARTING`状态；启动实例成功时，实例会进入`RUNNING`状态。
-* 支持批量操作。每次请求批量实例的上限为100。
+* This operation is only allowed for the instances with a status of `STOPPED`.
+* When the API is called successfully, the instance goes into the `STARTING` status. When started, it goes into the `RUNNING` status.
+* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
      * @param req StartInstancesRequest
      * @return StartInstancesResponse
      * @throws TencentCloudSDKException
@@ -1264,12 +1261,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (StopInstances) 用于关闭一个或多个实例。
+     *This API (StopInstances) is used to shut down one or more instances.
 
-* 只有状态为`RUNNING`的实例才可以进行此操作。
-* 接口调用成功时，实例会进入`STOPPING`状态；关闭实例成功时，实例会进入`STOPPED`状态。
-* 支持强制关闭。强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。
-* 支持批量操作。每次请求批量实例的上限为100。
+* This operation is only allowed for the instances with a status of `RUNNING`.
+* When the API is called successfully, the instance goes into the `STOPPING` status. When the instance is shut down, it goes into the `STOPPED` status.
+*  Forced shutdown is supported. Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
+* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
      * @param req StopInstancesRequest
      * @return StopInstancesResponse
      * @throws TencentCloudSDKException
@@ -1287,11 +1284,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口（SyncImages）用于将自定义镜像同步到其它地区。
+     *This API (SyncImages) is used to sync a custom image to other regions.
 
-* 该接口每次调用只支持同步一个镜像。
-* 该接口支持多个同步地域。
-* 单个帐号在每个地域最多支持存在10个自定义镜像。
+* Each call to this API can only sync a single image.
+* This API supports syncing to multiple regions.
+* A maximum of 10 custom images are allowed to be created for each region. 
      * @param req SyncImagesRequest
      * @return SyncImagesResponse
      * @throws TencentCloudSDKException
@@ -1309,11 +1306,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *本接口 (TerminateInstances) 用于主动退还实例。
+     *This API (TerminateInstances) is used to return instances.
 
-* 不再使用的实例，可通过本接口主动退还。
-* 按量计费的实例通过本接口可直接退还；包年包月实例如符合[退还规则](https://cloud.tencent.com/document/product/213/9711)，也可通过本接口主动退还。
-* 支持批量操作，每次请求批量实例的上限为100。
+* The instances that are no longer used can be returned via this API.
+* Postpaid instances can be directly returned via this API. Prepaid instances that conform to the [rules for return](https://cloud.tencent.com/document/product/213/9711) can also be returned via this API.
+* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
      * @param req TerminateInstancesRequest
      * @return TerminateInstancesResponse
      * @throws TencentCloudSDKException

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InquiryPriceResizeInstanceDisksResponse  extends AbstractModel{
 
     /**
-    * 该参数表示磁盘扩容成对应配置的价格。
+    * The parameter indicates the price of expanding the capacity of the disk to a proper configuration.
     */
     @SerializedName("Price")
     @Expose
     private Price Price;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取该参数表示磁盘扩容成对应配置的价格。
-     * @return Price 该参数表示磁盘扩容成对应配置的价格。
+     * Obtain the parameter indicates the price of expanding the capacity of the disk to a proper configuration.
+     * @return Price The parameter indicates the price of expanding the capacity of the disk to a proper configuration.
      */
     public Price getPrice() {
         return this.Price;
     }
 
     /**
-     * 设置该参数表示磁盘扩容成对应配置的价格。
-     * @param Price 该参数表示磁盘扩容成对应配置的价格。
+     * Set the parameter indicates the price of expanding the capacity of the disk to a proper configuration.
+     * @param Price the parameter indicates the price of expanding the capacity of the disk to a proper configuration.
      */
     public void setPrice(Price Price) {
         this.Price = Price;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Price.", this.Price);

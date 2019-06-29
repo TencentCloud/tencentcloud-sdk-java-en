@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ListUsersForGroupResponse  extends AbstractModel{
 
     /**
-    * 用户组关联的用户总数。
+    * Total number of users associated with the user group.
     */
     @SerializedName("TotalNum")
     @Expose
     private Long TotalNum;
 
     /**
-    * 子用户信息。
+    * Sub-user information.
     */
     @SerializedName("UserInfo")
     @Expose
     private GroupMemberInfo [] UserInfo;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取用户组关联的用户总数。
-     * @return TotalNum 用户组关联的用户总数。
+     * Obtain total number of users associated with the user group.
+     * @return TotalNum total user group number.
      */
     public Long getTotalNum() {
         return this.TotalNum;
     }
 
     /**
-     * 设置用户组关联的用户总数。
-     * @param TotalNum 用户组关联的用户总数。
+     * Configure total number of users associated with the user group.
+     * @param TotalNum total user group number.
      */
     public void setTotalNum(Long TotalNum) {
         this.TotalNum = TotalNum;
     }
 
     /**
-     * 获取子用户信息。
-     * @return UserInfo 子用户信息。
+     * Obtain sub-user information.
+     * @return UserInfo sub-user information.
      */
     public GroupMemberInfo [] getUserInfo() {
         return this.UserInfo;
     }
 
     /**
-     * 设置子用户信息。
-     * @param UserInfo 子用户信息。
+     * Configure sub-user information.
+     * @param UserInfo sub-user information.
      */
     public void setUserInfo(GroupMemberInfo [] UserInfo) {
         this.UserInfo = UserInfo;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalNum", this.TotalNum);

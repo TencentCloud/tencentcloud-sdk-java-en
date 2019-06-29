@@ -23,145 +23,145 @@ import java.util.HashMap;
 public class HostResource  extends AbstractModel{
 
     /**
-    * cdh实例总cpu核数
+    * Total number of CPU cores in a CDH instance
     */
     @SerializedName("CpuTotal")
     @Expose
     private Integer CpuTotal;
 
     /**
-    * cdh实例可用cpu核数
+    * Number of available CPU cores in a CDH instance
     */
     @SerializedName("CpuAvailable")
     @Expose
     private Integer CpuAvailable;
 
     /**
-    * cdh实例总内存大小（单位为:GiB）
+    * Total memory size in a CDH instance (in GiB)
     */
     @SerializedName("MemTotal")
     @Expose
     private Float MemTotal;
 
     /**
-    * cdh实例可用内存大小（单位为:GiB）
+    * Available memory size in a CDH instance (in GiB)
     */
     @SerializedName("MemAvailable")
     @Expose
     private Float MemAvailable;
 
     /**
-    * cdh实例总磁盘大小（单位为:GiB）
+    * Total disk size in a CDH instance (in GiB)
     */
     @SerializedName("DiskTotal")
     @Expose
     private Integer DiskTotal;
 
     /**
-    * cdh实例可用磁盘大小（单位为:GiB）
+    * Available disk size in a CDH instance (in GiB)
     */
     @SerializedName("DiskAvailable")
     @Expose
     private Integer DiskAvailable;
 
     /**
-     * 获取cdh实例总cpu核数
-     * @return CpuTotal cdh实例总cpu核数
+     * Get total number of CPU cores in a CDH instance
+     * @return CpuTotal Total number of CPU cores in a CDH instance
      */
     public Integer getCpuTotal() {
         return this.CpuTotal;
     }
 
     /**
-     * 设置cdh实例总cpu核数
-     * @param CpuTotal cdh实例总cpu核数
+     * Set total number of CPU cores in a CDH instance
+     * @param CpuTotal Total number of CPU cores in a CDH instance
      */
     public void setCpuTotal(Integer CpuTotal) {
         this.CpuTotal = CpuTotal;
     }
 
     /**
-     * 获取cdh实例可用cpu核数
-     * @return CpuAvailable cdh实例可用cpu核数
+     * Get number of available CPU cores in a CDH instance
+     * @return CpuAvailable Number of available CPU cores in a CDH instance
      */
     public Integer getCpuAvailable() {
         return this.CpuAvailable;
     }
 
     /**
-     * 设置cdh实例可用cpu核数
-     * @param CpuAvailable cdh实例可用cpu核数
+     * Set number of available CPU cores in a CDH instance |
+     * @param CpuAvailable Number of available CPU cores in a CDH instance
      */
     public void setCpuAvailable(Integer CpuAvailable) {
         this.CpuAvailable = CpuAvailable;
     }
 
     /**
-     * 获取cdh实例总内存大小（单位为:GiB）
-     * @return MemTotal cdh实例总内存大小（单位为:GiB）
+     * Get total memory size in a CDH instance (in GiB)
+     * @return MemTotal Total memory size in a CDH instance (in GiB)
      */
     public Float getMemTotal() {
         return this.MemTotal;
     }
 
     /**
-     * 设置cdh实例总内存大小（单位为:GiB）
-     * @param MemTotal cdh实例总内存大小（单位为:GiB）
+     * Set total memory size in a CDH instance (in GiB) |
+     * @param MemTotal Total memory size in a CDH instance (in GiB)
      */
     public void setMemTotal(Float MemTotal) {
         this.MemTotal = MemTotal;
     }
 
     /**
-     * 获取cdh实例可用内存大小（单位为:GiB）
-     * @return MemAvailable cdh实例可用内存大小（单位为:GiB）
+     * Get available memory size in a CDH instance (in GiB)
+     * @return MemAvailable Available memory size in a CDH instance (in GiB)
      */
     public Float getMemAvailable() {
         return this.MemAvailable;
     }
 
     /**
-     * 设置cdh实例可用内存大小（单位为:GiB）
-     * @param MemAvailable cdh实例可用内存大小（单位为:GiB）
+     * Set available memory size in a CDH instance (in GiB) |
+     * @param MemAvailable Available memory size in a CDH instance (in GiB)
      */
     public void setMemAvailable(Float MemAvailable) {
         this.MemAvailable = MemAvailable;
     }
 
     /**
-     * 获取cdh实例总磁盘大小（单位为:GiB）
-     * @return DiskTotal cdh实例总磁盘大小（单位为:GiB）
+     * Get total disk size in a CDH instance (in GiB)
+     * @return DiskTotal Total disk size in a CDH instance (in GiB)
      */
     public Integer getDiskTotal() {
         return this.DiskTotal;
     }
 
     /**
-     * 设置cdh实例总磁盘大小（单位为:GiB）
-     * @param DiskTotal cdh实例总磁盘大小（单位为:GiB）
+     * Set total disk size in a CDH instance (in GiB)
+     * @param DiskTotal Total disk size in a CDH instance (in GiB)
      */
     public void setDiskTotal(Integer DiskTotal) {
         this.DiskTotal = DiskTotal;
     }
 
     /**
-     * 获取cdh实例可用磁盘大小（单位为:GiB）
-     * @return DiskAvailable cdh实例可用磁盘大小（单位为:GiB）
+     * Get available disk size in a CDH instance (in GiB)
+     * @return DiskAvailable Available disk size in a CDH instance (in GiB)
      */
     public Integer getDiskAvailable() {
         return this.DiskAvailable;
     }
 
     /**
-     * 设置cdh实例可用磁盘大小（单位为:GiB）
-     * @param DiskAvailable cdh实例可用磁盘大小（单位为:GiB）
+     * Set available disk size in a CDH instance (in GiB)
+     * @param DiskAvailable Available disk size in a CDH instance (in GiB)
      */
     public void setDiskAvailable(Integer DiskAvailable) {
         this.DiskAvailable = DiskAvailable;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "CpuTotal", this.CpuTotal);

@@ -23,536 +23,536 @@ import java.util.HashMap;
 public class AutoScalingGroup  extends AbstractModel{
 
     /**
-    * 伸缩组ID
+    * Scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 伸缩组名称
+    * Scaling group name
     */
     @SerializedName("AutoScalingGroupName")
     @Expose
     private String AutoScalingGroupName;
 
     /**
-    * 伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br>
+    * Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
     */
     @SerializedName("AutoScalingGroupStatus")
     @Expose
     private String AutoScalingGroupStatus;
 
     /**
-    * 创建时间，采用UTC标准计时
+    * Creation time, in UTC time.
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * 默认冷却时间，单位秒
+    * Default cooldown period, in seconds
     */
     @SerializedName("DefaultCooldown")
     @Expose
     private Integer DefaultCooldown;
 
     /**
-    * 期望实例数
+    * Desired number of instances.
     */
     @SerializedName("DesiredCapacity")
     @Expose
     private Integer DesiredCapacity;
 
     /**
-    * 启用状态，取值包括`ENABLED`和`DISABLED`
+    * Enabled status, values include `ENABLED` and `DISABLED`
     */
     @SerializedName("EnabledStatus")
     @Expose
     private String EnabledStatus;
 
     /**
-    * 应用型负载均衡器列表
+    * List of application load balancers
     */
     @SerializedName("ForwardLoadBalancerSet")
     @Expose
     private ForwardLoadBalancer [] ForwardLoadBalancerSet;
 
     /**
-    * 实例数量
+    * Number of Instances
     */
     @SerializedName("InstanceCount")
     @Expose
     private Integer InstanceCount;
 
     /**
-    * 状态为`IN_SERVICE`实例的数量
+    * Number of instances in `IN_SERVICE` status
     */
     @SerializedName("InServiceInstanceCount")
     @Expose
     private Integer InServiceInstanceCount;
 
     /**
-    * 启动配置ID
+    * Launch configuration ID
     */
     @SerializedName("LaunchConfigurationId")
     @Expose
     private String LaunchConfigurationId;
 
     /**
-    * 启动配置名称
+    * Launch configuration name.
     */
     @SerializedName("LaunchConfigurationName")
     @Expose
     private String LaunchConfigurationName;
 
     /**
-    * 传统型负载均衡器ID列表
+    * List of traditional load balancer IDs
     */
     @SerializedName("LoadBalancerIdSet")
     @Expose
     private String [] LoadBalancerIdSet;
 
     /**
-    * 最大实例数
+    * Maximum number of instances
     */
     @SerializedName("MaxSize")
     @Expose
     private Integer MaxSize;
 
     /**
-    * 最小实例数
+    * Minimum number of instances
     */
     @SerializedName("MinSize")
     @Expose
     private Integer MinSize;
 
     /**
-    * 项目ID
+    * Project ID
     */
     @SerializedName("ProjectId")
     @Expose
     private Integer ProjectId;
 
     /**
-    * 子网ID列表
+    * List of subnet IDs
     */
     @SerializedName("SubnetIdSet")
     @Expose
     private String [] SubnetIdSet;
 
     /**
-    * 销毁策略
+    * Termination policy
     */
     @SerializedName("TerminationPolicySet")
     @Expose
     private String [] TerminationPolicySet;
 
     /**
-    * VPC标识
+    * VPC ID
     */
     @SerializedName("VpcId")
     @Expose
     private String VpcId;
 
     /**
-    * 可用区列表
+    * List of availability zones
     */
     @SerializedName("ZoneSet")
     @Expose
     private String [] ZoneSet;
 
     /**
-    * 重试策略
+    * Retry policy
     */
     @SerializedName("RetryPolicy")
     @Expose
     private String RetryPolicy;
 
     /**
-    * 伸缩组是否处于伸缩活动中，`IN_ACTIVITY`表示处于伸缩活动中，`NOT_IN_ACTIVITY`表示不处于伸缩活动中。
+    * Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
     */
     @SerializedName("InActivityStatus")
     @Expose
     private String InActivityStatus;
 
     /**
-    * 伸缩组标签列表
+    * Scaling group tag list
     */
     @SerializedName("Tags")
     @Expose
     private Tag [] Tags;
 
     /**
-     * 获取伸缩组ID
-     * @return AutoScalingGroupId 伸缩组ID
+     * Get Scaling group ID
+     * @return AutoScalingGroupId Scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID
-     * @param AutoScalingGroupId 伸缩组ID
+     * Set Scaling group ID
+     * @param AutoScalingGroupId Scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取伸缩组名称
-     * @return AutoScalingGroupName 伸缩组名称
+     * Get scaling group name
+     * @return AutoScalingGroupName Scaling group name
      */
     public String getAutoScalingGroupName() {
         return this.AutoScalingGroupName;
     }
 
     /**
-     * 设置伸缩组名称
-     * @param AutoScalingGroupName 伸缩组名称
+     * Set scaling group name
+     * @param AutoScalingGroupName Scaling group name
      */
     public void setAutoScalingGroupName(String AutoScalingGroupName) {
         this.AutoScalingGroupName = AutoScalingGroupName;
     }
 
     /**
-     * 获取伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br>
-     * @return AutoScalingGroupStatus 伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br>
+     * Get Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
+     * @return AutoScalingGroupStatus Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
      */
     public String getAutoScalingGroupStatus() {
         return this.AutoScalingGroupStatus;
     }
 
     /**
-     * 设置伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br>
-     * @param AutoScalingGroupStatus 伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br>
+     * Set Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
+     * @param AutoScalingGroupStatus Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
      */
     public void setAutoScalingGroupStatus(String AutoScalingGroupStatus) {
         this.AutoScalingGroupStatus = AutoScalingGroupStatus;
     }
 
     /**
-     * 获取创建时间，采用UTC标准计时
-     * @return CreatedTime 创建时间，采用UTC标准计时
+     * Get Creation time, in UTC time.
+     * @return CreatedTime Creation time, in UTC time.
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置创建时间，采用UTC标准计时
-     * @param CreatedTime 创建时间，采用UTC标准计时
+     * Set Creation time, in UTC time.
+     * @param CreatedTime Creation time, in UTC time.
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 获取默认冷却时间，单位秒
-     * @return DefaultCooldown 默认冷却时间，单位秒
+     * Get Default cooldown period, in seconds
+     * @return DefaultCooldown Default cooldown period, in seconds
      */
     public Integer getDefaultCooldown() {
         return this.DefaultCooldown;
     }
 
     /**
-     * 设置默认冷却时间，单位秒
-     * @param DefaultCooldown 默认冷却时间，单位秒
+     * Set Default cooldown period, in seconds
+     * @param DefaultCooldown Default cooldown period, in seconds
      */
     public void setDefaultCooldown(Integer DefaultCooldown) {
         this.DefaultCooldown = DefaultCooldown;
     }
 
     /**
-     * 获取期望实例数
-     * @return DesiredCapacity 期望实例数
+     * Get Desired number of instances.
+     * @return DesiredCapacity Desired number of instances.
      */
     public Integer getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * 设置期望实例数
-     * @param DesiredCapacity 期望实例数
+     * Set Desired number of instances.
+     * @param DesiredCapacity Desired number of instances.
      */
     public void setDesiredCapacity(Integer DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * 获取启用状态，取值包括`ENABLED`和`DISABLED`
-     * @return EnabledStatus 启用状态，取值包括`ENABLED`和`DISABLED`
+     * Get Enabled status, values include `ENABLED` and `DISABLED`
+     * @return EnabledStatus Enabled status, values include `ENABLED` and `DISABLED`
      */
     public String getEnabledStatus() {
         return this.EnabledStatus;
     }
 
     /**
-     * 设置启用状态，取值包括`ENABLED`和`DISABLED`
-     * @param EnabledStatus 启用状态，取值包括`ENABLED`和`DISABLED`
+     * Set Enabled status, values include `ENABLED` and `DISABLED`
+     * @param EnabledStatus Enabled status, values include `ENABLED` and `DISABLED`
      */
     public void setEnabledStatus(String EnabledStatus) {
         this.EnabledStatus = EnabledStatus;
     }
 
     /**
-     * 获取应用型负载均衡器列表
-     * @return ForwardLoadBalancerSet 应用型负载均衡器列表
+     * Get List of application load balancers
+     * @return ForwardLoadBalancerSet List of application load balancers
      */
     public ForwardLoadBalancer [] getForwardLoadBalancerSet() {
         return this.ForwardLoadBalancerSet;
     }
 
     /**
-     * 设置应用型负载均衡器列表
-     * @param ForwardLoadBalancerSet 应用型负载均衡器列表
+     * Set List of application load balancers
+     * @param ForwardLoadBalancerSet List of application load balancers
      */
     public void setForwardLoadBalancerSet(ForwardLoadBalancer [] ForwardLoadBalancerSet) {
         this.ForwardLoadBalancerSet = ForwardLoadBalancerSet;
     }
 
     /**
-     * 获取实例数量
-     * @return InstanceCount 实例数量
+     * Get number of instances
+     * @return InstanceCount number of instances
      */
     public Integer getInstanceCount() {
         return this.InstanceCount;
     }
 
     /**
-     * 设置实例数量
-     * @param InstanceCount 实例数量
+     * Set number of instances
+     * @param InstanceCount number of instances 
      */
     public void setInstanceCount(Integer InstanceCount) {
         this.InstanceCount = InstanceCount;
     }
 
     /**
-     * 获取状态为`IN_SERVICE`实例的数量
-     * @return InServiceInstanceCount 状态为`IN_SERVICE`实例的数量
+     * Get Number of instances in `IN_SERVICE` status
+     * @return InServiceInstanceCount Number of instances in `IN_SERVICE` status
      */
     public Integer getInServiceInstanceCount() {
         return this.InServiceInstanceCount;
     }
 
     /**
-     * 设置状态为`IN_SERVICE`实例的数量
-     * @param InServiceInstanceCount 状态为`IN_SERVICE`实例的数量
+     * Set Number of instances in `IN_SERVICE` status
+     * @param InServiceInstanceCount Number of instances in `IN_SERVICE` status
      */
     public void setInServiceInstanceCount(Integer InServiceInstanceCount) {
         this.InServiceInstanceCount = InServiceInstanceCount;
     }
 
     /**
-     * 获取启动配置ID
-     * @return LaunchConfigurationId 启动配置ID
+     * Get launch configuration ID
+     * @return LaunchConfigurationId Launch configuration ID.
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * 设置启动配置ID
-     * @param LaunchConfigurationId 启动配置ID
+     * Set launch configuration ID
+     * @param LaunchConfigurationId Launch configuration ID
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * 获取启动配置名称
-     * @return LaunchConfigurationName 启动配置名称
+     * Get launch configuration name
+     * @return LaunchConfigurationName launch configuration name
      */
     public String getLaunchConfigurationName() {
         return this.LaunchConfigurationName;
     }
 
     /**
-     * 设置启动配置名称
-     * @param LaunchConfigurationName 启动配置名称
+     * Set launch configuration name
+     * @param LaunchConfigurationName Launch configuration name
      */
     public void setLaunchConfigurationName(String LaunchConfigurationName) {
         this.LaunchConfigurationName = LaunchConfigurationName;
     }
 
     /**
-     * 获取传统型负载均衡器ID列表
-     * @return LoadBalancerIdSet 传统型负载均衡器ID列表
+     * Get List of traditional load balancer IDs
+     * @return LoadBalancerId List of traditional load balancer IDs
      */
     public String [] getLoadBalancerIdSet() {
         return this.LoadBalancerIdSet;
     }
 
     /**
-     * 设置传统型负载均衡器ID列表
-     * @param LoadBalancerIdSet 传统型负载均衡器ID列表
+     * Set List of traditional load balancer IDs
+     * @param LoadBalancerId List of traditional load balancer IDs
      */
     public void setLoadBalancerIdSet(String [] LoadBalancerIdSet) {
         this.LoadBalancerIdSet = LoadBalancerIdSet;
     }
 
     /**
-     * 获取最大实例数
-     * @return MaxSize 最大实例数
+     * Get Maximum number of instances
+     * @return MaxSize Maximum number of instances
      */
     public Integer getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * 设置最大实例数
-     * @param MaxSize 最大实例数
+     * Set Maximum number of instances
+     * @param MaxSize Maximum number of instances
      */
     public void setMaxSize(Integer MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * 获取最小实例数
-     * @return MinSize 最小实例数
+     * Get Minimum number of instances
+     * @return MinSize Minimum number of instances
      */
     public Integer getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * 设置最小实例数
-     * @param MinSize 最小实例数
+     * Set Minimum number of instances
+     * @param MinSize Minimum number of instances
      */
     public void setMinSize(Integer MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * 获取项目ID
-     * @return ProjectId 项目ID
+     * Get project ID
+     * @return ProjectId Project ID.
      */
     public Integer getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * 设置项目ID
-     * @param ProjectId 项目ID
+     * Set project ID.
+     * @param ProjectId Project ID.
      */
     public void setProjectId(Integer ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * 获取子网ID列表
-     * @return SubnetIdSet 子网ID列表
+     * Get List of subnet IDs
+     * @return SubnetIds List of subnet IDs
      */
     public String [] getSubnetIdSet() {
         return this.SubnetIdSet;
     }
 
     /**
-     * 设置子网ID列表
-     * @param SubnetIdSet 子网ID列表
+     * Set List of subnet IDs
+     * @param SubnetIds List of subnet IDs
      */
     public void setSubnetIdSet(String [] SubnetIdSet) {
         this.SubnetIdSet = SubnetIdSet;
     }
 
     /**
-     * 获取销毁策略
-     * @return TerminationPolicySet 销毁策略
+     * Get Termination policy
+     * @return TerminationPolicySet Termination policy
      */
     public String [] getTerminationPolicySet() {
         return this.TerminationPolicySet;
     }
 
     /**
-     * 设置销毁策略
-     * @param TerminationPolicySet 销毁策略
+     * Set Termination policy
+     * @param TerminationPolicySet Termination policy
      */
     public void setTerminationPolicySet(String [] TerminationPolicySet) {
         this.TerminationPolicySet = TerminationPolicySet;
     }
 
     /**
-     * 获取VPC标识
-     * @return VpcId VPC标识
+     * Get VPC ID
+     * @return VpcId VPC ID
      */
     public String getVpcId() {
         return this.VpcId;
     }
 
     /**
-     * 设置VPC标识
-     * @param VpcId VPC标识
+     * Set VPC ID
+     * @param VpcId VPC ID
      */
     public void setVpcId(String VpcId) {
         this.VpcId = VpcId;
     }
 
     /**
-     * 获取可用区列表
-     * @return ZoneSet 可用区列表
+     * Get list of availability zones
+     * @return ZoneSet List of Availability Zones
      */
     public String [] getZoneSet() {
         return this.ZoneSet;
     }
 
     /**
-     * 设置可用区列表
-     * @param ZoneSet 可用区列表
+     * Set list of availability zones
+     * @param ZoneSet List of Availability Zones
      */
     public void setZoneSet(String [] ZoneSet) {
         this.ZoneSet = ZoneSet;
     }
 
     /**
-     * 获取重试策略
-     * @return RetryPolicy 重试策略
+     * Get retry policy
+     * @return RetryPolicy
      */
     public String getRetryPolicy() {
         return this.RetryPolicy;
     }
 
     /**
-     * 设置重试策略
-     * @param RetryPolicy 重试策略
+     * Set retry policy
+     * @param RetryPolicy
      */
     public void setRetryPolicy(String RetryPolicy) {
         this.RetryPolicy = RetryPolicy;
     }
 
     /**
-     * 获取伸缩组是否处于伸缩活动中，`IN_ACTIVITY`表示处于伸缩活动中，`NOT_IN_ACTIVITY`表示不处于伸缩活动中。
-     * @return InActivityStatus 伸缩组是否处于伸缩活动中，`IN_ACTIVITY`表示处于伸缩活动中，`NOT_IN_ACTIVITY`表示不处于伸缩活动中。
+     * Get Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
+     * @return InActivityStatus Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
      */
     public String getInActivityStatus() {
         return this.InActivityStatus;
     }
 
     /**
-     * 设置伸缩组是否处于伸缩活动中，`IN_ACTIVITY`表示处于伸缩活动中，`NOT_IN_ACTIVITY`表示不处于伸缩活动中。
-     * @param InActivityStatus 伸缩组是否处于伸缩活动中，`IN_ACTIVITY`表示处于伸缩活动中，`NOT_IN_ACTIVITY`表示不处于伸缩活动中。
+     * Set Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
+     * @param InActivityStatus Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
      */
     public void setInActivityStatus(String InActivityStatus) {
         this.InActivityStatus = InActivityStatus;
     }
 
     /**
-     * 获取伸缩组标签列表
-     * @return Tags 伸缩组标签列表
+     * Get scaling group tag list
+     * @return Tags scaling group tag list
      */
     public Tag [] getTags() {
         return this.Tags;
     }
 
     /**
-     * 设置伸缩组标签列表
-     * @param Tags 伸缩组标签列表
+     * Set scaling group tag list
+     * @param Tags scaling group tag list
      */
     public void setTags(Tag [] Tags) {
         this.Tags = Tags;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

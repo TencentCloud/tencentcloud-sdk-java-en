@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class TargetAttribute  extends AbstractModel{
 
     /**
-    * 端口
+    * Port
     */
     @SerializedName("Port")
     @Expose
     private Integer Port;
 
     /**
-    * 权重
+    * Weight
     */
     @SerializedName("Weight")
     @Expose
     private Integer Weight;
 
     /**
-     * 获取端口
-     * @return Port 端口
+     * Obtain Port
+     * @return Port Port
      */
     public Integer getPort() {
         return this.Port;
     }
 
     /**
-     * 设置端口
-     * @param Port 端口
+     * Set Port
+     * @param Port Port
      */
     public void setPort(Integer Port) {
         this.Port = Port;
     }
 
     /**
-     * 获取权重
-     * @return Weight 权重
+     * Obtain weight
+     * @return Weight weight
      */
     public Integer getWeight() {
         return this.Weight;
     }
 
     /**
-     * 设置权重
-     * @param Weight 权重
+     * Set weight
+     * @param Weight weight
      */
     public void setWeight(Integer Weight) {
         this.Weight = Weight;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Port", this.Port);

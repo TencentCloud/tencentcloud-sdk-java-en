@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class Filter  extends AbstractModel{
 
     /**
-    * 需要过滤的字段。
+    * Fields to be filtered.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * 字段的过滤值。
+    * Filter values of the field.
     */
     @SerializedName("Values")
     @Expose
     private String [] Values;
 
     /**
-     * 获取需要过滤的字段。
-     * @return Name 需要过滤的字段。
+     * Obtain fields to be filtered.
+     * @return Name Fields to be filtered.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置需要过滤的字段。
-     * @param Name 需要过滤的字段。
+     * Configure the fields to be filtered.
+     * @param Name Fields to be filtered.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取字段的过滤值。
-     * @return Values 字段的过滤值。
+     * Obtain the filter values of the field.
+     * @return Values Filter values of the field.
      */
     public String [] getValues() {
         return this.Values;
     }
 
     /**
-     * 设置字段的过滤值。
-     * @param Values 字段的过滤值。
+     * Configure the filter values of the field.
+     * @param Values Filter values of the field.
      */
     public void setValues(String [] Values) {
         this.Values = Values;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

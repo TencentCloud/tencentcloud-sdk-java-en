@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class LimitedLoginSettings  extends AbstractModel{
 
     /**
-    * 密钥ID列表。
+    * List of key IDs.
     */
     @SerializedName("KeyIds")
     @Expose
     private String [] KeyIds;
 
     /**
-     * 获取密钥ID列表。
-     * @return KeyIds 密钥ID列表。
+     * Obtain the  list of key IDs.
+     * @return KeyIds List of key IDs.
      */
     public String [] getKeyIds() {
         return this.KeyIds;
     }
 
     /**
-     * 设置密钥ID列表。
-     * @param KeyIds 密钥ID列表。
+     * Configure the  list of key IDs.
+     * @param KeyIds List of key IDs.
      */
     public void setKeyIds(String [] KeyIds) {
         this.KeyIds = KeyIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "KeyIds.", this.KeyIds);

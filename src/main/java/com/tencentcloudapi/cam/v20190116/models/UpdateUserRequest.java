@@ -23,191 +23,191 @@ import java.util.HashMap;
 public class UpdateUserRequest  extends AbstractModel{
 
     /**
-    * 子用户用户名
+    * Sub-user username
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * 子用户备注
+    * Sub-user note
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-    * 子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
+    * Whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
     */
     @SerializedName("ConsoleLogin")
     @Expose
     private Long ConsoleLogin;
 
     /**
-    * 子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
+    * Sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
     */
     @SerializedName("Password")
     @Expose
     private String Password;
 
     /**
-    * 子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
+    * If the sub-user needs to reset the password to re-login the console. 0: No; 1: Yes
     */
     @SerializedName("NeedResetPassword")
     @Expose
     private Long NeedResetPassword;
 
     /**
-    * 手机号
+    * Mobile Number
     */
     @SerializedName("PhoneNum")
     @Expose
     private String PhoneNum;
 
     /**
-    * 区号
+    * Area Code
     */
     @SerializedName("CountryCode")
     @Expose
     private String CountryCode;
 
     /**
-    * 邮箱
+    * Email
     */
     @SerializedName("Email")
     @Expose
     private String Email;
 
     /**
-     * 获取子用户用户名
-     * @return Name 子用户用户名
+     * Obtain sub-user username
+     * @return Name sub-user username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置子用户用户名
-     * @param Name 子用户用户名
+     * Set sub-user username
+     * @param Name sub-user username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取子用户备注
-     * @return Remark 子用户备注
+     * Obtain sub-user note
+     * @return Remark sub-user note
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * 设置子用户备注
-     * @param Remark 子用户备注
+     * Set up sub-user note
+     * @param Remark sub-user note
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * 获取子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
-     * @return ConsoleLogin 子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
+     * Whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
+     * @return ConsoleLogin Whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
      */
     public Long getConsoleLogin() {
         return this.ConsoleLogin;
     }
 
     /**
-     * 设置子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
-     * @param ConsoleLogin 子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。
+     * Set whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
+     * @param ConsoleLogin Whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
      */
     public void setConsoleLogin(Long ConsoleLogin) {
         this.ConsoleLogin = ConsoleLogin;
     }
 
     /**
-     * 获取子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
-     * @return Password 子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
+     * Sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
+     * @return Password Sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
      */
     public String getPassword() {
         return this.Password;
     }
 
     /**
-     * 设置子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
-     * @param Password 子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大写小字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大写小字母、数字和特殊字符。
+     * Set sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
+     * @param Password Sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
      */
     public void setPassword(String Password) {
         this.Password = Password;
     }
 
     /**
-     * 获取子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
-     * @return NeedResetPassword 子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
+     * Obtain whether sub-users need to reset passwords to re-login to the console. 0: No; 1: Yes.
+     * @return NeedResetPassword Whether sub-users need to reset passwords to re-login to the console. 0: No; 1: Yes.
      */
     public Long getNeedResetPassword() {
         return this.NeedResetPassword;
     }
 
     /**
-     * 设置子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
-     * @param NeedResetPassword 子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。
+     * Configure whether sub-users need to reset passwords to re-login to the console. 0: No; 1: Yes.
+     * @param NeedResetPassword Whether sub-users need to reset passwords to re-login to the console. 0: No; 1: Yes.
      */
     public void setNeedResetPassword(Long NeedResetPassword) {
         this.NeedResetPassword = NeedResetPassword;
     }
 
     /**
-     * 获取手机号
-     * @return PhoneNum 手机号
+     * Obtain mobile number 
+     * @return PhoneNum mobile number
      */
     public String getPhoneNum() {
         return this.PhoneNum;
     }
 
     /**
-     * 设置手机号
-     * @param PhoneNum 手机号
+     * Set mobile number
+     * @param PhoneNum set mobile phone number.
      */
     public void setPhoneNum(String PhoneNum) {
         this.PhoneNum = PhoneNum;
     }
 
     /**
-     * 获取区号
-     * @return CountryCode 区号
+     * Obtain area code
+     * @return CountryCode area code
      */
     public String getCountryCode() {
         return this.CountryCode;
     }
 
     /**
-     * 设置区号
-     * @param CountryCode 区号
+     * Set area code
+     * @param CountryCode area code
      */
     public void setCountryCode(String CountryCode) {
         this.CountryCode = CountryCode;
     }
 
     /**
-     * 获取邮箱
-     * @return Email 邮箱
+     * Obtain email
+     * @return Email email
      */
     public String getEmail() {
         return this.Email;
     }
 
     /**
-     * 设置邮箱
-     * @param Email 邮箱
+     * Configure Emailbox
+     * @param Email mailbox
      */
     public void setEmail(String Email) {
         this.Email = Email;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

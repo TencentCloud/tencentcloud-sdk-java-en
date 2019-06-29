@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteDisasterRecoverGroupsRequest  extends AbstractModel{
 
     /**
-    * 分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+    * spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
     */
     @SerializedName("DisasterRecoverGroupIds")
     @Expose
     private String [] DisasterRecoverGroupIds;
 
     /**
-     * 获取分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
-     * @return DisasterRecoverGroupIds 分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+     * Get spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
+     * @return DisasterRecoverGroupIds spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
      */
     public String [] getDisasterRecoverGroupIds() {
         return this.DisasterRecoverGroupIds;
     }
 
     /**
-     * 设置分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
-     * @param DisasterRecoverGroupIds 分散置放群组ID列表，可通过[DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)接口获取。
+     * Set spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
+     * @param DisasterRecoverGroupIds spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
      */
     public void setDisasterRecoverGroupIds(String [] DisasterRecoverGroupIds) {
         this.DisasterRecoverGroupIds = DisasterRecoverGroupIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "DisasterRecoverGroupIds.", this.DisasterRecoverGroupIds);

@@ -23,510 +23,490 @@ import java.util.HashMap;
 public class LaunchConfiguration  extends AbstractModel{
 
     /**
-    * 实例所属项目ID。
+    * ID of the project to which the instance belongs.
     */
     @SerializedName("ProjectId")
     @Expose
     private Integer ProjectId;
 
     /**
-    * 启动配置ID。
+    * Launch configuration ID.
     */
     @SerializedName("LaunchConfigurationId")
     @Expose
     private String LaunchConfigurationId;
 
     /**
-    * 启动配置名称。
+    * Launch configuration name.
     */
     @SerializedName("LaunchConfigurationName")
     @Expose
     private String LaunchConfigurationName;
 
     /**
-    * 实例机型。
+    * Instance model.
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-    * 实例系统盘配置信息。
+    * Configuration information of the system disk in the instance.
     */
     @SerializedName("SystemDisk")
     @Expose
     private SystemDisk SystemDisk;
 
     /**
-    * 实例数据盘配置信息。
+    * Configuration information of the instance data disk.
     */
     @SerializedName("DataDisks")
     @Expose
     private DataDisk [] DataDisks;
 
     /**
-    * 实例登录设置。
+    * Login settings of an instance.
     */
     @SerializedName("LoginSettings")
     @Expose
     private LimitedLoginSettings LoginSettings;
 
     /**
-    * 公网带宽相关信息设置。
+    * Configuration information of public network bandwidth.
     */
     @SerializedName("InternetAccessible")
     @Expose
     private InternetAccessible InternetAccessible;
 
     /**
-    * 实例所属安全组。
+    * The security group to which an instance belongs.
     */
     @SerializedName("SecurityGroupIds")
     @Expose
     private String [] SecurityGroupIds;
 
     /**
-    * 启动配置关联的伸缩组。
+    * Scaling group to which the launch configuration is attached.
     */
     @SerializedName("AutoScalingGroupAbstractSet")
     @Expose
     private AutoScalingGroupAbstract [] AutoScalingGroupAbstractSet;
 
     /**
-    * 自定义数据。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Custom Data. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("UserData")
     @Expose
     private String UserData;
 
     /**
-    * 启动配置创建时间。
+    * Creation time of the launch configuration.
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * 实例的增强服务启用情况与其设置。
+    * Indicates whether the enhanced service is enabled for the instance and the service settings.
     */
     @SerializedName("EnhancedService")
     @Expose
     private EnhancedService EnhancedService;
 
     /**
-    * 镜像ID。
+    * Image ID.
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * 启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
+    * Launch configuration status. Possible values:<br><li>NORMAL：Normal.<br><li>IMAGE_ABNORMAL：Image abnormal.<br><li>CBS_SNAP_ABNORMAL：Data disk snapshot abnormal.<br><li>SECURITY_GROUP_ABNORMAL：Security group abnormal.<br>
     */
     @SerializedName("LaunchConfigurationStatus")
     @Expose
     private String LaunchConfigurationStatus;
 
     /**
-    * 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
+    * Instance charging mode,by default CVM service charges based on POSTPAID_BY_HOUR.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br><li>SPOTPAID: pay by bidding.
     */
     @SerializedName("InstanceChargeType")
     @Expose
     private String InstanceChargeType;
 
     /**
-    * 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Market-related options for instances, such as parameters related to spot instances.This parameter is required if the billing method for the specified instance is prepaid. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("InstanceMarketOptions")
     @Expose
     private InstanceMarketOptionsRequest InstanceMarketOptions;
 
     /**
-    * 实例机型列表。
+    * List of instance model.
     */
     @SerializedName("InstanceTypes")
     @Expose
     private String [] InstanceTypes;
 
     /**
-    * 标签列表。
+    * List of tag.
     */
     @SerializedName("InstanceTags")
     @Expose
     private InstanceTag [] InstanceTags;
 
     /**
-    * 版本号。
+    * Version number.
     */
     @SerializedName("VersionNumber")
     @Expose
     private Integer VersionNumber;
 
     /**
-    * 更新时间
+    * Update Time.
     */
     @SerializedName("UpdatedTime")
     @Expose
     private String UpdatedTime;
 
     /**
-     * 获取实例所属项目ID。
-     * @return ProjectId 实例所属项目ID。
+     * Obtain the ID of the project to which the instance belongs.
+     * @return ProjectId ID of the project to which the instance belongs.
      */
     public Integer getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * 设置实例所属项目ID。
-     * @param ProjectId 实例所属项目ID。
+     * Configure the ID of the project to which the instance belongs.
+     * @param ProjectId ID of the project to which the instance belongs.
      */
     public void setProjectId(Integer ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * 获取启动配置ID。
-     * @return LaunchConfigurationId 启动配置ID。
+     * Obtain the launch configuration ID.
+     * @return LaunchConfigurationId Launch configuration ID.
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * 设置启动配置ID。
-     * @param LaunchConfigurationId 启动配置ID。
+     * Configure the launch configuration ID.
+     * @param LaunchConfigurationId Launch configuration ID.
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * 获取启动配置名称。
-     * @return LaunchConfigurationName 启动配置名称。
+     * Obtain the launch configuration name.
+     * @return LaunchConfigurationName Launch configuration name.
      */
     public String getLaunchConfigurationName() {
         return this.LaunchConfigurationName;
     }
 
     /**
-     * 设置启动配置名称。
-     * @param LaunchConfigurationName 启动配置名称。
+     * Configure the launch configuration name.
+     * @param LaunchConfigurationName Launch configuration name.
      */
     public void setLaunchConfigurationName(String LaunchConfigurationName) {
         this.LaunchConfigurationName = LaunchConfigurationName;
     }
 
     /**
-     * 获取实例机型。
-     * @return InstanceType 实例机型。
+     * Obtain the instance model.
+     * @return InstanceType Instance model.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * 设置实例机型。
-     * @param InstanceType 实例机型。
+     * Configure the instance model.
+     * @param InstanceType Instance model.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * 获取实例系统盘配置信息。
-     * @return SystemDisk 实例系统盘配置信息。
+     * Obtain the configuration information of the system disk in the instance.
+     * @return SystemDisk Configuration information of the system disk in the instance.
      */
     public SystemDisk getSystemDisk() {
         return this.SystemDisk;
     }
 
     /**
-     * 设置实例系统盘配置信息。
-     * @param SystemDisk 实例系统盘配置信息。
+     * Set the configuration information of the system disk in the instance.
+     * @param SystemDisk Configuration information of the system disk in the instance.
      */
     public void setSystemDisk(SystemDisk SystemDisk) {
         this.SystemDisk = SystemDisk;
     }
 
     /**
-     * 获取实例数据盘配置信息。
-     * @return DataDisks 实例数据盘配置信息。
+     * Obtain the configuration information of the instance data disk.
+     * @return DataDisks Configuration information of the instance data disk.
      */
     public DataDisk [] getDataDisks() {
         return this.DataDisks;
     }
 
     /**
-     * 设置实例数据盘配置信息。
-     * @param DataDisks 实例数据盘配置信息。
+     * Set the configuration information of the instance data disk.
+     * @param DataDisks Configuration information of the instance data disk.
      */
     public void setDataDisks(DataDisk [] DataDisks) {
         this.DataDisks = DataDisks;
     }
 
     /**
-     * 获取实例登录设置。
-     * @return LoginSettings 实例登录设置。
+     * Obtain the login settings of an instance.
+     * @return LoginSettings Login settings of an instance.
      */
     public LimitedLoginSettings getLoginSettings() {
         return this.LoginSettings;
     }
 
     /**
-     * 设置实例登录设置。
-     * @param LoginSettings 实例登录设置。
+     * Set the login settings of an instance.
+     * @param LoginSettings Login settings of an instance.
      */
     public void setLoginSettings(LimitedLoginSettings LoginSettings) {
         this.LoginSettings = LoginSettings;
     }
 
     /**
-     * 获取公网带宽相关信息设置。
-     * @return InternetAccessible 公网带宽相关信息设置。
+     * Obtain the configuration information of public network bandwidth.
+     * @return InternetAccessible Configuration information of public network bandwidth.
      */
     public InternetAccessible getInternetAccessible() {
         return this.InternetAccessible;
     }
 
     /**
-     * 设置公网带宽相关信息设置。
-     * @param InternetAccessible 公网带宽相关信息设置。
+     * Set the configuration information of public network bandwidth.
+     * @param InternetAccessible Configuration information of public network bandwidth.
      */
     public void setInternetAccessible(InternetAccessible InternetAccessible) {
         this.InternetAccessible = InternetAccessible;
     }
 
     /**
-     * 获取实例所属安全组。
-     * @return SecurityGroupIds 实例所属安全组。
+     * Obtain the security group to which an instance belongs.
+     * @return SecurityGroupIds The security group to which an instance belongs.
      */
     public String [] getSecurityGroupIds() {
         return this.SecurityGroupIds;
     }
 
     /**
-     * 设置实例所属安全组。
-     * @param SecurityGroupIds 实例所属安全组。
+     * Configure the security group to which an instance belongs.
+     * @param SecurityGroupIds The security group to which an instance belongs.
      */
     public void setSecurityGroupIds(String [] SecurityGroupIds) {
         this.SecurityGroupIds = SecurityGroupIds;
     }
 
     /**
-     * 获取启动配置关联的伸缩组。
-     * @return AutoScalingGroupAbstractSet 启动配置关联的伸缩组。
+     * Obtain the scaling group to which the launch configuration is attached.
+     * Scaling group to which the launch configuration is attached.
      */
     public AutoScalingGroupAbstract [] getAutoScalingGroupAbstractSet() {
         return this.AutoScalingGroupAbstractSet;
     }
 
     /**
-     * 设置启动配置关联的伸缩组。
-     * @param AutoScalingGroupAbstractSet 启动配置关联的伸缩组。
+     * Configure the scaling group to which the launch configuration is attached.
+     * Scaling group to which the launch configuration is attached.
      */
     public void setAutoScalingGroupAbstractSet(AutoScalingGroupAbstract [] AutoScalingGroupAbstractSet) {
         this.AutoScalingGroupAbstractSet = AutoScalingGroupAbstractSet;
     }
 
     /**
-     * 获取自定义数据。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return UserData 自定义数据。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain the Custom Data. Note: This field may return null, indicating that no valid value was found.
+     * @return UserData Custom Data. Note: This field may return null, indicating that no valid value was found.
      */
     public String getUserData() {
         return this.UserData;
     }
 
     /**
-     * 设置自定义数据。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param UserData 自定义数据。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configure the Custom Data. Note: This field may return null, indicating that no valid value was found.
+     * @param UserData Custom Data. Note: This field may return null, indicating that no valid value was found.
      */
     public void setUserData(String UserData) {
         this.UserData = UserData;
     }
 
     /**
-     * 获取启动配置创建时间。
-     * @return CreatedTime 启动配置创建时间。
+     * Obtain the creation time of the launch configuration.
+     * @return CreatedTime Creation time of the launch configuration.
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * 设置启动配置创建时间。
-     * @param CreatedTime 启动配置创建时间。
+     * Configure the creation time of the launch configuration.
+     * @param CreatedTime Creation time of the launch configuration.
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * 获取实例的增强服务启用情况与其设置。
-     * @return EnhancedService 实例的增强服务启用情况与其设置。
+     * Obtain whether the enhanced service is enabled for the instance and the service settings.
+     * @return EnhancedService Indicates whether the enhanced service is enabled for the instance and the service settings.
      */
     public EnhancedService getEnhancedService() {
         return this.EnhancedService;
     }
 
     /**
-     * 设置实例的增强服务启用情况与其设置。
-     * @param EnhancedService 实例的增强服务启用情况与其设置。
+     * Configure the whether the enhanced service is enabled for the instance and the service settings.
+     * @param EnhancedService Indicates whether the enhanced service is enabled for the instance and the service settings.
      */
     public void setEnhancedService(EnhancedService EnhancedService) {
         this.EnhancedService = EnhancedService;
     }
 
     /**
-     * 获取镜像ID。
-     * @return ImageId 镜像ID。
+     * Obtain the image ID.
+     * @return ImageId Image ID.
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * 设置镜像ID。
-     * @param ImageId 镜像ID。
+     * Configure the image ID.
+     * @param ImageId Image ID.
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * 获取启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
-     * @return LaunchConfigurationStatus 启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
+     * Obtain the status of launch configuration status. Possible values:<br><li>NORMAL：Normal.<br><li>IMAGE_ABNORMAL：Image abnormal.<br><li>CBS_SNAP_ABNORMAL：Data disk snapshot abnormal.<br><li>SECURITY_GROUP_ABNORMAL：Security group abnormal.<br>
+     * @return LaunchConfigurationStatus The status of launch configuration status.<br><li>NORMAL：Normal.<br><li>IMAGE_ABNORMAL：Image abnormal.<br><li>CBS_SNAP_ABNORMAL：Data disk snapshot abnormal.<br><li>SECURITY_GROUP_ABNORMAL：Security group abnormal.<br>
      */
     public String getLaunchConfigurationStatus() {
         return this.LaunchConfigurationStatus;
     }
 
     /**
-     * 设置启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
-     * @param LaunchConfigurationStatus 启动配置当前状态。取值范围：<br><li>NORMAL：正常<br><li>IMAGE_ABNORMAL：启动配置镜像异常<br><li>CBS_SNAP_ABNORMAL：启动配置数据盘快照异常<br><li>SECURITY_GROUP_ABNORMAL：启动配置安全组异常<br>
+     * Configure the status of launch configuration status. Possible values:<br><li>NORMAL：Normal.<br><li>IMAGE_ABNORMAL：Image abnormal.<br><li>CBS_SNAP_ABNORMAL：Data disk snapshot abnormal.<br><li>SECURITY_GROUP_ABNORMAL：Security group abnormal.<br>
+     * @param LaunchConfigurationStatus The status of launch configuration status.<br><li>NORMAL：Normal.<br><li>IMAGE_ABNORMAL：Image abnormal.<br><li>CBS_SNAP_ABNORMAL：Data disk snapshot abnormal.<br><li>SECURITY_GROUP_ABNORMAL：Security group abnormal.<br>
      */
     public void setLaunchConfigurationStatus(String LaunchConfigurationStatus) {
         this.LaunchConfigurationStatus = LaunchConfigurationStatus;
     }
 
     /**
-     * 获取实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
-     * @return InstanceChargeType 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
+     * Obtain the instance charging mode,by default CVM service charges based on POSTPAID_BY_HOUR.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br><li>SPOTPAID: pay by bidding.
+     * @return InstanceChargeType The instance charging mode,by default CVM service charges based on POSTPAID_BY_HOUR.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br><li>SPOTPAID: pay by bidding.
      */
     public String getInstanceChargeType() {
         return this.InstanceChargeType;
     }
 
     /**
-     * 设置实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
-     * @param InstanceChargeType 实例计费类型，CVM默认值按照POSTPAID_BY_HOUR处理。
-<br><li>POSTPAID_BY_HOUR：按小时后付费
-<br><li>SPOTPAID：竞价付费
+     * Configure the instance charging mode,by default CVM service charges based on POSTPAID_BY_HOUR.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br><li>SPOTPAID: pay by bidding.
+     * @param InstanceChargeType The instance charging mode,by default CVM service charges based on POSTPAID_BY_HOUR.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br><li>SPOTPAID: pay by bidding.
      */
     public void setInstanceChargeType(String InstanceChargeType) {
         this.InstanceChargeType = InstanceChargeType;
     }
 
     /**
-     * 获取实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Obtain the market-related options for instances, such as parameters related to spot instances.This parameter is required if the billing method for the specified instance is prepaid. Note: This field may return null, indicating that no valid value was found.
+     * @return InstanceMarketOptions Market-related options for instances, such as parameters related to spot instances.This parameter is required if the billing method for the specified instance is prepaid. Note: This field may return null, indicating that no valid value was found.
      */
     public InstanceMarketOptionsRequest getInstanceMarketOptions() {
         return this.InstanceMarketOptions;
     }
 
     /**
-     * 设置实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param InstanceMarketOptions 实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configure the market-related options for instances, such as parameters related to spot instances.This parameter is required if the billing method for the specified instance is prepaid. Note: This field may return null, indicating that no valid value was found.
+     * @param InstanceMarketOptions Market-related options for instances, such as parameters related to spot instances.This parameter is required if the billing method for the specified instance is prepaid. Note: This field may return null, indicating that no valid value was found.
      */
     public void setInstanceMarketOptions(InstanceMarketOptionsRequest InstanceMarketOptions) {
         this.InstanceMarketOptions = InstanceMarketOptions;
     }
 
     /**
-     * 获取实例机型列表。
-     * @return InstanceTypes 实例机型列表。
+     * Obtain the list of instance model.
+     * @return InstanceTypes List of instance model.
      */
     public String [] getInstanceTypes() {
         return this.InstanceTypes;
     }
 
     /**
-     * 设置实例机型列表。
-     * @param InstanceTypes 实例机型列表。
+     * Configure the list of instance model.
+     * @param InstanceTypes List of instance model.
      */
     public void setInstanceTypes(String [] InstanceTypes) {
         this.InstanceTypes = InstanceTypes;
     }
 
     /**
-     * 获取标签列表。
-     * @return InstanceTags 标签列表。
+     * Obtain the list of tag.
+     * @return InstanceTags List of tag.
      */
     public InstanceTag [] getInstanceTags() {
         return this.InstanceTags;
     }
 
     /**
-     * 设置标签列表。
-     * @param InstanceTags 标签列表。
+     * Configure the list of tag.
+     * @param InstanceTags List of tag.
      */
     public void setInstanceTags(InstanceTag [] InstanceTags) {
         this.InstanceTags = InstanceTags;
     }
 
     /**
-     * 获取版本号。
-     * @return VersionNumber 版本号。
+     * Obtain the version number.
+     * @return VersionNumber Version number.
      */
     public Integer getVersionNumber() {
         return this.VersionNumber;
     }
 
     /**
-     * 设置版本号。
-     * @param VersionNumber 版本号。
+     * Configure the version number.
+     * @param VersionNumber Version number.
      */
     public void setVersionNumber(Integer VersionNumber) {
         this.VersionNumber = VersionNumber;
     }
 
     /**
-     * 获取更新时间
-     * @return UpdatedTime 更新时间
+     * Obtain the update Time.
+     * @return UpdatedTime Update Time.
      */
     public String getUpdatedTime() {
         return this.UpdatedTime;
     }
 
     /**
-     * 设置更新时间
-     * @param UpdatedTime 更新时间
+     * Configure the update Time.
+     * @param UpdatedTime Update Time.
      */
     public void setUpdatedTime(String UpdatedTime) {
         this.UpdatedTime = UpdatedTime;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ProjectId", this.ProjectId);

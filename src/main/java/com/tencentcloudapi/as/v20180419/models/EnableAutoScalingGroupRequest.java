@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class EnableAutoScalingGroupRequest  extends AbstractModel{
 
     /**
-    * 伸缩组ID
+    * ID of Scaling group.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-     * 获取伸缩组ID
-     * @return AutoScalingGroupId 伸缩组ID
+     * Obtain the ID of Scaling group.
+     * @return AutoScalingGroupId ID of Scaling group.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID
-     * @param AutoScalingGroupId 伸缩组ID
+     * Configure the ID of Scaling group.
+     * @param AutoScalingGroupId ID of Scaling group.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

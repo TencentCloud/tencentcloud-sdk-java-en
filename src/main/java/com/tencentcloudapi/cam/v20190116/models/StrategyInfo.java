@@ -23,206 +23,191 @@ import java.util.HashMap;
 public class StrategyInfo  extends AbstractModel{
 
     /**
-    * 策略ID。
+    * Policy ID.
     */
     @SerializedName("PolicyId")
     @Expose
     private Long PolicyId;
 
     /**
-    * 策略名称。
+    * Policy Name.
     */
     @SerializedName("PolicyName")
     @Expose
     private String PolicyName;
 
     /**
-    * 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Time policy created. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("AddTime")
     @Expose
     private String AddTime;
 
     /**
-    * 策略类型。1 表示自定义策略，2 表示预设策略。
+    * Policy type. 1: custom policy; 2: predefined policy.
     */
     @SerializedName("Type")
     @Expose
     private Long Type;
 
     /**
-    * 策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
+    * Policy description. Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+    * How policy created: 1. via console; 2. via syntax.
     */
     @SerializedName("CreateMode")
     @Expose
     private Long CreateMode;
 
     /**
-    * 关联的用户数
+    * Number of associated users
     */
     @SerializedName("Attachments")
     @Expose
     private Long Attachments;
 
     /**
-    * 策略关联的产品
-注意：此字段可能返回 null，表示取不到有效值。
+    * Product associated with the policyNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("ServiceType")
     @Expose
     private String ServiceType;
 
     /**
-     * 获取策略ID。
-     * @return PolicyId 策略ID。
+     * Getting policy ID.
+     * @return PolicyId policy ID
      */
     public Long getPolicyId() {
         return this.PolicyId;
     }
 
     /**
-     * 设置策略ID。
-     * @param PolicyId 策略ID。
+     * Configuring policy ID.
+     * @param PolicyId policy ID.
      */
     public void setPolicyId(Long PolicyId) {
         this.PolicyId = PolicyId;
     }
 
     /**
-     * 获取策略名称。
-     * @return PolicyName 策略名称。
+     * Getting policy name.
+     * @return PolicyName policy name.
      */
     public String getPolicyName() {
         return this.PolicyName;
     }
 
     /**
-     * 设置策略名称。
-     * @param PolicyName 策略名称。
+     * Configuring policy name.
+     * @param PolicyName policy name.
      */
     public void setPolicyName(String PolicyName) {
         this.PolicyName = PolicyName;
     }
 
     /**
-     * 获取策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return AddTime 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting creation time of the policy. Note: This field may return null, indicating that no valid value was found.
+     * @return AddTime Policy Creation Time Note: This field may return null, indicating that no valid value was found.
      */
     public String getAddTime() {
         return this.AddTime;
     }
 
     /**
-     * 设置策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param AddTime 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring policy creation Time Note: This field may return null, indicating that no valid value was found.
+     * @param AddTime policy creation time Note: This field may return null, indicating that no valid value was found.
      */
     public void setAddTime(String AddTime) {
         this.AddTime = AddTime;
     }
 
     /**
-     * 获取策略类型。1 表示自定义策略，2 表示预设策略。
-     * @return Type 策略类型。1 表示自定义策略，2 表示预设策略。
+     * Getting policy type. 1: custom policy; 2: predefined policy.
+     * @return Type policy type. 1: custom policy; 2: predefined policy.
      */
     public Long getType() {
         return this.Type;
     }
 
     /**
-     * 设置策略类型。1 表示自定义策略，2 表示预设策略。
-     * @param Type 策略类型。1 表示自定义策略，2 表示预设策略。
+     * Configuring policy type. 1: custom policy; 2: predefined policy.
+     * @param Type policy type. 1: custom policy; 2: predefined policy.
      */
     public void setType(Long Type) {
         this.Type = Type;
     }
 
     /**
-     * 获取策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Description 策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting policy description Note: This field may return null, indicating that no valid value was found.
+     * @return Description policy description. Note: This field may return null, indicating that no valid value was found.
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * 设置策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Description 策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring policy description Note: This field may return null, indicating that no valid value was found.
+     * @param Description Policy description Note: This field may return null, indicating that no valid value was found.
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * 获取创建来源，1 通过控制台创建, 2 通过策略语法创建。
-     * @return CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+     * Getting how policy created: 1. Via console; 2. Via syntax
+     * @return CreateMode How Policy Created: 1. Via console; 2. Via syntax
      */
     public Long getCreateMode() {
         return this.CreateMode;
     }
 
     /**
-     * 设置创建来源，1 通过控制台创建, 2 通过策略语法创建。
-     * @param CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建。
+     * Configuring How Policy Created: 1. Via console; 2. Via syntax
+     * @param CreateMode How Policy Created: 1. Via console; 2. Via syntax
      */
     public void setCreateMode(Long CreateMode) {
         this.CreateMode = CreateMode;
     }
 
     /**
-     * 获取关联的用户数
-     * @return Attachments 关联的用户数
+     * Getting number of associated users
+     * @return Attachments number of associated users
      */
     public Long getAttachments() {
         return this.Attachments;
     }
 
     /**
-     * 设置关联的用户数
-     * @param Attachments 关联的用户数
+     * Configuring number of associated users
+     * @param Attachments number of associated users
      */
     public void setAttachments(Long Attachments) {
         this.Attachments = Attachments;
     }
 
     /**
-     * 获取策略关联的产品
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return ServiceType 策略关联的产品
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting product associated with the policyNote: This field may return null, indicating that no valid value was found.
+     * @return ServiceType product associated with the policyNote: This field may return null, indicating that no valid value was found.
      */
     public String getServiceType() {
         return this.ServiceType;
     }
 
     /**
-     * 设置策略关联的产品
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param ServiceType 策略关联的产品
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring product associated with the policyNote: This field may return null, indicating that no valid value was found.
+     * @param ServiceType product associated with the policyNote: This field may return null, indicating that no valid value was found.
      */
     public void setServiceType(String ServiceType) {
         this.ServiceType = ServiceType;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

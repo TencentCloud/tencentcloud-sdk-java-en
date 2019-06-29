@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteLifecycleHookRequest  extends AbstractModel{
 
     /**
-    * 生命周期挂钩ID
+    * lifecycle hook ID 
     */
     @SerializedName("LifecycleHookId")
     @Expose
     private String LifecycleHookId;
 
     /**
-     * 获取生命周期挂钩ID
-     * @return LifecycleHookId 生命周期挂钩ID
+     * Obtain lifecycle hook ID
+     * @return LifecycleHookId LifecycleHookId
      */
     public String getLifecycleHookId() {
         return this.LifecycleHookId;
     }
 
     /**
-     * 设置生命周期挂钩ID
-     * @param LifecycleHookId 生命周期挂钩ID
+     * Set lifecycle hook ID
+     * @param LifecycleHookId LifecycleHookId
      */
     public void setLifecycleHookId(String LifecycleHookId) {
         this.LifecycleHookId = LifecycleHookId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LifecycleHookId", this.LifecycleHookId);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InstanceTag  extends AbstractModel{
 
     /**
-    * 标签键
+    * Tag key.
     */
     @SerializedName("Key")
     @Expose
     private String Key;
 
     /**
-    * 标签值
+    * Tag value.
     */
     @SerializedName("Value")
     @Expose
     private String Value;
 
     /**
-     * 获取标签键
-     * @return Key 标签键
+     * Obtain a tag key.
+     * @return Key Tag key.
      */
     public String getKey() {
         return this.Key;
     }
 
     /**
-     * 设置标签键
-     * @param Key 标签键
+     * Configure a tag key.
+     * @param Key Tag key.
      */
     public void setKey(String Key) {
         this.Key = Key;
     }
 
     /**
-     * 获取标签值
-     * @return Value 标签值
+     * Obtain a tag value.
+     * @return Value Tag value.
      */
     public String getValue() {
         return this.Value;
     }
 
     /**
-     * 设置标签值
-     * @param Value 标签值
+     * Configure a tag value.
+     * @param Value Tag value.
      */
     public void setValue(String Value) {
         this.Value = Value;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Key", this.Key);

@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteKeyPairsRequest  extends AbstractModel{
 
     /**
-    * 一个或多个待操作的密钥对ID。每次请求批量密钥对的上限为100。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。
+    * one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`.
     */
     @SerializedName("KeyIds")
     @Expose
     private String [] KeyIds;
 
     /**
-     * 获取一个或多个待操作的密钥对ID。每次请求批量密钥对的上限为100。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。
-     * @return KeyIds 一个或多个待操作的密钥对ID。每次请求批量密钥对的上限为100。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。
+     * one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`. 
+     * @return KeyIds one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`. 
      */
     public String [] getKeyIds() {
         return this.KeyIds;
     }
 
     /**
-     * 设置一个或多个待操作的密钥对ID。每次请求批量密钥对的上限为100。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。
-     * @param KeyIds 一个或多个待操作的密钥对ID。每次请求批量密钥对的上限为100。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。
+     * Set one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`. 
+     * @param KeyIds one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`. 
      */
     public void setKeyIds(String [] KeyIds) {
         this.KeyIds = KeyIds;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "KeyIds.", this.KeyIds);

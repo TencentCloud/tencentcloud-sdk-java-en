@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeDisasterRecoverGroupsResponse  extends AbstractModel{
 
     /**
-    * 分散置放群组信息列表。
+    * List of information on a spread placement group
     */
     @SerializedName("DisasterRecoverGroupSet")
     @Expose
     private DisasterRecoverGroup [] DisasterRecoverGroupSet;
 
     /**
-    * 用户置放群组总量。
+    * Total number of user placement groups.
     */
     @SerializedName("TotalCount")
     @Expose
     private Integer TotalCount;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取分散置放群组信息列表。
-     * @return DisasterRecoverGroupSet 分散置放群组信息列表。
+     * Get List of information on a spread placement group
+     * @return DisasterRecoverGroupSet List of information on a spread placement group
      */
     public DisasterRecoverGroup [] getDisasterRecoverGroupSet() {
         return this.DisasterRecoverGroupSet;
     }
 
     /**
-     * 设置分散置放群组信息列表。
-     * @param DisasterRecoverGroupSet 分散置放群组信息列表。
+     * Set List of information on a spread placement group
+     * @param DisasterRecoverGroupSet List of information on a spread placement group
      */
     public void setDisasterRecoverGroupSet(DisasterRecoverGroup [] DisasterRecoverGroupSet) {
         this.DisasterRecoverGroupSet = DisasterRecoverGroupSet;
     }
 
     /**
-     * 获取用户置放群组总量。
-     * @return TotalCount 用户置放群组总量。
+     * Get Total number of placement groups of an user
+     * @return TotalCount Total number of placement groups of an user
      */
     public Integer getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * 设置用户置放群组总量。
-     * @param TotalCount 用户置放群组总量。
+     * Set Total number of placement groups of an user
+     * @param TotalCount Total number of placement groups of an user
      */
     public void setTotalCount(Integer TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "DisasterRecoverGroupSet.", this.DisasterRecoverGroupSet);

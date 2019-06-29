@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeInstanceFamilyConfigsResponse  extends AbstractModel{
 
     /**
-    * 实例机型组配置的列表信息
+    * List of instance model family configurations 
     */
     @SerializedName("InstanceFamilyConfigSet")
     @Expose
     private InstanceFamilyConfig [] InstanceFamilyConfigSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取实例机型组配置的列表信息
-     * @return InstanceFamilyConfigSet 实例机型组配置的列表信息
+     * Obtain list of instance model family configurations 
+     * @return InstanceFamilyConfigSet List of instance model family configurations 
      */
     public InstanceFamilyConfig [] getInstanceFamilyConfigSet() {
         return this.InstanceFamilyConfigSet;
     }
 
     /**
-     * 设置实例机型组配置的列表信息
-     * @param InstanceFamilyConfigSet 实例机型组配置的列表信息
+     * Set list of instance model family configurations 
+     * @param InstanceFamilyConfigSet List of instance model family configurations 
      */
     public void setInstanceFamilyConfigSet(InstanceFamilyConfig [] InstanceFamilyConfigSet) {
         this.InstanceFamilyConfigSet = InstanceFamilyConfigSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "InstanceFamilyConfigSet.", this.InstanceFamilyConfigSet);

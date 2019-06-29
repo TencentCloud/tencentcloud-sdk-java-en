@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ModifyImageAttributeRequest  extends AbstractModel{
 
     /**
-    * 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
+    * Image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * 设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过20个字符。<br> <li> 镜像名称不能与已有镜像重复。
+    * Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 64 characters.<br> <li> It must be unique.
     */
     @SerializedName("ImageName")
     @Expose
     private String ImageName;
 
     /**
-    * 设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
+    * Set a new image description, which must meet the following requirements:<br> <li> It cannot exceed 60 characters.
     */
     @SerializedName("ImageDescription")
     @Expose
     private String ImageDescription;
 
     /**
-     * 获取镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
-     * @return ImageId 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
+     * Obtain image ID list like `img-gvbnzy6f`. Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
+     * @return ImageIds Image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * 设置镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
-     * @param ImageId 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
+     * Set up image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
+     * @param ImageIds Image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * 获取设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过20个字符。<br> <li> 镜像名称不能与已有镜像重复。
-     * @return ImageName 设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过20个字符。<br> <li> 镜像名称不能与已有镜像重复。
+     * Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 20 characters.<br> <li> Image name cannot be the same as present image names.
+     * @return ImageName Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 20 characters.<br> <li> Image name cannot be the same as present image names.
      */
     public String getImageName() {
         return this.ImageName;
     }
 
     /**
-     * 设置设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过20个字符。<br> <li> 镜像名称不能与已有镜像重复。
-     * @param ImageName 设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过20个字符。<br> <li> 镜像名称不能与已有镜像重复。
+     * Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 20 characters.<br> <li> Image name cannot be the same as present image names.
+     * @param ImageName Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 20 characters.<br> <li> Image name cannot be the same as present image names.
      */
     public void setImageName(String ImageName) {
         this.ImageName = ImageName;
     }
 
     /**
-     * 获取设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
-     * @return ImageDescription 设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
+     * Set a new image description, which must meet the following requirements:<br> <li> It cannot exceed 60 characters.
+     * @return ImageDescription Set a new image description, which must meet the following requirements:<br> <li>  It cannot exceed 60 characters.
      */
     public String getImageDescription() {
         return this.ImageDescription;
     }
 
     /**
-     * 设置设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
-     * @param ImageDescription 设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
+     * Set a new image description, which must meet the following requirements:<br> <li>  It cannot exceed 60 characters.
+     * @param ImageDescription Set a new image name, which must meet the following requirements:<br> <li>  It cannot exceed 60 characters.
      */
     public void setImageDescription(String ImageDescription) {
         this.ImageDescription = ImageDescription;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internally realized, users have no permission for it 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ImageId", this.ImageId);

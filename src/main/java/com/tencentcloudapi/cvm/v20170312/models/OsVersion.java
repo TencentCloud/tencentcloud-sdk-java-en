@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class OsVersion  extends AbstractModel{
 
     /**
-    * 操作系统类型
+    * Operating System
     */
     @SerializedName("OsName")
     @Expose
     private String OsName;
 
     /**
-    * 支持的操作系统版本
+    * Supported operating system version
     */
     @SerializedName("OsVersions")
     @Expose
     private String [] OsVersions;
 
     /**
-    * 支持的操作系统架构
+    * Supported operating system architecture
     */
     @SerializedName("Architecture")
     @Expose
     private String [] Architecture;
 
     /**
-     * 获取操作系统类型
-     * @return OsName 操作系统类型
+     * Obtain the type of the operating system
+     * @return OsName The type of the operating system
      */
     public String getOsName() {
         return this.OsName;
     }
 
     /**
-     * 设置操作系统类型
-     * @param OsName 操作系统类型
+     * The type of the operating system
+     * @param OsName The type of the operating system
      */
     public void setOsName(String OsName) {
         this.OsName = OsName;
     }
 
     /**
-     * 获取支持的操作系统版本
-     * @return OsVersions 支持的操作系统版本
+     * The operating system version which is supported.
+     * @return OsVersions The operating system version which is supported.
      */
     public String [] getOsVersions() {
         return this.OsVersions;
     }
 
     /**
-     * 设置支持的操作系统版本
-     * @param OsVersions 支持的操作系统版本
+     * Setting the operating system version which is supported.
+     * @param OsVersions The operating system version which is supported.
      */
     public void setOsVersions(String [] OsVersions) {
         this.OsVersions = OsVersions;
     }
 
     /**
-     * 获取支持的操作系统架构
-     * @return Architecture 支持的操作系统架构
+     * Obtain the supported operating system architecture
+     * @return Architecture Supported operating system architecture
      */
     public String [] getArchitecture() {
         return this.Architecture;
     }
 
     /**
-     * 设置支持的操作系统架构
-     * @param Architecture 支持的操作系统架构
+     * Setting the supported operating system architecture
+     * @param Architecture Supported operating system architecture
      */
     public void setArchitecture(String [] Architecture) {
         this.Architecture = Architecture;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "OsName", this.OsName);

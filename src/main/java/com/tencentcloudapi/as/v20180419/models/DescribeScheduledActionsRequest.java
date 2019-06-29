@@ -23,114 +23,114 @@ import java.util.HashMap;
 public class DescribeScheduledActionsRequest  extends AbstractModel{
 
     /**
-    * 按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
+    * ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
     */
     @SerializedName("ScheduledActionIds")
     @Expose
     private String [] ScheduledActionIds;
 
     /**
-    * 过滤条件。
-<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
-<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>
+    * Filter conditions
+<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Offset")
     @Expose
     private Integer Offset;
 
     /**
-    * 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377). 
     */
     @SerializedName("Limit")
     @Expose
     private Integer Limit;
 
     /**
-     * 获取按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
-     * @return ScheduledActionIds 按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
+     * Obtain ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
+     * @return ScheduledActionIds ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
      */
     public String [] getScheduledActionIds() {
         return this.ScheduledActionIds;
     }
 
     /**
-     * 设置按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
-     * @param ScheduledActionIds 按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。
+     * Set ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
+     * @param ScheduledActionIds ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
      */
     public void setScheduledActionIds(String [] ScheduledActionIds) {
         this.ScheduledActionIds = ScheduledActionIds;
     }
 
     /**
-     * 获取过滤条件。
-<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
-<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>
-     * @return Filters 过滤条件。
-<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
-<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>
+     * obtain filter conditions
+<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+     * @return Filters filter conditions.
+<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
-<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>
-     * @param Filters 过滤条件。
-<li> scheduled-action-id - String - 是否必填：否 -（过滤条件）按照定时任务ID过滤。</li>
-<li> scheduled-action-name - String - 是否必填：否 - （过滤条件） 按照定时任务名称过滤。</li>
-<li> auto-scaling-group-id - String - 是否必填：否 - （过滤条件） 按照伸缩组ID过滤。</li>
+     * Set filter conditions.
+<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+     * @param Filters filter conditions
+<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @return Offset Offest. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getOffset() {
         return this.Offset;
     }
 
     /**
-     * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Offset Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * 获取返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getLimit() {
         return this.Limit;
     }
 
     /**
-     * 设置返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Limit 返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setLimit(Integer Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "ScheduledActionIds.", this.ScheduledActionIds);

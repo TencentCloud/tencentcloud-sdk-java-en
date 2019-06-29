@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ChargePrepaid  extends AbstractModel{
 
     /**
-    * 购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。
+    * Purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
     */
     @SerializedName("Period")
     @Expose
     private Integer Period;
 
     /**
-    * 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+    * Auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
     */
     @SerializedName("RenewFlag")
     @Expose
     private String RenewFlag;
 
     /**
-     * 获取购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。
-     * @return Period 购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。
+     * Get purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
+     * @return Period Purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
      */
     public Integer getPeriod() {
         return this.Period;
     }
 
     /**
-     * 设置购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。
-     * @param Period 购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。
+     * Set purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
+     * @param Period Purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
      */
     public void setPeriod(Integer Period) {
         this.Period = Period;
     }
 
     /**
-     * 获取自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
-     * @return RenewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+     * Get auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
+     * @return RenewFlag Auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
      */
     public String getRenewFlag() {
         return this.RenewFlag;
     }
 
     /**
-     * 设置自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
-     * @param RenewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+     * Set auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
+     * @param RenewFlag Auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
      */
     public void setRenewFlag(String RenewFlag) {
         this.RenewFlag = RenewFlag;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Period", this.Period);

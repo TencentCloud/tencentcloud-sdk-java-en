@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class InternetBandwidthConfig  extends AbstractModel{
 
     /**
-    * 开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+    * Start time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * 结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+    * End time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-    * 实例带宽信息。
+    * Instance bandwidth information.
     */
     @SerializedName("InternetAccessible")
     @Expose
     private InternetAccessible InternetAccessible;
 
     /**
-     * 获取开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @return StartTime 开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Get start time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
+     * @return StartTime start time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * 设置开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @param StartTime 开始时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set start time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
+     * @param StartTime start time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * 获取结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @return EndTime 结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Get end time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
+     * @return EndTime end time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * 设置结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
-     * @param EndTime 结束时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set end time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
+     * @param EndTime end time.which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * 获取实例带宽信息。
-     * @return InternetAccessible 实例带宽信息。
+     * Get instance bandwidth information.
+     * @return InternetAccessible instance bandwidth information.
      */
     public InternetAccessible getInternetAccessible() {
         return this.InternetAccessible;
     }
 
     /**
-     * 设置实例带宽信息。
-     * @param InternetAccessible 实例带宽信息。
+     * Set instance bandwidth information.
+     * @param InternetAccessible instance bandwidth information.
      */
     public void setInternetAccessible(InternetAccessible InternetAccessible) {
         this.InternetAccessible = InternetAccessible;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "StartTime", this.StartTime);

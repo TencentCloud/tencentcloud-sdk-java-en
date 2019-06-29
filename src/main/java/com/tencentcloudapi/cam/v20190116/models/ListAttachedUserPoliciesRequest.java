@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ListAttachedUserPoliciesRequest  extends AbstractModel{
 
     /**
-    * 子账号 uin
+    * Sub-account uin
     */
     @SerializedName("TargetUin")
     @Expose
     private Long TargetUin;
 
     /**
-    * 页码，默认值是 1，从 1 开始
+    * Page number. Default value is 1. Start from 1
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * 每页大小，默认值是 20
+    * Per page size. Default value is 20
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-     * 获取子账号 uin
-     * @return TargetUin 子账号 uin
+     * Obtain sub-account uin
+     * @return TargetUin sub-account uin
      */
     public Long getTargetUin() {
         return this.TargetUin;
     }
 
     /**
-     * 设置子账号 uin
-     * @param TargetUin 子账号 uin
+     * Set sub-account uin
+     * @param TargetUin sub-account uin
      */
     public void setTargetUin(Long TargetUin) {
         this.TargetUin = TargetUin;
     }
 
     /**
-     * 获取页码，默认值是 1，从 1 开始
-     * @return Page 页码，默认值是 1，从 1 开始
+     * Obtain page number. Default value is 1. Start from 1
+     * @return Page page number. Default value is 1; starting from 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * 设置页码，默认值是 1，从 1 开始
-     * @param Page 页码，默认值是 1，从 1 开始
+     * Set page number. Default value is 1; starting from 1
+     * @param Page page number. Default value is 1; starting from 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * 获取每页大小，默认值是 20
-     * @return Rp 每页大小，默认值是 20
+     * Obtain each page size. Default value is 20
+     * @return Rp each page size. Default value is 20
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * 设置每页大小，默认值是 20
-     * @param Rp 每页大小，默认值是 20
+     * Set each page size. Default value is 20
+     * @param Rp each page size. Default value is 20
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TargetUin", this.TargetUin);

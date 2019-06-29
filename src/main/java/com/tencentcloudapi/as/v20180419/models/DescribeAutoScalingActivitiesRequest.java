@@ -23,170 +23,170 @@ import java.util.HashMap;
 public class DescribeAutoScalingActivitiesRequest  extends AbstractModel{
 
     /**
-    * 按照一个或者多个伸缩活动ID查询。伸缩活动ID形如：`asa-5l2ejpfo`。每次请求的上限为100。参数不支持同时指定`ActivityIds`和`Filters`。
+    * ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
     */
     @SerializedName("ActivityIds")
     @Expose
     private String [] ActivityIds;
 
     /**
-    * 过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
+    * Filter conditions
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID</li>
+<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
+<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
+<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Number of returned results. It defaults to 20. The maximum is 100. For more information on`Limit` , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Limit")
     @Expose
     private Integer Limit;
 
     /**
-    * 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Offset")
     @Expose
     private Integer Offset;
 
     /**
-    * 伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+    * Earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * 伸缩活动最晚的结束时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+    * Latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-     * 获取按照一个或者多个伸缩活动ID查询。伸缩活动ID形如：`asa-5l2ejpfo`。每次请求的上限为100。参数不支持同时指定`ActivityIds`和`Filters`。
-     * @return ActivityIds 按照一个或者多个伸缩活动ID查询。伸缩活动ID形如：`asa-5l2ejpfo`。每次请求的上限为100。参数不支持同时指定`ActivityIds`和`Filters`。
+     * Obtain ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
+     * @return ActivityIds ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
      */
     public String [] getActivityIds() {
         return this.ActivityIds;
     }
 
     /**
-     * 设置按照一个或者多个伸缩活动ID查询。伸缩活动ID形如：`asa-5l2ejpfo`。每次请求的上限为100。参数不支持同时指定`ActivityIds`和`Filters`。
-     * @param ActivityIds 按照一个或者多个伸缩活动ID查询。伸缩活动ID形如：`asa-5l2ejpfo`。每次请求的上限为100。参数不支持同时指定`ActivityIds`和`Filters`。
+     * Set ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
+     * @param ActivityIds ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
      */
     public void setActivityIds(String [] ActivityIds) {
         this.ActivityIds = ActivityIds;
     }
 
     /**
-     * 获取过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
-     * @return Filters 过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
+     * Obtain filter conditions
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID</li>
+<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
+<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
+<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
+     * @return Filters Filter conditions
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID</li>
+<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
+<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
+<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
-     * @param Filters 过滤条件。
-<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>
-<li> activity-status-code - String - 是否必填：否 -（过滤条件）按照伸缩活动状态过滤。（INIT：初始化中|RUNNING：运行中|SUCCESSFUL：活动成功|PARTIALLY_SUCCESSFUL：活动部分成功|FAILED：活动失败|CANCELLED：活动取消）</li>
-<li> activity-type - String - 是否必填：否 -（过滤条件）按照伸缩活动类型过滤。（SCALE_OUT：扩容活动|SCALE_IN：缩容活动|ATTACH_INSTANCES：添加实例|REMOVE_INSTANCES：销毁实例|DETACH_INSTANCES：移出实例|TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁|REPLACE_UNHEALTHY_INSTANCE：替换不健康实例|UPDATE_LOAD_BALANCERS：更新负载均衡器）</li>
-<li> activity-id - String - 是否必填：否 -（过滤条件）按照伸缩活动ID过滤。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`ActivityIds`和`Filters`。
+     * Set filter conditions
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID.</li>
+<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
+<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
+<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
+     * @param Filters Filter conditions.
+<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID.</li>
+<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
+<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
+<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID.</li>
+You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 获取返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on`Limit` , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getLimit() {
         return this.Limit;
     }
 
     /**
-     * 设置返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setLimit(Integer Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * 获取偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @return Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public Integer getOffset() {
         return this.Offset;
     }
 
     /**
-     * 设置偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set Offset. Default is 0. For more information on `Offset` , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Offset. Default is 0. For more information on`Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * 获取伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-     * @return StartTime 伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+     * Obtain earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time `UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+     * @return StartTime Earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time `UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * 设置伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-     * @param StartTime 伸缩活动最早的开始时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time `UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+     * @param StartTime Earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time `UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * 获取伸缩活动最晚的结束时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-     * @return EndTime 伸缩活动最晚的结束时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+     * Obtain latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+     * @return EndTime latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * 设置伸缩活动最晚的结束时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
-     * @param EndTime 伸缩活动最晚的结束时间，如果指定了ActivityIds，此参数将被忽略。取值为`UTC`时间，按照`ISO8601`标准，格式：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+     * @param EndTime latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "ActivityIds.", this.ActivityIds);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class AttachGroupPolicyRequest  extends AbstractModel{
 
     /**
-    * 策略 id
+    * Policy ID
     */
     @SerializedName("PolicyId")
     @Expose
     private Long PolicyId;
 
     /**
-    * 用户组 id
+    * User Group ID
     */
     @SerializedName("AttachGroupId")
     @Expose
     private Long AttachGroupId;
 
     /**
-     * 获取策略 id
-     * @return PolicyId 策略 id
+     * Getting Policy ID
+     * @return PolicyId Policy ID
      */
     public Long getPolicyId() {
         return this.PolicyId;
     }
 
     /**
-     * 设置策略 id
-     * @param PolicyId 策略 id
+     * Configuring Policy ID
+     * @param PolicyId Policy ID
      */
     public void setPolicyId(Long PolicyId) {
         this.PolicyId = PolicyId;
     }
 
     /**
-     * 获取用户组 id
-     * @return AttachGroupId 用户组 id
+     * Getting User Group ID
+     * @return AttachGroupId User Group ID
      */
     public Long getAttachGroupId() {
         return this.AttachGroupId;
     }
 
     /**
-     * 设置用户组 id
-     * @param AttachGroupId 用户组 id
+     * Configuring User Group ID
+     * @param AttachGroupId User Group ID
      */
     public void setAttachGroupId(Long AttachGroupId) {
         this.AttachGroupId = AttachGroupId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

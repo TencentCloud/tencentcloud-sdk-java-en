@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ModifyDesiredCapacityRequest  extends AbstractModel{
 
     /**
-    * 伸缩组ID
+    * Scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 期望实例数
+    * Desired number of instances.
     */
     @SerializedName("DesiredCapacity")
     @Expose
     private Integer DesiredCapacity;
 
     /**
-     * 获取伸缩组ID
-     * @return AutoScalingGroupId 伸缩组ID
+     * Obtain the scaling group ID.
+     * @return AutoScalingGroupId Scaling group ID.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID
-     * @param AutoScalingGroupId 伸缩组ID
+     * Configure the scaling group ID.
+     * @param AutoScalingGroupId Scaling group ID.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取期望实例数
-     * @return DesiredCapacity 期望实例数
+     * Obtain the desired number of instances.
+     * @return DesiredCapacity Desired number of instances.
      */
     public Integer getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * 设置期望实例数
-     * @param DesiredCapacity 期望实例数
+     * Configure the desired number of instances.
+     * @param DesiredCapacity Desired number of instances.
      */
     public void setDesiredCapacity(Integer DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

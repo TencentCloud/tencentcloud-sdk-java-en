@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class GetUserRequest  extends AbstractModel{
 
     /**
-    * 子用户用户名
+    * Sub-user’s Username
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-     * 获取子用户用户名
-     * @return Name 子用户用户名
+     * Getting Sub-user’s Username
+     * @return Name Sub-user’s Username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置子用户用户名
-     * @param Name 子用户用户名
+     * Configuring Sub-user’s Username
+     * @param Name Sub-user’s Username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

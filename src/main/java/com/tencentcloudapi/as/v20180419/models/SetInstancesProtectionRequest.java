@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class SetInstancesProtectionRequest  extends AbstractModel{
 
     /**
-    * 伸缩组ID。
+    * Scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * 实例ID。
+    * Instance ID
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 实例是否需要移出保护。
+    * If the instance needs to be removed from protection
     */
     @SerializedName("ProtectedFromScaleIn")
     @Expose
     private Boolean ProtectedFromScaleIn;
 
     /**
-     * 获取伸缩组ID。
-     * @return AutoScalingGroupId 伸缩组ID。
+     * Obtain the scaling group ID
+     * @return AutoScalingGroupId Scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * 设置伸缩组ID。
-     * @param AutoScalingGroupId 伸缩组ID。
+     * Configure the scaling group ID
+     * @param AutoScalingGroupId Scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * 获取实例ID。
-     * @return InstanceIds 实例ID。
+     * Obtain instance ID
+     * @return InstanceId Instance ID
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置实例ID。
-     * @param InstanceIds 实例ID。
+     * Set instance ID
+     * @param InstanceId Instance ID
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取实例是否需要移出保护。
-     * @return ProtectedFromScaleIn 实例是否需要移出保护。
+     * Obtain the parameter value that indicates if the instance needs to be removed from protection. 
+     * @return ProtectedFromScaleIn If the instance needs to be removed from protection. 
      */
     public Boolean getProtectedFromScaleIn() {
         return this.ProtectedFromScaleIn;
     }
 
     /**
-     * 设置实例是否需要移出保护。
-     * @param ProtectedFromScaleIn 实例是否需要移出保护。
+     * Set if the instance needs to be removed from protection. 
+     * @param ProtectedFromScaleIn If the instance needs to be removed from protection. 
      */
     public void setProtectedFromScaleIn(Boolean ProtectedFromScaleIn) {
         this.ProtectedFromScaleIn = ProtectedFromScaleIn;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

@@ -23,168 +23,168 @@ import java.util.HashMap;
 public class AddUserResponse  extends AbstractModel{
 
     /**
-    * 子用户 UIN
+    * Sub-user UID
     */
     @SerializedName("Uin")
     @Expose
     private Long Uin;
 
     /**
-    * 子用户用户名
+    * Sub-user’s Username
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * 如果输入参数组合为自动生成随机密码，则返回生成的密码
+    * Configuring Password: If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
     */
     @SerializedName("Password")
     @Expose
     private String Password;
 
     /**
-    * 子用户密钥 ID
+    * Sub-user’s Key ID
     */
     @SerializedName("SecretId")
     @Expose
     private String SecretId;
 
     /**
-    * 子用户密钥 Key
+    * Sub-user’s Key
     */
     @SerializedName("SecretKey")
     @Expose
     private String SecretKey;
 
     /**
-    * 子用户 UID
+    * Sub-user UID
     */
     @SerializedName("Uid")
     @Expose
     private Long Uid;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取子用户 UIN
-     * @return Uin 子用户 UIN
+     * Getting Sub-user UIN
+     * @return Uin Sub-user UIN
      */
     public Long getUin() {
         return this.Uin;
     }
 
     /**
-     * 设置子用户 UIN
-     * @param Uin 子用户 UIN
+     * Configuring Sub-user UIN
+     * @param Uin Sub-user UIN
      */
     public void setUin(Long Uin) {
         this.Uin = Uin;
     }
 
     /**
-     * 获取子用户用户名
-     * @return Name 子用户用户名
+     * Getting Sub-user’s Username
+     * @return Name Sub-user’s Username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置子用户用户名
-     * @param Name 子用户用户名
+     * Configuring Sub-user’s Username
+     * @param Name Sub-user’s Username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取如果输入参数组合为自动生成随机密码，则返回生成的密码
-     * @return Password 如果输入参数组合为自动生成随机密码，则返回生成的密码
+     * Getting Password: If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
+     * @return Password If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
      */
     public String getPassword() {
         return this.Password;
     }
 
     /**
-     * 设置如果输入参数组合为自动生成随机密码，则返回生成的密码
-     * @param Password 如果输入参数组合为自动生成随机密码，则返回生成的密码
+     * Configuring Password: If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
+     * @param Password If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
      */
     public void setPassword(String Password) {
         this.Password = Password;
     }
 
     /**
-     * 获取子用户密钥 ID
-     * @return SecretId 子用户密钥 ID
+     * Getting Sub-user’s Key ID
+     * @return SecretId Sub-user’s Key ID
      */
     public String getSecretId() {
         return this.SecretId;
     }
 
     /**
-     * 设置子用户密钥 ID
-     * @param SecretId 子用户密钥 ID
+     * Configuring Sub-user’s Key ID
+     * @param SecretId Sub-user’s Key ID
      */
     public void setSecretId(String SecretId) {
         this.SecretId = SecretId;
     }
 
     /**
-     * 获取子用户密钥 Key
-     * @return SecretKey 子用户密钥 Key
+     * Getting Sub-user’s Key
+     * @return SecretKey Sub-user’s Key
      */
     public String getSecretKey() {
         return this.SecretKey;
     }
 
     /**
-     * 设置子用户密钥 Key
-     * @param SecretKey 子用户密钥 Key
+     * Configuring Sub-user’s Key
+     * @param SecretKey Sub-user’s Key
      */
     public void setSecretKey(String SecretKey) {
         this.SecretKey = SecretKey;
     }
 
     /**
-     * 获取子用户 UID
-     * @return Uid 子用户 UID
+     * Getting Sub-user UID
+     * @return Uid Sub-user UID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * 设置子用户 UID
-     * @param Uid 子用户 UID
+     * Configuring Sub-user UID
+     * @param Uid Sub-user UID
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uin", this.Uin);

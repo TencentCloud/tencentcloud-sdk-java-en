@@ -23,109 +23,99 @@ import java.util.HashMap;
 public class AttachEntityOfPolicy  extends AbstractModel{
 
     /**
-    * 实体ID
+    * Entity ID
     */
     @SerializedName("Id")
     @Expose
     private String Id;
 
     /**
-    * 实体名称
-注意：此字段可能返回 null，表示取不到有效值。
+    * Entity NameNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * 实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
+    * Entity UINNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Uin")
     @Expose
     private Long Uin;
 
     /**
-    * 关联类型。1 用户关联 ； 2 用户组关联
+    * Type of entity association. 1 Associate by Users ； 2 Associate by User Groups
     */
     @SerializedName("RelatedType")
     @Expose
     private Long RelatedType;
 
     /**
-     * 获取实体ID
-     * @return Id 实体ID
+     * Getting Entity ID
+     * @return Id Entity ID
      */
     public String getId() {
         return this.Id;
     }
 
     /**
-     * 设置实体ID
-     * @param Id 实体ID
+     * Configuring Entity ID
+     * @param Id Entity ID
      */
     public void setId(String Id) {
         this.Id = Id;
     }
 
     /**
-     * 获取实体名称
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Name 实体名称
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting Entity NameNote: This field may return null, indicating that no valid value was found.
+     * @return Name: Entity NameNote: This field may return null, indicating that no valid value was found.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置实体名称
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Name 实体名称
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring Entity Name Note: This field may return null, indicating that no valid value was found.
+     * @param Name Entity NameNote: This field may return null, indicating that no valid value was found.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Uin 实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting Entity UINNote: This field may return null, indicating that no valid value was found.
+     * @return Uin Entity UINNote: This field may return null, indicating that no valid value was found.
      */
     public Long getUin() {
         return this.Uin;
     }
 
     /**
-     * 设置实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Uin 实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring Entity UINNote: This field may return null, indicating that no valid value was found.
+     * @param Uin Entity UINNote: This field may return null, indicating that no valid value was found.
      */
     public void setUin(Long Uin) {
         this.Uin = Uin;
     }
 
     /**
-     * 获取关联类型。1 用户关联 ； 2 用户组关联
-     * @return RelatedType 关联类型。1 用户关联 ； 2 用户组关联
+     * Getting Type of Entity Association
+     * @return RelatedType Type of entity association. 1 Associate by Users; 2 Associate by User Groups
      */
     public Long getRelatedType() {
         return this.RelatedType;
     }
 
     /**
-     * 设置关联类型。1 用户关联 ； 2 用户组关联
-     * @param RelatedType 关联类型。1 用户关联 ； 2 用户组关联
+     * Configuring type of entity association. 1 Associate by Users; 2 Associate by User Groups
+     * @param RelatedType Type of entity association. 1 Associate by Users; 2 Associate by User Groups
      */
     public void setRelatedType(Long RelatedType) {
         this.RelatedType = RelatedType;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Id", this.Id);

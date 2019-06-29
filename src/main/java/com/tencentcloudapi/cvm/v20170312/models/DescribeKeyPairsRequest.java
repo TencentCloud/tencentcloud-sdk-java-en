@@ -23,109 +23,109 @@ import java.util.HashMap;
 public class DescribeKeyPairsRequest  extends AbstractModel{
 
     /**
-    * 密钥对ID，密钥对ID形如：`skey-11112222`（此接口支持同时传入多个ID进行过滤。此参数的具体格式可参考 API [简介](https://cloud.tencent.com/document/api/213/15688)的 `id.N` 一节）。参数不支持同时指定 `KeyIds` 和 `Filters`。密钥对ID可以通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询。
+    * IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
     */
     @SerializedName("KeyIds")
     @Expose
     private String [] KeyIds;
 
     /**
-    * 过滤条件。
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的projectId获取项目ID。</li>
-<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>参数不支持同时指定 `KeyIds` 和 `Filters`。
+    * Filter conditions
+<li> project-id - Integer - Required :No | (Filter condition). Filter by project ID. You can obtain the project ID by either of the following ways: query the project ID via [Project List](https://console.cloud.tencent.com/project);obtain the project ID from the `projectId` field of the returned values of API [DescribeProject](/document/api/378/4400).|</li>
+<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * 偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688). 
     */
     @SerializedName("Offset")
     @Expose
     private Integer Offset;
 
     /**
-    * 返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). 
     */
     @SerializedName("Limit")
     @Expose
     private Integer Limit;
 
     /**
-     * 获取密钥对ID，密钥对ID形如：`skey-11112222`（此接口支持同时传入多个ID进行过滤。此参数的具体格式可参考 API [简介](https://cloud.tencent.com/document/api/213/15688)的 `id.N` 一节）。参数不支持同时指定 `KeyIds` 和 `Filters`。密钥对ID可以通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询。
-     * @return KeyIds 密钥对ID，密钥对ID形如：`skey-11112222`（此接口支持同时传入多个ID进行过滤。此参数的具体格式可参考 API [简介](https://cloud.tencent.com/document/api/213/15688)的 `id.N` 一节）。参数不支持同时指定 `KeyIds` 和 `Filters`。密钥对ID可以通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询。
+     * IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
+     * @return KeyIds IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
      */
     public String [] getKeyIds() {
         return this.KeyIds;
     }
 
     /**
-     * 设置密钥对ID，密钥对ID形如：`skey-11112222`（此接口支持同时传入多个ID进行过滤。此参数的具体格式可参考 API [简介](https://cloud.tencent.com/document/api/213/15688)的 `id.N` 一节）。参数不支持同时指定 `KeyIds` 和 `Filters`。密钥对ID可以通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询。
-     * @param KeyIds 密钥对ID，密钥对ID形如：`skey-11112222`（此接口支持同时传入多个ID进行过滤。此参数的具体格式可参考 API [简介](https://cloud.tencent.com/document/api/213/15688)的 `id.N` 一节）。参数不支持同时指定 `KeyIds` 和 `Filters`。密钥对ID可以通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询。
+     * Set IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
+     * @param KeyIds IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
      */
     public void setKeyIds(String [] KeyIds) {
         this.KeyIds = KeyIds;
     }
 
     /**
-     * 获取过滤条件。
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的projectId获取项目ID。</li>
-<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>参数不支持同时指定 `KeyIds` 和 `Filters`。
-     * @return Filters 过滤条件。
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的projectId获取项目ID。</li>
-<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>参数不支持同时指定 `KeyIds` 和 `Filters`。
+     * Obtain filter conditions
+<li> project-id - Integer - required:  No | (Filter condition). Filter by project ID. You can obtain the project ID by querying the project ID via [Project List](https://console.cloud.tencent.com/project);or calling [DescribeProject](/document/api/378/4400) , and obtaining from the `projectId` field of the returned values of API.</li>
+<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
+     * @return Filters filter conditions
+<li> project-id - Integer - required:  No | (Filter condition). Filter by project ID. You can obtain the project ID by querying the project ID via [Project List](https://console.cloud.tencent.com/project);or calling [DescribeProject](/document/api/378/4400) , and obtaining from the `projectId` field of the returned values of API.</li>
+<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的projectId获取项目ID。</li>
-<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>参数不支持同时指定 `KeyIds` 和 `Filters`。
-     * @param Filters 过滤条件。
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可以通过[项目列表](https://console.cloud.tencent.com/project)查询项目ID，或者调用接口 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)，取返回信息中的projectId获取项目ID。</li>
-<li> key-name - String - 是否必填：否 -（过滤条件）按照密钥对名称过滤。</li>参数不支持同时指定 `KeyIds` 和 `Filters`。
+     * Set filter conditions.
+<li> project-id - Integer - required:  No | (Filter condition). Filter by project ID. You can obtain the project ID by querying the project ID via [Project List](https://console.cloud.tencent.com/project);or calling [DescribeProject](/document/api/378/4400) , and obtaining from the `projectId` field of the returned values of API.</li>
+<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
+     * @param Filters filter condtions
+<li> project-id - Integer - required:  No | (Filter condition). Filter by project ID. You can obtain the project ID by querying the project ID via [Project List](https://console.cloud.tencent.com/project);or calling [DescribeProject](/document/api/378/4400) , and obtaining from the `projectId` field of the returned values of API.</li>
+<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 获取偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Offset 偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688). 
+     * @return Offset Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688). 
      */
     public Integer getOffset() {
         return this.Offset;
     }
 
     /**
-     * 设置偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Offset 偏移量，默认为0。关于 `Offset` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688). 
+     * @param Offset Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688).
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * 获取返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Limit 返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
      */
     public Integer getLimit() {
         return this.Limit;
     }
 
     /**
-     * 设置返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Limit 返回数量，默认为20，最大值为100。关于 `Limit` 的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
      */
     public void setLimit(Integer Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "KeyIds.", this.KeyIds);

@@ -23,174 +23,174 @@ import java.util.HashMap;
 public class DescribeInstancesRequest  extends AbstractModel{
 
     /**
-    * 按照一个或者多个实例ID查询。实例ID形如：`ins-xxxxxxxx`。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`id.N`一节）。每次请求的实例的上限为100。参数不支持同时指定`InstanceIds`和`Filters`。
+    * query by one or more Instance IDs, such as：`ins-xxxxxxxx`。（the format of parameter refer to API[introduction](https://cloud.tencent.com/document/api/213/15688)）。the upper limit of instances IDs of each query is 100, `InstanceIds` and `Filters` cannot be assigned at same time
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * 过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可通过调用[DescribeProject](https://cloud.tencent.com/document/api/378/4400)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/378/4398)创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照[CDH](https://cloud.tencent.com/document/product/416) ID过滤。[CDH](https://cloud.tencent.com/document/product/416) ID形如：host-xxxxxxxx。</li>
-<li> vpc-id - String - 是否必填：否 - （过滤条件）按照VPC ID进行过滤。VPC ID形如：vpc-xxxxxxxx。</li>
-<li> subnet-id - String - 是否必填：否 - （过滤条件）按照子网ID进行过滤。子网ID形如：subnet-xxxxxxxx。</li>
-<li> instance-id - String - 是否必填：否 - （过滤条件）按照实例ID过滤。实例ID形如：ins-xxxxxxxx。</li>
-<li> security-group-id - String - 是否必填：否 - （过滤条件）按照安全组ID过滤，安全组ID形如: sg-8jlk3f3r。</li>
-<li> instance-name - String - 是否必填：否 - （过滤条件）按照实例名称过滤。</li>
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。 )  </li>
-<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的内网IP过滤。</li>
-<li> public-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的公网IP过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>
-<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
+    * Filter conditions
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - required：No -(Filter condition) Filter by Project ID.By calling [DescribeProject](https://cloud.tencent.com/document/api/378/4400) to enquire the created projects list or log in the console to get it (https://console.cloud.tencent.com/cvm/index)；creating new projects by calling [AddProject](https://cloud.tencent.com/document/api/378/4398)</li>
+<li> host-id - String - required：No - (Filter condition) Filter by [CDH] ID(https://cloud.tencent.com/document/product/416) .[CDH](https://cloud.tencent.com/document/product/416) sample of ID：host-xxxxxxxx.</li>
+<li> vpc-id - String - required：No - (Filter condition) Filter by ID of VPC, sample ofVPC ID：vpc-xxxxxxxx.</li>
+<li> subnet-id - String - required：No - (Filter condition) Filter by ID of subnet, sample of Subnet ID：subnet-xxxxxxxx.</li>
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID, sample of instance ID: ins-xxxxxxxx.</li>
+<li> security-group-id - String - Required: No - (Filter condition) Filter by Security Group ID，sample of security group ID : sg-8jlk3f3r.</li>
+<li> instance-name - String - Required: No - (Filter condition) Filter by instance name.</li>
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charging type (PREPAID：monthly or yearly payment in advance | POSTPAID_BY_HOUR：hourly payment | CDHPAID：[CDH] payment (https://cloud.tencent.com/document/product/416)，only charge the fee of [CDH](https://cloud.tencent.com/document/product/416)，no charge for CVMs running on [CDH](https://cloud.tencent.com/document/product/416) )  </li>
+<li> private-ip-address - String - Required: No - (Filter condition) Filter by the private IP of the instance primary ENI.</li>
+<li> public-ip-address - String - Required: No - (Filter condition) Filter by the public IP of the instance primary ENI, including the IP automatically assigned when an instance is being created and the EIP manually bound after the instance has been created.</li>
+<li> tag-key - String - Required: No - (Filter condition) Filter by tag key.</li>
+<li> tag-value - String - Required: No - (Filter condition) Filter by tag value.</li>
+<li> tag:tag-key - String - required：No - (Filter condition) Filter by tag-key. tag-key use specific tag-key as replacement, please refer to sample 2.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `InstanceIds` and `Filters` cannot be assigned at same time.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
     */
     @SerializedName("Offset")
     @Expose
     private Integer Offset;
 
     /**
-    * 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+    * Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
     */
     @SerializedName("Limit")
     @Expose
     private Integer Limit;
 
     /**
-     * 获取按照一个或者多个实例ID查询。实例ID形如：`ins-xxxxxxxx`。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`id.N`一节）。每次请求的实例的上限为100。参数不支持同时指定`InstanceIds`和`Filters`。
-     * @return InstanceIds 按照一个或者多个实例ID查询。实例ID形如：`ins-xxxxxxxx`。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`id.N`一节）。每次请求的实例的上限为100。参数不支持同时指定`InstanceIds`和`Filters`。
+     * query by one or more Instance IDs, such as：`ins-xxxxxxxx`。（the format of parameter refer to API[introduction](chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)). the upper limit of instances IDs of each query is 100, `InstanceIds` and `Filters` cannot be assigned at same time
+     * @return InstanceIds query by one or more Instance IDs, such as：`ins-xxxxxxxx`。（the format of parameter refer to API[introduction](chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)). the upper limit of instances IDs of each query is 100, `InstanceIds` and `Filters` cannot be assigned at same time
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * 设置按照一个或者多个实例ID查询。实例ID形如：`ins-xxxxxxxx`。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`id.N`一节）。每次请求的实例的上限为100。参数不支持同时指定`InstanceIds`和`Filters`。
-     * @param InstanceIds 按照一个或者多个实例ID查询。实例ID形如：`ins-xxxxxxxx`。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的`id.N`一节）。每次请求的实例的上限为100。参数不支持同时指定`InstanceIds`和`Filters`。
+     * Set query by one or more Instance IDs, such as：`ins-xxxxxxxx`。（the format of parameter refer to API[introduction](chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)). the upper limit of instances IDs of each query is 100, `InstanceIds` and `Filters` cannot be assigned at same time
+     * @param InstanceIds query by one or more Instance IDs, such as：`ins-xxxxxxxx`。（the format of parameter refer to API[introduction](chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)). the upper limit of instances IDs of each query is 100, `InstanceIds` and `Filters` cannot be assigned at same time
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * 获取过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可通过调用[DescribeProject](https://cloud.tencent.com/document/api/378/4400)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/378/4398)创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照[CDH](https://cloud.tencent.com/document/product/416) ID过滤。[CDH](https://cloud.tencent.com/document/product/416) ID形如：host-xxxxxxxx。</li>
-<li> vpc-id - String - 是否必填：否 - （过滤条件）按照VPC ID进行过滤。VPC ID形如：vpc-xxxxxxxx。</li>
-<li> subnet-id - String - 是否必填：否 - （过滤条件）按照子网ID进行过滤。子网ID形如：subnet-xxxxxxxx。</li>
-<li> instance-id - String - 是否必填：否 - （过滤条件）按照实例ID过滤。实例ID形如：ins-xxxxxxxx。</li>
-<li> security-group-id - String - 是否必填：否 - （过滤条件）按照安全组ID过滤，安全组ID形如: sg-8jlk3f3r。</li>
-<li> instance-name - String - 是否必填：否 - （过滤条件）按照实例名称过滤。</li>
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。 )  </li>
-<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的内网IP过滤。</li>
-<li> public-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的公网IP过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>
-<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
-     * @return Filters 过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可通过调用[DescribeProject](https://cloud.tencent.com/document/api/378/4400)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/378/4398)创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照[CDH](https://cloud.tencent.com/document/product/416) ID过滤。[CDH](https://cloud.tencent.com/document/product/416) ID形如：host-xxxxxxxx。</li>
-<li> vpc-id - String - 是否必填：否 - （过滤条件）按照VPC ID进行过滤。VPC ID形如：vpc-xxxxxxxx。</li>
-<li> subnet-id - String - 是否必填：否 - （过滤条件）按照子网ID进行过滤。子网ID形如：subnet-xxxxxxxx。</li>
-<li> instance-id - String - 是否必填：否 - （过滤条件）按照实例ID过滤。实例ID形如：ins-xxxxxxxx。</li>
-<li> security-group-id - String - 是否必填：否 - （过滤条件）按照安全组ID过滤，安全组ID形如: sg-8jlk3f3r。</li>
-<li> instance-name - String - 是否必填：否 - （过滤条件）按照实例名称过滤。</li>
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。 )  </li>
-<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的内网IP过滤。</li>
-<li> public-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的公网IP过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>
-<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
+     * obtain filter conditions
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - required：No -(Filter condition) Filter by Project ID.By calling [DescribeProject](https://cloud.tencent.com/document/api/378/4400) to enquire the created projects list or log in the console to get it (https://console.cloud.tencent.com/cvm/index)；creating new projects by calling [AddProject](https://cloud.tencent.com/document/api/378/4398)</li>
+<li> host-id - String - required：No - (Filter condition) Filter by [CDH] ID(https://cloud.tencent.com/document/product/416) .[CDH](https://cloud.tencent.com/document/product/416) sample of ID：host-xxxxxxxx.</li>
+<li> vpc-id - String - required：No - (Filter condition) Filter by ID of VPC, sample ofVPC ID：vpc-xxxxxxxx.</li>
+<li> subnet-id - String - required：No - (Filter condition) Filter by ID of subnet, sample of Subnet ID：subnet-xxxxxxxx.</li>
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID, sample of instance ID: ins-xxxxxxxx.</li>
+<li> security-group-id - String - Required: No - (Filter condition) Filter by Security Group ID，sample of security group ID : sg-8jlk3f3r.</li>
+<li> instance-name - String - Required: No - (Filter condition) Filter by instance name.</li>
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charging type (PREPAID：monthly or yearly payment in advance | POSTPAID_BY_HOUR：hourly payment | CDHPAID：[CDH] payment (https://cloud.tencent.com/document/product/416)，only charge the fee of [CDH](https://cloud.tencent.com/document/product/416)，no charge for CVMs running on [CDH](https://cloud.tencent.com/document/product/416) )  </li>
+<li> private-ip-address - String - Required: No - (Filter condition) Filter by the private IP of the instance primary ENI.</li>
+<li> public-ip-address - String - Required: No - (Filter condition) Filter by the public IP of the instance primary ENI, including the IP automatically assigned when an instance is being created and the EIP manually bound after the instance has been created.</li>
+<li> tag-key - String - Required: No - (Filter condition) Filter by tag key.</li>
+<li> tag-value - String - Required: No - (Filter condition) Filter by tag value.</li>
+<li> tag:tag-key - String - required：No - (Filter condition) Filter by tag-key. tag-key use specific tag-key as replacement, please refer to sample 2.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `InstanceIds` and `Filters` cannot be assigned at same time.
+     * @return Filters filter conditions.
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - required：No -(Filter condition) Filter by Project ID.By calling [DescribeProject](https://cloud.tencent.com/document/api/378/4400) to enquire the created projects list or log in the console to get it (https://console.cloud.tencent.com/cvm/index)；creating new projects by calling [AddProject](https://cloud.tencent.com/document/api/378/4398)</li>
+<li> host-id - String - required：No - (Filter condition) Filter by [CDH] ID(https://cloud.tencent.com/document/product/416) .[CDH](https://cloud.tencent.com/document/product/416) sample of ID：host-xxxxxxxx.</li>
+<li> vpc-id - String - required：No - (Filter condition) Filter by ID of VPC, sample ofVPC ID：vpc-xxxxxxxx.</li>
+<li> subnet-id - String - required：No - (Filter condition) Filter by ID of subnet, sample of Subnet ID：subnet-xxxxxxxx.</li>
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID, sample of instance ID: ins-xxxxxxxx.</li>
+<li> security-group-id - String - Required: No - (Filter condition) Filter by Security Group ID，sample of security group ID : sg-8jlk3f3r.</li>
+<li> instance-name - String - Required: No - (Filter condition) Filter by instance name.</li>
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charging type (PREPAID：monthly or yearly payment in advance | POSTPAID_BY_HOUR：hourly payment | CDHPAID：[CDH] payment (https://cloud.tencent.com/document/product/416)，only charge the fee of [CDH](https://cloud.tencent.com/document/product/416)，no charge for CVMs running on [CDH](https://cloud.tencent.com/document/product/416) )  </li>
+<li> private-ip-address - String - Required: No - (Filter condition) Filter by the private IP of the instance primary ENI.</li>
+<li> public-ip-address - String - Required: No - (Filter condition) Filter by the public IP of the instance primary ENI, including the IP automatically assigned when an instance is being created and the EIP manually bound after the instance has been created.</li>
+<li> tag-key - String - Required: No - (Filter condition) Filter by tag key.</li>
+<li> tag-value - String - Required: No - (Filter condition) Filter by tag value.</li>
+<li> tag:tag-key - String - required：No - (Filter condition) Filter by tag-key. tag-key use specific tag-key as replacement, please refer to sample 2.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `InstanceIds` and `Filters` cannot be assigned at same time.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * 设置过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可通过调用[DescribeProject](https://cloud.tencent.com/document/api/378/4400)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/378/4398)创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照[CDH](https://cloud.tencent.com/document/product/416) ID过滤。[CDH](https://cloud.tencent.com/document/product/416) ID形如：host-xxxxxxxx。</li>
-<li> vpc-id - String - 是否必填：否 - （过滤条件）按照VPC ID进行过滤。VPC ID形如：vpc-xxxxxxxx。</li>
-<li> subnet-id - String - 是否必填：否 - （过滤条件）按照子网ID进行过滤。子网ID形如：subnet-xxxxxxxx。</li>
-<li> instance-id - String - 是否必填：否 - （过滤条件）按照实例ID过滤。实例ID形如：ins-xxxxxxxx。</li>
-<li> security-group-id - String - 是否必填：否 - （过滤条件）按照安全组ID过滤，安全组ID形如: sg-8jlk3f3r。</li>
-<li> instance-name - String - 是否必填：否 - （过滤条件）按照实例名称过滤。</li>
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。 )  </li>
-<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的内网IP过滤。</li>
-<li> public-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的公网IP过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>
-<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
-     * @param Filters 过滤条件。
-<li> zone - String - 是否必填：否 -（过滤条件）按照可用区过滤。</li>
-<li> project-id - Integer - 是否必填：否 -（过滤条件）按照项目ID过滤。可通过调用[DescribeProject](https://cloud.tencent.com/document/api/378/4400)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/378/4398)创建新的项目。</li>
-<li> host-id - String - 是否必填：否 - （过滤条件）按照[CDH](https://cloud.tencent.com/document/product/416) ID过滤。[CDH](https://cloud.tencent.com/document/product/416) ID形如：host-xxxxxxxx。</li>
-<li> vpc-id - String - 是否必填：否 - （过滤条件）按照VPC ID进行过滤。VPC ID形如：vpc-xxxxxxxx。</li>
-<li> subnet-id - String - 是否必填：否 - （过滤条件）按照子网ID进行过滤。子网ID形如：subnet-xxxxxxxx。</li>
-<li> instance-id - String - 是否必填：否 - （过滤条件）按照实例ID过滤。实例ID形如：ins-xxxxxxxx。</li>
-<li> security-group-id - String - 是否必填：否 - （过滤条件）按照安全组ID过滤，安全组ID形如: sg-8jlk3f3r。</li>
-<li> instance-name - String - 是否必填：否 - （过滤条件）按照实例名称过滤。</li>
-<li> instance-charge-type - String - 是否必填：否 -（过滤条件）按照实例计费模式过滤。 (PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。 )  </li>
-<li> private-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的内网IP过滤。</li>
-<li> public-ip-address - String - 是否必填：否 - （过滤条件）按照实例主网卡的公网IP过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</li>
-<li> tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。</li>
-<li> tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。</li>
-<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例2。</li>
-每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。
+     * Set filter conditions
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - required：No -(Filter condition) Filter by Project ID.By calling [DescribeProject](https://cloud.tencent.com/document/api/378/4400) to enquire the created projects list or log in the console to get it (https://console.cloud.tencent.com/cvm/index)；creating new projects by calling [AddProject](https://cloud.tencent.com/document/api/378/4398)</li>
+<li> host-id - String - required：No - (Filter condition) Filter by [CDH] ID(https://cloud.tencent.com/document/product/416) .[CDH](https://cloud.tencent.com/document/product/416) sample of ID：host-xxxxxxxx.</li>
+<li> vpc-id - String - required：No - (Filter condition) Filter by ID of VPC, sample ofVPC ID：vpc-xxxxxxxx.</li>
+<li> subnet-id - String - required：No - (Filter condition) Filter by ID of subnet, sample of Subnet ID：subnet-xxxxxxxx.</li>
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID, sample of instance ID: ins-xxxxxxxx.</li>
+<li> security-group-id - String - Required: No - (Filter condition) Filter by Security Group ID，sample of security group ID : sg-8jlk3f3r.</li>
+<li> instance-name - String - Required: No - (Filter condition) Filter by instance name.</li>
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charging type (PREPAID：monthly or yearly payment in advance | POSTPAID_BY_HOUR：hourly payment | CDHPAID：[CDH] payment (https://cloud.tencent.com/document/product/416)，only charge the fee of [CDH](https://cloud.tencent.com/document/product/416)，no charge for CVMs running on [CDH](https://cloud.tencent.com/document/product/416) )  </li>
+<li> private-ip-address - String - Required: No - (Filter condition) Filter by the private IP of the instance primary ENI.</li>
+<li> public-ip-address - String - Required: No - (Filter condition) Filter by the public IP of the instance primary ENI, including the IP automatically assigned when an instance is being created and the EIP manually bound after the instance has been created.</li>
+<li> tag-key - String - Required: No - (Filter condition) Filter by tag key.</li>
+<li> tag-value - String - Required: No - (Filter condition) Filter by tag value.</li>
+<li> tag:tag-key - String - required：No - (Filter condition) Filter by tag-key. tag-key use specific tag-key as replacement, please refer to sample 2.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `InstanceIds` and `Filters` cannot be assigned at same time.
+     * @param Filters filter conditions
+<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> project-id - Integer - required：No -(Filter condition) Filter by Project ID.By calling [DescribeProject](https://cloud.tencent.com/document/api/378/4400) to enquire the created projects list or log in the console to get it (https://console.cloud.tencent.com/cvm/index)；creating new projects by calling [AddProject](https://cloud.tencent.com/document/api/378/4398)</li>
+<li> host-id - String - required：No - (Filter condition) Filter by [CDH] ID(https://cloud.tencent.com/document/product/416) .[CDH](https://cloud.tencent.com/document/product/416) sample of ID：host-xxxxxxxx.</li>
+<li> vpc-id - String - required：No - (Filter condition) Filter by ID of VPC, sample ofVPC ID：vpc-xxxxxxxx.</li>
+<li> subnet-id - String - required：No - (Filter condition) Filter by ID of subnet, sample of Subnet ID：subnet-xxxxxxxx.</li>
+<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID, sample of instance ID: ins-xxxxxxxx.</li>
+<li> security-group-id - String - Required: No - (Filter condition) Filter by Security Group ID，sample of security group ID : sg-8jlk3f3r.</li>
+<li> instance-name - String - Required: No - (Filter condition) Filter by instance name.</li>
+<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charging type (PREPAID：monthly or yearly payment in advance | POSTPAID_BY_HOUR：hourly payment | CDHPAID：[CDH] payment (https://cloud.tencent.com/document/product/416)，only charge the fee of [CDH](https://cloud.tencent.com/document/product/416)，no charge for CVMs running on [CDH](https://cloud.tencent.com/document/product/416) )  </li>
+<li> private-ip-address - String - Required: No - (Filter condition) Filter by the private IP of the instance primary ENI.</li>
+<li> public-ip-address - String - Required: No - (Filter condition) Filter by the public IP of the instance primary ENI, including the IP automatically assigned when an instance is being created and the EIP manually bound after the instance has been created.</li>
+<li> tag-key - String - Required: No - (Filter condition) Filter by tag key.</li>
+<li> tag-value - String - Required: No - (Filter condition) Filter by tag value.</li>
+<li> tag:tag-key - String - required：No - (Filter condition) Filter by tag-key. tag-key use specific tag-key as replacement, please refer to sample 2.</li>
+The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `InstanceIds` and `Filters` cannot be assigned at same time.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * 获取偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * @return Offset Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
      */
     public Integer getOffset() {
         return this.Offset;
     }
 
     /**
-     * 设置偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Offset 偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * @param Offset Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * 获取返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @return Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
      */
     public Integer getLimit() {
         return this.Limit;
     }
 
     /**
-     * 设置返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
-     * @param Limit 返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。
+     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
      */
     public void setLimit(Integer Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * Internal implementation, reserved from use 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

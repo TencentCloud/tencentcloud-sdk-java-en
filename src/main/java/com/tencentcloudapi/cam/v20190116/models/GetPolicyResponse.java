@@ -23,198 +23,168 @@ import java.util.HashMap;
 public class GetPolicyResponse  extends AbstractModel{
 
     /**
-    * 策略名
-注意：此字段可能返回 null，表示取不到有效值。
+    * Policy NameNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("PolicyName")
     @Expose
     private String PolicyName;
 
     /**
-    * 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
+    * Policy DescriptionNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * 1 表示自定义策略，2 表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
+    * 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Type")
     @Expose
     private Long Type;
 
     /**
-    * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+    * Policy Creation TimeNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("AddTime")
     @Expose
     private String AddTime;
 
     /**
-    * 最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+    * Latest Update TimeNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("UpdateTime")
     @Expose
     private String UpdateTime;
 
     /**
-    * 策略文档
-注意：此字段可能返回 null，表示取不到有效值。
+    * Policy DocumentationNote: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("PolicyDocument")
     @Expose
     private String PolicyDocument;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取策略名
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return PolicyName 策略名
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting Policy NameNote: This field may return null, indicating that no valid value was found.
+     * @return PolicyName Policy NameNote: This field may return null, indicating that no valid value was found.
      */
     public String getPolicyName() {
         return this.PolicyName;
     }
 
     /**
-     * 设置策略名
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param PolicyName 策略名
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring Policy NameNote: This field may return null, indicating that no valid value was found.
+     * @param PolicyName Policy NameNote: This field may return null, indicating that no valid value was found.
      */
     public void setPolicyName(String PolicyName) {
         this.PolicyName = PolicyName;
     }
 
     /**
-     * 获取策略描述
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Description 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting Policy DescriptionNote: This field may return null, indicating that no valid value was found.
+     * @return Description Policy descriptionNote: This field may return null, indicating that no valid value was found.
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * 设置策略描述
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Description 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring Policy DescriptionNote: This field may return null, indicating that no valid value was found.
+     * @param Description Policy descriptionNote: This field may return null, indicating that no valid value was found.
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * 获取1 表示自定义策略，2 表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return Type 1 表示自定义策略，2 表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
+     * 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
+     * @return Type 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
      */
     public Long getType() {
         return this.Type;
     }
 
     /**
-     * 设置1 表示自定义策略，2 表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param Type 1 表示自定义策略，2 表示预设策略
-注意：此字段可能返回 null，表示取不到有效值。
+     * 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
+     * @param Type 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
      */
     public void setType(Long Type) {
         this.Type = Type;
     }
 
     /**
-     * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return AddTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting Policy Creation Time.Note: This field may return null, indicating that no valid value was found.
+     * @return AddTime Policy Creation TimeNote: This field may return null, indicating that no valid value was found.
      */
     public String getAddTime() {
         return this.AddTime;
     }
 
     /**
-     * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param AddTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring Policy Creation TimeNote: This field may return null, indicating that no valid value was found.
+     * @param AddTime Policy creation timeNote: This field may return null, indicating that no valid value was found.
      */
     public void setAddTime(String AddTime) {
         this.AddTime = AddTime;
     }
 
     /**
-     * 获取最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return UpdateTime 最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting Latest Update TimeNote: This field may return null, indicating that no valid value was found.
+     * @return UpdateTime Time of the latest updateNote: This field may return null, indicating that no valid value was found.
      */
     public String getUpdateTime() {
         return this.UpdateTime;
     }
 
     /**
-     * 设置最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param UpdateTime 最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
+     * Setting Latest Update TimeNote: This field may return null, indicating that no valid value was found.
+     * @param UpdateTime Time of the latest updateNote: This field may return null, indicating that no valid value was found.
      */
     public void setUpdateTime(String UpdateTime) {
         this.UpdateTime = UpdateTime;
     }
 
     /**
-     * 获取策略文档
-注意：此字段可能返回 null，表示取不到有效值。
-     * @return PolicyDocument 策略文档
-注意：此字段可能返回 null，表示取不到有效值。
+     * Getting Policy DocumentationNote: This field may return null, indicating that no valid value was found.
+     * @return PolicyDocument Policy documentationNote: This field may return null, indicating that no valid value was found.
      */
     public String getPolicyDocument() {
         return this.PolicyDocument;
     }
 
     /**
-     * 设置策略文档
-注意：此字段可能返回 null，表示取不到有效值。
-     * @param PolicyDocument 策略文档
-注意：此字段可能返回 null，表示取不到有效值。
+     * Configuring Policy DocumentationNote: This field may return null, indicating that no valid value was found.
+     * @param PolicyDocument Policy documentationNote: This field may return null, indicating that no valid value was found.
      */
     public void setPolicyDocument(String PolicyDocument) {
         this.PolicyDocument = PolicyDocument;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Getting unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @return RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configuring RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyName", this.PolicyName);

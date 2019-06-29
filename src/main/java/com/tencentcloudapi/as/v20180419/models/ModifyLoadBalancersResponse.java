@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ModifyLoadBalancersResponse  extends AbstractModel{
 
     /**
-    * 伸缩活动ID
+    * Scaling Activity ID
     */
     @SerializedName("ActivityId")
     @Expose
     private String ActivityId;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * The unique ID of a request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取伸缩活动ID
-     * @return ActivityId 伸缩活动ID
+     * Obtain Scaling Activity ID
+     * @return ActivityId Scaling Activity ID
      */
     public String getActivityId() {
         return this.ActivityId;
     }
 
     /**
-     * 设置伸缩活动ID
-     * @param ActivityId 伸缩活动ID
+     * Set Scaling Activity ID
+     * @param ActivityId Scaling Activity ID
      */
     public void setActivityId(String ActivityId) {
         this.ActivityId = ActivityId;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID returned for a request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Configure the unique ID of a request, which is required for each troubleshooting case.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ActivityId", this.ActivityId);

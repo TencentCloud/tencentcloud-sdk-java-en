@@ -23,122 +23,122 @@ import java.util.HashMap;
 public class InquiryPriceResetInstanceRequest  extends AbstractModel{
 
     /**
-    * 实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
+    * Instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * 指定有效的[镜像](/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
+    * Specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * 实例系统盘配置信息。系统盘为云盘的实例可以通过该参数指定重装后的系统盘大小来实现对系统盘的扩容操作，若不指定则默认系统盘大小保持不变。系统盘大小只支持扩容不支持缩容；重装只支持修改系统盘的大小，不能修改系统盘的类型。
+    * Configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
     */
     @SerializedName("SystemDisk")
     @Expose
     private SystemDisk SystemDisk;
 
     /**
-    * 实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
+    * Login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
     */
     @SerializedName("LoginSettings")
     @Expose
     private LoginSettings LoginSettings;
 
     /**
-    * 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+    * Enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
     */
     @SerializedName("EnhancedService")
     @Expose
     private EnhancedService EnhancedService;
 
     /**
-     * 获取实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
-     * @return InstanceId 实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
+     * Get instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
+     * @return InstanceId Instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * 设置实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
-     * @param InstanceId 实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。
+     * Set instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
+     * @param InstanceId Instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * 获取指定有效的[镜像](/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
-     * @return ImageId 指定有效的[镜像](/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
+     * Get specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
+     * @return ImageId Specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * 设置指定有效的[镜像](/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
-     * @param ImageId 指定有效的[镜像](/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，取返回信息中的`ImageId`字段。</li>
+     * Set specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
+     * Set specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * 获取实例系统盘配置信息。系统盘为云盘的实例可以通过该参数指定重装后的系统盘大小来实现对系统盘的扩容操作，若不指定则默认系统盘大小保持不变。系统盘大小只支持扩容不支持缩容；重装只支持修改系统盘的大小，不能修改系统盘的类型。
-     * @return SystemDisk 实例系统盘配置信息。系统盘为云盘的实例可以通过该参数指定重装后的系统盘大小来实现对系统盘的扩容操作，若不指定则默认系统盘大小保持不变。系统盘大小只支持扩容不支持缩容；重装只支持修改系统盘的大小，不能修改系统盘的类型。
+     * Get configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
+     * @return SystemDisk  Configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
      */
     public SystemDisk getSystemDisk() {
         return this.SystemDisk;
     }
 
     /**
-     * 设置实例系统盘配置信息。系统盘为云盘的实例可以通过该参数指定重装后的系统盘大小来实现对系统盘的扩容操作，若不指定则默认系统盘大小保持不变。系统盘大小只支持扩容不支持缩容；重装只支持修改系统盘的大小，不能修改系统盘的类型。
-     * @param SystemDisk 实例系统盘配置信息。系统盘为云盘的实例可以通过该参数指定重装后的系统盘大小来实现对系统盘的扩容操作，若不指定则默认系统盘大小保持不变。系统盘大小只支持扩容不支持缩容；重装只支持修改系统盘的大小，不能修改系统盘的类型。
+     * Set configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
+     * @param SystemDisk Configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
      */
     public void setSystemDisk(SystemDisk SystemDisk) {
         this.SystemDisk = SystemDisk;
     }
 
     /**
-     * 获取实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
-     * @return LoginSettings 实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
+     * Get login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
+     * @return LoginSettings Login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
      */
     public LoginSettings getLoginSettings() {
         return this.LoginSettings;
     }
 
     /**
-     * 设置实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
-     * @param LoginSettings 实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。
+     * Set login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
+     * @param LoginSettings Login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
      */
     public void setLoginSettings(LoginSettings LoginSettings) {
         this.LoginSettings = LoginSettings;
     }
 
     /**
-     * 获取增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
-     * @return EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+     * Get enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
+     * @return EnhancedService Enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
      */
     public EnhancedService getEnhancedService() {
         return this.EnhancedService;
     }
 
     /**
-     * 设置增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
-     * @param EnhancedService 增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。
+     * Set enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
+     * @param EnhancedService Enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
      */
     public void setEnhancedService(EnhancedService EnhancedService) {
         this.EnhancedService = EnhancedService;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);

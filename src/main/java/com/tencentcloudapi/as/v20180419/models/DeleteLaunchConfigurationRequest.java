@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteLaunchConfigurationRequest  extends AbstractModel{
 
     /**
-    * 需要删除的启动配置ID。
+    * The launch configuration that needs to be deleted.
     */
     @SerializedName("LaunchConfigurationId")
     @Expose
     private String LaunchConfigurationId;
 
     /**
-     * 获取需要删除的启动配置ID。
-     * @return LaunchConfigurationId 需要删除的启动配置ID。
+     * Get the ID of the launch configuration to be deleted.
+     * @return LaunchConfigurationId ID of the launch configuration to be deleted
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * 设置需要删除的启动配置ID。
-     * @param LaunchConfigurationId 需要删除的启动配置ID。
+     * Set the ID of the launch configuration to be deleted.
+     * @param LaunchConfigurationId ID of the launch configuration to be deleted 
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LaunchConfigurationId", this.LaunchConfigurationId);

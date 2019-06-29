@@ -23,260 +23,260 @@ import java.util.HashMap;
 public class GroupMemberInfo  extends AbstractModel{
 
     /**
-    * 子用户 Uid。
+    * Sub-user UID
     */
     @SerializedName("Uid")
     @Expose
     private Long Uid;
 
     /**
-    * 子用户 Uin。
+    * Sub-user UIN
     */
     @SerializedName("Uin")
     @Expose
     private Long Uin;
 
     /**
-    * 子用户名称。
+    * Sub-user name.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * 手机号。
+    * Mobile number
     */
     @SerializedName("PhoneNum")
     @Expose
     private String PhoneNum;
 
     /**
-    * 手机区域代码。
+    * Mobile number area code.
     */
     @SerializedName("CountryCode")
     @Expose
     private String CountryCode;
 
     /**
-    * 是否已验证手机。
+    * Whether mobile number is verified.
     */
     @SerializedName("PhoneFlag")
     @Expose
     private Long PhoneFlag;
 
     /**
-    * 邮箱地址。
+    * Email
     */
     @SerializedName("Email")
     @Expose
     private String Email;
 
     /**
-    * 是否已验证邮箱。
+    * If email has been verified.
     */
     @SerializedName("EmailFlag")
     @Expose
     private Long EmailFlag;
 
     /**
-    * 用户类型。
+    * User type.
     */
     @SerializedName("UserType")
     @Expose
     private Long UserType;
 
     /**
-    * 创建时间。
+    * Creation time.
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * 是否为主消息接收人。
+    * If it is the main message receiver.
     */
     @SerializedName("IsReceiverOwner")
     @Expose
     private Long IsReceiverOwner;
 
     /**
-     * 获取子用户 Uid。
-     * @return Uid 子用户 Uid。
+     * Obtain sub-user Uid.
+     * @return Uid sub-user Uid.
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * 设置子用户 Uid。
-     * @param Uid 子用户 Uid。
+     * Set sub-user Uid.
+     * @param Uid sub-user Uid.
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * 获取子用户 Uin。
-     * @return Uin 子用户 Uin。
+     * Obtain sub-user Uin.
+     * @return Uin sub-user Uin.
      */
     public Long getUin() {
         return this.Uin;
     }
 
     /**
-     * 设置子用户 Uin。
-     * @param Uin 子用户 Uin。
+     * Set sub-user Uin.
+     * @param Uin sub-user Uin.
      */
     public void setUin(Long Uin) {
         this.Uin = Uin;
     }
 
     /**
-     * 获取子用户名称。
-     * @return Name 子用户名称。
+     * Obtain sub-user name.
+     * @return Name sub-user name.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * 设置子用户名称。
-     * @param Name 子用户名称。
+     * Set sub-user name.
+     * @param Name sub-user name.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * 获取手机号。
-     * @return PhoneNum 手机号。
+     * Obtain mobile number 
+     * @return PhoneNum return cell phone number.
      */
     public String getPhoneNum() {
         return this.PhoneNum;
     }
 
     /**
-     * 设置手机号。
-     * @param PhoneNum 手机号。
+     * Set mobile number
+     * @param PhoneNum set cell phone number.
      */
     public void setPhoneNum(String PhoneNum) {
         this.PhoneNum = PhoneNum;
     }
 
     /**
-     * 获取手机区域代码。
-     * @return CountryCode 手机区域代码。
+     * Obtain mobile number area code.
+     * @return CountryCode mobile number area code.
      */
     public String getCountryCode() {
         return this.CountryCode;
     }
 
     /**
-     * 设置手机区域代码。
-     * @param CountryCode 手机区域代码。
+     * Set obile phone area code.
+     * @param CountryCode mobile phone area code.
      */
     public void setCountryCode(String CountryCode) {
         this.CountryCode = CountryCode;
     }
 
     /**
-     * 获取是否已验证手机。
-     * @return PhoneFlag 是否已验证手机。
+     * Get whether mobile number has been verified.
+     * @return PhoneFlag whether mobile number has been verified.
      */
     public Long getPhoneFlag() {
         return this.PhoneFlag;
     }
 
     /**
-     * 设置是否已验证手机。
-     * @param PhoneFlag 是否已验证手机。
+     * Set whether mobile number has been verified.
+     * @param PhoneFlag whether mobile number has been verified.
      */
     public void setPhoneFlag(Long PhoneFlag) {
         this.PhoneFlag = PhoneFlag;
     }
 
     /**
-     * 获取邮箱地址。
-     * @return Email 邮箱地址。
+     * Obtain email address.
+     * @return Email address
      */
     public String getEmail() {
         return this.Email;
     }
 
     /**
-     * 设置邮箱地址。
-     * @param Email 邮箱地址。
+     * Set email address.
+     * @param Email email address.
      */
     public void setEmail(String Email) {
         this.Email = Email;
     }
 
     /**
-     * 获取是否已验证邮箱。
-     * @return EmailFlag 是否已验证邮箱。
+     * Obtain wether email has been verified.
+     * @return EmailFlag whether email has been verified.
      */
     public Long getEmailFlag() {
         return this.EmailFlag;
     }
 
     /**
-     * 设置是否已验证邮箱。
-     * @param EmailFlag 是否已验证邮箱。
+     * Set whether email has been verified.
+     * @param EmailFlag whether email has been verified.
      */
     public void setEmailFlag(Long EmailFlag) {
         this.EmailFlag = EmailFlag;
     }
 
     /**
-     * 获取用户类型。
-     * @return UserType 用户类型。
+     * Obtain user type.
+     * @return UserType.
      */
     public Long getUserType() {
         return this.UserType;
     }
 
     /**
-     * 设置用户类型。
-     * @param UserType 用户类型。
+     * Set user type.
+     * @param UserType user type.
      */
     public void setUserType(Long UserType) {
         this.UserType = UserType;
     }
 
     /**
-     * 获取创建时间。
-     * @return CreateTime 创建时间。
+     * Obtain creation time.
+     * @return CreateTime return creation time.
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * 设置创建时间。
-     * @param CreateTime 创建时间。
+     * Set creation time.
+     * @param CreateTime creation time.
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * 获取是否为主消息接收人。
-     * @return IsReceiverOwner 是否为主消息接收人。
+     * Obtain whether it is main message receiver.
+     * @return IsReceiverOwner whether it is the main message receiver.
      */
     public Long getIsReceiverOwner() {
         return this.IsReceiverOwner;
     }
 
     /**
-     * 设置是否为主消息接收人。
-     * @param IsReceiverOwner 是否为主消息接收人。
+     * Set whether it is the main message receiver.
+     * @param IsReceiverOwner whether it is the main message receiver.
      */
     public void setIsReceiverOwner(Long IsReceiverOwner) {
         this.IsReceiverOwner = IsReceiverOwner;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uid", this.Uid);

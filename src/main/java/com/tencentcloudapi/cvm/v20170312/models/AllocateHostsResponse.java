@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class AllocateHostsResponse  extends AbstractModel{
 
     /**
-    * 新创建云子机的实例id列表。
+    * List of IDs of CVM instances newly created on CDH
     */
     @SerializedName("HostIdSet")
     @Expose
     private String [] HostIdSet;
 
     /**
-    * 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+    * Unique request ID, will return in every request, which is required for each troubleshooting case.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * 获取新创建云子机的实例id列表。
-     * @return HostIdSet 新创建云子机的实例id列表。
+     * Get list of IDs of CVM instances newly created on CDH
+     * @return HostIdSet List of IDs of CVM instances created on CDH.
      */
     public String [] getHostIdSet() {
         return this.HostIdSet;
     }
 
     /**
-     * 设置新创建云子机的实例id列表。
-     * @param HostIdSet 新创建云子机的实例id列表。
+     * Set list of IDs of CVM instances newly created on CDH
+     * @param HostIdSet List of IDs of CVM instances newly created on CDH
      */
     public void setHostIdSet(String [] HostIdSet) {
         this.HostIdSet = HostIdSet;
     }
 
     /**
-     * 获取唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @return RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Get unique request ID, will return in every request, which is required for each troubleshooting case.
+     * @return RequestId unique request ID, will return in every request, which is required for each troubleshooting case.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * 设置唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
-     * @param RequestId 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。
+     * Set unique request ID, will return in every request, which is required for each troubleshooting case.
+     * @param RequestId unique request ID, will return in every request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "HostIdSet.", this.HostIdSet);

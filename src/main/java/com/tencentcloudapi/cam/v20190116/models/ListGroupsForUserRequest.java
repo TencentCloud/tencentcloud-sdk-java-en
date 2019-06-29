@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ListGroupsForUserRequest  extends AbstractModel{
 
     /**
-    * 子用户 UID
+    * Sub-user UID
     */
     @SerializedName("Uid")
     @Expose
     private Long Uid;
 
     /**
-    * 每页数量。默认为20。
+    * Number each page. Default is 20.
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-    * 页码。默认为1。
+    * Page number. Default is 1.
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-     * 获取子用户 UID
-     * @return Uid 子用户 UID
+     * Getting Sub-user User ID
+     * @return Uid Sub-user User ID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * 设置子用户 UID
-     * @param Uid 子用户 UID
+     * Configuring Sub-user UID
+     * @param Uid Sub-user UID
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * 获取每页数量。默认为20。
-     * @return Rp 每页数量。默认为20。
+     * Obtain number per page. Default is 20.
+     * @return Rp number per page. Default is 20.
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * 设置每页数量。默认为20。
-     * @param Rp 每页数量。默认为20。
+     * Set number per page. Default is 20.
+     * @param Rp number per page. Default is 20.
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * 获取页码。默认为1。
-     * @return Page 页码。默认为1。
+     * Obtain page number. Default is 1.
+     * @return Page page number. Default is 1.
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * 设置页码。默认为1。
-     * @param Page 页码。默认为1。
+     * Set page number. Default is 1.
+     * @param Page page number. Default is 1.
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only. 
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uid", this.Uid);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class TagSpecification  extends AbstractModel{
 
     /**
-    * 标签绑定的资源类型，当前支持类型："instance"和"host"
+    * Type of resource bound to a tag. Only type "instance" and "host" are supported.
     */
     @SerializedName("ResourceType")
     @Expose
     private String ResourceType;
 
     /**
-    * 标签对列表
+    * List of tag pairs
     */
     @SerializedName("Tags")
     @Expose
     private Tag [] Tags;
 
     /**
-     * 获取标签绑定的资源类型，当前支持类型："instance"和"host"
-     * @return ResourceType 标签绑定的资源类型，当前支持类型："instance"和"host"
+     * Obtain type of resource bound to a tag. Only type "instance" and "host" are supported.
+     * @return ResourceType type of resource bound to a tag. Only type "instance" and "host" are supported.
      */
     public String getResourceType() {
         return this.ResourceType;
     }
 
     /**
-     * 设置标签绑定的资源类型，当前支持类型："instance"和"host"
-     * @param ResourceType 标签绑定的资源类型，当前支持类型："instance"和"host"
+     * Set type of resource bound to a tag. Only type "instance" and "host" are supported.
+     * @param ResourceType type of resource bound to a tag. Only type "instance" and "host" are supported.
      */
     public void setResourceType(String ResourceType) {
         this.ResourceType = ResourceType;
     }
 
     /**
-     * 获取标签对列表
-     * @return Tags 标签对列表
+     * Obtain ist of tag pairs
+     * @return Tags List of tag pairs
      */
     public Tag [] getTags() {
         return this.Tags;
     }
 
     /**
-     * 设置标签对列表
-     * @param Tags 标签对列表
+     * Set list of tag pairs
+     * @param Tags List of tag pairs
      */
     public void setTags(Tag [] Tags) {
         this.Tags = Tags;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ResourceType", this.ResourceType);

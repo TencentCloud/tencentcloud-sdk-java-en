@@ -23,44 +23,44 @@ import java.util.HashMap;
 public class RegionInfo  extends AbstractModel{
 
     /**
-    * 地域名称，例如，ap-guangzhou
+    * Region name. For example, ap-guangzhou
     */
     @SerializedName("Region")
     @Expose
     private String Region;
 
     /**
-    * 地域描述，例如，华南地区(广州)
+    * Region description. For example, South China (Guangzhou)
     */
     @SerializedName("RegionName")
     @Expose
     private String RegionName;
 
     /**
-    * 地域是否可用状态
+    * Whether the region is available
     */
     @SerializedName("RegionState")
     @Expose
     private String RegionState;
 
     /**
-     * 获取地域名称，例如，ap-guangzhou
-     * @return Region 地域名称，例如，ap-guangzhou
+     * Obtain region availability zone name. For example, ap-guangzhou-3
+     * @return Region Region name, e.g. ap-guangzhou
      */
     public String getRegion() {
         return this.Region;
     }
 
     /**
-     * 设置地域名称，例如，ap-guangzhou
-     * @param Region 地域名称，例如，ap-guangzhou
+     * Set region availability zone name. For example, ap-guangzhou
+     * @param Region egion name，For example, ap-guangzhou
      */
     public void setRegion(String Region) {
         this.Region = Region;
     }
 
     /**
-     * 获取地域描述，例如，华南地区(广州)
+     * Obtain region description. For example, South China (Guangzhou)
      * @return RegionName 地域描述，例如，华南地区(广州)
      */
     public String getRegionName() {
@@ -68,31 +68,31 @@ public class RegionInfo  extends AbstractModel{
     }
 
     /**
-     * 设置地域描述，例如，华南地区(广州)
-     * @param RegionName 地域描述，例如，华南地区(广州)
+     * Setting region description. For example, South China (Guangzhou)
+     * @param RegionName region description. For example, South China (Guangzhou)
      */
     public void setRegionName(String RegionName) {
         this.RegionName = RegionName;
     }
 
     /**
-     * 获取地域是否可用状态
-     * @return RegionState 地域是否可用状态
+     * Obtaining whether the region is available.
+     * @return RegionState Whether the region is available.
      */
     public String getRegionState() {
         return this.RegionState;
     }
 
     /**
-     * 设置地域是否可用状态
-     * @param RegionState 地域是否可用状态
+     * Setting whether the region is available.
+     * @param RegionState Whether the region is available.
      */
     public void setRegionState(String RegionState) {
         this.RegionState = RegionState;
     }
 
     /**
-     * 内部实现，用户禁止调用
+     * For internal use only
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Region", this.Region);
