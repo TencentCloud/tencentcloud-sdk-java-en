@@ -69,7 +69,7 @@ public class ModifyLoadBalancersRequest  extends AbstractModel{
 
     /**
      * Set ID List of Traditional CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
-     * @param LoadBalancerIDs ID List of Traditional CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+     * @param LoadBalancerIds ID List of Traditional CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
      */
     public void setLoadBalancerIds(String [] LoadBalancerIds) {
         this.LoadBalancerIds = LoadBalancerIds;

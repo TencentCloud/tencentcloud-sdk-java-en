@@ -46,7 +46,7 @@ public class InquiryPriceResetInstancesTypeResponse  extends AbstractModel{
 
     /**
      * Configure the parameter indicates adjust the price to corresponding instance model’s.
-     * @return Price | the parameter indicates adjust the price to corresponding instance model’s.
+     * @param Price | the parameter indicates adjust the price to corresponding instance model’s.
      */
     public void setPrice(Price Price) {
         this.Price = Price;
@@ -54,7 +54,7 @@ public class InquiryPriceResetInstancesTypeResponse  extends AbstractModel{
 
     /**
      * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case. Should provide the RequestId of the request when locating the problem.
+     * @return RequestId The unique ID of a request, which is required for each troubleshooting case. Should provide the RequestId of the request when locating the problem.
      */
     public String getRequestId() {
         return this.RequestId;
