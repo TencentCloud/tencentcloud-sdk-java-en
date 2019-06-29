@@ -60,7 +60,7 @@ public class StopInstancesRequest  extends AbstractModel{
 
     /**
      * Set ID(s) of one or more instances you are working with, which can be obtained from field value `InstanceId` in the returned result of API [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728). The maximum number of instances in a batch for each request is 100.
-     * @param Instance Ids of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * @param InstanceIds Ids of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;

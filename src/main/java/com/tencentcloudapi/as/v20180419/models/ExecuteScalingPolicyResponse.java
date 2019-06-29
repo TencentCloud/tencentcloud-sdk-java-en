@@ -62,7 +62,7 @@ public class ExecuteScalingPolicyResponse  extends AbstractModel{
 
     /**
      * Configure the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;

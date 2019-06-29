@@ -39,7 +39,7 @@ public class DescribeInstanceInternetBandwidthConfigsRequest  extends AbstractMo
 
     /**
      * Set IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
-     * @param InstanceIds  ID of instances you are working with can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * @param InstanceId  ID of instances you are working with can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;

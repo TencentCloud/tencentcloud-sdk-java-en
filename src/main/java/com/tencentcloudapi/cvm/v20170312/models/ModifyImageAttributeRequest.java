@@ -53,7 +53,7 @@ public class ModifyImageAttributeRequest  extends AbstractModel{
 
     /**
      * Set up image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
-     * @param ImageIds Image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
+     * @param ImageId Image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;

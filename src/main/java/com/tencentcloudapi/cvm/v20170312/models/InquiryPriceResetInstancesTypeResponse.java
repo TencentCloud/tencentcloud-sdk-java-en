@@ -37,7 +37,7 @@ public class InquiryPriceResetInstancesTypeResponse  extends AbstractModel{
     private String RequestId;
 
     /**
-     *  Obtain the parameter indicates adjust the price to corresponding instance model’s.
+     * Obtain the parameter indicates adjust the price to corresponding instance model’s.
      * @return Price | the parameter indicates adjust the price to corresponding instance model’s.
      */
     public Price getPrice() {
@@ -45,7 +45,7 @@ public class InquiryPriceResetInstancesTypeResponse  extends AbstractModel{
     }
 
     /**
-     *  Obtain the parameter indicates adjust the price to corresponding instance model’s.
+     * Configure the parameter indicates adjust the price to corresponding instance model’s.
      * @return Price | the parameter indicates adjust the price to corresponding instance model’s.
      */
     public void setPrice(Price Price) {
@@ -54,7 +54,7 @@ public class InquiryPriceResetInstancesTypeResponse  extends AbstractModel{
 
     /**
      * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case. Should provide the RequestId of the request when locating the problem.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case. Should provide the RequestId of the request when locating the problem.
      */
     public String getRequestId() {
         return this.RequestId;
@@ -62,7 +62,7 @@ public class InquiryPriceResetInstancesTypeResponse  extends AbstractModel{
 
     /**
      * Configure the unique ID of a request, which is required for each troubleshooting case. Should provide the RequestId of the request when locating the problem.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case. Should provide the RequestId of the request when locating the problem.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case. Should provide the RequestId of the request when locating the problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;

@@ -62,7 +62,7 @@ public class CreateLaunchConfigurationResponse  extends AbstractModel{
 
     /**
      * Set unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;

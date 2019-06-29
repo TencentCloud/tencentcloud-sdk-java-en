@@ -53,7 +53,7 @@ public class RenewInstancesRequest  extends AbstractModel{
 
     /**
      * To configure ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
-     * @param Instance Ids of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * @param InstanceIds Ids of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
@@ -85,7 +85,7 @@ public class RenewInstancesRequest  extends AbstractModel{
 
     /**
      * Setting whether to renew elastic data disks，value range:<br><li>TRUE: Indicates renewing the elastic data disks mounted to the instance when renewing a prepaid instance<br><li>FALSE: Indicates not renewing the elastic data disks mounted to the instance when renewing a prepaid instance<br><br>Default: TRUE
-     * @param whether to renew elastic data disks，value range:<br><li>TRUE: Indicates renewing the elastic data disks mounted to the instance when renewing a prepaid instance<br><li>FALSE: Indicates not renewing the elastic data disks mounted to the instance when renewing a prepaid instance<br><br>Default: TRUE
+     * @param RenewPortableDataDisk whether to renew elastic data disks，value range:<br><li>TRUE: Indicates renewing the elastic data disks mounted to the instance when renewing a prepaid instance<br><li>FALSE: Indicates not renewing the elastic data disks mounted to the instance when renewing a prepaid instance<br><br>Default: TRUE
      */
     public void setRenewPortableDataDisk(Boolean RenewPortableDataDisk) {
         this.RenewPortableDataDisk = RenewPortableDataDisk;

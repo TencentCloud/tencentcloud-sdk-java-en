@@ -276,7 +276,7 @@ public class Instance  extends AbstractModel{
 
     /**
      * Configure the Instance Type.
-     * @param Instance Type Instance Type.
+     * @param InstanceType Type Instance Type.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;

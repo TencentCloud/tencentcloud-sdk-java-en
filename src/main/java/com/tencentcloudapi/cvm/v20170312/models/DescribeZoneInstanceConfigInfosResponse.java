@@ -46,7 +46,7 @@ public class DescribeZoneInstanceConfigInfosResponse  extends AbstractModel{
 
     /**
      * Set list of model information (instance model/quota information) in an availability zone.
-     * @return InstanceTypeQuotaSet List of model information in availability zone
+     * @param InstanceTypeQuotaSet List of model information in availability zone
      */
     public void setInstanceTypeQuotaSet(InstanceTypeQuotaItem [] InstanceTypeQuotaSet) {
         this.InstanceTypeQuotaSet = InstanceTypeQuotaSet;

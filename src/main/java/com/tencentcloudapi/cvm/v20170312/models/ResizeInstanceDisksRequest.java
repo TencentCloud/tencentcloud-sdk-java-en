@@ -53,7 +53,7 @@ public class ResizeInstanceDisksRequest  extends AbstractModel{
 
     /**
      * To configure ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
-     * @param InstanceIds  of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * @param InstanceId  of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;

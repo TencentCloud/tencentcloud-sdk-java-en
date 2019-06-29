@@ -39,7 +39,7 @@ public class DescribeInstanceVncUrlRequest  extends AbstractModel{
 
     /**
      * Set ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
-     * @param InstanceIds ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * @param InstanceId ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;

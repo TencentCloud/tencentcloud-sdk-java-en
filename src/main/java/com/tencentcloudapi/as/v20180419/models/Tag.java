@@ -69,7 +69,7 @@ public class Tag  extends AbstractModel{
 
     /**
      * Set tag value
-     * @param value tag value
+     * @param Value tag value
      */
     public void setValue(String Value) {
         this.Value = Value;

@@ -536,7 +536,7 @@ public class Instance  extends AbstractModel{
 
     /**
      * Set instanceState InstanceState. Value range:<br><li>PENDING: Creating<br></li><li>LAUNCH_FAILED: Creation failed<br></li><li>RUNNING: Running<br></li><li>STOPPED: Shut down<br></li><li>STARTING: Starting up<br></li><li>STOPPING: Shutting down<br></li><li>REBOOTING: Restarting<br></li><li>SHUTDOWN: To be terminated<br></li><li>TERMINATING: Terminating<br></li>
-     * @param instanceState InstanceState. Value range:<br><li>PENDING: Creating<br></li><li>LAUNCH_FAILED: Creation failed<br></li><li>RUNNING: Running<br></li><li>STOPPED: Shut down<br></li><li>STARTING: Starting up<br></li><li>STOPPING: Shutting down<br></li><li>REBOOTING: Restarting<br></li><li>SHUTDOWN: To be terminated<br></li><li>TERMINATING: Terminating<br></li>
+     * @param InstanceState InstanceState. Value range:<br><li>PENDING: Creating<br></li><li>LAUNCH_FAILED: Creation failed<br></li><li>RUNNING: Running<br></li><li>STOPPED: Shut down<br></li><li>STARTING: Starting up<br></li><li>STOPPING: Shutting down<br></li><li>REBOOTING: Restarting<br></li><li>SHUTDOWN: To be terminated<br></li><li>TERMINATING: Terminating<br></li>
      */
     public void setInstanceState(String InstanceState) {
         this.InstanceState = InstanceState;

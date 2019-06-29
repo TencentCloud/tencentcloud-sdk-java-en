@@ -147,7 +147,7 @@ You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot sp
 
     /**
      * Set Offset. Default is 0. For more information on `Offset` , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Offset. Default is 0. For more information on`Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * @param Offset Default is 0. For more information on`Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
      */
     public void setOffset(Integer Offset) {
         this.Offset = Offset;

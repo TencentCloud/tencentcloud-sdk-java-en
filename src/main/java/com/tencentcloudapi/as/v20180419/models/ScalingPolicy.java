@@ -136,7 +136,7 @@ public class ScalingPolicy  extends AbstractModel{
 
     /**
      * After an alert is triggered,the method to change expected instance number. Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
-     * @return AdjustmentType After an alert is triggered, the method to modify expected instance number.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
+     * @param AdjustmentType After an alert is triggered, the method to modify expected instance number.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
      */
     public void setAdjustmentType(String AdjustmentType) {
         this.AdjustmentType = AdjustmentType;
@@ -152,7 +152,7 @@ public class ScalingPolicy  extends AbstractModel{
 
     /**
      * Set the adjusted value of expected number of instances after alert is triggered.
-     * @return AdjustmentValue After an alert is triggered, the adjusted expected instance number. Value:
+     * @param AdjustmentValue After an alert is triggered, the adjusted expected instance number. Value:
      */
     public void setAdjustmentValue(Integer AdjustmentValue) {
         this.AdjustmentValue = AdjustmentValue;

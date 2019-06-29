@@ -385,7 +385,7 @@ public class AutoScalingGroup  extends AbstractModel{
 
     /**
      * Set List of traditional load balancer IDs
-     * @param LoadBalancerId List of traditional load balancer IDs
+     * @param LoadBalancerIdSet List of traditional load balancer IDs
      */
     public void setLoadBalancerIdSet(String [] LoadBalancerIdSet) {
         this.LoadBalancerIdSet = LoadBalancerIdSet;
@@ -449,7 +449,7 @@ public class AutoScalingGroup  extends AbstractModel{
 
     /**
      * Set List of subnet IDs
-     * @param SubnetIds List of subnet IDs
+     * @param SubnetIdSet List of subnet IDs
      */
     public void setSubnetIdSet(String [] SubnetIdSet) {
         this.SubnetIdSet = SubnetIdSet;

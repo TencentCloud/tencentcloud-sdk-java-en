@@ -118,7 +118,7 @@ public class ScheduledAction  extends AbstractModel{
 
     /**
      * Set scheduled action name
-     * @param ScheduledActionId Scheduled action name
+     * @param ScheduledActionName Scheduled action name
      */
     public void setScheduledActionName(String ScheduledActionName) {
         this.ScheduledActionName = ScheduledActionName;

@@ -69,7 +69,7 @@ public class SetInstancesProtectionRequest  extends AbstractModel{
 
     /**
      * Set instance ID
-     * @param InstanceId Instance ID
+     * @param InstanceIds Instance ID
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;

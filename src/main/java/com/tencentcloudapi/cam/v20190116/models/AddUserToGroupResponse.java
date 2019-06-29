@@ -39,7 +39,7 @@ public class AddUserToGroupResponse  extends AbstractModel{
 
     /**
      * Configuring RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId, the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * @param RequestId the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;

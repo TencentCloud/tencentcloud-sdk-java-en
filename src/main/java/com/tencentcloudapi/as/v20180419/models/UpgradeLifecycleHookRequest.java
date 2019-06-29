@@ -97,7 +97,7 @@ public class UpgradeLifecycleHookRequest  extends AbstractModel{
 
     /**
      * Set Lifecycle hook name
-     * @param LifecycleHookId Lifecycle hook name
+     * @param LifecycleHookName Lifecycle hook name
      */
     public void setLifecycleHookName(String LifecycleHookName) {
         this.LifecycleHookName = LifecycleHookName;

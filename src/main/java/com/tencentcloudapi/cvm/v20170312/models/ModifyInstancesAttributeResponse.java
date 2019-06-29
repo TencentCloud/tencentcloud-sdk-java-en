@@ -39,7 +39,7 @@ public class ModifyInstancesAttributeResponse  extends AbstractModel{
 
     /**
      * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param Obtain the unique ID of a request, which is required for each troubleshooting case.
+     * @param RequestId the unique ID of a request, which is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;

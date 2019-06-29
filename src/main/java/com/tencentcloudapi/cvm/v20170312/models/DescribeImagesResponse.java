@@ -85,7 +85,7 @@ public class DescribeImagesResponse  extends AbstractModel{
 
     /**
      * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request which is gotten from each request and it is required for each troubleshooting case.
+     * @param RequestId The unique ID of a request which is gotten from each request and it is required for each troubleshooting case.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
