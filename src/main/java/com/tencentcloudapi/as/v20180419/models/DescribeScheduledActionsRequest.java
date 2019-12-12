@@ -23,114 +23,114 @@ import java.util.HashMap;
 public class DescribeScheduledActionsRequest  extends AbstractModel{
 
     /**
-    * ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
+    * Queries by one or more scheduled task IDs in the format of asst-am691zxo. The maximum number of instances per request is 100. This parameter does not support specifying both ScheduledActionIds` and `Filters` at the same time.
     */
     @SerializedName("ScheduledActionIds")
     @Expose
     private String [] ScheduledActionIds;
 
     /**
-    * Filter conditions
-<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
-<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+    * Filter.
+<li> scheduled-action-id - String - Required: No - (Filter) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+    * Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-    * Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377). 
+    * Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-     * Obtain ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
-     * @return ScheduledActionIds ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
+     * Get Queries by one or more scheduled task IDs in the format of asst-am691zxo. The maximum number of instances per request is 100. This parameter does not support specifying both ScheduledActionIds` and `Filters` at the same time. 
+     * @return ScheduledActionIds Queries by one or more scheduled task IDs in the format of asst-am691zxo. The maximum number of instances per request is 100. This parameter does not support specifying both ScheduledActionIds` and `Filters` at the same time.
      */
     public String [] getScheduledActionIds() {
         return this.ScheduledActionIds;
     }
 
     /**
-     * Set ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
-     * @param ScheduledActionIds ID(s) of the scheduled task(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters.
+     * Set Queries by one or more scheduled task IDs in the format of asst-am691zxo. The maximum number of instances per request is 100. This parameter does not support specifying both ScheduledActionIds` and `Filters` at the same time.
+     * @param ScheduledActionIds Queries by one or more scheduled task IDs in the format of asst-am691zxo. The maximum number of instances per request is 100. This parameter does not support specifying both ScheduledActionIds` and `Filters` at the same time.
      */
     public void setScheduledActionIds(String [] ScheduledActionIds) {
         this.ScheduledActionIds = ScheduledActionIds;
     }
 
     /**
-     * obtain filter conditions
-<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
-<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-     * @return Filters filter conditions.
-<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
-<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+     * Get Filter.
+<li> scheduled-action-id - String - Required: No - (Filter) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li> 
+     * @return Filters Filter.
+<li> scheduled-action-id - String - Required: No - (Filter) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter conditions.
-<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
-<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-     * @param Filters filter conditions
-<li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled task ID.</li>
-<li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled task name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
+     * Set Filter.
+<li> scheduled-action-id - String - Required: No - (Filter) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+     * @param Filters Filter.
+<li> scheduled-action-id - String - Required: No - (Filter) Filter by scheduled task ID.</li>
+<li> scheduled-action-name - String - Required: No - (Filter) Filter by scheduled task name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Obtain offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @return Offset Offest. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Offset Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "ScheduledActionIds.", this.ScheduledActionIds);

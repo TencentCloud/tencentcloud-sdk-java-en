@@ -23,76 +23,86 @@ import java.util.HashMap;
 public class ImportKeyPairRequest  extends AbstractModel{
 
     /**
-    * Name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
+    * Key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
     */
     @SerializedName("KeyName")
     @Expose
     private String KeyName;
 
     /**
-    * The ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
+    * The ID of the [project](https://cloud.tencent.com/document/product/378/10861) to which the created key pair belongs.<br><br>You can retrieve the project ID in two ways:<br><li>Query the project ID in [Project Management](https://console.cloud.tencent.com/project).<br><li>Call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and search for `projectId` in the response.
+
+If you want to use the default project, specify 0 for the parameter.
     */
     @SerializedName("ProjectId")
     @Expose
-    private Integer ProjectId;
+    private Long ProjectId;
 
     /**
-    * The public key (in plain text) of the key pair, `OpenSSH RSA` format
+    * Content of the public key in the key pair in the `OpenSSH RSA` format.
     */
     @SerializedName("PublicKey")
     @Expose
     private String PublicKey;
 
     /**
-     * Get name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
-     * @return KeyName Name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
+     * Get Key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters. 
+     * @return KeyName Key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
      */
     public String getKeyName() {
         return this.KeyName;
     }
 
     /**
-     * Set name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
-     * @param KeyName Name of key pair, can only contain alphanumeric characters and underscore, name should not longer than 25 characters.
+     * Set Key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
+     * @param KeyName Key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
      */
     public void setKeyName(String KeyName) {
         this.KeyName = KeyName;
     }
 
     /**
-     * Get the ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
-     * @return ProjectId The ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
+     * Get The ID of the [project](https://cloud.tencent.com/document/product/378/10861) to which the created key pair belongs.<br><br>You can retrieve the project ID in two ways:<br><li>Query the project ID in [Project Management](https://console.cloud.tencent.com/project).<br><li>Call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and search for `projectId` in the response.
+
+If you want to use the default project, specify 0 for the parameter. 
+     * @return ProjectId The ID of the [project](https://cloud.tencent.com/document/product/378/10861) to which the created key pair belongs.<br><br>You can retrieve the project ID in two ways:<br><li>Query the project ID in [Project Management](https://console.cloud.tencent.com/project).<br><li>Call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and search for `projectId` in the response.
+
+If you want to use the default project, specify 0 for the parameter.
      */
-    public Integer getProjectId() {
+    public Long getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * Set the ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
-     * @param ProjectId The ID of the [project](https://intl.cloud.tencent.com/document/product/378/10863) to which the created key pair belongs.<br><br>You can obtain the project ID by either of the following ways:<br><li>Query project ID from [Project Management](https://console.cloud.tencent.com/project)<br><li>Obtain the project ID from `projectId ` field in the returned values of API DescribeProject. For default project, enter 0 as project ID.
+     * Set The ID of the [project](https://cloud.tencent.com/document/product/378/10861) to which the created key pair belongs.<br><br>You can retrieve the project ID in two ways:<br><li>Query the project ID in [Project Management](https://console.cloud.tencent.com/project).<br><li>Call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and search for `projectId` in the response.
+
+If you want to use the default project, specify 0 for the parameter.
+     * @param ProjectId The ID of the [project](https://cloud.tencent.com/document/product/378/10861) to which the created key pair belongs.<br><br>You can retrieve the project ID in two ways:<br><li>Query the project ID in [Project Management](https://console.cloud.tencent.com/project).<br><li>Call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and search for `projectId` in the response.
+
+If you want to use the default project, specify 0 for the parameter.
      */
-    public void setProjectId(Integer ProjectId) {
+    public void setProjectId(Long ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * Get the public key (in plain text) of the key pair, `OpenSSH RSA` format.
-     * @return PublicKey The public key (in plain text) of the key pair, `OpenSSH RSA` format.
+     * Get Content of the public key in the key pair in the `OpenSSH RSA` format. 
+     * @return PublicKey Content of the public key in the key pair in the `OpenSSH RSA` format.
      */
     public String getPublicKey() {
         return this.PublicKey;
     }
 
     /**
-     * Set the public key (in plain text) of the key pair, `OpenSSH RSA` format.
-     * @param PublicKey The public key (in plain text) of the key pair, `OpenSSH RSA` format.
+     * Set Content of the public key in the key pair in the `OpenSSH RSA` format.
+     * @param PublicKey Content of the public key in the key pair in the `OpenSSH RSA` format.
      */
     public void setPublicKey(String PublicKey) {
         this.PublicKey = PublicKey;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "KeyName", this.KeyName);

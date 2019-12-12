@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteImagesRequest  extends AbstractModel{
 
     /**
-    * The list of IDs of the instances to be deleted
+    * List of the IDs of the instances to be deleted.
     */
     @SerializedName("ImageIds")
     @Expose
     private String [] ImageIds;
 
     /**
-     * Get the list of IDs of the instances to be deleted
-     * @return ImageIds The list of IDs of the instances to be deleted
+     * Get List of the IDs of the instances to be deleted. 
+     * @return ImageIds List of the IDs of the instances to be deleted.
      */
     public String [] getImageIds() {
         return this.ImageIds;
     }
 
     /**
-     * Set the list of IDs of the instances to be deleted
-     * @param ImageIds The list of IDs of the instances to be deleted
+     * Set List of the IDs of the instances to be deleted.
+     * @param ImageIds List of the IDs of the instances to be deleted.
      */
     public void setImageIds(String [] ImageIds) {
         this.ImageIds = ImageIds;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "ImageIds.", this.ImageIds);

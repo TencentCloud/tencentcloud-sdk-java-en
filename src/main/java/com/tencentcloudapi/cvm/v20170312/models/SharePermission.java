@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class SharePermission  extends AbstractModel{
 
     /**
-    * The time when the image is shared
+    * Time when an image was shared.
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * ID of the account to which the image is shared
+    * ID of the account with which the image is shared.
     */
     @SerializedName("AccountId")
     @Expose
     private String AccountId;
 
     /**
-     * Obtain the time when the image is shared
-     * @return CreatedTime The time when the image is shared
+     * Get Time when an image was shared. 
+     * @return CreatedTime Time when an image was shared.
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * Configure the time when the image is shared
-     * @param CreatedTime The time when the image is shared
+     * Set Time when an image was shared.
+     * @param CreatedTime Time when an image was shared.
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * Obtain ID of the account to which the image is shared
-     * @return AccountId ID of the account to which the image is shared
+     * Get ID of the account with which the image is shared. 
+     * @return AccountId ID of the account with which the image is shared.
      */
     public String getAccountId() {
         return this.AccountId;
     }
 
     /**
-     * Configure ID of the account to which the image is shared
-     * @param AccountId ID of the account to which the image is shared
+     * Set ID of the account with which the image is shared.
+     * @param AccountId ID of the account with which the image is shared.
      */
     public void setAccountId(String AccountId) {
         this.AccountId = AccountId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "CreatedTime", this.CreatedTime);

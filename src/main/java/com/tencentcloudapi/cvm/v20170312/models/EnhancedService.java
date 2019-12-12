@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class EnhancedService  extends AbstractModel{
 
     /**
-    * Enable Host Security service. If this parameter is not specified, host security is enabled by default.
+    * Enables cloud security service. If this parameter is not specified, the cloud security service will be enabled by default.
     */
     @SerializedName("SecurityService")
     @Expose
     private RunSecurityServiceEnabled SecurityService;
 
     /**
-    * Enable Cloud Monitoring service. If this parameter is not specified, monitoring service is enabled by default.
+    * Enables cloud monitor service. If this parameter is not specified, the cloud monitor service will be enabled by default.
     */
     @SerializedName("MonitorService")
     @Expose
     private RunMonitorServiceEnabled MonitorService;
 
     /**
-     * Get Host Security service. If this parameter is not specified, host security is enabled by default.
-     * @return SecurityService Enable Host Security service. If this parameter is not specified, host security is enabled by default.
+     * Get Enables cloud security service. If this parameter is not specified, the cloud security service will be enabled by default. 
+     * @return SecurityService Enables cloud security service. If this parameter is not specified, the cloud security service will be enabled by default.
      */
     public RunSecurityServiceEnabled getSecurityService() {
         return this.SecurityService;
     }
 
     /**
-     * Set Host Security service. If this parameter is not specified, host security is enabled by default.
-     * @param SecurityService Enable Host Security service. If this parameter is not specified, host security is enabled by default.
+     * Set Enables cloud security service. If this parameter is not specified, the cloud security service will be enabled by default.
+     * @param SecurityService Enables cloud security service. If this parameter is not specified, the cloud security service will be enabled by default.
      */
     public void setSecurityService(RunSecurityServiceEnabled SecurityService) {
         this.SecurityService = SecurityService;
     }
 
     /**
-     * Get Cloud Monitoring service. If this parameter is not specified, monitoring service is enabled by default.
-     * @return MonitorService Enable Cloud Monitoring service. If this parameter is not specified, monitoring service is enabled by default.
+     * Get Enables cloud monitor service. If this parameter is not specified, the cloud monitor service will be enabled by default. 
+     * @return MonitorService Enables cloud monitor service. If this parameter is not specified, the cloud monitor service will be enabled by default.
      */
     public RunMonitorServiceEnabled getMonitorService() {
         return this.MonitorService;
     }
 
     /**
-     * Set Cloud Monitoring service. If this parameter is not specified, host security is enabled by default.
-     * @param MonitorService Enable Cloud Monitoring service. If this parameter is not specified, monitoring service is enabled by default.
+     * Set Enables cloud monitor service. If this parameter is not specified, the cloud monitor service will be enabled by default.
+     * @param MonitorService Enables cloud monitor service. If this parameter is not specified, the cloud monitor service will be enabled by default.
      */
     public void setMonitorService(RunMonitorServiceEnabled MonitorService) {
         this.MonitorService = MonitorService;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "SecurityService.", this.SecurityService);

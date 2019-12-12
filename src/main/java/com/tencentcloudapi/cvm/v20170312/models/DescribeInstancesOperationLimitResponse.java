@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeInstancesOperationLimitResponse  extends AbstractModel{
 
     /**
-    * The parameter meaning query limit of adjusting configuration(scaling down)
+    * The maximum number of times you can modify the instance configurations (degrading the configurations)
     */
     @SerializedName("InstanceOperationLimitSet")
     @Expose
     private OperationCountLimit [] InstanceOperationLimitSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the parameter meaning query limit of adjusting configuration(scaling down)
-     * @return InstanceOperationLimitSet The parameter means query limit of adjusting configuration(scaling down)
+     * Get The maximum number of times you can modify the instance configurations (degrading the configurations) 
+     * @return InstanceOperationLimitSet The maximum number of times you can modify the instance configurations (degrading the configurations)
      */
     public OperationCountLimit [] getInstanceOperationLimitSet() {
         return this.InstanceOperationLimitSet;
     }
 
     /**
-     * Set the parameter means query limit of adjusting configuration(scaling down)
-     * @param InstanceOperationLimitSet The parameter means query limit of adjusting configuration(scaling down)
+     * Set The maximum number of times you can modify the instance configurations (degrading the configurations)
+     * @param InstanceOperationLimitSet The maximum number of times you can modify the instance configurations (degrading the configurations)
      */
     public void setInstanceOperationLimitSet(OperationCountLimit [] InstanceOperationLimitSet) {
         this.InstanceOperationLimitSet = InstanceOperationLimitSet;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "InstanceOperationLimitSet.", this.InstanceOperationLimitSet);

@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeHostsResponse  extends AbstractModel{
 
     /**
-    * Total number of placement groups of an user
+    * Total number of CDH instances meeting the query conditions
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * Details of a CDH instance
+    * Information on CDH instances
     */
     @SerializedName("HostSet")
     @Expose
     private HostItem [] HostSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get Total number of placement groups of an user
-     * @return TotalCount Total number of placement groups of an user
+     * Get Total number of CDH instances meeting the query conditions 
+     * @return TotalCount Total number of CDH instances meeting the query conditions
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set Total number of placement groups of an user
-     * @param TotalCount Total number of placement groups of an user
+     * Set Total number of CDH instances meeting the query conditions
+     * @param TotalCount Total number of CDH instances meeting the query conditions
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Get Details of a CDH instance
-     * @return HostSet Details of a CDH instance
+     * Get Information on CDH instances 
+     * @return HostSet Information on CDH instances
      */
     public HostItem [] getHostSet() {
         return this.HostSet;
     }
 
     /**
-     * Set Details of a CDH instance
-     * @param HostSet Details of a CDH instance
+     * Set Information on CDH instances
+     * @param HostSet Information on CDH instances
      */
     public void setHostSet(HostItem [] HostSet) {
         this.HostSet = HostSet;
     }
 
     /**
-     * Get Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

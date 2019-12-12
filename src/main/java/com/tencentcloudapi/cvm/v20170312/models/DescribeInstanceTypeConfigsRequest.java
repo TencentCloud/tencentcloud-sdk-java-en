@@ -23,45 +23,45 @@ import java.util.HashMap;
 public class DescribeInstanceTypeConfigsRequest  extends AbstractModel{
 
     /**
-    * Filter conditions
-<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
-<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
-the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
+    * Filters.
+<li> `zone` - String - Optional - Filter results by [availability zone](https://cloud.tencent.com/document/product/213/15753#ZoneInfo).</li>
+<li> `instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
+Each request can have up to 10 `Filters` and 1 `Filters.Values`.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-     * Obtain filter conditions
-<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
-<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
-the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
-     * @return Filters filter conditions
-<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
-<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
-the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
+     * Get Filters.
+<li> `zone` - String - Optional - Filter results by [availability zone](https://cloud.tencent.com/document/product/213/15753#ZoneInfo).</li>
+<li> `instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
+Each request can have up to 10 `Filters` and 1 `Filters.Values`. 
+     * @return Filters Filters.
+<li> `zone` - String - Optional - Filter results by [availability zone](https://cloud.tencent.com/document/product/213/15753#ZoneInfo).</li>
+<li> `instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
+Each request can have up to 10 `Filters` and 1 `Filters.Values`.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter conditions
-<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
-<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
-the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
-     * @param Filters filter conditions
-<li> zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).</li>
-<li> instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`, etc.</li>
-the upper limit of `Filters` and `Filter.Values` of each request are 10 and 1 respectively
+     * Set Filters.
+<li> `zone` - String - Optional - Filter results by [availability zone](https://cloud.tencent.com/document/product/213/15753#ZoneInfo).</li>
+<li> `instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
+Each request can have up to 10 `Filters` and 1 `Filters.Values`.
+     * @param Filters Filters.
+<li> `zone` - String - Optional - Filter results by [availability zone](https://cloud.tencent.com/document/product/213/15753#ZoneInfo).</li>
+<li> `instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
+Each request can have up to 10 `Filters` and 1 `Filters.Values`.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Filters.", this.Filters);

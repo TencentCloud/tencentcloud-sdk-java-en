@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class Filter  extends AbstractModel{
 
     /**
-    * Fields to be filtered.
+    * Filters.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * Filter values of the field.
+    * Filter values.
     */
     @SerializedName("Values")
     @Expose
     private String [] Values;
 
     /**
-     * Get fields to be filtered.
-     * @return Name Fields to be filtered.
+     * Get Filters. 
+     * @return Name Filters.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Set fields to be filtered.
-     * @param Name Fields to be filtered.
+     * Set Filters.
+     * @param Name Filters.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Get Filter values of the field.
-     * @return Values Filter values of the field.
+     * Get Filter values. 
+     * @return Values Filter values.
      */
     public String [] getValues() {
         return this.Values;
     }
 
     /**
-     * Set Filter values of the field.
-     * @param Values Filter values of the field.
+     * Set Filter values.
+     * @param Values Filter values.
      */
     public void setValues(String [] Values) {
         this.Values = Values;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

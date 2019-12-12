@@ -23,70 +23,70 @@ import java.util.HashMap;
 public class DescribeZoneInstanceConfigInfosRequest  extends AbstractModel{
 
     /**
-    * Filter conditions.
+    * Filters.
 
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
 
-<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
+<li>`instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
 
-<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
+<li>`instance-type` - String - Optional - Filter results by model. Different instance models have different configurations. You can call `DescribeInstanceTypeConfigs` to query the latest configuration list or refer to the documentation on instance types. If this parameter is not specified, `S1.SMALL1` will be used by default.</li>
 
-<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
+<li>`instance-charge-type` - String - Optional - Filter results by instance billing method. `POSTPAID_BY_HOUR`: pay-as-you-go | `CDHPAID`: you are only billed for CDH instances, not the CVMs running on the CDH instances.</li>
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-     * Get filter conditions.  
+     * Get Filters.
 
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
 
-<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
+<li>`instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
 
-<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
+<li>`instance-type` - String - Optional - Filter results by model. Different instance models have different configurations. You can call `DescribeInstanceTypeConfigs` to query the latest configuration list or refer to the documentation on instance types. If this parameter is not specified, `S1.SMALL1` will be used by default.</li>
 
-<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
-     * @return Filters Filter Conditions
+<li>`instance-charge-type` - String - Optional - Filter results by instance billing method. `POSTPAID_BY_HOUR`: pay-as-you-go | `CDHPAID`: you are only billed for CDH instances, not the CVMs running on the CDH instances.</li> 
+     * @return Filters Filters.
 
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
 
-<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
+<li>`instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
 
-<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
+<li>`instance-type` - String - Optional - Filter results by model. Different instance models have different configurations. You can call `DescribeInstanceTypeConfigs` to query the latest configuration list or refer to the documentation on instance types. If this parameter is not specified, `S1.SMALL1` will be used by default.</li>
 
-<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
+<li>`instance-charge-type` - String - Optional - Filter results by instance billing method. `POSTPAID_BY_HOUR`: pay-as-you-go | `CDHPAID`: you are only billed for CDH instances, not the CVMs running on the CDH instances.</li>
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter conditions
+     * Set Filters.
 
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
 
-<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
+<li>`instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
 
-<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
+<li>`instance-type` - String - Optional - Filter results by model. Different instance models have different configurations. You can call `DescribeInstanceTypeConfigs` to query the latest configuration list or refer to the documentation on instance types. If this parameter is not specified, `S1.SMALL1` will be used by default.</li>
 
-<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
-     * @param Filters Filter conditions.
+<li>`instance-charge-type` - String - Optional - Filter results by instance billing method. `POSTPAID_BY_HOUR`: pay-as-you-go | `CDHPAID`: you are only billed for CDH instances, not the CVMs running on the CDH instances.</li>
+     * @param Filters Filters.
 
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
 
-<li> instance-family - String - Required: No - (Filter condition) Filter by instance family, such as: S1, I1, M1, etc.</li>
+<li>`instance-family` - String - Optional - Filter results by instance model family, such as `S1`, `I1`, and `M1`.</li>
 
-<li> instance-type - String - Required: No - (Filter condition) Filter by instance type. Instance type comprise varying combinations of CPU, memory and networking capacity, you can use DescribeInstanceTypeConfigs to retrieve latest configurations or refer to description of instance type. If this parameter is not specified, instance type S1.SMALL1 will be used.</li>
+<li>`instance-type` - String - Optional - Filter results by model. Different instance models have different configurations. You can call `DescribeInstanceTypeConfigs` to query the latest configuration list or refer to the documentation on instance types. If this parameter is not specified, `S1.SMALL1` will be used by default.</li>
 
-<li> instance-charge-type - String - Required: No - (Filter condition) Filter by instance charge type. (PREPAID: monthly subscription, | POSTPAID_BY_HOUR: pay as you go | CDHPAID: Pay for dedicated host where CVM instance deployed.)  </li>
+<li>`instance-charge-type` - String - Optional - Filter results by instance billing method. `POSTPAID_BY_HOUR`: pay-as-you-go | `CDHPAID`: you are only billed for CDH instances, not the CVMs running on the CDH instances.</li>
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Filters.", this.Filters);

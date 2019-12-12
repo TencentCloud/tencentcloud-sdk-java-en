@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeAutoScalingInstancesResponse  extends AbstractModel{
 
     /**
-    * List of details of an instance.
+    * List of instance details.
     */
     @SerializedName("AutoScalingInstanceSet")
     @Expose
     private Instance [] AutoScalingInstanceSet;
 
     /**
-    * Number of instances matching the filter condition.
+    * Number of eligible instances.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain instance details list
-     * @return AutoScalingInstanceSet Instance details list
+     * Get List of instance details. 
+     * @return AutoScalingInstanceSet List of instance details.
      */
     public Instance [] getAutoScalingInstanceSet() {
         return this.AutoScalingInstanceSet;
     }
 
     /**
-     * Set Instance details list
-     * @param AutoScalingInstanceSet Instance details list
+     * Set List of instance details.
+     * @param AutoScalingInstanceSet List of instance details.
      */
     public void setAutoScalingInstanceSet(Instance [] AutoScalingInstanceSet) {
         this.AutoScalingInstanceSet = AutoScalingInstanceSet;
     }
 
     /**
-     * Obtain number of instances that meet the condition.
-     * @return TotalCount Number of instances that meet the condition.
+     * Get Number of eligible instances. 
+     * @return TotalCount Number of eligible instances.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of instances that meet the condition.
-     * @param TotalCount Number of instances that meet the condition.
+     * Set Number of eligible instances.
+     * @param TotalCount Number of eligible instances.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "AutoScalingInstanceSet.", this.AutoScalingInstanceSet);

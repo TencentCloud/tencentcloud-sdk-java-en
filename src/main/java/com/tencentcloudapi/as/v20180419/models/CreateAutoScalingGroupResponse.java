@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateAutoScalingGroupResponse  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+     * Get Auto scaling group ID 
+     * @return AutoScalingGroupId Auto scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set scaling group ID
-     * @param AutoScalingGroupId Scaling group ID
+     * Set Auto scaling group ID
+     * @param AutoScalingGroupId Auto scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Get the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

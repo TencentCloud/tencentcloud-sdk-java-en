@@ -23,168 +23,168 @@ import java.util.HashMap;
 public class CreateScalingPolicyRequest  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Alarm trigger policy name
+    * Alarm trigger policy name.
     */
     @SerializedName("ScalingPolicyName")
     @Expose
     private String ScalingPolicyName;
 
     /**
-    * Method of changing desired number of instance after an alarm is triggered. Values include:<br><li>CHANGE_IN_CAPACITY：Increase or decrease desired number of instances</li><li>EXACT_CAPACITY：Adjust to specified desired number of instances</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust the desired number of instances according to a set percentage</li>
+    * The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li>
     */
     @SerializedName("AdjustmentType")
     @Expose
     private String AdjustmentType;
 
     /**
-    * The adjustment value of the desired number of instances after an alarm is triggered. Values include:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY, a positive AdjustmentValue means that the number of instances will be increased when an alarm is triggered; a negative AdjustmentValue means that the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY, the AdjustmentValue will be the desired number of instances when an alarm is triggered. The value must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, a positive AdjustmentValue (in %) will be the percentage that the desired number of instances will increase by, a negative AdjustmentValue (in %) will be the percentage that the desired number of instances will decrease by.
+    * The adjusted value of desired number of instances after the alarm is triggered. Value range: <br><li>When AdjustmentType is CHANGE_IN_CAPACITY, if AdjustmentValue is a positive value, some new instances will be added after the alarm is triggered, and if it is a negative value, some existing instances will be removed after the alarm is triggered </li> <li> When AdjustmentType is EXACT_CAPACITY, the value of AdjustmentValue is the desired number of instances after the alarm is triggered, which should be equal to or greater than 0 </li> <li> When AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, if AdjusmentValue (in %) is a positive value, new instances will be added by percentage after the alarm is triggered; if it is a negative value, existing instances will be removed by percentage after the alarm is triggered.
     */
     @SerializedName("AdjustmentValue")
     @Expose
-    private Integer AdjustmentValue;
+    private Long AdjustmentValue;
 
     /**
-    * Alarm monitoring metrics
+    * Alarm monitoring metric.
     */
     @SerializedName("MetricAlarm")
     @Expose
     private MetricAlarm MetricAlarm;
 
     /**
-    * Cooldown period (in seconds). Default is 300 seconds. 
+    * Cooldown period in seconds. Default value: 300 seconds.
     */
     @SerializedName("Cooldown")
     @Expose
-    private Integer Cooldown;
+    private Long Cooldown;
 
     /**
-    * Notification group ID, a collection of user group IDs. User group IDs can be queried via the API DescribeUserGroup.
+    * Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404).
     */
     @SerializedName("NotificationUserGroupIds")
     @Expose
     private String [] NotificationUserGroupIds;
 
     /**
-     * Get scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+     * Get Auto scaling group ID. 
+     * @return AutoScalingGroupId Auto scaling group ID.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set Scaling group ID
-     * @param AutoScalingGroupId Scaling group ID
+     * Set Auto scaling group ID.
+     * @param AutoScalingGroupId Auto scaling group ID.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Get Alarm trigger policy name
-     * @return ScalingPolicyName Alarm trigger policy name
+     * Get Alarm trigger policy name. 
+     * @return ScalingPolicyName Alarm trigger policy name.
      */
     public String getScalingPolicyName() {
         return this.ScalingPolicyName;
     }
 
     /**
-     * Set Alarm trigger policy name
-     * @param ScalingPolicyName Alarm trigger policy name
+     * Set Alarm trigger policy name.
+     * @param ScalingPolicyName Alarm trigger policy name.
      */
     public void setScalingPolicyName(String ScalingPolicyName) {
         this.ScalingPolicyName = ScalingPolicyName;
     }
 
     /**
-     * Get Method of changing desired number of instance after an alarm is triggered. Values include:<br><li>CHANGE_IN_CAPACITY：Increase or decrease desired number of instances</li><li>EXACT_CAPACITY：Adjust to specified desired number of instances</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust the desired number of instances according to a set percentage</li>
-     * @return AdjustmentType Method of changing desired number of instance after an alarm is triggered. Values include:<br><li>CHANGE_IN_CAPACITY：Increase or decrease desired number of instances</li><li>EXACT_CAPACITY：Adjust to specified desired number of instances</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust the desired number of instances according to a set percentage</li>
+     * Get The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li> 
+     * @return AdjustmentType The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li>
      */
     public String getAdjustmentType() {
         return this.AdjustmentType;
     }
 
     /**
-     * Set Method of changing desired number of instance after an alarm is triggered. Values include:<br><li>CHANGE_IN_CAPACITY：Increase or decrease desired number of instances</li><li>EXACT_CAPACITY：Adjust to specified desired number of instances</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust the desired number of instances according to a set percentage</li>
-     * @param AdjustmentType Method of changing desired number of instance after an alarm is triggered. Values include:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust to specified desired number of instances</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
+     * Set The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li>
+     * @param AdjustmentType The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li>
      */
     public void setAdjustmentType(String AdjustmentType) {
         this.AdjustmentType = AdjustmentType;
     }
 
     /**
-     * Get the adjustment value of the desired number of instances after an alarm is triggered. Values include:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY, a positive AdjustmentValue means that the number of instances will be increased when an alarm is triggered; a negative AdjustmentValue means that the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY, the AdjustmentValue will be the desired number of instances when an alarm is triggered. The value must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, a positive AdjustmentValue (in %) will be the percentage that the desired number of instances will increase by, a negative AdjustmentValue (in %) will be the percentage that the desired number of instances will decrease by.
-     * @return AdjustmentValue the adjustment value of the desired number of instances after an alarm is triggered. Values include:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY, a positive AdjustmentValue means that the number of instances will be increased when an alarm is triggered; a negative AdjustmentValue means that the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY, the AdjustmentValue will be the desired number of instances when an alarm is triggered. The value must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, a positive AdjustmentValue (in %) will be the percentage that the desired number of instances will increase by, a negative AdjustmentValue (in %) will be the percentage that the desired number of instances will decrease by.
+     * Get The adjusted value of desired number of instances after the alarm is triggered. Value range: <br><li>When AdjustmentType is CHANGE_IN_CAPACITY, if AdjustmentValue is a positive value, some new instances will be added after the alarm is triggered, and if it is a negative value, some existing instances will be removed after the alarm is triggered </li> <li> When AdjustmentType is EXACT_CAPACITY, the value of AdjustmentValue is the desired number of instances after the alarm is triggered, which should be equal to or greater than 0 </li> <li> When AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, if AdjusmentValue (in %) is a positive value, new instances will be added by percentage after the alarm is triggered; if it is a negative value, existing instances will be removed by percentage after the alarm is triggered. 
+     * @return AdjustmentValue The adjusted value of desired number of instances after the alarm is triggered. Value range: <br><li>When AdjustmentType is CHANGE_IN_CAPACITY, if AdjustmentValue is a positive value, some new instances will be added after the alarm is triggered, and if it is a negative value, some existing instances will be removed after the alarm is triggered </li> <li> When AdjustmentType is EXACT_CAPACITY, the value of AdjustmentValue is the desired number of instances after the alarm is triggered, which should be equal to or greater than 0 </li> <li> When AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, if AdjusmentValue (in %) is a positive value, new instances will be added by percentage after the alarm is triggered; if it is a negative value, existing instances will be removed by percentage after the alarm is triggered.
      */
-    public Integer getAdjustmentValue() {
+    public Long getAdjustmentValue() {
         return this.AdjustmentValue;
     }
 
     /**
-     * Set the adjustment value of the desired number of instances after an alarm is triggered. Values include:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY, a positive AdjustmentValue means that the number of instances will be increased when an alarm is triggered; a negative AdjustmentValue means that the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY, the AdjustmentValue will be the desired number of instances when an alarm is triggered. The value must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, a positive AdjustmentValue (in %) will be the percentage that the desired number of instances will increase by, a negative AdjustmentValue (in %) will be the percentage that the desired number of instances will decrease by.
-     * @param AdjustmentValue the adjustment value of the desired number of instances after an alarm is triggered. Values include:<br><li>If AdjustmentType is CHANGE_IN_CAPACITY, a positive AdjustmentValue means that the number of instances will be increased when an alarm is triggered; a negative AdjustmentValue means that the number of instances will be decreased. </li> <li> If AdjustmentType is EXACT_CAPACITY, the AdjustmentValue will be the desired number of instances when an alarm is triggered. The value must be greater or equal to zero. </li> <li> If AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, a positive AdjustmentValue (in %) will be the percentage that the desired number of instances will increase by, a negative AdjustmentValue (in %) will be the percentage that the desired number of instances will decrease by.
+     * Set The adjusted value of desired number of instances after the alarm is triggered. Value range: <br><li>When AdjustmentType is CHANGE_IN_CAPACITY, if AdjustmentValue is a positive value, some new instances will be added after the alarm is triggered, and if it is a negative value, some existing instances will be removed after the alarm is triggered </li> <li> When AdjustmentType is EXACT_CAPACITY, the value of AdjustmentValue is the desired number of instances after the alarm is triggered, which should be equal to or greater than 0 </li> <li> When AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, if AdjusmentValue (in %) is a positive value, new instances will be added by percentage after the alarm is triggered; if it is a negative value, existing instances will be removed by percentage after the alarm is triggered.
+     * @param AdjustmentValue The adjusted value of desired number of instances after the alarm is triggered. Value range: <br><li>When AdjustmentType is CHANGE_IN_CAPACITY, if AdjustmentValue is a positive value, some new instances will be added after the alarm is triggered, and if it is a negative value, some existing instances will be removed after the alarm is triggered </li> <li> When AdjustmentType is EXACT_CAPACITY, the value of AdjustmentValue is the desired number of instances after the alarm is triggered, which should be equal to or greater than 0 </li> <li> When AdjustmentType is PERCENT_CHANGE_IN_CAPACITY, if AdjusmentValue (in %) is a positive value, new instances will be added by percentage after the alarm is triggered; if it is a negative value, existing instances will be removed by percentage after the alarm is triggered.
      */
-    public void setAdjustmentValue(Integer AdjustmentValue) {
+    public void setAdjustmentValue(Long AdjustmentValue) {
         this.AdjustmentValue = AdjustmentValue;
     }
 
     /**
-     * Get Alarm monitoring metrics
-     * @return MetricAlarm Alarm monitoring metrics
+     * Get Alarm monitoring metric. 
+     * @return MetricAlarm Alarm monitoring metric.
      */
     public MetricAlarm getMetricAlarm() {
         return this.MetricAlarm;
     }
 
     /**
-     * Set Alarm monitoring metrics
-     * @param MetricAlarm Alarm monitoring metrics
+     * Set Alarm monitoring metric.
+     * @param MetricAlarm Alarm monitoring metric.
      */
     public void setMetricAlarm(MetricAlarm MetricAlarm) {
         this.MetricAlarm = MetricAlarm;
     }
 
     /**
-     * Get Cooldown period (in seconds). Default is 300 seconds. 
-     * @return Cooldown Cooldown period (in seconds). Default is 300 seconds. 
+     * Get Cooldown period in seconds. Default value: 300 seconds. 
+     * @return Cooldown Cooldown period in seconds. Default value: 300 seconds.
      */
-    public Integer getCooldown() {
+    public Long getCooldown() {
         return this.Cooldown;
     }
 
     /**
-     * Set Cooldown period (in seconds). Default is 300 seconds. 
-     * @param Cooldown period (in seconds). Default is 300 seconds. 
+     * Set Cooldown period in seconds. Default value: 300 seconds.
+     * @param Cooldown Cooldown period in seconds. Default value: 300 seconds.
      */
-    public void setCooldown(Integer Cooldown) {
+    public void setCooldown(Long Cooldown) {
         this.Cooldown = Cooldown;
     }
 
     /**
-     * Get Notification group ID, a collection of user group IDs. User group IDs can be queried via the API DescribeUserGroup.
-     * @return NotificationUserGroupIds Notification group ID, a collection of user group IDs. User group IDs can be queried via the API DescribeUserGroup.
+     * Get Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404). 
+     * @return NotificationUserGroupIds Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404).
      */
     public String [] getNotificationUserGroupIds() {
         return this.NotificationUserGroupIds;
     }
 
     /**
-     * Set notification group ID, a collection of user group IDs. User group IDs can be queried via the API DescribeUserGroup.
-     * @param NotificationUserGroupIds Notification group ID, a collection of user group IDs. User group IDs can be queried via the API DescribeUserGroup.
+     * Set Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404).
+     * @param NotificationUserGroupIds Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404).
      */
     public void setNotificationUserGroupIds(String [] NotificationUserGroupIds) {
         this.NotificationUserGroupIds = NotificationUserGroupIds;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

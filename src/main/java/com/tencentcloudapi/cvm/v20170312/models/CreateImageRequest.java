@@ -30,7 +30,7 @@ public class CreateImageRequest  extends AbstractModel{
     private String ImageName;
 
     /**
-    * Instance ID used to create an image
+    * The ID of the instance used to create an image
     */
     @SerializedName("InstanceId")
     @Expose
@@ -44,49 +44,42 @@ public class CreateImageRequest  extends AbstractModel{
     private String ImageDescription;
 
     /**
-    * Indicates whether to perform a forced shutdown to create an image when soft shutdown fails
+    * Whether to force shut down an instance to create an image when a soft shutdown fails
     */
     @SerializedName("ForcePoweroff")
     @Expose
     private String ForcePoweroff;
 
     /**
-    * whether enable Sysprep when creating a Windows image
+    * Whether to enable Sysprep when creating a Windows image
     */
     @SerializedName("Sysprep")
     @Expose
     private String Sysprep;
 
     /**
-    * whether allow shutdown a running instance to create an image
-    */
-    @SerializedName("Reboot")
-    @Expose
-    private String Reboot;
-
-    /**
-    * Data disk ID used to create an image
+    * The ID of the data disk used to create an image
     */
     @SerializedName("DataDiskIds")
     @Expose
     private String [] DataDiskIds;
 
     /**
-    * Snapshot ID used to create an image, a system disk snapshot must be included
+    * The ID of the snapshot used to create an image. A system disk snapshot must be included.
     */
     @SerializedName("SnapshotIds")
     @Expose
     private String [] SnapshotIds;
 
     /**
-    * Detect validity of the request, without any impact on the detected resources
+    * Verifies the validity of the request without affecting the resources involved.
     */
     @SerializedName("DryRun")
     @Expose
     private Boolean DryRun;
 
     /**
-     * Get Image name
+     * Get Image name 
      * @return ImageName Image name
      */
     public String getImageName() {
@@ -102,23 +95,23 @@ public class CreateImageRequest  extends AbstractModel{
     }
 
     /**
-     * Get Instance ID used to create an image
-     * @return InstanceId Instance ID used to create an image
+     * Get The ID of the instance used to create an image 
+     * @return InstanceId The ID of the instance used to create an image
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * Set Instance ID used to create an image
-     * @param InstanceId Instance ID used to create an image
+     * Set The ID of the instance used to create an image
+     * @param InstanceId The ID of the instance used to create an image
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * Get Image description
+     * Get Image description 
      * @return ImageDescription Image description
      */
     public String getImageDescription() {
@@ -134,103 +127,87 @@ public class CreateImageRequest  extends AbstractModel{
     }
 
     /**
-     * Get whether to perform a forced shutdown to create an image when soft shutdown fails
-     * @return ForcePoweroff whether to perform a forced shutdown to create an image when soft shutdown fails
+     * Get Whether to force shut down an instance to create an image when a soft shutdown fails 
+     * @return ForcePoweroff Whether to force shut down an instance to create an image when a soft shutdown fails
      */
     public String getForcePoweroff() {
         return this.ForcePoweroff;
     }
 
     /**
-     * Set whether to perform a forced shutdown to create an image when soft shutdown fails
-     * @param ForcePoweroff whether to perform a forced shutdown to create an image when soft shutdown fails
+     * Set Whether to force shut down an instance to create an image when a soft shutdown fails
+     * @param ForcePoweroff Whether to force shut down an instance to create an image when a soft shutdown fails
      */
     public void setForcePoweroff(String ForcePoweroff) {
         this.ForcePoweroff = ForcePoweroff;
     }
 
     /**
-     * Get whether enable Sysprep when creating a Windows image
-     * @return Sysprep whether enable Sysprep when creating a Windows image
+     * Get Whether to enable Sysprep when creating a Windows image 
+     * @return Sysprep Whether to enable Sysprep when creating a Windows image
      */
     public String getSysprep() {
         return this.Sysprep;
     }
 
     /**
-     * Set whether enable Sysprep when creating a Windows image
-     * @param Sysprep whether enable Sysprep when creating a Windows image
+     * Set Whether to enable Sysprep when creating a Windows image
+     * @param Sysprep Whether to enable Sysprep when creating a Windows image
      */
     public void setSysprep(String Sysprep) {
         this.Sysprep = Sysprep;
     }
 
     /**
-     * Get whether allow shutdown a running instance to create an image
-     * @return Reboot whether allow shutdown a running instance to create an image
-     */
-    public String getReboot() {
-        return this.Reboot;
-    }
-
-    /**
-     * Set whether allow shutdown a running instance to create an image
-     * @param Reboot whether allow shutdown a running instance to create an image
-     */
-    public void setReboot(String Reboot) {
-        this.Reboot = Reboot;
-    }
-
-    /**
-     * Get Instance ID used to create an image
-     * @return DataDiskIds Data disk ID used to create an image
+     * Get The ID of the data disk used to create an image 
+     * @return DataDiskIds The ID of the data disk used to create an image
      */
     public String [] getDataDiskIds() {
         return this.DataDiskIds;
     }
 
     /**
-     * Set Data disk ID used to create an image
-     * @param DataDiskIds Data disk ID used to create an image
+     * Set The ID of the data disk used to create an image
+     * @param DataDiskIds The ID of the data disk used to create an image
      */
     public void setDataDiskIds(String [] DataDiskIds) {
         this.DataDiskIds = DataDiskIds;
     }
 
     /**
-     * Get Snapshot ID used to create an image, a system disk snapshot must be included
-     * @return SnapshotIds Snapshot ID used to create an image, a system disk snapshot must be included
+     * Get The ID of the snapshot used to create an image. A system disk snapshot must be included. 
+     * @return SnapshotIds The ID of the snapshot used to create an image. A system disk snapshot must be included.
      */
     public String [] getSnapshotIds() {
         return this.SnapshotIds;
     }
 
     /**
-     * Set Snapshot ID used to create an image, a system disk snapshot must be included
-     * @param SnapshotIds Snapshot ID used to create an image, a system disk snapshot must be included
+     * Set The ID of the snapshot used to create an image. A system disk snapshot must be included.
+     * @param SnapshotIds The ID of the snapshot used to create an image. A system disk snapshot must be included.
      */
     public void setSnapshotIds(String [] SnapshotIds) {
         this.SnapshotIds = SnapshotIds;
     }
 
     /**
-     * Get Detect validity of the request, without any impact on the detected resources
-     * @return DryRun Detect validity of the request, without any impact on the detected resources
+     * Get Verifies the validity of the request without affecting the resources involved. 
+     * @return DryRun Verifies the validity of the request without affecting the resources involved.
      */
     public Boolean getDryRun() {
         return this.DryRun;
     }
 
     /**
-     * Set Detect validity of the request, without any impact on the detected resources
-     * @param DryRun Detect validity of the request, without any impact on the detected resources
+     * Set Verifies the validity of the request without affecting the resources involved.
+     * @param DryRun Verifies the validity of the request without affecting the resources involved.
      */
     public void setDryRun(Boolean DryRun) {
         this.DryRun = DryRun;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ImageName", this.ImageName);
@@ -238,7 +215,6 @@ public class CreateImageRequest  extends AbstractModel{
         this.setParamSimple(map, prefix + "ImageDescription", this.ImageDescription);
         this.setParamSimple(map, prefix + "ForcePoweroff", this.ForcePoweroff);
         this.setParamSimple(map, prefix + "Sysprep", this.Sysprep);
-        this.setParamSimple(map, prefix + "Reboot", this.Reboot);
         this.setParamArraySimple(map, prefix + "DataDiskIds.", this.DataDiskIds);
         this.setParamArraySimple(map, prefix + "SnapshotIds.", this.SnapshotIds);
         this.setParamSimple(map, prefix + "DryRun", this.DryRun);

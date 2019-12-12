@@ -23,57 +23,81 @@ import java.util.HashMap;
 public class RebootInstancesRequest  extends AbstractModel{
 
     /**
-    * ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+    * Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Whether to perform a forced restart on the instance in case of a failure of normal restart.<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart on the instance in case of a failure of normal restart<br><br>Default: FALSE.
+    * Whether to force restart an instance after a normal restart fails. Valid values: <br><li>TRUE: force restart an instance after a normal restart fails <br><li>FALSE: do not force restart an instance after a normal restart fails <br><br>Default value: FALSE.
     */
     @SerializedName("ForceReboot")
     @Expose
     private Boolean ForceReboot;
 
     /**
-     * To obtain ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
-     * @return InstanceIds ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+    * Shutdown type. Valid values: <br><li>SOFT: soft shutdown<br><li>HARD: hard shutdown<br><li>SOFT_FIRST: perform a soft shutdown first, and perform a hard shutdown if the soft shutdown fails<br><br>Default value: SOFT.
+    */
+    @SerializedName("StopType")
+    @Expose
+    private String StopType;
+
+    /**
+     * Get Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100. 
+     * @return InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * To configure ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
-     * @param InstanceIds Ids of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * Set Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
+     * @param InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Obtaining whether to perform a forced shutdown on the instance in case of a failure of normal restart.<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart in case of a ffail normal restart<br><br>Default: FALSE.
-     * @return ForceReboot  Whether to perform a forced restart in case of a failure of noral restart.<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart in case of a failed normal restart.<br><br>Default: FALSE.
+     * Get Whether to force restart an instance after a normal restart fails. Valid values: <br><li>TRUE: force restart an instance after a normal restart fails <br><li>FALSE: do not force restart an instance after a normal restart fails <br><br>Default value: FALSE. 
+     * @return ForceReboot Whether to force restart an instance after a normal restart fails. Valid values: <br><li>TRUE: force restart an instance after a normal restart fails <br><li>FALSE: do not force restart an instance after a normal restart fails <br><br>Default value: FALSE.
      */
     public Boolean getForceReboot() {
         return this.ForceReboot;
     }
 
     /**
-     * Setting whether to perform a forced restart on the instance in case of a failure of normal restart.value range:<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart in case of a failed normal restart.<br><br>Default: FALSE.
-     * @param ForceReboot whether to perform a forced restart on the instance in case of a failure of normal restart.value range:<br><li>TRUE: Perform a forced restart in case of a failed normal restart.<br><li>FALSE：Do not perform a forced restart in case of a failed normal restart.<br><br>Default: FALSE.
+     * Set Whether to force restart an instance after a normal restart fails. Valid values: <br><li>TRUE: force restart an instance after a normal restart fails <br><li>FALSE: do not force restart an instance after a normal restart fails <br><br>Default value: FALSE.
+     * @param ForceReboot Whether to force restart an instance after a normal restart fails. Valid values: <br><li>TRUE: force restart an instance after a normal restart fails <br><li>FALSE: do not force restart an instance after a normal restart fails <br><br>Default value: FALSE.
      */
     public void setForceReboot(Boolean ForceReboot) {
         this.ForceReboot = ForceReboot;
     }
 
     /**
-     * For internal use only.
+     * Get Shutdown type. Valid values: <br><li>SOFT: soft shutdown<br><li>HARD: hard shutdown<br><li>SOFT_FIRST: perform a soft shutdown first, and perform a hard shutdown if the soft shutdown fails<br><br>Default value: SOFT. 
+     * @return StopType Shutdown type. Valid values: <br><li>SOFT: soft shutdown<br><li>HARD: hard shutdown<br><li>SOFT_FIRST: perform a soft shutdown first, and perform a hard shutdown if the soft shutdown fails<br><br>Default value: SOFT.
+     */
+    public String getStopType() {
+        return this.StopType;
+    }
+
+    /**
+     * Set Shutdown type. Valid values: <br><li>SOFT: soft shutdown<br><li>HARD: hard shutdown<br><li>SOFT_FIRST: perform a soft shutdown first, and perform a hard shutdown if the soft shutdown fails<br><br>Default value: SOFT.
+     * @param StopType Shutdown type. Valid values: <br><li>SOFT: soft shutdown<br><li>HARD: hard shutdown<br><li>SOFT_FIRST: perform a soft shutdown first, and perform a hard shutdown if the soft shutdown fails<br><br>Default value: SOFT.
+     */
+    public void setStopType(String StopType) {
+        this.StopType = StopType;
+    }
+
+    /**
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);
         this.setParamSimple(map, prefix + "ForceReboot", this.ForceReboot);
+        this.setParamSimple(map, prefix + "StopType", this.StopType);
 
     }
 }

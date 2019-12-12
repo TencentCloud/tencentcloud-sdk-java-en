@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteDisasterRecoverGroupsRequest  extends AbstractModel{
 
     /**
-    * spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
+    * List of spread placement group IDs, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API.
     */
     @SerializedName("DisasterRecoverGroupIds")
     @Expose
     private String [] DisasterRecoverGroupIds;
 
     /**
-     * Get spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
-     * @return DisasterRecoverGroupIds spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
+     * Get List of spread placement group IDs, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API. 
+     * @return DisasterRecoverGroupIds List of spread placement group IDs, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API.
      */
     public String [] getDisasterRecoverGroupIds() {
         return this.DisasterRecoverGroupIds;
     }
 
     /**
-     * Set spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
-     * @param DisasterRecoverGroupIds spread placement group ID了list, can query via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810).
+     * Set List of spread placement group IDs, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API.
+     * @param DisasterRecoverGroupIds List of spread placement group IDs, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API.
      */
     public void setDisasterRecoverGroupIds(String [] DisasterRecoverGroupIds) {
         this.DisasterRecoverGroupIds = DisasterRecoverGroupIds;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "DisasterRecoverGroupIds.", this.DisasterRecoverGroupIds);

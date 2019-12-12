@@ -30,14 +30,21 @@ public class PaiInstance  extends AbstractModel{
     private String InstanceId;
 
     /**
-    * Instance Domain name
+    * Instance domain name
     */
     @SerializedName("DomainName")
     @Expose
     private String DomainName;
 
     /**
-     * Obtain Instance ID
+    * 
+    */
+    @SerializedName("PaiMateUrl")
+    @Expose
+    private String PaiMateUrl;
+
+    /**
+     * Get Instance ID 
      * @return InstanceId Instance ID
      */
     public String getInstanceId() {
@@ -53,7 +60,7 @@ public class PaiInstance  extends AbstractModel{
     }
 
     /**
-     * Obtain Instance domain name
+     * Get Instance domain name 
      * @return DomainName Instance domain name
      */
     public String getDomainName() {
@@ -69,11 +76,28 @@ public class PaiInstance  extends AbstractModel{
     }
 
     /**
-     * For internal use only.
+     * Get  
+     * @return PaiMateUrl 
+     */
+    public String getPaiMateUrl() {
+        return this.PaiMateUrl;
+    }
+
+    /**
+     * Set 
+     * @param PaiMateUrl 
+     */
+    public void setPaiMateUrl(String PaiMateUrl) {
+        this.PaiMateUrl = PaiMateUrl;
+    }
+
+    /**
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);
         this.setParamSimple(map, prefix + "DomainName", this.DomainName);
+        this.setParamSimple(map, prefix + "PaiMateUrl", this.PaiMateUrl);
 
     }
 }

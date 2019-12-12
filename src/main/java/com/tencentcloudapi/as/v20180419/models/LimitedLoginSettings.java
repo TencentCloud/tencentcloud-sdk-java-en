@@ -30,7 +30,7 @@ public class LimitedLoginSettings  extends AbstractModel{
     private String [] KeyIds;
 
     /**
-     * Obtain the  list of key IDs.
+     * Get List of key IDs. 
      * @return KeyIds List of key IDs.
      */
     public String [] getKeyIds() {
@@ -38,7 +38,7 @@ public class LimitedLoginSettings  extends AbstractModel{
     }
 
     /**
-     * Configure the  list of key IDs.
+     * Set List of key IDs.
      * @param KeyIds List of key IDs.
      */
     public void setKeyIds(String [] KeyIds) {
@@ -46,7 +46,7 @@ public class LimitedLoginSettings  extends AbstractModel{
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "KeyIds.", this.KeyIds);

@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteAutoScalingGroupRequest  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-     * Get the scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+     * Get Auto scaling group ID 
+     * @return AutoScalingGroupId Auto scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set the scaling group ID
-     * @param AutoScalingGroupId Scaling group ID
+     * Set Auto scaling group ID
+     * @param AutoScalingGroupId Auto scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

@@ -23,114 +23,114 @@ import java.util.HashMap;
 public class DescribeAutoScalingInstancesRequest  extends AbstractModel{
 
     /**
-    * IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
+    * ID of the CVM instance to be queried. This parameter does not support specifying both InstanceIds and Filters at the same time.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Filter conditions.
-<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
+    * Filter.
+<li> instance-id - String - Required: No - (Filter) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `InstanceIds` and `Filters` at the same time.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+    * Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-    * Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+    * Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-     * Obtain IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
-     * @return InstanceIds IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
+     * Get ID of the CVM instance to be queried. This parameter does not support specifying both InstanceIds and Filters at the same time. 
+     * @return InstanceIds ID of the CVM instance to be queried. This parameter does not support specifying both InstanceIds and Filters at the same time.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * Set IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
-     * @param InstanceIds IDs of CVM instances to be queried. You cannot specify both InstanceIds and Filters.
+     * Set ID of the CVM instance to be queried. This parameter does not support specifying both InstanceIds and Filters at the same time.
+     * @param InstanceIds ID of the CVM instance to be queried. This parameter does not support specifying both InstanceIds and Filters at the same time.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Obtain filter conditions.
-<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
-     * @return Filters Filter conditions.
-<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
+     * Get Filter.
+<li> instance-id - String - Required: No - (Filter) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `InstanceIds` and `Filters` at the same time. 
+     * @return Filters Filter.
+<li> instance-id - String - Required: No - (Filter) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `InstanceIds` and `Filters` at the same time.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter conditions.
-<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
-     * @param Filters conditions.
-<li> instance-id - String - Required: No - (Filter condition) Filter by instance ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `InstanceIds` and `Filters`.
+     * Set Filter.
+<li> instance-id - String - Required: No - (Filter) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `InstanceIds` and `Filters` at the same time.
+     * @param Filters Filter.
+<li> instance-id - String - Required: No - (Filter) Filter by instance ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `InstanceIds` and `Filters` at the same time.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Obtain offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Offset Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

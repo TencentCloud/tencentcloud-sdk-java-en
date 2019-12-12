@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeInstanceVncUrlResponse  extends AbstractModel{
 
     /**
-    * the address of management terminal of instance.
+    * Instance VNC URL.
     */
     @SerializedName("InstanceVncUrl")
     @Expose
     private String InstanceVncUrl;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the address of management terminal of instance.
-     * @return InstanceVncUrl the address of management terminal of instance.
+     * Get Instance VNC URL. 
+     * @return InstanceVncUrl Instance VNC URL.
      */
     public String getInstanceVncUrl() {
         return this.InstanceVncUrl;
     }
 
     /**
-     * Set the address of management terminal of instance.
-     * @param InstanceVncUrl the address of management terminal of instance.
+     * Set Instance VNC URL.
+     * @param InstanceVncUrl Instance VNC URL.
      */
     public void setInstanceVncUrl(String InstanceVncUrl) {
         this.InstanceVncUrl = InstanceVncUrl;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceVncUrl", this.InstanceVncUrl);

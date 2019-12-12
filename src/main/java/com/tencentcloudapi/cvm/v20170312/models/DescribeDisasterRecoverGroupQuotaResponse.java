@@ -27,48 +27,48 @@ public class DescribeDisasterRecoverGroupQuotaResponse  extends AbstractModel{
     */
     @SerializedName("GroupQuota")
     @Expose
-    private Integer GroupQuota;
+    private Long GroupQuota;
 
     /**
     * The number of placement groups that have been created by the current user.
     */
     @SerializedName("CurrentNum")
     @Expose
-    private Integer CurrentNum;
+    private Long CurrentNum;
 
     /**
-    * Quota of instances in a physical-machine-type disaster recovery group.
+    * Quota on instances in a physical-machine-type disaster recovery group.
     */
     @SerializedName("CvmInHostGroupQuota")
     @Expose
-    private Integer CvmInHostGroupQuota;
+    private Long CvmInHostGroupQuota;
 
     /**
-    * Quota of instances in a switch disaster recovery group.
+    * Quota on instances in a switch-type disaster recovery group.
     */
     @SerializedName("CvmInSwGroupQuota")
     @Expose
-    private Integer CvmInSwGroupQuota;
+    private Long CvmInSwGroupQuota;
 
     /**
-    * Quota of instances in a rack-type disaster recovery group.
+    * Quota on instances in a rack-type disaster recovery group.
     */
     @SerializedName("CvmInRackGroupQuota")
     @Expose
-    private Integer CvmInRackGroupQuota;
+    private Long CvmInRackGroupQuota;
 
     /**
-    * Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get The maximum number of placement groups that can be created.
+     * Get The maximum number of placement groups that can be created. 
      * @return GroupQuota The maximum number of placement groups that can be created.
      */
-    public Integer getGroupQuota() {
+    public Long getGroupQuota() {
         return this.GroupQuota;
     }
 
@@ -76,15 +76,15 @@ public class DescribeDisasterRecoverGroupQuotaResponse  extends AbstractModel{
      * Set The maximum number of placement groups that can be created.
      * @param GroupQuota The maximum number of placement groups that can be created.
      */
-    public void setGroupQuota(Integer GroupQuota) {
+    public void setGroupQuota(Long GroupQuota) {
         this.GroupQuota = GroupQuota;
     }
 
     /**
-     * Get The number of placement groups that have been created by the current user.
+     * Get The number of placement groups that have been created by the current user. 
      * @return CurrentNum The number of placement groups that have been created by the current user.
      */
-    public Integer getCurrentNum() {
+    public Long getCurrentNum() {
         return this.CurrentNum;
     }
 
@@ -92,76 +92,76 @@ public class DescribeDisasterRecoverGroupQuotaResponse  extends AbstractModel{
      * Set The number of placement groups that have been created by the current user.
      * @param CurrentNum The number of placement groups that have been created by the current user.
      */
-    public void setCurrentNum(Integer CurrentNum) {
+    public void setCurrentNum(Long CurrentNum) {
         this.CurrentNum = CurrentNum;
     }
 
     /**
-     * Get Quota of instances in a physical-machine-type disaster recovery group.
-     * @return CvmInHostGroupQuota Quota of instances in a physical-machine-type disaster recovery group.
+     * Get Quota on instances in a physical-machine-type disaster recovery group. 
+     * @return CvmInHostGroupQuota Quota on instances in a physical-machine-type disaster recovery group.
      */
-    public Integer getCvmInHostGroupQuota() {
+    public Long getCvmInHostGroupQuota() {
         return this.CvmInHostGroupQuota;
     }
 
     /**
-     * Set Quota of instances in a physical-machine-type disaster recovery group.
-     * @param CvmInHostGroupQuota Quota of instances in a physical-machine-type disaster recovery group.
+     * Set Quota on instances in a physical-machine-type disaster recovery group.
+     * @param CvmInHostGroupQuota Quota on instances in a physical-machine-type disaster recovery group.
      */
-    public void setCvmInHostGroupQuota(Integer CvmInHostGroupQuota) {
+    public void setCvmInHostGroupQuota(Long CvmInHostGroupQuota) {
         this.CvmInHostGroupQuota = CvmInHostGroupQuota;
     }
 
     /**
-     * Get Quota of instances in a switch disaster recovery group.
-     * @return CvmInSwGroupQuota Quota of instances in a switch disaster recovery group.
+     * Get Quota on instances in a switch-type disaster recovery group. 
+     * @return CvmInSwGroupQuota Quota on instances in a switch-type disaster recovery group.
      */
-    public Integer getCvmInSwGroupQuota() {
+    public Long getCvmInSwGroupQuota() {
         return this.CvmInSwGroupQuota;
     }
 
     /**
-     * Set Quota of instances in a switch disaster recovery group.
-     * @param CvmInSwGroupQuota Quota of instances in a switch disaster recovery group.
+     * Set Quota on instances in a switch-type disaster recovery group.
+     * @param CvmInSwGroupQuota Quota on instances in a switch-type disaster recovery group.
      */
-    public void setCvmInSwGroupQuota(Integer CvmInSwGroupQuota) {
+    public void setCvmInSwGroupQuota(Long CvmInSwGroupQuota) {
         this.CvmInSwGroupQuota = CvmInSwGroupQuota;
     }
 
     /**
-     * Get Quota of instances in a switch disaster recovery group.
-     * @return CvmInRackGroupQuota Quota of instances in a rack-type disaster recovery group.
+     * Get Quota on instances in a rack-type disaster recovery group. 
+     * @return CvmInRackGroupQuota Quota on instances in a rack-type disaster recovery group.
      */
-    public Integer getCvmInRackGroupQuota() {
+    public Long getCvmInRackGroupQuota() {
         return this.CvmInRackGroupQuota;
     }
 
     /**
-     * Set Quota of instances in a rack-type disaster recovery group.
-     * @param CvmInRackGroupQuota Quota of instances in a rack-type disaster recovery group.
+     * Set Quota on instances in a rack-type disaster recovery group.
+     * @param CvmInRackGroupQuota Quota on instances in a rack-type disaster recovery group.
      */
-    public void setCvmInRackGroupQuota(Integer CvmInRackGroupQuota) {
+    public void setCvmInRackGroupQuota(Long CvmInRackGroupQuota) {
         this.CvmInRackGroupQuota = CvmInRackGroupQuota;
     }
 
     /**
-     * Get Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupQuota", this.GroupQuota);

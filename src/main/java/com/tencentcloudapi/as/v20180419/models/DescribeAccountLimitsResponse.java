@@ -23,122 +23,122 @@ import java.util.HashMap;
 public class DescribeAccountLimitsResponse  extends AbstractModel{
 
     /**
-    * The maximum number of launch configurations that can be created under your account
+    * Maximum number of launch configurations allowed for creation by the user account
     */
     @SerializedName("MaxNumberOfLaunchConfigurations")
     @Expose
-    private Integer MaxNumberOfLaunchConfigurations;
+    private Long MaxNumberOfLaunchConfigurations;
 
     /**
-    * The number of existing launch configurations under your account
+    * Current number of launch configurations under the user account
     */
     @SerializedName("NumberOfLaunchConfigurations")
     @Expose
-    private Integer NumberOfLaunchConfigurations;
+    private Long NumberOfLaunchConfigurations;
 
     /**
-    * The maximum number of scaling groups that can be created under your account
+    * Maximum number of auto scaling groups allowed for creation by the user account
     */
     @SerializedName("MaxNumberOfAutoScalingGroups")
     @Expose
-    private Integer MaxNumberOfAutoScalingGroups;
+    private Long MaxNumberOfAutoScalingGroups;
 
     /**
-    * The number of existing scaling groups under your account
+    * Current number of auto scaling groups under the user account
     */
     @SerializedName("NumberOfAutoScalingGroups")
     @Expose
-    private Integer NumberOfAutoScalingGroups;
+    private Long NumberOfAutoScalingGroups;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the maximum number of launch configurations that can be created under your account
-     * @return MaxNumberOfLaunchConfigurations The maximum number of launch configurations that can be created under your account
+     * Get Maximum number of launch configurations allowed for creation by the user account 
+     * @return MaxNumberOfLaunchConfigurations Maximum number of launch configurations allowed for creation by the user account
      */
-    public Integer getMaxNumberOfLaunchConfigurations() {
+    public Long getMaxNumberOfLaunchConfigurations() {
         return this.MaxNumberOfLaunchConfigurations;
     }
 
     /**
-     * Set the maximum number of launch configurations that can be created under your account
-     * @param MaxNumberOfLaunchConfigurations The maximum number of launch configurations that can be created under your account
+     * Set Maximum number of launch configurations allowed for creation by the user account
+     * @param MaxNumberOfLaunchConfigurations Maximum number of launch configurations allowed for creation by the user account
      */
-    public void setMaxNumberOfLaunchConfigurations(Integer MaxNumberOfLaunchConfigurations) {
+    public void setMaxNumberOfLaunchConfigurations(Long MaxNumberOfLaunchConfigurations) {
         this.MaxNumberOfLaunchConfigurations = MaxNumberOfLaunchConfigurations;
     }
 
     /**
-     * Obtain the number of existing launch configurations under your account
-     * @return NumberOfLaunchConfigurations The number of existing launch configurations under your account
+     * Get Current number of launch configurations under the user account 
+     * @return NumberOfLaunchConfigurations Current number of launch configurations under the user account
      */
-    public Integer getNumberOfLaunchConfigurations() {
+    public Long getNumberOfLaunchConfigurations() {
         return this.NumberOfLaunchConfigurations;
     }
 
     /**
-     * Set the number of existing launch configurations under your account
-     * @param NumberOfLaunchConfigurations The number of existing launch configurations under your account
+     * Set Current number of launch configurations under the user account
+     * @param NumberOfLaunchConfigurations Current number of launch configurations under the user account
      */
-    public void setNumberOfLaunchConfigurations(Integer NumberOfLaunchConfigurations) {
+    public void setNumberOfLaunchConfigurations(Long NumberOfLaunchConfigurations) {
         this.NumberOfLaunchConfigurations = NumberOfLaunchConfigurations;
     }
 
     /**
-     * Obtain the number of existing scaling groups under your account
-     * @return MaxNumberOfAutoScalingGroups The maximum number of scaling groups that can be created under your account
+     * Get Maximum number of auto scaling groups allowed for creation by the user account 
+     * @return MaxNumberOfAutoScalingGroups Maximum number of auto scaling groups allowed for creation by the user account
      */
-    public Integer getMaxNumberOfAutoScalingGroups() {
+    public Long getMaxNumberOfAutoScalingGroups() {
         return this.MaxNumberOfAutoScalingGroups;
     }
 
     /**
-     * Set the maximum number of scaling groups that can be created under your account
-     * @param MaxNumberOfAutoScalingGroups The maximum number of scaling groups that can be created under your account
+     * Set Maximum number of auto scaling groups allowed for creation by the user account
+     * @param MaxNumberOfAutoScalingGroups Maximum number of auto scaling groups allowed for creation by the user account
      */
-    public void setMaxNumberOfAutoScalingGroups(Integer MaxNumberOfAutoScalingGroups) {
+    public void setMaxNumberOfAutoScalingGroups(Long MaxNumberOfAutoScalingGroups) {
         this.MaxNumberOfAutoScalingGroups = MaxNumberOfAutoScalingGroups;
     }
 
     /**
-     * Obtain the number of existing scaling groups under your account
-     * @return NumberOfAutoScalingGroups The number of existing scaling groups under your account
+     * Get Current number of auto scaling groups under the user account 
+     * @return NumberOfAutoScalingGroups Current number of auto scaling groups under the user account
      */
-    public Integer getNumberOfAutoScalingGroups() {
+    public Long getNumberOfAutoScalingGroups() {
         return this.NumberOfAutoScalingGroups;
     }
 
     /**
-     * Set the number of existing scaling groups under your account
-     * @param NumberOfAutoScalingGroups The number of existing scaling groups under your account
+     * Set Current number of auto scaling groups under the user account
+     * @param NumberOfAutoScalingGroups Current number of auto scaling groups under the user account
      */
-    public void setNumberOfAutoScalingGroups(Integer NumberOfAutoScalingGroups) {
+    public void setNumberOfAutoScalingGroups(Long NumberOfAutoScalingGroups) {
         this.NumberOfAutoScalingGroups = NumberOfAutoScalingGroups;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "MaxNumberOfLaunchConfigurations", this.MaxNumberOfLaunchConfigurations);

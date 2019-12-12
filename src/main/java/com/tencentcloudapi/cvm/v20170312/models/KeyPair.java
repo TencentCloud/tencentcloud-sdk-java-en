@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class KeyPair  extends AbstractModel{
 
     /**
-    * Key pair `ID` is the unique identifier of key pair and cannot be modified.
+    * Key pair `ID`, the unique identifier of a key pair.
     */
     @SerializedName("KeyId")
     @Expose
@@ -41,7 +41,7 @@ public class KeyPair  extends AbstractModel{
     */
     @SerializedName("ProjectId")
     @Expose
-    private Integer ProjectId;
+    private Long ProjectId;
 
     /**
     * Key pair description.
@@ -51,163 +51,163 @@ public class KeyPair  extends AbstractModel{
     private String Description;
 
     /**
-    * The public key (in plain text) of the key pair.
+    * Content of public key in a key pair.
     */
     @SerializedName("PublicKey")
     @Expose
     private String PublicKey;
 
     /**
-    * The private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
+    * Content of private key in a key pair. Tencent Cloud do not keep private keys. Please keep it properly.
     */
     @SerializedName("PrivateKey")
     @Expose
     private String PrivateKey;
 
     /**
-    * The list of `ID` of instances associated with the key.
+    * `ID` list of instances associated with a key.
     */
     @SerializedName("AssociatedInstanceIds")
     @Expose
     private String [] AssociatedInstanceIds;
 
     /**
-    * Creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
+    * Creation time, which follows the `ISO8601` standard and uses `UTC` time in the format of `YYYY-MM-DDThh:mm:ssZ`.
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-     * Get key pair `ID` is the unique identifier of key pair and cannot be modified.
-     * @return KeyId Key pair `ID` is the unique identifier of key pair and cannot be modified.
+     * Get Key pair `ID`, the unique identifier of a key pair. 
+     * @return KeyId Key pair `ID`, the unique identifier of a key pair.
      */
     public String getKeyId() {
         return this.KeyId;
     }
 
     /**
-     * Set key pair `ID` is the unique identifier of key pair and cannot be modified.
-     * @param KeyId Key pair `ID` is the unique identifier of key pair and cannot be modified.
+     * Set Key pair `ID`, the unique identifier of a key pair.
+     * @param KeyId Key pair `ID`, the unique identifier of a key pair.
      */
     public void setKeyId(String KeyId) {
         this.KeyId = KeyId;
     }
 
     /**
-     * Get key pair name.
-     * @return KeyName key pair name.
+     * Get Key pair name. 
+     * @return KeyName Key pair name.
      */
     public String getKeyName() {
         return this.KeyName;
     }
 
     /**
-     * Set key pair name.
-     * @param KeyName key pair name.
+     * Set Key pair name.
+     * @param KeyName Key pair name.
      */
     public void setKeyName(String KeyName) {
         this.KeyName = KeyName;
     }
 
     /**
-     * Get `ID` of the project to which a key pair belongs.
+     * Get `ID` of the project to which a key pair belongs. 
      * @return ProjectId `ID` of the project to which a key pair belongs.
      */
-    public Integer getProjectId() {
+    public Long getProjectId() {
         return this.ProjectId;
     }
 
     /**
      * Set `ID` of the project to which a key pair belongs.
-     * @param ProjectId ID of the project belongs.
+     * @param ProjectId `ID` of the project to which a key pair belongs.
      */
-    public void setProjectId(Integer ProjectId) {
+    public void setProjectId(Long ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * Get projectId ID of the project belongs.
-     * @return Description projectId ID of the project belongs.
+     * Get Key pair description. 
+     * @return Description Key pair description.
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * Set projectId ID of the project belongs.
-     * @param Description projectId ID of the project belongs.
+     * Set Key pair description.
+     * @param Description Key pair description.
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * Get the public key (in plain text) of the key pair.
-     * @return PublicKey the public key (in plain text) of the key pair.
+     * Get Content of public key in a key pair. 
+     * @return PublicKey Content of public key in a key pair.
      */
     public String getPublicKey() {
         return this.PublicKey;
     }
 
     /**
-     * Set the public key (in plain text) of the key pair.
-     * @param PublicKey The public key (in plain text) of the key pair.
+     * Set Content of public key in a key pair.
+     * @param PublicKey Content of public key in a key pair.
      */
     public void setPublicKey(String PublicKey) {
         this.PublicKey = PublicKey;
     }
 
     /**
-     * Get the private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
-     * @return PrivateKey the private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
+     * Get Content of private key in a key pair. Tencent Cloud do not keep private keys. Please keep it properly. 
+     * @return PrivateKey Content of private key in a key pair. Tencent Cloud do not keep private keys. Please keep it properly.
      */
     public String getPrivateKey() {
         return this.PrivateKey;
     }
 
     /**
-     * Set the private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
-     * @param PrivateKey the private key (in plain text) of the key pair. Tencent Cloud will not retain user's private key. Please keep it well.
+     * Set Content of private key in a key pair. Tencent Cloud do not keep private keys. Please keep it properly.
+     * @param PrivateKey Content of private key in a key pair. Tencent Cloud do not keep private keys. Please keep it properly.
      */
     public void setPrivateKey(String PrivateKey) {
         this.PrivateKey = PrivateKey;
     }
 
     /**
-     * Get the list of `IDs` of instances associated with the key.
-     * @return AssociatedInstanceIds the list of `IDs` of instances associated with the key.
+     * Get `ID` list of instances associated with a key. 
+     * @return AssociatedInstanceIds `ID` list of instances associated with a key.
      */
     public String [] getAssociatedInstanceIds() {
         return this.AssociatedInstanceIds;
     }
 
     /**
-     * Set the list of `IDs` of instances associated with the key.
-     * @param AssociatedInstanceIds the list of `IDs` of instances associated with the key.
+     * Set `ID` list of instances associated with a key.
+     * @param AssociatedInstanceIds `ID` list of instances associated with a key.
      */
     public void setAssociatedInstanceIds(String [] AssociatedInstanceIds) {
         this.AssociatedInstanceIds = AssociatedInstanceIds;
     }
 
     /**
-     * Set creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
-     * @return CreatedTime creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
+     * Get Creation time, which follows the `ISO8601` standard and uses `UTC` time in the format of `YYYY-MM-DDThh:mm:ssZ`. 
+     * @return CreatedTime Creation time, which follows the `ISO8601` standard and uses `UTC` time in the format of `YYYY-MM-DDThh:mm:ssZ`.
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * Set creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
-     * @param CreatedTime creation time, which is displayed in a format that conforms to the `ISO8601` standard, and `UTC` time is used. Format is `YYYY-MM-DDThh:mm:ssZ`.
+     * Set Creation time, which follows the `ISO8601` standard and uses `UTC` time in the format of `YYYY-MM-DDThh:mm:ssZ`.
+     * @param CreatedTime Creation time, which follows the `ISO8601` standard and uses `UTC` time in the format of `YYYY-MM-DDThh:mm:ssZ`.
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "KeyId", this.KeyId);

@@ -23,106 +23,106 @@ import java.util.HashMap;
 public class ModifyNotificationConfigurationRequest  extends AbstractModel{
 
     /**
-    * ID of notification to be modified. 
+    * ID of the notification to be modified.
     */
     @SerializedName("AutoScalingNotificationId")
     @Expose
     private String AutoScalingNotificationId;
 
     /**
-    * Type of notification: grouping of notification types that could be subscribed. Value range is as below:
-<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
-<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
+    * Notification type, i.e., the set of types of notifications to be subscribed to. Value range:
+<li>SCALE_OUT_SUCCESSFUL: scale-out succeeded</li>
+<li>SCALE_OUT_FAILED: scale-out failed</li>
+<li>SCALE_IN_SUCCESSFUL: scale-in succeeded</li>
+<li>SCALE_IN_FAILED: scale-in failed</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL: unhealthy instance replacement succeeded</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED: unhealthy instance replacement failed</li>
     */
     @SerializedName("NotificationTypes")
     @Expose
     private String [] NotificationTypes;
 
     /**
-    * ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
+    * Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404).
     */
     @SerializedName("NotificationUserGroupIds")
     @Expose
     private String [] NotificationUserGroupIds;
 
     /**
-     * Obtain the notification ID that is to be modified.
-     * @return AutoScalingNotificationId Notification ID to be modified.
+     * Get ID of the notification to be modified. 
+     * @return AutoScalingNotificationId ID of the notification to be modified.
      */
     public String getAutoScalingNotificationId() {
         return this.AutoScalingNotificationId;
     }
 
     /**
-     * Set notification ID that will be modified.
-     * @param AutoScalingNotificationId Notification ID to be modified.
+     * Set ID of the notification to be modified.
+     * @param AutoScalingNotificationId ID of the notification to be modified.
      */
     public void setAutoScalingNotificationId(String AutoScalingNotificationId) {
         this.AutoScalingNotificationId = AutoScalingNotificationId;
     }
 
     /**
-     * Obtain the type of notification, which is grouping of notification types that could be subscribed. Value range is as below:
-<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
-<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
-     * @return NotificationTypes Type of notification: grouping of notification types that could be subscribed. Value range is as below:
-<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
-<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
+     * Get Notification type, i.e., the set of types of notifications to be subscribed to. Value range:
+<li>SCALE_OUT_SUCCESSFUL: scale-out succeeded</li>
+<li>SCALE_OUT_FAILED: scale-out failed</li>
+<li>SCALE_IN_SUCCESSFUL: scale-in succeeded</li>
+<li>SCALE_IN_FAILED: scale-in failed</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL: unhealthy instance replacement succeeded</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED: unhealthy instance replacement failed</li> 
+     * @return NotificationTypes Notification type, i.e., the set of types of notifications to be subscribed to. Value range:
+<li>SCALE_OUT_SUCCESSFUL: scale-out succeeded</li>
+<li>SCALE_OUT_FAILED: scale-out failed</li>
+<li>SCALE_IN_SUCCESSFUL: scale-in succeeded</li>
+<li>SCALE_IN_FAILED: scale-in failed</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL: unhealthy instance replacement succeeded</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED: unhealthy instance replacement failed</li>
      */
     public String [] getNotificationTypes() {
         return this.NotificationTypes;
     }
 
     /**
-     * Set type of notification: grouping of notification types that could be subscribed. Value range is as below:
-<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
-<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
-     * @param NotificationTypes Type of notification: grouping of notification types that could be subscribed. Value range is as below:
-<li>SCALE_OUT_SUCCESSFUL：Expansion completed successfully.</li>
-<li>SCALE_OUT_SUCCESSFUL：Expansion failed.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking completed successfully.</li>
-<li>SCALE_IN_SUCCESSFUL：Shrinking failed.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：Operation of replacing unhealthy instance completes successfully.</li>
-<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：Operation of replacing unhealthy instance failed.</li>
+     * Set Notification type, i.e., the set of types of notifications to be subscribed to. Value range:
+<li>SCALE_OUT_SUCCESSFUL: scale-out succeeded</li>
+<li>SCALE_OUT_FAILED: scale-out failed</li>
+<li>SCALE_IN_SUCCESSFUL: scale-in succeeded</li>
+<li>SCALE_IN_FAILED: scale-in failed</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL: unhealthy instance replacement succeeded</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED: unhealthy instance replacement failed</li>
+     * @param NotificationTypes Notification type, i.e., the set of types of notifications to be subscribed to. Value range:
+<li>SCALE_OUT_SUCCESSFUL: scale-out succeeded</li>
+<li>SCALE_OUT_FAILED: scale-out failed</li>
+<li>SCALE_IN_SUCCESSFUL: scale-in succeeded</li>
+<li>SCALE_IN_FAILED: scale-in failed</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL: unhealthy instance replacement succeeded</li>
+<li>REPLACE_UNHEALTHY_INSTANCE_FAILED: unhealthy instance replacement failed</li>
      */
     public void setNotificationTypes(String [] NotificationTypes) {
         this.NotificationTypes = NotificationTypes;
     }
 
     /**
-     * Obtain ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
-     * @return NotificationUserGroupIds ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
+     * Get Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404). 
+     * @return NotificationUserGroupIds Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404).
      */
     public String [] getNotificationUserGroupIds() {
         return this.NotificationUserGroupIds;
     }
 
     /**
-     * Set ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
-     * @param NotificationUserGroupIds ID of notification group.It is the aggregation of user group IDs.User group IDs can be retrieved at [DescribeUserGroup](https://cloud.tencent.com/document/api/378/4404).
+     * Set Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404).
+     * @param NotificationUserGroupIds Array of String | Notification group ID, which is the set of user group IDs and can be queried through the [DescribeUserGroup API](https://cloud.tencent.com/document/api/378/4404).
      */
     public void setNotificationUserGroupIds(String [] NotificationUserGroupIds) {
         this.NotificationUserGroupIds = NotificationUserGroupIds;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingNotificationId", this.AutoScalingNotificationId);

@@ -23,237 +23,237 @@ import java.util.HashMap;
 public class ScheduledAction  extends AbstractModel{
 
     /**
-    * Scheduled action ID
+    * Scheduled task ID.
     */
     @SerializedName("ScheduledActionId")
     @Expose
     private String ScheduledActionId;
 
     /**
-    * scheduled action name
+    * Scheduled task name.
     */
     @SerializedName("ScheduledActionName")
     @Expose
     private String ScheduledActionName;
 
     /**
-    * ID of the scaling group that scheduled action belong to.
+    * ID of the auto scaling group where the scheduled task is located.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+    * Start time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * Repeat method of scheduled action
+    * Repeating mode of the scheduled task.
     */
     @SerializedName("Recurrence")
     @Expose
     private String Recurrence;
 
     /**
-    * Scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+    * End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-    * Maximum number of instances set by scheduled action
+    * Maximum number of instances set by the scheduled task.
     */
     @SerializedName("MaxSize")
     @Expose
-    private Integer MaxSize;
+    private Long MaxSize;
 
     /**
-    * Desired number of instances set by scheduled action
+    * Desired number of instances set by the scheduled task.
     */
     @SerializedName("DesiredCapacity")
     @Expose
-    private Integer DesiredCapacity;
+    private Long DesiredCapacity;
 
     /**
-    * Minimum number of instances set by scheduled action
+    * Minimum number of instances set by the scheduled task.
     */
     @SerializedName("MinSize")
     @Expose
-    private Integer MinSize;
+    private Long MinSize;
 
     /**
-    * scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
+    * Creation time of the scheduled task. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-     * Get scheduled action ID
-     * @return ScheduledActionId Scheduled action ID
+     * Get Scheduled task ID. 
+     * @return ScheduledActionId Scheduled task ID.
      */
     public String getScheduledActionId() {
         return this.ScheduledActionId;
     }
 
     /**
-     * Set scheduled action ID
-     * @param ScheduledActionId Scheduled action ID
+     * Set Scheduled task ID.
+     * @param ScheduledActionId Scheduled task ID.
      */
     public void setScheduledActionId(String ScheduledActionId) {
         this.ScheduledActionId = ScheduledActionId;
     }
 
     /**
-     * Get scheduled action name
-     * @return ScheduledActionId Scheduled action name
+     * Get Scheduled task name. 
+     * @return ScheduledActionName Scheduled task name.
      */
     public String getScheduledActionName() {
         return this.ScheduledActionName;
     }
 
     /**
-     * Set scheduled action name
-     * @param ScheduledActionName Scheduled action name
+     * Set Scheduled task name.
+     * @param ScheduledActionName Scheduled task name.
      */
     public void setScheduledActionName(String ScheduledActionName) {
         this.ScheduledActionName = ScheduledActionName;
     }
 
     /**
-     * Obtain ID of the scaling group that the scheduled action belong to.
-     * @return AutoScalingGroupId ID of the scaling group that the scheduled action belong to.
+     * Get ID of the auto scaling group where the scheduled task is located. 
+     * @return AutoScalingGroupId ID of the auto scaling group where the scheduled task is located.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set ID of the scaling group that the scheduled action belong to.
-     * @param AutoScalingGroupId Scaling group ID that the scheduled action belong to.
+     * Set ID of the auto scaling group where the scheduled task is located.
+     * @param AutoScalingGroupId ID of the auto scaling group where the scheduled task is located.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Obtain scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
-     * @return StartTime Scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * Get Start time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. 
+     * @return StartTime Start time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * Set the scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
-     * @param StartTime The scheduled action start time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * Set Start time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
+     * @param StartTime Start time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * Obtain the recurrence of scheduled action
-     * @return Recurrence The recurrence of scheduled action
+     * Get Repeating mode of the scheduled task. 
+     * @return Recurrence Repeating mode of the scheduled task.
      */
     public String getRecurrence() {
         return this.Recurrence;
     }
 
     /**
-     * Set the recurrence of scheduled action
-     * @param Recurrence The recurrence of scheduled action
+     * Set Repeating mode of the scheduled task.
+     * @param Recurrence Repeating mode of the scheduled task.
      */
     public void setRecurrence(String Recurrence) {
         this.Recurrence = Recurrence;
     }
 
     /**
-     * Set the scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
-     * @return EndTime Scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * Get End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. 
+     * @return EndTime End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * Set the scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
-     * @param EndTime Scheduled action end time. Value: `Beijing Time` (UTC+8) in `ISO8601` standard and format `YYYY-MM-DDThh:mm:ss+08:00`.
+     * Set End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
+     * @param EndTime End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * Obtain the maximum number of instances set by scheduled action
-     * @return MaxSize The maximum number of instances set by scheduled action
+     * Get Maximum number of instances set by the scheduled task. 
+     * @return MaxSize Maximum number of instances set by the scheduled task.
      */
-    public Integer getMaxSize() {
+    public Long getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * Set the maximum number of instances set by scheduled action
-     * @param MaxSize The maximum number of instances set by scheduled action
+     * Set Maximum number of instances set by the scheduled task.
+     * @param MaxSize Maximum number of instances set by the scheduled task.
      */
-    public void setMaxSize(Integer MaxSize) {
+    public void setMaxSize(Long MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * Obtain the desired number of instances set by scheduled action
-     * @return DesiredCapacity The desired number of instances set by scheduled action
+     * Get Desired number of instances set by the scheduled task. 
+     * @return DesiredCapacity Desired number of instances set by the scheduled task.
      */
-    public Integer getDesiredCapacity() {
+    public Long getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * Set the desired number of instances set by scheduled action
-     * @param DesiredCapacity The desired number of instances set by scheduled action
+     * Set Desired number of instances set by the scheduled task.
+     * @param DesiredCapacity Desired number of instances set by the scheduled task.
      */
-    public void setDesiredCapacity(Integer DesiredCapacity) {
+    public void setDesiredCapacity(Long DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * Obtain the minimum number of instances set by scheduled action
-     * @return MinSize The minimum number of instances set by scheduled action
+     * Get Minimum number of instances set by the scheduled task. 
+     * @return MinSize Minimum number of instances set by the scheduled task.
      */
-    public Integer getMinSize() {
+    public Long getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * Set the minimum number of instances set by scheduled action
-     * @param MinSize The minimum number of instances set by scheduled action
+     * Set Minimum number of instances set by the scheduled task.
+     * @param MinSize Minimum number of instances set by the scheduled task.
      */
-    public void setMinSize(Integer MinSize) {
+    public void setMinSize(Long MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * Obtain scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
-     * @return CreatedTime Scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
+     * Get Creation time of the scheduled task. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard. 
+     * @return CreatedTime Creation time of the scheduled task. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * Set the scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
-     * @param CreatedTime Scheduled action creation time. Value: `UTC`Time in`ISO8601` standard，format：`YYYY-MM-DDThh:mm:ssZ`。
+     * Set Creation time of the scheduled task. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
+     * @param CreatedTime Creation time of the scheduled task. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ScheduledActionId", this.ScheduledActionId);

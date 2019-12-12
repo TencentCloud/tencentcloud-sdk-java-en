@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeImagesResponse  extends AbstractModel{
 
     /**
-    * An array of detailed information of an image, including the main statuses and attributes of the image.
+    * Information on an image, including its state and attributes.
     */
     @SerializedName("ImageSet")
     @Expose
     private Image [] ImageSet;
 
     /**
-    * Number of images satisfying the filter conditions.
+    * Number of images meeting the filtering conditions.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * obtain An array of detailed information of an image, including the main statuses and attributes of the image.
-     * @return ImageSet An array of detailed information of an image, including the main statuses and attributes of the image.
+     * Get Information on an image, including its state and attributes. 
+     * @return ImageSet Information on an image, including its state and attributes.
      */
     public Image [] getImageSet() {
         return this.ImageSet;
     }
 
     /**
-     * Set an array of detailed information of an image, including the main statuses and attributes of the image.
-     * @param ImageSet An array of detailed information of an image, including the main statuses and attributes of the image.
+     * Set Information on an image, including its state and attributes.
+     * @param ImageSet Information on an image, including its state and attributes.
      */
     public void setImageSet(Image [] ImageSet) {
         this.ImageSet = ImageSet;
     }
 
     /**
-     * Obtain Number of images satisfying the filter conditions.
-     * @return TotalCount Number of images satisfying the filter conditions.
+     * Get Number of images meeting the filtering conditions. 
+     * @return TotalCount Number of images meeting the filtering conditions.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of images satisfying the filter conditions.
-     * @param TotalCount Number of images satisfying the filter conditions.
+     * Set Number of images meeting the filtering conditions.
+     * @param TotalCount Number of images meeting the filtering conditions.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request which is gotten from each request and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "ImageSet.", this.ImageSet);

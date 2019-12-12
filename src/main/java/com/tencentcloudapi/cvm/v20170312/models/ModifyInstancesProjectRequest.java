@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ModifyInstancesProjectRequest  extends AbstractModel{
 
     /**
-    * ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+    * Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Project ID. A project can be created using the API [AddProject](https://intl.cloud.tencent.com/document/api/378/4398). During the query of instance using the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/9388), the project ID can be used to filter the results.
+    * Project ID. You can create a project by calling [AddProject](https://cloud.tencent.com/doc/api/403/4398). When calling [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) to query instances, the project IDs can be used to filter the results.
     */
     @SerializedName("ProjectId")
     @Expose
-    private Integer ProjectId;
+    private Long ProjectId;
 
     /**
-     * To obtain ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
-     * @return InstanceIds ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * Get Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100. 
+     * @return InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * To configure ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances for each request is 100.
-     * @param InstanceIds  of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/9388)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * Set Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
+     * @param InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Get the Project ID. A project can be created using the API [AddProject](https://intl.cloud.tencent.com/document/api/378/4398). During the query of instance using the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/9388), the project ID can be used to filter the results.
-     * @return ProjectId. A project can be created using the API [AddProject](https://intl.cloud.tencent.com/document/api/378/4398). During the query of instance using the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/9388), the project ID can be used to filter the results.
+     * Get Project ID. You can create a project by calling [AddProject](https://cloud.tencent.com/doc/api/403/4398). When calling [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) to query instances, the project IDs can be used to filter the results. 
+     * @return ProjectId Project ID. You can create a project by calling [AddProject](https://cloud.tencent.com/doc/api/403/4398). When calling [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) to query instances, the project IDs can be used to filter the results.
      */
-    public Integer getProjectId() {
+    public Long getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * Setting Project ID. A project can be created using the API [AddProject](https://intl.cloud.tencent.com/document/api/378/4398). During the query of instance using the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/9388), the project ID can be used to filter the results.
-     * @param ProjectId Project ID. A project can be created using the API [AddProject](https://intl.cloud.tencent.com/document/api/378/4398). During the query of instance using the API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/9388), the project ID can be used to filter the results.
+     * Set Project ID. You can create a project by calling [AddProject](https://cloud.tencent.com/doc/api/403/4398). When calling [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) to query instances, the project IDs can be used to filter the results.
+     * @param ProjectId Project ID. You can create a project by calling [AddProject](https://cloud.tencent.com/doc/api/403/4398). When calling [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) to query instances, the project IDs can be used to filter the results.
      */
-    public void setProjectId(Integer ProjectId) {
+    public void setProjectId(Long ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

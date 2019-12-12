@@ -23,137 +23,147 @@ import java.util.HashMap;
 public class DescribeImagesRequest  extends AbstractModel{
 
     /**
-    * Image ID list, such as: `img-gvbnzy6f`. the format of parameter of array type refer to [API introduction](https://cloud.tencent.com/document/api/213/15688). The IDs of images can be obtained in following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
+    * List of image IDs, such as `img-gvbnzy6f`. For the format of array-type parameters, see [API Introduction](https://cloud.tencent.com/document/api/213/15688). You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>View the image IDs in the [Image Console](https://console.cloud.tencent.com/cvm/image).
     */
     @SerializedName("ImageIds")
     @Expose
     private String [] ImageIds;
 
     /**
-    * Filter conditions, limit of each request of `Filters` is 0, while limit of each request of `Filters.Values`. `ImageIds` and `Filters` cannot be assigned in parameter at same time. the specific filter conditions are as below:
-<li> image-id - String - Required:No - (Filter condition) Filter by image ID. </li>
-<li> image-type - String - Required:No - (filter condition) Filter by the types of images. values of images：[image type](https://cloud.tencent.com/document/product/213/9452#image_type).</li>
-<li> image-state - String - Required:No - (filter condition) Filter by the states of images. value of states: [image statas](https://cloud.tencent.com/document/product/213/9452#image_state).</li>
+    * Filters. Each request can have up to 10 `Filters` and 5 `Filters.Values`. You cannot specify `ImageIds` and `Filters` at the same time. Specific filters:
+<li>`image-id` - String - Optional - Filter results by image ID</li>
+<li>`image-type` - String - Optional - Filter results by image type. Valid values:
+    PRIVATE_IMAGE: private image created by the current account 
+    PUBLIC_IMAGE: public image created by Tencent Cloud
+   SHARED_IMAGE: image shared with the current account by another account.</li>
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * Offset, the default is 0. For more information, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+    * Offset; default value: 0. For more information on `Offset`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-    * Limit, default is 20.For more information on Limit, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+    * Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-    * Instance type, such as `S1.SMALL1`
+    * Instance type, e.g. `S1.SMALL1`
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-     * Image ID list, such as: `img-gvbnzy6f`. the format of parameter of array type refer to [API introduction](https://cloud.tencent.com/document/api/213/15688). The IDs of images can be obtained in following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
-     * @return ImageIds Image ID list, such as: `img-gvbnzy6f`. the format of parameter of array type refer to [API introduction](https://cloud.tencent.com/document/api/213/15688). The IDs of images can be obtained in following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
+     * Get List of image IDs, such as `img-gvbnzy6f`. For the format of array-type parameters, see [API Introduction](https://cloud.tencent.com/document/api/213/15688). You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>View the image IDs in the [Image Console](https://console.cloud.tencent.com/cvm/image). 
+     * @return ImageIds List of image IDs, such as `img-gvbnzy6f`. For the format of array-type parameters, see [API Introduction](https://cloud.tencent.com/document/api/213/15688). You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>View the image IDs in the [Image Console](https://console.cloud.tencent.com/cvm/image).
      */
     public String [] getImageIds() {
         return this.ImageIds;
     }
 
     /**
-     * Set Image ID list, such as: `img-gvbnzy6f`. the format of parameter of array type refer to [API introduction](https://cloud.tencent.com/document/api/213/15688). The IDs of images can be obtained in following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
-     * @param ImageIds Image ID list, such as: `img-gvbnzy6f`. the format of parameter of array type refer to [API introduction](https://cloud.tencent.com/document/api/213/15688). The IDs of images can be obtained in following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
+     * Set List of image IDs, such as `img-gvbnzy6f`. For the format of array-type parameters, see [API Introduction](https://cloud.tencent.com/document/api/213/15688). You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>View the image IDs in the [Image Console](https://console.cloud.tencent.com/cvm/image).
+     * @param ImageIds List of image IDs, such as `img-gvbnzy6f`. For the format of array-type parameters, see [API Introduction](https://cloud.tencent.com/document/api/213/15688). You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>View the image IDs in the [Image Console](https://console.cloud.tencent.com/cvm/image).
      */
     public void setImageIds(String [] ImageIds) {
         this.ImageIds = ImageIds;
     }
 
     /**
-     * Obtain Filter conditions, limit of each request of `Filters` is 0, while limit of each request of `Filters.Values`. `ImageIds` and `Filters` cannot be assigned in parameter at same time. the specific filter conditions are as below:
-<li> image-type - String - Required:No - (Filter condition) Filter by image ID. </li>
-<li> image-type - String - Required:No - (filter condition) Filter by the types of images. values of images：[image type](https://cloud.tencent.com/document/product/213/9452#image_type).</li>
-<li> image-state - String - Required:No - (filter condition) Filter by the states of images. value of states: [image statas](https://cloud.tencent.com/document/product/213/9452#image_state).</li>
-     * @return Filters Filter conditions, limit of each request of `Filters` is 0, while limit of each request of `Filters.Values`. `ImageIds` and `Filters` cannot be assigned in parameter at same time. the specific filter conditions are as below:
-<li> image-type - String - Required:No - (Filter condition) Filter by image ID. </li>
-<li> image-type - String - Required:No - (filter condition) Filter by the types of images. values of images：[image type](https://cloud.tencent.com/document/product/213/9452#image_type).</li>
-<li> image-state - String - Required:No - (filter condition) Filter by the states of images. value of states: [image statas](https://cloud.tencent.com/document/product/213/9452#image_state).</li>
+     * Get Filters. Each request can have up to 10 `Filters` and 5 `Filters.Values`. You cannot specify `ImageIds` and `Filters` at the same time. Specific filters:
+<li>`image-id` - String - Optional - Filter results by image ID</li>
+<li>`image-type` - String - Optional - Filter results by image type. Valid values:
+    PRIVATE_IMAGE: private image created by the current account 
+    PUBLIC_IMAGE: public image created by Tencent Cloud
+   SHARED_IMAGE: image shared with the current account by another account.</li> 
+     * @return Filters Filters. Each request can have up to 10 `Filters` and 5 `Filters.Values`. You cannot specify `ImageIds` and `Filters` at the same time. Specific filters:
+<li>`image-id` - String - Optional - Filter results by image ID</li>
+<li>`image-type` - String - Optional - Filter results by image type. Valid values:
+    PRIVATE_IMAGE: private image created by the current account 
+    PUBLIC_IMAGE: public image created by Tencent Cloud
+   SHARED_IMAGE: image shared with the current account by another account.</li>
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set Filter conditions, limit of each request of `Filters` is 0, while limit of each request of `Filters.Values`. `ImageIds` and `Filters` cannot be assigned in parameter at same time. the specific filter conditions are as below:
-<li> image-type - String - Required:No - (Filter condition) Filter by image ID. </li>
-<li> image-type - String - Required:No - (filter condition) Filter by the types of images. values of images：[image type](https://cloud.tencent.com/document/product/213/9452#image_type).</li>
-<li> image-state - String - Required:No - (filter condition) Filter by the states of images. value of states: [image statas](https://cloud.tencent.com/document/product/213/9452#image_state).</li>
-     * @param Filters Filter conditions, limit of each request of `Filters` is 0, while limit of each request of `Filters.Values`. `ImageIds` and `Filters` cannot be assigned in parameter at same time. the specific filter conditions are as below:
-<li> image-type - String - Required:No - (Filter condition) Filter by image ID. </li>
-<li> image-type - String - Required:No - (filter condition) Filter by the types of images. values of images：[image type](https://cloud.tencent.com/document/product/213/9452#image_type).</li>
-<li> image-state - String - Required:No - (filter condition) Filter by the states of images. value of states: [image statas](https://cloud.tencent.com/document/product/213/9452#image_state).</li>
+     * Set Filters. Each request can have up to 10 `Filters` and 5 `Filters.Values`. You cannot specify `ImageIds` and `Filters` at the same time. Specific filters:
+<li>`image-id` - String - Optional - Filter results by image ID</li>
+<li>`image-type` - String - Optional - Filter results by image type. Valid values:
+    PRIVATE_IMAGE: private image created by the current account 
+    PUBLIC_IMAGE: public image created by Tencent Cloud
+   SHARED_IMAGE: image shared with the current account by another account.</li>
+     * @param Filters Filters. Each request can have up to 10 `Filters` and 5 `Filters.Values`. You cannot specify `ImageIds` and `Filters` at the same time. Specific filters:
+<li>`image-id` - String - Optional - Filter results by image ID</li>
+<li>`image-type` - String - Optional - Filter results by image type. Valid values:
+    PRIVATE_IMAGE: private image created by the current account 
+    PUBLIC_IMAGE: public image created by Tencent Cloud
+   SHARED_IMAGE: image shared with the current account by another account.</li>
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Offset, the default is 0. For more information, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
-     * @return Offset Offset, the default is 0. For more information, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+     * Get Offset; default value: 0. For more information on `Offset`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89). 
+     * @return Offset Offset; default value: 0. For more information on `Offset`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set Offset, the default is 0. For more information, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
-     * @param Offset Offset, the default is 0. For more information, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+     * Set Offset; default value: 0. For more information on `Offset`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+     * @param Offset Offset; default value: 0. For more information on `Offset`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * Limit, default is 20.For more information on Limit, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
-     * @return Limit Limit, default is 20.For more information on Limit, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+     * Get Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89). 
+     * @return Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set Limit, default is 20.For more information on Limit, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
-     * @param Limit Limit, default is 20.For more information on Limit, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+     * Set Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
+     * @param Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89).
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * Obtain instances types, such as `S1.SMALL1`
-     * @return InstanceType instances types, such as `S1.SMALL1`
+     * Get Instance type, e.g. `S1.SMALL1` 
+     * @return InstanceType Instance type, e.g. `S1.SMALL1`
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * Set instances types, such as `S1.SMALL1`
-     * @param InstanceType instances types, such as `S1.SMALL1`
+     * Set Instance type, e.g. `S1.SMALL1`
+     * @param InstanceType Instance type, e.g. `S1.SMALL1`
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "ImageIds.", this.ImageIds);

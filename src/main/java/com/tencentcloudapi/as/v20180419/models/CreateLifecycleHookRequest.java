@@ -23,42 +23,42 @@ import java.util.HashMap;
 public class CreateLifecycleHookRequest  extends AbstractModel{
 
     /**
-    * Scaling group ID.
+    * Auto scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
+    * Lifecycle hook name, which can contain Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) with a maximum length of 128 bytes.
     */
     @SerializedName("LifecycleHookName")
     @Expose
     private String LifecycleHookName;
 
     /**
-    * Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
+    * Scenario for the lifecycle hook. Valid values: "INSTANCE_LAUNCHING" and "INSTANCE_TERMINATING"
     */
     @SerializedName("LifecycleTransition")
     @Expose
     private String LifecycleTransition;
 
     /**
-    * Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
+    * Defined actions when lifecycle hook times out. Valid values: "CONTINUE" and "ABANDON". Default value: "CONTINUE"
     */
     @SerializedName("DefaultResult")
     @Expose
     private String DefaultResult;
 
     /**
-    * Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
+    * The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300
     */
     @SerializedName("HeartbeatTimeout")
     @Expose
-    private Integer HeartbeatTimeout;
+    private Long HeartbeatTimeout;
 
     /**
-    * Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
+    * Additional information sent by Auto Scaling to the notification target. Default value is “”. Maximum length is 1024 characters.
     */
     @SerializedName("NotificationMetadata")
     @Expose
@@ -72,103 +72,103 @@ public class CreateLifecycleHookRequest  extends AbstractModel{
     private NotificationTarget NotificationTarget;
 
     /**
-     * Get Scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+     * Get Auto scaling group ID 
+     * @return AutoScalingGroupId Auto scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set Scaling group ID
-     * @param AutoScalingGroupId Scaling group ID
+     * Set Auto scaling group ID
+     * @param AutoScalingGroupId Auto scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Get Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
-     * @return LifecycleHookName Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
+     * Get Lifecycle hook name, which can contain Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) with a maximum length of 128 bytes. 
+     * @return LifecycleHookName Lifecycle hook name, which can contain Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) with a maximum length of 128 bytes.
      */
     public String getLifecycleHookName() {
         return this.LifecycleHookName;
     }
 
     /**
-     * Set Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
-     * @param LifecycleHookName Lifecycle hook name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 128 characters.
+     * Set Lifecycle hook name, which can contain Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) with a maximum length of 128 bytes.
+     * @param LifecycleHookName Lifecycle hook name, which can contain Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) with a maximum length of 128 bytes.
      */
     public void setLifecycleHookName(String LifecycleHookName) {
         this.LifecycleHookName = LifecycleHookName;
     }
 
     /**
-     * Get Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
-     * @return LifecycleTransition Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
+     * Get Scenario for the lifecycle hook. Valid values: "INSTANCE_LAUNCHING" and "INSTANCE_TERMINATING" 
+     * @return LifecycleTransition Scenario for the lifecycle hook. Valid values: "INSTANCE_LAUNCHING" and "INSTANCE_TERMINATING"
      */
     public String getLifecycleTransition() {
         return this.LifecycleTransition;
     }
 
     /**
-     * Set Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
-     * @param LifecycleTransition Lifecycle hook event. Values includes: “INSTANCE_LAUNCHING” and “INSTANCE_TERMINATING”
+     * Set Scenario for the lifecycle hook. Valid values: "INSTANCE_LAUNCHING" and "INSTANCE_TERMINATING"
+     * @param LifecycleTransition Scenario for the lifecycle hook. Valid values: "INSTANCE_LAUNCHING" and "INSTANCE_TERMINATING"
      */
     public void setLifecycleTransition(String LifecycleTransition) {
         this.LifecycleTransition = LifecycleTransition;
     }
 
     /**
-     * Get Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
-     * @return DefaultResult Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
+     * Get Defined actions when lifecycle hook times out. Valid values: "CONTINUE" and "ABANDON". Default value: "CONTINUE" 
+     * @return DefaultResult Defined actions when lifecycle hook times out. Valid values: "CONTINUE" and "ABANDON". Default value: "CONTINUE"
      */
     public String getDefaultResult() {
         return this.DefaultResult;
     }
 
     /**
-     * Set Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
-     * @param DefaultResult Defined actions when lifecycle hook times out. Values include “CONTINUE” or “ABANDON”. Default value is “CONTINUE”.
+     * Set Defined actions when lifecycle hook times out. Valid values: "CONTINUE" and "ABANDON". Default value: "CONTINUE"
+     * @param DefaultResult Defined actions when lifecycle hook times out. Valid values: "CONTINUE" and "ABANDON". Default value: "CONTINUE"
      */
     public void setDefaultResult(String DefaultResult) {
         this.DefaultResult = DefaultResult;
     }
 
     /**
-     * Get Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
-     * @return HeartbeatTimeout Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
+     * Get The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300 
+     * @return HeartbeatTimeout The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300
      */
-    public Integer getHeartbeatTimeout() {
+    public Long getHeartbeatTimeout() {
         return this.HeartbeatTimeout;
     }
 
     /**
-     * Set Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
-     * @param HeartbeatTimeout Maximum time before lifecycle hook times out (in seconds). Range is from 30 to 3600 seconds. Default is 300 seconds.
+     * Set The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300
+     * @param HeartbeatTimeout The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300
      */
-    public void setHeartbeatTimeout(Integer HeartbeatTimeout) {
+    public void setHeartbeatTimeout(Long HeartbeatTimeout) {
         this.HeartbeatTimeout = HeartbeatTimeout;
     }
 
     /**
-     * Get Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
-     * @return NotificationMetadata Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
+     * Get Additional information sent by Auto Scaling to the notification target. Default value is “”. Maximum length is 1024 characters. 
+     * @return NotificationMetadata Additional information sent by Auto Scaling to the notification target. Default value is “”. Maximum length is 1024 characters.
      */
     public String getNotificationMetadata() {
         return this.NotificationMetadata;
     }
 
     /**
-     * Set Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
-     * @param NotificationMetadata Additional notes sent to the notification target. Default value is “”. Maximum length is 1024 characters. 
+     * Set Additional information sent by Auto Scaling to the notification target. Default value is “”. Maximum length is 1024 characters.
+     * @param NotificationMetadata Additional information sent by Auto Scaling to the notification target. Default value is “”. Maximum length is 1024 characters.
      */
     public void setNotificationMetadata(String NotificationMetadata) {
         this.NotificationMetadata = NotificationMetadata;
     }
 
     /**
-     * Get notification target
+     * Get Notification target 
      * @return NotificationTarget Notification target
      */
     public NotificationTarget getNotificationTarget() {
@@ -176,7 +176,7 @@ public class CreateLifecycleHookRequest  extends AbstractModel{
     }
 
     /**
-     * Set notification target
+     * Set Notification target
      * @param NotificationTarget Notification target
      */
     public void setNotificationTarget(NotificationTarget NotificationTarget) {
@@ -184,7 +184,7 @@ public class CreateLifecycleHookRequest  extends AbstractModel{
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

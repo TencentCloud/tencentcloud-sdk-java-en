@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeImageSharePermissionResponse  extends AbstractModel{
 
     /**
-    * Information on image sharing
+    * Information on image sharing.
     */
     @SerializedName("SharePermissionSet")
     @Expose
     private SharePermission [] SharePermissionSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain Information on image sharing
-     * @return SharePermissionSet information on image sharing
+     * Get Information on image sharing. 
+     * @return SharePermissionSet Information on image sharing.
      */
     public SharePermission [] getSharePermissionSet() {
         return this.SharePermissionSet;
     }
 
     /**
-     * set information on image sharing
-     * @param SharePermissionSet information on image sharing
+     * Set Information on image sharing.
+     * @param SharePermissionSet Information on image sharing.
      */
     public void setSharePermissionSet(SharePermission [] SharePermissionSet) {
         this.SharePermissionSet = SharePermissionSet;
     }
 
     /**
-     * obtain the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "SharePermissionSet.", this.SharePermissionSet);

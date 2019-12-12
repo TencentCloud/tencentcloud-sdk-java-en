@@ -23,63 +23,68 @@ import java.util.HashMap;
 public class CreateKeyPairRequest  extends AbstractModel{
 
     /**
-    * Name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
+    * Name of the key pair, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
     */
     @SerializedName("KeyName")
     @Expose
     private String KeyName;
 
     /**
-    * The project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
-<li>Query the project ID via the project list.
-<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
+    * The ID of the project to which the new key pair belongs.
+You can query the project IDs in two ways:
+<li>Query the project IDs in the project list.
+<li>Call `DescribeProject` and look for `projectId` in the response.
     */
     @SerializedName("ProjectId")
     @Expose
-    private Integer ProjectId;
+    private Long ProjectId;
 
     /**
-     * Get name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
-     * @return KeyName Name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
+     * Get Name of the key pair, which can contain numbers, letters, and underscores, with a maximum length of 25 characters. 
+     * @return KeyName Name of the key pair, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
      */
     public String getKeyName() {
         return this.KeyName;
     }
 
     /**
-     * Set name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
-     * @param KeyName Name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
+     * Set Name of the key pair, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
+     * @param KeyName Name of the key pair, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
      */
     public void setKeyName(String KeyName) {
         this.KeyName = KeyName;
     }
 
     /**
-     * Get the project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
-<li>Query the project ID via the project list.
-<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
-     * @return ProjectId The project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
-<li>Query the project ID via the project list.
-<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
+     * Get The ID of the project to which the new key pair belongs.
+You can query the project IDs in two ways:
+<li>Query the project IDs in the project list.
+<li>Call `DescribeProject` and look for `projectId` in the response. 
+     * @return ProjectId The ID of the project to which the new key pair belongs.
+You can query the project IDs in two ways:
+<li>Query the project IDs in the project list.
+<li>Call `DescribeProject` and look for `projectId` in the response.
      */
-    public Integer getProjectId() {
+    public Long getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * Set the project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
-<li>Query the project ID via the project list.
-<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
-     * @param ProjectId The project ID to which the created key pair belongs. You can obtain the project ID by either of the following ways:
-<li>Query the project ID via the project list.
-<li>Get the project ID from `projectId ` in the returned result of API DescribeProject.
+     * Set The ID of the project to which the new key pair belongs.
+You can query the project IDs in two ways:
+<li>Query the project IDs in the project list.
+<li>Call `DescribeProject` and look for `projectId` in the response.
+     * @param ProjectId The ID of the project to which the new key pair belongs.
+You can query the project IDs in two ways:
+<li>Query the project IDs in the project list.
+<li>Call `DescribeProject` and look for `projectId` in the response.
      */
-    public void setProjectId(Integer ProjectId) {
+    public void setProjectId(Long ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "KeyName", this.KeyName);

@@ -29,27 +29,16 @@ public class AsClient extends AbstractClient{
     private static String endpoint = "as.tencentcloudapi.com";
     private static String version = "2018-04-19";
 
-    /**
-     * Construct client
-     * @param credential client credentials
-     * @param region product region
-     */
     public AsClient(Credential credential, String region) {
         this(credential, region, new ClientProfile());
     }
 
-    /**
-     * Construct client
-     * @param credential client credentials
-     * @param region product region
-     * @param profile client profile
-     */
     public AsClient(Credential credential, String region, ClientProfile profile) {
         super(AsClient.endpoint, AsClient.version, credential, region, profile);
     }
 
     /**
-     *This API (AttachInstances) is used to add CVM instances to a scaling group.
+     *This API (AttachInstances) is used to add CVM instances to an auto scaling group.
 
      * @param req AttachInstancesRequest
      * @return AttachInstancesResponse
@@ -68,9 +57,9 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (CompleteLifecycleAction) is used to perform the action to complete the lifecycle.
+     *This API (CompleteLifecycleAction) is used to complete a lifecycle action.
 
-* The user can call this API to specify how a lifecycle hook is used (CONTINUE or ABANDON). If you do not call this API, the lifecycle hook will be processed according to “DefaultResult”. 
+* The result ("CONTINUE" or "ABANDON") of a specific lifecycle hook can be specified by calling this API. If this API is not called at all, the lifecycle hook will be processed based on the "DefaultResult" after timeout.
 
      * @param req CompleteLifecycleActionRequest
      * @return CompleteLifecycleActionResponse
@@ -89,7 +78,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (CreateAutoScalingGroup) is used to create a scaling group.
+     *This API (CreateAutoScalingGroup) is used to create an auto scaling group.
      * @param req CreateAutoScalingGroupRequest
      * @return CreateAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -109,9 +98,9 @@ public class AsClient extends AbstractClient{
     /**
      *This API (CreateLaunchConfiguration) is used to create a launch configuration.
 
-* You can modify a limited number of fields of the launch configuration with  `ModifyLaunchConfigurationAttributes` . If you want to use a new launch configuration, you must create one.
+* A few fields of a launch configuration can be modified through `ModifyLaunchConfigurationAttributes`. To use a new launch configuration, it is recommended to create it from scratch.
 
-* You can create 20 launch configurations for each project. For more information, see [Use Limits](https://cloud.tencent.com/document/product/377/3120).
+* You can create up to 20 launch configurations for each project. For more information, see [Usage Limits](https://cloud.tencent.com/document/product/377/3120).
 
      * @param req CreateLaunchConfigurationRequest
      * @return CreateLaunchConfigurationResponse
@@ -130,9 +119,9 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (CreateLifeCycleHook) is used to create new lifecycle hooks.
+     *This API (CreateLifeCycleHook) is used to create a lifecycle hook.
 
-* You can set notifications for lifecycle hooks. The notifications will be sent to your CMQ message queue. The format of the notification is as below: 
+* You can configure message notifications in the following format for lifecycle hooks, which will be sent to your CMQ queue by AS:
 
 ```
 {
@@ -166,7 +155,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API （CreateNotificationConfiguration）is used to create notification. 
+     *This API (CreateNotificationConfiguration) is used to create a notification.
      * @param req CreateNotificationConfigurationRequest
      * @return CreateNotificationConfigurationResponse
      * @throws TencentCloudSDKException
@@ -184,7 +173,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (CreatePaiInstance) is used to create a Pai instance.
+     *This API (CreatePaiInstance) is used to create a PAI instance.
      * @param req CreatePaiInstanceRequest
      * @return CreatePaiInstanceResponse
      * @throws TencentCloudSDKException
@@ -220,7 +209,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (CreateScheduledAction) is used to create a scheduled action.
+     *This API (CreateScheduledAction) is used to create a scheduled task.
      * @param req CreateScheduledActionRequest
      * @return CreateScheduledActionResponse
      * @throws TencentCloudSDKException
@@ -238,7 +227,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DeleteAutoScalingGroup) is used to delete a scaling group. You can only delete a scaling group when no instance exists and no scaling activity is being executed in it.
+     *This API (DeleteAutoScalingGroup) is used to delete the specified auto scaling group that has no instances and remains inactive.
      * @param req DeleteAutoScalingGroupRequest
      * @return DeleteAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -258,7 +247,7 @@ public class AsClient extends AbstractClient{
     /**
      *This API (DeleteLaunchConfiguration) is used to delete a launch configuration.
 
-* * If a launch configuration in the scaling group is in active status, then it cannot be deleted.
+* If the launch configuration is active in an auto scaling group, it cannot be deleted.
 
      * @param req DeleteLaunchConfigurationRequest
      * @return DeleteLaunchConfigurationResponse
@@ -295,7 +284,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DeleteNotificationConfiguration) is used to delete notifications. 
+     *This API (DeleteNotificationConfiguration) is used to delete the specified notification.
      * @param req DeleteNotificationConfigurationRequest
      * @return DeleteNotificationConfigurationResponse
      * @throws TencentCloudSDKException
@@ -313,7 +302,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DeleteScalingPolicy) is used to delete alarm trigger policies.
+     *This API (DeleteScalingPolicy) is used to delete an alarm trigger policy.
      * @param req DeleteScalingPolicyRequest
      * @return DeleteScalingPolicyResponse
      * @throws TencentCloudSDKException
@@ -331,7 +320,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DeleteScheduledAction) is used to delete a scheduled action.
+     *This API (DeleteScheduledAction) is used to delete the specified scheduled task.
      * @param req DeleteScheduledActionRequest
      * @return DeleteScheduledActionResponse
      * @throws TencentCloudSDKException
@@ -349,7 +338,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeAccountLimits) is used to query the limits on the resources for your account.
+     *This API (DescribeAccountLimits) is used to query the limits of user's AS resources.
      * @param req DescribeAccountLimitsRequest
      * @return DescribeAccountLimitsResponse
      * @throws TencentCloudSDKException
@@ -367,7 +356,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeScalingActivity) is used to query scaling activity logs of scaling groups.
+     *This API (DescribeAutoScalingActivities) is used to query the activity history of an auto scaling group.
      * @param req DescribeAutoScalingActivitiesRequest
      * @return DescribeAutoScalingActivitiesResponse
      * @throws TencentCloudSDKException
@@ -385,10 +374,28 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeAutoScalingGroups) is used to query the information of one or more scaling groups.
+     *This API is used to query the latest activity history of an auto scaling group.
+     * @param req DescribeAutoScalingGroupLastActivitiesRequest
+     * @return DescribeAutoScalingGroupLastActivitiesResponse
+     * @throws TencentCloudSDKException
+     */
+    public DescribeAutoScalingGroupLastActivitiesResponse DescribeAutoScalingGroupLastActivities(DescribeAutoScalingGroupLastActivitiesRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<DescribeAutoScalingGroupLastActivitiesResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<DescribeAutoScalingGroupLastActivitiesResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "DescribeAutoScalingGroupLastActivities"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
 
-* You can query the details of scaling groups according to ID, name, or launch configuration ID. For more information about filtering, see Filter `Filter`.
-* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of scaling groups are returned to the current user.
+    /**
+     *This API (DescribeAutoScalingGroups) is used to query the information of auto scaling groups.
+
+* You can query the details of auto scaling groups based on information such as auto scaling group ID, auto scaling group name, or launch configuration ID. For more information on filters, see `Filter`.
+* If the parameter is empty, a certain number (specified by `Limit` and 20 by default) of auto scaling groups of the current user will be returned.
      * @param req DescribeAutoScalingGroupsRequest
      * @return DescribeAutoScalingGroupsResponse
      * @throws TencentCloudSDKException
@@ -406,10 +413,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeAutoScalingInstances) is used to query the information of auto scaling instances.
+     *This API (DescribeAutoScalingInstances) is used to query the information of instances associated with AS.
 
-* You can query the details of instances according to ID or scaling group name. For more information about filtering, see Filter `Filter`.
-* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of instances are returned to the current user.
+* You can query the details of instances based on information such as instance ID and auto scaling group ID. For more information on filters, see `Filter`.
+* If the parameter is empty, a certain number (specified by `Limit` and 20 by default) of instances of the current user will be returned.
      * @param req DescribeAutoScalingInstancesRequest
      * @return DescribeAutoScalingInstancesResponse
      * @throws TencentCloudSDKException
@@ -427,10 +434,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeLaunchConfigurations) is used to query the information of one or more launch configurations.
+     *This API (DescribeLaunchConfigurations) is used to query the information of launch configurations.
 
-* You can query the details of launch configurations according to ID or name. For more information about filtering, see Filter `Filter`.
-* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of launch configurations are returned to the current user.
+* You can query the launch configuration details based on information such as launch configuration ID and name. For more information on filters, see `Filter`.
+* If the parameter is empty, a certain number (specified by `Limit` and 20 by default) of launch configurations of the current user will be returned.
      * @param req DescribeLaunchConfigurationsRequest
      * @return DescribeLaunchConfigurationsResponse
      * @throws TencentCloudSDKException
@@ -450,8 +457,8 @@ public class AsClient extends AbstractClient{
     /**
      *This API (DescribeLifecycleHooks) is used to query the information of lifecycle hooks.
 
-* You can query the details of lifecycle hooks according to scaling group ID, lifecycle hook ID or lifecycle hook name. For more information about filtering, see Filter `Filter`.
-* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of lifecycle hooks are returned to the current user.
+* You can query the details of lifecycle hooks based on information such as auto scaling group ID, lifecycle hook ID, or lifecycle hook name. For more information on filters, see `Filter`.
+* If the parameter is empty, a certain number (specified by `Limit` and 20 by default) of lifecycle hooks of the current user will be returned.
      * @param req DescribeLifecycleHooksRequest
      * @return DescribeLifecycleHooksResponse
      * @throws TencentCloudSDKException
@@ -469,7 +476,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeNotificationConfigurations) is used to query the information of one or more notifications.  You can query the details of notifications according to notification ID or scaling group ID. For more information about filtering, see Filter `Filter`. If the parameter is empty, a certain number (specified by `Limit`, the default is 20) of notifications are returned to the current user.
+     *This API (DescribeNotificationConfigurations) is used to query the information of one or more notifications.
+
+You can query the details of notifications based on information such as notification ID and auto scaling group ID. For more information on filters, see `Filter`.
+If the parameter is empty, a certain number (specified by `Limit` and 20 by default) of notifications of the current user will be returned.
      * @param req DescribeNotificationConfigurationsRequest
      * @return DescribeNotificationConfigurationsResponse
      * @throws TencentCloudSDKException
@@ -489,8 +499,8 @@ public class AsClient extends AbstractClient{
     /**
      *This API (DescribePaiInstances) is used to query the information of PAI instances.
 
-* You can query the details of PAI instances according to instance ID or instance domain name. For more information about filtering, see Filter `Filter`.
-* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of PAI instances are returned to the current user.
+* You can query the detailed information of PAI instances based on information such as instance ID and instance domain name. For more information on filters, see `Filter`.
+* If the parameter is empty, a certain number (specified by `Limit` and 20 by default) of PAI instances of the current user will be returned.
      * @param req DescribePaiInstancesRequest
      * @return DescribePaiInstancesResponse
      * @throws TencentCloudSDKException
@@ -526,10 +536,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeScheduledActions) is used to query the details of one or more scheduled actions.
+     *This API (DescribeScheduledActions) is used to query the details of one or more scheduled tasks.
 
-* You can query the details of scheduled actions according to its ID, name, or scaling group ID. For more information about filtering, see Filter `Filter`.
-* If the parameter is empty, a certain number (specified by `Limit`, the default is 20) of scheduled actions are returned to the current user.
+* You can query the details of scheduled tasks based on information such as scheduled task ID, scheduled task name, or auto scaling group ID. For more information on filters, see `Filter`.
+* If the parameter is empty, a certain number (specified by `Limit` and 20 by default) of scheduled tasks of the current user will be returned.
      * @param req DescribeScheduledActionsRequest
      * @return DescribeScheduledActionsResponse
      * @throws TencentCloudSDKException
@@ -547,7 +557,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DetachInstances) is used to remove CVM instances from a scaling group. Instances removed via this API will not be terminated.
+     *This API (DetachInstances) is used to remove CVM instances from an auto scaling group. Instances removed via this API will not be terminated.
      * @param req DetachInstancesRequest
      * @return DetachInstancesResponse
      * @throws TencentCloudSDKException
@@ -565,7 +575,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (DisableAutoScalingGroup) is used to disable a scaling group.
+     *This API (DisableAutoScalingGroup) is used to disable the specified auto scaling group.
      * @param req DisableAutoScalingGroupRequest
      * @return DisableAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -583,7 +593,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (EnableAutoScalingGroup) is used to enable a scaling group.
+     *This API (EnableAutoScalingGroup) is used to enable the specified auto scaling group.
      * @param req EnableAutoScalingGroupRequest
      * @return EnableAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -603,8 +613,8 @@ public class AsClient extends AbstractClient{
     /**
      *This API (ExecuteScalingPolicy) is used to execute a scaling policy.
 
-* It will execute scaling policies according to the scaling policy ID.
-* If the scaling group the policy belongs to is already performing a scaling activity, it will reject executing the scaling policy. 
+* The scaling policy can be executed based on the scaling policy ID.
+* When the auto scaling group to which the scaling policy belongs is performing a scaling activity, the scaling policy will be rejected.
      * @param req ExecuteScalingPolicyRequest
      * @return ExecuteScalingPolicyResponse
      * @throws TencentCloudSDKException
@@ -622,7 +632,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (ModifyAutoScalingGroup) is used to modify a scaling group.
+     *This API (ModifyAutoScalingGroup) is used to modify an auto scaling group.
      * @param req ModifyAutoScalingGroupRequest
      * @return ModifyAutoScalingGroupResponse
      * @throws TencentCloudSDKException
@@ -640,7 +650,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (ModifyDesiredCapacity) is used to modify the desired number of instances for a scaling group.
+     *This API (ModifyDesiredCapacity) is used to modify the desired number of instances in the specified auto scaling group.
      * @param req ModifyDesiredCapacityRequest
      * @return ModifyDesiredCapacityResponse
      * @throws TencentCloudSDKException
@@ -658,10 +668,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (ModifyLaunchConfigurationAttributes) is used to modify launch configuration attributes. 
+     *This API (ModifyLaunchConfigurationAttributes) is used to modify some attributes of a launch configuration.
 
-* After the launch configuration is modified, the existing instances that have been created by it will not be changed, but new instances will be created according to the new configuration.
-* This API only supports modifying simple launch configurations. 
+* The changes of launch configuration do not affect the existing instances. New instances will be created based on the modified configuration.
+* This API supports modifying certain simple types of attributes.
      * @param req ModifyLaunchConfigurationAttributesRequest
      * @return ModifyLaunchConfigurationAttributesResponse
      * @throws TencentCloudSDKException
@@ -679,11 +689,11 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (ModifyLoadBalancers) is used to modify the load balancer of a scaling group.
+     *This API (ModifyLoadBalancers) is used to modify the load balancers of an auto scaling group.
 
-* This API can specify a new load balancer configuration for the scaling group. The new configuration overwrites the original load balancer configuration.
-* If you want to remove all load balancers from the scaling group, specify only the scaling group ID but not the specific load balancer when calling this API.
-* This API will immediately modify the load balancer of the scaling group and generate a scaling activity to asynchronously modify the load balancer of the existing instances.
+* This API can specify a new load balancer configuration for the auto scaling group. The new configuration overwrites the original load balancer configuration.
+* If you want to clear the load balancer for the auto scaling group, specify only the auto scaling group ID but not the specific load balancer when calling this API.
+* This API modifies the load balancer of the auto scaling group and generate a scaling activity to asynchronously modify the load balancers of existing instances.
      * @param req ModifyLoadBalancersRequest
      * @return ModifyLoadBalancersResponse
      * @throws TencentCloudSDKException
@@ -701,7 +711,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (ModifyNotificationConfiguration) is used to modify notifications. 
+     *This API (ModifyNotificationConfiguration) is used to modify a notification.
      * @param req ModifyNotificationConfigurationRequest
      * @return ModifyNotificationConfigurationResponse
      * @throws TencentCloudSDKException
@@ -719,7 +729,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (ModifyScalingPolicy) is used to modify alarm trigger policies.
+     *This API (ModifyScalingPolicy) is used to modify an alarm trigger policy.
      * @param req ModifyScalingPolicyRequest
      * @return ModifyScalingPolicyResponse
      * @throws TencentCloudSDKException
@@ -737,7 +747,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (ModifyScheduledAction) is used to modify scheduled actions.
+     *This API (ModifyScheduledAction) is used to modify a scheduled task.
      * @param req ModifyScheduledActionRequest
      * @return ModifyScheduledActionResponse
      * @throws TencentCloudSDKException
@@ -755,7 +765,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (PreviewPaiDomainName) is used to preview PAI domain names. 
+     *This API (PreviewPaiDomainName) is used to preview a PAI domain name.
 
      * @param req PreviewPaiDomainNameRequest
      * @return PreviewPaiDomainNameResponse
@@ -774,7 +784,7 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (RemoveInstances) is used to delete CVM instances from a scaling group. Instances created automatically by Auto Scaling will be terminated, while those created and added to the scaling group will be removed and retained.
+     *This API (RemoveInstances) is used to remove CVM instances from an auto scaling group. Instances created automatically by AS will be terminated, while those added to the auto scaling group after creation will be removed and retained.
      * @param req RemoveInstancesRequest
      * @return RemoveInstancesResponse
      * @throws TencentCloudSDKException
@@ -792,7 +802,8 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (SetInstancesProtection) is used to enable removal protection for an instance.  When an instance has removal protection enabled, it will not be removed when scaling is triggered due to situations such as replacement of unhealthy instances, alarm trigger policies or threshold changes. 
+     *This API (SetInstancesProtection) is used to enable scale-in protection for an instance.
+When an instance has scale-in protection enabled, it will not be removed when scaling is triggered by replacement of unhealthy instances, alarm trigger policy, threshold change, etc.
      * @param req SetInstancesProtectionRequest
      * @return SetInstancesProtectionResponse
      * @throws TencentCloudSDKException
@@ -810,10 +821,10 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (UpgradeLaunchConfiguration) is used to upgrade launch configurations. 
+     *This API (UpgradeLaunchConfiguration) is used to upgrade a launch configuration.
 
-* This API is used to upgrade launch configurations. The new configuration overwrites the original launch configuration. Default values will be used for optional fields that are left blank. 
-* After the launch configuration is upgraded and modified, the existing instances that have been created by it will not be changed, but new instances will be created according to the new configuration.
+* This API is used to upgrade a launch configuration in a "completely overriding" manner, i.e., it uniformly sets a new configuration according to the API parameters regardless of the original parameters. If optional fields are left empty, their default values will be used.
+* After the launch configuration is upgraded, the existing instances that have been created by it will not be changed, but new instances will be created according to the new configuration.
      * @param req UpgradeLaunchConfigurationRequest
      * @return UpgradeLaunchConfigurationResponse
      * @throws TencentCloudSDKException
@@ -831,9 +842,9 @@ public class AsClient extends AbstractClient{
     }
 
     /**
-     *This API (UpgradeLifecycleHook) is used to upgrade lifecycle hooks.
+     *This API (UpgradeLifecycleHook) is used to upgrade a lifecycle hook.
 
-* This API is used to upgrade lifecycle hooks. The new configuration overwrites the original configuration. Default values will be used for optional fields that are left blank. 
+* This API is used to upgrade a lifecycle hook in a "completely overriding" manner, i.e., it uniformly sets a new configuration according to the API parameters regardless of the original parameters. If optional fields are left empty, their default values will be used.
 
      * @param req UpgradeLifecycleHookRequest
      * @return UpgradeLifecycleHookResponse

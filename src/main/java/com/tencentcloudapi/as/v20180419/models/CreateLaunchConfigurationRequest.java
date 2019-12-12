@@ -23,70 +23,71 @@ import java.util.HashMap;
 public class CreateLaunchConfigurationRequest  extends AbstractModel{
 
     /**
-    * Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
+    * Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes.
     */
     @SerializedName("LaunchConfigurationName")
     @Expose
     private String LaunchConfigurationName;
 
     /**
-    * Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
+    * Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li>
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
+    * ID of the project to which the instance belongs. This parameter can be obtained from the `projectId` field in the returned values of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If this is left empty, default project is used.
     */
     @SerializedName("ProjectId")
     @Expose
-    private Integer ProjectId;
+    private Long ProjectId;
 
     /**
-    * Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+    * Instance model. Different instance models specify different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) API to get the latest specification table or referring to the descriptions in [Instance Types](https://cloud.tencent.com/document/product/213/11518).
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-    * Instance’s system disk configuration. If not specified, the default value will be assigned.
+    * System disk configuration of the instance. If this parameter is not specified, the default value will be assigned to it.
     */
     @SerializedName("SystemDisk")
     @Expose
     private SystemDisk SystemDisk;
 
     /**
-    * Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
+    * Information of the instance's data disk configuration. If this parameter is not specified, no data disk is purchased by default. Up to 11 data disks can be supported.
     */
     @SerializedName("DataDisks")
     @Expose
     private DataDisk [] DataDisks;
 
     /**
-    * Public network bandwidth configuration. If not specified, the default public network bandwidth is 0 Mbps.
+    * Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps.
     */
     @SerializedName("InternetAccessible")
     @Expose
     private InternetAccessible InternetAccessible;
 
     /**
-    * Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
+    * Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message.
     */
     @SerializedName("LoginSettings")
     @Expose
     private LoginSettings LoginSettings;
 
     /**
-    * The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
+    * The security group to which the instance belongs. This parameter can be obtained by calling the `SecurityGroupId` field in the returned value of [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808). If this parameter is not specified, no security group will be bound by default.
     */
     @SerializedName("SecurityGroupIds")
     @Expose
     private String [] SecurityGroupIds;
 
     /**
-    * Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
+    * Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, Cloud Monitoring and Cloud Security will be enabled by default.
     */
     @SerializedName("EnhancedService")
     @Expose
@@ -100,202 +101,228 @@ public class CreateLaunchConfigurationRequest  extends AbstractModel{
     private String UserData;
 
     /**
-    * Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
+    * Instance billing type. CVM instances are POSTPAID_BY_HOUR by default.
+<br><li>POSTPAID_BY_HOUR: Pay-as-you-go on an hourly basis
+<br><li>SPOTPAID: Bidding
     */
     @SerializedName("InstanceChargeType")
     @Expose
     private String InstanceChargeType;
 
     /**
-    * Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
+    * Market-related options of the instance, such as the parameters related to stop instances. If the billing method of instance is specified as bidding, this parameter must be passed in.
     */
     @SerializedName("InstanceMarketOptions")
     @Expose
     private InstanceMarketOptionsRequest InstanceMarketOptions;
 
     /**
-    * List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+    * List of instance models. Different instance models specify different resource specifications. Up to 10 instance models can be supported.
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
     */
     @SerializedName("InstanceTypes")
     @Expose
     private String [] InstanceTypes;
 
     /**
-    * Instance type validation policy. Values include ALL and ANY. Default value is ANY. <br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
+    * Instance type verification policy. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy.
     */
     @SerializedName("InstanceTypesCheckPolicy")
     @Expose
     private String InstanceTypesCheckPolicy;
 
     /**
-    * Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
+    * List of tags. This parameter is used to bind up to 10 tags to newly added instances.
     */
     @SerializedName("InstanceTags")
     @Expose
     private InstanceTag [] InstanceTags;
 
     /**
-     * Get Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
-     * @return LaunchConfigurationName Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
+    * CAM role name, which can be obtained from the roleName field in the return value of the DescribeRoleList API.
+    */
+    @SerializedName("CamRoleName")
+    @Expose
+    private String CamRoleName;
+
+    /**
+    * CVM HostName settings.
+    */
+    @SerializedName("HostNameSettings")
+    @Expose
+    private HostNameSettings HostNameSettings;
+
+    /**
+     * Get Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes. 
+     * @return LaunchConfigurationName Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes.
      */
     public String getLaunchConfigurationName() {
         return this.LaunchConfigurationName;
     }
 
     /**
-     * Set Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
-     * @param LaunchConfigurationName Launch configuration display name. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 60 characters.
+     * Set Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes.
+     * @param LaunchConfigurationName Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes.
      */
     public void setLaunchConfigurationName(String LaunchConfigurationName) {
         this.LaunchConfigurationName = LaunchConfigurationName;
     }
 
     /**
-     * Get Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public image</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
-     * @return ImageId Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public image</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
+     * Get Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li> 
+     * @return ImageId Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li>
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * Set Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public Images</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
-     * @param ImageId Specified valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, in the format `img-8toqc6s3`. There are four types of images:<br/><li>Public Images</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Image</li><br/>You can get the available image ID by either of the following ways: <br/><li>Query the image ID of a `Public Image`, `Custom Image` or `Shared Image` by logging in to the Console; query the image ID of a `Service Marketplace Image` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Get the `ImageId` field in the returned values of API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).</li>
+     * Set Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li>
+     * @param ImageId Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li>
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * Get Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
-     * @return ProjectId  Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
+     * Get ID of the project to which the instance belongs. This parameter can be obtained from the `projectId` field in the returned values of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If this is left empty, default project is used. 
+     * @return ProjectId ID of the project to which the instance belongs. This parameter can be obtained from the `projectId` field in the returned values of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If this is left empty, default project is used.
      */
-    public Integer getProjectId() {
+    public Long getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * Set Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
-     * @param ProjectId  Instance project ID. Get this parameter in the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If it is not defined, default project is used.
+     * Set ID of the project to which the instance belongs. This parameter can be obtained from the `projectId` field in the returned values of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If this is left empty, default project is used.
+     * @param ProjectId ID of the project to which the instance belongs. This parameter can be obtained from the `projectId` field in the returned values of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If this is left empty, default project is used.
      */
-    public void setProjectId(Integer ProjectId) {
+    public void setProjectId(Long ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * Get Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
-     * @return InstanceType Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * Get Instance model. Different instance models specify different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) API to get the latest specification table or referring to the descriptions in [Instance Types](https://cloud.tencent.com/document/product/213/11518).
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered. 
+     * @return InstanceType Instance model. Different instance models specify different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) API to get the latest specification table or referring to the descriptions in [Instance Types](https://cloud.tencent.com/document/product/213/11518).
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * Set Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
-     * @param InstanceType Instance model. Different instance models specify different resource specifications. For specific values, call API [DescribeInstanceTypeConfigs] (https://intl.cloud.tencent.com/document/api/213/15749) for latest specifications, or refer to [instance type](https://intl.cloud.tencent.com/document/product/213/11518). `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * Set Instance model. Different instance models specify different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) API to get the latest specification table or referring to the descriptions in [Instance Types](https://cloud.tencent.com/document/product/213/11518).
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * @param InstanceType Instance model. Different instance models specify different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) API to get the latest specification table or referring to the descriptions in [Instance Types](https://cloud.tencent.com/document/product/213/11518).
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * Get Instance’s system disk configuration. If not specified, the default value will be assigned.
-     * @return SystemDisk Instance’s system disk configuration. If not specified, the default value will be assigned.
+     * Get System disk configuration of the instance. If this parameter is not specified, the default value will be assigned to it. 
+     * @return SystemDisk System disk configuration of the instance. If this parameter is not specified, the default value will be assigned to it.
      */
     public SystemDisk getSystemDisk() {
         return this.SystemDisk;
     }
 
     /**
-     * Set Instance’s system disk configuration. If not specified, the default value will be assigned.
-     * @param SystemDisk Instance’s system disk configuration. If not specified, the default value will be assigned.
+     * Set System disk configuration of the instance. If this parameter is not specified, the default value will be assigned to it.
+     * @param SystemDisk System disk configuration of the instance. If this parameter is not specified, the default value will be assigned to it.
      */
     public void setSystemDisk(SystemDisk SystemDisk) {
         this.SystemDisk = SystemDisk;
     }
 
     /**
-     * Get Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
-     * @return DataDisks Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
+     * Get Information of the instance's data disk configuration. If this parameter is not specified, no data disk is purchased by default. Up to 11 data disks can be supported. 
+     * @return DataDisks Information of the instance's data disk configuration. If this parameter is not specified, no data disk is purchased by default. Up to 11 data disks can be supported.
      */
     public DataDisk [] getDataDisks() {
         return this.DataDisks;
     }
 
     /**
-     * Set Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
-     * @param DataDisks Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
+     * Set Information of the instance's data disk configuration. If this parameter is not specified, no data disk is purchased by default. Up to 11 data disks can be supported.
+     * @param DataDisks Information of the instance's data disk configuration. If this parameter is not specified, no data disk is purchased by default. Up to 11 data disks can be supported.
      */
     public void setDataDisks(DataDisk [] DataDisks) {
         this.DataDisks = DataDisks;
     }
 
     /**
-     * Get Public network bandwidth configuration. If not specified, the default public network bandwidth is 0 Mbps.
-     * @return InternetAccessible Instance’s system disk configuration. If not specified, no disks will be purchased by default. A maximum of 11 data disks can be assigned. 
+     * Get Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps. 
+     * @return InternetAccessible Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps.
      */
     public InternetAccessible getInternetAccessible() {
         return this.InternetAccessible;
     }
 
     /**
-     * Set Public network bandwidth configuration. If not specified, the default public network bandwidth is 0 Mbps.
-     * @param InternetAccessible Public network bandwidth configuration. If not specified, the default public network bandwidth is 0 Mbps.
+     * Set Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps.
+     * @param InternetAccessible Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps.
      */
     public void setInternetAccessible(InternetAccessible InternetAccessible) {
         this.InternetAccessible = InternetAccessible;
     }
 
     /**
-     * Get Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
-     * @return LoginSettings Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
+     * Get Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. 
+     * @return LoginSettings Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message.
      */
     public LoginSettings getLoginSettings() {
         return this.LoginSettings;
     }
 
     /**
-     * Set Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
-     * @param LoginSettings Instance login setting. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the console message center.
+     * Set Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message.
+     * @param LoginSettings Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message.
      */
     public void setLoginSettings(LoginSettings LoginSettings) {
         this.LoginSettings = LoginSettings;
     }
 
     /**
-     * Get The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
-     * @return SecurityGroupIds The security group to which the instance belongs. The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
+     * Get The security group to which the instance belongs. This parameter can be obtained by calling the `SecurityGroupId` field in the returned value of [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808). If this parameter is not specified, no security group will be bound by default. 
+     * @return SecurityGroupIds The security group to which the instance belongs. This parameter can be obtained by calling the `SecurityGroupId` field in the returned value of [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808). If this parameter is not specified, no security group will be bound by default.
      */
     public String [] getSecurityGroupIds() {
         return this.SecurityGroupIds;
     }
 
     /**
-     * Set The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
-     * @param SecurityGroupIds The security group to which the instance belongs. Get this parameter in the `SecurityGroupId` field in the returned values of API [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If it is not defined, no security group will be bound by default.
+     * Set The security group to which the instance belongs. This parameter can be obtained by calling the `SecurityGroupId` field in the returned value of [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808). If this parameter is not specified, no security group will be bound by default.
+     * @param SecurityGroupIds The security group to which the instance belongs. This parameter can be obtained by calling the `SecurityGroupId` field in the returned value of [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808). If this parameter is not specified, no security group will be bound by default.
      */
     public void setSecurityGroupIds(String [] SecurityGroupIds) {
         this.SecurityGroupIds = SecurityGroupIds;
     }
 
     /**
-     * Get Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
-     * @return EnhancedService Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
+     * Get Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, Cloud Monitoring and Cloud Security will be enabled by default. 
+     * @return EnhancedService Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, Cloud Monitoring and Cloud Security will be enabled by default.
      */
     public EnhancedService getEnhancedService() {
         return this.EnhancedService;
     }
 
     /**
-     * Set Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
-     * @param EnhancedService Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
+     * Set Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, Cloud Monitoring and Cloud Security will be enabled by default.
+     * @param EnhancedService Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, Cloud Monitoring and Cloud Security will be enabled by default.
      */
     public void setEnhancedService(EnhancedService EnhancedService) {
         this.EnhancedService = EnhancedService;
     }
 
     /**
-     * Get Base64-encoded custom data of up to 16 KB.
+     * Get Base64-encoded custom data of up to 16 KB. 
      * @return UserData Base64-encoded custom data of up to 16 KB.
      */
     public String getUserData() {
@@ -311,87 +338,151 @@ public class CreateLaunchConfigurationRequest  extends AbstractModel{
     }
 
     /**
-     * Get Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
-     * @return InstanceChargeType Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
+     * Get Instance billing type. CVM instances are POSTPAID_BY_HOUR by default.
+<br><li>POSTPAID_BY_HOUR: Pay-as-you-go on an hourly basis
+<br><li>SPOTPAID: Bidding 
+     * @return InstanceChargeType Instance billing type. CVM instances are POSTPAID_BY_HOUR by default.
+<br><li>POSTPAID_BY_HOUR: Pay-as-you-go on an hourly basis
+<br><li>SPOTPAID: Bidding
      */
     public String getInstanceChargeType() {
         return this.InstanceChargeType;
     }
 
     /**
-     * Set Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
-     * @param InstanceChargeType Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default.<br><li>POSTPAID_BY_HOUR: pay-as-you-go on an hourly cycle<br><li>SPOTPAID: pay by bidding.
+     * Set Instance billing type. CVM instances are POSTPAID_BY_HOUR by default.
+<br><li>POSTPAID_BY_HOUR: Pay-as-you-go on an hourly basis
+<br><li>SPOTPAID: Bidding
+     * @param InstanceChargeType Instance billing type. CVM instances are POSTPAID_BY_HOUR by default.
+<br><li>POSTPAID_BY_HOUR: Pay-as-you-go on an hourly basis
+<br><li>SPOTPAID: Bidding
      */
     public void setInstanceChargeType(String InstanceChargeType) {
         this.InstanceChargeType = InstanceChargeType;
     }
 
     /**
-     * Get Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
-     * @return InstanceMarketOptions Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
+     * Get Market-related options of the instance, such as the parameters related to stop instances. If the billing method of instance is specified as bidding, this parameter must be passed in. 
+     * @return InstanceMarketOptions Market-related options of the instance, such as the parameters related to stop instances. If the billing method of instance is specified as bidding, this parameter must be passed in.
      */
     public InstanceMarketOptionsRequest getInstanceMarketOptions() {
         return this.InstanceMarketOptions;
     }
 
     /**
-     * Set Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
-     * @param InstanceMarketOptions Market-related options for instances, such as parameters related to spot instances.This parameter is mandatory for spot instances.
+     * Set Market-related options of the instance, such as the parameters related to stop instances. If the billing method of instance is specified as bidding, this parameter must be passed in.
+     * @param InstanceMarketOptions Market-related options of the instance, such as the parameters related to stop instances. If the billing method of instance is specified as bidding, this parameter must be passed in.
      */
     public void setInstanceMarketOptions(InstanceMarketOptionsRequest InstanceMarketOptions) {
         this.InstanceMarketOptions = InstanceMarketOptions;
     }
 
     /**
-     * Get List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
-     * @return InstanceTypes List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * Get List of instance models. Different instance models specify different resource specifications. Up to 10 instance models can be supported.
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered. 
+     * @return InstanceTypes List of instance models. Different instance models specify different resource specifications. Up to 10 instance models can be supported.
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
      */
     public String [] getInstanceTypes() {
         return this.InstanceTypes;
     }
 
     /**
-     * Set List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
-     * @param InstanceTypes List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. `InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * Set List of instance models. Different instance models specify different resource specifications. Up to 10 instance models can be supported.
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
+     * @param InstanceTypes List of instance models. Different instance models specify different resource specifications. Up to 10 instance models can be supported.
+`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
      */
     public void setInstanceTypes(String [] InstanceTypes) {
         this.InstanceTypes = InstanceTypes;
     }
 
     /**
-     * Get Instance type validation policy. Values include ALL and ANY. Default value is ANY. <br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
-     * @return InstanceTypesCheckPolicy Instance type validation policy. Values include ALL and ANY. Default value is ANY.<br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
+     * Get Instance type verification policy. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy. 
+     * @return InstanceTypesCheckPolicy Instance type verification policy. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy.
      */
     public String getInstanceTypesCheckPolicy() {
         return this.InstanceTypesCheckPolicy;
     }
 
     /**
-     * Set Instance type validation policy. Values include ALL and ANY. Default value is ANY.<br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
-     * @param InstanceTypesCheckPolicy Instance type validation policy. Values include ALL and ANY. Default value is ANY.<br><li> ALL: All instance types (InstanceType) can be used or validation fails.<br><li> ANY: Any one of the instance types (InstanceType) can be used or validation fails. Common reasons why instance types are not available: instance types are sold out, associated cloud disks are sold out. If an instance type does not exist or if it is discontinued, the validation will fail regardless of the value of InstanceTypesCheckPolicy.
+     * Set Instance type verification policy. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy.
+     * @param InstanceTypesCheckPolicy Instance type verification policy. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy.
      */
     public void setInstanceTypesCheckPolicy(String InstanceTypesCheckPolicy) {
         this.InstanceTypesCheckPolicy = InstanceTypesCheckPolicy;
     }
 
     /**
-     * Get Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
-     * @return InstanceTags Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
+     * Get List of tags. This parameter is used to bind up to 10 tags to newly added instances. 
+     * @return InstanceTags List of tags. This parameter is used to bind up to 10 tags to newly added instances.
      */
     public InstanceTag [] getInstanceTags() {
         return this.InstanceTags;
     }
 
     /**
-     * Set Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
-     * @param InstanceTags Tag list. Tag lists can be bound to instances. A maximum of 10 tags are supported.
+     * Set List of tags. This parameter is used to bind up to 10 tags to newly added instances.
+     * @param InstanceTags List of tags. This parameter is used to bind up to 10 tags to newly added instances.
      */
     public void setInstanceTags(InstanceTag [] InstanceTags) {
         this.InstanceTags = InstanceTags;
     }
 
     /**
-     * For internal use only
+     * Get CAM role name, which can be obtained from the roleName field in the return value of the DescribeRoleList API. 
+     * @return CamRoleName CAM role name, which can be obtained from the roleName field in the return value of the DescribeRoleList API.
+     */
+    public String getCamRoleName() {
+        return this.CamRoleName;
+    }
+
+    /**
+     * Set CAM role name, which can be obtained from the roleName field in the return value of the DescribeRoleList API.
+     * @param CamRoleName CAM role name, which can be obtained from the roleName field in the return value of the DescribeRoleList API.
+     */
+    public void setCamRoleName(String CamRoleName) {
+        this.CamRoleName = CamRoleName;
+    }
+
+    /**
+     * Get CVM HostName settings. 
+     * @return HostNameSettings CVM HostName settings.
+     */
+    public HostNameSettings getHostNameSettings() {
+        return this.HostNameSettings;
+    }
+
+    /**
+     * Set CVM HostName settings.
+     * @param HostNameSettings CVM HostName settings.
+     */
+    public void setHostNameSettings(HostNameSettings HostNameSettings) {
+        this.HostNameSettings = HostNameSettings;
+    }
+
+    /**
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LaunchConfigurationName", this.LaunchConfigurationName);
@@ -410,6 +501,8 @@ public class CreateLaunchConfigurationRequest  extends AbstractModel{
         this.setParamArraySimple(map, prefix + "InstanceTypes.", this.InstanceTypes);
         this.setParamSimple(map, prefix + "InstanceTypesCheckPolicy", this.InstanceTypesCheckPolicy);
         this.setParamArrayObj(map, prefix + "InstanceTags.", this.InstanceTags);
+        this.setParamSimple(map, prefix + "CamRoleName", this.CamRoleName);
+        this.setParamObj(map, prefix + "HostNameSettings.", this.HostNameSettings);
 
     }
 }

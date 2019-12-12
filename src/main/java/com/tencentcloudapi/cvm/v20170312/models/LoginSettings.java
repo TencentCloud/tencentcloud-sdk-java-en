@@ -23,76 +23,91 @@ import java.util.HashMap;
 public class LoginSettings  extends AbstractModel{
 
     /**
-    * Login password of the instance. The rule of password complexity varies with different operating systems:<br><li>Linux instance's password should be a combination of 8-16 characters comprised of at least two of the following types: letters [a-z, A-Z], numbers [0-9], and special symbols [( ) ` ~ ! @ # $ % ^ & * - + =  { } [ ] : ; ' , . ? / ].<br><li>The password for a Windows instance should be a combination of 12-16 characters comprised of at least three of the following types: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? / ].<br><br>If this parameter is not specified, a password is randomly generated and sent to you via the internal message. Note: This field may return null, indicating that no valid value was found.
+    * Login password of the instance. The password requirements vary among different operating systems: <br><li>For Linux instances, the password must be 8-16 characters long and contain at least one character from two of the following categories: [a-z, A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]. <br><li>For Windows instances, the password must be 12-16 characters long and contain at least one character from three of the following categories: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]. <br><br>If this parameter is not specified, a random password will be generated and sent to you via the Message Center.
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("Password")
     @Expose
     private String Password;
 
     /**
-    * List of key IDs. An instance associated with the key can be accessed using the corresponding private key. KeyId can be obtained via the API DescribeKeyPairs. A key and a password cannot be specified at the same time, and specifying the key is not supported in Windows. You can specify only one key when purchasing an instance. Note: This field may return null, indicating that no valid value was found.
+    * List of key IDs. After an instance is associated with a key, you can access the instance with the private key in the key pair. You can call `DescribeKeyPairs` to obtain `KeyId`. Key and password cannot be specified at the same time. Windows instances do not support keys. Currently, you can only specify one key when purchasing an instance.
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("KeyIds")
     @Expose
     private String [] KeyIds;
 
     /**
-    * Indicates whether to keep the original settings for an image. You cannot specify this parameter if Password or KeyIds.N is specified. You can specify this parameter to TRUE only when you create an instance using a custom image, shared image, or image imported from external resources. Value range:<br><li>TRUE: Keep the login settings for the image<br><li>FALSE: Do not keep the login settings for the image<br><br>Default: FALSE. Note: This field may return null, indicating that no valid value was found.
+    * Whether to keep the original settings of an image. You cannot specify this parameter and `Password` or `KeyIds.N` at the same time. You can specify this parameter as `TRUE` only when you create an instance using a custom image, a shared image, or an imported image. Valid values: <br><li>TRUE: keep the login settings of the image <br><li>FALSE: do not keep the login settings of the image <br><br>Default value: FALSE.
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("KeepImageLogin")
     @Expose
     private String KeepImageLogin;
 
     /**
-     * Obtain a instance’s login password: password complexity requirement varies with different operating systems, as shown below:<br><li>Linux instance's password should be a combination of 8-16 characters comprised of at least two of the following types: letters [a-z, A-Z], numbers [0-9], and special symbols [( ) ` ~ ! @ # $ % ^ & * - + =  { } [ ] : ; ' , . ? / ].<br><li>The password for a Windows instance should be a combination of 12-16 characters comprised of at least three of the following types: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? / ].<br><br>If this parameter is not specified, a password is randomly generated and sent to you via the internal message. Note: This field may return null, indicating that no valid value was found.
-     * @return Password Login password of the instance. The rule of password complexity varies with different operating systems:<br><li>Linux instance's password should be a combination of 8-16 characters comprised of at least two of the following types: letters [a-z, A-Z], numbers [0-9], and special symbols [( ) ` ~ ! @ # $ % ^ & * - + =  { } [ ] : ; ' , . ? / ].<br><li>The password for a Windows instance should be a combination of 12-16 characters comprised of at least three of the following types: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? / ].<br><br>If this parameter is not specified, a password is randomly generated and sent to you via the internal message. Note: This field may return null, indicating that no valid value was found.
+     * Get Login password of the instance. The password requirements vary among different operating systems: <br><li>For Linux instances, the password must be 8-16 characters long and contain at least one character from two of the following categories: [a-z, A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]. <br><li>For Windows instances, the password must be 12-16 characters long and contain at least one character from three of the following categories: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]. <br><br>If this parameter is not specified, a random password will be generated and sent to you via the Message Center.
+Note: This field may return null, indicating that no valid value is found. 
+     * @return Password Login password of the instance. The password requirements vary among different operating systems: <br><li>For Linux instances, the password must be 8-16 characters long and contain at least one character from two of the following categories: [a-z, A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]. <br><li>For Windows instances, the password must be 12-16 characters long and contain at least one character from three of the following categories: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]. <br><br>If this parameter is not specified, a random password will be generated and sent to you via the Message Center.
+Note: This field may return null, indicating that no valid value is found.
      */
     public String getPassword() {
         return this.Password;
     }
 
     /**
-     * Configure a instance’s login password: password complexity requirement varies with different operating systems, as shown below:<br><li>Linux instance's password should be a combination of 8-16 characters comprised of at least two of the following types: letters [a-z, A-Z], numbers [0-9], and special symbols [( ) ` ~ ! @ # $ % ^ & * - + =  { } [ ] : ; ' , . ? / ].<br><li>The password for a Windows instance should be a combination of 12-16 characters comprised of at least three of the following types: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? / ].<br><br>If this parameter is not specified, a password is randomly generated and sent to you via the internal message. Note: This field may return null, indicating that no valid value was found.
-     * @param Password Login password of the instance. The rule of password complexity varies with different operating systems:<br><li>Linux instance's password should be a combination of 8-16 characters comprised of at least two of the following types: letters [a-z, A-Z], numbers [0-9], and special symbols [( ) ` ~ ! @ # $ % ^ & * - + =  { } [ ] : ; ' , . ? / ].<br><li>The password for a Windows instance should be a combination of 12-16 characters comprised of at least three of the following types: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? / ].<br><br>If this parameter is not specified, a password is randomly generated and sent to you via the internal message. Note: This field may return null, indicating that no valid value was found.
+     * Set Login password of the instance. The password requirements vary among different operating systems: <br><li>For Linux instances, the password must be 8-16 characters long and contain at least one character from two of the following categories: [a-z, A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]. <br><li>For Windows instances, the password must be 12-16 characters long and contain at least one character from three of the following categories: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]. <br><br>If this parameter is not specified, a random password will be generated and sent to you via the Message Center.
+Note: This field may return null, indicating that no valid value is found.
+     * @param Password Login password of the instance. The password requirements vary among different operating systems: <br><li>For Linux instances, the password must be 8-16 characters long and contain at least one character from two of the following categories: [a-z, A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? / ]. <br><li>For Windows instances, the password must be 12-16 characters long and contain at least one character from three of the following categories: [a-z], [A-Z], [0-9] and [( ) ` ~ ! @ # $ % ^ & * - + = { } [ ] : ; ' , . ? /]. <br><br>If this parameter is not specified, a random password will be generated and sent to you via the Message Center.
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setPassword(String Password) {
         this.Password = Password;
     }
 
     /**
-     * Obtain the list of key IDs. An instance associated with the key can be accessed using the corresponding private key. KeyId can be obtained via the API DescribeKeyPairs. A key and a password cannot be specified at the same time, and specifying the key is not supported in Windows. You can specify only one key when purchasing an instance. Note: This field may return null, indicating that no valid value was found.
-     * @return KeyIds List of key IDs. An instance associated with the key can be accessed using the corresponding private key. KeyId can be obtained via the API DescribeKeyPairs. A key and a password cannot be specified at the same time, and specifying the key is not supported in Windows. You can specify only one key when purchasing an instance. Note: This field may return null, indicating that no valid value was found.
+     * Get List of key IDs. After an instance is associated with a key, you can access the instance with the private key in the key pair. You can call `DescribeKeyPairs` to obtain `KeyId`. Key and password cannot be specified at the same time. Windows instances do not support keys. Currently, you can only specify one key when purchasing an instance.
+Note: This field may return null, indicating that no valid value is found. 
+     * @return KeyIds List of key IDs. After an instance is associated with a key, you can access the instance with the private key in the key pair. You can call `DescribeKeyPairs` to obtain `KeyId`. Key and password cannot be specified at the same time. Windows instances do not support keys. Currently, you can only specify one key when purchasing an instance.
+Note: This field may return null, indicating that no valid value is found.
      */
     public String [] getKeyIds() {
         return this.KeyIds;
     }
 
     /**
-     * Configure the list of key IDs. An instance associated with the key can be accessed using the corresponding private key. KeyId can be obtained via the API DescribeKeyPairs. A key and a password cannot be specified at the same time, and specifying the key is not supported in Windows. You can specify only one key when purchasing an instance. Note: This field may return null, indicating that no valid value was found.
-     * @param KeyIds List of key IDs. An instance associated with the key can be accessed using the corresponding private key. KeyId can be obtained via the API DescribeKeyPairs. A key and a password cannot be specified at the same time, and specifying the key is not supported in Windows. You can specify only one key when purchasing an instance. Note: This field may return null, indicating that no valid value was found.
+     * Set List of key IDs. After an instance is associated with a key, you can access the instance with the private key in the key pair. You can call `DescribeKeyPairs` to obtain `KeyId`. Key and password cannot be specified at the same time. Windows instances do not support keys. Currently, you can only specify one key when purchasing an instance.
+Note: This field may return null, indicating that no valid value is found.
+     * @param KeyIds List of key IDs. After an instance is associated with a key, you can access the instance with the private key in the key pair. You can call `DescribeKeyPairs` to obtain `KeyId`. Key and password cannot be specified at the same time. Windows instances do not support keys. Currently, you can only specify one key when purchasing an instance.
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setKeyIds(String [] KeyIds) {
         this.KeyIds = KeyIds;
     }
 
     /**
-     * Obtain whether to keep the original settings for an image. You cannot specify this parameter if Password or KeyIds.N is specified. You can specify this parameter to TRUE only when you create an instance using a custom image, shared image, or image imported from external resources. Value range:<br><li>TRUE: Keep the login settings for the image<br><li>FALSE: Do not keep the login settings for the image<br><br>Default: FALSE. Note: This field may return null, indicating that no valid value was found.
-     * @return KeepImageLogin Indicates whether to keep the original settings for an image. You cannot specify this parameter if Password or KeyIds.N is specified. You can specify this parameter to TRUE only when you create an instance using a custom image, shared image, or image imported from external resources. Value range:<br><li>TRUE: Keep the login settings for the image<br><li>FALSE: Do not keep the login settings for the image<br><br>Default: FALSE. Note: This field may return null, indicating that no valid value was found.
+     * Get Whether to keep the original settings of an image. You cannot specify this parameter and `Password` or `KeyIds.N` at the same time. You can specify this parameter as `TRUE` only when you create an instance using a custom image, a shared image, or an imported image. Valid values: <br><li>TRUE: keep the login settings of the image <br><li>FALSE: do not keep the login settings of the image <br><br>Default value: FALSE.
+Note: This field may return null, indicating that no valid value is found. 
+     * @return KeepImageLogin Whether to keep the original settings of an image. You cannot specify this parameter and `Password` or `KeyIds.N` at the same time. You can specify this parameter as `TRUE` only when you create an instance using a custom image, a shared image, or an imported image. Valid values: <br><li>TRUE: keep the login settings of the image <br><li>FALSE: do not keep the login settings of the image <br><br>Default value: FALSE.
+Note: This field may return null, indicating that no valid value is found.
      */
     public String getKeepImageLogin() {
         return this.KeepImageLogin;
     }
 
     /**
-     * Configure whether to keep the original settings for an image. You cannot specify this parameter if Password or KeyIds.N is specified. You can specify this parameter to TRUE only when you create an instance using a custom image, shared image, or image imported from external resources. Value range:<br><li>TRUE: Keep the login settings for the image<br><li>FALSE: Do not keep the login settings for the image<br><br>Default: FALSE. Note: This field may return null, indicating that no valid value was found.
-     * @param KeepImageLogin Indicates whether to keep the original settings for an image. You cannot specify this parameter if Password or KeyIds.N is specified. You can specify this parameter to TRUE only when you create an instance using a custom image, shared image, or image imported from external resources. Value range:<br><li>TRUE: Keep the login settings for the image<br><li>FALSE: Do not keep the login settings for the image<br><br>Default: FALSE. Note: This field may return null, indicating that no valid value was found.
+     * Set Whether to keep the original settings of an image. You cannot specify this parameter and `Password` or `KeyIds.N` at the same time. You can specify this parameter as `TRUE` only when you create an instance using a custom image, a shared image, or an imported image. Valid values: <br><li>TRUE: keep the login settings of the image <br><li>FALSE: do not keep the login settings of the image <br><br>Default value: FALSE.
+Note: This field may return null, indicating that no valid value is found.
+     * @param KeepImageLogin Whether to keep the original settings of an image. You cannot specify this parameter and `Password` or `KeyIds.N` at the same time. You can specify this parameter as `TRUE` only when you create an instance using a custom image, a shared image, or an imported image. Valid values: <br><li>TRUE: keep the login settings of the image <br><li>FALSE: do not keep the login settings of the image <br><br>Default value: FALSE.
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setKeepImageLogin(String KeepImageLogin) {
         this.KeepImageLogin = KeepImageLogin;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Password", this.Password);

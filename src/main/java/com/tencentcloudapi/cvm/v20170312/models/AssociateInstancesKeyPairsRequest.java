@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class AssociateInstancesKeyPairsRequest  extends AbstractModel{
 
     /**
-    * One or more instance IDs to be operated, the maximum of each request for batch instance is 100.<br>You can get available instance ID by the following ways:<br><li>Log in console to query instance ID [Console](https://console.cloud.tencent.com/cvm/index).<br><li>Call interface [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，get instance ID from return message `InstanceId`.
+    * Instance ID(s). The maximum number of instances in each request is 100. <br>You can obtain the available instance IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the instance IDs. <br><li>Call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * One or more KeyPairs to be operated, the maximum of each request for batch KeyPairs is 100. KeyPairs ID for instance：`skey-3glfot13`.<br>You can get available KeyPairs by the following ways:<br><li>Log in console to query KeyPairs ID [Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPairs ID from return message`KeyId`.
+    * Key ID(s). The maximum number of key pairs in each request is 100. The key pair ID is in the format of `skey-3glfot13`. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
     */
     @SerializedName("KeyIds")
     @Expose
     private String [] KeyIds;
 
     /**
-    * Whether to forced shutdown running instance. It is recommended to manually shut down the running instance before associate the security key. Values:<br><li>TRUE: Perform a forced shutdown if normal shutdown failed<br><li>FALSE: Do not perform a forced shutdown if normal shutdown failed<br>Default: FALSE.
+    * Whether to force shut down a running instances. It is recommended to manually shut down a running instance before associating a key pair with it. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE.
     */
     @SerializedName("ForceStop")
     @Expose
     private Boolean ForceStop;
 
     /**
-     * Get one or more instance IDs to be operated, the maximum of each request for batch instance is 100.<br>You can get available instance ID by the following ways:<br><li>Log in console to query instance ID [Console](https://console.cloud.tencent.com/cvm/index).<br><li>Call interface [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，get instance ID from return message`InstanceId`.
-     * @return InstanceIds one or more instance IDs to be operated, the maximum of each request for batch instance is 100.<br>You can get available instance ID by the following ways:<br><li>Log in console to query instance ID [Console](https://console.cloud.tencent.com/cvm/index).<br><li>Call interface [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，get instance ID from return message`InstanceId`.
+     * Get Instance ID(s). The maximum number of instances in each request is 100. <br>You can obtain the available instance IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the instance IDs. <br><li>Call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. 
+     * @return InstanceIds Instance ID(s). The maximum number of instances in each request is 100. <br>You can obtain the available instance IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the instance IDs. <br><li>Call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * Set one or more instance IDs to be operated, the maximum of each request for batch instance is 100.<br>You can get available instance ID by the following ways:<br><li>Log in console to query instance ID [Console](https://console.cloud.tencent.com/cvm/index).<br><li>Call interface [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，get instance ID from return message`InstanceId`.
-     * @param InstanceIds One or more instance IDs to be operated, the maximum of each request for batch instance is 100.<br>You can get available instance ID by the following ways:<br><li>Log in console to query instance ID [Console](https://console.cloud.tencent.com/cvm/index).<br><li>Call interface [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，get instance ID from return message`InstanceId`.
+     * Set Instance ID(s). The maximum number of instances in each request is 100. <br>You can obtain the available instance IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the instance IDs. <br><li>Call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
+     * @param InstanceIds Instance ID(s). The maximum number of instances in each request is 100. <br>You can obtain the available instance IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the instance IDs. <br><li>Call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Get one or more KeyPairs to be operated, the maximum of each request for batch KeyPairs is 100. KeyPairs ID for instance: `skey-3glfot13`。<br>You can get available KeyPairs ID by the following ways:<br><li>Log in console to query KeyPairs ID [Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPairs ID from return message`KeyId`.
-     * @return KeyIds One or more KeyPairs to be operated, the maximum of each request for batch KeyPairs is 100. KeyPairs ID for instance：`skey-3glfot13`。<br>You can get available KeyPairs ID by the following ways:<br><li>Log in console to query KeyPairs ID [Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPairs ID from return message`KeyId`.
+     * Get Key ID(s). The maximum number of key pairs in each request is 100. The key pair ID is in the format of `skey-3glfot13`. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response. 
+     * @return KeyIds Key ID(s). The maximum number of key pairs in each request is 100. The key pair ID is in the format of `skey-3glfot13`. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
      */
     public String [] getKeyIds() {
         return this.KeyIds;
     }
 
     /**
-     * Set one or more KeyPairs to be operated, the maximum of each request for batch KeyPairs is 100. KeyPairs ID for instance：`skey-3glfot13`.<br>You can get available KeyPairs ID by the following ways:<br><li>Log in console to query KeyPairs ID [Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPairs ID from return message`KeyId`.
-     * @param KeyIds One or more KeyPairs to be operated, the maximum of each request for batch KeyPairs is 100. KeyPairs ID for instance：`skey-3glfot13`<br>You can get available KeyPairs ID by the following ways:<br><li>Log in console to query KeyPairs ID [Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPairs ID from return message`KeyId`.
+     * Set Key ID(s). The maximum number of key pairs in each request is 100. The key pair ID is in the format of `skey-3glfot13`. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
+     * @param KeyIds Key ID(s). The maximum number of key pairs in each request is 100. The key pair ID is in the format of `skey-3glfot13`. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
      */
     public void setKeyIds(String [] KeyIds) {
         this.KeyIds = KeyIds;
     }
 
     /**
-     * Get whether to forced shutdown running instance. It is recommended to manually shut down the running instance before associate the security key. Values:<br><li>TRUE: Perform a forced shutdown if normal shutdown failed<br><li>FALSE: Do not perform a forced shutdown.<br>Default: FALSE.
-     * @return ForceStop Whether to forced shutdown running instance. It is recommended to manually shut down the running instance before associate the security key. Values:<br><li>TRUE: Perform a forced shutdown if normal shutdown failed<br><li>FALSE: Do not perform a forced shutdown.<br>Default: FALSE.
+     * Get Whether to force shut down a running instances. It is recommended to manually shut down a running instance before associating a key pair with it. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. 
+     * @return ForceStop Whether to force shut down a running instances. It is recommended to manually shut down a running instance before associating a key pair with it. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE.
      */
     public Boolean getForceStop() {
         return this.ForceStop;
     }
 
     /**
-     * Set whether to forced shutdown running instance. It is recommended to manually shut down the running instance before associate the security key. Values:<br><li>TRUE: Perform a forced shutdown if normal shutdown failed<br><li>FALSE: Do not perform a forced shutdown.<br>Default: FALSE.
-     * @param ForceStop whether to forced shutdown running instance. It is recommended to manually shut down the running instance before associate the security key. Values:<br><li>TRUE: Perform a forced shutdown if normal shutdown failed<br><li>FALSE: Do not perform a forced shutdown.<br>Default: FALSE.
+     * Set Whether to force shut down a running instances. It is recommended to manually shut down a running instance before associating a key pair with it. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE.
+     * @param ForceStop Whether to force shut down a running instances. It is recommended to manually shut down a running instance before associating a key pair with it. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE.
      */
     public void setForceStop(Boolean ForceStop) {
         this.ForceStop = ForceStop;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

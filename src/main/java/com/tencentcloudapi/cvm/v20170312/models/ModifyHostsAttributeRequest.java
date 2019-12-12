@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ModifyHostsAttributeRequest  extends AbstractModel{
 
     /**
-    * ID(s) of one or more CDH instances you are working with.
+    * CDH instance ID(s).
     */
     @SerializedName("HostIds")
     @Expose
     private String [] HostIds;
 
     /**
-    * Displayed name of CDH instance. You can specify any name you like, but its length should be limited to 60 characters.
+    * CDH instance name to be displayed. You can specify any name you like, but its length cannot exceed 60 characters.
     */
     @SerializedName("HostName")
     @Expose
     private String HostName;
 
     /**
-    * Auto renewal flag. Supported values:<br><li>NOTIFY_AND_AUTO_RENEW：Notify expiry and renew automatically.<br><li>NOTIFY_AND_MANUAL_RENEW：Notify expiry but not renew automatically.<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Neither notify expiry nor renew automatically.<br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
+    * Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient.
     */
     @SerializedName("RenewFlag")
     @Expose
     private String RenewFlag;
 
     /**
-     * Get ID(s) of one or more CDH instances you are working with.
-     * @return HostIds ID(s) of one or more instances you are working with. 
+     * Get CDH instance ID(s). 
+     * @return HostIds CDH instance ID(s).
      */
     public String [] getHostIds() {
         return this.HostIds;
     }
 
     /**
-     * ID(s) of one or more CDH instances you are working with.
-     * @param HostIds ID(s) of one or more CDH instance to be operated.
+     * Set CDH instance ID(s).
+     * @param HostIds CDH instance ID(s).
      */
     public void setHostIds(String [] HostIds) {
         this.HostIds = HostIds;
     }
 
     /**
-     * Get displayed name of CDH instance. You can specify any name you like, but its length should be limited to 60 characters.
-     * @return HostName Displayed name of CDH instance. You can specify any name you like, but its length should be limited to 60 characters.
+     * Get CDH instance name to be displayed. You can specify any name you like, but its length cannot exceed 60 characters. 
+     * @return HostName CDH instance name to be displayed. You can specify any name you like, but its length cannot exceed 60 characters.
      */
     public String getHostName() {
         return this.HostName;
     }
 
     /**
-     * Set displayed name of CDH instance. You can specify any name you like, but its length should be limited to 60 characters.
-     * @param HostName Displayed name of CDH instance. You can specify any name you like, but its length should be limited to 60 characters.
+     * Set CDH instance name to be displayed. You can specify any name you like, but its length cannot exceed 60 characters.
+     * @param HostName CDH instance name to be displayed. You can specify any name you like, but its length cannot exceed 60 characters.
      */
     public void setHostName(String HostName) {
         this.HostName = HostName;
     }
 
     /**
-     * Obtain the auto renewal flag. Supported values:<br><li>NOTIFY_AND_AUTO_RENEW：Notify expiry and renew automatically.<br><li>NOTIFY_AND_MANUAL_RENEW：Notify expiry but not renew automatically.<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Neither notify expiry nor renew automatically.<br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
-     * @return RenewFlag Auto renewal flag. Supported values:<br><li>NOTIFY_AND_AUTO_RENEW：Notify expiry and renew automatically.<br><li>NOTIFY_AND_MANUAL_RENEW：Notify expiry but not renew automatically.<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Neither notify expiry nor renew automatically.<br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
+     * Get Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient. 
+     * @return RenewFlag Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient.
      */
     public String getRenewFlag() {
         return this.RenewFlag;
     }
 
     /**
-     * Configure the auto renewal flag. Supported values:<br><li>NOTIFY_AND_AUTO_RENEW：Notify expiry and renew automatically.<br><li>NOTIFY_AND_MANUAL_RENEW：Notify expiry but not renew automatically.<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Neither notify expiry nor renew automatically.<br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
-     * @param RenewFlag Auto renewal flag. Supported values:<br><li>NOTIFY_AND_AUTO_RENEW：Notify expiry and renew automatically.<br><li>NOTIFY_AND_MANUAL_RENEW：Notify expiry but not renew automatically.<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Neither notify expiry nor renew automatically.<br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
+     * Set Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient.
+     * @param RenewFlag Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient.
      */
     public void setRenewFlag(String RenewFlag) {
         this.RenewFlag = RenewFlag;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "HostIds.", this.HostIds);

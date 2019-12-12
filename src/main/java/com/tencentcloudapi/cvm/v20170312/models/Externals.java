@@ -23,76 +23,91 @@ import java.util.HashMap;
 public class Externals  extends AbstractModel{
 
     /**
-    * Release addressNote: This field may return null, indicating that no valid value was found.
+    * Release address
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("ReleaseAddress")
     @Expose
     private Boolean ReleaseAddress;
 
     /**
-    * Network types that are not supportedNote: This field may return null, indicating that no valid value was found.
+    * Unsupported network types
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("UnsupportNetworks")
     @Expose
     private String [] UnsupportNetworks;
 
     /**
-    * Attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
+    * Attributes of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("StorageBlockAttr")
     @Expose
     private StorageBlock StorageBlockAttr;
 
     /**
-     * Get release addressNote: This field may return null, indicating that no valid value was found.
-     * @return ReleaseAddress Release addressNote: This field may return null, indicating that no valid value was found.
+     * Get Release address
+Note: This field may return null, indicating that no valid value is found. 
+     * @return ReleaseAddress Release address
+Note: This field may return null, indicating that no valid value is found.
      */
     public Boolean getReleaseAddress() {
         return this.ReleaseAddress;
     }
 
     /**
-     * Set release addressNote: This field may return null, indicating that no valid value was found.
-     * @param ReleaseAddress Release addressNote: This field may return null, indicating that no valid value was found.
+     * Set Release address
+Note: This field may return null, indicating that no valid value is found.
+     * @param ReleaseAddress Release address
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setReleaseAddress(Boolean ReleaseAddress) {
         this.ReleaseAddress = ReleaseAddress;
     }
 
     /**
-     * Get network types that are not supportedNote: This field may return null, indicating that no valid value was found.
-     * @return UnsupportNetworks Network types that are not supportedNote: This field may return null, indicating that no valid value was found.
+     * Get Unsupported network types
+Note: This field may return null, indicating that no valid value is found. 
+     * @return UnsupportNetworks Unsupported network types
+Note: This field may return null, indicating that no valid value is found.
      */
     public String [] getUnsupportNetworks() {
         return this.UnsupportNetworks;
     }
 
     /**
-     * Set network types that are not supportedNote: This field may return null, indicating that no valid value was found.
-     * @param UnsupportNetworks Network types that are not supportedNote: This field may return null, indicating that no valid value was found.
+     * Set Unsupported network types
+Note: This field may return null, indicating that no valid value is found.
+     * @param UnsupportNetworks Unsupported network types
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setUnsupportNetworks(String [] UnsupportNetworks) {
         this.UnsupportNetworks = UnsupportNetworks;
     }
 
     /**
-     * Get attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
-     * @return StorageBlockAttr Attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * Get Attributes of local HDD storage
+Note: This field may return null, indicating that no valid value is found. 
+     * @return StorageBlockAttr Attributes of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
      */
     public StorageBlock getStorageBlockAttr() {
         return this.StorageBlockAttr;
     }
 
     /**
-     * Set attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
-     * @param StorageBlockAttr Attributes of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * Set Attributes of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
+     * @param StorageBlockAttr Attributes of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setStorageBlockAttr(StorageBlock StorageBlockAttr) {
         this.StorageBlockAttr = StorageBlockAttr;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ReleaseAddress", this.ReleaseAddress);

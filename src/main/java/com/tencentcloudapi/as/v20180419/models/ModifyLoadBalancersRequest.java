@@ -23,81 +23,115 @@ import java.util.HashMap;
 public class ModifyLoadBalancersRequest  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * ID list of Traditional CLB: Currently the maximum length is 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+    * List of classic CLB IDs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time.
     */
     @SerializedName("LoadBalancerIds")
     @Expose
     private String [] LoadBalancerIds;
 
     /**
-    * ID list of Application CLB: Currently the maximum length is 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+    * List of CLBs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time.
     */
     @SerializedName("ForwardLoadBalancers")
     @Expose
     private ForwardLoadBalancer [] ForwardLoadBalancers;
 
     /**
-     * Obtain Scaling Group ID.
-     * @return AutoScalingGroupId Scaling Group ID
+    * CLB verification policy. Valid values: "ALL" and "DIFF". Default value: "ALL"
+<br><li> ALL. Verification is successful only when all CLBs are valid. Otherwise, verification fails.
+<br><li> DIFF. Only the changes in the CLB parameters are verified. If valid, the verification is successful. Otherwise, verification fails.
+    */
+    @SerializedName("LoadBalancersCheckPolicy")
+    @Expose
+    private String LoadBalancersCheckPolicy;
+
+    /**
+     * Get Auto scaling group ID 
+     * @return AutoScalingGroupId Auto scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set Scaling Group ID
-     * @param AutoScalingGroupId Scaling Group ID
+     * Set Auto scaling group ID
+     * @param AutoScalingGroupId Auto scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Obtain ID list of Traditional CLB: Currently the maximum length is 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
-     * @return LoadBalancerIDs ID List of Traditional CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+     * Get List of classic CLB IDs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time. 
+     * @return LoadBalancerIds List of classic CLB IDs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time.
      */
     public String [] getLoadBalancerIds() {
         return this.LoadBalancerIds;
     }
 
     /**
-     * Set ID List of Traditional CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
-     * @param LoadBalancerIds ID List of Traditional CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+     * Set List of classic CLB IDs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time.
+     * @param LoadBalancerIds List of classic CLB IDs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time.
      */
     public void setLoadBalancerIds(String [] LoadBalancerIds) {
         this.LoadBalancerIds = LoadBalancerIds;
     }
 
     /**
-     * Obtain ID list of Application CLB: Currently the maximum length is 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
-     * @return ForwardLoadBalancers ID List of Application CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+     * Get List of CLBs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time. 
+     * @return ForwardLoadBalancers List of CLBs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time.
      */
     public ForwardLoadBalancer [] getForwardLoadBalancers() {
         return this.ForwardLoadBalancers;
     }
 
     /**
-     * Set ID List of Application CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
-     * @param ForwardLoadBalancers ID List of Application CLB, Currently the maximum length 1. Only one of LoadBalancerIds and ForwardLoadBalancers can be defined.
+     * Set List of CLBs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time.
+     * @param ForwardLoadBalancers List of CLBs. Currently, the maximum length is 20. You cannot specify LoadBalancerIds and ForwardLoadBalancers at the same time.
      */
     public void setForwardLoadBalancers(ForwardLoadBalancer [] ForwardLoadBalancers) {
         this.ForwardLoadBalancers = ForwardLoadBalancers;
     }
 
     /**
-     * For internal use only.
+     * Get CLB verification policy. Valid values: "ALL" and "DIFF". Default value: "ALL"
+<br><li> ALL. Verification is successful only when all CLBs are valid. Otherwise, verification fails.
+<br><li> DIFF. Only the changes in the CLB parameters are verified. If valid, the verification is successful. Otherwise, verification fails. 
+     * @return LoadBalancersCheckPolicy CLB verification policy. Valid values: "ALL" and "DIFF". Default value: "ALL"
+<br><li> ALL. Verification is successful only when all CLBs are valid. Otherwise, verification fails.
+<br><li> DIFF. Only the changes in the CLB parameters are verified. If valid, the verification is successful. Otherwise, verification fails.
+     */
+    public String getLoadBalancersCheckPolicy() {
+        return this.LoadBalancersCheckPolicy;
+    }
+
+    /**
+     * Set CLB verification policy. Valid values: "ALL" and "DIFF". Default value: "ALL"
+<br><li> ALL. Verification is successful only when all CLBs are valid. Otherwise, verification fails.
+<br><li> DIFF. Only the changes in the CLB parameters are verified. If valid, the verification is successful. Otherwise, verification fails.
+     * @param LoadBalancersCheckPolicy CLB verification policy. Valid values: "ALL" and "DIFF". Default value: "ALL"
+<br><li> ALL. Verification is successful only when all CLBs are valid. Otherwise, verification fails.
+<br><li> DIFF. Only the changes in the CLB parameters are verified. If valid, the verification is successful. Otherwise, verification fails.
+     */
+    public void setLoadBalancersCheckPolicy(String LoadBalancersCheckPolicy) {
+        this.LoadBalancersCheckPolicy = LoadBalancersCheckPolicy;
+    }
+
+    /**
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);
         this.setParamArraySimple(map, prefix + "LoadBalancerIds.", this.LoadBalancerIds);
         this.setParamArrayObj(map, prefix + "ForwardLoadBalancers.", this.ForwardLoadBalancers);
+        this.setParamSimple(map, prefix + "LoadBalancersCheckPolicy", this.LoadBalancersCheckPolicy);
 
     }
 }

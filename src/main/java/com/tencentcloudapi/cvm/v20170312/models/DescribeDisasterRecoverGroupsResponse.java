@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeDisasterRecoverGroupsResponse  extends AbstractModel{
 
     /**
-    * List of information on a spread placement group
+    * Information on spread placement groups.
     */
     @SerializedName("DisasterRecoverGroupSet")
     @Expose
     private DisasterRecoverGroup [] DisasterRecoverGroupSet;
 
     /**
-    * Total number of user placement groups.
+    * Total number of placement groups of the user.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get List of information on a spread placement group
-     * @return DisasterRecoverGroupSet List of information on a spread placement group
+     * Get Information on spread placement groups. 
+     * @return DisasterRecoverGroupSet Information on spread placement groups.
      */
     public DisasterRecoverGroup [] getDisasterRecoverGroupSet() {
         return this.DisasterRecoverGroupSet;
     }
 
     /**
-     * Set List of information on a spread placement group
-     * @param DisasterRecoverGroupSet List of information on a spread placement group
+     * Set Information on spread placement groups.
+     * @param DisasterRecoverGroupSet Information on spread placement groups.
      */
     public void setDisasterRecoverGroupSet(DisasterRecoverGroup [] DisasterRecoverGroupSet) {
         this.DisasterRecoverGroupSet = DisasterRecoverGroupSet;
     }
 
     /**
-     * Get Total number of placement groups of an user
-     * @return TotalCount Total number of placement groups of an user
+     * Get Total number of placement groups of the user. 
+     * @return TotalCount Total number of placement groups of the user.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set Total number of placement groups of an user
-     * @param TotalCount Total number of placement groups of an user
+     * Set Total number of placement groups of the user.
+     * @param TotalCount Total number of placement groups of the user.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Get Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "DisasterRecoverGroupSet.", this.DisasterRecoverGroupSet);

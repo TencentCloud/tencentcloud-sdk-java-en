@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeScalingPoliciesResponse  extends AbstractModel{
 
     /**
-    * The list of auto scaling alarm trigger policies retails.
+    * List of AS alarm trigger policy details.
     */
     @SerializedName("ScalingPolicySet")
     @Expose
     private ScalingPolicy [] ScalingPolicySet;
 
     /**
-    * Number of notification matching the filter condition.
+    * Number of eligible notifications.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the list of auto scaling alarm trigger policies retails.
-     * @return ScalingPolicySet The list of auto scaling alarm trigger policies retails.
+     * Get List of AS alarm trigger policy details. 
+     * @return ScalingPolicySet List of AS alarm trigger policy details.
      */
     public ScalingPolicy [] getScalingPolicySet() {
         return this.ScalingPolicySet;
     }
 
     /**
-     * Set the list of auto scaling alarm trigger policies retails.
-     * @param ScalingPolicySet The list of auto scaling alarm trigger policies retails.
+     * Set List of AS alarm trigger policy details.
+     * @param ScalingPolicySet List of AS alarm trigger policy details.
      */
     public void setScalingPolicySet(ScalingPolicy [] ScalingPolicySet) {
         this.ScalingPolicySet = ScalingPolicySet;
     }
 
     /**
-     * Obtain number of notification matching the filter condition.
-     * @return TotalCount Number of notification matching the filter condition.
+     * Get Number of eligible notifications. 
+     * @return TotalCount Number of eligible notifications.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of notification matching the filter condition.
-     * @param TotalCount Number of notification matching the filter condition.
+     * Set Number of eligible notifications.
+     * @param TotalCount Number of eligible notifications.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "ScalingPolicySet.", this.ScalingPolicySet);

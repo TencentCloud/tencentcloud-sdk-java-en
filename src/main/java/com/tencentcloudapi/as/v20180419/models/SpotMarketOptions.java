@@ -23,53 +23,58 @@ import java.util.HashMap;
 public class SpotMarketOptions  extends AbstractModel{
 
     /**
-    * Bidding - i,e, “1.05”
+    * Bidding price such as "1.05"
     */
     @SerializedName("MaxPrice")
     @Expose
     private String MaxPrice;
 
     /**
-    * Bidding request type.Currently only valid type: one-time.By default one-time.Note: This field may return null, indicating that no valid value was found.
+    * Bid request type. Currently, only "one-time" type is supported. Default value: one-time
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("SpotInstanceType")
     @Expose
     private String SpotInstanceType;
 
     /**
-     * Obtain Bidding - i,e, “1.05”
-     * @return MaxPrice Bidding - i,e, “1.05”
+     * Get Bidding price such as "1.05" 
+     * @return MaxPrice Bidding price such as "1.05"
      */
     public String getMaxPrice() {
         return this.MaxPrice;
     }
 
     /**
-     * Set Bidding - i,e, “1.05”
-     * @param MaxPrice Bidding - i,e, “1.05”
+     * Set Bidding price such as "1.05"
+     * @param MaxPrice Bidding price such as "1.05"
      */
     public void setMaxPrice(String MaxPrice) {
         this.MaxPrice = MaxPrice;
     }
 
     /**
-     * Obtain Bidding request type.Currently only valid type: one-time.By default one-time.Note: This field may return null, indicating that no valid value was found.
-     * @return SpotInstanceType Bidding request type.Currently only valid type: one-time.By default one-time.Note: This field may return null, indicating that no valid value was found.
+     * Get Bid request type. Currently, only "one-time" type is supported. Default value: one-time
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return SpotInstanceType Bid request type. Currently, only "one-time" type is supported. Default value: one-time
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public String getSpotInstanceType() {
         return this.SpotInstanceType;
     }
 
     /**
-     * Set Bidding request type.Currently only valid type: one-time.By default one-time.Note: This field may return null, indicating that no valid value was found.
-     * @param SpotInstanceType Bidding request type.Currently only valid type: one-time.By default one-time.Note: This field may return null, indicating that no valid value was found.
+     * Set Bid request type. Currently, only "one-time" type is supported. Default value: one-time
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param SpotInstanceType Bid request type. Currently, only "one-time" type is supported. Default value: one-time
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public void setSpotInstanceType(String SpotInstanceType) {
         this.SpotInstanceType = SpotInstanceType;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "MaxPrice", this.MaxPrice);

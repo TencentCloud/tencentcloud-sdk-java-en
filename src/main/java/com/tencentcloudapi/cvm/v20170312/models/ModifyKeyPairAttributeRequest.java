@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ModifyKeyPairAttributeRequest  extends AbstractModel{
 
     /**
-    * Key pair ID, Key pair ID,  such as `skey-xxxxxxxx`.<br><br>You can obtain the available key ID by either of the following ways: <br><li>Find SSH key pair ID by log in to the [CVM Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Obtain the `KeyId` field value in the returned result by calling [DescribeKeyPairs](https://intl.cloud.tencent.com/document/api/213/15715).
+    * Key pair ID in the format of `skey-xxxxxxxx`. <br><br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
     */
     @SerializedName("KeyId")
     @Expose
     private String KeyId;
 
     /**
-    * Modified name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
+    * New key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
     */
     @SerializedName("KeyName")
     @Expose
     private String KeyName;
 
     /**
-    * Modified description of key pair. This can be arbitrarily specified, but cannot exceed 60 characters.
+    * New key pair description. You can specify any name you like, but its length cannot exceed 60 characters.
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-     * Key pair ID, Key pair ID,  such as `skey-xxxxxxxx`.<br><br>You can obtain the available key ID by either of the following ways: <br><li>Query  key ID by logging in to the [CVM Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Obtain the `KeyId` field value in the returned result by calling [DescribeKeyPairs](https://intl.cloud.tencent.com/document/api/213/9403).
-     * @return KeyId Key pair ID, such as`skey-xxxxxxxx`<br><br>You can obtain the available key ID by either of the following ways: <br><li>Query key ID by logging in to the [CVM Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Obtain the `KeyId` field value in the returned result by calling [DescribeKeyPairs](https://intl.cloud.tencent.com/document/api/213/9403).
+     * Get Key pair ID in the format of `skey-xxxxxxxx`. <br><br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response. 
+     * @return KeyId Key pair ID in the format of `skey-xxxxxxxx`. <br><br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
      */
     public String getKeyId() {
         return this.KeyId;
     }
 
     /**
-     * Setting Key Pair ID,such as:`skey-xxxxxxxx`<br><br>You can obtain the available key ID by either of the following ways:<br><li>Find  key pair ID by logging in to the [CVM Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Obtain the `KeyId` field value in the returned result by calling [DescribeImages](https://intl.cloud.tencent.com/document/api/213/9403).
-     * @param KeyId Key pair ID, such as:`skey-xxxxxxxx`。<br><br>You can obtain the available key ID by either of the following ways:<br><li>Find  key ID by logging in to the [CVM Console](https://console.cloud.tencent.com/cvm/sshkey).<br><li>Obtain the `KeyId` field value in the returned result by calling [DescribeKeyPairs](https://intl.cloud.tencent.com/document/api/213/9403).
+     * Set Key pair ID in the format of `skey-xxxxxxxx`. <br><br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
+     * @param KeyId Key pair ID in the format of `skey-xxxxxxxx`. <br><br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
      */
     public void setKeyId(String KeyId) {
         this.KeyId = KeyId;
     }
 
     /**
-     * Getting the modified name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
-     * @return KeyName Modified name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters. |
+     * Get New key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters. 
+     * @return KeyName New key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
      */
     public String getKeyName() {
         return this.KeyName;
     }
 
     /**
-     * Setting the modified name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters.
-     * @param KeyName modified name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters. |
+     * Set New key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
+     * @param KeyName New key pair name, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.
      */
     public void setKeyName(String KeyName) {
         this.KeyName = KeyName;
     }
 
     /**
-     * Getting the modified description of key pair. This can be arbitrarily specified, but cannot exceed 60 characters.
-     * @return Description modified description of key pair. This can be arbitrarily specified, but cannot exceed 60 characters. |
+     * Get New key pair description. You can specify any name you like, but its length cannot exceed 60 characters. 
+     * @return Description New key pair description. You can specify any name you like, but its length cannot exceed 60 characters.
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * Setting the modified name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 60 characters.
-     * @param Description modified description of key pair. This can be arbitrarily specified, but cannot exceed 60 characters. |
+     * Set New key pair description. You can specify any name you like, but its length cannot exceed 60 characters.
+     * @param Description New key pair description. You can specify any name you like, but its length cannot exceed 60 characters.
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "KeyId", this.KeyId);

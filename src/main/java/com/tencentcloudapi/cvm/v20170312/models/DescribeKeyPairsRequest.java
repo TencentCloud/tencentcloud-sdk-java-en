@@ -23,109 +23,109 @@ import java.util.HashMap;
 public class DescribeKeyPairsRequest  extends AbstractModel{
 
     /**
-    * IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
+    * Key pair ID(s) in the format of `skey-11112222`. This API supports using multiple IDs as filters at the same time. For more information on the format of this parameter, see the `id.N` section in [API Introduction](https://cloud.tencent.com/document/api/213/15688). You cannot specify `KeyIds` and `Filters` at the same time. You can log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the key pair IDs.
     */
     @SerializedName("KeyIds")
     @Expose
     private String [] KeyIds;
 
     /**
-    * Filter conditions
-<li> project-id - Integer - Required :No | (Filter condition). Filter by project ID. You can obtain the project ID by either of the following ways: query the project ID via [Project List](https://console.cloud.tencent.com/project);obtain the project ID from the `projectId` field of the returned values of API [DescribeProject](/document/api/378/4400).|</li>
-<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
+    * Filters.
+<li> `project-id` - Integer - Optional - Filter results by project ID. To view the list of project IDs, you can go to [Project Management](https://console.cloud.tencent.com/project), or call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and look for `projectId` in the response. </li>
+<li> `key-name` - String - Optional - Filter results by key pair name. </li> You cannot specify `KeyIds` and `Filters` at the same time.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688). 
+    * Offset; default value: 0. For more information on `Offset`, see the corresponding sections in API [Introduction](https://intl.cloud.tencent.com/document/product/377). Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-    * Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). 
+    * Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-     * IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
-     * @return KeyIds IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
+     * Get Key pair ID(s) in the format of `skey-11112222`. This API supports using multiple IDs as filters at the same time. For more information on the format of this parameter, see the `id.N` section in [API Introduction](https://cloud.tencent.com/document/api/213/15688). You cannot specify `KeyIds` and `Filters` at the same time. You can log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the key pair IDs. 
+     * @return KeyIds Key pair ID(s) in the format of `skey-11112222`. This API supports using multiple IDs as filters at the same time. For more information on the format of this parameter, see the `id.N` section in [API Introduction](https://cloud.tencent.com/document/api/213/15688). You cannot specify `KeyIds` and `Filters` at the same time. You can log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the key pair IDs.
      */
     public String [] getKeyIds() {
         return this.KeyIds;
     }
 
     /**
-     * Set IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
-     * @param KeyIds IDs of Key pairs, such as:`skey-11112222`（The API supports multiple ID as filter conditions. The format of parameter refers to API [introduction](Chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)).`KeyIds` and `Filters` cannot be assigned at same time. IDs of key pairs can be obtained via log in the console(https://console.cloud.tencent.com/cvm/index)
+     * Set Key pair ID(s) in the format of `skey-11112222`. This API supports using multiple IDs as filters at the same time. For more information on the format of this parameter, see the `id.N` section in [API Introduction](https://cloud.tencent.com/document/api/213/15688). You cannot specify `KeyIds` and `Filters` at the same time. You can log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the key pair IDs.
+     * @param KeyIds Key pair ID(s) in the format of `skey-11112222`. This API supports using multiple IDs as filters at the same time. For more information on the format of this parameter, see the `id.N` section in [API Introduction](https://cloud.tencent.com/document/api/213/15688). You cannot specify `KeyIds` and `Filters` at the same time. You can log in to the [console](https://console.cloud.tencent.com/cvm/index) to query the key pair IDs.
      */
     public void setKeyIds(String [] KeyIds) {
         this.KeyIds = KeyIds;
     }
 
     /**
-     * Obtain filter conditions
-<li> project-id - Integer - required:  No | (Filter condition). Filter by project ID. You can obtain the project ID by querying the project ID via [Project List](https://console.cloud.tencent.com/project);or calling [DescribeProject](/document/api/378/4400) , and obtaining from the `projectId` field of the returned values of API.</li>
-<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
-     * @return Filters filter conditions
-<li> project-id - Integer - required:  No | (Filter condition). Filter by project ID. You can obtain the project ID by querying the project ID via [Project List](https://console.cloud.tencent.com/project);or calling [DescribeProject](/document/api/378/4400) , and obtaining from the `projectId` field of the returned values of API.</li>
-<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
+     * Get Filters.
+<li> `project-id` - Integer - Optional - Filter results by project ID. To view the list of project IDs, you can go to [Project Management](https://console.cloud.tencent.com/project), or call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and look for `projectId` in the response. </li>
+<li> `key-name` - String - Optional - Filter results by key pair name. </li> You cannot specify `KeyIds` and `Filters` at the same time. 
+     * @return Filters Filters.
+<li> `project-id` - Integer - Optional - Filter results by project ID. To view the list of project IDs, you can go to [Project Management](https://console.cloud.tencent.com/project), or call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and look for `projectId` in the response. </li>
+<li> `key-name` - String - Optional - Filter results by key pair name. </li> You cannot specify `KeyIds` and `Filters` at the same time.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter conditions.
-<li> project-id - Integer - required:  No | (Filter condition). Filter by project ID. You can obtain the project ID by querying the project ID via [Project List](https://console.cloud.tencent.com/project);or calling [DescribeProject](/document/api/378/4400) , and obtaining from the `projectId` field of the returned values of API.</li>
-<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
-     * @param Filters filter condtions
-<li> project-id - Integer - required:  No | (Filter condition). Filter by project ID. You can obtain the project ID by querying the project ID via [Project List](https://console.cloud.tencent.com/project);or calling [DescribeProject](/document/api/378/4400) , and obtaining from the `projectId` field of the returned values of API.</li>
-<li> key-name - String - Required: No - (Filter condition). Filter by key pair name.</li>`KeyIds` and `Filters` cannot be assigned at same time.
+     * Set Filters.
+<li> `project-id` - Integer - Optional - Filter results by project ID. To view the list of project IDs, you can go to [Project Management](https://console.cloud.tencent.com/project), or call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and look for `projectId` in the response. </li>
+<li> `key-name` - String - Optional - Filter results by key pair name. </li> You cannot specify `KeyIds` and `Filters` at the same time.
+     * @param Filters Filters.
+<li> `project-id` - Integer - Optional - Filter results by project ID. To view the list of project IDs, you can go to [Project Management](https://console.cloud.tencent.com/project), or call [DescribeProject](https://cloud.tencent.com/document/api/378/4400) and look for `projectId` in the response. </li>
+<li> `key-name` - String - Optional - Filter results by key pair name. </li> You cannot specify `KeyIds` and `Filters` at the same time.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Obtain Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688). 
-     * @return Offset Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688). 
+     * Get Offset; default value: 0. For more information on `Offset`, see the corresponding sections in API [Introduction](https://intl.cloud.tencent.com/document/product/377). Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).  
+     * @return Offset Offset; default value: 0. For more information on `Offset`, see the corresponding sections in API [Introduction](https://intl.cloud.tencent.com/document/product/377). Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688). 
-     * @param Offset Offset, default is 0. please see API[introduction]  For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). Number of returned results, default is 20, and maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview (https://cloud.tencent.com/document/api/213/15688).
+     * Set Offset; default value: 0. For more information on `Offset`, see the corresponding sections in API [Introduction](https://intl.cloud.tencent.com/document/product/377). Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
+     * @param Offset Offset; default value: 0. For more information on `Offset`, see the corresponding sections in API [Introduction](https://intl.cloud.tencent.com/document/product/377). Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
-     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * Get Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).  
+     * @return Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
-     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * Set Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
+     * @param Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "KeyIds.", this.KeyIds);

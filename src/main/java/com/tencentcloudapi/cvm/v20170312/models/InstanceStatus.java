@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InstanceStatus  extends AbstractModel{
 
     /**
-    * Instances`ID`.
+    * Instance `ID`.
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * [Instance Status](/document/api/213/9452#INSTANCE_STATE).
+    * The instance state. Valid values: <br><li>PENDING: creating<br></li><li>LAUNCH_FAILED: creation failed<br></li><li>RUNNING: running<br></li><li>STOPPED: shut down<br></li><li>STARTING: starting<br></li><li>STOPPING: shutting down<br></li><li>REBOOTING: rebooting<br></li><li>SHUTDOWN: shut down and to be terminated<br></li><li>TERMINATING: terminating.<br></li>
     */
     @SerializedName("InstanceState")
     @Expose
     private String InstanceState;
 
     /**
-     * Get instance`ID`.
-     * @return InstanceId Instance`ID`.
+     * Get Instance `ID`. 
+     * @return InstanceId Instance `ID`.
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * Set instance`ID`.
-     * @param InstanceId Instance`ID`.
+     * Set Instance `ID`.
+     * @param InstanceId Instance `ID`.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * Get [Instance Status](/document/api/213/9452#INSTANCE_STATE).
-     * @return InstanceState [Instance Status](/document/api/213/9452#INSTANCE_STATE). |
+     * Get The instance state. Valid values: <br><li>PENDING: creating<br></li><li>LAUNCH_FAILED: creation failed<br></li><li>RUNNING: running<br></li><li>STOPPED: shut down<br></li><li>STARTING: starting<br></li><li>STOPPING: shutting down<br></li><li>REBOOTING: rebooting<br></li><li>SHUTDOWN: shut down and to be terminated<br></li><li>TERMINATING: terminating.<br></li> 
+     * @return InstanceState The instance state. Valid values: <br><li>PENDING: creating<br></li><li>LAUNCH_FAILED: creation failed<br></li><li>RUNNING: running<br></li><li>STOPPED: shut down<br></li><li>STARTING: starting<br></li><li>STOPPING: shutting down<br></li><li>REBOOTING: rebooting<br></li><li>SHUTDOWN: shut down and to be terminated<br></li><li>TERMINATING: terminating.<br></li>
      */
     public String getInstanceState() {
         return this.InstanceState;
     }
 
     /**
-     * Set [Instance Status](/document/api/213/9452#INSTANCE_STATE).
-     * @param InstanceState [Instance Status](/document/api/213/9452#INSTANCE_STATE). |
+     * Set The instance state. Valid values: <br><li>PENDING: creating<br></li><li>LAUNCH_FAILED: creation failed<br></li><li>RUNNING: running<br></li><li>STOPPED: shut down<br></li><li>STARTING: starting<br></li><li>STOPPING: shutting down<br></li><li>REBOOTING: rebooting<br></li><li>SHUTDOWN: shut down and to be terminated<br></li><li>TERMINATING: terminating.<br></li>
+     * @param InstanceState The instance state. Valid values: <br><li>PENDING: creating<br></li><li>LAUNCH_FAILED: creation failed<br></li><li>RUNNING: running<br></li><li>STOPPED: shut down<br></li><li>STARTING: starting<br></li><li>STOPPING: shutting down<br></li><li>REBOOTING: rebooting<br></li><li>SHUTDOWN: shut down and to be terminated<br></li><li>TERMINATING: terminating.<br></li>
      */
     public void setInstanceState(String InstanceState) {
         this.InstanceState = InstanceState;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);

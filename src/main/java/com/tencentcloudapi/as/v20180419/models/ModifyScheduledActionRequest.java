@@ -23,191 +23,191 @@ import java.util.HashMap;
 public class ModifyScheduledActionRequest  extends AbstractModel{
 
     /**
-    * ID of scheduled action to be modified.
+    * ID of the scheduled task to be edited
     */
     @SerializedName("ScheduledActionId")
     @Expose
     private String ScheduledActionId;
 
     /**
-    * Scheduled action name, which is unique under one scaling group. It can only contain Chinese and English letters, numbers, underscores, hyphens ("-") and decimal points. Its length cannot exceed 60 characters. |
+    * Scheduled task name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 60 bytes and must be unique in an auto scaling group.
     */
     @SerializedName("ScheduledActionName")
     @Expose
     private String ScheduledActionName;
 
     /**
-    * When a Scheduled Action is triggered, maximum number of instances for a Scaling Group.
+    * The maximum number of instances set for the auto scaling group when the scheduled task is triggered.
     */
     @SerializedName("MaxSize")
     @Expose
-    private Integer MaxSize;
+    private Long MaxSize;
 
     /**
-    * When a Scheduled Action is triggered, minimum number of instances for a Scaling Group.
+    * The minimum number of instances set for the auto scaling group when the scheduled task is triggered.
     */
     @SerializedName("MinSize")
     @Expose
-    private Integer MinSize;
+    private Long MinSize;
 
     /**
-    * When a Scheduled Action is triggered, desired number of instances for a Scaling Group.
+    * The desired number of instances set for the auto scaling group when the scheduled task is triggered.
     */
     @SerializedName("DesiredCapacity")
     @Expose
-    private Integer DesiredCapacity;
+    private Long DesiredCapacity;
 
     /**
-    * Time that scheduled task is triggered for first time. Its value is [1] (UTC+8), in [2] standard,Format:[3]
+    * Initial triggered time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * Time that scheduled task ends. Its value is [1] (UTC+8), in [2] standard,Format:[3]<br>This parameter should be set with [1]. At end time,scheduled action expires.
+    * End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. <br>This parameter and `Recurrence` need to be specified at the same time. After the end time, the scheduled task will no longer take effect.
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-    * Repeat of scheduled action. In standard Cron format  [Cron](https://zh.wikipedia.org/wiki/Cron).<br>This parameter should be set with [1]. 
+    * Repeating mode of the scheduled task, which is in standard cron format. <br>This parameter and `EndTime` need to be specified at the same time.
     */
     @SerializedName("Recurrence")
     @Expose
     private String Recurrence;
 
     /**
-     * Obtain the ID of the scheduled action that is to be modified.
-     * @return ScheduledActionId ID of the scheduled action to be modified 
+     * Get ID of the scheduled task to be edited 
+     * @return ScheduledActionId ID of the scheduled task to be edited
      */
     public String getScheduledActionId() {
         return this.ScheduledActionId;
     }
 
     /**
-     * Set the ID of the scheduled action that is to be modified.
-     * @param ScheduledActionId ID of the scheduled action to be modified
+     * Set ID of the scheduled task to be edited
+     * @param ScheduledActionId ID of the scheduled task to be edited
      */
     public void setScheduledActionId(String ScheduledActionId) {
         this.ScheduledActionId = ScheduledActionId;
     }
 
     /**
-     * Obtain the name of the scheduled action,which is unique under one scaling group. It can only contain Chinese and English letters, numbers, underscores, hyphens ("-") and decimal points. Its length cannot exceed 60 characters.Be unique within a Scaling Group.
-     * @return ScheduledActionName The name of the scheduled action,which is unique under one scaling group. It can only contain Chinese and English letters, numbers, underscores, hyphens ("-") and decimal points. Its length cannot exceed 60 characters. Be unique within a Scaling Group.
+     * Get Scheduled task name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 60 bytes and must be unique in an auto scaling group. 
+     * @return ScheduledActionName Scheduled task name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 60 bytes and must be unique in an auto scaling group.
      */
     public String getScheduledActionName() {
         return this.ScheduledActionName;
     }
 
     /**
-     * Set the name of the scheduled action,which is unique under one scaling group. It can only contain Chinese and English letters, numbers, underscores, hyphens ("-") and decimal points. Its length cannot exceed 60 characters.Be unique within a Scaling Group.
-     * @param ScheduledActionName Scheduled action name, which is unique under one scaling group. It can only contain Chinese and English letters, numbers, underscores, hyphens ("-") and decimal points. Its length cannot exceed 60 characters. |
+     * Set Scheduled task name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 60 bytes and must be unique in an auto scaling group.
+     * @param ScheduledActionName Scheduled task name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 60 bytes and must be unique in an auto scaling group.
      */
     public void setScheduledActionName(String ScheduledActionName) {
         this.ScheduledActionName = ScheduledActionName;
     }
 
     /**
-     * Obtain maximum number of instances for a Scaling Group,which is for the time when a Scheduled Action is triggered.
-     * @return MaxSize When a Scheduled Action is triggered, the maximum number of instances for a Scaling Group.
+     * Get The maximum number of instances set for the auto scaling group when the scheduled task is triggered. 
+     * @return MaxSize The maximum number of instances set for the auto scaling group when the scheduled task is triggered.
      */
-    public Integer getMaxSize() {
+    public Long getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * Set the maximum number of instances for a Scaling Group when a Scheduled Action is triggered.
-     * @param MaxSize When a Scheduled Action is triggered, the maximum number of instances for a Scaling Group.
+     * Set The maximum number of instances set for the auto scaling group when the scheduled task is triggered.
+     * @param MaxSize The maximum number of instances set for the auto scaling group when the scheduled task is triggered.
      */
-    public void setMaxSize(Integer MaxSize) {
+    public void setMaxSize(Long MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * When a Scheduled Action is triggered, obtain minimum number of instances for a Scaling Group.
-     * @return MinSize When a Scheduled Action is triggered, the minimum number of instances for a Scaling Group.
+     * Get The minimum number of instances set for the auto scaling group when the scheduled task is triggered. 
+     * @return MinSize The minimum number of instances set for the auto scaling group when the scheduled task is triggered.
      */
-    public Integer getMinSize() {
+    public Long getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * Set the minimum number of instances for a Scaling Group when a Scheduled Action is triggered,
-     * @param MinSize The minimum number of instances for a Scaling Group when a Scheduled Action is triggered,
+     * Set The minimum number of instances set for the auto scaling group when the scheduled task is triggered.
+     * @param MinSize The minimum number of instances set for the auto scaling group when the scheduled task is triggered.
      */
-    public void setMinSize(Integer MinSize) {
+    public void setMinSize(Long MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * Obtain the desired number of instances for a Scaling Group when a Scheduled Action is triggered,
-     * @return DesiredCapacity The desired number of instances for a Scaling Group when a scheduled action is triggered
+     * Get The desired number of instances set for the auto scaling group when the scheduled task is triggered. 
+     * @return DesiredCapacity The desired number of instances set for the auto scaling group when the scheduled task is triggered.
      */
-    public Integer getDesiredCapacity() {
+    public Long getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * When a Scheduled Action is triggered, desired number of instances for a Scaling Group.
-     * @param DesiredCapacity The desired number of instances for Scaling Group when a scheduled action is triggered
+     * Set The desired number of instances set for the auto scaling group when the scheduled task is triggered.
+     * @param DesiredCapacity The desired number of instances set for the auto scaling group when the scheduled task is triggered.
      */
-    public void setDesiredCapacity(Integer DesiredCapacity) {
+    public void setDesiredCapacity(Long DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * Obtain the time that scheduled action is triggered for first time. Its value is `北京时间`（UTC+8），in`ISO8601`standard，format：`YYYY-MM-DDThh:mm:ss+08:00`.
-     * @return StartTime the time that scheduled action is triggered for first time. Its value is [1] (UTC+8), in [2] standard,Format:[3]
+     * Get Initial triggered time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. 
+     * @return StartTime Initial triggered time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * Set the time that scheduled action is triggered for first time. Its value is `北京时间`（UTC+8），in`ISO8601`standard，format：`YYYY-MM-DDThh:mm:ss+08:00`.
-     * @param StartTime Time that scheduled action is triggered for first time. Its value is [1] (UTC+8), in [2] standard,Format:[3]
+     * Set Initial triggered time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
+     * @param StartTime Initial triggered time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard.
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * Obtain the time that scheduled action ends. Its value is `北京时间`（UTC+8），in`ISO8601`standard，format：`YYYY-MM-DDThh:mm:ss+08:00`.<br>This parameter should be set with `Recurrence`. At end time,scheduled action expires. 
-     * @return EndTime The time that scheduled action ends. Its value is `北京时间`（UTC+8），in`ISO8601`standard，format：`YYYY-MM-DDThh:mm:ss+08:00`. <br>This parameter should be set with `Recurrence`. At end time,scheduled action expires. 
+     * Get End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. <br>This parameter and `Recurrence` need to be specified at the same time. After the end time, the scheduled task will no longer take effect. 
+     * @return EndTime End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. <br>This parameter and `Recurrence` need to be specified at the same time. After the end time, the scheduled task will no longer take effect.
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * Time that scheduled action ends. Its value is `北京时间`（UTC+8），in`ISO8601`standard，format：`YYYY-MM-DDThh:mm:ss+08:00`. <br>This parameter should be set with.`Recurrence`. A end time,scheduled action expires.
-     * @param EndTime Time that scheduled action ends. Its value is `北京时间`（UTC+8），in`ISO8601`standard，format：`YYYY-MM-DDThh:mm:ss+08:00`. <br>This parameter should be set with `Recurrence` . At end time,scheduled action expires.
+     * Set End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. <br>This parameter and `Recurrence` need to be specified at the same time. After the end time, the scheduled task will no longer take effect.
+     * @param EndTime End time of the scheduled task. The value is in `Beijing time` (UTC+8) in the format of `YYYY-MM-DDThh:mm:ss+08:00` according to the `ISO8601` standard. <br>This parameter and `Recurrence` need to be specified at the same time. After the end time, the scheduled task will no longer take effect.
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * Obtain the repeat pattern of scheduled action. In standard Cron format[Cron](https://zh.wikipedia.org/wiki/Cron).<br>This parameter should be set with `EndTime`.
-     * @return Recurrence Repeat of scheduled action. In standard Cron format[Cron](https://zh.wikipedia.org/wiki/Cron).<br>This parameter should be set with `EndTime`.
+     * Get Repeating mode of the scheduled task, which is in standard cron format. <br>This parameter and `EndTime` need to be specified at the same time. 
+     * @return Recurrence Repeating mode of the scheduled task, which is in standard cron format. <br>This parameter and `EndTime` need to be specified at the same time.
      */
     public String getRecurrence() {
         return this.Recurrence;
     }
 
     /**
-     * Set the repeat pattern of scheduled action. In standard Cron format[Cron](https://zh.wikipedia.org/wiki/Cron).<br>This parameter should be set with `EndTime`.
-     * @param Recurrence Repeat pattern of scheduled action. In standard Cron format[Cron](https://zh.wikipedia.org/wiki/Cron).<br>This parameter should be set with `EndTime`.
+     * Set Repeating mode of the scheduled task, which is in standard cron format. <br>This parameter and `EndTime` need to be specified at the same time.
+     * @param Recurrence Repeating mode of the scheduled task, which is in standard cron format. <br>This parameter and `EndTime` need to be specified at the same time.
      */
     public void setRecurrence(String Recurrence) {
         this.Recurrence = Recurrence;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ScheduledActionId", this.ScheduledActionId);

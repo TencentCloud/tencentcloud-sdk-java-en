@@ -23,73 +23,73 @@ import java.util.HashMap;
 public class ActivtyRelatedInstance  extends AbstractModel{
 
     /**
-    * Instance ID
+    * Instance ID.
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * Instance’s status in the scaling activity. Values as below:
-<li>INIT: Initializing
-<li>RUNNING: Instance in operation
-<li>SUCCESSFUL: Activity is successful
-<li>FAILED: Activity failed
+    * Status of the instance in the scaling activity. Value range:
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>FAILED: failed
     */
     @SerializedName("InstanceStatus")
     @Expose
     private String InstanceStatus;
 
     /**
-     * Get instance ID
-     * @return InstanceId Instance ID
+     * Get Instance ID. 
+     * @return InstanceId Instance ID.
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * Set instance ID
-     * @param InstanceId Instance ID
+     * Set Instance ID.
+     * @param InstanceId Instance ID.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * Get instance’s status in the scaling activity. Values as below:
-<li>INIT: Initializing
-<li>RUNNING: Instance in operation
-<li>SUCCESSFUL: Activity is successful
-<li>FAILED: Activity failed
-     * @return InstanceStatus Instance’s status in the scaling activity. Values as below:
-<li>INIT: Initializing
-<li>RUNNING: Instance in operation
-<li>SUCCESSFUL: Activity is successful
-<li>FAILED: Activity failed
+     * Get Status of the instance in the scaling activity. Value range:
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>FAILED: failed 
+     * @return InstanceStatus Status of the instance in the scaling activity. Value range:
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>FAILED: failed
      */
     public String getInstanceStatus() {
         return this.InstanceStatus;
     }
 
     /**
-     * Set instance’s status in the scaling activity. Values as below:
-<li>INIT: Initializing
-<li>RUNNING: Instance in operation
-<li>SUCCESSFUL: Activity is successful
-<li>FAILED: Activity failed
-     * @param InstanceStatus Instance’s status in the scaling activity. Values as below:
-<li>INIT: Initializing
-<li>RUNNING: Instance in operation
-<li>SUCCESSFUL: Activity is successful
-<li>FAILED: Activity failed
+     * Set Status of the instance in the scaling activity. Value range:
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>FAILED: failed
+     * @param InstanceStatus Status of the instance in the scaling activity. Value range:
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>FAILED: failed
      */
     public void setInstanceStatus(String InstanceStatus) {
         this.InstanceStatus = InstanceStatus;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);

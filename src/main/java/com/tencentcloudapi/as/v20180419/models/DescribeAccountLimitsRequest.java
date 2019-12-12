@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class DescribeAccountLimitsRequest  extends AbstractModel{
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
 

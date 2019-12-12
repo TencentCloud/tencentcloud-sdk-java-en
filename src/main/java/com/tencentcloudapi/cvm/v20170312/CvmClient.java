@@ -29,27 +29,16 @@ public class CvmClient extends AbstractClient{
     private static String endpoint = "cvm.tencentcloudapi.com";
     private static String version = "2017-03-12";
 
-    /**
-     * Construct client
-     * @param credential client credentials
-     * @param region product region
-     */
     public CvmClient(Credential credential, String region) {
         this(credential, region, new ClientProfile());
     }
 
-    /**
-     * Construct client
-     * @param credential client credentials
-     * @param region product region
-     * @param profile client profile
-     */
     public CvmClient(Credential credential, String region, ClientProfile profile) {
         super(CvmClient.endpoint, CvmClient.version, credential, region, profile);
     }
 
     /**
-     *This API (AllocateHosts) is used to create one or more CDH instances with specified configuration.
+     *This API is used to create CDH instances with specified configuration.
 * When HostChargeType is PREPAID, the HostChargePrepaid parameter must be specified.
      * @param req AllocateHostsRequest
      * @return AllocateHostsResponse
@@ -68,12 +57,12 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (AssociateInstancesKeyPairs) is used to associate a key pair to an instance.
+     *This API is used to associate key pairs with instances.
 
-* When the public key of a key pair is written to the`SSH`configuration of the instance, you can log in to the instance through the private key of the key pair.
-* If the instance has associated with a key, the old key will be invalid.
-* If the instance was originally logged in through a password, the password will become unavailable if the instance associate a key.
-* Batch operations are supported. The maximum number of instances in a batch for each request is 100. If any instance that does not allow batch operation, an [error code] is returned.
+* If the public key of a key pair is written to the `SSH` configuration of the instance, users will be able to log in to the instance with the private key of the key pair.
+* If the instance is already associated with a key, the old key will become invalid.
+If you currently use a password to log in, you will no longer be able to do so after you associate the instance with a key.
+* Batch operations are supported. The maximum number of instances in each request is 100. If any instance in the request cannot be associated with a key, you will get an error code.
      * @param req AssociateInstancesKeyPairsRequest
      * @return AssociateInstancesKeyPairsResponse
      * @throws TencentCloudSDKException
@@ -91,7 +80,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (AssociateSecurityGroups) is used to associate a security group to a specified instance.
+     *This API is used to associate security groups with specified instances.
      * @param req AssociateSecurityGroupsRequest
      * @return AssociateSecurityGroupsResponse
      * @throws TencentCloudSDKException
@@ -109,7 +98,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (CreateDisasterRecoverGroup) is used to create[spread placement group](https://cloud.tencent.com/document/product/213/15486). You can assign an exist placement group when[create instance](https://cloud.tencent.com/document/api/213/15730).
+     *This API is used to create a [spread placement group](https://cloud.tencent.com/document/product/213/15486). After you create one, you can specify it for an instance when you [create the instance](https://cloud.tencent.com/document/api/213/15730), 
      * @param req CreateDisasterRecoverGroupRequest
      * @return CreateDisasterRecoverGroupResponse
      * @throws TencentCloudSDKException
@@ -127,7 +116,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (CreateImage) is used to create an new image from the system disk of an instance. The created image can be used to create instances.
+     *This API is used to create a new image with the system disk of an instance. The image can be used to create new instances.
      * @param req CreateImageRequest
      * @return CreateImageResponse
      * @throws TencentCloudSDKException
@@ -145,12 +134,12 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This (CreateKeyPair) is used to create a `OpenSSH RSA` KeyPair，can be used to log in `Linux` instance.
+     *This API is used to create an `OpenSSH RSA` key pair, which you can use to log in to a `Linux` instance.
 
-* You only need to specify the KeyPair name, and the system can automatically create a KeyPair and return the KeyPair `ID` as well as its public and private keys.
-* The KeyPair name must be unique.
-* The content of private key can be saved to a file as an `SSH` authentication method.
-* Tencent Cloud does not preserve user's private key. Please keep it well.
+* You only need to specify a name, and the system will automatically create a key pair and return its `ID` and the public and private keys.
+* The name of the key pair must be unique.
+* You can save the private key to a file and use it as an authentication method for `SSH`.
+* Tencent Cloud does not save users’ private keys. Be sure to save it yourself.
      * @param req CreateKeyPairRequest
      * @return CreateKeyPairResponse
      * @throws TencentCloudSDKException
@@ -168,7 +157,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DeleteDisasterRecoverGroups) is used to delete[spread placement group](https://cloud.tencent.com/document/product/213/15486). Only empty placement group will be deleted，non empty placement group need to terminate all the CVMs in the group before delete, otherwise the deletion may fail.
+     *This API is used to delete a [spread placement group](https://cloud.tencent.com/document/product/213/15486). Only empty placement groups can be deleted. To delete a non-empty group, you need to terminate all the CVM instances in it first. Otherwise, the deletion will fail.
      * @param req DeleteDisasterRecoverGroupsRequest
      * @return DeleteDisasterRecoverGroupsResponse
      * @throws TencentCloudSDKException
@@ -186,10 +175,10 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DeleteImages) is used to delete one or more images.
+     *This API is used to delete images.
 
-* when[image status](https://cloud.tencent.com/document/api/213/9452#image_state) are`创建中`and`使用中`, it’s not allowed to delete. You can get image status via[DescribeImages](https://cloud.tencent.com/document/api/213/9418).
-* A maximum of 10 custom images are allowed to be created for each region. Deletion of images can free the quota on account.
+* If the [ImageState](https://cloud.tencent.com/document/api/213/9452#image_state) of an image is `Creating` or `In Use`, it cannot be deleted. Use [DescribeImages](https://cloud.tencent.com/document/api/213/9418) to query the image state.
+* You can only create up to 10 custom images in each region. If you have used up the quota, you can delete images to create new ones.
 * A shared image cannot be deleted.
      * @param req DeleteImagesRequest
      * @return DeleteImagesResponse
@@ -208,10 +197,10 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DeleteKeyPairs) is used to delete the key pairs hosted in Tencent Cloud.
+     *This API is used to delete the key pairs hosted in Tencent Cloud.
 
-* A shared image cannot be deleted.
-* The KeyPair referenced by an instance or image cannot be deleted. You need to verify whether all the key pairs have been deleted successfully.
+* You can delete multiple key pairs at the same time.
+* A key pair used by an instance or image cannot be deleted. Therefore, you need to verify whether all the key pairs have been deleted successfully.
      * @param req DeleteKeyPairsRequest
      * @return DeleteKeyPairsResponse
      * @throws TencentCloudSDKException
@@ -229,7 +218,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeDisasterRecoverGroupQuota) is used to query the quota of[spread placement group](https://cloud.tencent.com/document/product/213/15486).
+     *This API is used to query the quota of [spread placement groups](https://cloud.tencent.com/document/product/213/15486).
      * @param req DescribeDisasterRecoverGroupQuotaRequest
      * @return DescribeDisasterRecoverGroupQuotaResponse
      * @throws TencentCloudSDKException
@@ -247,7 +236,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeDisasterRecoverGroups)is used to query information of[spread placement group](https://cloud.tencent.com/document/product/213/15486).
+     *This API is used to query the information on [spread placement groups](https://cloud.tencent.com/document/product/213/15486).
      * @param req DescribeDisasterRecoverGroupsRequest
      * @return DescribeDisasterRecoverGroupsResponse
      * @throws TencentCloudSDKException
@@ -265,7 +254,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeHosts) is used to get the details of one or more CDH instances.
+     *This API is used to query the details of CDH instances.
      * @param req DescribeHostsRequest
      * @return DescribeHostsResponse
      * @throws TencentCloudSDKException
@@ -283,7 +272,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeImageQuota) is used to query the image quota under the user account.
+     *This API is used to query the image quota of an user account.
      * @param req DescribeImageQuotaRequest
      * @return DescribeImageQuotaResponse
      * @throws TencentCloudSDKException
@@ -301,7 +290,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeImageSharePermission) is used to query the information on image sharing.
+     *This API is used to query image sharing information.
      * @param req DescribeImageSharePermissionRequest
      * @return DescribeImageSharePermissionResponse
      * @throws TencentCloudSDKException
@@ -319,10 +308,10 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeImages) is used to view the image list.
+     *This API is used to view the list of images.
 
-* You can query the details of the specified images by specifying image IDs, or set filters to query the details of the images that satisfy the filter conditions.
-* You can specify Offset and Limit to select a part of the results. The information of the first 20 images satisfying the condition is returned by default.
+* You specify the image ID or set filters to query the details of certain images.
+* You can specify `Offset` and `Limit` to select a certain part of the results. By default, the information on the first 20 matching results is returned.
      * @param req DescribeImagesRequest
      * @return DescribeImagesResponse
      * @throws TencentCloudSDKException
@@ -340,7 +329,7 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeImportImageOs) is used to view the operating system information of an imported image.
+     *This API is used to query the list of supported operating systems of imported images.
      * @param req DescribeImportImageOsRequest
      * @return DescribeImportImageOsResponse
      * @throws TencentCloudSDKException
@@ -358,49 +347,10 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeInstanceFamilyConfigs) is used to query the list of model families supported by the current user and region.
-     * @param req DescribeInstanceFamilyConfigsRequest
-     * @return DescribeInstanceFamilyConfigsResponse
-     * @throws TencentCloudSDKException
-     */
-    public DescribeInstanceFamilyConfigsResponse DescribeInstanceFamilyConfigs(DescribeInstanceFamilyConfigsRequest req) throws TencentCloudSDKException{
-        JsonResponseModel<DescribeInstanceFamilyConfigsResponse> rsp = null;
-        try {
-                Type type = new TypeToken<JsonResponseModel<DescribeInstanceFamilyConfigsResponse>>() {
-                }.getType();
-                rsp  = gson.fromJson(this.internalRequest(req, "DescribeInstanceFamilyConfigs"), type);
-        } catch (JsonSyntaxException e) {
-            throw new TencentCloudSDKException(e.getMessage());
-        }
-        return rsp.response;
-    }
+     *This API is used to query the model configuration of an instance.
 
-    /**
-     *This API (DescribeInstanceInternetBandwidthConfigs) is used to query the instance bandwidth configuration.
-
-* Only support query the bandwidth configuration of billing mode `BANDWIDTH_PREPAID`.
-* All bandwidth configuration information (including historical bandwidth configuration information) of an instance is returned via the API.
-     * @param req DescribeInstanceInternetBandwidthConfigsRequest
-     * @return DescribeInstanceInternetBandwidthConfigsResponse
-     * @throws TencentCloudSDKException
-     */
-    public DescribeInstanceInternetBandwidthConfigsResponse DescribeInstanceInternetBandwidthConfigs(DescribeInstanceInternetBandwidthConfigsRequest req) throws TencentCloudSDKException{
-        JsonResponseModel<DescribeInstanceInternetBandwidthConfigsResponse> rsp = null;
-        try {
-                Type type = new TypeToken<JsonResponseModel<DescribeInstanceInternetBandwidthConfigsResponse>>() {
-                }.getType();
-                rsp  = gson.fromJson(this.internalRequest(req, "DescribeInstanceInternetBandwidthConfigs"), type);
-        } catch (JsonSyntaxException e) {
-            throw new TencentCloudSDKException(e.getMessage());
-        }
-        return rsp.response;
-    }
-
-    /**
-     *This API (DescribeInstanceTypeConfigs) is used to query the instance model configuration.
-
-* You can query instance specification via`zone` and `instance-family`. Check filter`Filter`.
-* If the parameter is empty, all instances specification under the specified region are returned.
+* You can filter the query results with `zone` or `instance-family`. For more information on filtering conditions, see `Filter`.
+* If no parameter is defined, the model configuration of all the instances in the specified region will be returned.
      * @param req DescribeInstanceTypeConfigsRequest
      * @return DescribeInstanceTypeConfigsResponse
      * @throws TencentCloudSDKException
@@ -418,13 +368,16 @@ public class CvmClient extends AbstractClient{
     }
 
     /**
-     *This API (DescribeInstanceVncUrl) is used to query the URL to the instance management client.
+     *This API is used to query the VNC URL of an instance.
 
-* CVM under status `STOPPED` can not use this functionality.
-* The validity period of the management client URL is 15 sec. If the URL is not accessed within 15 sec after the API is called, it will become invalid automatically. You have to query a URL again.
-* Once the client URL is accessed, it will become invalid automatically. You have to query a URL again.
-* If the access is disconnected, reconnect attempts within one minute cannot exceed 30 times.
-* After get `InstanceVncUrl` ，need to add <https: //img.qcloud.com/qcloud/app/active_vnc/index.html?> parameter `InstanceVncUrl=xxxx`  at the end of link.  - Parameter `InstanceVncUrl` ：Successfully call API will return value of `InstanceVncUrl` .    The final URLs are in the following format:
+* It does not support `STOPPED` CVMs.
+* A VNC URL is only valid for 15 sec. If you do not access the URL within 15 seconds, it will become invalid and you will have to query another one.
+* Once you access a VNC URL, it will become invalid and you will have to query another one.
+* If the connection breaks up, you can make up to 30 requests per minute to reestablish the connection.
+* After you get the value of `InstanceVncUrl`, you need to append `InstanceVncUrl=xxxx` to the end of the link <https://img.qcloud.com/qcloud/app/active_vnc/index.html?>.
+  - Parameter `InstanceVncUrl`: the value of `InstanceVncUrl` returned after a successful API call.
+
+    The final URLs are in the following format:
 
 ```
 https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9
@@ -447,10 +400,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (DescribeInstances) is used to query the details of one or more instances.
+     *This API is used to query the details of instances.
 
-* You can query the details of an instance according to instance`ID`, instance name or billing method. See `Filter` for filtering information`Filter`.
-* If the parameter is empty, a certain number (specified by ``Limit``, the default is 20) of instances are returned to the current user.
+* You can filter the query results with the instance `ID`, name, or billing method. See `Filter` for more information.
+* If no parameter is defined, a certain number of instances under the current account will be returned. The number is specified by `Limit` and is 20 by default.
      * @param req DescribeInstancesRequest
      * @return DescribeInstancesResponse
      * @throws TencentCloudSDKException
@@ -468,9 +421,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API（DescribeInstancesOperationLimit）is used to query operation limitation of instances.
+     *This API is used to query limitations on operations on an instance.
 
-* the query for adjusting the number of configuration operation limitation is supported
+* Currently you can use this API to query the maximum number of times you can modify the configuration of an instance.
      * @param req DescribeInstancesOperationLimitRequest
      * @return DescribeInstancesOperationLimitResponse
      * @throws TencentCloudSDKException
@@ -488,10 +441,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (DescribeInstancesStatus) is used to query the status of one or more instances.
+     *This API is used to query the status of instances.
 
-* You can query instance status via instance `ID`.
-* If the parameter is empty, a certain number (specified by `Limit`, the default is 20) of status are returned to the current user.
+* You can query the status of an instance with its `ID`.
+* If no parameter is defined, the status of a certain number of instances under the current account will be returned. The number is specified by `Limit` and is 20 by default.
      * @param req DescribeInstancesStatusRequest
      * @return DescribeInstancesStatusResponse
      * @throws TencentCloudSDKException
@@ -509,7 +462,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (DescribeInternetChargeTypeConfigs) is used to query the network billing type.
+     *This API is used to query the network billing methods.
      * @param req DescribeInternetChargeTypeConfigsRequest
      * @return DescribeInternetChargeTypeConfigsResponse
      * @throws TencentCloudSDKException
@@ -527,9 +480,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (DescribeKeyPairs) is used to query key pair information.
+     *This API is used to query key pairs.
 
-* A keyPair is a pair of keys generated with an algorithm. In the generated key pair, one key is open to the public and called public key, and the other key kept by users is called private key. The public key content of the key pair can be queried through this API, but the private key content is not retained by system.
+* A key pair is a pair of keys generated by an algorithm in which the public key is available to the public and the private key is available only to the user. You can use this API to query the public key but not the private key.
      * @param req DescribeKeyPairsRequest
      * @return DescribeKeyPairsResponse
      * @throws TencentCloudSDKException
@@ -547,7 +500,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (DescribeRegions) is used to query regions.
+     *This API is used to query regions.
      * @param req DescribeRegionsRequest
      * @return DescribeRegionsResponse
      * @throws TencentCloudSDKException
@@ -565,7 +518,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (DescribeZoneInstanceConfigInfos) is used to obtain the model information in an availability zone.
+     *This API is used to query the configurations of models in an availability zone.
      * @param req DescribeZoneInstanceConfigInfosRequest
      * @return DescribeZoneInstanceConfigInfosResponse
      * @throws TencentCloudSDKException
@@ -583,30 +536,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (DescribeZones) is used to query availability zones.
-     * @param req DescribeZonesRequest
-     * @return DescribeZonesResponse
-     * @throws TencentCloudSDKException
-     */
-    public DescribeZonesResponse DescribeZones(DescribeZonesRequest req) throws TencentCloudSDKException{
-        JsonResponseModel<DescribeZonesResponse> rsp = null;
-        try {
-                Type type = new TypeToken<JsonResponseModel<DescribeZonesResponse>>() {
-                }.getType();
-                rsp  = gson.fromJson(this.internalRequest(req, "DescribeZones"), type);
-        } catch (JsonSyntaxException e) {
-            throw new TencentCloudSDKException(e.getMessage());
-        }
-        return rsp.response;
-    }
+     *This API is used to unbind one or more key pairs from one or more instances.
 
-    /**
-     *This API (DisassociateInstancesKeyPairs) is used to unbind a key pair from an instance.
-
-* Only support instances with operation system `Linux` and status [`STOPPED`](https://cloud.tencent.com/document/api/213/9452#INSTANCE_STATE).
-* After the key pair is unassociated, the instance can be logged in with the original password.
-* If password was not set before, you couldn’t use `SSH` to login after unassociated. Call API [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/15736) to set login password.
-* Batch operations are supported. The maximum number of instances in a batch for each request is 100. If any instance that does not allow batch operations, an [error code] is returned.
+* It only supports [`STOPPED`](https://cloud.tencent.com/document/product/213/15753#InstanceStatus) Linux instances.
+* After a key pair is disassociated from an instance, you can log in to the instance with password.
+* If you did not set a password for the instance, you will not be able to log in via SSH after the unbinding. In this case, you can call [ResetInstancesPassword](https://cloud.tencent.com/document/api/213/15736) to set a login password.
+* Batch operations are supported. The maximum number of instances in each request is 100. If instances not available for the operation are selected, you will get an error code.
      * @param req DisassociateInstancesKeyPairsRequest
      * @return DisassociateInstancesKeyPairsResponse
      * @throws TencentCloudSDKException
@@ -624,7 +559,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (DisassociateSecurityGroups) is used to disassociate a security group from specified instances.
+     *This API is used to disassociate security groups from instances.
      * @param req DisassociateSecurityGroupsRequest
      * @return DisassociateSecurityGroupsResponse
      * @throws TencentCloudSDKException
@@ -642,7 +577,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ImportImage) is used to import images that can be used to create instances.
+     *This API is used to import images. Imported images can be used to create instances. 
      * @param req ImportImageRequest
      * @return ImportImageResponse
      * @throws TencentCloudSDKException
@@ -660,11 +595,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ImportKeyPair) is used to import key pairs.
+     *This API is used to import key pairs.
 
-* This API is designed to import the key pair to the user account, instead of binding it to an instance automatically. You can bind the key pair to an instance using API [AssociasteInstancesKeyPair](https://cloud.tencent.com/document/api/213/9404).
-* The key pair name and the public key text of the key pair need to be specified.
-* If you have only the private key, you can convert the private key to a public key using `SSL` tool before importing it.
+* You can use this API to import key pairs to a user account, but the key pairs will not be automatically associated with any instance. You may use [AssociasteInstancesKeyPair](https://cloud.tencent.com/document/api/213/9404) to associate key pairs with instances.
+* You need to specify the names of the key pairs and the content of the public keys.
+* If you only have private keys, you can convert them to public keys with the `SSL` tool before importing them.
      * @param req ImportKeyPairRequest
      * @return ImportKeyPairResponse
      * @throws TencentCloudSDKException
@@ -682,48 +617,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (InquiryPriceModifyInstancesChargeType) is used to inquire the price for the switched billing method of an instance.
+     *This API is used to query the price for reinstalling an instance.
 
-* This API only supports switching the billing method from `POSTPAID_BY_HOUR` to `PREPAID`.
-* This operation is not supported for instances that are not charged for shutdown period, that belong to `BC1` and `BS1` model families, and that will be terminated at a certain time.
-     * @param req InquiryPriceModifyInstancesChargeTypeRequest
-     * @return InquiryPriceModifyInstancesChargeTypeResponse
-     * @throws TencentCloudSDKException
-     */
-    public InquiryPriceModifyInstancesChargeTypeResponse InquiryPriceModifyInstancesChargeType(InquiryPriceModifyInstancesChargeTypeRequest req) throws TencentCloudSDKException{
-        JsonResponseModel<InquiryPriceModifyInstancesChargeTypeResponse> rsp = null;
-        try {
-                Type type = new TypeToken<JsonResponseModel<InquiryPriceModifyInstancesChargeTypeResponse>>() {
-                }.getType();
-                rsp  = gson.fromJson(this.internalRequest(req, "InquiryPriceModifyInstancesChargeType"), type);
-        } catch (JsonSyntaxException e) {
-            throw new TencentCloudSDKException(e.getMessage());
-        }
-        return rsp.response;
-    }
-
-    /**
-     *This API (InquiryPriceRenewInstances) is used to inquiry the price of prepaid instance renewal.
-
-* Only supports querying the renewal price of the prepaid instances.
-     * @param req InquiryPriceRenewInstancesRequest
-     * @return InquiryPriceRenewInstancesResponse
-     * @throws TencentCloudSDKException
-     */
-    public InquiryPriceRenewInstancesResponse InquiryPriceRenewInstances(InquiryPriceRenewInstancesRequest req) throws TencentCloudSDKException{
-        JsonResponseModel<InquiryPriceRenewInstancesResponse> rsp = null;
-        try {
-                Type type = new TypeToken<JsonResponseModel<InquiryPriceRenewInstancesResponse>>() {
-                }.getType();
-                rsp  = gson.fromJson(this.internalRequest(req, "InquiryPriceRenewInstances"), type);
-        } catch (JsonSyntaxException e) {
-            throw new TencentCloudSDKException(e.getMessage());
-        }
-        return rsp.response;
-    }
-
-    /**
-     *This API (InquiryPriceResetInstance) is used to inquire the prices of reinstalled instances.* If you have specified `ImageId` parameter, the price inquiry is performed with the specified image. Otherwise, the image used by the current instance is used.* You can use this API to inquire prices after the operating system switch between `Linux` and `Windows` only for the instances with a [system disk type](/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.* For the instances in overseas regions, this operation is not supported.
+* If you have specified the `ImageId` parameter, the price query is performed with the specified image. Otherwise, the image used by the current instance is used.
+* You can only query the price for reinstallation caused by switching between Linux and Windows OS. And the [system disk type](https://cloud.tencent.com/document/api/213/15753#SystemDisk) of the instance must be `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`.
+* Currently, this API only supports instances in Mainland China regions.
      * @param req InquiryPriceResetInstanceRequest
      * @return InquiryPriceResetInstanceResponse
      * @throws TencentCloudSDKException
@@ -741,14 +639,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (InquiryPriceResetInstancesInternetMaxBandwidth) is used to inquire the price of the adjusted public network bandwidth cap of an instance.
+     *This API is used to query the price for upgrading the public bandwidth cap of an instance.
 
-* The bandwidth cap varies with different models. For details, please see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/509).
-* For a bandwidth with the `BANDWIDTH_PREPAID` billing mode, the parameters `StartTime` and `EndTime` need to be input to specify the validity period of the adjusted bandwidth. Bandwidth downgrade is not supported currently in this scenario. Since fee deduction is involved, make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
-* For a bandwidth with the `TRAFFIC_POSTPAID_BY_HOUR`, the `BANDWIDTH_POSTPAID_BY_HOUR`, or the `BANDWIDTH_PACKAGE` billing method, the adjustment of the bandwidth cap using this API takes effect in real time. Bandwidth upgrade and downgrade in the permitted range are supported, and the input of parameters `StartTime` and `EndTime` is not supported.
-* This API does not support adjusting a bandwidth with the `BANDWIDTH_POSTPAID_BY_MONTH` billing method.
-* This API does not support batch adjustment of bandwidths with the `BANDWIDTH_PREPAID` or the `BANDWIDTH_POSTPAID_BY_HOUR` billing method.
-* This API does not support batch adjustment of bandwidths with hybrid billing methods. For instance, it does not support adjusting bandwidths with the `TRAFFIC_POSTPAID_BY_HOUR` and the `BANDWIDTH_PACKAGE` billing methods at the same time.
+* The allowed bandwidth cap varies for different models. For details, see [Purchasing Network Bandwidth](https://cloud.tencent.com/document/product/213/509).
+* For bandwidth billed by the `TRAFFIC_POSTPAID_BY_HOUR` method, changing the bandwidth cap through this API takes effect in real time. You can increase or reduce bandwidth within applicable limits.
      * @param req InquiryPriceResetInstancesInternetMaxBandwidthRequest
      * @return InquiryPriceResetInstancesInternetMaxBandwidthResponse
      * @throws TencentCloudSDKException
@@ -766,11 +660,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (InquiryPriceResetInstancesType) is used to inquire the price of adjusting the model of an instance.
+     *This API is used to query the price for adjusting the instance model.
 
-* Currently, using this API for inquiring about the price of adjusting models is only supported for the instances with a [system disk type](https://cloud.tencent.com/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
-* Currently, using this API for inquiring about the price of adjusting models is only supported for the instances with a [system disk type](https://cloud.tencent.com/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
-* For prepaid instances, fee deduction will be involved in using this API, so make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
+* Currently, you can only use this API to query the prices of instances whose [system disk type](https://cloud.tencent.com/document/api/213/9452#block_device) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`.
+* Currently, you cannot use this API to query the prices of [CDH](https://cloud.tencent.com/document/product/416) instances.
      * @param req InquiryPriceResetInstancesTypeRequest
      * @return InquiryPriceResetInstancesTypeResponse
      * @throws TencentCloudSDKException
@@ -788,10 +681,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (InquiryPriceResizeInstanceDisks) is used to inquiry the price of data disk capacity expansion of the instance.
+     *This API is used to query the price for expanding data disks of an instance.
 
-* Only in-elastic data disk is supported (which can be obtained from [`DescribeDisks`](https://intl.cloud.tencent.com/document/api/362/16315) in the returned value: `Portable` is `false` by the API ), and [Data disk type] (https://intl.cloud.tencent.com/document/api/213/9452#block_device) is: `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`. 
-* Currently, the [CDH](https://cloud.tencent.com/document/product/416) instance is not supported to use this API to inquiry the price of data disk capacity expansion.* Only data disks purchased along with prepaid instances are supported.* Inquiring the price of expanding the capacity of only one data disk is supported.
+* Currently, you can only use this API to query the price of non-elastic data disks whose [disk type](/document/api/213/9452#block_device) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic.
+* Currently, you cannot use this API to query the price for [CDH](https://cloud.tencent.com/document/product/416) instances. *Also, you can only query the price of expanding one data disk at a time.
      * @param req InquiryPriceResizeInstanceDisksRequest
      * @return InquiryPriceResizeInstanceDisksResponse
      * @throws TencentCloudSDKException
@@ -809,7 +702,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (InquiryPriceRunInstances) is used to inquire the price for instance creation. With this API, you can only inquire the price according to the instance configuration within the range of purchase limits. For more information, please see [Create Instance](https://cloud.tencent.com/document/api/213/15730).
+     *This API is used to query the price of creating instances. You can only use this API for instances whose configuration is within the purchase limit. For more information, see [RunInstances](https://cloud.tencent.com/document/api/213/15730).
      * @param req InquiryPriceRunInstancesRequest
      * @return InquiryPriceRunInstancesResponse
      * @throws TencentCloudSDKException
@@ -827,7 +720,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ModifyDisasterRecoverGroupAttribute) is used modify attribution of [spread placement group].
+     *This API is used to modify the attributes of [spread placement groups](https://cloud.tencent.com/document/product/213/15486).
      * @param req ModifyDisasterRecoverGroupAttributeRequest
      * @return ModifyDisasterRecoverGroupAttributeResponse
      * @throws TencentCloudSDKException
@@ -845,7 +738,7 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ModifyHostsAttribute) is used to modify the attributes of CDH instance, such as instance name and renewal flag. Either the parameter HostName or RenewFlag must be set, but not both.
+     *This API is used to modify the attributes of a CDH instance, such as instance name and renewal flag. One of the two parameters, HostName and RenewFlag, must be set, but you cannot set both of them at the same time.
      * @param req ModifyHostsAttributeRequest
      * @return ModifyHostsAttributeResponse
      * @throws TencentCloudSDKException
@@ -863,9 +756,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ModifyImageAttribute) is used to modify the image attributes.
+     *This API is used to modify image attributes.
 
-* Modifying attributes is not allowed for a shared image.
+* Attributes of shared images cannot be modified.
      * @param req ModifyImageAttributeRequest
      * @return ModifyImageAttributeResponse
      * @throws TencentCloudSDKException
@@ -883,12 +776,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ModifyImageSharePermission) is used to modify the image sharing information.
+     *This API is used to modify image sharing information.
 
-* The accounts to which an image is shared can create instances from this image.
-* Each custom image can be shared to a maximum of 50 accounts.
-* A shared image can only be used to create instances and its name and description cannot be changed.
-* An image can only be shared to the accounts in the same region with the source account.
+* The accounts with which an image is shared can use the shared image to create instances.
+* Each custom image can be shared with up to 50 accounts.
+* You can use a shared image to create instances, but you cannot change its name and description.
+* If an image is shared with another account, the shared image will be in the same region as the original image.
 
      * @param req ModifyImageSharePermissionRequest
      * @return ModifyImageSharePermissionResponse
@@ -907,11 +800,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ModifyInstancesAttribute) is used to modify the attributes of an instance (only the modification to instance name is supported).
+     *This API is used to modify the attributes of an instance. Currently you can only use the API to modify the name and the associated security groups of the instance.
 
-* "Instance name" is only used by users for their management. Tencent Cloud does not use the name as the basis for ticket submission or instance management.
-* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
-* The instance associated security group will be disassociated if the associated security group is modified.
+* Instance names are used only for users’ convenience. Tencent Cloud does not use the name for ticket submission or instance management.
+* Batch operations are supported. The maximum number of instances in each request is 100.
+* When you change the security groups associated with an instance, the original security groups will be disassociated.
      * @param req ModifyInstancesAttributeRequest
      * @return ModifyInstancesAttributeResponse
      * @throws TencentCloudSDKException
@@ -929,33 +822,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ModifyInstancesChargeType) is used to switch the billing method of an instance.
+     *This API is used to change the project to which an instance belongs.
 
-* Only support switch billing mode from `POSTPAID_BY_HOUR` to `PREPAID`.
-* No charges when shut down instances, `BC1`and`BS1` type instances, instances will be terminated at a certain time are not supported.
-     * @param req ModifyInstancesChargeTypeRequest
-     * @return ModifyInstancesChargeTypeResponse
-     * @throws TencentCloudSDKException
-     */
-    public ModifyInstancesChargeTypeResponse ModifyInstancesChargeType(ModifyInstancesChargeTypeRequest req) throws TencentCloudSDKException{
-        JsonResponseModel<ModifyInstancesChargeTypeResponse> rsp = null;
-        try {
-                Type type = new TypeToken<JsonResponseModel<ModifyInstancesChargeTypeResponse>>() {
-                }.getType();
-                rsp  = gson.fromJson(this.internalRequest(req, "ModifyInstancesChargeType"), type);
-        } catch (JsonSyntaxException e) {
-            throw new TencentCloudSDKException(e.getMessage());
-        }
-        return rsp.response;
-    }
-
-    /**
-     *This API (ModifyInstancesProject) is used to modify the project to which an instance belongs.
-
-* The project is a virtual concept. Users can create multiple projects under one account to manage different resources in each project, and assign the different instances to different projects. The API [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388) can be used to query instances and the project ID can be used to filter the results.
-* The project of the instances bound with load balancers cannot be modified until the load balancers are unbound using the API [`DeregisterInstancesFromLoadBalancer`](https://cloud.tencent.com/document/api/214/1258).
-* The security groups associated with the instances are automatically disassociated when the project of the instances is modified. You can use the API [`ModifySecurityGroupsOfInstance`](https://cloud.tencent.com/document/api/213/1367) to associate security groups after modification.
-* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
+* Project is a virtual concept. Users can create multiple projects under one account, manage different resources in each project, and assign different instances to different projects. You may use [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) to query instances and use the project ID to filter results.
+* You cannot modify the project of an instance which is bound to a load balancer. You need to unbind the load balancer from the instance with [`DeregisterInstancesFromLoadBalancer`](https://cloud.tencent.com/document/api/214/1258) before using this API.
+* If you modify the project of an instance, security groups associated with the instance will be automatically disassociated. You can use [`ModifySecurityGroupsOfInstance`](https://cloud.tencent.com/document/api/213/1367) to associate the instance with certian security groups again.
+* Batch operations are supported. The maximum number of instances in each request is 100.
      * @param req ModifyInstancesProjectRequest
      * @return ModifyInstancesProjectResponse
      * @throws TencentCloudSDKException
@@ -973,30 +845,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ModifyInstancesRenewFlag) is used to modify the renewal flags of prepaid instances.
-
-* Any instance marked "Auto Renewal" is automatically renewed for one month whenever it expires.
-* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
-     * @param req ModifyInstancesRenewFlagRequest
-     * @return ModifyInstancesRenewFlagResponse
-     * @throws TencentCloudSDKException
-     */
-    public ModifyInstancesRenewFlagResponse ModifyInstancesRenewFlag(ModifyInstancesRenewFlagRequest req) throws TencentCloudSDKException{
-        JsonResponseModel<ModifyInstancesRenewFlagResponse> rsp = null;
-        try {
-                Type type = new TypeToken<JsonResponseModel<ModifyInstancesRenewFlagResponse>>() {
-                }.getType();
-                rsp  = gson.fromJson(this.internalRequest(req, "ModifyInstancesRenewFlag"), type);
-        } catch (JsonSyntaxException e) {
-            throw new TencentCloudSDKException(e.getMessage());
-        }
-        return rsp.response;
-    }
-
-    /**
-     *This API (ModifyInstancesVpcAttribute) is used to modify VPC attributes, such as IP
-* Instances are shut down by default when you perform this operation， and restart when completed.
-* when the VPC ID and subnet ID (the subnet must be in the same AZ with instance) are different with the VPC of the specified instance, will migrate the instances to the subnet of specified VPC. Please make sure there is no associated[ENI](https://cloud.tencent.com/document/product/576) and [Cloud Load Balancer](https://cloud.tencent.com/document/product/214) in specified instances.
+     *This API is used to modify the VPC attributes of an instance, such as the VPC IP address.
+* By default, the instances will shut down when you perform this operation and restart upon completion.
+* If the specified VPC ID and subnet ID (the subnet must be in the same availability zone as the instance) are different from the VPC where the specified instance resides, the instance will be migrated to a subnet of the specified VPC. Before performing this operation, make sure that the specified instance is not bound with an [ENI](https://cloud.tencent.com/document/product/576) or [CLB](https://cloud.tencent.com/document/product/214).
      * @param req ModifyInstancesVpcAttributeRequest
      * @return ModifyInstancesVpcAttributeResponse
      * @throws TencentCloudSDKException
@@ -1014,11 +865,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ModifyKeyPairAttribute) is used to modify the attributes of key pairs.
+     *This API is used to modify the attributes of key pairs.
 
 * This API modifies the name and description of the key pair identified by the key pair ID.
-* The KeyPair name must be unique.
-* Key pair ID is the unique identifier of key pair and cannot be modified.
+* The name of the key pair must be unique.
+* Key pair ID is the unique identifier of a key pair and cannot be modified.
      * @param req ModifyKeyPairAttributeRequest
      * @return ModifyKeyPairAttributeResponse
      * @throws TencentCloudSDKException
@@ -1036,12 +887,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (RebootInstances) is used to restart an instance.
+     *This API is used to restart instances.
 
-* This operation is only allowed for the instances with a status of `RUNNING`
-* When the API call is successful, the instance goes into the `REBOOTING` status. When restart successfully, it goes into the `RUNNING` status.
-* Forced restart is supported. Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
-* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
+* You can only perform this operation on instances whose status is `RUNNING`.
+* If the API is called successfully, the instance status will become `REBOOTING`. After the instance is restarted, its status will become `RUNNING` again.
+* Forced restart is supported. A forced restart is similar to switching off the power of a physical computer and starting it again. It may cause data loss or file system corruption. Be sure to only force start a CVM when it cannot be restarted normally.
+* Batch operations are supported. The maximum number of instances in each request is 100.
      * @param req RebootInstancesRequest
      * @return RebootInstancesResponse
      * @throws TencentCloudSDKException
@@ -1059,56 +910,14 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (RenewHosts) is used to renew the prepaid CDH instances.
+     *This API is used to reinstall the operating system of the specified instance.
 
-* Only the prepaid instances are supported, otherwise a specific [error code](#4.-.E9.94.99.E8.AF.AF.E7.A0.81) will be returned.
-* Make sure the account balance is sufficient when renewing. You can query the account balance via the [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397) API.
-     * @param req RenewHostsRequest
-     * @return RenewHostsResponse
-     * @throws TencentCloudSDKException
-     */
-    public RenewHostsResponse RenewHosts(RenewHostsRequest req) throws TencentCloudSDKException{
-        JsonResponseModel<RenewHostsResponse> rsp = null;
-        try {
-                Type type = new TypeToken<JsonResponseModel<RenewHostsResponse>>() {
-                }.getType();
-                rsp  = gson.fromJson(this.internalRequest(req, "RenewHosts"), type);
-        } catch (JsonSyntaxException e) {
-            throw new TencentCloudSDKException(e.getMessage());
-        }
-        return rsp.response;
-    }
-
-    /**
-     *This API (RenewInstances) is used to renew prepaid instances.
-
-* Only the prepaid instances are supported.
-* Make sure the account balance is sufficient when renewing. You can query the account balance via the [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397) API.
-     * @param req RenewInstancesRequest
-     * @return RenewInstancesResponse
-     * @throws TencentCloudSDKException
-     */
-    public RenewInstancesResponse RenewInstances(RenewInstancesRequest req) throws TencentCloudSDKException{
-        JsonResponseModel<RenewInstancesResponse> rsp = null;
-        try {
-                Type type = new TypeToken<JsonResponseModel<RenewInstancesResponse>>() {
-                }.getType();
-                rsp  = gson.fromJson(this.internalRequest(req, "RenewInstances"), type);
-        } catch (JsonSyntaxException e) {
-            throw new TencentCloudSDKException(e.getMessage());
-        }
-        return rsp.response;
-    }
-
-    /**
-     *This API (ResetInstance) is used to reinstall the operating system for the specified instance.
-
-* If you have specified `ImageId` parameter, the re-installation is performed with the specified image. Otherwise, the image used by the current instance is used.
-* The system disk will be formatted and reset. Please ensure that there is no important file in the system disk.
-* As the operating system is switched between `Linux` and `Windows`, the system disk `ID` of the instance will change, and the snapshot associated with the system disk can't be used to roll back and recover data.
-* If no password is specified, a password is issued randomly via internal message.
-* You can use this API to inquire prices after the operating system switch between `Linux` and `Windows` only for the instances with a [system disk type](https://cloud.tencent.com/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
-* For the instances in overseas regions, this operation is not supported.
+* If you specify an `ImageId`, the specified image is used. Otherwise, the image used by the current instance is used.
+* The system disk will be formatted and reset. Therefore, make sure that no important files are stored on the system disk.
+* If the operating system switches between `Linux` and `Windows`, the system disk `ID` of the instance will change, and the snapshots that are associated with the system disk can no longer be used to roll back and restore data.
+* If no password is specified, you will get a random password via internal message.
+* You can only use this API to switch the operating system between `Linux` and `Windows` for instances whose [system disk type](https://cloud.tencent.com/document/api/213/9452#SystemDisk) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`.
+* Currently, this API only supports instances in Mainland China regions.
      * @param req ResetInstanceRequest
      * @return ResetInstanceResponse
      * @throws TencentCloudSDKException
@@ -1126,14 +935,10 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ResetInstancesInternetMaxBandwidth) is used to adjust the public network bandwidth cap of an instance.
+     *This API is used to change the public bandwidth cap of an instance.
 
-* The bandwidth cap varies with different models. For details, please see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/509).
-* For a bandwidth with the `BANDWIDTH_PREPAID` billing method, the parameters `StartTime` and `EndTime` need to be input to specify the validity period of the adjusted bandwidth. Bandwidth downgrade is not supported currently in this scenario. Since fee deduction is involved, make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
-* For a bandwidth with the `TRAFFIC_POSTPAID_BY_HOUR`, the `BANDWIDTH_POSTPAID_BY_HOUR`, or the `BANDWIDTH_PACKAGE` billing method, the adjustment of the bandwidth cap using this API takes effect in real time. Bandwidth upgrade and downgrade in the permitted range are supported, and the input of parameters `StartTime` and `EndTime` is not supported.
-* This API does not support adjusting a bandwidth with the `BANDWIDTH_POSTPAID_BY_MONTH` billing method.
-* This API does not support batch adjustment of bandwidths with the `BANDWIDTH_PREPAID` or the `BANDWIDTH_POSTPAID_BY_HOUR` billing method.
-* This API does not support batch adjustment of bandwidths with hybrid billing methods. For instance, it does not support adjusting bandwidths with the `TRAFFIC_POSTPAID_BY_HOUR` and the `BANDWIDTH_PACKAGE` billing methods at the same time.
+* The allowed bandwidth cap varies for different models. For details, see [Purchasing Network Bandwidth](https://cloud.tencent.com/document/product/213/509).
+* For bandwidth billed by the `TRAFFIC_POSTPAID_BY_HOUR` method, changing the bandwidth cap through this API takes effect in real time. Users can increase or reduce bandwidth within applicable limits.
      * @param req ResetInstancesInternetMaxBandwidthRequest
      * @return ResetInstancesInternetMaxBandwidthResponse
      * @throws TencentCloudSDKException
@@ -1151,11 +956,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ResetInstancesPassword) is used to reset the password of the instance operating system to a user-defined one.
+     *This API is used to reset the password of the instance OS to a user-specified password.
 
-* This API only modifies the password of administrator account. The administrator account ID varies with the operating system of instance (e.g., `Administrator` for `Windows`, `ubuntu` for `Ubuntu`, and `root` for other systems).
-* To reset the password for a running instance, you need to explicitly specify the parameter `ForceStop` for a forced shutdown. If not, you can only reset password for the instances that have been shut down.
-* The bandwidth cap varies with different models. For details, please see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/509).
+* You can only use this API to modify the password of the administrator account. The name of the administrator account varies depending on the operating system. On Windows, it is `Administrator`; `Ubuntu`, `ubuntu`; `Linux`, `root`.)
+* To reset the password of a running instance, you need to explicitly specify the force shutdown parameter `ForceStop`. Otherwise, you can only reset passwords of instances that have been shut down.
+* Batch operations are supported. You can reset the passwords of multiple instances to the same one. The maximum number of instances in each request is 100.
      * @param req ResetInstancesPasswordRequest
      * @return ResetInstancesPasswordResponse
      * @throws TencentCloudSDKException
@@ -1173,9 +978,9 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ResetInstancesType) is used to adjust the model of an instance.
-* Using this API for adjusting models is only supported for the instances with a [system disk type](/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
-* Currently, using this API for adjusting mode is not supported for the [CDH](https://cloud.tencent.com/document/product/416) instances. For prepaid instances, fee deduction will be involved in using this API, so make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
+     *This API is used to change the model of an instance.
+* You can only use this API to change the models of instances whose [system disk type](/document/api/213/9452#block_device) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`.
+* Currently, you cannot use this API to change the models of [CDH](https://cloud.tencent.com/document/product/416) instances.
      * @param req ResetInstancesTypeRequest
      * @return ResetInstancesTypeResponse
      * @throws TencentCloudSDKException
@@ -1193,12 +998,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (ResizeInstanceDisks) is used to expand the capacity of the data disk of an instance.
+     *This API (ResizeInstanceDisks) is used to expand the data disks of an instance.
 
-* Only in-elastic data disk is supported (which can be obtained from [`DescribeDisks`](https://intl.cloud.tencent.com/document/api/362/16315) in the returned value: `Portable` is `false` by the API ), and [Data disk type] (https://intl.cloud.tencent.com/document/api/213/9452#block_device) is: `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`. 
-* Currently, the [CDH](https://cloud.tencent.com/document/product/416) instance is not supported to use this API to inquiry the price of data disk capacity expansion.
-* For prepaid instances, fee deduction will be involved in using this API, so make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
-* Only one data disk is allowed for capacity expansion.
+* Currently, you can only use the API to expand non-elastic data disks whose [disk type](/document/api/213/9452#block_device) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic.
+* Currently, this API does not support [CDH](https://cloud.tencent.com/document/product/416) instances.
+* Currently, only one data disk can be expanded at a time.
      * @param req ResizeInstanceDisksRequest
      * @return ResizeInstanceDisksResponse
      * @throws TencentCloudSDKException
@@ -1216,12 +1020,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (RunInstances) is used to create one or more instances with specified configuration.
+     *This API is used to create one or more instances with a specified configuration.
 
-* After the instance is created successfully, it will start on boot and the [instance status](/document/api/213/9452#instance_state) will become "running".
-* For prepaid instances, the required amount will be pre-deducted; for postpaid instances billed on an hourly basis, the amount equal to an hourly rate of the instance will be pre-frozen. Make sure your account balance is sufficient before calling this API.
-* The instances allowed to be purchased by this API are subject to the number limit described in the [Restrictions on CVM Instance Purchase] (https://cloud.tencent.com/document/product/213/2664), and share the quota with the instances created by the official website entry.
-* This API is an asynchronous API. An instance `ID` list will be returned when the creation request is issued successfully, but the instance is not created immediately. During this period, the status of the instance is "Pending". You can call API [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) to query the status of the instance to check whether it is created. If the status changes from "Pending" to "Running", the instance is created successfully.
+* After an instance is created successfully, it will start up automatically, and the [instance state](/document/api/213/9452#instance_state) will become "Running".
+* If you create a pay-as-you-go instance billed on an hourly basis, an amount equivalent to the hourly rate will be frozen before the creation. Make sure your account balance is sufficient before calling this API.
+* The number of instances you can purchase through this API is subject to the [CVM instance purchase limit](https://cloud.tencent.com/document/product/213/2664). Both the instances created through this API and the console will be counted toward the quota.
+* This API is an async API. An instance `ID` list will be returned after you successfully make a creation request. However, it does not mean the creation has been completed. The state of the instance will be `Creating` during the creation. You can use [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) to query the status of the instance. If the status changes from `Creating` to `Running`, it means that the instance has been created successfully.
      * @param req RunInstancesRequest
      * @return RunInstancesResponse
      * @throws TencentCloudSDKException
@@ -1239,11 +1043,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (StartInstances) is used to start one or more instances.
+     *This API is used to start instances.
 
-* This operation is only allowed for the instances with a status of `STOPPED`.
-* When the API is called successfully, the instance goes into the `STARTING` status. When started, it goes into the `RUNNING` status.
-* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
+* You can only perform this operation on instances whose status is `STOPPED`.
+* The instance status will become `STARTING` when the API is called successfully and `RUNNING` when the instance is successfully started.
+* Batch operations are supported. The maximum number of instances in each request is 100.
      * @param req StartInstancesRequest
      * @return StartInstancesResponse
      * @throws TencentCloudSDKException
@@ -1261,12 +1065,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (StopInstances) is used to shut down one or more instances.
+     *This API is used to shut down instances.
 
-* This operation is only allowed for the instances with a status of `RUNNING`.
-* When the API is called successfully, the instance goes into the `STOPPING` status. When the instance is shut down, it goes into the `STOPPED` status.
-*  Forced shutdown is supported. Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
-* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
+* You can only perform this operation on instances whose status is `RUNNING`.
+* The instance status will become `STOPPING` when the API is called successfully and `STOPPED` when the instance is successfully shut down.
+* Forced shutdown is supported. A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be sht down normally.
+* Batch operations are supported. The maximum number of instances in each request is 100.
      * @param req StopInstancesRequest
      * @return StopInstancesResponse
      * @throws TencentCloudSDKException
@@ -1284,11 +1088,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (SyncImages) is used to sync a custom image to other regions.
+     *This API is used to sync a custom image to other regions.
 
-* Each call to this API can only sync a single image.
-* This API supports syncing to multiple regions.
-* A maximum of 10 custom images are allowed to be created for each region. 
+* Each API call syncs a single image.
+* This API supports syncing an image to multiple regions.
+* Each account can have up to 10 custom images in each region. 
      * @param req SyncImagesRequest
      * @return SyncImagesResponse
      * @throws TencentCloudSDKException
@@ -1306,11 +1110,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
     }
 
     /**
-     *This API (TerminateInstances) is used to return instances.
+     *This API is used to return instances.
 
-* The instances that are no longer used can be returned via this API.
-* Postpaid instances can be directly returned via this API. Prepaid instances that conform to the [rules for return](https://cloud.tencent.com/document/product/213/9711) can also be returned via this API.
-* Batch operations are supported. The maximum number of instances in a batch for each request is 100.
+* Use this API to return instances that are no longer required.
+* Pay-as-you-go instances can be returned directly through this API.
+* When this API is called for the first time, the instance will be moved to the recycle bin. When this API is called for the second time, the instance will be terminated and cannot be recovered.
+* Batch operations are supported. The allowed maximum number of instances in each request is 100.
      * @param req TerminateInstancesRequest
      * @return TerminateInstancesResponse
      * @throws TencentCloudSDKException

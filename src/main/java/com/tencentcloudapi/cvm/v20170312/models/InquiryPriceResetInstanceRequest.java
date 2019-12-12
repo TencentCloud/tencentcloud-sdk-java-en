@@ -23,122 +23,122 @@ import java.util.HashMap;
 public class InquiryPriceResetInstanceRequest  extends AbstractModel{
 
     /**
-    * Instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
+    * Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * Specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
+    * [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li>
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * Configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
+    * Configuration of the system disk of the instance. For instances with a cloud disk as the system disk, you can expand the system disk by using this parameter to specify the new capacity after reinstallation. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the capacity of the system disk; reducing its capacity is not supported. When reinstalling the system, you can only modify the capacity of the system disk, not the type.
     */
     @SerializedName("SystemDisk")
     @Expose
     private SystemDisk SystemDisk;
 
     /**
-    * Login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
+    * Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center.
     */
     @SerializedName("LoginSettings")
     @Expose
     private LoginSettings LoginSettings;
 
     /**
-    * Enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
+    * Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default.
     */
     @SerializedName("EnhancedService")
     @Expose
     private EnhancedService EnhancedService;
 
     /**
-     * Get instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
-     * @return InstanceId Instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
+     * Get Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. 
+     * @return InstanceId Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * Set instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
-     * @param InstanceId Instance ID. You can obtain the parameter value from the `InstanceId` field in the returned result of API [DescribeInstances](https://intl.cloud.tencent.com/document/api/213/15728).
+     * Set Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
+     * @param InstanceId Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * Get specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
-     * @return ImageId Specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
+     * Get [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li> 
+     * @return ImageId [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li>
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * Set specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
-     * Set specifies a valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-xxx`. There are four types of images: <br/><li>Public image</li><li>Custom image</li><li>Shared Image</li><li>Marketplace image</li><br/>You can obtain the available image IDs by following methods:<br/><li>Query the Image ID of `PUBLIC_IMAGE`、`CUSTOM_IMAGE`、`SHARED_IMAGE` by logging in to [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE); query image ID of a `MARKETPLACE_IMAGE` image via [Cloud Marketplace](https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
+     * Set [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li>
+     * @param ImageId [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li>
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * Get configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
-     * @return SystemDisk  Configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
+     * Get Configuration of the system disk of the instance. For instances with a cloud disk as the system disk, you can expand the system disk by using this parameter to specify the new capacity after reinstallation. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the capacity of the system disk; reducing its capacity is not supported. When reinstalling the system, you can only modify the capacity of the system disk, not the type. 
+     * @return SystemDisk Configuration of the system disk of the instance. For instances with a cloud disk as the system disk, you can expand the system disk by using this parameter to specify the new capacity after reinstallation. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the capacity of the system disk; reducing its capacity is not supported. When reinstalling the system, you can only modify the capacity of the system disk, not the type.
      */
     public SystemDisk getSystemDisk() {
         return this.SystemDisk;
     }
 
     /**
-     * Set configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
-     * @param SystemDisk Configuration information of the system disk in the instance. For the instances with a cloud disk as the system disk, you can allowed to perform capacity expansion of the system disk after re-installation by using this parameter to specify the capacity. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the system disk capacity (capacity reduction is not supported for a system disk). Re-installing the system can only modify the system disk capacity, and cannot modify the system disk type.
+     * Set Configuration of the system disk of the instance. For instances with a cloud disk as the system disk, you can expand the system disk by using this parameter to specify the new capacity after reinstallation. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the capacity of the system disk; reducing its capacity is not supported. When reinstalling the system, you can only modify the capacity of the system disk, not the type.
+     * @param SystemDisk Configuration of the system disk of the instance. For instances with a cloud disk as the system disk, you can expand the system disk by using this parameter to specify the new capacity after reinstallation. If the parameter is not specified, the system disk capacity remains unchanged by default. You can only expand the capacity of the system disk; reducing its capacity is not supported. When reinstalling the system, you can only modify the capacity of the system disk, not the type.
      */
     public void setSystemDisk(SystemDisk SystemDisk) {
         this.SystemDisk = SystemDisk;
     }
 
     /**
-     * Get login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
-     * @return LoginSettings Login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
+     * Get Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center. 
+     * @return LoginSettings Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center.
      */
     public LoginSettings getLoginSettings() {
         return this.LoginSettings;
     }
 
     /**
-     * Set login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
-     * @param LoginSettings Login settings of an instance. This parameter is used to set the instance login method, passwor, key, or to keep the original login settings of image. By default, a password is generated randomly and notified to the user via internal message.
+     * Set Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center.
+     * @param LoginSettings Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center.
      */
     public void setLoginSettings(LoginSettings LoginSettings) {
         this.LoginSettings = LoginSettings;
     }
 
     /**
-     * Get enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
-     * @return EnhancedService Enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
+     * Get Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default. 
+     * @return EnhancedService Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default.
      */
     public EnhancedService getEnhancedService() {
         return this.EnhancedService;
     }
 
     /**
-     * Set enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
-     * @param EnhancedService Enables enhanced services. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor services. If this parameter is not specified, Cloud Monitor and Cloud Security services are enabled by default.
+     * Set Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default.
+     * @param EnhancedService Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default.
      */
     public void setEnhancedService(EnhancedService EnhancedService) {
         this.EnhancedService = EnhancedService;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);

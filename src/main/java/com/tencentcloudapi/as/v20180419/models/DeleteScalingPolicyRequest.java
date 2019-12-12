@@ -30,7 +30,7 @@ public class DeleteScalingPolicyRequest  extends AbstractModel{
     private String AutoScalingPolicyId;
 
     /**
-     * Obtain the ID of the alarm policy to be deleted
+     * Get ID of the alarm policy to be deleted. 
      * @return AutoScalingPolicyId ID of the alarm policy to be deleted.
      */
     public String getAutoScalingPolicyId() {
@@ -46,7 +46,7 @@ public class DeleteScalingPolicyRequest  extends AbstractModel{
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingPolicyId", this.AutoScalingPolicyId);

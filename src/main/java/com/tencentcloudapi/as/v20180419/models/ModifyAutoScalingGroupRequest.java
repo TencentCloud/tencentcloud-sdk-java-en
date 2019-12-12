@@ -23,32 +23,32 @@ import java.util.HashMap;
 public class ModifyAutoScalingGroupRequest  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
+    * Auto scaling group name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 55 bytes and must be unique under your account.
     */
     @SerializedName("AutoScalingGroupName")
     @Expose
     private String AutoScalingGroupName;
 
     /**
-    * Default cooldown period (in sec), default value is 300.
+    * Default cooldown period in seconds. Default value: 300
     */
     @SerializedName("DefaultCooldown")
     @Expose
-    private Integer DefaultCooldown;
+    private Long DefaultCooldown;
 
     /**
-    * Desired instance number, value should be between the max and min number.
+    * Desired number of instances. The number should be no larger than the maximum and no smaller than minimum number of instances
     */
     @SerializedName("DesiredCapacity")
     @Expose
-    private Integer DesiredCapacity;
+    private Long DesiredCapacity;
 
     /**
     * Launch configuration ID
@@ -58,294 +58,390 @@ public class ModifyAutoScalingGroupRequest  extends AbstractModel{
     private String LaunchConfigurationId;
 
     /**
-    * Max instance number, value range between 0-2000.
+    * Maximum number of instances. Value range: 0-2,000.
     */
     @SerializedName("MaxSize")
     @Expose
-    private Integer MaxSize;
+    private Long MaxSize;
 
     /**
-    * Min instance number, value range between 0-2000.
+    * Minimum number of instances. Value range: 0-2,000.
     */
     @SerializedName("MinSize")
     @Expose
-    private Integer MinSize;
+    private Long MinSize;
 
     /**
-    * Project ID.
+    * Project ID
     */
     @SerializedName("ProjectId")
     @Expose
-    private Integer ProjectId;
+    private Long ProjectId;
 
     /**
-    * The list of subnet.
+    * List of subnet IDs
     */
     @SerializedName("SubnetIds")
     @Expose
     private String [] SubnetIds;
 
     /**
-    * Termination policies. The number of policies is limited to 1. Valid value: OLDEST_INSTANCE and NEWEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
+    * Termination policy. Currently, the maximum length is 1. Value range: OLDEST_INSTANCE, NEWEST_INSTANCE.
+<br><li> OLDEST_INSTANCE: The oldest instance in the auto scaling group will be terminated first.
+<br><li> NEWEST_INSTANCE: The newest instance in the auto scaling group will be terminated first.
     */
     @SerializedName("TerminationPolicies")
     @Expose
     private String [] TerminationPolicies;
 
     /**
-    * VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network.
+    * VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the auto scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network.
     */
     @SerializedName("VpcId")
     @Expose
     private String VpcId;
 
     /**
-    * List of availability zones.
+    * List of availability zones
     */
     @SerializedName("Zones")
     @Expose
     private String [] Zones;
 
     /**
-    * Retry policy, available value include: IMMEDIATE_RETRY and INCREMENTAL_INTERVALS，Default value:  IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately, retry quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: The interval is incremented and retry. As the number of consecutive failures increases, the retry interval increases gradually, and the retry interval ranges from seconds to 1 day.
+    * Retry policy. Value range: IMMEDIATE_RETRY, INCREMENTAL_INTERVALS, and NO_RETRY. Default value: IMMEDIATE_RETRY.
+<br><li> IMMEDIATE_RETRY: Retrying immediately in a short period of time and stopping after a number of consecutive failures (5).
+<br><li> INCREMENTAL_INTERVALS: Retrying at incremental intervals, i.e., as the number of consecutive failures increases, the retry interval gradually increases, ranging from one second to one day.
+<br><li> NO_RETRY: No retry until a user call or alarm message is received again.
     */
     @SerializedName("RetryPolicy")
     @Expose
     private String RetryPolicy;
 
     /**
-    * Validation policy about availability zone. Valid value:ALL,ANY. Default value is ANY. It works when the scaling group changes the resource field (start configuration, available area, subnet).<br><li> ALL: All availability zones or SubnetId can be used, then the validation is passed. Otherwise validation fail.<br><li> ANY: Any one of availability zones or SubnetId can be used,then the validation is passed.Otherwise validation fail. Common reasons for the zones or subnet are unavailable includ: the available zones CVM instance type is sold out; the available zones CBS cloud disk sold out; the available zones quota is insufficient and the subnet IP is insufficient. If the available area or subnet in Zones/SubnetIds does not exist, the error will be verified regardless of the value of ZonesCheckPolicy.
+    * Availability zone verification policy. Value range: ALL, ANY. Default value: ANY. This will work when the resource-related fields (launch configuration, availability zone, or subnet) of the auto scaling group are actually modified.
+<br><li> ALL: The verification will succeed only if all availability zones (Zone) or subnets (SubnetId) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any availability zone (Zone) or subnet (SubnetId) is available; otherwise, an error will be reported.
+
+Common reasons why an availability zone or subnet is unavailable include stock-out of CVM instances or CBS cloud disks in the availability zone, insufficient quota in the availability zone, or insufficient IPs in the subnet.
+If an availability zone or subnet in Zones/SubnetIds does not exist, a verification error will be reported regardless of the value of ZonesCheckPolicy.
     */
     @SerializedName("ZonesCheckPolicy")
     @Expose
     private String ZonesCheckPolicy;
 
     /**
-     * Obtain the scaling group ID.
-     * @return AutoScalingGroupId Scaling group ID.
+    * Service settings such as unhealthy instance replacement.
+    */
+    @SerializedName("ServiceSettings")
+    @Expose
+    private ServiceSettings ServiceSettings;
+
+    /**
+    * 
+    */
+    @SerializedName("Ipv6AddressCount")
+    @Expose
+    private Long Ipv6AddressCount;
+
+    /**
+     * Get Auto scaling group ID 
+     * @return AutoScalingGroupId Auto scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Configure the scaling group ID.
-     * @param AutoScalingGroupId Scaling group ID.
+     * Set Auto scaling group ID
+     * @param AutoScalingGroupId Auto scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Obtain the scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
-     * @return AutoScalingGroupName Scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
+     * Get Auto scaling group name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 55 bytes and must be unique under your account. 
+     * @return AutoScalingGroupName Auto scaling group name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 55 bytes and must be unique under your account.
      */
     public String getAutoScalingGroupName() {
         return this.AutoScalingGroupName;
     }
 
     /**
-     * Configure the scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
-     * @param AutoScalingGroupName Scaling group name, must be unique in your account. The name can only contain Chinese characters, English letters, numbers, underscore, hyphen “-” and periods. It cannot exceed 55 characters.
+     * Set Auto scaling group name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 55 bytes and must be unique under your account.
+     * @param AutoScalingGroupName Auto scaling group name, which can only contain letters, numbers, underscores, hyphens ("-"), and decimal points with a maximum length of 55 bytes and must be unique under your account.
      */
     public void setAutoScalingGroupName(String AutoScalingGroupName) {
         this.AutoScalingGroupName = AutoScalingGroupName;
     }
 
     /**
-     * Obtain the default cooldown period (in sec), default value is 300.
-     * @return DefaultCooldown Default cooldown period (in sec), default value is 300.
+     * Get Default cooldown period in seconds. Default value: 300 
+     * @return DefaultCooldown Default cooldown period in seconds. Default value: 300
      */
-    public Integer getDefaultCooldown() {
+    public Long getDefaultCooldown() {
         return this.DefaultCooldown;
     }
 
     /**
-     * Configure the default cooldown period (in sec), default value is 300.
-     * @param DefaultCooldown Default cooldown period (in sec), default value is 300.
+     * Set Default cooldown period in seconds. Default value: 300
+     * @param DefaultCooldown Default cooldown period in seconds. Default value: 300
      */
-    public void setDefaultCooldown(Integer DefaultCooldown) {
+    public void setDefaultCooldown(Long DefaultCooldown) {
         this.DefaultCooldown = DefaultCooldown;
     }
 
     /**
-     * Obtain the desired instance number, value should be between the max and min number.
-     * @return DesiredCapacity Desired instance number, value should be between the max and min number.
+     * Get Desired number of instances. The number should be no larger than the maximum and no smaller than minimum number of instances 
+     * @return DesiredCapacity Desired number of instances. The number should be no larger than the maximum and no smaller than minimum number of instances
      */
-    public Integer getDesiredCapacity() {
+    public Long getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * Configure the desired instance number, value should be between the max and min number.
-     * @param DesiredCapacity Desired instance number, value should be between the max and min number.
+     * Set Desired number of instances. The number should be no larger than the maximum and no smaller than minimum number of instances
+     * @param DesiredCapacity Desired number of instances. The number should be no larger than the maximum and no smaller than minimum number of instances
      */
-    public void setDesiredCapacity(Integer DesiredCapacity) {
+    public void setDesiredCapacity(Long DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * Obtain the launch configuration ID.
-     * @return LaunchConfigurationId Launch configuration ID.
+     * Get Launch configuration ID 
+     * @return LaunchConfigurationId Launch configuration ID
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * Configure the launch configuration ID.
-     * @param LaunchConfigurationId Launch configuration ID.
+     * Set Launch configuration ID
+     * @param LaunchConfigurationId Launch configuration ID
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * Obtain the max instance number, value range between 0-2000.
-     * @return MaxSize Max instance number, value range between 0-2000.
+     * Get Maximum number of instances. Value range: 0-2,000. 
+     * @return MaxSize Maximum number of instances. Value range: 0-2,000.
      */
-    public Integer getMaxSize() {
+    public Long getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * Configure the max instance number, value range between 0-2000.
-     * @param MaxSize Max instance number, value range between 0-2000.
+     * Set Maximum number of instances. Value range: 0-2,000.
+     * @param MaxSize Maximum number of instances. Value range: 0-2,000.
      */
-    public void setMaxSize(Integer MaxSize) {
+    public void setMaxSize(Long MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * Obtain the min instance number, value range between 0-2000.
-     * @return MinSize Min instance number, value range between 0-2000.
+     * Get Minimum number of instances. Value range: 0-2,000. 
+     * @return MinSize Minimum number of instances. Value range: 0-2,000.
      */
-    public Integer getMinSize() {
+    public Long getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * Configure the min instance number, value range between 0-2000.
-     * @param MinSize Min instance number, value range between 0-2000.
+     * Set Minimum number of instances. Value range: 0-2,000.
+     * @param MinSize Minimum number of instances. Value range: 0-2,000.
      */
-    public void setMinSize(Integer MinSize) {
+    public void setMinSize(Long MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * Obtain the project ID.
-     * @return ProjectId Project ID.
+     * Get Project ID 
+     * @return ProjectId Project ID
      */
-    public Integer getProjectId() {
+    public Long getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * Configure the project ID.
-     * @param ProjectId Project ID.
+     * Set Project ID
+     * @param ProjectId Project ID
      */
-    public void setProjectId(Integer ProjectId) {
+    public void setProjectId(Long ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * Obtain the list of subnet.
-     * @return SubnetIds The list of subnet.
+     * Get List of subnet IDs 
+     * @return SubnetIds List of subnet IDs
      */
     public String [] getSubnetIds() {
         return this.SubnetIds;
     }
 
     /**
-     * Configure the list of subnet.
-     * @param SubnetIds The list of subnet.
+     * Set List of subnet IDs
+     * @param SubnetIds List of subnet IDs
      */
     public void setSubnetIds(String [] SubnetIds) {
         this.SubnetIds = SubnetIds;
     }
 
     /**
-     * Obtain the termination policies. The number of policies is limited to 1. Valid value: OLDEST_INSTANCE and NEWEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
-     * @return TerminationPolicies Termination policies. The number of policies is limited to 1. Valid value: OLDEST_INSTANCE and NEWEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
+     * Get Termination policy. Currently, the maximum length is 1. Value range: OLDEST_INSTANCE, NEWEST_INSTANCE.
+<br><li> OLDEST_INSTANCE: The oldest instance in the auto scaling group will be terminated first.
+<br><li> NEWEST_INSTANCE: The newest instance in the auto scaling group will be terminated first. 
+     * @return TerminationPolicies Termination policy. Currently, the maximum length is 1. Value range: OLDEST_INSTANCE, NEWEST_INSTANCE.
+<br><li> OLDEST_INSTANCE: The oldest instance in the auto scaling group will be terminated first.
+<br><li> NEWEST_INSTANCE: The newest instance in the auto scaling group will be terminated first.
      */
     public String [] getTerminationPolicies() {
         return this.TerminationPolicies;
     }
 
     /**
-     * Configure the termination policies. The number of policies is limited to 1. Valid value: OLDEST_INSTANCE and NEWEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
-     * @param TerminationPolicies Termination policies. The number of policies is limited to 1. Valid value: OLDEST_INSTANCE and NEWEST_INSTANCE.<br><li> OLDEST_INSTANCE: Prioritize the oldest instance in the scaling group.<br><li> NEWEST_INSTANCE: Prioritize the latest instance in the scaling group.
+     * Set Termination policy. Currently, the maximum length is 1. Value range: OLDEST_INSTANCE, NEWEST_INSTANCE.
+<br><li> OLDEST_INSTANCE: The oldest instance in the auto scaling group will be terminated first.
+<br><li> NEWEST_INSTANCE: The newest instance in the auto scaling group will be terminated first.
+     * @param TerminationPolicies Termination policy. Currently, the maximum length is 1. Value range: OLDEST_INSTANCE, NEWEST_INSTANCE.
+<br><li> OLDEST_INSTANCE: The oldest instance in the auto scaling group will be terminated first.
+<br><li> NEWEST_INSTANCE: The newest instance in the auto scaling group will be terminated first.
      */
     public void setTerminationPolicies(String [] TerminationPolicies) {
         this.TerminationPolicies = TerminationPolicies;
     }
 
     /**
-     * Obtain the VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network.
-     * @return VpcId VPC ID, VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network.
+     * Get VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the auto scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network. 
+     * @return VpcId VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the auto scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network.
      */
     public String getVpcId() {
         return this.VpcId;
     }
 
     /**
-     * Configure the VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network.
-     * @param VpcId VPC ID, VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network.
+     * Set VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the auto scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network.
+     * @param VpcId VPC ID. This field is left empty for basic networks. You need to specify SubnetIds when modifying the network of the auto scaling group to a VPC with a specified VPC ID. Specify Zones when modifying the network to a basic network.
      */
     public void setVpcId(String VpcId) {
         this.VpcId = VpcId;
     }
 
     /**
-     * Obtain the list of availability zones.
-     * @return Zones List of availability zones.
+     * Get List of availability zones 
+     * @return Zones List of availability zones
      */
     public String [] getZones() {
         return this.Zones;
     }
 
     /**
-     * Configure the list of availability zones.
-     * @param Zones List of availability zones.
+     * Set List of availability zones
+     * @param Zones List of availability zones
      */
     public void setZones(String [] Zones) {
         this.Zones = Zones;
     }
 
     /**
-     * Obtain the retry policy, available value include: IMMEDIATE_RETRY and INCREMENTAL_INTERVALS，Default value:  IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately, retry quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: The interval is incremented and retry. As the number of consecutive failures increases, the retry interval increases gradually, and the retry interval ranges from seconds to 1 day.
-     * @return RetryPolicy Retry policy, available value include: IMMEDIATE_RETRY and INCREMENTAL_INTERVALS，Default value:  IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately, retry quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: The interval is incremented and retry. As the number of consecutive failures increases, the retry interval increases gradually, and the retry interval ranges from seconds to 1 day.
+     * Get Retry policy. Value range: IMMEDIATE_RETRY, INCREMENTAL_INTERVALS, and NO_RETRY. Default value: IMMEDIATE_RETRY.
+<br><li> IMMEDIATE_RETRY: Retrying immediately in a short period of time and stopping after a number of consecutive failures (5).
+<br><li> INCREMENTAL_INTERVALS: Retrying at incremental intervals, i.e., as the number of consecutive failures increases, the retry interval gradually increases, ranging from one second to one day.
+<br><li> NO_RETRY: No retry until a user call or alarm message is received again. 
+     * @return RetryPolicy Retry policy. Value range: IMMEDIATE_RETRY, INCREMENTAL_INTERVALS, and NO_RETRY. Default value: IMMEDIATE_RETRY.
+<br><li> IMMEDIATE_RETRY: Retrying immediately in a short period of time and stopping after a number of consecutive failures (5).
+<br><li> INCREMENTAL_INTERVALS: Retrying at incremental intervals, i.e., as the number of consecutive failures increases, the retry interval gradually increases, ranging from one second to one day.
+<br><li> NO_RETRY: No retry until a user call or alarm message is received again.
      */
     public String getRetryPolicy() {
         return this.RetryPolicy;
     }
 
     /**
-     * Configure the retry policy, available value include: IMMEDIATE_RETRY and INCREMENTAL_INTERVALS，Default value:  IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately, retry quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: The interval is incremented and retry. As the number of consecutive failures increases, the retry interval increases gradually, and the retry interval ranges from seconds to 1 day.
-     * @param RetryPolicy Retry policy, available value include: IMMEDIATE_RETRY and INCREMENTAL_INTERVALS，Default value:  IMMEDIATE_RETRY.<br><li> IMMEDIATE_RETRY: Retry immediately, retry quickly in a short period of time. Continuous failures will not be retried after more than a certain number of times (5 times).<br><li> INCREMENTAL_INTERVALS: The interval is incremented and retry. As the number of consecutive failures increases, the retry interval increases gradually, and the retry interval ranges from seconds to 1 day.
+     * Set Retry policy. Value range: IMMEDIATE_RETRY, INCREMENTAL_INTERVALS, and NO_RETRY. Default value: IMMEDIATE_RETRY.
+<br><li> IMMEDIATE_RETRY: Retrying immediately in a short period of time and stopping after a number of consecutive failures (5).
+<br><li> INCREMENTAL_INTERVALS: Retrying at incremental intervals, i.e., as the number of consecutive failures increases, the retry interval gradually increases, ranging from one second to one day.
+<br><li> NO_RETRY: No retry until a user call or alarm message is received again.
+     * @param RetryPolicy Retry policy. Value range: IMMEDIATE_RETRY, INCREMENTAL_INTERVALS, and NO_RETRY. Default value: IMMEDIATE_RETRY.
+<br><li> IMMEDIATE_RETRY: Retrying immediately in a short period of time and stopping after a number of consecutive failures (5).
+<br><li> INCREMENTAL_INTERVALS: Retrying at incremental intervals, i.e., as the number of consecutive failures increases, the retry interval gradually increases, ranging from one second to one day.
+<br><li> NO_RETRY: No retry until a user call or alarm message is received again.
      */
     public void setRetryPolicy(String RetryPolicy) {
         this.RetryPolicy = RetryPolicy;
     }
 
     /**
-     * Obtain the validation policy about availability zone. Valid value:ALL,ANY. Default value is ANY. It works when the scaling group changes the resource field (start configuration, available area, subnet).<br><li> ALL: All availability zones or SubnetId can be used, then the validation is passed. Otherwise validation fail.<br><li> ANY: Any one of availability zones or SubnetId can be used,then the validation is passed.Otherwise validation fail. Common reasons for the zones or subnet are unavailable includ: the available zones CVM instance type is sold out; the available zones CBS cloud disk sold out; the available zones quota is insufficient and the subnet IP is insufficient. If the available area or subnet in Zones/SubnetIds does not exist, the error will be verified regardless of the value of ZonesCheckPolicy.
-     * @return ZonesCheckPolicy Validation policy about availability zone. Valid value:ALL,ANY. Default value is ANY. It works when the scaling group changes the resource field (start configuration, available area, subnet).<br><li> ALL: All availability zones or SubnetId can be used, then the validation is passed. Otherwise validation fail.<br><li> ANY: Any one of availability zones or SubnetId can be used,then the validation is passed.Otherwise validation fail. Common reasons for the zones or subnet are unavailable includ: the available zones CVM instance type is sold out; the available zones CBS cloud disk sold out; the available zones quota is insufficient and the subnet IP is insufficient. If the available area or subnet in Zones/SubnetIds does not exist, the error will be verified regardless of the value of ZonesCheckPolicy.
+     * Get Availability zone verification policy. Value range: ALL, ANY. Default value: ANY. This will work when the resource-related fields (launch configuration, availability zone, or subnet) of the auto scaling group are actually modified.
+<br><li> ALL: The verification will succeed only if all availability zones (Zone) or subnets (SubnetId) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any availability zone (Zone) or subnet (SubnetId) is available; otherwise, an error will be reported.
+
+Common reasons why an availability zone or subnet is unavailable include stock-out of CVM instances or CBS cloud disks in the availability zone, insufficient quota in the availability zone, or insufficient IPs in the subnet.
+If an availability zone or subnet in Zones/SubnetIds does not exist, a verification error will be reported regardless of the value of ZonesCheckPolicy. 
+     * @return ZonesCheckPolicy Availability zone verification policy. Value range: ALL, ANY. Default value: ANY. This will work when the resource-related fields (launch configuration, availability zone, or subnet) of the auto scaling group are actually modified.
+<br><li> ALL: The verification will succeed only if all availability zones (Zone) or subnets (SubnetId) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any availability zone (Zone) or subnet (SubnetId) is available; otherwise, an error will be reported.
+
+Common reasons why an availability zone or subnet is unavailable include stock-out of CVM instances or CBS cloud disks in the availability zone, insufficient quota in the availability zone, or insufficient IPs in the subnet.
+If an availability zone or subnet in Zones/SubnetIds does not exist, a verification error will be reported regardless of the value of ZonesCheckPolicy.
      */
     public String getZonesCheckPolicy() {
         return this.ZonesCheckPolicy;
     }
 
     /**
-     * Configure the validation policy about availability zone. Valid value:ALL,ANY. Default value is ANY. It works when the scaling group changes the resource field (start configuration, available area, subnet).<br><li> ALL: All availability zones or SubnetId can be used, then the validation is passed. Otherwise validation fail.<br><li> ANY: Any one of availability zones or SubnetId can be used,then the validation is passed.Otherwise validation fail. Common reasons for the zones or subnet are unavailable includ: the available zones CVM instance type is sold out; the available zones CBS cloud disk sold out; the available zones quota is insufficient and the subnet IP is insufficient. If the available area or subnet in Zones/SubnetIds does not exist, the error will be verified regardless of the value of ZonesCheckPolicy.
-     * @param ZonesCheckPolicy Validation policy about availability zone. Valid value:ALL,ANY. Default value is ANY. It works when the scaling group changes the resource field (start configuration, available area, subnet).<br><li> ALL: All availability zones or SubnetId can be used, then the validation is passed. Otherwise validation fail.<br><li> ANY: Any one of availability zones or SubnetId can be used,then the validation is passed.Otherwise validation fail. Common reasons for the zones or subnet are unavailable includ: the available zones CVM instance type is sold out; the available zones CBS cloud disk sold out; the available zones quota is insufficient and the subnet IP is insufficient. If the available area or subnet in Zones/SubnetIds does not exist, the error will be verified regardless of the value of ZonesCheckPolicy.
+     * Set Availability zone verification policy. Value range: ALL, ANY. Default value: ANY. This will work when the resource-related fields (launch configuration, availability zone, or subnet) of the auto scaling group are actually modified.
+<br><li> ALL: The verification will succeed only if all availability zones (Zone) or subnets (SubnetId) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any availability zone (Zone) or subnet (SubnetId) is available; otherwise, an error will be reported.
+
+Common reasons why an availability zone or subnet is unavailable include stock-out of CVM instances or CBS cloud disks in the availability zone, insufficient quota in the availability zone, or insufficient IPs in the subnet.
+If an availability zone or subnet in Zones/SubnetIds does not exist, a verification error will be reported regardless of the value of ZonesCheckPolicy.
+     * @param ZonesCheckPolicy Availability zone verification policy. Value range: ALL, ANY. Default value: ANY. This will work when the resource-related fields (launch configuration, availability zone, or subnet) of the auto scaling group are actually modified.
+<br><li> ALL: The verification will succeed only if all availability zones (Zone) or subnets (SubnetId) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any availability zone (Zone) or subnet (SubnetId) is available; otherwise, an error will be reported.
+
+Common reasons why an availability zone or subnet is unavailable include stock-out of CVM instances or CBS cloud disks in the availability zone, insufficient quota in the availability zone, or insufficient IPs in the subnet.
+If an availability zone or subnet in Zones/SubnetIds does not exist, a verification error will be reported regardless of the value of ZonesCheckPolicy.
      */
     public void setZonesCheckPolicy(String ZonesCheckPolicy) {
         this.ZonesCheckPolicy = ZonesCheckPolicy;
     }
 
     /**
-     * For internal use only.
+     * Get Service settings such as unhealthy instance replacement. 
+     * @return ServiceSettings Service settings such as unhealthy instance replacement.
+     */
+    public ServiceSettings getServiceSettings() {
+        return this.ServiceSettings;
+    }
+
+    /**
+     * Set Service settings such as unhealthy instance replacement.
+     * @param ServiceSettings Service settings such as unhealthy instance replacement.
+     */
+    public void setServiceSettings(ServiceSettings ServiceSettings) {
+        this.ServiceSettings = ServiceSettings;
+    }
+
+    /**
+     * Get  
+     * @return Ipv6AddressCount 
+     */
+    public Long getIpv6AddressCount() {
+        return this.Ipv6AddressCount;
+    }
+
+    /**
+     * Set 
+     * @param Ipv6AddressCount 
+     */
+    public void setIpv6AddressCount(Long Ipv6AddressCount) {
+        this.Ipv6AddressCount = Ipv6AddressCount;
+    }
+
+    /**
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);
@@ -362,6 +458,8 @@ public class ModifyAutoScalingGroupRequest  extends AbstractModel{
         this.setParamArraySimple(map, prefix + "Zones.", this.Zones);
         this.setParamSimple(map, prefix + "RetryPolicy", this.RetryPolicy);
         this.setParamSimple(map, prefix + "ZonesCheckPolicy", this.ZonesCheckPolicy);
+        this.setParamObj(map, prefix + "ServiceSettings.", this.ServiceSettings);
+        this.setParamSimple(map, prefix + "Ipv6AddressCount", this.Ipv6AddressCount);
 
     }
 }

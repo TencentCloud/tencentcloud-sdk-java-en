@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class SyncImagesRequest  extends AbstractModel{
 
     /**
-    * Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
+    * List of image IDs. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image). <br>The specified images must meet the following requirements: <br><li>The images must be in the `NORMAL` state. <br><li>The image size must be smaller than 50 GB. <br>For more information on image states, see [here](/document/api/213/9452#image_state).
     */
     @SerializedName("ImageIds")
     @Expose
     private String [] ImageIds;
 
     /**
-    * List of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
+    * List of destination regions for synchronization. A destination region must meet the following requirements: <br><li>It cannot be the source region. <br><li>It must be valid. <br><li>Currently some regions do not support image synchronization. <br>For specific regions, see [Region](https://cloud.tencent.com/document/product/213/6091).
     */
     @SerializedName("DestinationRegions")
     @Expose
     private String [] DestinationRegions;
 
     /**
-     * Obtain image ID list. Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
-     * @return ImageIds Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
+     * Get List of image IDs. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image). <br>The specified images must meet the following requirements: <br><li>The images must be in the `NORMAL` state. <br><li>The image size must be smaller than 50 GB. <br>For more information on image states, see [here](/document/api/213/9452#image_state). 
+     * @return ImageIds List of image IDs. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image). <br>The specified images must meet the following requirements: <br><li>The images must be in the `NORMAL` state. <br><li>The image size must be smaller than 50 GB. <br>For more information on image states, see [here](/document/api/213/9452#image_state).
      */
     public String [] getImageIds() {
         return this.ImageIds;
     }
 
     /**
-     * Set up image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
-     * @param ImageIds Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<br><li>It must identify an image with a status of `NORMAL`.<br><li>It must identify an image smaller than 50 GB.<br>For more information on image statuses, please see [Image Data Sheet](https://intl.cloud.tencent.com/document/api/213/9452#image_state).
+     * Set List of image IDs. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image). <br>The specified images must meet the following requirements: <br><li>The images must be in the `NORMAL` state. <br><li>The image size must be smaller than 50 GB. <br>For more information on image states, see [here](/document/api/213/9452#image_state).
+     * @param ImageIds List of image IDs. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image). <br>The specified images must meet the following requirements: <br><li>The images must be in the `NORMAL` state. <br><li>The image size must be smaller than 50 GB. <br>For more information on image states, see [here](/document/api/213/9452#image_state).
      */
     public void setImageIds(String [] ImageIds) {
         this.ImageIds = ImageIds;
     }
 
     /**
-     * List of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
-     * @return DestinationRegions List of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
+     * Get List of destination regions for synchronization. A destination region must meet the following requirements: <br><li>It cannot be the source region. <br><li>It must be valid. <br><li>Currently some regions do not support image synchronization. <br>For specific regions, see [Region](https://cloud.tencent.com/document/product/213/6091). 
+     * @return DestinationRegions List of destination regions for synchronization. A destination region must meet the following requirements: <br><li>It cannot be the source region. <br><li>It must be valid. <br><li>Currently some regions do not support image synchronization. <br>For specific regions, see [Region](https://cloud.tencent.com/document/product/213/6091).
      */
     public String [] getDestinationRegions() {
         return this.DestinationRegions;
     }
 
     /**
-     * Set up the list of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
-     * @param DestinationRegions The list of destination regions for synchronization. Destination region must meet the following requirements:<br><li>It cannot be the source region.<br><li>It must be valid.<br><li>Synchronization is not supported for some regions.<br>For more information about region parameter, see [Regions](https://intl.cloud.tencent.com/document/product/213/6091).
+     * Set List of destination regions for synchronization. A destination region must meet the following requirements: <br><li>It cannot be the source region. <br><li>It must be valid. <br><li>Currently some regions do not support image synchronization. <br>For specific regions, see [Region](https://cloud.tencent.com/document/product/213/6091).
+     * @param DestinationRegions List of destination regions for synchronization. A destination region must meet the following requirements: <br><li>It cannot be the source region. <br><li>It must be valid. <br><li>Currently some regions do not support image synchronization. <br>For specific regions, see [Region](https://cloud.tencent.com/document/product/213/6091).
      */
     public void setDestinationRegions(String [] DestinationRegions) {
         this.DestinationRegions = DestinationRegions;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "ImageIds.", this.ImageIds);

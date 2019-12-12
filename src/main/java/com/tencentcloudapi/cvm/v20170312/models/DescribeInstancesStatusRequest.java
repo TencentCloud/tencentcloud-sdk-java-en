@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeInstancesStatusRequest  extends AbstractModel{
 
     /**
-    * Query by one or more IDs of instances, suach as: `ins-11112222`. the format of the parameter refer to API[introduction](chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)）.the upper limit of instances of each request is 100.
+    * Instance ID(s) in the format of `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688). The maximum number of instances in each request is 100.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+    * Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-    * Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). 
+    * Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-     * Obtain query by one or more IDs of instances, suach as: `ins-11112222`. the format of the parameter refer to API[introduction](chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)）.the upper limit of instances of each request is 100.
-     * @return InstanceIds Query by one or more IDs of instances, suach as: `ins-11112222`. the format of the parameter refer to API[introduction](chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)）.the upper limit of instances of each request is 100.
+     * Get Instance ID(s) in the format of `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688). The maximum number of instances in each request is 100. 
+     * @return InstanceIds Instance ID(s) in the format of `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688). The maximum number of instances in each request is 100.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * Set query by one or more IDs of instances, suach as: `ins-11112222`. the format of the parameter refer to API[introduction](chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)）.the upper limit of instances of each request is 100.
-     * @param InstanceIds Query by one or more IDs of instances, suach as: `ins-11112222`. the format of the parameter refer to API[introduction](chapter `id.N` in https://cloud.tencent.com/document/api/213/15688)）.the upper limit of instances of each request is 100.
+     * Set Instance ID(s) in the format of `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688). The maximum number of instances in each request is 100.
+     * @param InstanceIds Instance ID(s) in the format of `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688). The maximum number of instances in each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
-     * @return Offset Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * Get Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
+     * @return Offset Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
-     * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * Set Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
+     * @param Offset Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
-     * @return Limit number of returned results. It defaults to 20, The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * Get Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
+     * @return Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit` see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
-     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
+     * Set Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
+     * @param Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

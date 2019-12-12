@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeInstancesResponse  extends AbstractModel{
 
     /**
-    * Number of instances matching the filter condition.
+    * Number of instances meeting the filtering conditions.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * List of details of an instance.
+    * Detailed instance information.
     */
     @SerializedName("InstanceSet")
     @Expose
     private Instance [] InstanceSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain number of instances matching the filter condition.
-     * @return TotalCount Number of instances matching the filter condition.
+     * Get Number of instances meeting the filtering conditions. 
+     * @return TotalCount Number of instances meeting the filtering conditions.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of instances matching the filter condition.
-     * @param TotalCount Number of instances matching the filter condition.
+     * Set Number of instances meeting the filtering conditions.
+     * @param TotalCount Number of instances meeting the filtering conditions.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the list of details of an instance.
-     * @return InstanceSet List of details of an instance.
+     * Get Detailed instance information. 
+     * @return InstanceSet Detailed instance information.
      */
     public Instance [] getInstanceSet() {
         return this.InstanceSet;
     }
 
     /**
-     * Set List of details of an instance.
-     * @param InstanceSet List of details of an instance.
+     * Set Detailed instance information.
+     * @param InstanceSet Detailed instance information.
      */
     public void setInstanceSet(Instance [] InstanceSet) {
         this.InstanceSet = InstanceSet;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

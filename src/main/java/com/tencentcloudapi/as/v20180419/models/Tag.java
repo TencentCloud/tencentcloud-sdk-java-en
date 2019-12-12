@@ -30,21 +30,22 @@ public class Tag  extends AbstractModel{
     private String Key;
 
     /**
-    * Tag key.
+    * Tag value
     */
     @SerializedName("Value")
     @Expose
     private String Value;
 
     /**
-    * Type of resource that tag is bound. Current supported type: “auto-scaling-group” Note: This field may return null, indicating that no valid value was found.
+    * Type of the resource binded to the tag. Currently supported types include "auto-scaling-group"
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("ResourceType")
     @Expose
     private String ResourceType;
 
     /**
-     * Obtain tag key
+     * Get Tag key 
      * @return Key Tag key
      */
     public String getKey() {
@@ -60,7 +61,7 @@ public class Tag  extends AbstractModel{
     }
 
     /**
-     * Obtain tag value
+     * Get Tag value 
      * @return Value Tag value
      */
     public String getValue() {
@@ -68,31 +69,35 @@ public class Tag  extends AbstractModel{
     }
 
     /**
-     * Set tag value
-     * @param Value tag value
+     * Set Tag value
+     * @param Value Tag value
      */
     public void setValue(String Value) {
         this.Value = Value;
     }
 
     /**
-     * Obtain the type of resource that tag is bound. Current supported type: “auto-scaling-group” Note: This field may return null, indicating that no valid value was found.
-     * @return ResourceType The type of resource that tag is bound. Current supported type: “auto-scaling-group” Note: This field may return null, indicating that no valid value was found.
+     * Get Type of the resource binded to the tag. Currently supported types include "auto-scaling-group"
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return ResourceType Type of the resource binded to the tag. Currently supported types include "auto-scaling-group"
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public String getResourceType() {
         return this.ResourceType;
     }
 
     /**
-     * Set the type of resource that tag is bound. Current supported type: “auto-scaling-group” Note: This field may return null, indicating that no valid value was found.
-     * @param ResourceType The type of resource that tag is bound. Current supported type: “auto-scaling-group” Note: This field may return null, indicating that no valid value was found.
+     * Set Type of the resource binded to the tag. Currently supported types include "auto-scaling-group"
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param ResourceType Type of the resource binded to the tag. Currently supported types include "auto-scaling-group"
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public void setResourceType(String ResourceType) {
         this.ResourceType = ResourceType;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Key", this.Key);

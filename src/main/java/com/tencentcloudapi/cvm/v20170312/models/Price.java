@@ -23,29 +23,29 @@ import java.util.HashMap;
 public class Price  extends AbstractModel{
 
     /**
-    * Instance price
+    * Instance price.
     */
     @SerializedName("InstancePrice")
     @Expose
     private ItemPrice InstancePrice;
 
     /**
-    * Network price
+    * Network price.
     */
     @SerializedName("BandwidthPrice")
     @Expose
     private ItemPrice BandwidthPrice;
 
     /**
-     * Obtain instance price.
-     * Instance price
+     * Get Instance price. 
+     * @return InstancePrice Instance price.
      */
     public ItemPrice getInstancePrice() {
         return this.InstancePrice;
     }
 
     /**
-     * Setting instance price
+     * Set Instance price.
      * @param InstancePrice Instance price.
      */
     public void setInstancePrice(ItemPrice InstancePrice) {
@@ -53,23 +53,23 @@ public class Price  extends AbstractModel{
     }
 
     /**
-     * Obtain Network price
-     * @return BandwidthPrice Network price
+     * Get Network price. 
+     * @return BandwidthPrice Network price.
      */
     public ItemPrice getBandwidthPrice() {
         return this.BandwidthPrice;
     }
 
     /**
-     * Set the Network price
-     * @param BandwidthPrice Network price
+     * Set Network price.
+     * @param BandwidthPrice Network price.
      */
     public void setBandwidthPrice(ItemPrice BandwidthPrice) {
         this.BandwidthPrice = BandwidthPrice;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "InstancePrice.", this.InstancePrice);

@@ -23,11 +23,11 @@ import java.util.HashMap;
 public class DescribeLaunchConfigurationsResponse  extends AbstractModel{
 
     /**
-    * Number of launch configurations that meet the condition.
+    * Number of eligible launch configurations.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
     * List of launch configuration details.
@@ -37,30 +37,30 @@ public class DescribeLaunchConfigurationsResponse  extends AbstractModel{
     private LaunchConfiguration [] LaunchConfigurationSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain number of launch configurations that meet the condition.
-     * @return TotalCount Number of launch configurations that meet the condition.
+     * Get Number of eligible launch configurations. 
+     * @return TotalCount Number of eligible launch configurations.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of launch configurations that meet the condition.
-     * @param TotalCount Number of launch configurations that meet the condition.
+     * Set Number of eligible launch configurations.
+     * @param TotalCount Number of eligible launch configurations.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain list of launch configuration details.
+     * Get List of launch configuration details. 
      * @return LaunchConfigurationSet List of launch configuration details.
      */
     public LaunchConfiguration [] getLaunchConfigurationSet() {
@@ -68,7 +68,7 @@ public class DescribeLaunchConfigurationsResponse  extends AbstractModel{
     }
 
     /**
-     * Set list of launch configuration details.
+     * Set List of launch configuration details.
      * @param LaunchConfigurationSet List of launch configuration details.
      */
     public void setLaunchConfigurationSet(LaunchConfiguration [] LaunchConfigurationSet) {
@@ -76,23 +76,23 @@ public class DescribeLaunchConfigurationsResponse  extends AbstractModel{
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

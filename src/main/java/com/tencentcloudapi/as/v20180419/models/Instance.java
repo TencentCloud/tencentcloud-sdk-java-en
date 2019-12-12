@@ -23,283 +23,306 @@ import java.util.HashMap;
 public class Instance  extends AbstractModel{
 
     /**
-    * Instance ID.
+    * Instance ID
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * Scaling group ID.
+    * Auto scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * ID of Launch configuration.
+    * Launch configuration ID
     */
     @SerializedName("LaunchConfigurationId")
     @Expose
     private String LaunchConfigurationId;
 
     /**
-    * Name of Launch configuration.
+    * Launch configuration name
     */
     @SerializedName("LaunchConfigurationName")
     @Expose
     private String LaunchConfigurationName;
 
     /**
-    * Lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
+    * Lifecycle status. Value range: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB
     */
     @SerializedName("LifeCycleState")
     @Expose
     private String LifeCycleState;
 
     /**
-    * Health status. Possible values: HEALTHY and UNHEALTHY.
+    * Health status. Value range: HEALTHY, UNHEALTHY
     */
     @SerializedName("HealthStatus")
     @Expose
     private String HealthStatus;
 
     /**
-    * Indicates whether to protect the instance from scaling down.
+    * Whether to add scale-in protection
     */
     @SerializedName("ProtectedFromScaleIn")
     @Expose
     private Boolean ProtectedFromScaleIn;
 
     /**
-    * Availability Zone.
+    * Availability zone
     */
     @SerializedName("Zone")
     @Expose
     private String Zone;
 
     /**
-    * Creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
+    * Creation type. Value range: AUTO_CREATION, MANUAL_ATTACHING.
     */
     @SerializedName("CreationType")
     @Expose
     private String CreationType;
 
     /**
-    * The time when the instance is added.
+    * Instance addition time
     */
     @SerializedName("AddTime")
     @Expose
     private String AddTime;
 
     /**
-    * Instance Type.
+    * Instance type
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-    * Version No.
+    * Version number
     */
     @SerializedName("VersionNumber")
     @Expose
-    private Integer VersionNumber;
+    private Long VersionNumber;
 
     /**
-     * Obtain an instance ID.
-     * @return InstanceId Instance ID.
+    * Auto scaling group name
+    */
+    @SerializedName("AutoScalingGroupName")
+    @Expose
+    private String AutoScalingGroupName;
+
+    /**
+     * Get Instance ID 
+     * @return InstanceId Instance ID
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * Configure an instance ID.
-     * @param InstanceId Instance ID.
+     * Set Instance ID
+     * @param InstanceId Instance ID
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * Obtain a scaling group ID.
-     * @return AutoScalingGroupId Scaling group ID.
+     * Get Auto scaling group ID 
+     * @return AutoScalingGroupId Auto scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Configure a scaling group ID.
-     * @param AutoScalingGroupId Scaling group ID.
+     * Set Auto scaling group ID
+     * @param AutoScalingGroupId Auto scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Obtain the ID of Launch configuration.
-     * @return LaunchConfigurationId ID of Launch configuration.
+     * Get Launch configuration ID 
+     * @return LaunchConfigurationId Launch configuration ID
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * Configure the ID of Launch configuration.
-     * @param LaunchConfigurationId ID of Launch configuration.
+     * Set Launch configuration ID
+     * @param LaunchConfigurationId Launch configuration ID
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * Obtain the name of Launch configuration.
-     * @return LaunchConfigurationName Name of Launch configuration.
+     * Get Launch configuration name 
+     * @return LaunchConfigurationName Launch configuration name
      */
     public String getLaunchConfigurationName() {
         return this.LaunchConfigurationName;
     }
 
     /**
-     * Configure the name of Launch configuration.
-     * @param LaunchConfigurationName Name of Launch configuration.
+     * Set Launch configuration name
+     * @param LaunchConfigurationName Launch configuration name
      */
     public void setLaunchConfigurationName(String LaunchConfigurationName) {
         this.LaunchConfigurationName = LaunchConfigurationName;
     }
 
     /**
-     * Obtain a lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
-     * @return LifeCycleState Lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
+     * Get Lifecycle status. Value range: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB 
+     * @return LifeCycleState Lifecycle status. Value range: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB
      */
     public String getLifeCycleState() {
         return this.LifeCycleState;
     }
 
     /**
-     * Configure a lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
-     * @param LifeCycleState Lifecycle status. Possible values: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB and DETACHING_LB.
+     * Set Lifecycle status. Value range: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB
+     * @param LifeCycleState Lifecycle status. Value range: IN_SERVICE, CREATING, TERMINATING, ATTACHING, DETACHING, ATTACHING_LB, DETACHING_LB
      */
     public void setLifeCycleState(String LifeCycleState) {
         this.LifeCycleState = LifeCycleState;
     }
 
     /**
-     * Obtain a health status. Possible values: HEALTHY and UNHEALTHY.
-     * @return HealthStatus Health status. Possible values: HEALTHY and UNHEALTHY.
+     * Get Health status. Value range: HEALTHY, UNHEALTHY 
+     * @return HealthStatus Health status. Value range: HEALTHY, UNHEALTHY
      */
     public String getHealthStatus() {
         return this.HealthStatus;
     }
 
     /**
-     * Configure a health status. Possible values: HEALTHY and UNHEALTHY.
-     * @param HealthStatus Health status. Possible values: HEALTHY and UNHEALTHY.
+     * Set Health status. Value range: HEALTHY, UNHEALTHY
+     * @param HealthStatus Health status. Value range: HEALTHY, UNHEALTHY
      */
     public void setHealthStatus(String HealthStatus) {
         this.HealthStatus = HealthStatus;
     }
 
     /**
-     * Obtain whether to protect the instance from scaling down is enable.
-     * @return ProtectedFromScaleIn Indicates whether to protect the instance from scaling down.
+     * Get Whether to add scale-in protection 
+     * @return ProtectedFromScaleIn Whether to add scale-in protection
      */
     public Boolean getProtectedFromScaleIn() {
         return this.ProtectedFromScaleIn;
     }
 
     /**
-     * Configure whether to protect the instance from scaling down is enable.
-     * @param ProtectedFromScaleIn Indicates whether to protect the instance from scaling down.
+     * Set Whether to add scale-in protection
+     * @param ProtectedFromScaleIn Whether to add scale-in protection
      */
     public void setProtectedFromScaleIn(Boolean ProtectedFromScaleIn) {
         this.ProtectedFromScaleIn = ProtectedFromScaleIn;
     }
 
     /**
-     * Obtain the Availability Zone.
-     * @return Zone Availability Zone.
+     * Get Availability zone 
+     * @return Zone Availability zone
      */
     public String getZone() {
         return this.Zone;
     }
 
     /**
-     * Configure the Availability Zone.
-     * @param Zone Availability Zone.
+     * Set Availability zone
+     * @param Zone Availability zone
      */
     public void setZone(String Zone) {
         this.Zone = Zone;
     }
 
     /**
-     * Obtain a creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
-     * Creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
+     * Get Creation type. Value range: AUTO_CREATION, MANUAL_ATTACHING. 
+     * @return CreationType Creation type. Value range: AUTO_CREATION, MANUAL_ATTACHING.
      */
     public String getCreationType() {
         return this.CreationType;
     }
 
     /**
-     * Configure a creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
-     * Creation type. Possible values: AUTO_CREATION and MANUAL_ATTACHING.
+     * Set Creation type. Value range: AUTO_CREATION, MANUAL_ATTACHING.
+     * @param CreationType Creation type. Value range: AUTO_CREATION, MANUAL_ATTACHING.
      */
     public void setCreationType(String CreationType) {
         this.CreationType = CreationType;
     }
 
     /**
-     * Obtain the time when the instance is added.
-     * @return AddTime The time when the instance is added.
+     * Get Instance addition time 
+     * @return AddTime Instance addition time
      */
     public String getAddTime() {
         return this.AddTime;
     }
 
     /**
-     * Configure the time when the instance is added.
-     * @param AddTime The time when the instance is added.
+     * Set Instance addition time
+     * @param AddTime Instance addition time
      */
     public void setAddTime(String AddTime) {
         this.AddTime = AddTime;
     }
 
     /**
-     * Obtain the Instance Type.
-     * @return InstanceType Instance Type.
+     * Get Instance type 
+     * @return InstanceType Instance type
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * Configure the Instance Type.
-     * @param InstanceType Type Instance Type.
+     * Set Instance type
+     * @param InstanceType Instance type
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * Obtain the Version No.
-     * @return VersionNumber Version No.
+     * Get Version number 
+     * @return VersionNumber Version number
      */
-    public Integer getVersionNumber() {
+    public Long getVersionNumber() {
         return this.VersionNumber;
     }
 
     /**
-     * Configure the Version No.
-     * @param VersionNumber Version No.
+     * Set Version number
+     * @param VersionNumber Version number
      */
-    public void setVersionNumber(Integer VersionNumber) {
+    public void setVersionNumber(Long VersionNumber) {
         this.VersionNumber = VersionNumber;
     }
 
     /**
-     * For internal use only.
+     * Get Auto scaling group name 
+     * @return AutoScalingGroupName Auto scaling group name
+     */
+    public String getAutoScalingGroupName() {
+        return this.AutoScalingGroupName;
+    }
+
+    /**
+     * Set Auto scaling group name
+     * @param AutoScalingGroupName Auto scaling group name
+     */
+    public void setAutoScalingGroupName(String AutoScalingGroupName) {
+        this.AutoScalingGroupName = AutoScalingGroupName;
+    }
+
+    /**
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);
@@ -314,6 +337,7 @@ public class Instance  extends AbstractModel{
         this.setParamSimple(map, prefix + "AddTime", this.AddTime);
         this.setParamSimple(map, prefix + "InstanceType", this.InstanceType);
         this.setParamSimple(map, prefix + "VersionNumber", this.VersionNumber);
+        this.setParamSimple(map, prefix + "AutoScalingGroupName", this.AutoScalingGroupName);
 
     }
 }

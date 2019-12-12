@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class ModifyInstancesVpcAttributeRequest  extends AbstractModel{
 
     /**
-    * IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+    * Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
+    * VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, VPC IP, etc. If the specified VPC ID and subnet ID (the subnet must be in the same availability zone as the instance) are different from the VPC where the specified instance resides, the instance will be migrated to a subnet of the specified VPC. You can use `PrivateIpAddresses` to specify the VPC subnet IP. If you want to specify the subnet IP, you will need to specify a subnet IP for each of the specified instances, and each `InstanceIds` will match a `PrivateIpAddresses`. If `PrivateIpAddresses` is not specified, the VPC subnet IP will be assigned randomly.
     */
     @SerializedName("VirtualPrivateCloud")
     @Expose
     private VirtualPrivateCloud VirtualPrivateCloud;
 
     /**
-    * Indicate whether a forced shutdown is performed to running instances. Default is TRUE. 
+    * Whether to force shut down a running instances. Default value: TRUE.
     */
     @SerializedName("ForceStop")
     @Expose
     private Boolean ForceStop;
 
     /**
-    * Indicate whether save the name of CVM.Default is FALSE.
+    * Whether to keep the host name. Default value: FALSE.
     */
     @SerializedName("ReserveHostName")
     @Expose
     private Boolean ReserveHostName;
 
     /**
-     * IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
-     * @return InstanceIds  of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * Get Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. 
+     * @return InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
-     * @param InstanceIds of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * Set Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
+     * @param InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Obtaining the configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
-     * @return VirtualPrivateCloud Configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
+     * Get VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, VPC IP, etc. If the specified VPC ID and subnet ID (the subnet must be in the same availability zone as the instance) are different from the VPC where the specified instance resides, the instance will be migrated to a subnet of the specified VPC. You can use `PrivateIpAddresses` to specify the VPC subnet IP. If you want to specify the subnet IP, you will need to specify a subnet IP for each of the specified instances, and each `InstanceIds` will match a `PrivateIpAddresses`. If `PrivateIpAddresses` is not specified, the VPC subnet IP will be assigned randomly. 
+     * @return VirtualPrivateCloud VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, VPC IP, etc. If the specified VPC ID and subnet ID (the subnet must be in the same availability zone as the instance) are different from the VPC where the specified instance resides, the instance will be migrated to a subnet of the specified VPC. You can use `PrivateIpAddresses` to specify the VPC subnet IP. If you want to specify the subnet IP, you will need to specify a subnet IP for each of the specified instances, and each `InstanceIds` will match a `PrivateIpAddresses`. If `PrivateIpAddresses` is not specified, the VPC subnet IP will be assigned randomly.
      */
     public VirtualPrivateCloud getVirtualPrivateCloud() {
         return this.VirtualPrivateCloud;
     }
 
     /**
-     * Setting the configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
-     * @param VirtualPrivateCloud Configuration about VPC. This parameter is used to specify VPC ID,Subnet ID and VPC IP,etc.Instance will be migrated to specified VPC subnet When the VPC ID and subnet ID are different to the network where the specified instance resides(subnet must on the same availability zone as instance).VPC IP could be specified via `PrivateIpAddresses`（Preconditions:All the specified instances should specify their subnet IPs）,`InstanceIds` and `PrivateIpAddresses` are corresponded. VPC subnet IP would be assigned randomly while `PrivateIpAddresses` is not specified.
+     * Set VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, VPC IP, etc. If the specified VPC ID and subnet ID (the subnet must be in the same availability zone as the instance) are different from the VPC where the specified instance resides, the instance will be migrated to a subnet of the specified VPC. You can use `PrivateIpAddresses` to specify the VPC subnet IP. If you want to specify the subnet IP, you will need to specify a subnet IP for each of the specified instances, and each `InstanceIds` will match a `PrivateIpAddresses`. If `PrivateIpAddresses` is not specified, the VPC subnet IP will be assigned randomly.
+     * @param VirtualPrivateCloud VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, VPC IP, etc. If the specified VPC ID and subnet ID (the subnet must be in the same availability zone as the instance) are different from the VPC where the specified instance resides, the instance will be migrated to a subnet of the specified VPC. You can use `PrivateIpAddresses` to specify the VPC subnet IP. If you want to specify the subnet IP, you will need to specify a subnet IP for each of the specified instances, and each `InstanceIds` will match a `PrivateIpAddresses`. If `PrivateIpAddresses` is not specified, the VPC subnet IP will be assigned randomly.
      */
     public void setVirtualPrivateCloud(VirtualPrivateCloud VirtualPrivateCloud) {
         this.VirtualPrivateCloud = VirtualPrivateCloud;
     }
 
     /**
-     * Obtaining whether to force shutdown is performed to running instances. Default is TRUE
-     * @return ForceStop Indicate  whether a forced shutdown is performed to running instances. Default is TRUE.
+     * Get Whether to force shut down a running instances. Default value: TRUE. 
+     * @return ForceStop Whether to force shut down a running instances. Default value: TRUE.
      */
     public Boolean getForceStop() {
         return this.ForceStop;
     }
 
     /**
-     * Setting whether a forced shutdown is performed to running instances. Default is TRUE.
-     * @param ForceStop Indicate whether a forced shutdown is performed to running instances. Default is TRUE.
+     * Set Whether to force shut down a running instances. Default value: TRUE.
+     * @param ForceStop Whether to force shut down a running instances. Default value: TRUE.
      */
     public void setForceStop(Boolean ForceStop) {
         this.ForceStop = ForceStop;
     }
 
     /**
-     * Obtaining whether to save the CVM name.Default is FALSE.
-     * @return ReserveHostName Whether to save the CVM name.Default is FALSE.
+     * Get Whether to keep the host name. Default value: FALSE. 
+     * @return ReserveHostName Whether to keep the host name. Default value: FALSE.
      */
     public Boolean getReserveHostName() {
         return this.ReserveHostName;
     }
 
     /**
-     * Setting whether to save the CVM name.Default is FALSE.
-     * @param ReserveHostName Whether to save the CVM name.Default is FALSE.
+     * Set Whether to keep the host name. Default value: FALSE.
+     * @param ReserveHostName Whether to keep the host name. Default value: FALSE.
      */
     public void setReserveHostName(Boolean ReserveHostName) {
         this.ReserveHostName = ReserveHostName;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

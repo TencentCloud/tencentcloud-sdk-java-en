@@ -41,33 +41,40 @@ public class LocalDiskType  extends AbstractModel{
     */
     @SerializedName("MinSize")
     @Expose
-    private Integer MinSize;
+    private Long MinSize;
 
     /**
     * Maximum size of a local disk.
     */
     @SerializedName("MaxSize")
     @Expose
-    private Integer MaxSize;
+    private Long MaxSize;
 
     /**
-     * Get type of a local disk.
-     * @return Type type of a local disk.
+    * 
+    */
+    @SerializedName("Required")
+    @Expose
+    private String Required;
+
+    /**
+     * Get Type of a local disk. 
+     * @return Type Type of a local disk.
      */
     public String getType() {
         return this.Type;
     }
 
     /**
-     * Set type of a local disk.
-     * @param Type type of a local disk.
+     * Set Type of a local disk.
+     * @param Type Type of a local disk.
      */
     public void setType(String Type) {
         this.Type = Type;
     }
 
     /**
-     * Get attributes of a local disk.
+     * Get Attributes of a local disk. 
      * @return PartitionType Attributes of a local disk.
      */
     public String getPartitionType() {
@@ -75,7 +82,7 @@ public class LocalDiskType  extends AbstractModel{
     }
 
     /**
-     * Set attributes of a local disk.
+     * Set Attributes of a local disk.
      * @param PartitionType Attributes of a local disk.
      */
     public void setPartitionType(String PartitionType) {
@@ -83,45 +90,62 @@ public class LocalDiskType  extends AbstractModel{
     }
 
     /**
-     * Get minimum size of a local disk.
-     * @return MinSize minimum size of a local disk.
+     * Get Minimum size of a local disk. 
+     * @return MinSize Minimum size of a local disk.
      */
-    public Integer getMinSize() {
+    public Long getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * Set minimum size of a local disk.
-     * @param MinSize minimum size of a local disk.
+     * Set Minimum size of a local disk.
+     * @param MinSize Minimum size of a local disk.
      */
-    public void setMinSize(Integer MinSize) {
+    public void setMinSize(Long MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * Get maximum size of a local disk.
-     * @return MaxSize maximum size of a local disk.
+     * Get Maximum size of a local disk. 
+     * @return MaxSize Maximum size of a local disk.
      */
-    public Integer getMaxSize() {
+    public Long getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * maximum size of a local disk.
-     * @param MaxSize maximum size of a local disk.
+     * Set Maximum size of a local disk.
+     * @param MaxSize Maximum size of a local disk.
      */
-    public void setMaxSize(Integer MaxSize) {
+    public void setMaxSize(Long MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Get  
+     * @return Required 
+     */
+    public String getRequired() {
+        return this.Required;
+    }
+
+    /**
+     * Set 
+     * @param Required 
+     */
+    public void setRequired(String Required) {
+        this.Required = Required;
+    }
+
+    /**
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Type", this.Type);
         this.setParamSimple(map, prefix + "PartitionType", this.PartitionType);
         this.setParamSimple(map, prefix + "MinSize", this.MinSize);
         this.setParamSimple(map, prefix + "MaxSize", this.MaxSize);
+        this.setParamSimple(map, prefix + "Required", this.Required);
 
     }
 }

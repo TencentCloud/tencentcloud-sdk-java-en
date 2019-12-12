@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeInstanceTypeConfigsResponse  extends AbstractModel{
 
     /**
-    * List of instance model configurations.
+    * List of instance model families
     */
     @SerializedName("InstanceTypeConfigSet")
     @Expose
     private InstanceTypeConfig [] InstanceTypeConfigSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the list of instance model configurations.
-     * @return InstanceTypeConfigSet List of instance model configurations.
+     * Get List of instance model families 
+     * @return InstanceTypeConfigSet List of instance model families
      */
     public InstanceTypeConfig [] getInstanceTypeConfigSet() {
         return this.InstanceTypeConfigSet;
     }
 
     /**
-     * Set the list of instance model configurations.
-     * @param InstanceTypeConfigSet List of instance model configurations.
+     * Set List of instance model families
+     * @param InstanceTypeConfigSet List of instance model families
      */
     public void setInstanceTypeConfigSet(InstanceTypeConfig [] InstanceTypeConfigSet) {
         this.InstanceTypeConfigSet = InstanceTypeConfigSet;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "InstanceTypeConfigSet.", this.InstanceTypeConfigSet);

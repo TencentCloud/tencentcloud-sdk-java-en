@@ -23,76 +23,91 @@ import java.util.HashMap;
 public class StorageBlock  extends AbstractModel{
 
     /**
-    * Type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
+    * Local HDD storage type. Value: LOCAL_PRO.
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("Type")
     @Expose
     private String Type;
 
     /**
-    * Minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
+    * Minimum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("MinSize")
     @Expose
-    private Integer MinSize;
+    private Long MinSize;
 
     /**
-    * Maximum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
+    * Maximum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("MaxSize")
     @Expose
-    private Integer MaxSize;
+    private Long MaxSize;
 
     /**
-     * Obtain type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
-     * @return Type type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
+     * Get Local HDD storage type. Value: LOCAL_PRO.
+Note: This field may return null, indicating that no valid value is found. 
+     * @return Type Local HDD storage type. Value: LOCAL_PRO.
+Note: This field may return null, indicating that no valid value is found.
      */
     public String getType() {
         return this.Type;
     }
 
     /**
-     * Set up type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
-     * @param Type type of local HDD storage. Value: LOCAL_PRO.Note: This field may return null, indicating that no valid value was found.
+     * Set Local HDD storage type. Value: LOCAL_PRO.
+Note: This field may return null, indicating that no valid value is found.
+     * @param Type Local HDD storage type. Value: LOCAL_PRO.
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setType(String Type) {
         this.Type = Type;
     }
 
     /**
-     * Obtain minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
-     * @return MinSize minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * Get Minimum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found. 
+     * @return MinSize Minimum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
      */
-    public Integer getMinSize() {
+    public Long getMinSize() {
         return this.MinSize;
     }
 
     /**
-     * Set up minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
-     * Minimum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * Set Minimum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
+     * @param MinSize Minimum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
      */
-    public void setMinSize(Integer MinSize) {
+    public void setMinSize(Long MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * Obtain maximum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
-     * @return MaxSize maximum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
+     * Get Maximum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found. 
+     * @return MaxSize Maximum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
      */
-    public Integer getMaxSize() {
+    public Long getMaxSize() {
         return this.MaxSize;
     }
 
     /**
-     * Set up maximum size of local HDD storageNote: This field may return null, indicating that no valid value was found.
-     * @param MaxSize Maximum size of local HDD storage.Note: This field may return null, indicating that no valid value was found.
+     * Set Maximum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
+     * @param MaxSize Maximum capacity of local HDD storage
+Note: This field may return null, indicating that no valid value is found.
      */
-    public void setMaxSize(Integer MaxSize) {
+    public void setMaxSize(Long MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Type", this.Type);

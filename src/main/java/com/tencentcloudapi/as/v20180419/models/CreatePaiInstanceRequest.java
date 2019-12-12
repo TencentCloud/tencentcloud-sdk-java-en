@@ -23,21 +23,21 @@ import java.util.HashMap;
 public class CreatePaiInstanceRequest  extends AbstractModel{
 
     /**
-    * PAI instance domain name
+    * PAI instance domain name.
     */
     @SerializedName("DomainName")
     @Expose
     private String DomainName;
 
     /**
-    * Public network bandwidth configuration information
+    * Information of the public network bandwidth configuration.
     */
     @SerializedName("InternetAccessible")
     @Expose
     private InternetAccessible InternetAccessible;
 
     /**
-    * Init script base64 encoded string
+    * Base64-encoded string of the launch script.
     */
     @SerializedName("InitScript")
     @Expose
@@ -51,104 +51,104 @@ public class CreatePaiInstanceRequest  extends AbstractModel{
     private String [] Zones;
 
     /**
-    * vpcId
+    * VpcId.
     */
     @SerializedName("VpcId")
     @Expose
     private String VpcId;
 
     /**
-    * List of subnets
+    * List of subnets.
     */
     @SerializedName("SubnetIds")
     @Expose
     private String [] SubnetIds;
 
     /**
-    * Displayed name of an instance
+    * Instance display name.
     */
     @SerializedName("InstanceName")
     @Expose
     private String InstanceName;
 
     /**
-    * List of instance models
+    * List of instance models.
     */
     @SerializedName("InstanceTypes")
     @Expose
     private String [] InstanceTypes;
 
     /**
-    * Instance Login settings
+    * Instance login settings.
     */
     @SerializedName("LoginSettings")
     @Expose
     private LoginSettings LoginSettings;
 
     /**
-    * Instance billing mode
+    * Instance billing type.
     */
     @SerializedName("InstanceChargeType")
     @Expose
     private String InstanceChargeType;
 
     /**
-    * Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
+    * Relevant parameter settings for the prepaid mode (i.e., monthly subscription). This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. If the billing method of the specified instance is prepaid, this parameter is required.
     */
     @SerializedName("InstanceChargePrepaid")
     @Expose
     private InstanceChargePrepaid InstanceChargePrepaid;
 
     /**
-     * Get PAI instance domain name
-     * @return DomainName PAI instance domain name
+     * Get PAI instance domain name. 
+     * @return DomainName PAI instance domain name.
      */
     public String getDomainName() {
         return this.DomainName;
     }
 
     /**
-     * Get PAI instance domain name
-     * @param DomainName PAI instance domain name
+     * Set PAI instance domain name.
+     * @param DomainName PAI instance domain name.
      */
     public void setDomainName(String DomainName) {
         this.DomainName = DomainName;
     }
 
     /**
-     * Get Public network bandwidth configuration information
-     * @return InternetAccessible Public network bandwidth configuration information
+     * Get Information of the public network bandwidth configuration. 
+     * @return InternetAccessible Information of the public network bandwidth configuration.
      */
     public InternetAccessible getInternetAccessible() {
         return this.InternetAccessible;
     }
 
     /**
-     * Set Public network bandwidth configuration information
-     * @param InternetAccessible Public network bandwidth configuration information
+     * Set Information of the public network bandwidth configuration.
+     * @param InternetAccessible Information of the public network bandwidth configuration.
      */
     public void setInternetAccessible(InternetAccessible InternetAccessible) {
         this.InternetAccessible = InternetAccessible;
     }
 
     /**
-     * Get Init script base64 encoded string
-     * @return InitScript Init script base64 encoded string
+     * Get Base64-encoded string of the launch script. 
+     * @return InitScript Base64-encoded string of the launch script.
      */
     public String getInitScript() {
         return this.InitScript;
     }
 
     /**
-     * Set Init script base64 encoded string
-     * @param InitScript Init script base64 encoded string
+     * Set Base64-encoded string of the launch script.
+     * @param InitScript Base64-encoded string of the launch script.
      */
     public void setInitScript(String InitScript) {
         this.InitScript = InitScript;
     }
 
     /**
-     * Get list of availability zones.
+     * Get List of availability zones. 
      * @return Zones List of availability zones.
      */
     public String [] getZones() {
@@ -156,127 +156,127 @@ public class CreatePaiInstanceRequest  extends AbstractModel{
     }
 
     /**
-     * Set list of availability zones.
-     * @param Zones list of availability zones
+     * Set List of availability zones.
+     * @param Zones List of availability zones.
      */
     public void setZones(String [] Zones) {
         this.Zones = Zones;
     }
 
     /**
-     * Get Vpcid
-     * @return VpcId VpcId
+     * Get VpcId. 
+     * @return VpcId VpcId.
      */
     public String getVpcId() {
         return this.VpcId;
     }
 
     /**
-     * Set Vpcid
-     * @param VpcId VpcId
+     * Set VpcId.
+     * @param VpcId VpcId.
      */
     public void setVpcId(String VpcId) {
         this.VpcId = VpcId;
     }
 
     /**
-     * Get List of subnets
-     * @return SubnetIds List of subnets
+     * Get List of subnets. 
+     * @return SubnetIds List of subnets.
      */
     public String [] getSubnetIds() {
         return this.SubnetIds;
     }
 
     /**
-     * Set List of subnets
-     * @param SubnetIds List of subnets
+     * Set List of subnets.
+     * @param SubnetIds List of subnets.
      */
     public void setSubnetIds(String [] SubnetIds) {
         this.SubnetIds = SubnetIds;
     }
 
     /**
-     * Get Displayed name of an instance.
-     * @return InstanceName Displayed name of an instance.
+     * Get Instance display name. 
+     * @return InstanceName Instance display name.
      */
     public String getInstanceName() {
         return this.InstanceName;
     }
 
     /**
-     * Set Displayed name of an instance.
-     * @param InstanceName The displayed name of the instance.
+     * Set Instance display name.
+     * @param InstanceName Instance display name.
      */
     public void setInstanceName(String InstanceName) {
         this.InstanceName = InstanceName;
     }
 
     /**
-     * Get list of instance models
-     * @return InstanceTypes List of instance models
+     * Get List of instance models. 
+     * @return InstanceTypes List of instance models.
      */
     public String [] getInstanceTypes() {
         return this.InstanceTypes;
     }
 
     /**
-     * Set list of instance models
-     * @param InstanceTypes List of instance models
+     * Set List of instance models.
+     * @param InstanceTypes List of instance models.
      */
     public void setInstanceTypes(String [] InstanceTypes) {
         this.InstanceTypes = InstanceTypes;
     }
 
     /**
-     * Get instance login settings
-     * @return LoginSettings instance login settings
+     * Get Instance login settings. 
+     * @return LoginSettings Instance login settings.
      */
     public LoginSettings getLoginSettings() {
         return this.LoginSettings;
     }
 
     /**
-     * Set instance login settings
-     * @param LoginSettings instance login settings
+     * Set Instance login settings.
+     * @param LoginSettings Instance login settings.
      */
     public void setLoginSettings(LoginSettings LoginSettings) {
         this.LoginSettings = LoginSettings;
     }
 
     /**
-     * Get instance billing mode
-     * @return InstanceChargeType instance billing mode
+     * Get Instance billing type. 
+     * @return InstanceChargeType Instance billing type.
      */
     public String getInstanceChargeType() {
         return this.InstanceChargeType;
     }
 
     /**
-     * Set instance billing mode
-     * @param InstanceChargeType instance billing mode
+     * Set Instance billing type.
+     * @param InstanceChargeType Instance billing type.
      */
     public void setInstanceChargeType(String InstanceChargeType) {
         this.InstanceChargeType = InstanceChargeType;
     }
 
     /**
-     * Get Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
-     * @return InstanceChargePrepaid Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
+     * Get Relevant parameter settings for the prepaid mode (i.e., monthly subscription). This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. If the billing method of the specified instance is prepaid, this parameter is required. 
+     * @return InstanceChargePrepaid Relevant parameter settings for the prepaid mode (i.e., monthly subscription). This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. If the billing method of the specified instance is prepaid, this parameter is required.
      */
     public InstanceChargePrepaid getInstanceChargePrepaid() {
         return this.InstanceChargePrepaid;
     }
 
     /**
-     * Set Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
-     * @param InstanceChargePrepaid Parameter settings for prepaid billing mode, also known as monthly subscription. This parameter can specify the purchase period and other attributes such as auto-renewal settings. This parameter is mandatory for prepaid instances.
+     * Set Relevant parameter settings for the prepaid mode (i.e., monthly subscription). This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. If the billing method of the specified instance is prepaid, this parameter is required.
+     * @param InstanceChargePrepaid Relevant parameter settings for the prepaid mode (i.e., monthly subscription). This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. If the billing method of the specified instance is prepaid, this parameter is required.
      */
     public void setInstanceChargePrepaid(InstanceChargePrepaid InstanceChargePrepaid) {
         this.InstanceChargePrepaid = InstanceChargePrepaid;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DomainName", this.DomainName);

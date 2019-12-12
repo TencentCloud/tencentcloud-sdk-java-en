@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DisassociateSecurityGroupsRequest  extends AbstractModel{
 
     /**
-    * Specify security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
+    * ID of the security group to be disassociated, such as `sg-efil73jd`. Only one security group can be disassociated.
     */
     @SerializedName("SecurityGroupIds")
     @Expose
     private String [] SecurityGroupIds;
 
     /**
-    * Specify CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
+    * ID(s) of the instance(s) to be disassociated，such as `ins-lesecurk`. You can specify multiple instances.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-     * Get security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
-     * @return SecurityGroupIds security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
+     * Get ID of the security group to be disassociated, such as `sg-efil73jd`. Only one security group can be disassociated. 
+     * @return SecurityGroupIds ID of the security group to be disassociated, such as `sg-efil73jd`. Only one security group can be disassociated.
      */
     public String [] getSecurityGroupIds() {
         return this.SecurityGroupIds;
     }
 
     /**
-     * Set security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
-     * @param SecurityGroupIds security group `SecurityGroupID` you want to disassociate, e.g. sg-efil73jd, only support disassociate one security group at a time.
+     * Set ID of the security group to be disassociated, such as `sg-efil73jd`. Only one security group can be disassociated.
+     * @param SecurityGroupIds ID of the security group to be disassociated, such as `sg-efil73jd`. Only one security group can be disassociated.
      */
     public void setSecurityGroupIds(String [] SecurityGroupIds) {
         this.SecurityGroupIds = SecurityGroupIds;
     }
 
     /**
-     * Get CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
-     * @return InstanceIds CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
+     * Get ID(s) of the instance(s) to be disassociated，such as `ins-lesecurk`. You can specify multiple instances. 
+     * @return InstanceIds ID(s) of the instance(s) to be disassociated，such as `ins-lesecurk`. You can specify multiple instances.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * Set CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
-     * @param InstanceIds CVM instance ID(s) `InstanceID` to disassociate from, e.g. ins-lesecurk, disassociate multiple instances at same time is supported.
+     * Set ID(s) of the instance(s) to be disassociated，such as `ins-lesecurk`. You can specify multiple instances.
+     * @param InstanceIds ID(s) of the instance(s) to be disassociated，such as `ins-lesecurk`. You can specify multiple instances.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "SecurityGroupIds.", this.SecurityGroupIds);

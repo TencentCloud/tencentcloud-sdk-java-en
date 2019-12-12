@@ -27,20 +27,20 @@ public class TargetAttribute  extends AbstractModel{
     */
     @SerializedName("Port")
     @Expose
-    private Integer Port;
+    private Long Port;
 
     /**
     * Weight
     */
     @SerializedName("Weight")
     @Expose
-    private Integer Weight;
+    private Long Weight;
 
     /**
-     * Obtain Port
+     * Get Port 
      * @return Port Port
      */
-    public Integer getPort() {
+    public Long getPort() {
         return this.Port;
     }
 
@@ -48,28 +48,28 @@ public class TargetAttribute  extends AbstractModel{
      * Set Port
      * @param Port Port
      */
-    public void setPort(Integer Port) {
+    public void setPort(Long Port) {
         this.Port = Port;
     }
 
     /**
-     * Obtain weight
-     * @return Weight weight
+     * Get Weight 
+     * @return Weight Weight
      */
-    public Integer getWeight() {
+    public Long getWeight() {
         return this.Weight;
     }
 
     /**
-     * Set weight
-     * @param Weight weight
+     * Set Weight
+     * @param Weight Weight
      */
-    public void setWeight(Integer Weight) {
+    public void setWeight(Long Weight) {
         this.Weight = Weight;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Port", this.Port);

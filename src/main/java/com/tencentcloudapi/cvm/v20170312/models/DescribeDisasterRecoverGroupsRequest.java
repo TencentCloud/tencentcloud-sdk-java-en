@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class DescribeDisasterRecoverGroupsRequest  extends AbstractModel{
 
     /**
-    * ID of a spread placement group.
+    * List of spread placement group IDs.
     */
     @SerializedName("DisasterRecoverGroupIds")
     @Expose
     private String [] DisasterRecoverGroupIds;
 
     /**
-    * Spread placement group name. Fuzzy match is supported.
+    * Name of a spread placement group. Fuzzy match is supported.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688).
+    * Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-    * Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688).
+    * Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-     * Get ID of a spread placement group.
-     * @return DisasterRecoverGroupIds Set ID of a spread placement group.
+     * Get List of spread placement group IDs. 
+     * @return DisasterRecoverGroupIds List of spread placement group IDs.
      */
     public String [] getDisasterRecoverGroupIds() {
         return this.DisasterRecoverGroupIds;
     }
 
     /**
-     * Set ID of a spread placement group.
-     * @param DisasterRecoverGroupIds ID of a spread placement group.
+     * Set List of spread placement group IDs.
+     * @param DisasterRecoverGroupIds List of spread placement group IDs.
      */
     public void setDisasterRecoverGroupIds(String [] DisasterRecoverGroupIds) {
         this.DisasterRecoverGroupIds = DisasterRecoverGroupIds;
     }
 
     /**
-     * Get Spread placement group name. Fuzzy match is supported.
-     * @return Name Spread placement group name. Fuzzy match is supported.
+     * Get Name of a spread placement group. Fuzzy match is supported. 
+     * @return Name Name of a spread placement group. Fuzzy match is supported.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Set Spread placement group name. Fuzzy match is supported.
-     * @param Name Spread placement group name. Fuzzy match is supported.
+     * Set Name of a spread placement group. Fuzzy match is supported.
+     * @param Name Name of a spread placement group. Fuzzy match is supported.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Get Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688).
-     * @return Offset Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). 
+     * Get Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
+     * @return Offset Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688).
-     * @param Offset Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). 
+     * Set Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
+     * @param Offset Offset; default value: 0. For more information on `Offset`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * Get Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688).
-     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688).
+     * Get Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377).  
+     * @return Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688).
-     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688).
+     * Set Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
+     * @param Limit Number of results returned; default value: 20; maximum: 100. For more information on `Limit`, see the corresponding section in API [Introduction](https://intl.cloud.tencent.com/document/product/377). 
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "DisasterRecoverGroupIds.", this.DisasterRecoverGroupIds);

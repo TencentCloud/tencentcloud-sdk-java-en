@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http: //www.apache.org/licenses/LICENSE-2.0
+ *    http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,318 +23,318 @@ import java.util.HashMap;
 public class Activity  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Scaling activity ID
+    * Scaling activity ID.
     */
     @SerializedName("ActivityId")
     @Expose
     private String ActivityId;
 
     /**
-    * Scaling activity type. Values as below: <br>
-<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
+    * Scaling activity type. Value range:<br>
+<li>SCALE_OUT: scale-out <li>SCALE_IN: scale-in <li>ATTACH_INSTANCES: adding an instance <li>REMOVE_INSTANCES: terminating an instance <li>DETACH_INSTANCES: removing an instance <li>TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console <li>REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance
     */
     @SerializedName("ActivityType")
     @Expose
     private String ActivityType;
 
     /**
-    * Scaling activity status. Values as below: <br>
-<li>INIT: Initializing
-<li>RUNNING: Running
-<li>SUCCESSFUL: Activity is successful
-<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
-<li>FAILED: Activity failed
-<li>CANCELLED: Activity is canceled
+    * Scaling activity status. Value range:<br>
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>PARTIALLY_SUCCESSFUL: partially succeeded
+<li>FAILED: failed
+<li>CANCELLED: canceled
     */
     @SerializedName("StatusCode")
     @Expose
     private String StatusCode;
 
     /**
-    * Scaling activity status description
+    * Description of the scaling activity status.
     */
     @SerializedName("StatusMessage")
     @Expose
     private String StatusMessage;
 
     /**
-    * Scaling activity cause
+    * Cause of the scaling activity.
     */
     @SerializedName("Cause")
     @Expose
     private String Cause;
 
     /**
-    * Scaling activity description
+    * Description of the scaling activity.
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * Scaling activity start time
+    * Start time of the scaling activity.
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * Scaling activity end time
+    * End time of the scaling activity.
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-    * Scaling activity creation time
+    * Creation time of the scaling activity.
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * Scaling activity related instance set
+    * Information set of the instances related to the scaling activity.
     */
     @SerializedName("ActivityRelatedInstanceSet")
     @Expose
     private ActivtyRelatedInstance [] ActivityRelatedInstanceSet;
 
     /**
-    * Scaling activity status short description
+    * Brief description of the scaling activity status.
     */
     @SerializedName("StatusMessageSimplified")
     @Expose
     private String StatusMessageSimplified;
 
     /**
-     * Get scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+     * Get Auto scaling group ID. 
+     * @return AutoScalingGroupId Auto scaling group ID.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set scaling group ID
-     * @param AutoScalingGroupId Scaling group ID
+     * Set Auto scaling group ID.
+     * @param AutoScalingGroupId Auto scaling group ID.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Get scaling activity ID
-     * @return ActivityId Scaling activity ID
+     * Get Scaling activity ID. 
+     * @return ActivityId Scaling activity ID.
      */
     public String getActivityId() {
         return this.ActivityId;
     }
 
     /**
-     * Set scaling activity ID
-     * @param ActivityId Scaling activity ID
+     * Set Scaling activity ID.
+     * @param ActivityId Scaling activity ID.
      */
     public void setActivityId(String ActivityId) {
         this.ActivityId = ActivityId;
     }
 
     /**
-     * Get scaling activity type. Values as below: <br>
-<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
-     * @return ActivityType Scaling activity type. Values as below: <br>
-<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
+     * Get Scaling activity type. Value range:<br>
+<li>SCALE_OUT: scale-out <li>SCALE_IN: scale-in <li>ATTACH_INSTANCES: adding an instance <li>REMOVE_INSTANCES: terminating an instance <li>DETACH_INSTANCES: removing an instance <li>TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console <li>REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance 
+     * @return ActivityType Scaling activity type. Value range:<br>
+<li>SCALE_OUT: scale-out <li>SCALE_IN: scale-in <li>ATTACH_INSTANCES: adding an instance <li>REMOVE_INSTANCES: terminating an instance <li>DETACH_INSTANCES: removing an instance <li>TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console <li>REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance
      */
     public String getActivityType() {
         return this.ActivityType;
     }
 
     /**
-     * Set scaling activity type. Values as below: <br>
-<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
-     * @param ActivityType Scaling activity type. Values as below: <br>
-<li>SCALE_OUT: Scale out<li>SCALE_IN: Scale in<li>ATTACH_INSTANCES: Attach instances<li>REMOVE_INSTANCES: Remove instances<li>DETACH_INSTANCES: Detach instances<li>TERMINATE_INSTANCES_UNEXPECTEDLY: Terminate instances in CVM console<li>REPLACE_UNHEALTHY_INSTANCE: Replace unhealthy instance
+     * Set Scaling activity type. Value range:<br>
+<li>SCALE_OUT: scale-out <li>SCALE_IN: scale-in <li>ATTACH_INSTANCES: adding an instance <li>REMOVE_INSTANCES: terminating an instance <li>DETACH_INSTANCES: removing an instance <li>TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console <li>REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance
+     * @param ActivityType Scaling activity type. Value range:<br>
+<li>SCALE_OUT: scale-out <li>SCALE_IN: scale-in <li>ATTACH_INSTANCES: adding an instance <li>REMOVE_INSTANCES: terminating an instance <li>DETACH_INSTANCES: removing an instance <li>TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console <li>REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance
      */
     public void setActivityType(String ActivityType) {
         this.ActivityType = ActivityType;
     }
 
     /**
-     * Get scaling activity status. Values as below: <br>
-<li>INIT: Initializing
-<li>RUNNING: Running
-<li>SUCCESSFUL: Activity is successful
-<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
-<li>FAILED: Activity failed
-<li>CANCELLED: Activity is canceled
-     * @return StatusCode Scaling activity status. Values as below: <br>
-<li>INIT: Initializing
-<li>RUNNING: Running
-<li>SUCCESSFUL: Activity is successful
-<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
-<li>FAILED: Activity failed
-<li>CANCELLED: Activity is canceled
+     * Get Scaling activity status. Value range:<br>
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>PARTIALLY_SUCCESSFUL: partially succeeded
+<li>FAILED: failed
+<li>CANCELLED: canceled 
+     * @return StatusCode Scaling activity status. Value range:<br>
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>PARTIALLY_SUCCESSFUL: partially succeeded
+<li>FAILED: failed
+<li>CANCELLED: canceled
      */
     public String getStatusCode() {
         return this.StatusCode;
     }
 
     /**
-     * Set scaling activity status. Values as below: <br>
-<li>INIT: Initializing
-<li>RUNNING: Running
-<li>SUCCESSFUL: Activity is successful
-<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
-<li>FAILED: Activity failed
-<li>CANCELLED: Activity is canceled
-     * @param StatusCode Scaling activity status. Values as below: <br>
-<li>INIT:  Initializing
-<li>RUNNING: Running
-<li>SUCCESSFUL: Activity is successful
-<li>PARTIALLY_SUCCESSFUL: Activity is partially successful
-<li>FAILED: Activity failed
-<li>CANCELLED: Activity is canceled
+     * Set Scaling activity status. Value range:<br>
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>PARTIALLY_SUCCESSFUL: partially succeeded
+<li>FAILED: failed
+<li>CANCELLED: canceled
+     * @param StatusCode Scaling activity status. Value range:<br>
+<li>INIT: initializing
+<li>RUNNING: running
+<li>SUCCESSFUL: succeeded
+<li>PARTIALLY_SUCCESSFUL: partially succeeded
+<li>FAILED: failed
+<li>CANCELLED: canceled
      */
     public void setStatusCode(String StatusCode) {
         this.StatusCode = StatusCode;
     }
 
     /**
-     * Get scaling activity status description
-     * @return StatusMessage Scaling activity status description
+     * Get Description of the scaling activity status. 
+     * @return StatusMessage Description of the scaling activity status.
      */
     public String getStatusMessage() {
         return this.StatusMessage;
     }
 
     /**
-     * Set scaling activity status description 
-     * @param StatusMessage Scaling activity status description
+     * Set Description of the scaling activity status.
+     * @param StatusMessage Description of the scaling activity status.
      */
     public void setStatusMessage(String StatusMessage) {
         this.StatusMessage = StatusMessage;
     }
 
     /**
-     * Get the cause of the scaling activity
-     * @return Cause Scaling activity casue
+     * Get Cause of the scaling activity. 
+     * @return Cause Cause of the scaling activity.
      */
     public String getCause() {
         return this.Cause;
     }
 
     /**
-     * Set the cause of the scaling activity
-     * @param Cause Scaling activity cause
+     * Set Cause of the scaling activity.
+     * @param Cause Cause of the scaling activity.
      */
     public void setCause(String Cause) {
         this.Cause = Cause;
     }
 
     /**
-     * Get scaling activity description
-     * @return Description Scaling activity description
+     * Get Description of the scaling activity. 
+     * @return Description Description of the scaling activity.
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * Set scaling activity description 
-     * @param Description Scaling activity description
+     * Set Description of the scaling activity.
+     * @param Description Description of the scaling activity.
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * Get the start time of the scaling activity
-     * @return StartTime Scaling activity start time
+     * Get Start time of the scaling activity. 
+     * @return StartTime Start time of the scaling activity.
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * Set the start time of the scaling activity
-     * @param StartTime Scaling activity start time
+     * Set Start time of the scaling activity.
+     * @param StartTime Start time of the scaling activity.
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * Get the end time of the scaling activity
-     * @return EndTime Scaling activity end time
+     * Get End time of the scaling activity. 
+     * @return EndTime End time of the scaling activity.
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * Set the end time of the scaling activity
-     * @param EndTime Scaling activity end time
+     * Set End time of the scaling activity.
+     * @param EndTime End time of the scaling activity.
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * Get the creation time of the scaling activity
-     * @return CreatedTime Scaling activity creation time
+     * Get Creation time of the scaling activity. 
+     * @return CreatedTime Creation time of the scaling activity.
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * Set the creation time of the scaling activity
-     * @param CreatedTime Scaling activity creation time
+     * Set Creation time of the scaling activity.
+     * @param CreatedTime Creation time of the scaling activity.
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * Get the scaling activity related instance set
-     * @return ActivityRelatedInstanceSet Scaling activity related instance set
+     * Get Information set of the instances related to the scaling activity. 
+     * @return ActivityRelatedInstanceSet Information set of the instances related to the scaling activity.
      */
     public ActivtyRelatedInstance [] getActivityRelatedInstanceSet() {
         return this.ActivityRelatedInstanceSet;
     }
 
     /**
-     * Set the scaling activity related instance set
-     * @param ActivityRelatedInstanceSet Scaling activity related instance set
+     * Set Information set of the instances related to the scaling activity.
+     * @param ActivityRelatedInstanceSet Information set of the instances related to the scaling activity.
      */
     public void setActivityRelatedInstanceSet(ActivtyRelatedInstance [] ActivityRelatedInstanceSet) {
         this.ActivityRelatedInstanceSet = ActivityRelatedInstanceSet;
     }
 
     /**
-     * Get the scaling activity status short description
-     * @return StatusMessageSimplified Scaling activity status short description
+     * Get Brief description of the scaling activity status. 
+     * @return StatusMessageSimplified Brief description of the scaling activity status.
      */
     public String getStatusMessageSimplified() {
         return this.StatusMessageSimplified;
     }
 
     /**
-     * Set the scaling activity status short description
-     * @param StatusMessageSimplified Scaling activity status short description
+     * Set Brief description of the scaling activity status.
+     * @param StatusMessageSimplified Brief description of the scaling activity status.
      */
     public void setStatusMessageSimplified(String StatusMessageSimplified) {
         this.StatusMessageSimplified = StatusMessageSimplified;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

@@ -23,145 +23,145 @@ import java.util.HashMap;
 public class HostResource  extends AbstractModel{
 
     /**
-    * Total number of CPU cores in a CDH instance
+    * Total number of CPU cores in the CDH instance
     */
     @SerializedName("CpuTotal")
     @Expose
-    private Integer CpuTotal;
+    private Long CpuTotal;
 
     /**
-    * Number of available CPU cores in a CDH instance
+    * Number of available CPU cores in the CDH instance
     */
     @SerializedName("CpuAvailable")
     @Expose
-    private Integer CpuAvailable;
+    private Long CpuAvailable;
 
     /**
-    * Total memory size in a CDH instance (in GiB)
+    * Total memory of the CDH instance; unit: GiB
     */
     @SerializedName("MemTotal")
     @Expose
     private Float MemTotal;
 
     /**
-    * Available memory size in a CDH instance (in GiB)
+    * Available memory of the CDH instance; unit: GiB
     */
     @SerializedName("MemAvailable")
     @Expose
     private Float MemAvailable;
 
     /**
-    * Total disk size in a CDH instance (in GiB)
+    * Total disk size of the CDH instance; unit: GiB
     */
     @SerializedName("DiskTotal")
     @Expose
-    private Integer DiskTotal;
+    private Long DiskTotal;
 
     /**
-    * Available disk size in a CDH instance (in GiB)
+    * Avilable disk size of the CDH instance; unit: GiB
     */
     @SerializedName("DiskAvailable")
     @Expose
-    private Integer DiskAvailable;
+    private Long DiskAvailable;
 
     /**
-     * Get total number of CPU cores in a CDH instance
-     * @return CpuTotal Total number of CPU cores in a CDH instance
+     * Get Total number of CPU cores in the CDH instance 
+     * @return CpuTotal Total number of CPU cores in the CDH instance
      */
-    public Integer getCpuTotal() {
+    public Long getCpuTotal() {
         return this.CpuTotal;
     }
 
     /**
-     * Set total number of CPU cores in a CDH instance
-     * @param CpuTotal Total number of CPU cores in a CDH instance
+     * Set Total number of CPU cores in the CDH instance
+     * @param CpuTotal Total number of CPU cores in the CDH instance
      */
-    public void setCpuTotal(Integer CpuTotal) {
+    public void setCpuTotal(Long CpuTotal) {
         this.CpuTotal = CpuTotal;
     }
 
     /**
-     * Get number of available CPU cores in a CDH instance
-     * @return CpuAvailable Number of available CPU cores in a CDH instance
+     * Get Number of available CPU cores in the CDH instance 
+     * @return CpuAvailable Number of available CPU cores in the CDH instance
      */
-    public Integer getCpuAvailable() {
+    public Long getCpuAvailable() {
         return this.CpuAvailable;
     }
 
     /**
-     * Set number of available CPU cores in a CDH instance |
-     * @param CpuAvailable Number of available CPU cores in a CDH instance
+     * Set Number of available CPU cores in the CDH instance
+     * @param CpuAvailable Number of available CPU cores in the CDH instance
      */
-    public void setCpuAvailable(Integer CpuAvailable) {
+    public void setCpuAvailable(Long CpuAvailable) {
         this.CpuAvailable = CpuAvailable;
     }
 
     /**
-     * Get total memory size in a CDH instance (in GiB)
-     * @return MemTotal Total memory size in a CDH instance (in GiB)
+     * Get Total memory of the CDH instance; unit: GiB 
+     * @return MemTotal Total memory of the CDH instance; unit: GiB
      */
     public Float getMemTotal() {
         return this.MemTotal;
     }
 
     /**
-     * Set total memory size in a CDH instance (in GiB) |
-     * @param MemTotal Total memory size in a CDH instance (in GiB)
+     * Set Total memory of the CDH instance; unit: GiB
+     * @param MemTotal Total memory of the CDH instance; unit: GiB
      */
     public void setMemTotal(Float MemTotal) {
         this.MemTotal = MemTotal;
     }
 
     /**
-     * Get available memory size in a CDH instance (in GiB)
-     * @return MemAvailable Available memory size in a CDH instance (in GiB)
+     * Get Available memory of the CDH instance; unit: GiB 
+     * @return MemAvailable Available memory of the CDH instance; unit: GiB
      */
     public Float getMemAvailable() {
         return this.MemAvailable;
     }
 
     /**
-     * Set available memory size in a CDH instance (in GiB) |
-     * @param MemAvailable Available memory size in a CDH instance (in GiB)
+     * Set Available memory of the CDH instance; unit: GiB
+     * @param MemAvailable Available memory of the CDH instance; unit: GiB
      */
     public void setMemAvailable(Float MemAvailable) {
         this.MemAvailable = MemAvailable;
     }
 
     /**
-     * Get total disk size in a CDH instance (in GiB)
-     * @return DiskTotal Total disk size in a CDH instance (in GiB)
+     * Get Total disk size of the CDH instance; unit: GiB 
+     * @return DiskTotal Total disk size of the CDH instance; unit: GiB
      */
-    public Integer getDiskTotal() {
+    public Long getDiskTotal() {
         return this.DiskTotal;
     }
 
     /**
-     * Set total disk size in a CDH instance (in GiB)
-     * @param DiskTotal Total disk size in a CDH instance (in GiB)
+     * Set Total disk size of the CDH instance; unit: GiB
+     * @param DiskTotal Total disk size of the CDH instance; unit: GiB
      */
-    public void setDiskTotal(Integer DiskTotal) {
+    public void setDiskTotal(Long DiskTotal) {
         this.DiskTotal = DiskTotal;
     }
 
     /**
-     * Get available disk size in a CDH instance (in GiB)
-     * @return DiskAvailable Available disk size in a CDH instance (in GiB)
+     * Get Avilable disk size of the CDH instance; unit: GiB 
+     * @return DiskAvailable Avilable disk size of the CDH instance; unit: GiB
      */
-    public Integer getDiskAvailable() {
+    public Long getDiskAvailable() {
         return this.DiskAvailable;
     }
 
     /**
-     * Set available disk size in a CDH instance (in GiB)
-     * @param DiskAvailable Available disk size in a CDH instance (in GiB)
+     * Set Avilable disk size of the CDH instance; unit: GiB
+     * @param DiskAvailable Avilable disk size of the CDH instance; unit: GiB
      */
-    public void setDiskAvailable(Integer DiskAvailable) {
+    public void setDiskAvailable(Long DiskAvailable) {
         this.DiskAvailable = DiskAvailable;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "CpuTotal", this.CpuTotal);

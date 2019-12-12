@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ModifyDisasterRecoverGroupAttributeRequest  extends AbstractModel{
 
     /**
-    * Spread placement group ID, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
+    * Spread placement group ID, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API.
     */
     @SerializedName("DisasterRecoverGroupId")
     @Expose
     private String DisasterRecoverGroupId;
 
     /**
-    * Name of a spread placement group with a length of 1-60 characters.
+    * Name of a spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-     * Get ID of a spread placement group, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
-     * @return DisasterRecoverGroupId ID of a spread placement group, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
+     * Get Spread placement group ID, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API. 
+     * @return DisasterRecoverGroupId Spread placement group ID, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API.
      */
     public String getDisasterRecoverGroupId() {
         return this.DisasterRecoverGroupId;
     }
 
     /**
-     * Set ID of a spread placement group, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
-     * @param DisasterRecoverGroupId ID of a spread placement group, which can be obtained via API [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810)
+     * Set Spread placement group ID, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API.
+     * @param DisasterRecoverGroupId Spread placement group ID, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API.
      */
     public void setDisasterRecoverGroupId(String DisasterRecoverGroupId) {
         this.DisasterRecoverGroupId = DisasterRecoverGroupId;
     }
 
     /**
-     * Get name of a spread placement group with a length of 1-60 characters.
-     * @return Name Name of spread placement group, group name between 1 and 60 characters long (Chinese or English).
+     * Get Name of a spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters. 
+     * @return Name Name of a spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Set name of a spread placement group with a length of 1-60 characters.
-     * @param Name Name of spread placement group, group name between 1 and 60 characters long (Chinese or English).
+     * Set Name of a spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters.
+     * @param Name Name of a spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DisasterRecoverGroupId", this.DisasterRecoverGroupId);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class AssociateSecurityGroupsRequest  extends AbstractModel{
 
     /**
-    * the`安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
+    * ID of the security group to be associated, such as `sg-efil73jd`. Only one security group can be associated.
     */
     @SerializedName("SecurityGroupIds")
     @Expose
     private String [] SecurityGroupIds;
 
     /**
-    * associated`实例ID`，such as ins-lesecurk，multiple instances association is supported.
+    * ID(s) of the instance(s) to be associated，such as `ins-lesecurk`. You can specify multiple instances.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-     * Get `安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
-     * @return SecurityGroupIds `安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
+     * Get ID of the security group to be associated, such as `sg-efil73jd`. Only one security group can be associated. 
+     * @return SecurityGroupIds ID of the security group to be associated, such as `sg-efil73jd`. Only one security group can be associated.
      */
     public String [] getSecurityGroupIds() {
         return this.SecurityGroupIds;
     }
 
     /**
-     * set `安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
-     * @param SecurityGroupIds `安全组ID` to be associated，such as sg-efil73jd，only support associate one security group.
+     * Set ID of the security group to be associated, such as `sg-efil73jd`. Only one security group can be associated.
+     * @param SecurityGroupIds ID of the security group to be associated, such as `sg-efil73jd`. Only one security group can be associated.
      */
     public void setSecurityGroupIds(String [] SecurityGroupIds) {
         this.SecurityGroupIds = SecurityGroupIds;
     }
 
     /**
-     * Get associated `实例ID`，such as ins-lesecurk，multiple instances association is supported.
-     * @return InstanceIds associated `实例ID`，such as ins-lesecurk，multiple instances association is supported.
+     * Get ID(s) of the instance(s) to be associated，such as `ins-lesecurk`. You can specify multiple instances. 
+     * @return InstanceIds ID(s) of the instance(s) to be associated，such as `ins-lesecurk`. You can specify multiple instances.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * set associated `实例ID`，such as ins-lesecurk，multiple instances association is supported.
-     * @param InstanceIds associated `实例ID`，such as ins-lesecurk，multiple instances association is supported.
+     * Set ID(s) of the instance(s) to be associated，such as `ins-lesecurk`. You can specify multiple instances.
+     * @param InstanceIds ID(s) of the instance(s) to be associated，such as `ins-lesecurk`. You can specify multiple instances.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "SecurityGroupIds.", this.SecurityGroupIds);

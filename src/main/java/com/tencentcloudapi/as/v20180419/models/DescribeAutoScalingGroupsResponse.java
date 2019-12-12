@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeAutoScalingGroupsResponse  extends AbstractModel{
 
     /**
-    * List of scaling group details.
+    * List of auto scaling group details.
     */
     @SerializedName("AutoScalingGroupSet")
     @Expose
     private AutoScalingGroup [] AutoScalingGroupSet;
 
     /**
-    * Number of scaling groups that meet the condition.
+    * Number of eligible auto scaling groups.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain list of scaling group details.
-     * @return AutoScalingGroupSet List of scaling group details.
+     * Get List of auto scaling group details. 
+     * @return AutoScalingGroupSet List of auto scaling group details.
      */
     public AutoScalingGroup [] getAutoScalingGroupSet() {
         return this.AutoScalingGroupSet;
     }
 
     /**
-     * Set list of scaling group details.
-     * @param AutoScalingGroupSet List of scaling group details.
+     * Set List of auto scaling group details.
+     * @param AutoScalingGroupSet List of auto scaling group details.
      */
     public void setAutoScalingGroupSet(AutoScalingGroup [] AutoScalingGroupSet) {
         this.AutoScalingGroupSet = AutoScalingGroupSet;
     }
 
     /**
-     * Obtain number of scaling groups that meet the condition.
-     * @return TotalCount Number of scaling groups that meet the condition.
+     * Get Number of eligible auto scaling groups. 
+     * @return TotalCount Number of eligible auto scaling groups.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of scaling groups that meet the condition.
-     * @param TotalCount Number of scaling groups that meet the condition.
+     * Set Number of eligible auto scaling groups.
+     * @param TotalCount Number of eligible auto scaling groups.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "AutoScalingGroupSet.", this.AutoScalingGroupSet);

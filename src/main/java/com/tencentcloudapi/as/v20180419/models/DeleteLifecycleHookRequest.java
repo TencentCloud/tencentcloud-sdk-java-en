@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteLifecycleHookRequest  extends AbstractModel{
 
     /**
-    * lifecycle hook ID 
+    * Lifecycle hook ID
     */
     @SerializedName("LifecycleHookId")
     @Expose
     private String LifecycleHookId;
 
     /**
-     * Obtain lifecycle hook ID
-     * @return LifecycleHookId LifecycleHookId
+     * Get Lifecycle hook ID 
+     * @return LifecycleHookId Lifecycle hook ID
      */
     public String getLifecycleHookId() {
         return this.LifecycleHookId;
     }
 
     /**
-     * Set lifecycle hook ID
-     * @param LifecycleHookId LifecycleHookId
+     * Set Lifecycle hook ID
+     * @param LifecycleHookId Lifecycle hook ID
      */
     public void setLifecycleHookId(String LifecycleHookId) {
         this.LifecycleHookId = LifecycleHookId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LifecycleHookId", this.LifecycleHookId);

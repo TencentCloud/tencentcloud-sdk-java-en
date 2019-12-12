@@ -23,14 +23,14 @@ import java.util.HashMap;
 public class OsVersion  extends AbstractModel{
 
     /**
-    * Operating System
+    * Operating system type
     */
     @SerializedName("OsName")
     @Expose
     private String OsName;
 
     /**
-    * Supported operating system version
+    * Supported operating system versions
     */
     @SerializedName("OsVersions")
     @Expose
@@ -44,39 +44,39 @@ public class OsVersion  extends AbstractModel{
     private String [] Architecture;
 
     /**
-     * Obtain the type of the operating system
-     * @return OsName The type of the operating system
+     * Get Operating system type 
+     * @return OsName Operating system type
      */
     public String getOsName() {
         return this.OsName;
     }
 
     /**
-     * The type of the operating system
-     * @param OsName The type of the operating system
+     * Set Operating system type
+     * @param OsName Operating system type
      */
     public void setOsName(String OsName) {
         this.OsName = OsName;
     }
 
     /**
-     * The operating system version which is supported.
-     * @return OsVersions The operating system version which is supported.
+     * Get Supported operating system versions 
+     * @return OsVersions Supported operating system versions
      */
     public String [] getOsVersions() {
         return this.OsVersions;
     }
 
     /**
-     * Setting the operating system version which is supported.
-     * @param OsVersions The operating system version which is supported.
+     * Set Supported operating system versions
+     * @param OsVersions Supported operating system versions
      */
     public void setOsVersions(String [] OsVersions) {
         this.OsVersions = OsVersions;
     }
 
     /**
-     * Obtain the supported operating system architecture
+     * Get Supported operating system architecture 
      * @return Architecture Supported operating system architecture
      */
     public String [] getArchitecture() {
@@ -84,7 +84,7 @@ public class OsVersion  extends AbstractModel{
     }
 
     /**
-     * Setting the supported operating system architecture
+     * Set Supported operating system architecture
      * @param Architecture Supported operating system architecture
      */
     public void setArchitecture(String [] Architecture) {
@@ -92,7 +92,7 @@ public class OsVersion  extends AbstractModel{
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "OsName", this.OsName);

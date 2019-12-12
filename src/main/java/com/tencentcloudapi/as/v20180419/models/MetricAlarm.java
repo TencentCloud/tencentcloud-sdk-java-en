@@ -23,145 +23,145 @@ import java.util.HashMap;
 public class MetricAlarm  extends AbstractModel{
 
     /**
-    * Comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
+    * Comparison operator. Value range: <br><li>GREATER_THAN: greater than </li><li>GREATER_THAN_OR_EQUAL_TO: greater than or equal to </li><li>LESS_THAN: less than </li><li> LESS_THAN_OR_EQUAL_TO: less than or equal to </li><li> EQUAL_TO: equal to </li> <li>NOT_EQUAL_TO: not equal to </li>
     */
     @SerializedName("ComparisonOperator")
     @Expose
     private String ComparisonOperator;
 
     /**
-    * Name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
+    * Metric name. Value range: <br><li>CPU_UTILIZATION: CPU utilization </li><li>MEM_UTILIZATION: memory utilization </li><li>LAN_TRAFFIC_OUT: private network outbound bandwidth </li><li>LAN_TRAFFIC_IN: private network inbound bandwidth </li><li>WAN_TRAFFIC_OUT: public network outbound bandwidth </li><li>WAN_TRAFFIC_IN: public network inbound bandwidth </li>
     */
     @SerializedName("MetricName")
     @Expose
     private String MetricName;
 
     /**
-    * Alarm threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
+    * Alarming threshold: <br><li>CPU_UTILIZATION: [1, 100] in % </li><li>MEM_UTILIZATION: [1, 100] in % </li><li>LAN_TRAFFIC_OUT: >0 in Mbps </li><li>LAN_TRAFFIC_IN: >0 in Mbps </li><li>WAN_TRAFFIC_OUT: >0 in Mbps </li><li>WAN_TRAFFIC_IN: >0 in Mbps </li>
     */
     @SerializedName("Threshold")
     @Expose
-    private Integer Threshold;
+    private Long Threshold;
 
     /**
-    * Time period, unit: sec, enumerated value: 60, 300.
+    * Time period in seconds. Enumerated values: 60, 300.
     */
     @SerializedName("Period")
     @Expose
-    private Integer Period;
+    private Long Period;
 
     /**
-    * Repeat times. Value range: [1, 10]
+    * Number of repetitions. Value range: [1, 10]
     */
     @SerializedName("ContinuousTime")
     @Expose
-    private Integer ContinuousTime;
+    private Long ContinuousTime;
 
     /**
-    * Statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
+    * Statistics type. Value range: <br><li>AVERAGE: average </li><li>MAXIMUM: maximum <li>MINIMUM: minimum </li><br> Default value: AVERAGE
     */
     @SerializedName("Statistic")
     @Expose
     private String Statistic;
 
     /**
-     * Obtain the comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
-     * @return ComparisonOperator Comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
+     * Get Comparison operator. Value range: <br><li>GREATER_THAN: greater than </li><li>GREATER_THAN_OR_EQUAL_TO: greater than or equal to </li><li>LESS_THAN: less than </li><li> LESS_THAN_OR_EQUAL_TO: less than or equal to </li><li> EQUAL_TO: equal to </li> <li>NOT_EQUAL_TO: not equal to </li> 
+     * @return ComparisonOperator Comparison operator. Value range: <br><li>GREATER_THAN: greater than </li><li>GREATER_THAN_OR_EQUAL_TO: greater than or equal to </li><li>LESS_THAN: less than </li><li> LESS_THAN_OR_EQUAL_TO: less than or equal to </li><li> EQUAL_TO: equal to </li> <li>NOT_EQUAL_TO: not equal to </li>
      */
     public String getComparisonOperator() {
         return this.ComparisonOperator;
     }
 
     /**
-     * Configure the comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
-     * @param ComparisonOperator Comparison operator. Available values include:<br><li>GREATER_THAN: ></li><li>GREATER_THAN_OR_EQUAL_TO: > or =</li><li>LESS_THAN: <</li><li> LESS_THAN_OR_EQUAL_TO: < or =</li><li> EQUAL_TO: =</li> <li>NOT_EQUAL_TO: ≠</li>
+     * Set Comparison operator. Value range: <br><li>GREATER_THAN: greater than </li><li>GREATER_THAN_OR_EQUAL_TO: greater than or equal to </li><li>LESS_THAN: less than </li><li> LESS_THAN_OR_EQUAL_TO: less than or equal to </li><li> EQUAL_TO: equal to </li> <li>NOT_EQUAL_TO: not equal to </li>
+     * @param ComparisonOperator Comparison operator. Value range: <br><li>GREATER_THAN: greater than </li><li>GREATER_THAN_OR_EQUAL_TO: greater than or equal to </li><li>LESS_THAN: less than </li><li> LESS_THAN_OR_EQUAL_TO: less than or equal to </li><li> EQUAL_TO: equal to </li> <li>NOT_EQUAL_TO: not equal to </li>
      */
     public void setComparisonOperator(String ComparisonOperator) {
         this.ComparisonOperator = ComparisonOperator;
     }
 
     /**
-     * Obtain the name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
-     * Name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
+     * Get Metric name. Value range: <br><li>CPU_UTILIZATION: CPU utilization </li><li>MEM_UTILIZATION: memory utilization </li><li>LAN_TRAFFIC_OUT: private network outbound bandwidth </li><li>LAN_TRAFFIC_IN: private network inbound bandwidth </li><li>WAN_TRAFFIC_OUT: public network outbound bandwidth </li><li>WAN_TRAFFIC_IN: public network inbound bandwidth </li> 
+     * @return MetricName Metric name. Value range: <br><li>CPU_UTILIZATION: CPU utilization </li><li>MEM_UTILIZATION: memory utilization </li><li>LAN_TRAFFIC_OUT: private network outbound bandwidth </li><li>LAN_TRAFFIC_IN: private network inbound bandwidth </li><li>WAN_TRAFFIC_OUT: public network outbound bandwidth </li><li>WAN_TRAFFIC_IN: public network inbound bandwidth </li>
      */
     public String getMetricName() {
         return this.MetricName;
     }
 
     /**
-     * Configure the name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
-     * Name of index, available values include:<br><li>CPU_UTILIZATION: CPU utilization</li><li>MEM_UTILIZATION: Memory utilization</li><li>LAN_TRAFFIC_OUT: Outbound bandwidth of private network</li><li>LAN_TRAFFIC_IN: Inbound bandwidth of private network </li><li>WAN_TRAFFIC_OUT: Outbound bandwidth of public network</li><li>WAN_TRAFFIC_IN: Inbound bandwidth of public network</li>
+     * Set Metric name. Value range: <br><li>CPU_UTILIZATION: CPU utilization </li><li>MEM_UTILIZATION: memory utilization </li><li>LAN_TRAFFIC_OUT: private network outbound bandwidth </li><li>LAN_TRAFFIC_IN: private network inbound bandwidth </li><li>WAN_TRAFFIC_OUT: public network outbound bandwidth </li><li>WAN_TRAFFIC_IN: public network inbound bandwidth </li>
+     * @param MetricName Metric name. Value range: <br><li>CPU_UTILIZATION: CPU utilization </li><li>MEM_UTILIZATION: memory utilization </li><li>LAN_TRAFFIC_OUT: private network outbound bandwidth </li><li>LAN_TRAFFIC_IN: private network inbound bandwidth </li><li>WAN_TRAFFIC_OUT: public network outbound bandwidth </li><li>WAN_TRAFFIC_IN: public network inbound bandwidth </li>
      */
     public void setMetricName(String MetricName) {
         this.MetricName = MetricName;
     }
 
     /**
-     * Obtain the alarmed threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
-     * @return Threshold Alarm threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
+     * Get Alarming threshold: <br><li>CPU_UTILIZATION: [1, 100] in % </li><li>MEM_UTILIZATION: [1, 100] in % </li><li>LAN_TRAFFIC_OUT: >0 in Mbps </li><li>LAN_TRAFFIC_IN: >0 in Mbps </li><li>WAN_TRAFFIC_OUT: >0 in Mbps </li><li>WAN_TRAFFIC_IN: >0 in Mbps </li> 
+     * @return Threshold Alarming threshold: <br><li>CPU_UTILIZATION: [1, 100] in % </li><li>MEM_UTILIZATION: [1, 100] in % </li><li>LAN_TRAFFIC_OUT: >0 in Mbps </li><li>LAN_TRAFFIC_IN: >0 in Mbps </li><li>WAN_TRAFFIC_OUT: >0 in Mbps </li><li>WAN_TRAFFIC_IN: >0 in Mbps </li>
      */
-    public Integer getThreshold() {
+    public Long getThreshold() {
         return this.Threshold;
     }
 
     /**
-     * Configure the alarmed threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
-     * @param Threshold Alarm threshold:<br><li>CPU_UTILIZATION: [1, 100], unit: %</li><li>MEM_UTILIZATION: [1, 100], unit: %</li><li>LAN_TRAFFIC_OUT: >0, unit: Mbps </li><li>LAN_TRAFFIC_IN: >0, unit: Mbps</li><li>WAN_TRAFFIC_OUT: >0, unit: Mbps</li><li>WAN_TRAFFIC_IN: >0, unit: Mbps</li>
+     * Set Alarming threshold: <br><li>CPU_UTILIZATION: [1, 100] in % </li><li>MEM_UTILIZATION: [1, 100] in % </li><li>LAN_TRAFFIC_OUT: >0 in Mbps </li><li>LAN_TRAFFIC_IN: >0 in Mbps </li><li>WAN_TRAFFIC_OUT: >0 in Mbps </li><li>WAN_TRAFFIC_IN: >0 in Mbps </li>
+     * @param Threshold Alarming threshold: <br><li>CPU_UTILIZATION: [1, 100] in % </li><li>MEM_UTILIZATION: [1, 100] in % </li><li>LAN_TRAFFIC_OUT: >0 in Mbps </li><li>LAN_TRAFFIC_IN: >0 in Mbps </li><li>WAN_TRAFFIC_OUT: >0 in Mbps </li><li>WAN_TRAFFIC_IN: >0 in Mbps </li>
      */
-    public void setThreshold(Integer Threshold) {
+    public void setThreshold(Long Threshold) {
         this.Threshold = Threshold;
     }
 
     /**
-     * Obtain the time period, unit: sec, enumerated value: 60, 300.
-     * @return Period Time period, unit: sec, enumerated value: 60, 300.
+     * Get Time period in seconds. Enumerated values: 60, 300. 
+     * @return Period Time period in seconds. Enumerated values: 60, 300.
      */
-    public Integer getPeriod() {
+    public Long getPeriod() {
         return this.Period;
     }
 
     /**
-     * Configure the time period, unit: sec, enumerated value: 60, 300.
-     * @param Period Time period, unit: sec, enumerated value: 60, 300.
+     * Set Time period in seconds. Enumerated values: 60, 300.
+     * @param Period Time period in seconds. Enumerated values: 60, 300.
      */
-    public void setPeriod(Integer Period) {
+    public void setPeriod(Long Period) {
         this.Period = Period;
     }
 
     /**
-     * Obtain the repeat times. Value range: [1, 10]
-     * @return ContinuousTime Repeat times. Value range: [1, 10]
+     * Get Number of repetitions. Value range: [1, 10] 
+     * @return ContinuousTime Number of repetitions. Value range: [1, 10]
      */
-    public Integer getContinuousTime() {
+    public Long getContinuousTime() {
         return this.ContinuousTime;
     }
 
     /**
-     * Configure the repeat times. Value range: [1, 10]
-     * @param ContinuousTime Repeat times. Value range: [1, 10]
+     * Set Number of repetitions. Value range: [1, 10]
+     * @param ContinuousTime Number of repetitions. Value range: [1, 10]
      */
-    public void setContinuousTime(Integer ContinuousTime) {
+    public void setContinuousTime(Long ContinuousTime) {
         this.ContinuousTime = ContinuousTime;
     }
 
     /**
-     * Obtain the statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
-     * @return Statistic Statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
+     * Get Statistics type. Value range: <br><li>AVERAGE: average </li><li>MAXIMUM: maximum <li>MINIMUM: minimum </li><br> Default value: AVERAGE 
+     * @return Statistic Statistics type. Value range: <br><li>AVERAGE: average </li><li>MAXIMUM: maximum <li>MINIMUM: minimum </li><br> Default value: AVERAGE
      */
     public String getStatistic() {
         return this.Statistic;
     }
 
     /**
-     * Configure the statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
-     * @param Statistic Statistic type. Available value:<br><li>AVERAGE: Average value</li><li>MAXIMUM: Maximum value<li>MINIMUM: Minimum value</li><br> Default: AVERAGE
+     * Set Statistics type. Value range: <br><li>AVERAGE: average </li><li>MAXIMUM: maximum <li>MINIMUM: minimum </li><br> Default value: AVERAGE
+     * @param Statistic Statistics type. Value range: <br><li>AVERAGE: average </li><li>MAXIMUM: maximum <li>MINIMUM: minimum </li><br> Default value: AVERAGE
      */
     public void setStatistic(String Statistic) {
         this.Statistic = Statistic;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ComparisonOperator", this.ComparisonOperator);

@@ -23,29 +23,29 @@ import java.util.HashMap;
 public class InstanceMarketOptionsRequest  extends AbstractModel{
 
     /**
-    * Spot-related options
+    * Options related to bidding
     */
     @SerializedName("SpotOptions")
     @Expose
     private SpotMarketOptions SpotOptions;
 
     /**
-    * Market type. Only "spot" is supported.
+    * Market option type. Currently `spot` is the only supported value.
     */
     @SerializedName("MarketType")
     @Expose
     private String MarketType;
 
     /**
-     * Get options related to bidding
-     * @return SpotOptions options related to bidding
+     * Get Options related to bidding 
+     * @return SpotOptions Options related to bidding
      */
     public SpotMarketOptions getSpotOptions() {
         return this.SpotOptions;
     }
 
     /**
-     * Set options related to spot requests
+     * Set Options related to bidding
      * @param SpotOptions Options related to bidding
      */
     public void setSpotOptions(SpotMarketOptions SpotOptions) {
@@ -53,23 +53,23 @@ public class InstanceMarketOptionsRequest  extends AbstractModel{
     }
 
     /**
-     * Get market type. Only "spot" is supported.
-     * @return MarketType market type. Only "spot" is supported.
+     * Get Market option type. Currently `spot` is the only supported value. 
+     * @return MarketType Market option type. Currently `spot` is the only supported value.
      */
     public String getMarketType() {
         return this.MarketType;
     }
 
     /**
-     * Set market type. Only "spot" is supported.
-     * @param MarketType market type. Only "spot" is supported.
+     * Set Market option type. Currently `spot` is the only supported value.
+     * @param MarketType Market option type. Currently `spot` is the only supported value.
      */
     public void setMarketType(String MarketType) {
         this.MarketType = MarketType;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "SpotOptions.", this.SpotOptions);

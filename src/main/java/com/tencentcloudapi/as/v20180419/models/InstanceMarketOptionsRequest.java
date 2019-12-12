@@ -23,53 +23,58 @@ import java.util.HashMap;
 public class InstanceMarketOptionsRequest  extends AbstractModel{
 
     /**
-    * Spot-related options.
+    * Bidding-related options
     */
     @SerializedName("SpotOptions")
     @Expose
     private SpotMarketOptions SpotOptions;
 
     /**
-    * Market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
+    * Market option type. Currently, this only supports the value "spot"
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("MarketType")
     @Expose
     private String MarketType;
 
     /**
-     * Obtain the spot-related options.
-     * @return SpotOptions Spot-related options.
+     * Get Bidding-related options 
+     * @return SpotOptions Bidding-related options
      */
     public SpotMarketOptions getSpotOptions() {
         return this.SpotOptions;
     }
 
     /**
-     * Configure the spot-related options.
-     * @param SpotOptions Spot-related options.
+     * Set Bidding-related options
+     * @param SpotOptions Bidding-related options
      */
     public void setSpotOptions(SpotMarketOptions SpotOptions) {
         this.SpotOptions = SpotOptions;
     }
 
     /**
-     * Obtain the market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
-     * @return MarketType Market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
+     * Get Market option type. Currently, this only supports the value "spot"
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return MarketType Market option type. Currently, this only supports the value "spot"
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public String getMarketType() {
         return this.MarketType;
     }
 
     /**
-     * Configure the market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
-     * @param MarketType Market type. Only "spot" is supported.Note: This field may return null, indicating that no valid value was found.
+     * Set Market option type. Currently, this only supports the value "spot"
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param MarketType Market option type. Currently, this only supports the value "spot"
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public void setMarketType(String MarketType) {
         this.MarketType = MarketType;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "SpotOptions.", this.SpotOptions);

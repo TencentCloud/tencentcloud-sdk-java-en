@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ModifyDesiredCapacityRequest  extends AbstractModel{
 
     /**
-    * Scaling group ID.
+    * Auto scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Desired number of instances.
+    * Desired capacity
     */
     @SerializedName("DesiredCapacity")
     @Expose
-    private Integer DesiredCapacity;
+    private Long DesiredCapacity;
 
     /**
-     * Obtain the scaling group ID.
-     * @return AutoScalingGroupId Scaling group ID.
+     * Get Auto scaling group ID 
+     * @return AutoScalingGroupId Auto scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Configure the scaling group ID.
-     * @param AutoScalingGroupId Scaling group ID.
+     * Set Auto scaling group ID
+     * @param AutoScalingGroupId Auto scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Obtain the desired number of instances.
-     * @return DesiredCapacity Desired number of instances.
+     * Get Desired capacity 
+     * @return DesiredCapacity Desired capacity
      */
-    public Integer getDesiredCapacity() {
+    public Long getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * Configure the desired number of instances.
-     * @param DesiredCapacity Desired number of instances.
+     * Set Desired capacity
+     * @param DesiredCapacity Desired capacity
      */
-    public void setDesiredCapacity(Integer DesiredCapacity) {
+    public void setDesiredCapacity(Long DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

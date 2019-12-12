@@ -23,191 +23,191 @@ import java.util.HashMap;
 public class ScalingPolicy  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Alert trigger policy ID
+    * Alarm trigger policy ID.
     */
     @SerializedName("AutoScalingPolicyId")
     @Expose
     private String AutoScalingPolicyId;
 
     /**
-    * Alert trigger policy name
+    * Alarm trigger policy name.
     */
     @SerializedName("ScalingPolicyName")
     @Expose
     private String ScalingPolicyName;
 
     /**
-    * After an alert is triggered,the method to change expected instance number. Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
+    * The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li>
     */
     @SerializedName("AdjustmentType")
     @Expose
     private String AdjustmentType;
 
     /**
-    * After an alert is triggered,the adjusted value of desired number of instances.
+    * The adjusted value of desired number of instances after the alarm is triggered.
     */
     @SerializedName("AdjustmentValue")
     @Expose
-    private Integer AdjustmentValue;
+    private Long AdjustmentValue;
 
     /**
-    * Cooldown period
+    * Cooldown period.
     */
     @SerializedName("Cooldown")
     @Expose
-    private Integer Cooldown;
+    private Long Cooldown;
 
     /**
-    * Alert monitor metrics.
+    * Alarm monitoring metric.
     */
     @SerializedName("MetricAlarm")
     @Expose
     private MetricAlarm MetricAlarm;
 
     /**
-    * ID of notification group, which is the collection of user group IDs.
+    * Notification group ID, which is the set of user group IDs.
     */
     @SerializedName("NotificationUserGroupIds")
     @Expose
     private String [] NotificationUserGroupIds;
 
     /**
-     * Obtain the scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+     * Get Auto scaling group ID. 
+     * @return AutoScalingGroupId Auto scaling group ID.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Configure the scaling group ID
-     * @param AutoScalingGroupId Scaling group ID
+     * Set Auto scaling group ID.
+     * @param AutoScalingGroupId Auto scaling group ID.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Obtain the alert trigger policy ID
-     * @return AutoScalingPolicyId Alert trigger policy ID
+     * Get Alarm trigger policy ID. 
+     * @return AutoScalingPolicyId Alarm trigger policy ID.
      */
     public String getAutoScalingPolicyId() {
         return this.AutoScalingPolicyId;
     }
 
     /**
-     * Set alert trigger policy ID
-     * @param AutoScalingPolicyId alert trigger policy ID
+     * Set Alarm trigger policy ID.
+     * @param AutoScalingPolicyId Alarm trigger policy ID.
      */
     public void setAutoScalingPolicyId(String AutoScalingPolicyId) {
         this.AutoScalingPolicyId = AutoScalingPolicyId;
     }
 
     /**
-     * Obtain alert trigger policy ID
-     * @return ScalingPolicyName alert trigger policy name
+     * Get Alarm trigger policy name. 
+     * @return ScalingPolicyName Alarm trigger policy name.
      */
     public String getScalingPolicyName() {
         return this.ScalingPolicyName;
     }
 
     /**
-     * Set the alert trigger policy name
-     * @param ScalingPolicyName alert trigger policy name
+     * Set Alarm trigger policy name.
+     * @param ScalingPolicyName Alarm trigger policy name.
      */
     public void setScalingPolicyName(String ScalingPolicyName) {
         this.ScalingPolicyName = ScalingPolicyName;
     }
 
     /**
-     * Obtain the method to modify expected instance number after an alert is triggered.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
-     * @return AdjustmentType After an alert is triggered, the method to modify expected instance number.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
+     * Get The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li> 
+     * @return AdjustmentType The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li>
      */
     public String getAdjustmentType() {
         return this.AdjustmentType;
     }
 
     /**
-     * After an alert is triggered,the method to change expected instance number. Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
-     * @param AdjustmentType After an alert is triggered, the method to modify expected instance number.Value:<br><li>CHANGE_IN_CAPACITY：Increase or decrease expected instance number.</li><li>EXACT_CAPACITY：Adjust desired expected instance number.</li> <li>PERCENT_CHANGE_IN_CAPACITY：Adjust to expected instance number as per percentage.</li>
+     * Set The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li>
+     * @param AdjustmentType The method to adjust the desired number of instances after the alarm is triggered. Value range: <br><li>CHANGE_IN_CAPACITY: Increase or decrease the desired number of instances </li><li>EXACT_CAPACITY: Adjust to the specified desired number of instances </li> <li>PERCENT_CHANGE_IN_CAPACITY: Adjust the desired number of instances by percentage </li>
      */
     public void setAdjustmentType(String AdjustmentType) {
         this.AdjustmentType = AdjustmentType;
     }
 
     /**
-     * Obtain the adjusted value of expected number of instances after alert is triggered.
-     * @return AdjustmentValue After an alert is triggered, the adjusted expected instance number. Value:
+     * Get The adjusted value of desired number of instances after the alarm is triggered. 
+     * @return AdjustmentValue The adjusted value of desired number of instances after the alarm is triggered.
      */
-    public Integer getAdjustmentValue() {
+    public Long getAdjustmentValue() {
         return this.AdjustmentValue;
     }
 
     /**
-     * Set the adjusted value of expected number of instances after alert is triggered.
-     * @param AdjustmentValue After an alert is triggered, the adjusted expected instance number. Value:
+     * Set The adjusted value of desired number of instances after the alarm is triggered.
+     * @param AdjustmentValue The adjusted value of desired number of instances after the alarm is triggered.
      */
-    public void setAdjustmentValue(Integer AdjustmentValue) {
+    public void setAdjustmentValue(Long AdjustmentValue) {
         this.AdjustmentValue = AdjustmentValue;
     }
 
     /**
-     * Obtain the cooldown time
-     * @return Cooldown cool down time, in seconds.
+     * Get Cooldown period. 
+     * @return Cooldown Cooldown period.
      */
-    public Integer getCooldown() {
+    public Long getCooldown() {
         return this.Cooldown;
     }
 
     /**
-     * Set the cooldown time
-     * @param Cooldown cool down time, in seconds.
+     * Set Cooldown period.
+     * @param Cooldown Cooldown period.
      */
-    public void setCooldown(Integer Cooldown) {
+    public void setCooldown(Long Cooldown) {
         this.Cooldown = Cooldown;
     }
 
     /**
-     * Obtain alert/monitor metrics.
-     * @return MetricAlarm alert/monitor metrics.
+     * Get Alarm monitoring metric. 
+     * @return MetricAlarm Alarm monitoring metric.
      */
     public MetricAlarm getMetricAlarm() {
         return this.MetricAlarm;
     }
 
     /**
-     * Set alert/monitor metrics.
-     * @param MetricAlarm alert/monitor metrics.
+     * Set Alarm monitoring metric.
+     * @param MetricAlarm Alarm monitoring metric.
      */
     public void setMetricAlarm(MetricAlarm MetricAlarm) {
         this.MetricAlarm = MetricAlarm;
     }
 
     /**
-     * Obtain notification group ID,which is the collection of user groups.
-     * @return NotificationUserGroupIds Notification group ID,which is the collection of user groups.
+     * Get Notification group ID, which is the set of user group IDs. 
+     * @return NotificationUserGroupIds Notification group ID, which is the set of user group IDs.
      */
     public String [] getNotificationUserGroupIds() {
         return this.NotificationUserGroupIds;
     }
 
     /**
-     * Set notification group ID,which is the collection of user groups.
-     * @param NotificationUserGroupIds Notification group ID,which is the collection of user groups.
+     * Set Notification group ID, which is the set of user group IDs.
+     * @param NotificationUserGroupIds Notification group ID, which is the set of user group IDs.
      */
     public void setNotificationUserGroupIds(String [] NotificationUserGroupIds) {
         this.NotificationUserGroupIds = NotificationUserGroupIds;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

@@ -23,49 +23,49 @@ import java.util.HashMap;
 public class AutoScalingGroup  extends AbstractModel{
 
     /**
-    * Scaling group ID.
+    * Auto scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Scaling group name
+    * Auto scaling group name
     */
     @SerializedName("AutoScalingGroupName")
     @Expose
     private String AutoScalingGroupName;
 
     /**
-    * Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
+    * Current status of the auto scaling group. Value range: <br><li>NORMAL: normal <br><li>CVM_ABNORMAL: Exception with the launch configuration <br><li>LB_ABNORMAL: exception with the load balancer <br><li>VPC_ABNORMAL: exception with the VPC <br><li>INSUFFICIENT_BALANCE: insufficient balance <br>
     */
     @SerializedName("AutoScalingGroupStatus")
     @Expose
     private String AutoScalingGroupStatus;
 
     /**
-    * Creation time, in UTC time.
+    * Creation time in UTC format
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * Default cooldown period, in seconds
+    * Default cooldown period in seconds
     */
     @SerializedName("DefaultCooldown")
     @Expose
-    private Integer DefaultCooldown;
+    private Long DefaultCooldown;
 
     /**
-    * Desired number of instances.
+    * Desired number of instances
     */
     @SerializedName("DesiredCapacity")
     @Expose
-    private Integer DesiredCapacity;
+    private Long DesiredCapacity;
 
     /**
-    * Enabled status, values include `ENABLED` and `DISABLED`
+    * Enabled status. Value range: `ENABLED`, `DISABLED`
     */
     @SerializedName("EnabledStatus")
     @Expose
@@ -79,18 +79,18 @@ public class AutoScalingGroup  extends AbstractModel{
     private ForwardLoadBalancer [] ForwardLoadBalancerSet;
 
     /**
-    * Number of Instances
+    * Number of instances
     */
     @SerializedName("InstanceCount")
     @Expose
-    private Integer InstanceCount;
+    private Long InstanceCount;
 
     /**
     * Number of instances in `IN_SERVICE` status
     */
     @SerializedName("InServiceInstanceCount")
     @Expose
-    private Integer InServiceInstanceCount;
+    private Long InServiceInstanceCount;
 
     /**
     * Launch configuration ID
@@ -100,14 +100,14 @@ public class AutoScalingGroup  extends AbstractModel{
     private String LaunchConfigurationId;
 
     /**
-    * Launch configuration name.
+    * Launch configuration name
     */
     @SerializedName("LaunchConfigurationName")
     @Expose
     private String LaunchConfigurationName;
 
     /**
-    * List of traditional load balancer IDs
+    * List of Classic load balancer IDs
     */
     @SerializedName("LoadBalancerIdSet")
     @Expose
@@ -118,21 +118,21 @@ public class AutoScalingGroup  extends AbstractModel{
     */
     @SerializedName("MaxSize")
     @Expose
-    private Integer MaxSize;
+    private Long MaxSize;
 
     /**
     * Minimum number of instances
     */
     @SerializedName("MinSize")
     @Expose
-    private Integer MinSize;
+    private Long MinSize;
 
     /**
     * Project ID
     */
     @SerializedName("ProjectId")
     @Expose
-    private Integer ProjectId;
+    private Long ProjectId;
 
     /**
     * List of subnet IDs
@@ -170,133 +170,147 @@ public class AutoScalingGroup  extends AbstractModel{
     private String RetryPolicy;
 
     /**
-    * Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
+    * Whether the auto scaling group is performing a scaling activity. `IN_ACTIVITY` indicates yes, and `NOT_IN_ACTIVITY` indicates no.
     */
     @SerializedName("InActivityStatus")
     @Expose
     private String InActivityStatus;
 
     /**
-    * Scaling group tag list
+    * List of auto scaling group tags
     */
     @SerializedName("Tags")
     @Expose
     private Tag [] Tags;
 
     /**
-     * Get Scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+    * Service settings
+    */
+    @SerializedName("ServiceSettings")
+    @Expose
+    private ServiceSettings ServiceSettings;
+
+    /**
+    * 
+    */
+    @SerializedName("Ipv6AddressCount")
+    @Expose
+    private Long Ipv6AddressCount;
+
+    /**
+     * Get Auto scaling group ID 
+     * @return AutoScalingGroupId Auto scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set Scaling group ID
-     * @param AutoScalingGroupId Scaling group ID
+     * Set Auto scaling group ID
+     * @param AutoScalingGroupId Auto scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Get scaling group name
-     * @return AutoScalingGroupName Scaling group name
+     * Get Auto scaling group name 
+     * @return AutoScalingGroupName Auto scaling group name
      */
     public String getAutoScalingGroupName() {
         return this.AutoScalingGroupName;
     }
 
     /**
-     * Set scaling group name
-     * @param AutoScalingGroupName Scaling group name
+     * Set Auto scaling group name
+     * @param AutoScalingGroupName Auto scaling group name
      */
     public void setAutoScalingGroupName(String AutoScalingGroupName) {
         this.AutoScalingGroupName = AutoScalingGroupName;
     }
 
     /**
-     * Get Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
-     * @return AutoScalingGroupStatus Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
+     * Get Current status of the auto scaling group. Value range: <br><li>NORMAL: normal <br><li>CVM_ABNORMAL: Exception with the launch configuration <br><li>LB_ABNORMAL: exception with the load balancer <br><li>VPC_ABNORMAL: exception with the VPC <br><li>INSUFFICIENT_BALANCE: insufficient balance <br> 
+     * @return AutoScalingGroupStatus Current status of the auto scaling group. Value range: <br><li>NORMAL: normal <br><li>CVM_ABNORMAL: Exception with the launch configuration <br><li>LB_ABNORMAL: exception with the load balancer <br><li>VPC_ABNORMAL: exception with the VPC <br><li>INSUFFICIENT_BALANCE: insufficient balance <br>
      */
     public String getAutoScalingGroupStatus() {
         return this.AutoScalingGroupStatus;
     }
 
     /**
-     * Set Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
-     * @param AutoScalingGroupStatus Scaling group current status. Values include:<br><li>NORMAL: Normal.<br><li>CVM_ABNORMAL: Launch configuration abnormal<br><li>LB_ABNORMAL: CLB abnormal<br><li>VPC_ABNORMAL: VPC network abnormal<br><li>INSUFFICIENT_BALANCE: insufficient balance in your account<br>
+     * Set Current status of the auto scaling group. Value range: <br><li>NORMAL: normal <br><li>CVM_ABNORMAL: Exception with the launch configuration <br><li>LB_ABNORMAL: exception with the load balancer <br><li>VPC_ABNORMAL: exception with the VPC <br><li>INSUFFICIENT_BALANCE: insufficient balance <br>
+     * @param AutoScalingGroupStatus Current status of the auto scaling group. Value range: <br><li>NORMAL: normal <br><li>CVM_ABNORMAL: Exception with the launch configuration <br><li>LB_ABNORMAL: exception with the load balancer <br><li>VPC_ABNORMAL: exception with the VPC <br><li>INSUFFICIENT_BALANCE: insufficient balance <br>
      */
     public void setAutoScalingGroupStatus(String AutoScalingGroupStatus) {
         this.AutoScalingGroupStatus = AutoScalingGroupStatus;
     }
 
     /**
-     * Get Creation time, in UTC time.
-     * @return CreatedTime Creation time, in UTC time.
+     * Get Creation time in UTC format 
+     * @return CreatedTime Creation time in UTC format
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * Set Creation time, in UTC time.
-     * @param CreatedTime Creation time, in UTC time.
+     * Set Creation time in UTC format
+     * @param CreatedTime Creation time in UTC format
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * Get Default cooldown period, in seconds
-     * @return DefaultCooldown Default cooldown period, in seconds
+     * Get Default cooldown period in seconds 
+     * @return DefaultCooldown Default cooldown period in seconds
      */
-    public Integer getDefaultCooldown() {
+    public Long getDefaultCooldown() {
         return this.DefaultCooldown;
     }
 
     /**
-     * Set Default cooldown period, in seconds
-     * @param DefaultCooldown Default cooldown period, in seconds
+     * Set Default cooldown period in seconds
+     * @param DefaultCooldown Default cooldown period in seconds
      */
-    public void setDefaultCooldown(Integer DefaultCooldown) {
+    public void setDefaultCooldown(Long DefaultCooldown) {
         this.DefaultCooldown = DefaultCooldown;
     }
 
     /**
-     * Get Desired number of instances.
-     * @return DesiredCapacity Desired number of instances.
+     * Get Desired number of instances 
+     * @return DesiredCapacity Desired number of instances
      */
-    public Integer getDesiredCapacity() {
+    public Long getDesiredCapacity() {
         return this.DesiredCapacity;
     }
 
     /**
-     * Set Desired number of instances.
-     * @param DesiredCapacity Desired number of instances.
+     * Set Desired number of instances
+     * @param DesiredCapacity Desired number of instances
      */
-    public void setDesiredCapacity(Integer DesiredCapacity) {
+    public void setDesiredCapacity(Long DesiredCapacity) {
         this.DesiredCapacity = DesiredCapacity;
     }
 
     /**
-     * Get Enabled status, values include `ENABLED` and `DISABLED`
-     * @return EnabledStatus Enabled status, values include `ENABLED` and `DISABLED`
+     * Get Enabled status. Value range: `ENABLED`, `DISABLED` 
+     * @return EnabledStatus Enabled status. Value range: `ENABLED`, `DISABLED`
      */
     public String getEnabledStatus() {
         return this.EnabledStatus;
     }
 
     /**
-     * Set Enabled status, values include `ENABLED` and `DISABLED`
-     * @param EnabledStatus Enabled status, values include `ENABLED` and `DISABLED`
+     * Set Enabled status. Value range: `ENABLED`, `DISABLED`
+     * @param EnabledStatus Enabled status. Value range: `ENABLED`, `DISABLED`
      */
     public void setEnabledStatus(String EnabledStatus) {
         this.EnabledStatus = EnabledStatus;
     }
 
     /**
-     * Get List of application load balancers
+     * Get List of application load balancers 
      * @return ForwardLoadBalancerSet List of application load balancers
      */
     public ForwardLoadBalancer [] getForwardLoadBalancerSet() {
@@ -312,26 +326,26 @@ public class AutoScalingGroup  extends AbstractModel{
     }
 
     /**
-     * Get number of instances
-     * @return InstanceCount number of instances
+     * Get Number of instances 
+     * @return InstanceCount Number of instances
      */
-    public Integer getInstanceCount() {
+    public Long getInstanceCount() {
         return this.InstanceCount;
     }
 
     /**
-     * Set number of instances
-     * @param InstanceCount number of instances 
+     * Set Number of instances
+     * @param InstanceCount Number of instances
      */
-    public void setInstanceCount(Integer InstanceCount) {
+    public void setInstanceCount(Long InstanceCount) {
         this.InstanceCount = InstanceCount;
     }
 
     /**
-     * Get Number of instances in `IN_SERVICE` status
+     * Get Number of instances in `IN_SERVICE` status 
      * @return InServiceInstanceCount Number of instances in `IN_SERVICE` status
      */
-    public Integer getInServiceInstanceCount() {
+    public Long getInServiceInstanceCount() {
         return this.InServiceInstanceCount;
     }
 
@@ -339,20 +353,20 @@ public class AutoScalingGroup  extends AbstractModel{
      * Set Number of instances in `IN_SERVICE` status
      * @param InServiceInstanceCount Number of instances in `IN_SERVICE` status
      */
-    public void setInServiceInstanceCount(Integer InServiceInstanceCount) {
+    public void setInServiceInstanceCount(Long InServiceInstanceCount) {
         this.InServiceInstanceCount = InServiceInstanceCount;
     }
 
     /**
-     * Get launch configuration ID
-     * @return LaunchConfigurationId Launch configuration ID.
+     * Get Launch configuration ID 
+     * @return LaunchConfigurationId Launch configuration ID
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * Set launch configuration ID
+     * Set Launch configuration ID
      * @param LaunchConfigurationId Launch configuration ID
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
@@ -360,15 +374,15 @@ public class AutoScalingGroup  extends AbstractModel{
     }
 
     /**
-     * Get launch configuration name
-     * @return LaunchConfigurationName launch configuration name
+     * Get Launch configuration name 
+     * @return LaunchConfigurationName Launch configuration name
      */
     public String getLaunchConfigurationName() {
         return this.LaunchConfigurationName;
     }
 
     /**
-     * Set launch configuration name
+     * Set Launch configuration name
      * @param LaunchConfigurationName Launch configuration name
      */
     public void setLaunchConfigurationName(String LaunchConfigurationName) {
@@ -376,26 +390,26 @@ public class AutoScalingGroup  extends AbstractModel{
     }
 
     /**
-     * Get List of traditional load balancer IDs
-     * @return LoadBalancerId List of traditional load balancer IDs
+     * Get List of Classic load balancer IDs 
+     * @return LoadBalancerIdSet List of Classic load balancer IDs
      */
     public String [] getLoadBalancerIdSet() {
         return this.LoadBalancerIdSet;
     }
 
     /**
-     * Set List of traditional load balancer IDs
-     * @param LoadBalancerIdSet List of traditional load balancer IDs
+     * Set List of Classic load balancer IDs
+     * @param LoadBalancerIdSet List of Classic load balancer IDs
      */
     public void setLoadBalancerIdSet(String [] LoadBalancerIdSet) {
         this.LoadBalancerIdSet = LoadBalancerIdSet;
     }
 
     /**
-     * Get Maximum number of instances
+     * Get Maximum number of instances 
      * @return MaxSize Maximum number of instances
      */
-    public Integer getMaxSize() {
+    public Long getMaxSize() {
         return this.MaxSize;
     }
 
@@ -403,15 +417,15 @@ public class AutoScalingGroup  extends AbstractModel{
      * Set Maximum number of instances
      * @param MaxSize Maximum number of instances
      */
-    public void setMaxSize(Integer MaxSize) {
+    public void setMaxSize(Long MaxSize) {
         this.MaxSize = MaxSize;
     }
 
     /**
-     * Get Minimum number of instances
+     * Get Minimum number of instances 
      * @return MinSize Minimum number of instances
      */
-    public Integer getMinSize() {
+    public Long getMinSize() {
         return this.MinSize;
     }
 
@@ -419,29 +433,29 @@ public class AutoScalingGroup  extends AbstractModel{
      * Set Minimum number of instances
      * @param MinSize Minimum number of instances
      */
-    public void setMinSize(Integer MinSize) {
+    public void setMinSize(Long MinSize) {
         this.MinSize = MinSize;
     }
 
     /**
-     * Get project ID
-     * @return ProjectId Project ID.
+     * Get Project ID 
+     * @return ProjectId Project ID
      */
-    public Integer getProjectId() {
+    public Long getProjectId() {
         return this.ProjectId;
     }
 
     /**
-     * Set project ID.
-     * @param ProjectId Project ID.
+     * Set Project ID
+     * @param ProjectId Project ID
      */
-    public void setProjectId(Integer ProjectId) {
+    public void setProjectId(Long ProjectId) {
         this.ProjectId = ProjectId;
     }
 
     /**
-     * Get List of subnet IDs
-     * @return SubnetIds List of subnet IDs
+     * Get List of subnet IDs 
+     * @return SubnetIdSet List of subnet IDs
      */
     public String [] getSubnetIdSet() {
         return this.SubnetIdSet;
@@ -456,7 +470,7 @@ public class AutoScalingGroup  extends AbstractModel{
     }
 
     /**
-     * Get Termination policy
+     * Get Termination policy 
      * @return TerminationPolicySet Termination policy
      */
     public String [] getTerminationPolicySet() {
@@ -472,7 +486,7 @@ public class AutoScalingGroup  extends AbstractModel{
     }
 
     /**
-     * Get VPC ID
+     * Get VPC ID 
      * @return VpcId VPC ID
      */
     public String getVpcId() {
@@ -488,71 +502,103 @@ public class AutoScalingGroup  extends AbstractModel{
     }
 
     /**
-     * Get list of availability zones
-     * @return ZoneSet List of Availability Zones
+     * Get List of availability zones 
+     * @return ZoneSet List of availability zones
      */
     public String [] getZoneSet() {
         return this.ZoneSet;
     }
 
     /**
-     * Set list of availability zones
-     * @param ZoneSet List of Availability Zones
+     * Set List of availability zones
+     * @param ZoneSet List of availability zones
      */
     public void setZoneSet(String [] ZoneSet) {
         this.ZoneSet = ZoneSet;
     }
 
     /**
-     * Get retry policy
-     * @return RetryPolicy
+     * Get Retry policy 
+     * @return RetryPolicy Retry policy
      */
     public String getRetryPolicy() {
         return this.RetryPolicy;
     }
 
     /**
-     * Set retry policy
-     * @param RetryPolicy
+     * Set Retry policy
+     * @param RetryPolicy Retry policy
      */
     public void setRetryPolicy(String RetryPolicy) {
         this.RetryPolicy = RetryPolicy;
     }
 
     /**
-     * Get Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
-     * @return InActivityStatus Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
+     * Get Whether the auto scaling group is performing a scaling activity. `IN_ACTIVITY` indicates yes, and `NOT_IN_ACTIVITY` indicates no. 
+     * @return InActivityStatus Whether the auto scaling group is performing a scaling activity. `IN_ACTIVITY` indicates yes, and `NOT_IN_ACTIVITY` indicates no.
      */
     public String getInActivityStatus() {
         return this.InActivityStatus;
     }
 
     /**
-     * Set Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
-     * @param InActivityStatus Whether the scaling group currently has ongoing scaling activity. `IN_ACTIVITY` indicates that there’s an ongoing scaling activity, `NOT_IN_ACTIVITY` indicates there’s no ongoing scaling activity. 
+     * Set Whether the auto scaling group is performing a scaling activity. `IN_ACTIVITY` indicates yes, and `NOT_IN_ACTIVITY` indicates no.
+     * @param InActivityStatus Whether the auto scaling group is performing a scaling activity. `IN_ACTIVITY` indicates yes, and `NOT_IN_ACTIVITY` indicates no.
      */
     public void setInActivityStatus(String InActivityStatus) {
         this.InActivityStatus = InActivityStatus;
     }
 
     /**
-     * Get scaling group tag list
-     * @return Tags scaling group tag list
+     * Get List of auto scaling group tags 
+     * @return Tags List of auto scaling group tags
      */
     public Tag [] getTags() {
         return this.Tags;
     }
 
     /**
-     * Set scaling group tag list
-     * @param Tags scaling group tag list
+     * Set List of auto scaling group tags
+     * @param Tags List of auto scaling group tags
      */
     public void setTags(Tag [] Tags) {
         this.Tags = Tags;
     }
 
     /**
-     * For internal use only. 
+     * Get Service settings 
+     * @return ServiceSettings Service settings
+     */
+    public ServiceSettings getServiceSettings() {
+        return this.ServiceSettings;
+    }
+
+    /**
+     * Set Service settings
+     * @param ServiceSettings Service settings
+     */
+    public void setServiceSettings(ServiceSettings ServiceSettings) {
+        this.ServiceSettings = ServiceSettings;
+    }
+
+    /**
+     * Get  
+     * @return Ipv6AddressCount 
+     */
+    public Long getIpv6AddressCount() {
+        return this.Ipv6AddressCount;
+    }
+
+    /**
+     * Set 
+     * @param Ipv6AddressCount 
+     */
+    public void setIpv6AddressCount(Long Ipv6AddressCount) {
+        this.Ipv6AddressCount = Ipv6AddressCount;
+    }
+
+    /**
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);
@@ -578,6 +624,8 @@ public class AutoScalingGroup  extends AbstractModel{
         this.setParamSimple(map, prefix + "RetryPolicy", this.RetryPolicy);
         this.setParamSimple(map, prefix + "InActivityStatus", this.InActivityStatus);
         this.setParamArrayObj(map, prefix + "Tags.", this.Tags);
+        this.setParamObj(map, prefix + "ServiceSettings.", this.ServiceSettings);
+        this.setParamSimple(map, prefix + "Ipv6AddressCount", this.Ipv6AddressCount);
 
     }
 }

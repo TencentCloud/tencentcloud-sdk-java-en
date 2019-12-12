@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeInstancesStatusResponse  extends AbstractModel{
 
     /**
-    * Number of instance statues matching the filter condition.
+    * Number of instance states meeting the filtering conditions.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * [instance status](https://cloud.tencent.com/document/api/213/15728) list.
+    * List of [instance states](https://cloud.tencent.com/document/api/213/15728).
     */
     @SerializedName("InstanceStatusSet")
     @Expose
     private InstanceStatus [] InstanceStatusSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain number of instance statues matching the filter condition.
-     * @return TotalCount Number of instance statues matching the filter condition.
+     * Get Number of instance states meeting the filtering conditions. 
+     * @return TotalCount Number of instance states meeting the filtering conditions.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of instance statues matching the filter condition.
-     * @param TotalCount Number of instance statues matching the filter condition.
+     * Set Number of instance states meeting the filtering conditions.
+     * @param TotalCount Number of instance states meeting the filtering conditions.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain [instance status](https://cloud.tencent.com/document/api/213/15728) list.
-     * @return InstanceStatusSet [instance status](https://cloud.tencent.com/document/api/213/15728) list.
+     * Get List of [instance states](https://cloud.tencent.com/document/api/213/15728). 
+     * @return InstanceStatusSet List of [instance states](https://cloud.tencent.com/document/api/213/15728).
      */
     public InstanceStatus [] getInstanceStatusSet() {
         return this.InstanceStatusSet;
     }
 
     /**
-     * Set [instance status](https://cloud.tencent.com/document/api/213/15728) list.
-     * @param InstanceStatusSet [instance status](https://cloud.tencent.com/document/api/213/15728) list.
+     * Set List of [instance states](https://cloud.tencent.com/document/api/213/15728).
+     * @param InstanceStatusSet List of [instance states](https://cloud.tencent.com/document/api/213/15728).
      */
     public void setInstanceStatusSet(InstanceStatus [] InstanceStatusSet) {
         this.InstanceStatusSet = InstanceStatusSet;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

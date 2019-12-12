@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateLaunchConfigurationResponse  extends AbstractModel{
 
     /**
-    * Launch configuration ID, which is returned when you create a launch configuration using this API.
+    * This parameter is returned when a launch configuration is created through this API, indicating the launch configuration ID.
     */
     @SerializedName("LaunchConfigurationId")
     @Expose
     private String LaunchConfigurationId;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get launch configuration ID, which is returned when you create a launch configuration using this API.
-     * @return LaunchConfigurationId Launch configuration ID, which is returned when you create a launch configuration using this API.
+     * Get This parameter is returned when a launch configuration is created through this API, indicating the launch configuration ID. 
+     * @return LaunchConfigurationId This parameter is returned when a launch configuration is created through this API, indicating the launch configuration ID.
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * Set launch configuration ID, which is returned when you create a launch configuration using this API.
-     * @param LaunchConfigurationId Launch configuration ID, which is returned when you create a launch configuration using this API.
+     * Set This parameter is returned when a launch configuration is created through this API, indicating the launch configuration ID.
+     * @param LaunchConfigurationId This parameter is returned when a launch configuration is created through this API, indicating the launch configuration ID.
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * Get unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId The unique ID of a request, which is returned for each request. The RequestId is required for troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LaunchConfigurationId", this.LaunchConfigurationId);

@@ -30,49 +30,51 @@ public class DisasterRecoverGroup  extends AbstractModel{
     private String DisasterRecoverGroupId;
 
     /**
-    * Name of spread placement group, name between 1 and 60 characters long.
+    * Name of a spread placement group, which must be 1-60 characters long.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * Type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
+    * Type of a spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack.
     */
     @SerializedName("Type")
     @Expose
     private String Type;
 
     /**
-    * Maximum number of CVMs that can be hosted in a spread placement group.
+    * The maximum number of CVMs that can be hosted in a spread placement group.
     */
     @SerializedName("CvmQuotaTotal")
     @Expose
-    private Integer CvmQuotaTotal;
+    private Long CvmQuotaTotal;
 
     /**
-    * Current number of CVMs hosted in a spread placement group.
+    * The current number of CVMs in a spread placement group.
     */
     @SerializedName("CurrentNum")
     @Expose
-    private Integer CurrentNum;
+    private Long CurrentNum;
 
     /**
-    * List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
+    * The list of CVM IDs in a spread placement group.
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Creation time of a spread placement group. Note: This field may return null, indicating that no valid value was found.
+    * Creation time of a spread placement group.
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-     * Get ID of a spread placement group.
+     * Get ID of a spread placement group. 
      * @return DisasterRecoverGroupId ID of a spread placement group.
      */
     public String getDisasterRecoverGroupId() {
@@ -88,103 +90,111 @@ public class DisasterRecoverGroup  extends AbstractModel{
     }
 
     /**
-     * Name of a spread placement group with a length of 1-60 characters.
-     * @return Name Name of spread placement group, group name between 1 and 60 characters long.
+     * Get Name of a spread placement group, which must be 1-60 characters long. 
+     * @return Name Name of a spread placement group, which must be 1-60 characters long.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Name of a spread placement group with a length of 1-60 characters.
-     * @param Name Name of spread placement group, group name between 1 and 60 characters long.
+     * Set Name of a spread placement group, which must be 1-60 characters long.
+     * @param Name Name of a spread placement group, which must be 1-60 characters long.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Get type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
-     * @return Type Type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
+     * Get Type of a spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack. 
+     * @return Type Type of a spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack.
      */
     public String getType() {
         return this.Type;
     }
 
     /**
-     * Set type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
-     * @param Type Type of spread placement group, choose from:<br><li>HOST: Physical host<br><li>SW: Switch<br><li>RACK: Rack
+     * Set Type of a spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack.
+     * @param Type Type of a spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack.
      */
     public void setType(String Type) {
         this.Type = Type;
     }
 
     /**
-     * Get maximum number of CVMs that can be hosted in a spread placement group.
-     * @return CvmQuotaTotal Maximum number of CVMs that can be hosted in a spread placement group.
+     * Get The maximum number of CVMs that can be hosted in a spread placement group. 
+     * @return CvmQuotaTotal The maximum number of CVMs that can be hosted in a spread placement group.
      */
-    public Integer getCvmQuotaTotal() {
+    public Long getCvmQuotaTotal() {
         return this.CvmQuotaTotal;
     }
 
     /**
-     * Set maximum number of CVMs that can be hosted in a spread placement group.
-     * @param CvmQuotaTotal Maximum number of CVMs that can be hosted in a spread placement group.
+     * Set The maximum number of CVMs that can be hosted in a spread placement group.
+     * @param CvmQuotaTotal The maximum number of CVMs that can be hosted in a spread placement group.
      */
-    public void setCvmQuotaTotal(Integer CvmQuotaTotal) {
+    public void setCvmQuotaTotal(Long CvmQuotaTotal) {
         this.CvmQuotaTotal = CvmQuotaTotal;
     }
 
     /**
-     * Get number of CVMs hosted in a spread placement group.
-     * @return CurrentNum Current number of CVMs hosted in a spread placement group.
+     * Get The current number of CVMs in a spread placement group. 
+     * @return CurrentNum The current number of CVMs in a spread placement group.
      */
-    public Integer getCurrentNum() {
+    public Long getCurrentNum() {
         return this.CurrentNum;
     }
 
     /**
-     * Set number of CVMs hosted in a spread placement group.
-     * @param CurrentNum Current number of CVMs hosted in a spread placement group.
+     * Set The current number of CVMs in a spread placement group.
+     * @param CurrentNum The current number of CVMs in a spread placement group.
      */
-    public void setCurrentNum(Integer CurrentNum) {
+    public void setCurrentNum(Long CurrentNum) {
         this.CurrentNum = CurrentNum;
     }
 
     /**
-     * Get list of IDs of CVMs in a spread placement group. Note: This field may return null, indicating that no valid value was found.
-     * @return InstanceIds List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
+     * Get The list of CVM IDs in a spread placement group.
+Note: This field may return null, indicating that no valid value was found. 
+     * @return InstanceIds The list of CVM IDs in a spread placement group.
+Note: This field may return null, indicating that no valid value was found.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * Set list of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
-     * @param InstanceIds List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
+     * Set The list of CVM IDs in a spread placement group.
+Note: This field may return null, indicating that no valid value was found.
+     * @param InstanceIds The list of CVM IDs in a spread placement group.
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Get creation time of a spread placement group. Note: This field may return null, indicating that no valid value was found.
-     * @return CreateTime List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
+     * Get Creation time of a spread placement group.
+Note: This field may return null, indicating that no valid value is found. 
+     * @return CreateTime Creation time of a spread placement group.
+Note: This field may return null, indicating that no valid value is found.
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * Set creation time of a spread placement group. Note: This field may return null, indicating that no valid value was found.
-     * @param CreateTime List of instance IDs of CVM in a spread placement group. Note: This field may return null, indicating that no valid value was found.
+     * Set Creation time of a spread placement group.
+Note: This field may return null, indicating that no valid value is found.
+     * @param CreateTime Creation time of a spread placement group.
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DisasterRecoverGroupId", this.DisasterRecoverGroupId);

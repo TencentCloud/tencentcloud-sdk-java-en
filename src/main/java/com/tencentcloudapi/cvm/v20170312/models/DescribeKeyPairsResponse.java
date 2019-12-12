@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeKeyPairsResponse  extends AbstractModel{
 
     /**
-    * The number of key pairs matching the filter condition.
+    * Number of key pairs meeting the filtering conditions.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * List of details of key pairs.
+    * Detailed information on key pairs.
     */
     @SerializedName("KeyPairSet")
     @Expose
     private KeyPair [] KeyPairSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the number of key pairs matching the filter condition.
-     * @return TotalCount The number of key pairs matching the filter condition.
+     * Get Number of key pairs meeting the filtering conditions. 
+     * @return TotalCount Number of key pairs meeting the filtering conditions.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set the number of key pairs matching the filter condition.
-     * @param TotalCount The number of key pairs matching the filter condition.
+     * Set Number of key pairs meeting the filtering conditions.
+     * @param TotalCount Number of key pairs meeting the filtering conditions.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the list of details of key pairs.
-     * @return KeyPairSet The list of details of key pairs.
+     * Get Detailed information on key pairs. 
+     * @return KeyPairSet Detailed information on key pairs.
      */
     public KeyPair [] getKeyPairSet() {
         return this.KeyPairSet;
     }
 
     /**
-     * Set the list of details of key pairs.
-     * @param KeyPairSet The list of details of key pairs.
+     * Set Detailed information on key pairs.
+     * @param KeyPairSet Detailed information on key pairs.
      */
     public void setKeyPairSet(KeyPair [] KeyPairSet) {
         this.KeyPairSet = KeyPairSet;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

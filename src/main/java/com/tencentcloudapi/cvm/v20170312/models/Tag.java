@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class Tag  extends AbstractModel{
 
     /**
-    * Tag key.
+    * Tag key
     */
     @SerializedName("Key")
     @Expose
     private String Key;
 
     /**
-    * Tag value.
+    * Tag value
     */
     @SerializedName("Value")
     @Expose
     private String Value;
 
     /**
-     * Obtain tag key.
-     * @return Key tag key.
+     * Get Tag key 
+     * @return Key Tag key
      */
     public String getKey() {
         return this.Key;
     }
 
     /**
-     * Set tag key.
-     * @param Key tag key.
+     * Set Tag key
+     * @param Key Tag key
      */
     public void setKey(String Key) {
         this.Key = Key;
     }
 
     /**
-     * Obtain tag key.
-     * @return Value tag key.
+     * Get Tag value 
+     * @return Value Tag value
      */
     public String getValue() {
         return this.Value;
     }
 
     /**
-     * Set tag key.
-     * @param Value tag value
+     * Set Tag value
+     * @param Value Tag value
      */
     public void setValue(String Value) {
         this.Value = Value;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Key", this.Key);

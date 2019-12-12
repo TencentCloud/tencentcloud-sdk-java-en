@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class PreviewPaiDomainNameRequest  extends AbstractModel{
 
     /**
-    * Domain Name Type
+    * Domain name type
     */
     @SerializedName("DomainNameType")
     @Expose
     private String DomainNameType;
 
     /**
-     * Obtain Domain Name Type
-     * @return DomainNameType Domain Name Type
+     * Get Domain name type 
+     * @return DomainNameType Domain name type
      */
     public String getDomainNameType() {
         return this.DomainNameType;
     }
 
     /**
-     * Set Domain Name Type
-     * @param DomainNameType Domain Name Type
+     * Set Domain name type
+     * @param DomainNameType Domain name type
      */
     public void setDomainNameType(String DomainNameType) {
         this.DomainNameType = DomainNameType;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DomainNameType", this.DomainNameType);

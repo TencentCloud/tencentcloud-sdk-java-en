@@ -23,53 +23,63 @@ import java.util.HashMap;
 public class SystemDisk  extends AbstractModel{
 
     /**
-    * System disk types. For information on limits of system disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/2177). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
+    * System disk type. For more information on limits of system disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("DiskType")
     @Expose
     private String DiskType;
 
     /**
-    * Size of system disk, in GB. Default: 50 GB.Note: This field may return null, indicating that no valid value was found.
+    * System disk size in GB. Default value: 50
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("DiskSize")
     @Expose
-    private Integer DiskSize;
+    private Long DiskSize;
 
     /**
-     * Get system disk types. For information on limits of system disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/2177). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
-     * @return DiskType system disk types. For information on limits of system disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/2177). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
+     * Get System disk type. For more information on limits of system disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return DiskType System disk type. For more information on limits of system disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public String getDiskType() {
         return this.DiskType;
     }
 
     /**
-     * Set system disk types. For information on limits of system disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
-     * @param DiskType System disk types. For information on limits of system disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
+     * Set System disk type. For more information on limits of system disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param DiskType System disk type. For more information on limits of system disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public void setDiskType(String DiskType) {
         this.DiskType = DiskType;
     }
 
     /**
-     * Obtain size of system disk, in GB. Default: 50 GB.Note: This field may return null, indicating that no valid value was found.
-     * @return DiskSize Size of system disk. In GB. Default value:50.Note: This field may return null, indicating that no valid value was found.
+     * Get System disk size in GB. Default value: 50
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return DiskSize System disk size in GB. Default value: 50
+Note: This field may return null, indicating that no valid values can be obtained.
      */
-    public Integer getDiskSize() {
+    public Long getDiskSize() {
         return this.DiskSize;
     }
 
     /**
-     * Set size of system disk, in GB. Default: 50 GB.Note: This field may return null, indicating that no valid value was found.
-     * @param DiskSize Size of system disk. In GB. Default value:50.Note: This field may return null, indicating that no valid value was found.
+     * Set System disk size in GB. Default value: 50
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param DiskSize System disk size in GB. Default value: 50
+Note: This field may return null, indicating that no valid values can be obtained.
      */
-    public void setDiskSize(Integer DiskSize) {
+    public void setDiskSize(Long DiskSize) {
         this.DiskSize = DiskSize;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DiskType", this.DiskType);

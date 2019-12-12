@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InquiryPriceResizeInstanceDisksResponse  extends AbstractModel{
 
     /**
-    * The parameter indicates the price of expanding the capacity of the disk to a proper configuration.
+    * Price of the disks after being expanded to the specified configurations
     */
     @SerializedName("Price")
     @Expose
     private Price Price;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the parameter indicates the price of expanding the capacity of the disk to a proper configuration.
-     * @return Price The parameter indicates the price of expanding the capacity of the disk to a proper configuration.
+     * Get Price of the disks after being expanded to the specified configurations 
+     * @return Price Price of the disks after being expanded to the specified configurations
      */
     public Price getPrice() {
         return this.Price;
     }
 
     /**
-     * Set the parameter indicates the price of expanding the capacity of the disk to a proper configuration.
-     * @param Price the parameter indicates the price of expanding the capacity of the disk to a proper configuration.
+     * Set Price of the disks after being expanded to the specified configurations
+     * @param Price Price of the disks after being expanded to the specified configurations
      */
     public void setPrice(Price Price) {
         this.Price = Price;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Price.", this.Price);

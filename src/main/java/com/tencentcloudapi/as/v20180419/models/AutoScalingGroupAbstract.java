@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class AutoScalingGroupAbstract  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Scaling group name
+    * Auto scaling group name.
     */
     @SerializedName("AutoScalingGroupName")
     @Expose
     private String AutoScalingGroupName;
 
     /**
-     * Get scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+     * Get Auto scaling group ID. 
+     * @return AutoScalingGroupId Auto scaling group ID.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set Scaling group ID
-     * @param AutoScalingGroupId Scaling group ID
+     * Set Auto scaling group ID.
+     * @param AutoScalingGroupId Auto scaling group ID.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Get scaling group name
-     * @return AutoScalingGroupName Scaling group name
+     * Get Auto scaling group name. 
+     * @return AutoScalingGroupName Auto scaling group name.
      */
     public String getAutoScalingGroupName() {
         return this.AutoScalingGroupName;
     }
 
     /**
-     * Set scaling group name
-     * @param AutoScalingGroupName Scaling group name
+     * Set Auto scaling group name.
+     * @param AutoScalingGroupName Auto scaling group name.
      */
     public void setAutoScalingGroupName(String AutoScalingGroupName) {
         this.AutoScalingGroupName = AutoScalingGroupName;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

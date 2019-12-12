@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateScalingPolicyResponse  extends AbstractModel{
 
     /**
-    * Alarm trigger policy ID
+    * Alarm trigger policy ID.
     */
     @SerializedName("AutoScalingPolicyId")
     @Expose
     private String AutoScalingPolicyId;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get Alarm trigger policy ID
-     * @return AutoScalingPolicyId Alarm trigger policy ID
+     * Get Alarm trigger policy ID. 
+     * @return AutoScalingPolicyId Alarm trigger policy ID.
      */
     public String getAutoScalingPolicyId() {
         return this.AutoScalingPolicyId;
     }
 
     /**
-     * Set Alarm trigger policy ID
-     * @param AutoScalingPolicyId
+     * Set Alarm trigger policy ID.
+     * @param AutoScalingPolicyId Alarm trigger policy ID.
      */
     public void setAutoScalingPolicyId(String AutoScalingPolicyId) {
         this.AutoScalingPolicyId = AutoScalingPolicyId;
     }
 
     /**
-     * Get the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingPolicyId", this.AutoScalingPolicyId);

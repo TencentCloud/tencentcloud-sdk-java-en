@@ -30,7 +30,7 @@ public class DeleteNotificationConfigurationRequest  extends AbstractModel{
     private String AutoScalingNotificationId;
 
     /**
-     * ID of the notification to be obtained.
+     * Get ID of the notification to be deleted. 
      * @return AutoScalingNotificationId ID of the notification to be deleted.
      */
     public String getAutoScalingNotificationId() {
@@ -46,7 +46,7 @@ public class DeleteNotificationConfigurationRequest  extends AbstractModel{
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingNotificationId", this.AutoScalingNotificationId);

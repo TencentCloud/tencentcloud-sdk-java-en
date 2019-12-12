@@ -23,28 +23,28 @@ import java.util.HashMap;
 public class ImportImageRequest  extends AbstractModel{
 
     /**
-    * The operating system architecture of the imported image, `x86_64` or `i386`
+    * OS architecture of the image to be imported, `x86_64` or `i386`.
     */
     @SerializedName("Architecture")
     @Expose
     private String Architecture;
 
     /**
-    * The operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
+    * OS type of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems.
     */
     @SerializedName("OsType")
     @Expose
     private String OsType;
 
     /**
-    * The operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
+    * OS version of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems.
     */
     @SerializedName("OsVersion")
     @Expose
     private String OsVersion;
 
     /**
-    * The image address on COS where the imported image is stored
+    * Address on COS where the image to be imported is stored.
     */
     @SerializedName("ImageUrl")
     @Expose
@@ -65,85 +65,85 @@ public class ImportImageRequest  extends AbstractModel{
     private String ImageDescription;
 
     /**
-    * Perform dry-run
+    * Dry run to check the parameters without performing the operation
     */
     @SerializedName("DryRun")
     @Expose
     private Boolean DryRun;
 
     /**
-    * Indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
+    * Whether to force import the image. For more information, see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849).
     */
     @SerializedName("Force")
     @Expose
     private Boolean Force;
 
     /**
-     * Get the operating system architecture of the imported image, `x86_64` or `i386`
-     * @return Architecture The operating system architecture of the imported image, `x86_64` or `i386`
+     * Get OS architecture of the image to be imported, `x86_64` or `i386`. 
+     * @return Architecture OS architecture of the image to be imported, `x86_64` or `i386`.
      */
     public String getArchitecture() {
         return this.Architecture;
     }
 
     /**
-     * Set the operating system architecture of the imported image, `x86_64` or `i386`
-     * @param Architecture The operating system architecture of the imported image, `x86_64` or `i386`
+     * Set OS architecture of the image to be imported, `x86_64` or `i386`.
+     * @param Architecture OS architecture of the image to be imported, `x86_64` or `i386`.
      */
     public void setArchitecture(String Architecture) {
         this.Architecture = Architecture;
     }
 
     /**
-     * Get the operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
-     * @return OsType The operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
+     * Get OS type of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems. 
+     * @return OsType OS type of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems.
      */
     public String getOsType() {
         return this.OsType;
     }
 
     /**
-     * Set the operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
-     * @param OsType The operating system type of the imported image, which can be obtained via `DescribeImportImageOs`
+     * Set OS type of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems.
+     * @param OsType OS type of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems.
      */
     public void setOsType(String OsType) {
         this.OsType = OsType;
     }
 
     /**
-     * Get the operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
-     * @return OsVersion The operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
+     * Get OS version of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems. 
+     * @return OsVersion OS version of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems.
      */
     public String getOsVersion() {
         return this.OsVersion;
     }
 
     /**
-     * Set the operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
-     * @param OsVersion The operating system version of the imported image, which can be obtained via `DescribeImportImageOs`
+     * Set OS version of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems.
+     * @param OsVersion OS version of the image to be imported. You can call `DescribeImportImageOs` to obtain the list of supported operating systems.
      */
     public void setOsVersion(String OsVersion) {
         this.OsVersion = OsVersion;
     }
 
     /**
-     * Get the image address on COS where the imported image is stored
-     * @return ImageUrl The image address on COS where the imported image is stored
+     * Get Address on COS where the image to be imported is stored. 
+     * @return ImageUrl Address on COS where the image to be imported is stored.
      */
     public String getImageUrl() {
         return this.ImageUrl;
     }
 
     /**
-     * Set the image address on COS where the imported image is stored
-     * @param ImageUrl The image address on COS where the imported image is stored
+     * Set Address on COS where the image to be imported is stored.
+     * @param ImageUrl Address on COS where the image to be imported is stored.
      */
     public void setImageUrl(String ImageUrl) {
         this.ImageUrl = ImageUrl;
     }
 
     /**
-     * Get image name
+     * Get Image name 
      * @return ImageName Image name
      */
     public String getImageName() {
@@ -151,7 +151,7 @@ public class ImportImageRequest  extends AbstractModel{
     }
 
     /**
-     * Set image name
+     * Set Image name
      * @param ImageName Image name
      */
     public void setImageName(String ImageName) {
@@ -159,7 +159,7 @@ public class ImportImageRequest  extends AbstractModel{
     }
 
     /**
-     * Get image description
+     * Get Image description 
      * @return ImageDescription Image description
      */
     public String getImageDescription() {
@@ -167,7 +167,7 @@ public class ImportImageRequest  extends AbstractModel{
     }
 
     /**
-     * Set image description
+     * Set Image description
      * @param ImageDescription Image description
      */
     public void setImageDescription(String ImageDescription) {
@@ -175,39 +175,39 @@ public class ImportImageRequest  extends AbstractModel{
     }
 
     /**
-     * Get perform dry-run
-     * @return DryRun Perform dry-run
+     * Get Dry run to check the parameters without performing the operation 
+     * @return DryRun Dry run to check the parameters without performing the operation
      */
     public Boolean getDryRun() {
         return this.DryRun;
     }
 
     /**
-     * Set perform dry-run
-     * @param DryRun Perform dry-run
+     * Set Dry run to check the parameters without performing the operation
+     * @param DryRun Dry run to check the parameters without performing the operation
      */
     public void setDryRun(Boolean DryRun) {
         this.DryRun = DryRun;
     }
 
     /**
-     * Get indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
-     * @return Force Indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
+     * Get Whether to force import the image. For more information, see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849). 
+     * @return Force Whether to force import the image. For more information, see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849).
      */
     public Boolean getForce() {
         return this.Force;
     }
 
     /**
-     * Set indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
-     * @param Force Indicates whether to perform the forced image import. For more information, please see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849)
+     * Set Whether to force import the image. For more information, see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849).
+     * @param Force Whether to force import the image. For more information, see [Forcibly Import Image](https://intl.cloud.tencent.com/document/product/213/12849).
      */
     public void setForce(Boolean Force) {
         this.Force = Force;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Architecture", this.Architecture);

@@ -30,14 +30,14 @@ public class PreviewPaiDomainNameResponse  extends AbstractModel{
     private String DomainName;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain available PAI domain name
+     * Get Available PAI domain name 
      * @return DomainName Available PAI domain name
      */
     public String getDomainName() {
@@ -45,7 +45,7 @@ public class PreviewPaiDomainNameResponse  extends AbstractModel{
     }
 
     /**
-     * Set available PAI domain name
+     * Set Available PAI domain name
      * @param DomainName Available PAI domain name
      */
     public void setDomainName(String DomainName) {
@@ -53,23 +53,23 @@ public class PreviewPaiDomainNameResponse  extends AbstractModel{
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DomainName", this.DomainName);

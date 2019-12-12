@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InquiryPriceResetInstancesTypeRequest  extends AbstractModel{
 
     /**
-    * ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 1.
+    * Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 1.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Instance models. Different resource specifications are specified for different instance models. For specific values, please see the table of instance resource specifications. You can also obtain the latest specification list using the API for querying the list of instance resource specifications.
+    * Instance model. Different resource specifications are specified for different models. For specific values, see the instance resource specification table. You can also obtain the latest specification list by calling the API for querying the list of instance resource specifications.
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-     * To obtain ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 1.
-     * @return InstanceIds ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 1.
+     * Get Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 1. 
+     * @return InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 1.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * To configure ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances for each request is 1.
-     * @param InstanceIds  of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 1.
+     * Set Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 1.
+     * @param InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 1.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Obtain instance models. Different resource specifications are specified for different instance models. For specific values, please see the table of instance resource specifications. You can also obtain the latest specification list using the API for querying the list of instance resource specifications.
-     * @return InstanceType Instance model. Different resource specifications are specified for different instance models. For specific values, please see the table of instance resource specifications. You can also obtain the latest specification list using the API for querying the list of instance resource specifications. |
+     * Get Instance model. Different resource specifications are specified for different models. For specific values, see the instance resource specification table. You can also obtain the latest specification list by calling the API for querying the list of instance resource specifications. 
+     * @return InstanceType Instance model. Different resource specifications are specified for different models. For specific values, see the instance resource specification table. You can also obtain the latest specification list by calling the API for querying the list of instance resource specifications.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * Set instance models. Different resource specifications are specified for different instance models. For specific values, please see the table of instance resource specifications. You can also obtain the latest specification list using the API for querying the list of instance resource specifications.
-     * @param InstanceType Instance model. Different resource specifications are specified for different instance models. For specific values, please see the table of instance resource specifications. You can also obtain the latest specification list using the API for querying the list of instance resource specifications. |
+     * Set Instance model. Different resource specifications are specified for different models. For specific values, see the instance resource specification table. You can also obtain the latest specification list by calling the API for querying the list of instance resource specifications.
+     * @param InstanceType Instance model. Different resource specifications are specified for different models. For specific values, see the instance resource specification table. You can also obtain the latest specification list by calling the API for querying the list of instance resource specifications.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class InstanceTypeConfig  extends AbstractModel{
 
     /**
-    * Availability Zone
+    * Availability zone.
     */
     @SerializedName("Zone")
     @Expose
@@ -37,131 +37,131 @@ public class InstanceTypeConfig  extends AbstractModel{
     private String InstanceType;
 
     /**
-    * Instance model series.
+    * Instance model family.
     */
     @SerializedName("InstanceFamily")
     @Expose
     private String InstanceFamily;
 
     /**
-    * Number of GPU cores (in core).
+    * Number of GPU cores.
     */
     @SerializedName("GPU")
     @Expose
-    private Integer GPU;
+    private Long GPU;
 
     /**
-    * Number of CPU cores (in core).
+    * Number of CPU cores.
     */
     @SerializedName("CPU")
     @Expose
-    private Integer CPU;
+    private Long CPU;
 
     /**
-    * Memory size (in `GB`).
+    * Memory capacity; unit: `GB`.
     */
     @SerializedName("Memory")
     @Expose
-    private Integer Memory;
+    private Long Memory;
 
     /**
-     * Get availability zone.
-     * @return Zone availability zone.
+     * Get Availability zone. 
+     * @return Zone Availability zone.
      */
     public String getZone() {
         return this.Zone;
     }
 
     /**
-     * Set availability zone.
-     * @param Zone availability zone.
+     * Set Availability zone.
+     * @param Zone Availability zone.
      */
     public void setZone(String Zone) {
         this.Zone = Zone;
     }
 
     /**
-     * Get instance model.
-     * @return InstanceType instance model.
+     * Get Instance model. 
+     * @return InstanceType Instance model.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * Set instance model.
-     * @param InstanceType instance model.
+     * Set Instance model.
+     * @param InstanceType Instance model.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * Get instance model series.
-     * @return InstanceFamily Instance model series.
+     * Get Instance model family. 
+     * @return InstanceFamily Instance model family.
      */
     public String getInstanceFamily() {
         return this.InstanceFamily;
     }
 
     /**
-     * Set instance model series.
-     * @param InstanceFamily Instance model series.
+     * Set Instance model family.
+     * @param InstanceFamily Instance model family.
      */
     public void setInstanceFamily(String InstanceFamily) {
         this.InstanceFamily = InstanceFamily;
     }
 
     /**
-     * Get number of GPU cores (in core).
-     * @return GPU Number of cores of GPU, in core.
+     * Get Number of GPU cores. 
+     * @return GPU Number of GPU cores.
      */
-    public Integer getGPU() {
+    public Long getGPU() {
         return this.GPU;
     }
 
     /**
-     * Set number of GPU cores (in core).
-     * @param GPU Number of cores of GPU, in core.
+     * Set Number of GPU cores.
+     * @param GPU Number of GPU cores.
      */
-    public void setGPU(Integer GPU) {
+    public void setGPU(Long GPU) {
         this.GPU = GPU;
     }
 
     /**
-     * Get number of CPU cores (in core).
-     * @return CPU Number of cores of GPU, in core.
+     * Get Number of CPU cores. 
+     * @return CPU Number of CPU cores.
      */
-    public Integer getCPU() {
+    public Long getCPU() {
         return this.CPU;
     }
 
     /**
-     * Set number of CPU cores (in core).
-     * @param CPU Number of cores of GPU, in core.
+     * Set Number of CPU cores.
+     * @param CPU Number of CPU cores.
      */
-    public void setCPU(Integer CPU) {
+    public void setCPU(Long CPU) {
         this.CPU = CPU;
     }
 
     /**
-     * Get memory size (in `GB`).
-     * @return Memory Memory size (in `GB`).
+     * Get Memory capacity; unit: `GB`. 
+     * @return Memory Memory capacity; unit: `GB`.
      */
-    public Integer getMemory() {
+    public Long getMemory() {
         return this.Memory;
     }
 
     /**
-     * Set memory size (in `GB`).
-     * @param Memory Memory size (in `GB`).
+     * Set Memory capacity; unit: `GB`.
+     * @param Memory Memory capacity; unit: `GB`.
      */
-    public void setMemory(Integer Memory) {
+    public void setMemory(Long Memory) {
         this.Memory = Memory;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Zone", this.Zone);

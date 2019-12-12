@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class SystemDisk  extends AbstractModel{
 
     /**
-    * System disk types. For information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177).<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: Premium Cloud Storage
+    * The system disk type. For more information about the limits on system disk types, see [Instance Types](/document/product/213/2177). Valid values:<br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_SSD: SSD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><br>Default value: CLOUD_BASIC.
     */
     @SerializedName("DiskType")
     @Expose
     private String DiskType;
 
     /**
-    * ID of system disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now. 
+    * System disk ID. System disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently.
     */
     @SerializedName("DiskId")
     @Expose
     private String DiskId;
 
     /**
-    * Size of system disk, in GB. Default: 50 GB.
+    * System disk size; unit: GB; default value: 50 GB.
     */
     @SerializedName("DiskSize")
     @Expose
-    private Integer DiskSize;
+    private Long DiskSize;
 
     /**
-     * Obtain type of system disk. For information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177). Values:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: CLOUD_BASIC
-     * @return DiskType For information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177).<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: CLOUD_BASIC
+     * Get The system disk type. For more information about the limits on system disk types, see [Instance Types](/document/product/213/2177). Valid values:<br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_SSD: SSD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><br>Default value: CLOUD_BASIC. 
+     * @return DiskType The system disk type. For more information about the limits on system disk types, see [Instance Types](/document/product/213/2177). Valid values:<br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_SSD: SSD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><br>Default value: CLOUD_BASIC.
      */
     public String getDiskType() {
         return this.DiskType;
     }
 
     /**
-     * Set up type of system disks. For more information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177).<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: CLOUD_BASIC
-     * @param DiskType For information about the limits on system disk types, please see [CVM Instance Configuration](/document/product/213/2177).<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_SSD: SSD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><br>Default: CLOUD_BASIC
+     * Set The system disk type. For more information about the limits on system disk types, see [Instance Types](/document/product/213/2177). Valid values:<br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_SSD: SSD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><br>Default value: CLOUD_BASIC.
+     * @param DiskType The system disk type. For more information about the limits on system disk types, see [Instance Types](/document/product/213/2177). Valid values:<br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_SSD: SSD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><br>Default value: CLOUD_BASIC.
      */
     public void setDiskType(String DiskType) {
         this.DiskType = DiskType;
     }
 
     /**
-     * Obtain ID of system disk. 
-     * @return DiskId System disk ID. LOCAL_BASIC and LOCAL_SSD don’t have IDs and thus don’t support this parameter for now.
+     * Get System disk ID. System disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently. 
+     * @return DiskId System disk ID. System disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently.
      */
     public String getDiskId() {
         return this.DiskId;
     }
 
     /**
-     * Configure System disk ID. LOCAL_BASIC and LOCAL_SSD don’t have IDs and thus don’t support this parameter for now.
-     * @param DiskId System disk ID. LOCAL_BASIC and LOCAL_SSD don’t have IDs and thus don’t support this parameter for now.
+     * Set System disk ID. System disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently.
+     * @param DiskId System disk ID. System disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently.
      */
     public void setDiskId(String DiskId) {
         this.DiskId = DiskId;
     }
 
     /**
-     * Obtain size of system disk, in GB. Default: 50 GB.
-     * @return DiskSize size of system disk, in GB. Default: 50 GB.
+     * Get System disk size; unit: GB; default value: 50 GB. 
+     * @return DiskSize System disk size; unit: GB; default value: 50 GB.
      */
-    public Integer getDiskSize() {
+    public Long getDiskSize() {
         return this.DiskSize;
     }
 
     /**
-     * Configure size of system disk, in GB. Default: 50 GB.
-     * @param DiskSize size of system disk, in GB. Default: 50 GB.
+     * Set System disk size; unit: GB; default value: 50 GB.
+     * @param DiskSize System disk size; unit: GB; default value: 50 GB.
      */
-    public void setDiskSize(Integer DiskSize) {
+    public void setDiskSize(Long DiskSize) {
         this.DiskSize = DiskSize;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DiskType", this.DiskType);

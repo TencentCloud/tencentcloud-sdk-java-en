@@ -23,30 +23,35 @@ import java.util.HashMap;
 public class RunSecurityServiceEnabled  extends AbstractModel{
 
     /**
-    * Enable or disable [Cloud security](https://cloud.tencent.com/document/product/296)service.Value:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
+    * Whether to enable the [Cloud Security](https://cloud.tencent.com/document/product/296) service. Value range: <br><li>TRUE: Cloud Security is enabled <br><li>FALSE: Cloud Security is disabled <br><br>Default value: TRUE.
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("Enabled")
     @Expose
     private Boolean Enabled;
 
     /**
-     * Obtain setting of enable/disable [Cloud security] (https://cloud.tencent.com/document/product/296) service.Value:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
-     * @return Enabled Enabled or not [Cloud Security](https://cloud.tencent.com/document/product/296). Value range:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
+     * Get Whether to enable the [Cloud Security](https://cloud.tencent.com/document/product/296) service. Value range: <br><li>TRUE: Cloud Security is enabled <br><li>FALSE: Cloud Security is disabled <br><br>Default value: TRUE.
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return Enabled Whether to enable the [Cloud Security](https://cloud.tencent.com/document/product/296) service. Value range: <br><li>TRUE: Cloud Security is enabled <br><li>FALSE: Cloud Security is disabled <br><br>Default value: TRUE.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public Boolean getEnabled() {
         return this.Enabled;
     }
 
     /**
-     * Set Enabled or not [Cloud security](https://cloud.tencent.com/document/product/296) service.Value range:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
-     * @param Enabled Enable or disable [Cloud security](https://cloud.tencent.com/document/product/296) service. Value range:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
+     * Set Whether to enable the [Cloud Security](https://cloud.tencent.com/document/product/296) service. Value range: <br><li>TRUE: Cloud Security is enabled <br><li>FALSE: Cloud Security is disabled <br><br>Default value: TRUE.
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param Enabled Whether to enable the [Cloud Security](https://cloud.tencent.com/document/product/296) service. Value range: <br><li>TRUE: Cloud Security is enabled <br><li>FALSE: Cloud Security is disabled <br><br>Default value: TRUE.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public void setEnabled(Boolean Enabled) {
         this.Enabled = Enabled;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Enabled", this.Enabled);

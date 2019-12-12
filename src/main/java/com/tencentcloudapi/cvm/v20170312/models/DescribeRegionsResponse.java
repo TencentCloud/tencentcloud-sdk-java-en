@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeRegionsResponse  extends AbstractModel{
 
     /**
-    * The number of regions
+    * Number of regions
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * The list of regions
+    * List of regions
     */
     @SerializedName("RegionSet")
     @Expose
     private RegionInfo [] RegionSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the list of regions
-     * @return TotalCount the number of regions
+     * Get Number of regions 
+     * @return TotalCount Number of regions
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set the number of regions
-     * @param TotalCount the number of regions
+     * Set Number of regions
+     * @param TotalCount Number of regions
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the list of regions
-     * @return RegionSet the list of regions
+     * Get List of regions 
+     * @return RegionSet List of regions
      */
     public RegionInfo [] getRegionSet() {
         return this.RegionSet;
     }
 
     /**
-     * Set the list of regions
-     * @param RegionSet the list of regions
+     * Set List of regions
+     * @param RegionSet List of regions
      */
     public void setRegionSet(RegionInfo [] RegionSet) {
         this.RegionSet = RegionSet;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

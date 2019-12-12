@@ -23,58 +23,58 @@ import java.util.HashMap;
 public class DescribeInstancesOperationLimitRequest  extends AbstractModel{
 
     /**
-    * Query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
+    * Instance ID(s). To obtain the instance IDs, you can call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The instance ID format is `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688)). The maximum number of instance IDs in each request is 100.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Instance operation
-<li> INSTANCE_DEGRADE：instance scaling down</li>
+    * Operation on the instance(s).
+<li> INSTANCE_DEGRADE: downgrade the instance configurations</li>
     */
     @SerializedName("Operation")
     @Expose
     private String Operation;
 
     /**
-     * Obtain query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
-     * @return InstanceIds Query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
+     * Get Instance ID(s). To obtain the instance IDs, you can call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The instance ID format is `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688)). The maximum number of instance IDs in each request is 100. 
+     * @return InstanceIds Instance ID(s). To obtain the instance IDs, you can call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The instance ID format is `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688)). The maximum number of instance IDs in each request is 100.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * Set query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
-     * @param InstanceIds Query by one or more IDs of instance via [DescribeInstances](https://cloud.tencent.com/document/api/213/9388) the returned InstanceId from API. the sample as below: ins-xxxxxxxx。（the detailed format of parameters refer to API[introduction](chapter : ID.N of https://cloud.tencent.com/document/api/213/15688）。the upper limit of instance IDs of each request is 100.
+     * Set Instance ID(s). To obtain the instance IDs, you can call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The instance ID format is `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688)). The maximum number of instance IDs in each request is 100.
+     * @param InstanceIds Instance ID(s). To obtain the instance IDs, you can call [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The instance ID format is `ins-xxxxxxxx`. For more information on the format of this parameter, see the `id.N` section of [API Introduction](https://cloud.tencent.com/document/api/213/15688)). The maximum number of instance IDs in each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Obtain instance operation
-<li> INSTANCE_DEGRADE：instance scaling down</li>
-     * @return Operation instance operaiton
-<li> INSTANCE_DEGRADE：instance scaling down</li>
+     * Get Operation on the instance(s).
+<li> INSTANCE_DEGRADE: downgrade the instance configurations</li> 
+     * @return Operation Operation on the instance(s).
+<li> INSTANCE_DEGRADE: downgrade the instance configurations</li>
      */
     public String getOperation() {
         return this.Operation;
     }
 
     /**
-     * Set instance operation
-<li> INSTANCE_DEGRADE：instance scaling down</li>
-     * @param Operation instance operation
-<li> INSTANCE_DEGRADE：instance scaling down</li>
+     * Set Operation on the instance(s).
+<li> INSTANCE_DEGRADE: downgrade the instance configurations</li>
+     * @param Operation Operation on the instance(s).
+<li> INSTANCE_DEGRADE: downgrade the instance configurations</li>
      */
     public void setOperation(String Operation) {
         this.Operation = Operation;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

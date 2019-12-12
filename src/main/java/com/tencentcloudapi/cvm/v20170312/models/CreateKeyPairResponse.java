@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateKeyPairResponse  extends AbstractModel{
 
     /**
-    * KeyPair information.
+    * Key pair information.
     */
     @SerializedName("KeyPair")
     @Expose
     private KeyPair KeyPair;
 
     /**
-    * Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get KeyPair information.
-     * @return KeyPair KeyPair information.
+     * Get Key pair information. 
+     * @return KeyPair Key pair information.
      */
     public KeyPair getKeyPair() {
         return this.KeyPair;
     }
 
     /**
-     * Set KeyPair information.
-     * @param KeyPair KeyPair information.
+     * Set Key pair information.
+     * @param KeyPair Key pair information.
      */
     public void setKeyPair(KeyPair KeyPair) {
         this.KeyPair = KeyPair;
     }
 
     /**
-     * Get unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "KeyPair.", this.KeyPair);

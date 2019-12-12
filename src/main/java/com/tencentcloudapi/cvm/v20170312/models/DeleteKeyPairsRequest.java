@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DeleteKeyPairsRequest  extends AbstractModel{
 
     /**
-    * one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`.
+    * Key ID(s). The maximum number of key pairs in each request is 100. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
     */
     @SerializedName("KeyIds")
     @Expose
     private String [] KeyIds;
 
     /**
-     * one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`. 
-     * @return KeyIds one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`. 
+     * Get Key ID(s). The maximum number of key pairs in each request is 100. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response. 
+     * @return KeyIds Key ID(s). The maximum number of key pairs in each request is 100. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
      */
     public String [] getKeyIds() {
         return this.KeyIds;
     }
 
     /**
-     * Set one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`. 
-     * @param KeyIds one or more KeyPairs ID you are working with. A maximum of 100 key pairs are allowed in a batch for each request.<br>Get the available Key ID by either of the following ways:<br><li>Log in console to query Key ID [console (https://console.cloud.tencent.com/cvm/sshkey).<br><li>Call interface [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，get KeyPair ID from return message`KeyId`. 
+     * Set Key ID(s). The maximum number of key pairs in each request is 100. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
+     * @param KeyIds Key ID(s). The maximum number of key pairs in each request is 100. <br>You can obtain the available key pair IDs in two ways: <br><li>Log in to the [console](https://console.cloud.tencent.com/cvm/sshkey) to query the key pair IDs. <br><li>Call [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) and look for `KeyId` in the response.
      */
     public void setKeyIds(String [] KeyIds) {
         this.KeyIds = KeyIds;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "KeyIds.", this.KeyIds);

@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ActionTimer  extends AbstractModel{
 
     /**
-    * Extended data
+    * Additional data
     */
     @SerializedName("Externals")
     @Expose
     private Externals Externals;
 
     /**
-    * Timer name. Only "TerminateInstances" is supported.
+    * Timer name. Currently `TerminateInstances` is the only supported value.
     */
     @SerializedName("TimerAction")
     @Expose
     private String TimerAction;
 
     /**
-    * Execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40.
+    * Execution time, which must be at least 5 minutes later than the current time. For example, 2018-5-29 11:26:40.
     */
     @SerializedName("ActionTime")
     @Expose
     private String ActionTime;
 
     /**
-     * Get extended data
-     * @return Externals extended data
+     * Get Additional data 
+     * @return Externals Additional data
      */
     public Externals getExternals() {
         return this.Externals;
     }
 
     /**
-     * set extended data
-     * @param Externals extended data
+     * Set Additional data
+     * @param Externals Additional data
      */
     public void setExternals(Externals Externals) {
         this.Externals = Externals;
     }
 
     /**
-     * Get Timer name. Only "TerminateInstances" is supported.
-     * @return TimerAction Timer name. Only "TerminateInstances" is supported.
+     * Get Timer name. Currently `TerminateInstances` is the only supported value. 
+     * @return TimerAction Timer name. Currently `TerminateInstances` is the only supported value.
      */
     public String getTimerAction() {
         return this.TimerAction;
     }
 
     /**
-     * Set Timer name. Only "TerminateInstances" is supported.
-     * @param TimerAction Timer name. Only "TerminateInstances" is supported.
+     * Set Timer name. Currently `TerminateInstances` is the only supported value.
+     * @param TimerAction Timer name. Currently `TerminateInstances` is the only supported value.
      */
     public void setTimerAction(String TimerAction) {
         this.TimerAction = TimerAction;
     }
 
     /**
-     * Get execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40.
-     * @return ActionTime Execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40
+     * Get Execution time, which must be at least 5 minutes later than the current time. For example, 2018-5-29 11:26:40. 
+     * @return ActionTime Execution time, which must be at least 5 minutes later than the current time. For example, 2018-5-29 11:26:40.
      */
     public String getActionTime() {
         return this.ActionTime;
     }
 
     /**
-     * Set Execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40.
-     * @param ActionTime Execution time, which should be 5 minutes later than the current time. For example: 2018-5-29 11:26:40.
+     * Set Execution time, which must be at least 5 minutes later than the current time. For example, 2018-5-29 11:26:40.
+     * @param ActionTime Execution time, which must be at least 5 minutes later than the current time. For example, 2018-5-29 11:26:40.
      */
     public void setActionTime(String ActionTime) {
         this.ActionTime = ActionTime;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Externals.", this.Externals);

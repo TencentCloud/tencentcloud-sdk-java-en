@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeImportImageOsResponse  extends AbstractModel{
 
     /**
-    * Supported operating system types of imported images 
+    * Supported operating system types of imported images.
     */
     @SerializedName("ImportImageOsListSupported")
     @Expose
     private ImageOsList ImportImageOsListSupported;
 
     /**
-    * Supported operating system versions of imported images 
+    * Supported operating system versions of imported images. 
     */
     @SerializedName("ImportImageOsVersionSet")
     @Expose
     private OsVersion [] ImportImageOsVersionSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain supported operating system types of imported images 
-     * @return ImportImageOsListSupported Supported operating system types of imported images |
+     * Get Supported operating system types of imported images. 
+     * @return ImportImageOsListSupported Supported operating system types of imported images.
      */
     public ImageOsList getImportImageOsListSupported() {
         return this.ImportImageOsListSupported;
     }
 
     /**
-     * Set Supported operating system types of imported images 
-     * @param ImportImageOsListSupported Supported operating system types of imported images |
+     * Set Supported operating system types of imported images.
+     * @param ImportImageOsListSupported Supported operating system types of imported images.
      */
     public void setImportImageOsListSupported(ImageOsList ImportImageOsListSupported) {
         this.ImportImageOsListSupported = ImportImageOsListSupported;
     }
 
     /**
-     * Obtain supported operating system versions of imported images 
-     * @return ImportImageOsVersionSet Supported operating system versions of imported images 
+     * Get Supported operating system versions of imported images.  
+     * @return ImportImageOsVersionSet Supported operating system versions of imported images. 
      */
     public OsVersion [] getImportImageOsVersionSet() {
         return this.ImportImageOsVersionSet;
     }
 
     /**
-     * Set supported operating system versions of imported images 
-     * @param ImportImageOsVersionSet Supported operating system versions of imported images 
+     * Set Supported operating system versions of imported images. 
+     * @param ImportImageOsVersionSet Supported operating system versions of imported images. 
      */
     public void setImportImageOsVersionSet(OsVersion [] ImportImageOsVersionSet) {
         this.ImportImageOsVersionSet = ImportImageOsVersionSet;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     *  Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "ImportImageOsListSupported.", this.ImportImageOsListSupported);

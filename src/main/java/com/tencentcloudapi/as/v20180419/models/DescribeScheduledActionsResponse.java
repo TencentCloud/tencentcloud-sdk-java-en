@@ -23,11 +23,11 @@ import java.util.HashMap;
 public class DescribeScheduledActionsResponse  extends AbstractModel{
 
     /**
-    * Number of scheduled tasks that meet the condition.
+    * Number of eligible scheduled tasks.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
     * List of scheduled task details.
@@ -37,30 +37,30 @@ public class DescribeScheduledActionsResponse  extends AbstractModel{
     private ScheduledAction [] ScheduledActionSet;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the number of scheduled tasks that meet the condition.
-     * @return TotalCount Number of scheduled tasks that meet the condition.
+     * Get Number of eligible scheduled tasks. 
+     * @return TotalCount Number of eligible scheduled tasks.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Configure the number of scheduled tasks that meet the condition.
-     * @param TotalCount Number of scheduled tasks that meet the condition.
+     * Set Number of eligible scheduled tasks.
+     * @param TotalCount Number of eligible scheduled tasks.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the list of scheduled task details.
+     * Get List of scheduled task details. 
      * @return ScheduledActionSet List of scheduled task details.
      */
     public ScheduledAction [] getScheduledActionSet() {
@@ -68,7 +68,7 @@ public class DescribeScheduledActionsResponse  extends AbstractModel{
     }
 
     /**
-     * Configure the list of scheduled task details.
+     * Set List of scheduled task details.
      * @param ScheduledActionSet List of scheduled task details.
      */
     public void setScheduledActionSet(ScheduledAction [] ScheduledActionSet) {
@@ -76,23 +76,23 @@ public class DescribeScheduledActionsResponse  extends AbstractModel{
     }
 
     /**
-     * Obtain the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

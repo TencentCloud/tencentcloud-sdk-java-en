@@ -23,94 +23,109 @@ import java.util.HashMap;
 public class ResetInstancesPasswordRequest  extends AbstractModel{
 
     /**
-    * ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+    * Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Login password of the instance. The rule of password complexity varies with different operating systems: <br><li>`Linux`Password for a instance should be a combination of 8 to 16 characters comprised of at least two of the following types: `[a-z，A-Z]、[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>`Windows` password for an instance should be a combination of 12-16 characters comprised of at least three of the following types:`[a-z]，[A-Z]，[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>If both `Linux` and `Windows` instances are included, the password complexity is subject to the requirement for a `Windows` instance.    */
+    * Login password of the instance(s). The password requirements vary among different operating systems:
+For a Linux instance, the password must be 8 to 30 characters in length; password with more than 12 characters is recommended. It cannot begin with "/", and must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;'<>,.?/:
+For a Windows CVM, the password must be 12 to 30 characters in length. It cannot begin with "/" or contain your username. It must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;' <>,.?/:<br><li>If the specified instances include both `Linux` and `Windows` instances, you will need to follow the password requirements for `Windows` instances.
+    */
     @SerializedName("Password")
     @Expose
     private String Password;
 
     /**
-    * Username of the instance operating system for which the password needs to be reset. This parameter is limited to 64 characters.
+    * Operating system username of the instance for which you want to reset the password. The length of the username cannot exceed 64 characters.
     */
     @SerializedName("UserName")
     @Expose
     private String UserName;
 
     /**
-    * Whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Values: <br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
+    * Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally.
     */
     @SerializedName("ForceStop")
     @Expose
     private Boolean ForceStop;
 
     /**
-     * To obtain ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
-     * @return InstanceIds ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * Get Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100. 
+     * @return InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * To configure ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.The maximum number of instances for each request is 100.
-     * @param InstanceIds  of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://intl.cloud.tencent.com/document/api/213/15728)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * Set Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
+     * @param InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Obtain a instance’s login password: password complexity requirement varies with different operating systems, as shown below:<br><li>`Linux`Password for a instance should be a combination of 8 to 16 characters comprised of at least two of the following types: `[a-z，A-Z]、[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>`Windows` password for an instance should be a combination of 12-16 characters comprised of at least three of the following types:`[a-z]，[A-Z]，[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>If both `Linux` and `Windows` instances are included, the password complexity is subject to the requirement for a `Windows` instance.     * @return Password Instance login Password. Password complexity requirement varies with different operating systems, as shown below:<br><li>`Linux`Password for a instance should be a combination of 8 to 16 characters comprised of at least two of the following types: `[a-z，A-Z]、[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>`Windows` password for an instance should be a combination of 12-16 characters comprised of at least three of the following types:`[a-z]，[A-Z]，[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>If both `Linux` and `Windows` instances are included, the password complexity is subject to the requirement for a `Windows` instance.     */
+     * Get Login password of the instance(s). The password requirements vary among different operating systems:
+For a Linux instance, the password must be 8 to 30 characters in length; password with more than 12 characters is recommended. It cannot begin with "/", and must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;'<>,.?/:
+For a Windows CVM, the password must be 12 to 30 characters in length. It cannot begin with "/" or contain your username. It must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;' <>,.?/:<br><li>If the specified instances include both `Linux` and `Windows` instances, you will need to follow the password requirements for `Windows` instances. 
+     * @return Password Login password of the instance(s). The password requirements vary among different operating systems:
+For a Linux instance, the password must be 8 to 30 characters in length; password with more than 12 characters is recommended. It cannot begin with "/", and must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;'<>,.?/:
+For a Windows CVM, the password must be 12 to 30 characters in length. It cannot begin with "/" or contain your username. It must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;' <>,.?/:<br><li>If the specified instances include both `Linux` and `Windows` instances, you will need to follow the password requirements for `Windows` instances.
+     */
     public String getPassword() {
         return this.Password;
     }
 
     /**
-     * Configure login password of an instance.<br><li>`Linux`Password for a instance should be a combination of 8 to 16 characters comprised of at least two of the following types: `[a-z，A-Z]、[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>`Windows` password for an instance should be a combination of 12-16 characters comprised of at least three of the following types:`[a-z]，[A-Z]，[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>If both `Linux` and `Windows` instances are included, the password complexity is subject to the requirement for a `Windows` instance.     * @param Password Instance login Password. Password complexity requirement varies with different operating systems, as shown below:<br><li>`Linux` password for an instance should be a combination of 8 to 16 characters comprised of at least two of the following types: `[a-z，A-Z]、[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>`Windows` password for an instance should be a combination of 12-16 characters comprised of at least three of the following types:`[a-z]，[A-Z]，[0-9]` and `[( ) ~ ~ ! @ # $ % ^ & * - + = _ | { } [ ] : ; ' < > , . ? /]`中的符号。密码不允许以` starts with /`.<br><li>If both `Linux` and `Windows` instances are included, the password complexity is subject to the requirement for a `Windows` instance.     */
+     * Set Login password of the instance(s). The password requirements vary among different operating systems:
+For a Linux instance, the password must be 8 to 30 characters in length; password with more than 12 characters is recommended. It cannot begin with "/", and must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;'<>,.?/:
+For a Windows CVM, the password must be 12 to 30 characters in length. It cannot begin with "/" or contain your username. It must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;' <>,.?/:<br><li>If the specified instances include both `Linux` and `Windows` instances, you will need to follow the password requirements for `Windows` instances.
+     * @param Password Login password of the instance(s). The password requirements vary among different operating systems:
+For a Linux instance, the password must be 8 to 30 characters in length; password with more than 12 characters is recommended. It cannot begin with "/", and must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;'<>,.?/:
+For a Windows CVM, the password must be 12 to 30 characters in length. It cannot begin with "/" or contain your username. It must contain at least one character from three of the following categories: <br><li>Lowercase letters: [a-z]<br><li>Uppercase letters: [A-Z]<br><li>Numbers: 0-9<br><li>Special characters: ()\`~!@#$%^&\*-+=\_|{}[]:;' <>,.?/:<br><li>If the specified instances include both `Linux` and `Windows` instances, you will need to follow the password requirements for `Windows` instances.
+     */
     public void setPassword(String Password) {
         this.Password = Password;
     }
 
     /**
-     * Obtain username of the instance operating system for which the password needs to be reset. This parameter is limited to 64 characters.
-     * @return UserName Username of the instance operating system for which the password needs to be reset. This parameter is limited to 64 characters.
+     * Get Operating system username of the instance for which you want to reset the password. The length of the username cannot exceed 64 characters. 
+     * @return UserName Operating system username of the instance for which you want to reset the password. The length of the username cannot exceed 64 characters.
      */
     public String getUserName() {
         return this.UserName;
     }
 
     /**
-     * Configure username of the instance operating system for which the password needs to be reset. This parameter is limited to 64 characters.
-     * @param UserName Username of the instance operating system for which the password needs to be reset. This parameter is limited to 64 characters.
+     * Set Operating system username of the instance for which you want to reset the password. The length of the username cannot exceed 64 characters.
+     * @param UserName Operating system username of the instance for which you want to reset the password. The length of the username cannot exceed 64 characters.
      */
     public void setUserName(String UserName) {
         this.UserName = UserName;
     }
 
     /**
-     * Understand whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Values:<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
-     * @return ForceStop Whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Values:<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
+     * Get Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally. 
+     * @return ForceStop Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally.
      */
     public Boolean getForceStop() {
         return this.ForceStop;
     }
 
     /**
-     * Configure whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Values:<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
-     * @param ForceStop Whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Values: <br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
+     * Set Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally.
+     * @param ForceStop Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally.
      */
     public void setForceStop(Boolean ForceStop) {
         this.ForceStop = ForceStop;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

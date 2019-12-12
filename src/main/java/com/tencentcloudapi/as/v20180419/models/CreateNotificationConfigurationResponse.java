@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateNotificationConfigurationResponse  extends AbstractModel{
 
     /**
-    * Notification ID
+    * Notification ID.
     */
     @SerializedName("AutoScalingNotificationId")
     @Expose
     private String AutoScalingNotificationId;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get Notification ID
-     * @return AutoScalingNotificationId Notification ID
+     * Get Notification ID. 
+     * @return AutoScalingNotificationId Notification ID.
      */
     public String getAutoScalingNotificationId() {
         return this.AutoScalingNotificationId;
     }
 
     /**
-     * Set Notification ID
-     * @param AutoScalingNotificationId Notification ID
+     * Set Notification ID.
+     * @param AutoScalingNotificationId Notification ID.
      */
     public void setAutoScalingNotificationId(String AutoScalingNotificationId) {
         this.AutoScalingNotificationId = AutoScalingNotificationId;
     }
 
     /**
-     * Get unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingNotificationId", this.AutoScalingNotificationId);

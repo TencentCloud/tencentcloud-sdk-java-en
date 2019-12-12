@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class AutoScalingNotification  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * List of user group IDs
+    * List of user group IDs.
     */
     @SerializedName("NotificationUserGroupIds")
     @Expose
     private String [] NotificationUserGroupIds;
 
     /**
-    * List of event notifications
+    * List of notification events.
     */
     @SerializedName("NotificationTypes")
     @Expose
     private String [] NotificationTypes;
 
     /**
-    * Event notification ID
+    * Event notification ID.
     */
     @SerializedName("AutoScalingNotificationId")
     @Expose
     private String AutoScalingNotificationId;
 
     /**
-     * Get scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+     * Get Auto scaling group ID. 
+     * @return AutoScalingGroupId Auto scaling group ID.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Set Scaling group ID
-     * @param AutoScalingGroupId Scaling Group ID
+     * Set Auto scaling group ID.
+     * @param AutoScalingGroupId Auto scaling group ID.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Get List of user group IDs
-     * @return NotificationUserGroupIds List of user group IDs
+     * Get List of user group IDs. 
+     * @return NotificationUserGroupIds List of user group IDs.
      */
     public String [] getNotificationUserGroupIds() {
         return this.NotificationUserGroupIds;
     }
 
     /**
-     * Set List of user group IDs
-     * @param NotificationUserGroupIds List of user group IDs
+     * Set List of user group IDs.
+     * @param NotificationUserGroupIds List of user group IDs.
      */
     public void setNotificationUserGroupIds(String [] NotificationUserGroupIds) {
         this.NotificationUserGroupIds = NotificationUserGroupIds;
     }
 
     /**
-     * Get List of event notifications
-     * @return NotificationTypes List of event notifications
+     * Get List of notification events. 
+     * @return NotificationTypes List of notification events.
      */
     public String [] getNotificationTypes() {
         return this.NotificationTypes;
     }
 
     /**
-     * Set List of event notifications
-     * @param NotificationTypes List of event notifications
+     * Set List of notification events.
+     * @param NotificationTypes List of notification events.
      */
     public void setNotificationTypes(String [] NotificationTypes) {
         this.NotificationTypes = NotificationTypes;
     }
 
     /**
-     * Get Event notification ID
-     * @return AutoScalingNotificationId Event notification ID
+     * Get Event notification ID. 
+     * @return AutoScalingNotificationId Event notification ID.
      */
     public String getAutoScalingNotificationId() {
         return this.AutoScalingNotificationId;
     }
 
     /**
-     * Set Event notification ID
-     * @param AutoScalingNotificationId Event notification ID
+     * Set Event notification ID.
+     * @param AutoScalingNotificationId Event notification ID.
      */
     public void setAutoScalingNotificationId(String AutoScalingNotificationId) {
         this.AutoScalingNotificationId = AutoScalingNotificationId;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

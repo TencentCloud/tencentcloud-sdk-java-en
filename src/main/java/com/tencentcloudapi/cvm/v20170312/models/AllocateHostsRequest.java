@@ -23,168 +23,168 @@ import java.util.HashMap;
 public class AllocateHostsRequest  extends AbstractModel{
 
     /**
-    * Placement Location of instance. This parameter is used to specify the availability zone, project and other attributes of the instance
+    * Instance location. This parameter is used to specify the attributes of an instance, such as its availability zone and project.
     */
     @SerializedName("Placement")
     @Expose
     private Placement Placement;
 
     /**
-    * A string to ensure the idempotency of the request,
+    * A string used to ensure the idempotency of the request.
     */
     @SerializedName("ClientToken")
     @Expose
     private String ClientToken;
 
     /**
-    * Set relevant parameter for the prepaid mode. This parameter can specify the purchased usage period, set automatic renewal, and other attributes of prepaid instance. This parameter is mandatory if the billing method of the instance is prepaid
+    * Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances.
     */
     @SerializedName("HostChargePrepaid")
     @Expose
     private ChargePrepaid HostChargePrepaid;
 
     /**
-    * Instance billing model, only prepaid supported.
+    * The billing method of an instance. Currently only `PREPAID` is supported.
     */
     @SerializedName("HostChargeType")
     @Expose
     private String HostChargeType;
 
     /**
-    * CDH instance model, default: 'HS1'.
+    * CDH instance model. Default value: `HS1`.
     */
     @SerializedName("HostType")
     @Expose
     private String HostType;
 
     /**
-    * Amount of CDH instances purchased 
+    * The quantity of CDH instances you want to purchase.
     */
     @SerializedName("HostCount")
     @Expose
-    private Integer HostCount;
+    private Long HostCount;
 
     /**
-    * Tag description. This parameter can be used to bind a tag to a resource instance.
+    * Tag description. You can specify the parameter to associate a tag with an instance.
     */
     @SerializedName("TagSpecification")
     @Expose
     private TagSpecification [] TagSpecification;
 
     /**
-     * Get location of instance. This parameter is used to specify the availability zone and project to which the instance belongs.
-     * @return Placement Placement location of instance. This parameter is used to specify the availability zone and project of instance.
+     * Get Instance location. This parameter is used to specify the attributes of an instance, such as its availability zone and project. 
+     * @return Placement Instance location. This parameter is used to specify the attributes of an instance, such as its availability zone and project.
      */
     public Placement getPlacement() {
         return this.Placement;
     }
 
     /**
-     * Set location of instance. This parameter is used to specify availability zone,  project of instance.
-     * @param Placement location of instance. This parameter is used to specify the availability zone and project of instance.
+     * Set Instance location. This parameter is used to specify the attributes of an instance, such as its availability zone and project.
+     * @param Placement Instance location. This parameter is used to specify the attributes of an instance, such as its availability zone and project.
      */
     public void setPlacement(Placement Placement) {
         this.Placement = Placement;
     }
 
     /**
-     * Get a string to ensure the idempotency of the request
-     * @return ClientToken A string to ensure the idempotency of the request.
+     * Get A string used to ensure the idempotency of the request. 
+     * @return ClientToken A string used to ensure the idempotency of the request.
      */
     public String getClientToken() {
         return this.ClientToken;
     }
 
     /**
-     * Set A string to ensure the idempotency of the request.
-     * @param ClientToken A string to ensure the idempotency of the request.
+     * Set A string used to ensure the idempotency of the request.
+     * @param ClientToken A string used to ensure the idempotency of the request.
      */
     public void setClientToken(String ClientToken) {
         this.ClientToken = ClientToken;
     }
 
     /**
-     * Get prepaid mode parameter settings. This parameter can specify the usage period, set automatic renewal, and other attributes of the prepaid instance purchased. This parameter is mandatory if the billing method of the specified instance is prepaid.
-     * @return HostChargePrepaid prepaid mode parameter setting. This parameter can specify the usage period, set automatic renewal, and other attributes of the prepaid instance purchased. This parameter is mandatory if the billing method of the specified instance is prepaid.
+     * Get Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances. 
+     * @return HostChargePrepaid Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances.
      */
     public ChargePrepaid getHostChargePrepaid() {
         return this.HostChargePrepaid;
     }
 
     /**
-     * Set prepaid mode parameter. This parameter can specify the usage period, set automatic renewal, and other attributes of the prepaid instance purchased. This parameter is mandatory if the billing method of the specified instance is prepaid.
-     * @param HostChargePrepaid Set prepaid mode parameter. This parameter can specify the usage period, set automatic renewal, and other attributes of the prepaid instance purchased. This parameter is mandatory if the billing method of the specified instance is prepaid.
+     * Set Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances.
+     * @param HostChargePrepaid Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances.
      */
     public void setHostChargePrepaid(ChargePrepaid HostChargePrepaid) {
         this.HostChargePrepaid = HostChargePrepaid;
     }
 
     /**
-     * Get instance billing mode. Only PREPAID mode is supported.
-     * @return HostChargeType instance billing mode. Only PREPAID mode is supported.
+     * Get The billing method of an instance. Currently only `PREPAID` is supported. 
+     * @return HostChargeType The billing method of an instance. Currently only `PREPAID` is supported.
      */
     public String getHostChargeType() {
         return this.HostChargeType;
     }
 
     /**
-     * Set instance billing mode. Only PREPAID mode is supported.
-     * @param HostChargeType Instance billing mode. Only PREPAID mode is supported.
+     * Set The billing method of an instance. Currently only `PREPAID` is supported.
+     * @param HostChargeType The billing method of an instance. Currently only `PREPAID` is supported.
      */
     public void setHostChargeType(String HostChargeType) {
         this.HostChargeType = HostChargeType;
     }
 
     /**
-     * Get CDH instance mode, default 'HS1'.
-     * @return HostType CDH instance mode, default 'HS1'.
+     * Get CDH instance model. Default value: `HS1`. 
+     * @return HostType CDH instance model. Default value: `HS1`.
      */
     public String getHostType() {
         return this.HostType;
     }
 
     /**
-     * Set CDH instance mode, default 'HS1'.
-     * @param HostType CDH instance mode, default 'HS1'.
+     * Set CDH instance model. Default value: `HS1`.
+     * @param HostType CDH instance model. Default value: `HS1`.
      */
     public void setHostType(String HostType) {
         this.HostType = HostType;
     }
 
     /**
-     * Get number of CDH instances purchased.
-     * @return HostCount number of CDH instances purchased.
+     * Get The quantity of CDH instances you want to purchase. 
+     * @return HostCount The quantity of CDH instances you want to purchase.
      */
-    public Integer getHostCount() {
+    public Long getHostCount() {
         return this.HostCount;
     }
 
     /**
-     * Set number of CDH instances purchased.
-     * @param HostCount number of CDH instances purchased.
+     * Set The quantity of CDH instances you want to purchase.
+     * @param HostCount The quantity of CDH instances you want to purchase.
      */
-    public void setHostCount(Integer HostCount) {
+    public void setHostCount(Long HostCount) {
         this.HostCount = HostCount;
     }
 
     /**
-     * Get tag description list. This parameter is used to bind a tag to a resource instance. 
-     * @return TagSpecification Tag description list. This parameter is used to bind a tag to a resource instance.
+     * Get Tag description. You can specify the parameter to associate a tag with an instance. 
+     * @return TagSpecification Tag description. You can specify the parameter to associate a tag with an instance.
      */
     public TagSpecification [] getTagSpecification() {
         return this.TagSpecification;
     }
 
     /**
-     * Set tag description list. This parameter is used to bind a tag to a resource instance.
-     * @param TagSpecification Tag description list. This parameter is used to bind a tag to a resource instance.
+     * Set Tag description. You can specify the parameter to associate a tag with an instance.
+     * @param TagSpecification Tag description. You can specify the parameter to associate a tag with an instance.
      */
     public void setTagSpecification(TagSpecification [] TagSpecification) {
         this.TagSpecification = TagSpecification;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Placement.", this.Placement);

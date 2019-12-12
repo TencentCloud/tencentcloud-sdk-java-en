@@ -30,49 +30,49 @@ public class CreateDisasterRecoverGroupResponse  extends AbstractModel{
     private String DisasterRecoverGroupId;
 
     /**
-    * Type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
+    * Type of the spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack.
     */
     @SerializedName("Type")
     @Expose
     private String Type;
 
     /**
-    * Name of a spread placement group with a length of 1-60 characters.
+    * Name of the spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * Maximum number of CVMs in a placement group.
+    * The maximum number of CVMs in a placement group.
     */
     @SerializedName("CvmQuotaTotal")
     @Expose
-    private Integer CvmQuotaTotal;
+    private Long CvmQuotaTotal;
 
     /**
-    * Number of CVMs in a placement group.
+    * The current number of CVMs in a placement group.
     */
     @SerializedName("CurrentNum")
     @Expose
-    private Integer CurrentNum;
+    private Long CurrentNum;
 
     /**
-    * Creation time of a placement group.
+    * Creation time of the placement group.
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get List of spread placement group IDs.
+     * Get List of spread placement group IDs. 
      * @return DisasterRecoverGroupId List of spread placement group IDs.
      */
     public String getDisasterRecoverGroupId() {
@@ -88,103 +88,103 @@ public class CreateDisasterRecoverGroupResponse  extends AbstractModel{
     }
 
     /**
-     * Get type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
-     * @return Type Type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
+     * Get Type of the spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack. 
+     * @return Type Type of the spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack.
      */
     public String getType() {
         return this.Type;
     }
 
     /**
-     * Set type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
-     * @param Type Type of spread placement group, value:<br><li>Host: Physical machine<br><li>SW: Switch<br><li>Rack: Rack
+     * Set Type of the spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack.
+     * @param Type Type of the spread placement group. Valid values: <br><li>HOST: physical machine <br><li>SW: switch <br><li>RACK: rack.
      */
     public void setType(String Type) {
         this.Type = Type;
     }
 
     /**
-     * Get name of a spread placement group with a length of 1-60 characters.
-     * @return Name Name of a spread placement group with a length of 1-60 characters.
+     * Get Name of the spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters. 
+     * @return Name Name of the spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Set name of a spread placement group with a length of 1-60 characters.
-     * @param Name Name of a spread placement group with a length of 1-60 characters.
+     * Set Name of the spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters.
+     * @param Name Name of the spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Get maximum number of CVMs in a placement group.
-     * @return CvmQuotaTotal Maximum number of CVMs in a placement group.
+     * Get The maximum number of CVMs in a placement group. 
+     * @return CvmQuotaTotal The maximum number of CVMs in a placement group.
      */
-    public Integer getCvmQuotaTotal() {
+    public Long getCvmQuotaTotal() {
         return this.CvmQuotaTotal;
     }
 
     /**
-     * Set maximum number of CVMs in a placement group.
-     * @param CvmQuotaTotal Maximum number of CVMs in a placement group.
+     * Set The maximum number of CVMs in a placement group.
+     * @param CvmQuotaTotal The maximum number of CVMs in a placement group.
      */
-    public void setCvmQuotaTotal(Integer CvmQuotaTotal) {
+    public void setCvmQuotaTotal(Long CvmQuotaTotal) {
         this.CvmQuotaTotal = CvmQuotaTotal;
     }
 
     /**
-     * Get number of CVMs in a placement group.
-     * @return CurrentNum Number of CVMs in a placement group.
+     * Get The current number of CVMs in a placement group. 
+     * @return CurrentNum The current number of CVMs in a placement group.
      */
-    public Integer getCurrentNum() {
+    public Long getCurrentNum() {
         return this.CurrentNum;
     }
 
     /**
-     * Number of CVMs in a placement group.
-     * @param CurrentNum Number of CVMs in a placement group.
+     * Set The current number of CVMs in a placement group.
+     * @param CurrentNum The current number of CVMs in a placement group.
      */
-    public void setCurrentNum(Integer CurrentNum) {
+    public void setCurrentNum(Long CurrentNum) {
         this.CurrentNum = CurrentNum;
     }
 
     /**
-     * Get creation time of a placement group.
-     * @return CreateTime Creation time of a placement group.
+     * Get Creation time of the placement group. 
+     * @return CreateTime Creation time of the placement group.
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * Set creation time of a placement group.
-     * @param CreateTime Creation time of a placement group.
+     * Set Creation time of the placement group.
+     * @param CreateTime Creation time of the placement group.
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * Get unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @return RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
-     * @param RequestId Unique request ID, which is returned in every request. The RequestId is required for troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DisasterRecoverGroupId", this.DisasterRecoverGroupId);

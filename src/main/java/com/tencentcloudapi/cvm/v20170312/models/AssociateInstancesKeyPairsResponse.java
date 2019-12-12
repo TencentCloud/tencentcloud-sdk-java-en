@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class AssociateInstancesKeyPairsResponse  extends AbstractModel{
 
     /**
-    * Unique request ID, will returned in every request. The RequestId is required for troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get unique request ID, will returned in every request. The RequestId is required for troubleshooting case.
-     * @return RequestId Unique request ID, will returned in every request. The RequestId is required for troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique request ID, will returned in every request. The RequestId is required for troubleshooting case.
-     * @param RequestId Unique request ID, will returned in every request. The RequestId is required for troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "RequestId", this.RequestId);

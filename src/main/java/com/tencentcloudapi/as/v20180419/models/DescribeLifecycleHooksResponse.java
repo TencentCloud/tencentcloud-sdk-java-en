@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeLifecycleHooksResponse  extends AbstractModel{
 
     /**
-    * Lifecycle hook Set
+    * Array of lifecycle hooks
     */
     @SerializedName("LifecycleHookSet")
     @Expose
     private LifecycleHook [] LifecycleHookSet;
 
     /**
-    * TotalCount.
+    * Total quantity
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain Lifecycle hook Set
-     * @return LifecycleHookSet Lifecycle hook Set
+     * Get Array of lifecycle hooks 
+     * @return LifecycleHookSet Array of lifecycle hooks
      */
     public LifecycleHook [] getLifecycleHookSet() {
         return this.LifecycleHookSet;
     }
 
     /**
-     * Set Lifecycle hook Set
-     * @param LifecycleHookSet Lifecycle hook Set
+     * Set Array of lifecycle hooks
+     * @param LifecycleHookSet Array of lifecycle hooks
      */
     public void setLifecycleHookSet(LifecycleHook [] LifecycleHookSet) {
         this.LifecycleHookSet = LifecycleHookSet;
     }
 
     /**
-     * Obtain number of TotalCount.
-     * @return TotalCount Number of TotalCount.
+     * Get Total quantity 
+     * @return TotalCount Total quantity
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of TotalCount.
-     * @param TotalCount Number of TotalCount.
+     * Set Total quantity
+     * @param TotalCount Total quantity
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "LifecycleHookSet.", this.LifecycleHookSet);

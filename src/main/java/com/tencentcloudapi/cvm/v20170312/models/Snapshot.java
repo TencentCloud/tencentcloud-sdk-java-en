@@ -30,21 +30,23 @@ public class Snapshot  extends AbstractModel{
     private String SnapshotId;
 
     /**
-    * Type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
+    * Type of the cloud disk used to create the snapshot. Valid values:
+SYSTEM_DISK: system disk
+DATA_DISK: data disk
     */
     @SerializedName("DiskUsage")
     @Expose
     private String DiskUsage;
 
     /**
-    * Size of the cloud disk used to create this snapshot (in GB).
+    * Size of the cloud disk used to create the snapshot; unit: GB.
     */
     @SerializedName("DiskSize")
     @Expose
-    private Integer DiskSize;
+    private Long DiskSize;
 
     /**
-     * Obtain Snapshot ID.
+     * Get Snapshot ID. 
      * @return SnapshotId Snapshot ID.
      */
     public String getSnapshotId() {
@@ -52,7 +54,7 @@ public class Snapshot  extends AbstractModel{
     }
 
     /**
-     * Configure Snapshot ID.
+     * Set Snapshot ID.
      * @param SnapshotId Snapshot ID.
      */
     public void setSnapshotId(String SnapshotId) {
@@ -60,39 +62,47 @@ public class Snapshot  extends AbstractModel{
     }
 
     /**
-     * Obtain type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
-     * @return DiskUsage Type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
+     * Get Type of the cloud disk used to create the snapshot. Valid values:
+SYSTEM_DISK: system disk
+DATA_DISK: data disk 
+     * @return DiskUsage Type of the cloud disk used to create the snapshot. Valid values:
+SYSTEM_DISK: system disk
+DATA_DISK: data disk
      */
     public String getDiskUsage() {
         return this.DiskUsage;
     }
 
     /**
-     * Configure type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
-     * @param DiskUsage Type of the cloud disk used to create the snapshot. Value range: SYSTEM_DISK: System diskDATA_DISK: Data disk.
+     * Set Type of the cloud disk used to create the snapshot. Valid values:
+SYSTEM_DISK: system disk
+DATA_DISK: data disk
+     * @param DiskUsage Type of the cloud disk used to create the snapshot. Valid values:
+SYSTEM_DISK: system disk
+DATA_DISK: data disk
      */
     public void setDiskUsage(String DiskUsage) {
         this.DiskUsage = DiskUsage;
     }
 
     /**
-     * Size of the cloud disk used to create this snapshot (in GB).
-     * @return DiskSize Size of the cloud disk used to create this snapshot (in GB).
+     * Get Size of the cloud disk used to create the snapshot; unit: GB. 
+     * @return DiskSize Size of the cloud disk used to create the snapshot; unit: GB.
      */
-    public Integer getDiskSize() {
+    public Long getDiskSize() {
         return this.DiskSize;
     }
 
     /**
-     * Size of the cloud disk used to create this snapshot (in GB).
-     * @param DiskSize Size of the cloud disk used to create the snapshot.
+     * Set Size of the cloud disk used to create the snapshot; unit: GB.
+     * @param DiskSize Size of the cloud disk used to create the snapshot; unit: GB.
      */
-    public void setDiskSize(Integer DiskSize) {
+    public void setDiskSize(Long DiskSize) {
         this.DiskSize = DiskSize;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "SnapshotId", this.SnapshotId);

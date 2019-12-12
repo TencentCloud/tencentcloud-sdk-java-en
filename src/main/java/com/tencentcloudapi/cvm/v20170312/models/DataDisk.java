@@ -23,142 +23,152 @@ import java.util.HashMap;
 public class DataDisk  extends AbstractModel{
 
     /**
-    * Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
+    * The data disk size in GB. The minimum increment is 10 GB. Different types of data disks have different value ranges. For details, see [Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518). The default value is 0, indicating that no data disk is purchased. For more information, see the CVM documentation.
     */
     @SerializedName("DiskSize")
     @Expose
-    private Integer DiskSize;
+    private Long DiskSize;
 
     /**
-    * Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
+    * The data disk type. For more information about the limits on different data disk types, see [Instance Specifications](/document/product/213/2177). Valid values: <br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><li>CLOUD_SSD: SSD cloud disk<br><br>Default value: LOCAL_BASIC.<br><br>This parameter is invalid for the `ResizeInstanceDisk` API.
     */
     @SerializedName("DiskType")
     @Expose
     private String DiskType;
 
     /**
-    * ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
+    * Data disk ID. Data disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently.
     */
     @SerializedName("DiskId")
     @Expose
     private String DiskId;
 
     /**
-    * Whether terminate data disk with CVM. Value:
-<li>True: terminate data disk with CVM, only postpaid mode disk supported
-<li>FALSE: Keep data disk when CVM is terminated<br>
-Default: TRUE<br>
-This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
+    * Whether to terminate the data disk when its CVM is terminated. Valid values:
+<li>TRUE: terminate the data disk when its CVM is terminated. This value only supports pay-as-you-go cloud disks billed on an hourly basis.
+<li>FALSE: retain the data disk when its CVM is terminated.<br>
+Default value: TRUE<br>
+Currently this parameter is only used in the `RunInstances` API.
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("DeleteWithInstance")
     @Expose
     private Boolean DeleteWithInstance;
 
     /**
-    * Data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
+    * Data disk snapshot ID. The size of the selected data disk snapshot must be smaller than that of the data disk.
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("SnapshotId")
     @Expose
     private String SnapshotId;
 
     /**
-     * Get Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
-     * @return DiskSize Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
+     * Get The data disk size in GB. The minimum increment is 10 GB. Different types of data disks have different value ranges. For details, see [Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518). The default value is 0, indicating that no data disk is purchased. For more information, see the CVM documentation. 
+     * @return DiskSize The data disk size in GB. The minimum increment is 10 GB. Different types of data disks have different value ranges. For details, see [Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518). The default value is 0, indicating that no data disk is purchased. For more information, see the CVM documentation.
      */
-    public Integer getDiskSize() {
+    public Long getDiskSize() {
         return this.DiskSize;
     }
 
     /**
-     * Set Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
-     * @param DiskSize Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased.
+     * Set The data disk size in GB. The minimum increment is 10 GB. Different types of data disks have different value ranges. For details, see [Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518). The default value is 0, indicating that no data disk is purchased. For more information, see the CVM documentation.
+     * @param DiskSize The data disk size in GB. The minimum increment is 10 GB. Different types of data disks have different value ranges. For details, see [Instance Specifications](https://intl.cloud.tencent.com/document/product/213/11518). The default value is 0, indicating that no data disk is purchased. For more information, see the CVM documentation.
      */
-    public void setDiskSize(Integer DiskSize) {
+    public void setDiskSize(Long DiskSize) {
         this.DiskSize = DiskSize;
     }
 
     /**
-     * Get Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
-     * @return DiskType Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
+     * Get The data disk type. For more information about the limits on different data disk types, see [Instance Specifications](/document/product/213/2177). Valid values: <br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><li>CLOUD_SSD: SSD cloud disk<br><br>Default value: LOCAL_BASIC.<br><br>This parameter is invalid for the `ResizeInstanceDisk` API. 
+     * @return DiskType The data disk type. For more information about the limits on different data disk types, see [Instance Specifications](/document/product/213/2177). Valid values: <br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><li>CLOUD_SSD: SSD cloud disk<br><br>Default value: LOCAL_BASIC.<br><br>This parameter is invalid for the `ResizeInstanceDisk` API.
      */
     public String getDiskType() {
         return this.DiskType;
     }
 
     /**
-     * Set Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
-     * @param DiskType Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC：Local disk<br><li>LOCAL_SSD：Local SSD<br><li>CLOUD_BASIC：Basic cloud disk<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Disk<br><br>Default value: LOCAL_BASIC<br><br>This parameter is invalid for the API `ResizeInstanceDisk`.
+     * Set The data disk type. For more information about the limits on different data disk types, see [Instance Specifications](/document/product/213/2177). Valid values: <br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><li>CLOUD_SSD: SSD cloud disk<br><br>Default value: LOCAL_BASIC.<br><br>This parameter is invalid for the `ResizeInstanceDisk` API.
+     * @param DiskType The data disk type. For more information about the limits on different data disk types, see [Instance Specifications](/document/product/213/2177). Valid values: <br><li>LOCAL_BASIC: local disk<br><li>LOCAL_SSD: local SSD disk<br><li>CLOUD_BASIC: HDD cloud disk<br><li>CLOUD_PREMIUM: premium cloud storage<br><li>CLOUD_SSD: SSD cloud disk<br><br>Default value: LOCAL_BASIC.<br><br>This parameter is invalid for the `ResizeInstanceDisk` API.
      */
     public void setDiskType(String DiskType) {
         this.DiskType = DiskType;
     }
 
     /**
-     * Get ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
-     * @return DiskId ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
+     * Get Data disk ID. Data disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently. 
+     * @return DiskId Data disk ID. Data disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently.
      */
     public String getDiskId() {
         return this.DiskId;
     }
 
     /**
-     * Set ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
-     * @param DiskId ID of data disk. Neither LOCAL_BASIC nor LOCAL_SSD comes with an ID and thus neither supports this parameter for now.
+     * Set Data disk ID. Data disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently.
+     * @param DiskId Data disk ID. Data disks whose type is `LOCAL_BASIC` or `LOCAL_SSD` do not have an ID and do not support this parameter currently.
      */
     public void setDiskId(String DiskId) {
         this.DiskId = DiskId;
     }
 
     /**
-     * Get Whether terminate data disk with CVM. Value:
-<li>True: terminate data disk with CVM, only postpaid mode disk supported
-<li>FALSE: Keep data disk when CVM is terminated<br>
-Default: TRUE<br>
-This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
-     * @return DeleteWithInstance Whether terminate data disk with CVM. Value:
-<li>True: terminate data disk with CVM, only postpaid mode disk supported
-<li>FALSE: Keep data disk when CVM is terminated<br>
-Default: TRUE<br>
-This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
+     * Get Whether to terminate the data disk when its CVM is terminated. Valid values:
+<li>TRUE: terminate the data disk when its CVM is terminated. This value only supports pay-as-you-go cloud disks billed on an hourly basis.
+<li>FALSE: retain the data disk when its CVM is terminated.<br>
+Default value: TRUE<br>
+Currently this parameter is only used in the `RunInstances` API.
+Note: This field may return null, indicating that no valid value is found. 
+     * @return DeleteWithInstance Whether to terminate the data disk when its CVM is terminated. Valid values:
+<li>TRUE: terminate the data disk when its CVM is terminated. This value only supports pay-as-you-go cloud disks billed on an hourly basis.
+<li>FALSE: retain the data disk when its CVM is terminated.<br>
+Default value: TRUE<br>
+Currently this parameter is only used in the `RunInstances` API.
+Note: This field may return null, indicating that no valid value is found.
      */
     public Boolean getDeleteWithInstance() {
         return this.DeleteWithInstance;
     }
 
     /**
-     * Set Whether terminate data disk with CVM. Value:
-<li>True: terminate data disk with CVM, only postpaid mode disk supported
-<li>FALSE: Keep data disk when CVM is terminated<br>
-Default: TRUE<br>
-This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
-     * @param DeleteWithInstance Whether terminate data disk with CVM. Value:
-<li>True: terminate data disk with CVM, only postpaid mode disk supported
-<li>FALSE: Keep data disk when CVM is terminated<br>
-Default: TRUE<br>
-This parameter is invalid for the API `RunInstances`. Note: This field may return null, indicating that no valid value was found.
+     * Set Whether to terminate the data disk when its CVM is terminated. Valid values:
+<li>TRUE: terminate the data disk when its CVM is terminated. This value only supports pay-as-you-go cloud disks billed on an hourly basis.
+<li>FALSE: retain the data disk when its CVM is terminated.<br>
+Default value: TRUE<br>
+Currently this parameter is only used in the `RunInstances` API.
+Note: This field may return null, indicating that no valid value is found.
+     * @param DeleteWithInstance Whether to terminate the data disk when its CVM is terminated. Valid values:
+<li>TRUE: terminate the data disk when its CVM is terminated. This value only supports pay-as-you-go cloud disks billed on an hourly basis.
+<li>FALSE: retain the data disk when its CVM is terminated.<br>
+Default value: TRUE<br>
+Currently this parameter is only used in the `RunInstances` API.
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setDeleteWithInstance(Boolean DeleteWithInstance) {
         this.DeleteWithInstance = DeleteWithInstance;
     }
 
     /**
-     * Get data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
-     * @return SnapshotId Data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
+     * Get Data disk snapshot ID. The size of the selected data disk snapshot must be smaller than that of the data disk.
+Note: This field may return null, indicating that no valid value is found. 
+     * @return SnapshotId Data disk snapshot ID. The size of the selected data disk snapshot must be smaller than that of the data disk.
+Note: This field may return null, indicating that no valid value is found.
      */
     public String getSnapshotId() {
         return this.SnapshotId;
     }
 
     /**
-     * Set data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
-     * @param SnapshotId Data disk snapshot ID. the capacity of the selected data disk snapshot must be less than that of the data disk (storageSize). Note: This field may return null, indicating that no valid value was found.
+     * Set Data disk snapshot ID. The size of the selected data disk snapshot must be smaller than that of the data disk.
+Note: This field may return null, indicating that no valid value is found.
+     * @param SnapshotId Data disk snapshot ID. The size of the selected data disk snapshot must be smaller than that of the data disk.
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setSnapshotId(String SnapshotId) {
         this.SnapshotId = SnapshotId;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DiskSize", this.DiskSize);

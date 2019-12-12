@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class CreateScheduledActionResponse  extends AbstractModel{
 
     /**
-    * Scheduled action ID
+    * Scheduled task ID
     */
     @SerializedName("ScheduledActionId")
     @Expose
     private String ScheduledActionId;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get scheduled action ID
-     * @return ScheduledActionId Scheduled action ID
+     * Get Scheduled task ID 
+     * @return ScheduledActionId Scheduled task ID
      */
     public String getScheduledActionId() {
         return this.ScheduledActionId;
     }
 
     /**
-     * Set scheduled action ID
-     * @param ScheduledActionId Scheduled action ID
+     * Set Scheduled task ID
+     * @param ScheduledActionId Scheduled task ID
      */
     public void setScheduledActionId(String ScheduledActionId) {
         this.ScheduledActionId = ScheduledActionId;
     }
 
     /**
-     * Get the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ScheduledActionId", this.ScheduledActionId);

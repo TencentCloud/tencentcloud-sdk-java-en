@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class ForwardLoadBalancer  extends AbstractModel{
 
     /**
-    * ID of Load balancer.
+    * Load balancer ID
     */
     @SerializedName("LoadBalancerId")
     @Expose
     private String LoadBalancerId;
 
     /**
-    * ID of the application-based load balancer listener.
+    * Application load balancer listener ID
     */
     @SerializedName("ListenerId")
     @Expose
     private String ListenerId;
 
     /**
-    * List of target rule attributes.
+    * List of target rule attributes
     */
     @SerializedName("TargetAttributes")
     @Expose
     private TargetAttribute [] TargetAttributes;
 
     /**
-    * ID of forwarding rule.
+    * ID of a forwarding rule. This parameter is required for layer-7 listeners.
     */
     @SerializedName("LocationId")
     @Expose
     private String LocationId;
 
     /**
-     * Obtain the ID of Load balancer.
-     * @return LoadBalancerId ID of Load balancer.
+     * Get Load balancer ID 
+     * @return LoadBalancerId Load balancer ID
      */
     public String getLoadBalancerId() {
         return this.LoadBalancerId;
     }
 
     /**
-     * Configure the ID of Load balancer.
-     * @param LoadBalancerId ID of Load balancer.
+     * Set Load balancer ID
+     * @param LoadBalancerId Load balancer ID
      */
     public void setLoadBalancerId(String LoadBalancerId) {
         this.LoadBalancerId = LoadBalancerId;
     }
 
     /**
-     * Obtain an ID of the application-based load balancer listener.
-     * @return ListenerId ID of the application-based load balancer listener.
+     * Get Application load balancer listener ID 
+     * @return ListenerId Application load balancer listener ID
      */
     public String getListenerId() {
         return this.ListenerId;
     }
 
     /**
-     * Configure an ID of the application-based load balancer listener.
-     * @param ListenerId ID of the application-based load balancer listener.
+     * Set Application load balancer listener ID
+     * @param ListenerId Application load balancer listener ID
      */
     public void setListenerId(String ListenerId) {
         this.ListenerId = ListenerId;
     }
 
     /**
-     * Obtain a list of target rule attributes.
-     * @return TargetAttributes List of target rule attributes.
+     * Get List of target rule attributes 
+     * @return TargetAttributes List of target rule attributes
      */
     public TargetAttribute [] getTargetAttributes() {
         return this.TargetAttributes;
     }
 
     /**
-     * Configure a list of target rule attributes.
-     * @param TargetAttributes List of target rule attributes.
+     * Set List of target rule attributes
+     * @param TargetAttributes List of target rule attributes
      */
     public void setTargetAttributes(TargetAttribute [] TargetAttributes) {
         this.TargetAttributes = TargetAttributes;
     }
 
     /**
-     * Obtain the ID of forwarding rule.
-     * @return LocationId ID of forwarding rule.
+     * Get ID of a forwarding rule. This parameter is required for layer-7 listeners. 
+     * @return LocationId ID of a forwarding rule. This parameter is required for layer-7 listeners.
      */
     public String getLocationId() {
         return this.LocationId;
     }
 
     /**
-     * Configure the ID of forwarding rule.
-     * @param LocationId ID of forwarding rule.
+     * Set ID of a forwarding rule. This parameter is required for layer-7 listeners.
+     * @param LocationId ID of a forwarding rule. This parameter is required for layer-7 listeners.
      */
     public void setLocationId(String LocationId) {
         this.LocationId = LocationId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LoadBalancerId", this.LoadBalancerId);

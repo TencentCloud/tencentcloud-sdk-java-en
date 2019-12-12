@@ -23,53 +23,63 @@ import java.util.HashMap;
 public class ImageOsList  extends AbstractModel{
 
     /**
-    * Supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
+    * Supported Windows OS
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("Windows")
     @Expose
     private String [] Windows;
 
     /**
-    * Supported Linux operating systems.Note: This field may return null, indicating that no valid value was found.
+    * Supported Linux OS
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("Linux")
     @Expose
     private String [] Linux;
 
     /**
-     * Get supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
-     * @return Windows Supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
+     * Get Supported Windows OS
+Note: This field may return null, indicating that no valid value is found. 
+     * @return Windows Supported Windows OS
+Note: This field may return null, indicating that no valid value is found.
      */
     public String [] getWindows() {
         return this.Windows;
     }
 
     /**
-     * Set supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
-     * @param Windows Supported Windows operating systems. Note: This field may return null, indicating that no valid value was found.
+     * Set Supported Windows OS
+Note: This field may return null, indicating that no valid value is found.
+     * @param Windows Supported Windows OS
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setWindows(String [] Windows) {
         this.Windows = Windows;
     }
 
     /**
-     * Get supported Linux operating systemsNote: This field may return null, indicating that no valid value was found.
-     * @return Linux supported Windows operating systemsNote: This field may return null, indicating that no valid value was found.
+     * Get Supported Linux OS
+Note: This field may return null, indicating that no valid value is found. 
+     * @return Linux Supported Linux OS
+Note: This field may return null, indicating that no valid value is found.
      */
     public String [] getLinux() {
         return this.Linux;
     }
 
     /**
-     * Set supported Linux operating systemsNote: This field may return null, indicating that no valid value was found.
-     * @param Linux Supported Linux operating systemsNote: This field may return null, indicating that no valid value was found.
+     * Set Supported Linux OS
+Note: This field may return null, indicating that no valid value is found.
+     * @param Linux Supported Linux OS
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setLinux(String [] Linux) {
         this.Linux = Linux;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "Windows.", this.Windows);

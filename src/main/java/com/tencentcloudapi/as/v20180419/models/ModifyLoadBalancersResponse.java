@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ModifyLoadBalancersResponse  extends AbstractModel{
 
     /**
-    * Scaling Activity ID
+    * Scaling activity ID
     */
     @SerializedName("ActivityId")
     @Expose
     private String ActivityId;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain Scaling Activity ID
-     * @return ActivityId Scaling Activity ID
+     * Get Scaling activity ID 
+     * @return ActivityId Scaling activity ID
      */
     public String getActivityId() {
         return this.ActivityId;
     }
 
     /**
-     * Set Scaling Activity ID
-     * @param ActivityId Scaling Activity ID
+     * Set Scaling activity ID
+     * @param ActivityId Scaling activity ID
      */
     public void setActivityId(String ActivityId) {
         this.ActivityId = ActivityId;
     }
 
     /**
-     * Obtain the unique ID of a request, which is required for each troubleshooting case.
-     * @return RequestId The unique ID returned for a request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId The unique ID of a request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ActivityId", this.ActivityId);

@@ -23,30 +23,35 @@ import java.util.HashMap;
 public class RunMonitorServiceEnabled  extends AbstractModel{
 
     /**
-    * Enable or disable [Cloud Monitoring](https://cloud.tencent.com/document/product/248)service.Value:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
+    * Whether to enable the [Cloud Monitor](https://cloud.tencent.com/document/product/248) service. Value range: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("Enabled")
     @Expose
     private Boolean Enabled;
 
     /**
-     * Obtain Enable or disable [Cloud Monitoring](https://cloud.tencent.com/document/product/248)service.Value:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
-     * @return Enabled Enable or disable [Cloud Monitoring](https://cloud.tencent.com/document/product/248)service.Value:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
+     * Get Whether to enable the [Cloud Monitor](https://cloud.tencent.com/document/product/248) service. Value range: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return Enabled Whether to enable the [Cloud Monitor](https://cloud.tencent.com/document/product/248) service. Value range: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public Boolean getEnabled() {
         return this.Enabled;
     }
 
     /**
-     * Configure Enable or disable [Cloud Monitoring](https://cloud.tencent.com/document/product/248)service.Value:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
-     * @param Enabled Enable or disable [Cloud Monitoring](https://cloud.tencent.com/document/product/248)service.Value:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE Note: This field may return null, indicating that no valid value was found.
+     * Set Whether to enable the [Cloud Monitor](https://cloud.tencent.com/document/product/248) service. Value range: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param Enabled Whether to enable the [Cloud Monitor](https://cloud.tencent.com/document/product/248) service. Value range: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public void setEnabled(Boolean Enabled) {
         this.Enabled = Enabled;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Enabled", this.Enabled);

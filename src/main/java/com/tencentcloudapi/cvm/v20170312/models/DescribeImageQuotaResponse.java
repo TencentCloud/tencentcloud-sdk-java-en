@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeImageQuotaResponse  extends AbstractModel{
 
     /**
-    * The image quota under an account
+    * The image quota of an account
     */
     @SerializedName("ImageNumQuota")
     @Expose
-    private Integer ImageNumQuota;
+    private Long ImageNumQuota;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * obtain the image quota of account
-     * @return ImageNumQuota the image quota of account
+     * Get The image quota of an account 
+     * @return ImageNumQuota The image quota of an account
      */
-    public Integer getImageNumQuota() {
+    public Long getImageNumQuota() {
         return this.ImageNumQuota;
     }
 
     /**
-     * set the image quota
-     * @param ImageNumQuota the image quota of account
+     * Set The image quota of an account
+     * @param ImageNumQuota The image quota of an account
      */
-    public void setImageNumQuota(Integer ImageNumQuota) {
+    public void setImageNumQuota(Long ImageNumQuota) {
         this.ImageNumQuota = ImageNumQuota;
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ImageNumQuota", this.ImageNumQuota);

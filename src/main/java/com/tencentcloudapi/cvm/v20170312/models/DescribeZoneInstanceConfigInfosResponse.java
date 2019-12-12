@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DescribeZoneInstanceConfigInfosResponse  extends AbstractModel{
 
     /**
-    * Model information (instance model/quota information) in an availability zone.
+    * List of model configurations for the availability zone.
     */
     @SerializedName("InstanceTypeQuotaSet")
     @Expose
     private InstanceTypeQuotaItem [] InstanceTypeQuotaSet;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get list of model information (instance model/quota information) in an availability zone.
-     * @return InstanceTypeQuotaSet List of model information in availability zone
+     * Get List of model configurations for the availability zone. 
+     * @return InstanceTypeQuotaSet List of model configurations for the availability zone.
      */
     public InstanceTypeQuotaItem [] getInstanceTypeQuotaSet() {
         return this.InstanceTypeQuotaSet;
     }
 
     /**
-     * Set list of model information (instance model/quota information) in an availability zone.
-     * @param InstanceTypeQuotaSet List of model information in availability zone
+     * Set List of model configurations for the availability zone.
+     * @param InstanceTypeQuotaSet List of model configurations for the availability zone.
      */
     public void setInstanceTypeQuotaSet(InstanceTypeQuotaItem [] InstanceTypeQuotaSet) {
         this.InstanceTypeQuotaSet = InstanceTypeQuotaSet;
     }
 
     /**
-     * Get unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "InstanceTypeQuotaSet.", this.InstanceTypeQuotaSet);

@@ -23,101 +23,101 @@ import java.util.HashMap;
 public class DescribeHostsRequest  extends AbstractModel{
 
     /**
-    * Filter conditions
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
-<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
-<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
+    * Filters.
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
+<li> `project-id` - Integer - Optional - Filter results by project ID. You can call `DescribeProject` or log in to the console to view the list of existing projects. You can also create a new project by calling `AddProject`.</li>
+<li> `host-id` - String - Optional - Filter results by CDH ID. CDH IDs are in the format of `host-11112222`.</li>
+<li> `host-name` - String - Optional - Filter results by CDH instance name.</li>
+<li> `host-state` - String - Optional - Filter results by CDH instance state. (PENDING: creating | LAUNCH_FAILURE: creation failed | RUNNING: running | EXPIRED: expired)</li>
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * Offset. Default is 0.
+    * Offset; default value: 0.
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-    * <**ECI**>
+    * Number of results returned; default value: 20; maximum: 100.
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-     * Get filter condition.
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
-<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
-<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
-     * @return Filters Filter condition.
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
-<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
-<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
+     * Get Filters.
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
+<li> `project-id` - Integer - Optional - Filter results by project ID. You can call `DescribeProject` or log in to the console to view the list of existing projects. You can also create a new project by calling `AddProject`.</li>
+<li> `host-id` - String - Optional - Filter results by CDH ID. CDH IDs are in the format of `host-11112222`.</li>
+<li> `host-name` - String - Optional - Filter results by CDH instance name.</li>
+<li> `host-state` - String - Optional - Filter results by CDH instance state. (PENDING: creating | LAUNCH_FAILURE: creation failed | RUNNING: running | EXPIRED: expired)</li> 
+     * @return Filters Filters.
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
+<li> `project-id` - Integer - Optional - Filter results by project ID. You can call `DescribeProject` or log in to the console to view the list of existing projects. You can also create a new project by calling `AddProject`.</li>
+<li> `host-id` - String - Optional - Filter results by CDH ID. CDH IDs are in the format of `host-11112222`.</li>
+<li> `host-name` - String - Optional - Filter results by CDH instance name.</li>
+<li> `host-state` - String - Optional - Filter results by CDH instance state. (PENDING: creating | LAUNCH_FAILURE: creation failed | RUNNING: running | EXPIRED: expired)</li>
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter condition.
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
-<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
-<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
-     * @param Filters Filter condition.
-<li> zone - String - Required: No - (Filter condition) Filter by availability zone.</li>
-<li> project-id - Integer - Required: No - (Filter condition) Filter by project ID. You can view the list of created projects by calling DescribeProject or by logging in to the console. You can also create a new project by calling AddProject.</li>
-<li> host-id - String - Required: No - (Filter condition) Filter by CDH ID.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH instance name.</li>
-<li> host-name - String - Required: No - (Filter condition) Filter by CDH status. （PENDING：Creating |LAUNCH_FAILURE：Failed|RUNNING：Running|EXPIRED：Expired）</li>
+     * Set Filters.
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
+<li> `project-id` - Integer - Optional - Filter results by project ID. You can call `DescribeProject` or log in to the console to view the list of existing projects. You can also create a new project by calling `AddProject`.</li>
+<li> `host-id` - String - Optional - Filter results by CDH ID. CDH IDs are in the format of `host-11112222`.</li>
+<li> `host-name` - String - Optional - Filter results by CDH instance name.</li>
+<li> `host-state` - String - Optional - Filter results by CDH instance state. (PENDING: creating | LAUNCH_FAILURE: creation failed | RUNNING: running | EXPIRED: expired)</li>
+     * @param Filters Filters.
+<li> `zone` - String - Optional - Filter results by availability zone.</li>
+<li> `project-id` - Integer - Optional - Filter results by project ID. You can call `DescribeProject` or log in to the console to view the list of existing projects. You can also create a new project by calling `AddProject`.</li>
+<li> `host-id` - String - Optional - Filter results by CDH ID. CDH IDs are in the format of `host-11112222`.</li>
+<li> `host-name` - String - Optional - Filter results by CDH instance name.</li>
+<li> `host-state` - String - Optional - Filter results by CDH instance state. (PENDING: creating | LAUNCH_FAILURE: creation failed | RUNNING: running | EXPIRED: expired)</li>
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Get Offset. Default is 0.
-     * @return Offset Offset. Default is 0.
+     * Get Offset; default value: 0. 
+     * @return Offset Offset; default value: 0.
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set Offset. Default is 0.
-     * @param Offset Offset. Default is 0.
+     * Set Offset; default value: 0.
+     * @param Offset Offset; default value: 0.
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * Get Number of values to be returned. Default is 20. Maximum is 100
-     * @return Limit Number of values to be returned. Default is 20. Maximum is 100
+     * Get Number of results returned; default value: 20; maximum: 100. 
+     * @return Limit Number of results returned; default value: 20; maximum: 100.
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set Number of values to be returned. Default is 20. Maximum is 100
-     * @param Limit Number of values to be returned. Default is 20. Maximum is 100
+     * Set Number of results returned; default value: 20; maximum: 100.
+     * @param Limit Number of results returned; default value: 20; maximum: 100.
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Filters.", this.Filters);

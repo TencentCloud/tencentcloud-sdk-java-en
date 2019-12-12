@@ -23,145 +23,175 @@ import java.util.HashMap;
 public class ModifyLaunchConfigurationAttributesRequest  extends AbstractModel{
 
     /**
-    * Launch configuration ID.
+    * Launch configuration ID
     */
     @SerializedName("LaunchConfigurationId")
     @Expose
     private String LaunchConfigurationId;
 
     /**
-    * Specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string, retrieve filed [1].</li>
+    * Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li>
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * List of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
+    * List of instance types. Different instance models specify different resource specifications. Up to 5 instance models can be supported.
+The launch configuration uses InstanceType to indicate one single instance type and InstanceTypes to indicate multiple instance types. After InstanceTypes is successfully specified for the launch configuration, the original InstanceType will be automatically invalidated.
     */
     @SerializedName("InstanceTypes")
     @Expose
     private String [] InstanceTypes;
 
     /**
-    * The validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
+    * Instance type verification policy which works when InstanceTypes is actually modified. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy.
     */
     @SerializedName("InstanceTypesCheckPolicy")
     @Expose
     private String InstanceTypesCheckPolicy;
 
     /**
-    * Launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
+    * Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes.
     */
     @SerializedName("LaunchConfigurationName")
     @Expose
     private String LaunchConfigurationName;
 
     /**
-    * The customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
+    * Base64-encoded custom data of up to 16 KB. If you want to clear UserData, specify it as an empty string
     */
     @SerializedName("UserData")
     @Expose
     private String UserData;
 
     /**
-     * Obtain the launch configuration ID.
-     * @return LaunchConfigurationId Launch configuration ID.
+     * Get Launch configuration ID 
+     * @return LaunchConfigurationId Launch configuration ID
      */
     public String getLaunchConfigurationId() {
         return this.LaunchConfigurationId;
     }
 
     /**
-     * Configure the launch configuration ID.
-     * @param LaunchConfigurationId Launch configuration ID.
+     * Set Launch configuration ID
+     * @param LaunchConfigurationId Launch configuration ID
      */
     public void setLaunchConfigurationId(String LaunchConfigurationId) {
         this.LaunchConfigurationId = LaunchConfigurationId;
     }
 
     /**
-     * Obtain the specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string, retrieve filed `ImageId`.</li>
-     * @return ImageId Specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string,retrieve filed `ImageId`.</li>
+     * Get Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li> 
+     * @return ImageId Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li>
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * Configure the specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string,retrieve filed `ImageId`.</li>
-     * @param ImageId Specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940) ID, such as `img-8toqc6s3`. There are four types of images:<br/><li>Public image.</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images.</li><br/>You can obtain the available image ID by either of the following ways:<br/><li>Query the image ID of a `Public image`, `Custom image` or `Shared Image` by logging in to the [Console]; query the image ID of a `Service Marketplace Images` via [Cloud Marketplace].</li><li>Call the interface [DescribeImages] (https://cloud.tencent.com/document/api/213/15715), in the return string,retrieve filed `ImageId`.</li>
+     * Set Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li>
+     * @param ImageId Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li>
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * Obtain the list of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
-     * @return InstanceTypes List of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
+     * Get List of instance types. Different instance models specify different resource specifications. Up to 5 instance models can be supported.
+The launch configuration uses InstanceType to indicate one single instance type and InstanceTypes to indicate multiple instance types. After InstanceTypes is successfully specified for the launch configuration, the original InstanceType will be automatically invalidated. 
+     * @return InstanceTypes List of instance types. Different instance models specify different resource specifications. Up to 5 instance models can be supported.
+The launch configuration uses InstanceType to indicate one single instance type and InstanceTypes to indicate multiple instance types. After InstanceTypes is successfully specified for the launch configuration, the original InstanceType will be automatically invalidated.
      */
     public String [] getInstanceTypes() {
         return this.InstanceTypes;
     }
 
     /**
-     * Configure the list of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
-     * @param InstanceTypes List of instance machine types,each type defines different configurations about resources. It can have up to 5 instance machine types. Start the configuration, representing a single instance type via InstanceType and a multi-instance type via InstanceTypes. After the InstanceTypes is successfully started, the original InstanceType is automatically invalidated.
+     * Set List of instance types. Different instance models specify different resource specifications. Up to 5 instance models can be supported.
+The launch configuration uses InstanceType to indicate one single instance type and InstanceTypes to indicate multiple instance types. After InstanceTypes is successfully specified for the launch configuration, the original InstanceType will be automatically invalidated.
+     * @param InstanceTypes List of instance types. Different instance models specify different resource specifications. Up to 5 instance models can be supported.
+The launch configuration uses InstanceType to indicate one single instance type and InstanceTypes to indicate multiple instance types. After InstanceTypes is successfully specified for the launch configuration, the original InstanceType will be automatically invalidated.
      */
     public void setInstanceTypes(String [] InstanceTypes) {
         this.InstanceTypes = InstanceTypes;
     }
 
     /**
-     * Obtain the validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
-     * @return InstanceTypesCheckPolicy The validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
+     * Get Instance type verification policy which works when InstanceTypes is actually modified. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy. 
+     * @return InstanceTypesCheckPolicy Instance type verification policy which works when InstanceTypes is actually modified. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy.
      */
     public String getInstanceTypesCheckPolicy() {
         return this.InstanceTypesCheckPolicy;
     }
 
     /**
-     * Configure the validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
-     * @param InstanceTypesCheckPolicy The validation policy works when actually modifying InstanceTypes. Valid value: ALL,ANY. Default value is ANY.<br><li> ALL, All instance types can be used, then the validation is passed.Otherwise validation fail.<br><li> ANY, Any one of instance types can be used, then the validation is passed.Otherwise validation fail. The scenarios that instance types are not usable include: instance types are sold out,associated cloud disks are sold out. If an instance type does not exist or it is offiline, no matter what values InstanceTypesCheckPolicy has, validation always fail.
+     * Set Instance type verification policy which works when InstanceTypes is actually modified. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy.
+     * @param InstanceTypesCheckPolicy Instance type verification policy which works when InstanceTypes is actually modified. Value range: ALL, ANY. Default value: ANY.
+<br><li> ALL: The verification will success only if all instance types (InstanceType) are available; otherwise, an error will be reported.
+<br><li> ANY: The verification will success if any instance type (InstanceType) is available; otherwise, an error will be reported.
+
+Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk.
+If a model in InstanceTypes does not exist or has been discontinued, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy.
      */
     public void setInstanceTypesCheckPolicy(String InstanceTypesCheckPolicy) {
         this.InstanceTypesCheckPolicy = InstanceTypesCheckPolicy;
     }
 
     /**
-     * Obtain the launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
-     * @return LaunchConfigurationName Launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
+     * Get Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes. 
+     * @return LaunchConfigurationName Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes.
      */
     public String getLaunchConfigurationName() {
         return this.LaunchConfigurationName;
     }
 
     /**
-     * Configure the launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
-     * @param LaunchConfigurationName Launch configuration display name.The name can only contain Chinese,English letters, numbers, underscore, hyphen”-”, English dot “.”. It cannot exceed 60 characters.
+     * Set Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes.
+     * @param LaunchConfigurationName Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes.
      */
     public void setLaunchConfigurationName(String LaunchConfigurationName) {
         this.LaunchConfigurationName = LaunchConfigurationName;
     }
 
     /**
-     * Obtain the customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
-     * @return UserData The customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
+     * Get Base64-encoded custom data of up to 16 KB. If you want to clear UserData, specify it as an empty string 
+     * @return UserData Base64-encoded custom data of up to 16 KB. If you want to clear UserData, specify it as an empty string
      */
     public String getUserData() {
         return this.UserData;
     }
 
     /**
-     * Configure the customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
-     * @param UserData The customized data Base64 encoded. Not exceed 16KB in size. If you want to clear UserData, specify it as an empty string.
+     * Set Base64-encoded custom data of up to 16 KB. If you want to clear UserData, specify it as an empty string
+     * @param UserData Base64-encoded custom data of up to 16 KB. If you want to clear UserData, specify it as an empty string
      */
     public void setUserData(String UserData) {
         this.UserData = UserData;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LaunchConfigurationId", this.LaunchConfigurationId);

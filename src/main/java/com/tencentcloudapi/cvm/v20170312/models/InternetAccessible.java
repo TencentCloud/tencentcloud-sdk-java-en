@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class InternetAccessible  extends AbstractModel{
 
     /**
-    * Network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: non-bandwidth package user’s billing type is defaulted same as the sub-machine.
+    * Network billing method. Valid values: <br><li>BANDWIDTH_PREPAID: prepaid; billed by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay-as-you-go; billed by traffic on an hourly basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: pay-as-you-go; billed by bandwidth on an hourly basis <br><li>BANDWIDTH_PACKAGE: for bandwidth package users <br>Default value: same as the instance billing method for non-bandwidth package users.
     */
     @SerializedName("InternetChargeType")
     @Expose
     private String InternetChargeType;
 
     /**
-    * The maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](/document/product/213/509)。
+    * The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/12523).
     */
     @SerializedName("InternetMaxBandwidthOut")
     @Expose
-    private Integer InternetMaxBandwidthOut;
+    private Long InternetMaxBandwidthOut;
 
     /**
-    * Whether to assign public IP. Value range:<br><li>TRUE：Assign public IP.<br><li>FALSE: Not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned.
+    * Whether to assign a public IP. Valid values: <br><li>TRUE: Assign a public IP <br><li>FALSE: Do not assign a public IP <br><br>If the public network bandwidth is greater than 0 Mbps, you can choose whether to assign a public IP; by default a public IP will be assigned. If the public network bandwidth is 0 Mbps, you will not be able to assign a public IP.
     */
     @SerializedName("PublicIpAssigned")
     @Expose
     private Boolean PublicIpAssigned;
 
     /**
-    * IDs of bandwidth package, which can be obtained from [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) in the returned value of API `BandwidthPackageId`.
+    * Bandwidth package ID. To obatin the IDs, you can call [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) and look for the `BandwidthPackageId` fields in the response.
     */
     @SerializedName("BandwidthPackageId")
     @Expose
     private String BandwidthPackageId;
 
     /**
-     * Obtain the network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: 
-     * @return InternetChargeType Network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: non-bandwidth package user’s billing type is defaulted same as the sub-machine.
+     * Get Network billing method. Valid values: <br><li>BANDWIDTH_PREPAID: prepaid; billed by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay-as-you-go; billed by traffic on an hourly basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: pay-as-you-go; billed by bandwidth on an hourly basis <br><li>BANDWIDTH_PACKAGE: for bandwidth package users <br>Default value: same as the instance billing method for non-bandwidth package users. 
+     * @return InternetChargeType Network billing method. Valid values: <br><li>BANDWIDTH_PREPAID: prepaid; billed by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay-as-you-go; billed by traffic on an hourly basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: pay-as-you-go; billed by bandwidth on an hourly basis <br><li>BANDWIDTH_PACKAGE: for bandwidth package users <br>Default value: same as the instance billing method for non-bandwidth package users.
      */
     public String getInternetChargeType() {
         return this.InternetChargeType;
     }
 
     /**
-     * Configure the network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: non-bandwidth package user’s billing type is defaulted same as the sub-machine.
-     * @param InternetChargeType Network billing type. Value range:<br><li>BANDWIDTH_PREPAID：Prepaid by bandwidth.<br><li>TRAFFIC_POSTPAID_BY_HOUR：Postpaid by traffic on an hourly basis.<br><li>BANDWIDTH_POSTPAID_BY_HOUR：Postpaid by bandwidth on an hourly basis.<br><li>BANDWIDTH_PACKAGE：Bandwidth package users.<br>Default: non-bandwidth package user’s billing type is defaulted same as the sub-machine.
+     * Set Network billing method. Valid values: <br><li>BANDWIDTH_PREPAID: prepaid; billed by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay-as-you-go; billed by traffic on an hourly basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: pay-as-you-go; billed by bandwidth on an hourly basis <br><li>BANDWIDTH_PACKAGE: for bandwidth package users <br>Default value: same as the instance billing method for non-bandwidth package users.
+     * @param InternetChargeType Network billing method. Valid values: <br><li>BANDWIDTH_PREPAID: prepaid; billed by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay-as-you-go; billed by traffic on an hourly basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: pay-as-you-go; billed by bandwidth on an hourly basis <br><li>BANDWIDTH_PACKAGE: for bandwidth package users <br>Default value: same as the instance billing method for non-bandwidth package users.
      */
     public void setInternetChargeType(String InternetChargeType) {
         this.InternetChargeType = InternetChargeType;
     }
 
     /**
-     * Obtain the maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](/document/product/213/509).
-     * @return InternetMaxBandwidthOut The maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](/document/product/213/509).
+     * Get The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/12523). 
+     * @return InternetMaxBandwidthOut The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/12523).
      */
-    public Integer getInternetMaxBandwidthOut() {
+    public Long getInternetMaxBandwidthOut() {
         return this.InternetMaxBandwidthOut;
     }
 
     /**
-     * Configure the maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](/document/product/213/509).
-     * @param InternetMaxBandwidthOut The maximum outbound bandwidth of the public network (in Mbps). Default is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchase Network Bandwidth](/document/product/213/509).
+     * Set The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/12523).
+     * @param InternetMaxBandwidthOut The maximum outbound bandwidth of the public network, in Mbps. The default value is 0 Mbps. The upper limit of bandwidth varies for different models. For more information, see [Purchase Network Bandwidth](https://cloud.tencent.com/document/product/213/12523).
      */
-    public void setInternetMaxBandwidthOut(Integer InternetMaxBandwidthOut) {
+    public void setInternetMaxBandwidthOut(Long InternetMaxBandwidthOut) {
         this.InternetMaxBandwidthOut = InternetMaxBandwidthOut;
     }
 
     /**
-     * Obtain whether to assign public IP. Value range:<br><li>TRUE: Assign public IP.<br><li>FALSE: Not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned.
-     * @return PublicIpAssigned Whether to assign public IP. Value range:<br><li>TRUE: Assign public IP.<br><li>FALSE: Not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned.
+     * Get Whether to assign a public IP. Valid values: <br><li>TRUE: Assign a public IP <br><li>FALSE: Do not assign a public IP <br><br>If the public network bandwidth is greater than 0 Mbps, you can choose whether to assign a public IP; by default a public IP will be assigned. If the public network bandwidth is 0 Mbps, you will not be able to assign a public IP. 
+     * @return PublicIpAssigned Whether to assign a public IP. Valid values: <br><li>TRUE: Assign a public IP <br><li>FALSE: Do not assign a public IP <br><br>If the public network bandwidth is greater than 0 Mbps, you can choose whether to assign a public IP; by default a public IP will be assigned. If the public network bandwidth is 0 Mbps, you will not be able to assign a public IP.
      */
     public Boolean getPublicIpAssigned() {
         return this.PublicIpAssigned;
     }
 
     /**
-     * Configure whether to assign public IP. Value range:<br><li>TRUE: Assign public IP.<br><li>FALSE: Not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned.
-     * @param PublicIpAssigned Whether to assign public IP. Value range:<br><li>TRUE: Assign public IP.<br><li>FALSE: Not assign public IP.<br><br>If the public network bandwidth is greater than 0 Mbps, you're free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, the public IP is not assigned.
+     * Set Whether to assign a public IP. Valid values: <br><li>TRUE: Assign a public IP <br><li>FALSE: Do not assign a public IP <br><br>If the public network bandwidth is greater than 0 Mbps, you can choose whether to assign a public IP; by default a public IP will be assigned. If the public network bandwidth is 0 Mbps, you will not be able to assign a public IP.
+     * @param PublicIpAssigned Whether to assign a public IP. Valid values: <br><li>TRUE: Assign a public IP <br><li>FALSE: Do not assign a public IP <br><br>If the public network bandwidth is greater than 0 Mbps, you can choose whether to assign a public IP; by default a public IP will be assigned. If the public network bandwidth is 0 Mbps, you will not be able to assign a public IP.
      */
     public void setPublicIpAssigned(Boolean PublicIpAssigned) {
         this.PublicIpAssigned = PublicIpAssigned;
     }
 
     /**
-     * Obtain IDs of bandwidth package, which can be obtained from [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) in the returned value of API `BandwidthPackageId`.
-     * @return BandwidthPackageId IDs of bandwidth package, which can be obtained from [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) in the returned value of API `BandwidthPackageId`.
+     * Get Bandwidth package ID. To obatin the IDs, you can call [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) and look for the `BandwidthPackageId` fields in the response. 
+     * @return BandwidthPackageId Bandwidth package ID. To obatin the IDs, you can call [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) and look for the `BandwidthPackageId` fields in the response.
      */
     public String getBandwidthPackageId() {
         return this.BandwidthPackageId;
     }
 
     /**
-     * Set IDs of bandwidth package, which can be obtained from [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) in the returned value of API `BandwidthPackageId`.
-     * @param BandwidthPackageId  IDs of bandwidth package, which can be obtained from [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) in the returned value of API `BandwidthPackageId`.
+     * Set Bandwidth package ID. To obatin the IDs, you can call [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) and look for the `BandwidthPackageId` fields in the response.
+     * @param BandwidthPackageId Bandwidth package ID. To obatin the IDs, you can call [`DescribeBandwidthPackages`](https://cloud.tencent.com/document/api/215/19209) and look for the `BandwidthPackageId` fields in the response.
      */
     public void setBandwidthPackageId(String BandwidthPackageId) {
         this.BandwidthPackageId = BandwidthPackageId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InternetChargeType", this.InternetChargeType);

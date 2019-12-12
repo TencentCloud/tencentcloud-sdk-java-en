@@ -37,28 +37,28 @@ public class UpgradeLifecycleHookRequest  extends AbstractModel{
     private String LifecycleHookName;
 
     /**
-    * Scenario of lifecycle hook. Value range includes: “INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+    * Scenario for the lifecycle hook. Value range: "INSTANCE_LAUNCHING", "INSTANCE_TERMINATING"
     */
     @SerializedName("LifecycleTransition")
     @Expose
     private String LifecycleTransition;
 
     /**
-    * Define the actions in case of lifecycle hook timeout. Value range: “CONTINUE”,“ABANDON”. Default value is “CONTINUE”.
+    * Defines the action to be taken by the auto scaling group upon lifecycle hook timeout. Value range: "CONTINUE", "ABANDON". Default value: "CONTINUE"
     */
     @SerializedName("DefaultResult")
     @Expose
     private String DefaultResult;
 
     /**
-    * Maximum time before Lifecycle timeout is reached (in seconds), range is from 30 to 3600 seconds. Default is 300 seconds.
+    * The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300
     */
     @SerializedName("HeartbeatTimeout")
     @Expose
-    private Integer HeartbeatTimeout;
+    private Long HeartbeatTimeout;
 
     /**
-    * Extra information that Auto Scaling sends to targets. Default value is
+    * Additional information sent by AS to the notification target. The default value is ''
     */
     @SerializedName("NotificationMetadata")
     @Expose
@@ -72,7 +72,7 @@ public class UpgradeLifecycleHookRequest  extends AbstractModel{
     private NotificationTarget NotificationTarget;
 
     /**
-     * Obtain Lifecycle hook ID
+     * Get Lifecycle hook ID 
      * @return LifecycleHookId Lifecycle hook ID
      */
     public String getLifecycleHookId() {
@@ -88,8 +88,8 @@ public class UpgradeLifecycleHookRequest  extends AbstractModel{
     }
 
     /**
-     * Obtain Lifecycle hook ID
-     * @return LifecycleHookId Lifecycle hook name
+     * Get Lifecycle hook name 
+     * @return LifecycleHookName Lifecycle hook name
      */
     public String getLifecycleHookName() {
         return this.LifecycleHookName;
@@ -104,71 +104,71 @@ public class UpgradeLifecycleHookRequest  extends AbstractModel{
     }
 
     /**
-     * Obtain the scenario of lifecycle hook. Value range includes: “INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
-     * @return LifecycleTransition The scenario of lifecycle hook. Value range includes: “INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+     * Get Scenario for the lifecycle hook. Value range: "INSTANCE_LAUNCHING", "INSTANCE_TERMINATING" 
+     * @return LifecycleTransition Scenario for the lifecycle hook. Value range: "INSTANCE_LAUNCHING", "INSTANCE_TERMINATING"
      */
     public String getLifecycleTransition() {
         return this.LifecycleTransition;
     }
 
     /**
-     * Set the scenario of lifecycle hook. Value range includes: “INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
-     * @param LifecycleTransition The scenario of lifecycle hook. Value range includes: “INSTANCE_LAUNCHING”和“INSTANCE_TERMINATING”
+     * Set Scenario for the lifecycle hook. Value range: "INSTANCE_LAUNCHING", "INSTANCE_TERMINATING"
+     * @param LifecycleTransition Scenario for the lifecycle hook. Value range: "INSTANCE_LAUNCHING", "INSTANCE_TERMINATING"
      */
     public void setLifecycleTransition(String LifecycleTransition) {
         this.LifecycleTransition = LifecycleTransition;
     }
 
     /**
-     * Obtain define the actions in case of lifecycle hook timeout. Value range: “CONTINUE”,“ABANDON”. Default value is “CONTINUE”.
-     * @return DefaultResult Define the actions in case of lifecycle hook timeout. Value range: “CONTINUE”,“ABANDON”. Default value is “CONTINUE”.
+     * Get Defines the action to be taken by the auto scaling group upon lifecycle hook timeout. Value range: "CONTINUE", "ABANDON". Default value: "CONTINUE" 
+     * @return DefaultResult Defines the action to be taken by the auto scaling group upon lifecycle hook timeout. Value range: "CONTINUE", "ABANDON". Default value: "CONTINUE"
      */
     public String getDefaultResult() {
         return this.DefaultResult;
     }
 
     /**
-     * Set define the actions in case of lifecycle hook timeout. Value range: “CONTINUE”,“ABANDON”. Default value is “CONTINUE”.
-     * @param DefaultResult Define the actions in case of lifecycle hook timeout. Value range: “CONTINUE”,“ABANDON”. Default value is “CONTINUE”.
+     * Set Defines the action to be taken by the auto scaling group upon lifecycle hook timeout. Value range: "CONTINUE", "ABANDON". Default value: "CONTINUE"
+     * @param DefaultResult Defines the action to be taken by the auto scaling group upon lifecycle hook timeout. Value range: "CONTINUE", "ABANDON". Default value: "CONTINUE"
      */
     public void setDefaultResult(String DefaultResult) {
         this.DefaultResult = DefaultResult;
     }
 
     /**
-     * Obtain the maximum time before Lifecycle timeout is reached (in seconds), range is from 30 to 3600 seconds. Default is 300 seconds.
-     * @return HeartbeatTimeout  The maximum time before Lifecycle timeout is reached (in seconds), range is from 30 to 3600 seconds. Default is 300 seconds.
+     * Get The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300 
+     * @return HeartbeatTimeout The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300
      */
-    public Integer getHeartbeatTimeout() {
+    public Long getHeartbeatTimeout() {
         return this.HeartbeatTimeout;
     }
 
     /**
-     * Set the maximum time before Lifecycle timeout is reached (in seconds), range is from 30 to 3600 seconds. Default is 300 seconds.
-     * @param HeartbeatTimeout  The maximum time before Lifecycle timeout is reached (in seconds), range is from 30 to 3600 seconds. Default is 300 seconds.
+     * Set The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300
+     * @param HeartbeatTimeout The maximum length of time (in seconds) that can elapse before the lifecycle hook times out. Value range: 30-3,600. Default value: 300
      */
-    public void setHeartbeatTimeout(Integer HeartbeatTimeout) {
+    public void setHeartbeatTimeout(Long HeartbeatTimeout) {
         this.HeartbeatTimeout = HeartbeatTimeout;
     }
 
     /**
-     * Obtain the extra information that Auto Scaling sends to targets. Default value is
-     * @return NotificationMetadata The extra information that Auto Scaling sends to targets. Default value is
+     * Get Additional information sent by AS to the notification target. The default value is '' 
+     * @return NotificationMetadata Additional information sent by AS to the notification target. The default value is ''
      */
     public String getNotificationMetadata() {
         return this.NotificationMetadata;
     }
 
     /**
-     * Set the extra information that Auto Scaling sends to targets. Default value is
-     * @param NotificationMetadata The extra information that Auto Scaling sends to targets. Default value is
+     * Set Additional information sent by AS to the notification target. The default value is ''
+     * @param NotificationMetadata Additional information sent by AS to the notification target. The default value is ''
      */
     public void setNotificationMetadata(String NotificationMetadata) {
         this.NotificationMetadata = NotificationMetadata;
     }
 
     /**
-     * Obtain Notification target
+     * Get Notification target 
      * @return NotificationTarget Notification target
      */
     public NotificationTarget getNotificationTarget() {
@@ -184,7 +184,7 @@ public class UpgradeLifecycleHookRequest  extends AbstractModel{
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LifecycleHookId", this.LifecycleHookId);

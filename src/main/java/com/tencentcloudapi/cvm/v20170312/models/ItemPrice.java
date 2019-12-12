@@ -23,99 +23,119 @@ import java.util.HashMap;
 public class ItemPrice  extends AbstractModel{
 
     /**
-    * Subsequent unit price (in CNY) Note: This field may return null, indicating that no valid value was found.
+    * Subsequent unit price (in RMB).
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("UnitPrice")
     @Expose
     private Float UnitPrice;
 
     /**
-    * Subsequent billing unit. Value Range: <br><li>Scenarios using this billing unit include: postpaid by hour (POSTPAID_BY_HOUR) and postpaid by bandwidth on an hourly basis (BANDWIDTH_POSTPAID_BY_HOUR).<br><li>GB: The billing unit is calculated in GB. The scenario using this billing unit is: postpaid by traffic on an hourly basis (TRAFFIC_POSTPAID_BY_HOUR). Note: This field may return null, indicating that no valid value was found.
+    * Subsequent billing unit. Valid values: <br><li>HOUR: bill by hour. Scenarios using this billing unit include: pay as you go for instances on an hourly basis (`POSTPAID_BY_HOUR`), and pay as you go for bandwidth on an hourly basis (`BANDWIDTH_POSTPAID_BY_HOUR`). <br><li>GB: bill by traffic in GB. Scenarios using this billing unit include: pay as you go for traffic on an hourly basis (`TRAFFIC_POSTPAID_BY_HOUR`).
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("ChargeUnit")
     @Expose
     private String ChargeUnit;
 
     /**
-    * Original price of a prepaid instance (in CNY). Note: This field may return null, indicating that no valid value was found.
+    * Original price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("OriginalPrice")
     @Expose
     private Float OriginalPrice;
 
     /**
-    * Discount price of a prepaid instance (in CNY). Note: This field may return null, indicating that no valid value was found.
+    * Discount price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("DiscountPrice")
     @Expose
     private Float DiscountPrice;
 
     /**
-     * Get subsequent unit price (in CNY). Note: This field may return null, indicating that no valid value was found.
-     * @return UnitPrice subsequent unit price (in CNY). Note: This field may return null, indicating that no valid value was found.
+     * Get Subsequent unit price (in RMB).
+Note: This field may return null, indicating that no valid value is found. 
+     * @return UnitPrice Subsequent unit price (in RMB).
+Note: This field may return null, indicating that no valid value is found.
      */
     public Float getUnitPrice() {
         return this.UnitPrice;
     }
 
     /**
-     * Set subsequent unit price (in CNY). Note: This field may return null, indicating that no valid value was found.
-     * @param UnitPrice subsequent unit price (in CNY). Note: This field may return null, indicating that no valid value was found.
+     * Set Subsequent unit price (in RMB).
+Note: This field may return null, indicating that no valid value is found.
+     * @param UnitPrice Subsequent unit price (in RMB).
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setUnitPrice(Float UnitPrice) {
         this.UnitPrice = UnitPrice;
     }
 
     /**
-     * Get subsequent billing unit. Value Range: <br><li>HOUR: bill by hour. Scenarios using this billing unit include: postpaid by hour (POSTPAID_BY_HOUR) and postpaid by bandwidth on an hourly basis (BANDWIDTH_POSTPAID_BY_HOUR).<br><li>GB: The billing unit is calculated in GB. The scenario using this billing unit is: postpaid by traffic on an hourly basis (TRAFFIC_POSTPAID_BY_HOUR). Note: This field may return null, indicating that no valid value was found.
-     * @return ChargeUnit Subsequent billing unit. Value Range: <br><li>HOUR: bill by hour. Scenarios using this billing unit include: postpaid by hour (POSTPAID_BY_HOUR) and postpaid by bandwidth on an hourly basis (BANDWIDTH_POSTPAID_BY_HOUR).<br><li>GB: The billing unit is calculated in GB.The scenario using this billing unit is: postpaid by traffic on an hourly basis (TRAFFIC_POSTPAID_BY_HOUR). Note: This field may return null, indicating that no valid value was found.
+     * Get Subsequent billing unit. Valid values: <br><li>HOUR: bill by hour. Scenarios using this billing unit include: pay as you go for instances on an hourly basis (`POSTPAID_BY_HOUR`), and pay as you go for bandwidth on an hourly basis (`BANDWIDTH_POSTPAID_BY_HOUR`). <br><li>GB: bill by traffic in GB. Scenarios using this billing unit include: pay as you go for traffic on an hourly basis (`TRAFFIC_POSTPAID_BY_HOUR`).
+Note: This field may return null, indicating that no valid value is found. 
+     * @return ChargeUnit Subsequent billing unit. Valid values: <br><li>HOUR: bill by hour. Scenarios using this billing unit include: pay as you go for instances on an hourly basis (`POSTPAID_BY_HOUR`), and pay as you go for bandwidth on an hourly basis (`BANDWIDTH_POSTPAID_BY_HOUR`). <br><li>GB: bill by traffic in GB. Scenarios using this billing unit include: pay as you go for traffic on an hourly basis (`TRAFFIC_POSTPAID_BY_HOUR`).
+Note: This field may return null, indicating that no valid value is found.
      */
     public String getChargeUnit() {
         return this.ChargeUnit;
     }
 
     /**
-     *  Set subsequent billing unit. Value Range: <br><li>HOUR: bill by hour. Scenarios using this billing unit include: postpaid by hour (POSTPAID_BY_HOUR) and postpaid by bandwidth on an hourly basis (BANDWIDTH_POSTPAID_BY_HOUR).<br><li>GB: The billing unit is calculated in GB. The scenario using this billing unit is: postpaid by traffic on an hourly basis (TRAFFIC_POSTPAID_BY_HOUR). Note: This field may return null, indicating that no valid value was found.
-     * @param ChargeUnit subsequent billing unit. Value Range: <br><li>HOUR: bill by hour. Scenarios using this billing unit include: postpaid by hour (POSTPAID_BY_HOUR) and postpaid by bandwidth on an hourly basis (BANDWIDTH_POSTPAID_BY_HOUR).<br><li>GB: The billing unit is calculated in GB. The scenario using this billing unit is: postpaid by traffic on an hourly basis (TRAFFIC_POSTPAID_BY_HOUR). Note: This field may return null, indicating that no valid value was found.
+     * Set Subsequent billing unit. Valid values: <br><li>HOUR: bill by hour. Scenarios using this billing unit include: pay as you go for instances on an hourly basis (`POSTPAID_BY_HOUR`), and pay as you go for bandwidth on an hourly basis (`BANDWIDTH_POSTPAID_BY_HOUR`). <br><li>GB: bill by traffic in GB. Scenarios using this billing unit include: pay as you go for traffic on an hourly basis (`TRAFFIC_POSTPAID_BY_HOUR`).
+Note: This field may return null, indicating that no valid value is found.
+     * @param ChargeUnit Subsequent billing unit. Valid values: <br><li>HOUR: bill by hour. Scenarios using this billing unit include: pay as you go for instances on an hourly basis (`POSTPAID_BY_HOUR`), and pay as you go for bandwidth on an hourly basis (`BANDWIDTH_POSTPAID_BY_HOUR`). <br><li>GB: bill by traffic in GB. Scenarios using this billing unit include: pay as you go for traffic on an hourly basis (`TRAFFIC_POSTPAID_BY_HOUR`).
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setChargeUnit(String ChargeUnit) {
         this.ChargeUnit = ChargeUnit;
     }
 
     /**
-     * Get original price of a prepaid instance (in CNY). Note: This field may return null, indicating that no valid value was found.
-     * @return OriginalPrice Original price of prepaid fees (in CNY). | Note: This field may return null, indicating that no valid value was found.
+     * Get Original price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found. 
+     * @return OriginalPrice Original price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found.
      */
     public Float getOriginalPrice() {
         return this.OriginalPrice;
     }
 
     /**
-     * Set original price of a prepaid instance (in CNY). Note: This field may return null, indicating that no valid value was found.
-     * @param OriginalPrice Original price of prepaid fees (in CNY). | Note: This field may return null, indicating that no valid value was found.
+     * Set Original price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found.
+     * @param OriginalPrice Original price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setOriginalPrice(Float OriginalPrice) {
         this.OriginalPrice = OriginalPrice;
     }
 
     /**
-     * Get discount price of a prepaid instance (in CNY). Note: This field may return null, indicating that no valid value was found.
-     * @return DiscountPrice Discount price of prepaid fees (in CNY). | Note: This field may return null, indicating that no valid value was found.
+     * Get Discount price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found. 
+     * @return DiscountPrice Discount price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found.
      */
     public Float getDiscountPrice() {
         return this.DiscountPrice;
     }
 
     /**
-     * Set discount price of a prepaid instance (in CNY). Note: This field may return null, indicating that no valid value was found.
-     * @param DiscountPrice Discount price of prepaid fees (in CNY). | Note: This field may return null, indicating that no valid value was found.
+     * Set Discount price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found.
+     * @param DiscountPrice Discount price of a prepaid instance (in RMB).
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setDiscountPrice(Float DiscountPrice) {
         this.DiscountPrice = DiscountPrice;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "UnitPrice", this.UnitPrice);

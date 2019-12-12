@@ -23,76 +23,91 @@ import java.util.HashMap;
 public class DataDisk  extends AbstractModel{
 
     /**
-    * Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
+    * Data disk type. For more information on limits of data disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("DiskType")
     @Expose
     private String DiskType;
 
     /**
-    * Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased. Note: This field may return null, indicating that no valid value was found.
+    * Data disk size (in GB). The minimum adjustment increment is 10 GB. The value range varies by data disk type. For more information on limits, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). The default value is 0, indicating that no data disk is purchased. For more information, see the product documentation.
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("DiskSize")
     @Expose
-    private Integer DiskSize;
+    private Long DiskSize;
 
     /**
-    * Data disk snapshot ID, similar to `snap-l8psqwnt` Note: This field may return null, indicating that no valid value was found.
+    * Data disk snapshot ID, such as `snap-l8psqwnt`.
+Note: This field may return null, indicating that no valid values can be obtained.
     */
     @SerializedName("SnapshotId")
     @Expose
     private String SnapshotId;
 
     /**
-     * Get data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
-     * @return DiskType Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
+     * Get Data disk type. For more information on limits of data disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return DiskType Data disk type. For more information on limits of data disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public String getDiskType() {
         return this.DiskType;
     }
 
     /**
-     * Set data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
-     * @param DiskType Data disk types. For information on limits of data disk type, please see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Values include:<br><li>LOCAL_BASIC: Local disk.<br><li>LOCAL_SSD: SSD local disk.<br><li>CLOUD_BASIC: HDD cloud disk.<br><li>CLOUD_PREMIUM: Premium Cloud Storage<br><li>CLOUD_SSD: SSD cloud disk.<br><br>Default value: LOCAL_BASIC Note: This field may return null, indicating that no valid value was found.
+     * Set Data disk type. For more information on limits of data disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param DiskType Data disk type. For more information on limits of data disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public void setDiskType(String DiskType) {
         this.DiskType = DiskType;
     }
 
     /**
-     * Get data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased. Note: This field may return null, indicating that no valid value was found.
-     * @return DiskSize Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased. Note: This field may return null, indicating that no valid value was found.
+     * Get Data disk size (in GB). The minimum adjustment increment is 10 GB. The value range varies by data disk type. For more information on limits, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). The default value is 0, indicating that no data disk is purchased. For more information, see the product documentation.
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return DiskSize Data disk size (in GB). The minimum adjustment increment is 10 GB. The value range varies by data disk type. For more information on limits, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). The default value is 0, indicating that no data disk is purchased. For more information, see the product documentation.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
-    public Integer getDiskSize() {
+    public Long getDiskSize() {
         return this.DiskSize;
     }
 
     /**
-     * Set data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased. Note: This field may return null, indicating that no valid value was found.
-     * @param DiskSize Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For information on limits, see [CVM Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). Default is 0, indicating that no data disk is purchased. Note: This field may return null, indicating that no valid value was found.
+     * Set Data disk size (in GB). The minimum adjustment increment is 10 GB. The value range varies by data disk type. For more information on limits, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). The default value is 0, indicating that no data disk is purchased. For more information, see the product documentation.
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param DiskSize Data disk size (in GB). The minimum adjustment increment is 10 GB. The value range varies by data disk type. For more information on limits, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). The default value is 0, indicating that no data disk is purchased. For more information, see the product documentation.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
-    public void setDiskSize(Integer DiskSize) {
+    public void setDiskSize(Long DiskSize) {
         this.DiskSize = DiskSize;
     }
 
     /**
-     * Get data disk snapshot ID, similar to `snap-l8psqwnt` Note: This field may return null, indicating that no valid value was found.
-     * @return SnapshotId Data disk snapshot ID, similar to `snap-l8psqwnt` Note: This field may return null, indicating that no valid value was found.
+     * Get Data disk snapshot ID, such as `snap-l8psqwnt`.
+Note: This field may return null, indicating that no valid values can be obtained. 
+     * @return SnapshotId Data disk snapshot ID, such as `snap-l8psqwnt`.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public String getSnapshotId() {
         return this.SnapshotId;
     }
 
     /**
-     * Set data disk snapshot ID, similar to `snap-l8psqwnt` Note: This field may return null, indicating that no valid value was found.
-     * @param SnapshotId Data disk snapshot ID, similar to `snap-l8psqwnt` Note: This field may return null, indicating that no valid value was found.
+     * Set Data disk snapshot ID, such as `snap-l8psqwnt`.
+Note: This field may return null, indicating that no valid values can be obtained.
+     * @param SnapshotId Data disk snapshot ID, such as `snap-l8psqwnt`.
+Note: This field may return null, indicating that no valid values can be obtained.
      */
     public void setSnapshotId(String SnapshotId) {
         this.SnapshotId = SnapshotId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "DiskType", this.DiskType);

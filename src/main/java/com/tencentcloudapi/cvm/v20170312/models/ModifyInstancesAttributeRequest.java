@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ModifyInstancesAttributeRequest  extends AbstractModel{
 
     /**
-    * ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+    * Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Instance’s name.You can name it as you like,60 characters limited.
+    * Instance name. You can specify any name you like, but its length cannot exceed 60 characters.
     */
     @SerializedName("InstanceName")
     @Expose
     private String InstanceName;
 
     /**
-    * The list of appointed security group id,CVM will reconnect to the appointed security group,the original security group id will be unbinded.
+    * ID list of security groups of the instance. The instance will be associated with the specified security groups and will be disassociated from the original security groups.
     */
     @SerializedName("SecurityGroups")
     @Expose
     private String [] SecurityGroups;
 
     /**
-     * To obtain ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
-     * @return InstanceIds ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * Get Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100. 
+     * @return InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * To configure ID(s) of one or more instances, you can obtain ID(s) from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388) in the returned value of API `InstanceId`.The maximum number of instances for each request is 100.
-     * @param InstanceIds  of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * Set Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
+     * @param InstanceIds Instance ID(s). To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. The maximum number of instances in each request is 100.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Get the name of instance.You can name it as you like,60 characters limited.
-     * @return InstanceName The name of instance.You can name it as you like,60 characters limited.
+     * Get Instance name. You can specify any name you like, but its length cannot exceed 60 characters. 
+     * @return InstanceName Instance name. You can specify any name you like, but its length cannot exceed 60 characters.
      */
     public String getInstanceName() {
         return this.InstanceName;
     }
 
     /**
-     * Set the name of instance.You can name it as you like,60 characters limited.
-     * @param InstanceName The name of instance.You can name it as you like,60 characters limited.
+     * Set Instance name. You can specify any name you like, but its length cannot exceed 60 characters.
+     * @param InstanceName Instance name. You can specify any name you like, but its length cannot exceed 60 characters.
      */
     public void setInstanceName(String InstanceName) {
         this.InstanceName = InstanceName;
     }
 
     /**
-     * Get the appointed instances’ security group id list,CVM will reconnect to the appointed security group,the original security group id will be unbinded.
-     * @return SecurityGroups Appointed instances’ security group id list，CVM will reconnect to the appointed security group,the original security group id will be unbinded.
+     * Get ID list of security groups of the instance. The instance will be associated with the specified security groups and will be disassociated from the original security groups. 
+     * @return SecurityGroups ID list of security groups of the instance. The instance will be associated with the specified security groups and will be disassociated from the original security groups.
      */
     public String [] getSecurityGroups() {
         return this.SecurityGroups;
     }
 
     /**
-     * Set the appointed instances’ security group id list,CVM will reconnect to the appointed security group,the original security group id will be unbinded.
-     * @param SecurityGroups Appointed instances’ security group id list,CVM will reconnect to the appointed security group,the original security group id will be unbinded.
+     * Set ID list of security groups of the instance. The instance will be associated with the specified security groups and will be disassociated from the original security groups.
+     * @param SecurityGroups ID list of security groups of the instance. The instance will be associated with the specified security groups and will be disassociated from the original security groups.
      */
     public void setSecurityGroups(String [] SecurityGroups) {
         this.SecurityGroups = SecurityGroups;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

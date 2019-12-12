@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ExecuteScalingPolicyRequest  extends AbstractModel{
 
     /**
-    * Alarm scaling policy ID.
+    * Alarm-based scaling policy ID
     */
     @SerializedName("AutoScalingPolicyId")
     @Expose
     private String AutoScalingPolicyId;
 
     /**
-    * Indicates whether check is enabled. The check monitors if scaling group activity is in cooldown period. The default value is false.
+    * Whether to check if the auto scaling group is in the cooldown period. Default value: false
     */
     @SerializedName("HonorCooldown")
     @Expose
     private Boolean HonorCooldown;
 
     /**
-     * Obtain the alarming scaling policy ID.
-     * @return AutoScalingPolicyId Alarm scaling policy ID.
+     * Get Alarm-based scaling policy ID 
+     * @return AutoScalingPolicyId Alarm-based scaling policy ID
      */
     public String getAutoScalingPolicyId() {
         return this.AutoScalingPolicyId;
     }
 
     /**
-     * Configure the alarming scaling policy ID.
-     * @param AutoScalingPolicyId Alarm scaling policy ID.
+     * Set Alarm-based scaling policy ID
+     * @param AutoScalingPolicyId Alarm-based scaling policy ID
      */
     public void setAutoScalingPolicyId(String AutoScalingPolicyId) {
         this.AutoScalingPolicyId = AutoScalingPolicyId;
     }
 
     /**
-     * Obtain whether to check that the scaling group activity is in the cooldown period. The default value is false.
-     * @return HonorCooldown Indicates Whether check is enabled. The check monitors if scaling group activity is in cooldown. The default value is false.
+     * Get Whether to check if the auto scaling group is in the cooldown period. Default value: false 
+     * @return HonorCooldown Whether to check if the auto scaling group is in the cooldown period. Default value: false
      */
     public Boolean getHonorCooldown() {
         return this.HonorCooldown;
     }
 
     /**
-     * Configure if check is enabled. The check monitors if scaling group activity is in cooldown period. The default value is false.
-     * @param HonorCooldown Indicates Whether check is enabled. The check monitors if scaling group activity is in cooldown period. The default value is false.
+     * Set Whether to check if the auto scaling group is in the cooldown period. Default value: false
+     * @param HonorCooldown Whether to check if the auto scaling group is in the cooldown period. Default value: false
      */
     public void setHonorCooldown(Boolean HonorCooldown) {
         this.HonorCooldown = HonorCooldown;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingPolicyId", this.AutoScalingPolicyId);

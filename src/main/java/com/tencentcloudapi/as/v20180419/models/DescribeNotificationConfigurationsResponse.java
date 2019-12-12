@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeNotificationConfigurationsResponse  extends AbstractModel{
 
     /**
-    * Number of notifications matching the filter condition.
+    * Number of eligible notifications.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * List of scaling group notifications details.
+    * List of AS event notification details.
     */
     @SerializedName("AutoScalingNotificationSet")
     @Expose
     private AutoScalingNotification [] AutoScalingNotificationSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain number of notifications matching the filter condition.
-     * @return TotalCount Number of notifications matching the filter condition.
+     * Get Number of eligible notifications. 
+     * @return TotalCount Number of eligible notifications.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of notifications matching the filter condition.
-     * @param TotalCount Number of notifications matching the filter condition.
+     * Set Number of eligible notifications.
+     * @param TotalCount Number of eligible notifications.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain list of scaling group notifications details.
-     * @return AutoScalingNotificationSet List of scaling group notifications details.
+     * Get List of AS event notification details. 
+     * @return AutoScalingNotificationSet List of AS event notification details.
      */
     public AutoScalingNotification [] getAutoScalingNotificationSet() {
         return this.AutoScalingNotificationSet;
     }
 
     /**
-     * Set list of scaling group notifications details.
-     * @param AutoScalingNotificationSet List of scaling group notifications details.
+     * Set List of AS event notification details.
+     * @param AutoScalingNotificationSet List of AS event notification details.
      */
     public void setAutoScalingNotificationSet(AutoScalingNotification [] AutoScalingNotificationSet) {
         this.AutoScalingNotificationSet = AutoScalingNotificationSet;
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

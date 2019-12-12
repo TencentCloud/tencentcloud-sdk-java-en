@@ -23,170 +23,170 @@ import java.util.HashMap;
 public class DescribeAutoScalingActivitiesRequest  extends AbstractModel{
 
     /**
-    * ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
+    * Queries by one or more scaling activity IDs in the format of `asa-5l2ejpfo`. The maximum quantity per request is 100. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time.
     */
     @SerializedName("ActivityIds")
     @Expose
     private String [] ActivityIds;
 
     /**
-    * Filter conditions
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID</li>
-<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
-<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
-<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
+    * Filter.
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> activity-status-code - String - Required: No - (Filter) Filter by scaling activity status . (INIT: initializing | RUNNING: running | SUCCESSFUL: succeeded | PARTIALLY_SUCCESSFUL: partially succeeded | FAILED: failed | CANCELLED: canceled)</li>
+<li> activity-type - String - Required: No - (Filter) Filter by scaling activity type. (SCALE_OUT: scale-out | SCALE_IN: scale-in | ATTACH_INSTANCES: adding an instance | REMOVE_INSTANCES: terminating an instance | DETACH_INSTANCES: removing an instance | TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console | REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance | UPDATE_LOAD_BALANCERS: updating a load balancer)</li>
+<li> activity-id - String - Required: No - (Filter) Filter by scaling activity ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * Number of returned results. It defaults to 20. The maximum is 100. For more information on`Limit` , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+    * Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-    * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+    * Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-    * Earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+    * The earliest start time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
     */
     @SerializedName("StartTime")
     @Expose
     private String StartTime;
 
     /**
-    * Latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+    * The latest end time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
     */
     @SerializedName("EndTime")
     @Expose
     private String EndTime;
 
     /**
-     * Obtain ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
-     * @return ActivityIds ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
+     * Get Queries by one or more scaling activity IDs in the format of `asa-5l2ejpfo`. The maximum quantity per request is 100. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time. 
+     * @return ActivityIds Queries by one or more scaling activity IDs in the format of `asa-5l2ejpfo`. The maximum quantity per request is 100. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time.
      */
     public String [] getActivityIds() {
         return this.ActivityIds;
     }
 
     /**
-     * Set ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
-     * @param ActivityIds ID(s) of the scaling Activity to be queried, such as `asa-5l2ejpfo`. A maximum of 100 scaling groups can be queried at one time. You cannot specify both`ActivityIds` and `Filters`.
+     * Set Queries by one or more scaling activity IDs in the format of `asa-5l2ejpfo`. The maximum quantity per request is 100. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time.
+     * @param ActivityIds Queries by one or more scaling activity IDs in the format of `asa-5l2ejpfo`. The maximum quantity per request is 100. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time.
      */
     public void setActivityIds(String [] ActivityIds) {
         this.ActivityIds = ActivityIds;
     }
 
     /**
-     * Obtain filter conditions
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID</li>
-<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
-<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
-<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
-     * @return Filters Filter conditions
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID</li>
-<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
-<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
-<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
+     * Get Filter.
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> activity-status-code - String - Required: No - (Filter) Filter by scaling activity status . (INIT: initializing | RUNNING: running | SUCCESSFUL: succeeded | PARTIALLY_SUCCESSFUL: partially succeeded | FAILED: failed | CANCELLED: canceled)</li>
+<li> activity-type - String - Required: No - (Filter) Filter by scaling activity type. (SCALE_OUT: scale-out | SCALE_IN: scale-in | ATTACH_INSTANCES: adding an instance | REMOVE_INSTANCES: terminating an instance | DETACH_INSTANCES: removing an instance | TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console | REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance | UPDATE_LOAD_BALANCERS: updating a load balancer)</li>
+<li> activity-id - String - Required: No - (Filter) Filter by scaling activity ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time. 
+     * @return Filters Filter.
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> activity-status-code - String - Required: No - (Filter) Filter by scaling activity status . (INIT: initializing | RUNNING: running | SUCCESSFUL: succeeded | PARTIALLY_SUCCESSFUL: partially succeeded | FAILED: failed | CANCELLED: canceled)</li>
+<li> activity-type - String - Required: No - (Filter) Filter by scaling activity type. (SCALE_OUT: scale-out | SCALE_IN: scale-in | ATTACH_INSTANCES: adding an instance | REMOVE_INSTANCES: terminating an instance | DETACH_INSTANCES: removing an instance | TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console | REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance | UPDATE_LOAD_BALANCERS: updating a load balancer)</li>
+<li> activity-id - String - Required: No - (Filter) Filter by scaling activity ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter conditions
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID.</li>
-<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
-<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
-<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
-     * @param Filters Filter conditions.
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by the scaling group ID.</li>
-<li> activity-status-code - String - Required: No - (Filter condition) Filter by the scaling activity status. (INIT:Initializing|RUNNING:Running|SUCCESSFUL:activity successful|PARTIALLY_SUCCESSFUL:activity partially successful|FAILED:activity failed|CANCELLED:activity cancelled</li>
-<li> activity-type - String - Required: No - (Filter condition) Filter by the scaling activity type. （SCALE_OUT：capacity expansion acactivity|SCALE_IN:Reduce capacity acactivity|ATTACH_INSTANCES:attach instances|REMOVE_INSTANCES:remove instances|DETACH_INSTANCES:detach instances|TERMINATE_INSTANCES_UNEXPECTEDLY:terminate instances on CVM Console|REPLACE_UNHEALTHY_INSTANCE:replace unhealthy instance|UPDATE_LOAD_BALANCERS:update load balancers）</li>
-<li> activity-id - String - Required: No - (Filter condition) Filter by the scaling activity ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `ActivityIds`and `Filters`.
+     * Set Filter.
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> activity-status-code - String - Required: No - (Filter) Filter by scaling activity status . (INIT: initializing | RUNNING: running | SUCCESSFUL: succeeded | PARTIALLY_SUCCESSFUL: partially succeeded | FAILED: failed | CANCELLED: canceled)</li>
+<li> activity-type - String - Required: No - (Filter) Filter by scaling activity type. (SCALE_OUT: scale-out | SCALE_IN: scale-in | ATTACH_INSTANCES: adding an instance | REMOVE_INSTANCES: terminating an instance | DETACH_INSTANCES: removing an instance | TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console | REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance | UPDATE_LOAD_BALANCERS: updating a load balancer)</li>
+<li> activity-id - String - Required: No - (Filter) Filter by scaling activity ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time.
+     * @param Filters Filter.
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> activity-status-code - String - Required: No - (Filter) Filter by scaling activity status . (INIT: initializing | RUNNING: running | SUCCESSFUL: succeeded | PARTIALLY_SUCCESSFUL: partially succeeded | FAILED: failed | CANCELLED: canceled)</li>
+<li> activity-type - String - Required: No - (Filter) Filter by scaling activity type. (SCALE_OUT: scale-out | SCALE_IN: scale-in | ATTACH_INSTANCES: adding an instance | REMOVE_INSTANCES: terminating an instance | DETACH_INSTANCES: removing an instance | TERMINATE_INSTANCES_UNEXPECTEDLY: terminating an instance in the CVM console | REPLACE_UNHEALTHY_INSTANCE: replacing an unhealthy instance | UPDATE_LOAD_BALANCERS: updating a load balancer)</li>
+<li> activity-id - String - Required: No - (Filter) Filter by scaling activity ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `ActivityIds` and `Filters` at the same time.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on`Limit` , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * Obtain Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @return Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set Offset. Default is 0. For more information on `Offset` , see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Offset Default is 0. For more information on`Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * Obtain earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time `UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
-     * @return StartTime Earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time `UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+     * Get The earliest start time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard. 
+     * @return StartTime The earliest start time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
      */
     public String getStartTime() {
         return this.StartTime;
     }
 
     /**
-     * Set earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time `UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
-     * @param StartTime Earliest start time,if specify ActivityIds, this parameter will be ignored. Which is based on time `UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+     * Set The earliest start time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
+     * @param StartTime The earliest start time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
      */
     public void setStartTime(String StartTime) {
         this.StartTime = StartTime;
     }
 
     /**
-     * Obtain latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
-     * @return EndTime latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+     * Get The latest end time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard. 
+     * @return EndTime The latest end time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
      */
     public String getEndTime() {
         return this.EndTime;
     }
 
     /**
-     * Set latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
-     * @param EndTime latest end time,if specify ActivityIds, this parameter will be ignored. Which is based on time`UTC`,and in the format of `ISO8601` according to the `YYYY-MM-DDThh:mm:ssZ` standard.
+     * Set The latest end time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
+     * @param EndTime The latest end time of the scaling activity, which will be ignored if ActivityIds is specified. The value is in `UTC time` in the format of `YYYY-MM-DDThh:mm:ssZ` according to the `ISO8601` standard.
      */
     public void setEndTime(String EndTime) {
         this.EndTime = EndTime;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "ActivityIds.", this.ActivityIds);

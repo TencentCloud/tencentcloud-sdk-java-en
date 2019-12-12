@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribePaiInstancesResponse  extends AbstractModel{
 
     /**
-    * Number of PAI instances matching the filter condition.
+    * Number of eligible PAI instances
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * The details of PAI instance
+    * PAI instance details
     */
     @SerializedName("PaiInstanceSet")
     @Expose
     private PaiInstance [] PaiInstanceSet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain number of PAI instances matching the filter condition.
-     * @return TotalCount Number of PAI instances matching the filter condition.
+     * Get Number of eligible PAI instances 
+     * @return TotalCount Number of eligible PAI instances
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of PAI instances matching the filter condition.
-     * @param TotalCount Number of PAI instances matching the filter condition.
+     * Set Number of eligible PAI instances
+     * @param TotalCount Number of eligible PAI instances
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain the details of PAI instance
-     * @return PaiInstanceSet The details of PAI instance
+     * Get PAI instance details 
+     * @return PaiInstanceSet PAI instance details
      */
     public PaiInstance [] getPaiInstanceSet() {
         return this.PaiInstanceSet;
     }
 
     /**
-     * Set the details of PAI instance
-     * @param PaiInstanceSet The details of PAI instance
+     * Set PAI instance details
+     * @param PaiInstanceSet PAI instance details
      */
     public void setPaiInstanceSet(PaiInstance [] PaiInstanceSet) {
         this.PaiInstanceSet = PaiInstanceSet;
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

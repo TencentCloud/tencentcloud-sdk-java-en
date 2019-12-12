@@ -23,14 +23,14 @@ import java.util.HashMap;
 public class RegionInfo  extends AbstractModel{
 
     /**
-    * Region name. For example, ap-guangzhou
+    * Region name, such as `ap-guangzhou`
     */
     @SerializedName("Region")
     @Expose
     private String Region;
 
     /**
-    * Region description. For example, South China (Guangzhou)
+    * Region description, such as South China (Guangzhou)
     */
     @SerializedName("RegionName")
     @Expose
@@ -44,55 +44,55 @@ public class RegionInfo  extends AbstractModel{
     private String RegionState;
 
     /**
-     * Obtain region availability zone name. For example, ap-guangzhou-3
-     * @return Region Region name, e.g. ap-guangzhou
+     * Get Region name, such as `ap-guangzhou` 
+     * @return Region Region name, such as `ap-guangzhou`
      */
     public String getRegion() {
         return this.Region;
     }
 
     /**
-     * Set region availability zone name. For example, ap-guangzhou
-     * @param Region egion name，For example, ap-guangzhou
+     * Set Region name, such as `ap-guangzhou`
+     * @param Region Region name, such as `ap-guangzhou`
      */
     public void setRegion(String Region) {
         this.Region = Region;
     }
 
     /**
-     * Obtain region description. For example, South China (Guangzhou)
-     * @return RegionName 地域描述，例如，华南地区(广州)
+     * Get Region description, such as South China (Guangzhou) 
+     * @return RegionName Region description, such as South China (Guangzhou)
      */
     public String getRegionName() {
         return this.RegionName;
     }
 
     /**
-     * Setting region description. For example, South China (Guangzhou)
-     * @param RegionName region description. For example, South China (Guangzhou)
+     * Set Region description, such as South China (Guangzhou)
+     * @param RegionName Region description, such as South China (Guangzhou)
      */
     public void setRegionName(String RegionName) {
         this.RegionName = RegionName;
     }
 
     /**
-     * Obtaining whether the region is available.
-     * @return RegionState Whether the region is available.
+     * Get Whether the region is available 
+     * @return RegionState Whether the region is available
      */
     public String getRegionState() {
         return this.RegionState;
     }
 
     /**
-     * Setting whether the region is available.
-     * @param RegionState Whether the region is available.
+     * Set Whether the region is available
+     * @param RegionState Whether the region is available
      */
     public void setRegionState(String RegionState) {
         this.RegionState = RegionState;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Region", this.Region);

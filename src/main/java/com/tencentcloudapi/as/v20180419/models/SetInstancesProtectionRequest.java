@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class SetInstancesProtectionRequest  extends AbstractModel{
 
     /**
-    * Scaling group ID
+    * Auto scaling group ID.
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Instance ID
+    * Instance ID.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * If the instance needs to be removed from protection
+    * Whether the instance needs to be protected from scale-in.
     */
     @SerializedName("ProtectedFromScaleIn")
     @Expose
     private Boolean ProtectedFromScaleIn;
 
     /**
-     * Obtain the scaling group ID
-     * @return AutoScalingGroupId Scaling group ID
+     * Get Auto scaling group ID. 
+     * @return AutoScalingGroupId Auto scaling group ID.
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Configure the scaling group ID
-     * @param AutoScalingGroupId Scaling group ID
+     * Set Auto scaling group ID.
+     * @param AutoScalingGroupId Auto scaling group ID.
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Obtain instance ID
-     * @return InstanceId Instance ID
+     * Get Instance ID. 
+     * @return InstanceIds Instance ID.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * Set instance ID
-     * @param InstanceIds Instance ID
+     * Set Instance ID.
+     * @param InstanceIds Instance ID.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Obtain the parameter value that indicates if the instance needs to be removed from protection. 
-     * @return ProtectedFromScaleIn If the instance needs to be removed from protection. 
+     * Get Whether the instance needs to be protected from scale-in. 
+     * @return ProtectedFromScaleIn Whether the instance needs to be protected from scale-in.
      */
     public Boolean getProtectedFromScaleIn() {
         return this.ProtectedFromScaleIn;
     }
 
     /**
-     * Set if the instance needs to be removed from protection. 
-     * @param ProtectedFromScaleIn If the instance needs to be removed from protection. 
+     * Set Whether the instance needs to be protected from scale-in.
+     * @param ProtectedFromScaleIn Whether the instance needs to be protected from scale-in.
      */
     public void setProtectedFromScaleIn(Boolean ProtectedFromScaleIn) {
         this.ProtectedFromScaleIn = ProtectedFromScaleIn;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "AutoScalingGroupId", this.AutoScalingGroupId);

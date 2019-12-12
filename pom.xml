@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.tencentcloudapi</groupId>
   <artifactId>tencentcloud-sdk-java-en</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <packaging>jar</packaging>
   <name>tencentcloud-sdk-java-en</name>
   <url>https://cloud.tencent.com/</url>

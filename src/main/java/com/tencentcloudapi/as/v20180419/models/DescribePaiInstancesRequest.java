@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class DescribePaiInstancesRequest  extends AbstractModel{
 
     /**
-    * Query the details of PAI instances according to instance ID.
+    * Queries by PAI instance ID.
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * Filter conditions.
+    * Filter.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * Number of values to be returned. Default is 20. Maximum is 100.
+    * Number of returned results. Default value: 20. Maximum value: 100.
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-    * Offset. Default is 0.
+    * Offset. Default value: 0.
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-     * Obtain query the details of PAI instances according to instance ID
-     * @return InstanceIds Query the details of PAI instances according to instance ID.
+     * Get Queries by PAI instance ID. 
+     * @return InstanceIds Queries by PAI instance ID.
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * Set query the details of PAI instances according to instance ID
-     * @param InstanceIds Query the details of PAI instances according to instance ID.
+     * Set Queries by PAI instance ID.
+     * @param InstanceIds Queries by PAI instance ID.
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Obtain filter conditions.
-     * @return Filters Filter conditions.
+     * Get Filter. 
+     * @return Filters Filter.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter conditions.
-     * @param Filters Filter conditions.
+     * Set Filter.
+     * @param Filters Filter.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Obtain number of values to be returned. Default is 20. Maximum is 100.
-     * @return Limit Number of values to be returned. Default is 20. Maximum is 100.
+     * Get Number of returned results. Default value: 20. Maximum value: 100. 
+     * @return Limit Number of returned results. Default value: 20. Maximum value: 100.
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set number of values to be returned. Default is 20. Maximum is 100.
-     * @param Limit Number of values to be returned. Default is 20. Maximum is 100.
+     * Set Number of returned results. Default value: 20. Maximum value: 100.
+     * @param Limit Number of returned results. Default value: 20. Maximum value: 100.
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * Obtain offset. Default is 0.
-     * @return Offset Offset. Default is 0.
+     * Get Offset. Default value: 0. 
+     * @return Offset Offset. Default value: 0.
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set offset. Default is 0.
-     * @param Offset Offset. Default is 0.
+     * Set Offset. Default value: 0.
+     * @param Offset Offset. Default value: 0.
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "InstanceIds.", this.InstanceIds);

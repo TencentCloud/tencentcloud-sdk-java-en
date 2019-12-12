@@ -23,214 +23,214 @@ import java.util.HashMap;
 public class LifecycleHook  extends AbstractModel{
 
     /**
-    * Lifecycle hook ID.
+    * Lifecycle hook ID
     */
     @SerializedName("LifecycleHookId")
     @Expose
     private String LifecycleHookId;
 
     /**
-    * Lifecycle hook name.
+    * Lifecycle hook name
     */
     @SerializedName("LifecycleHookName")
     @Expose
     private String LifecycleHookName;
 
     /**
-    * Scaling group ID.
+    * Auto scaling group ID
     */
     @SerializedName("AutoScalingGroupId")
     @Expose
     private String AutoScalingGroupId;
 
     /**
-    * Lifecycle hook results by default.
+    * Default result of the lifecycle hook
     */
     @SerializedName("DefaultResult")
     @Expose
     private String DefaultResult;
 
     /**
-    * Waiting timeout of lifecycle hook.
+    * Wait timeout period of the lifecycle hook
     */
     @SerializedName("HeartbeatTimeout")
     @Expose
-    private Integer HeartbeatTimeout;
+    private Long HeartbeatTimeout;
 
     /**
-    * Scenario of lifecycle hook.
+    * Applicable scenario of the lifecycle hook
     */
     @SerializedName("LifecycleTransition")
     @Expose
     private String LifecycleTransition;
 
     /**
-    * Extra information of informing target.
+    * Additional information for the notification target
     */
     @SerializedName("NotificationMetadata")
     @Expose
     private String NotificationMetadata;
 
     /**
-    * Creation time.
+    * Creation time
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * Inform target.
+    * Notification target
     */
     @SerializedName("NotificationTarget")
     @Expose
     private NotificationTarget NotificationTarget;
 
     /**
-     * Obtain the lifecycle hook ID.
-     * @return LifecycleHookId Lifecycle hook ID.
+     * Get Lifecycle hook ID 
+     * @return LifecycleHookId Lifecycle hook ID
      */
     public String getLifecycleHookId() {
         return this.LifecycleHookId;
     }
 
     /**
-     * Configure the lifecycle hook ID.
-     * @param LifecycleHookId Lifecycle hook ID.
+     * Set Lifecycle hook ID
+     * @param LifecycleHookId Lifecycle hook ID
      */
     public void setLifecycleHookId(String LifecycleHookId) {
         this.LifecycleHookId = LifecycleHookId;
     }
 
     /**
-     * Obtain the lifecycle hook name.
-     * @return LifecycleHookName Lifecycle hook name.
+     * Get Lifecycle hook name 
+     * @return LifecycleHookName Lifecycle hook name
      */
     public String getLifecycleHookName() {
         return this.LifecycleHookName;
     }
 
     /**
-     * Configure the lifecycle hook name.
-     * @param LifecycleHookName Lifecycle hook name.
+     * Set Lifecycle hook name
+     * @param LifecycleHookName Lifecycle hook name
      */
     public void setLifecycleHookName(String LifecycleHookName) {
         this.LifecycleHookName = LifecycleHookName;
     }
 
     /**
-     * Obtain the scaling group ID.
-     * @return AutoScalingGroupId Scaling group ID.
+     * Get Auto scaling group ID 
+     * @return AutoScalingGroupId Auto scaling group ID
      */
     public String getAutoScalingGroupId() {
         return this.AutoScalingGroupId;
     }
 
     /**
-     * Configure the scaling group ID.
-     * @param AutoScalingGroupId Scaling group ID.
+     * Set Auto scaling group ID
+     * @param AutoScalingGroupId Auto scaling group ID
      */
     public void setAutoScalingGroupId(String AutoScalingGroupId) {
         this.AutoScalingGroupId = AutoScalingGroupId;
     }
 
     /**
-     * Obtain the lifecycle hook results by default.
-     * @return DefaultResult Lifecycle hook results by default.
+     * Get Default result of the lifecycle hook 
+     * @return DefaultResult Default result of the lifecycle hook
      */
     public String getDefaultResult() {
         return this.DefaultResult;
     }
 
     /**
-     * Configure the lifecycle hook results by default.
-     * @param DefaultResult Lifecycle hook results by default.
+     * Set Default result of the lifecycle hook
+     * @param DefaultResult Default result of the lifecycle hook
      */
     public void setDefaultResult(String DefaultResult) {
         this.DefaultResult = DefaultResult;
     }
 
     /**
-     * Obtain the waiting timeout of lifecycle hook.
-     * @return HeartbeatTimeout Waiting timeout of lifecycle hook.
+     * Get Wait timeout period of the lifecycle hook 
+     * @return HeartbeatTimeout Wait timeout period of the lifecycle hook
      */
-    public Integer getHeartbeatTimeout() {
+    public Long getHeartbeatTimeout() {
         return this.HeartbeatTimeout;
     }
 
     /**
-     * Configure the waiting timeout of lifecycle hook.
-     * @param HeartbeatTimeout Waiting timeout of lifecycle hook.
+     * Set Wait timeout period of the lifecycle hook
+     * @param HeartbeatTimeout Wait timeout period of the lifecycle hook
      */
-    public void setHeartbeatTimeout(Integer HeartbeatTimeout) {
+    public void setHeartbeatTimeout(Long HeartbeatTimeout) {
         this.HeartbeatTimeout = HeartbeatTimeout;
     }
 
     /**
-     * Obtain the scenario of lifecycle hook.
-     * @return LifecycleTransition Scenario of lifecycle hook.
+     * Get Applicable scenario of the lifecycle hook 
+     * @return LifecycleTransition Applicable scenario of the lifecycle hook
      */
     public String getLifecycleTransition() {
         return this.LifecycleTransition;
     }
 
     /**
-     * Configure the scenario of lifecycle hook.
-     * @param LifecycleTransition Scenario of lifecycle hook.
+     * Set Applicable scenario of the lifecycle hook
+     * @param LifecycleTransition Applicable scenario of the lifecycle hook
      */
     public void setLifecycleTransition(String LifecycleTransition) {
         this.LifecycleTransition = LifecycleTransition;
     }
 
     /**
-     * Obtain the extra information of informing target.
-     * @return NotificationMetadata Extra information of informing target.
+     * Get Additional information for the notification target 
+     * @return NotificationMetadata Additional information for the notification target
      */
     public String getNotificationMetadata() {
         return this.NotificationMetadata;
     }
 
     /**
-     * Configure the extra information of informing target.
-     * @param NotificationMetadata Extra information of informing target.
+     * Set Additional information for the notification target
+     * @param NotificationMetadata Additional information for the notification target
      */
     public void setNotificationMetadata(String NotificationMetadata) {
         this.NotificationMetadata = NotificationMetadata;
     }
 
     /**
-     * Obtain the creation time.
-     * @return CreatedTime Creation time.
+     * Get Creation time 
+     * @return CreatedTime Creation time
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * Configure the creation time.
-     * @param CreatedTime Creation time.
+     * Set Creation time
+     * @param CreatedTime Creation time
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * Obtain the Informed target.
-     * @return NotificationTarget Inform target.
+     * Get Notification target 
+     * @return NotificationTarget Notification target
      */
     public NotificationTarget getNotificationTarget() {
         return this.NotificationTarget;
     }
 
     /**
-     * Configure the Informed target.
-     * @param NotificationTarget Inform target.
+     * Set Notification target
+     * @param NotificationTarget Notification target
      */
     public void setNotificationTarget(NotificationTarget NotificationTarget) {
         this.NotificationTarget = NotificationTarget;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LifecycleHookId", this.LifecycleHookId);

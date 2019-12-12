@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class RunMonitorServiceEnabled  extends AbstractModel{
 
     /**
-    * Whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE
+    * Whether to enable [Cloud Monitor](/document/product/248). Valid values: <br><li>TRUE: enable Cloud Monitor <br><li>FALSE: do not enable Cloud Monitor <br><br>Default value: TRUE.
     */
     @SerializedName("Enabled")
     @Expose
     private Boolean Enabled;
 
     /**
-     * Obtain whether to enable [Cloud Monitor](/document/product/248) service.<br><li>Whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>FALSE: Do not enable<br><br>Default: TRUE
-     * @return Enabled Whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE
+     * Get Whether to enable [Cloud Monitor](/document/product/248). Valid values: <br><li>TRUE: enable Cloud Monitor <br><li>FALSE: do not enable Cloud Monitor <br><br>Default value: TRUE. 
+     * @return Enabled Whether to enable [Cloud Monitor](/document/product/248). Valid values: <br><li>TRUE: enable Cloud Monitor <br><li>FALSE: do not enable Cloud Monitor <br><br>Default value: TRUE.
      */
     public Boolean getEnabled() {
         return this.Enabled;
     }
 
     /**
-     * Configure whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE
-     * @param Enabled Whether to enable [Cloud Monitor](/document/product/248) service. Values:<br><li>TRUE: Enable<br><li>FALSE: Do not enable<br><br>Default: TRUE
+     * Set Whether to enable [Cloud Monitor](/document/product/248). Valid values: <br><li>TRUE: enable Cloud Monitor <br><li>FALSE: do not enable Cloud Monitor <br><br>Default value: TRUE.
+     * @param Enabled Whether to enable [Cloud Monitor](/document/product/248). Valid values: <br><li>TRUE: enable Cloud Monitor <br><li>FALSE: do not enable Cloud Monitor <br><br>Default value: TRUE.
      */
     public void setEnabled(Boolean Enabled) {
         this.Enabled = Enabled;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Enabled", this.Enabled);

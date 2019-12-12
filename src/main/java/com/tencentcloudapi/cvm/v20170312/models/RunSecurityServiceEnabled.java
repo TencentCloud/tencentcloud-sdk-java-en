@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class RunSecurityServiceEnabled  extends AbstractModel{
 
     /**
-    * Whether to enable [Cloud Monitor](https://intl.cloud.tencent.com/document/product/296) service. Values:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE
+    * Whether to enable [Cloud Security](/document/product/296). Valid values: <br><li>TRUE: enable Cloud Security <br><li>FALSE: do not enable Cloud Security <br><br>Default value: TRUE.
     */
     @SerializedName("Enabled")
     @Expose
     private Boolean Enabled;
 
     /**
-     * Obtain whether to enable [Cloud Monitor](https://intl.cloud.tencent.com/document/product/296) service.<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE
-     * @return Enabled Whether to enable [Cloud Security](https://intl.cloud.tencent.com/document/product/296). Value range:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE
+     * Get Whether to enable [Cloud Security](/document/product/296). Valid values: <br><li>TRUE: enable Cloud Security <br><li>FALSE: do not enable Cloud Security <br><br>Default value: TRUE. 
+     * @return Enabled Whether to enable [Cloud Security](/document/product/296). Valid values: <br><li>TRUE: enable Cloud Security <br><li>FALSE: do not enable Cloud Security <br><br>Default value: TRUE.
      */
     public Boolean getEnabled() {
         return this.Enabled;
     }
 
     /**
-     * Configure whether to enable [Cloud Monitor](https://intl.cloud.tencent.com/document/product/296) service. Values:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE
-     * @param Enabled Whether to enable [Cloud Security](https://intl.cloud.tencent.com/document/product/296). Value range:<br><li>TRUE: Enable Cloud Security<br><li>FALSE: Disable Cloud Security<br><br>Default: TRUE
+     * Set Whether to enable [Cloud Security](/document/product/296). Valid values: <br><li>TRUE: enable Cloud Security <br><li>FALSE: do not enable Cloud Security <br><br>Default value: TRUE.
+     * @param Enabled Whether to enable [Cloud Security](/document/product/296). Valid values: <br><li>TRUE: enable Cloud Security <br><li>FALSE: do not enable Cloud Security <br><br>Default value: TRUE.
      */
     public void setEnabled(Boolean Enabled) {
         this.Enabled = Enabled;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Enabled", this.Enabled);

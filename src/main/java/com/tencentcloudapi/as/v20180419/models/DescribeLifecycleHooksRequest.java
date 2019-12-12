@@ -23,139 +23,139 @@ import java.util.HashMap;
 public class DescribeLifecycleHooksRequest  extends AbstractModel{
 
     /**
-    * ID(s) of the Lifecycle hook to be queried, such as `ash-8azjzxcl`. A maximum of 100 instances are allowed for each request. You cannot specify both `LifecycleHookIds` and `Filters`.
+    * Queries by one or more lifecycle hook IDs in the format of `ash-8azjzxcl`. The maximum quantity per request is 100. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time.
     */
     @SerializedName("LifecycleHookIds")
     @Expose
     private String [] LifecycleHookIds;
 
     /**
-    * Filter conditions
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-Filter conditions
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
+    * Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+    * Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-    * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+    * Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-     * Get queries according to one or more lifecycle hook ID(s), such as `ash-8azjzxcl`. A maximum of 100 lifecycle hook IDs are allowed for each request.You cannot specify both `LifecycleHookIds` and `Filters`.
-     * @return LifecycleHookIds Queries according to one or more lifecycle hook ID(s), such as `ash-8azjzxcl`. A maximum of 100 lifecycle hook IDs are allowed for each request.You cannot specify both `LifecycleHookIds` and `Filters`.
+     * Get Queries by one or more lifecycle hook IDs in the format of `ash-8azjzxcl`. The maximum quantity per request is 100. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time. 
+     * @return LifecycleHookIds Queries by one or more lifecycle hook IDs in the format of `ash-8azjzxcl`. The maximum quantity per request is 100. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time.
      */
     public String [] getLifecycleHookIds() {
         return this.LifecycleHookIds;
     }
 
     /**
-     * Set queries according to one or more lifecycle hook ID(s), such as `ash-8azjzxcl`. A maximum of 100 lifecycle hook IDs are allowed for each request.You cannot specify both `LifecycleHookIds` and `Filters`.
-     * @param LifecycleHookIds Queries according to one or more lifecycle hook ID(s), such as `ash-8azjzxcl`. A maximum of 100 lifecycle hook IDs are allowed for each request.You cannot specify both `LifecycleHookIds` and `Filters`.
+     * Set Queries by one or more lifecycle hook IDs in the format of `ash-8azjzxcl`. The maximum quantity per request is 100. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time.
+     * @param LifecycleHookIds Queries by one or more lifecycle hook IDs in the format of `ash-8azjzxcl`. The maximum quantity per request is 100. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time.
      */
     public void setLifecycleHookIds(String [] LifecycleHookIds) {
         this.LifecycleHookIds = LifecycleHookIds;
     }
 
     /**
-     * Get filter conditions.
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-Filter conditions.
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
-     * @return Filters Filter Conditions.
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-Filter conditions.
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
+     * Get Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time. 
+     * @return Filters Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter conditions.
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-Filter conditions
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
-     * @param Filters Filter conditions.
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-Filter conditions
-<li> lifecycle-hook-id - String - Required: No - (Filter condition) Filter by lifecycle hook ID.</li>
-<li> lifecycle-hook-name - String - Required: No - (Filter condition) Filter by lifecycle hook name.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-You can specify 10 `Filters` and 5 `Filter.Values` in one request. You cannot specify both `LifecycleHookIds ` and `Filters`.
+     * Set Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time.
+     * @param Filters Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+Filter.
+<li> lifecycle-hook-id - String - Required: No - (Filter) Filter by lifecycle hook ID.</li>
+<li> lifecycle-hook-name - String - Required: No - (Filter) Filter by lifecycle hook name.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `LifecycleHookIds` and `Filters` at the same time.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Get number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * Get offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @return Offset Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "LifecycleHookIds.", this.LifecycleHookIds);

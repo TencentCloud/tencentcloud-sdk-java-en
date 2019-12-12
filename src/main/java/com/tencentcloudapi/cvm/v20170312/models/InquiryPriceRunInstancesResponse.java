@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InquiryPriceRunInstancesResponse  extends AbstractModel{
 
     /**
-    * The parameter indicates the price of the instance with specified configuration.
+    * Price of the instance with the specified configurations.
     */
     @SerializedName("Price")
     @Expose
     private Price Price;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain the parameter indicates the price of the instance with specified configuration.
-     * @return Price the parameter indicates the price for the switched billing method of an instance with specified configuration.
+     * Get Price of the instance with the specified configurations. 
+     * @return Price Price of the instance with the specified configurations.
      */
     public Price getPrice() {
         return this.Price;
     }
 
     /**
-     * Set the parameter indicates the price of the instance with specified configuration.
-     * @param Price the parameter indicates the price for the switched billing method of an instance with specified configuration.
+     * Set Price of the instance with the specified configurations.
+     * @param Price Price of the instance with the specified configurations.
      */
     public void setPrice(Price Price) {
         this.Price = Price;
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Price.", this.Price);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class TagSpecification  extends AbstractModel{
 
     /**
-    * Type of resource bound to a tag. Only type "instance" and "host" are supported.
+    * Type of the resources associated with the tags. Currently only "instance" and "host" are supported.
     */
     @SerializedName("ResourceType")
     @Expose
     private String ResourceType;
 
     /**
-    * List of tag pairs
+    * List of tags
     */
     @SerializedName("Tags")
     @Expose
     private Tag [] Tags;
 
     /**
-     * Obtain type of resource bound to a tag. Only type "instance" and "host" are supported.
-     * @return ResourceType type of resource bound to a tag. Only type "instance" and "host" are supported.
+     * Get Type of the resources associated with the tags. Currently only "instance" and "host" are supported. 
+     * @return ResourceType Type of the resources associated with the tags. Currently only "instance" and "host" are supported.
      */
     public String getResourceType() {
         return this.ResourceType;
     }
 
     /**
-     * Set type of resource bound to a tag. Only type "instance" and "host" are supported.
-     * @param ResourceType type of resource bound to a tag. Only type "instance" and "host" are supported.
+     * Set Type of the resources associated with the tags. Currently only "instance" and "host" are supported.
+     * @param ResourceType Type of the resources associated with the tags. Currently only "instance" and "host" are supported.
      */
     public void setResourceType(String ResourceType) {
         this.ResourceType = ResourceType;
     }
 
     /**
-     * Obtain ist of tag pairs
-     * @return Tags List of tag pairs
+     * Get List of tags 
+     * @return Tags List of tags
      */
     public Tag [] getTags() {
         return this.Tags;
     }
 
     /**
-     * Set list of tag pairs
-     * @param Tags List of tag pairs
+     * Set List of tags
+     * @param Tags List of tags
      */
     public void setTags(Tag [] Tags) {
         this.Tags = Tags;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ResourceType", this.ResourceType);

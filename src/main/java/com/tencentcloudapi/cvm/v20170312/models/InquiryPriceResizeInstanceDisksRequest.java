@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class InquiryPriceResizeInstanceDisksRequest  extends AbstractModel{
 
     /**
-    * IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+    * Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * Configuration information of the data disk whose capacity is to be expanded. Only in-elastic data disk is supported (which can be obtained from [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) in the returned value: `Portable` is `false` by the API ), and [Data disk type] (/document/api/213/9452#block_device) is: `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`. Data disk capacity unit: GB. Minimum capacity expansion step width: 10G. For the selection of the data disk type, please see the hard disk product intro. The available data disk types are limited by the instance type `InstanceType`. In addition, the maximum capacity allowed for expansion varies depending on the type of data disk.
+    * The configuration of data disks to be expanded. Currently, you can only use the API to expand non-elastic data disks whose [disk type](https://cloud.tencent.com/document/product/213/15753#DataDisk) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic. Data disk capacity unit: GB; minimum increment: 10 GB. For more information about selecting a data disk type, see the product overview on cloud disks. Available data disk types are subject to the instance type (`InstanceType`). In addition, the maximum capacity allowed for expansion varies by data disk type.
     */
     @SerializedName("DataDisks")
     @Expose
     private DataDisk [] DataDisks;
 
     /**
-    * Whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Range:<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
+    * Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally.
     */
     @SerializedName("ForceStop")
     @Expose
     private Boolean ForceStop;
 
     /**
-     * Obtain IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
-     * @return InstanceIds ID(s) of one or more instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * Get Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. 
+     * @return InstanceId Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * Set IDs of instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
-     * @param InstanceId  of instances you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+     * Set Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
+     * @param InstanceId Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * Obtain the configuration information of the data disk whose capacity is to be expanded. Only in-elastic data disk is supported (which can be obtained from [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) in the returned value: `Portable` is `false` by the API ), and [Data disk type] (/document/api/213/9452#block_device) is: `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`. Data disk capacity unit: GB. Minimum capacity expansion step width: 10G. For the selection of the data disk type, please see the hard disk product intro. The available data disk types are limited by the instance type `InstanceType`. In addition, the maximum capacity allowed for expansion varies depending on the type of data disk.
-     * @return DataDisks Configuration information of the data disk whose capacity is to be expanded. Only in-elastic data disk is supported (which can be obtained from [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) in the returned value: `Portable` is `false` by the API ), and [Data disk type] (/document/api/213/9452#block_device) is: `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`. Data disk capacity unit: GB. Minimum capacity expansion step width: 10G. For the selection of the data disk type, please see the hard disk product intro. The available data disk types are limited by the instance type `InstanceType`. In addition, the maximum capacity allowed for expansion varies depending on the type of data disk.
+     * Get The configuration of data disks to be expanded. Currently, you can only use the API to expand non-elastic data disks whose [disk type](https://cloud.tencent.com/document/product/213/15753#DataDisk) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic. Data disk capacity unit: GB; minimum increment: 10 GB. For more information about selecting a data disk type, see the product overview on cloud disks. Available data disk types are subject to the instance type (`InstanceType`). In addition, the maximum capacity allowed for expansion varies by data disk type. 
+     * @return DataDisks The configuration of data disks to be expanded. Currently, you can only use the API to expand non-elastic data disks whose [disk type](https://cloud.tencent.com/document/product/213/15753#DataDisk) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic. Data disk capacity unit: GB; minimum increment: 10 GB. For more information about selecting a data disk type, see the product overview on cloud disks. Available data disk types are subject to the instance type (`InstanceType`). In addition, the maximum capacity allowed for expansion varies by data disk type.
      */
     public DataDisk [] getDataDisks() {
         return this.DataDisks;
     }
 
     /**
-     * Configure configuration information of the data disk whose capacity is to be expanded. Only in-elastic data disk is supported (which can be obtained from [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) in the returned value: `Portable` is `false` by the API ), and [Data disk] (/document/api/213/9452#block_device) is: `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`. Data disk capacity unit: GB. Minimum capacity expansion step width: 10G. For the selection of the data disk type, please see the hard disk product intro. The available data disk types are limited by the instance type `InstanceType`. In addition, the maximum capacity allowed for expansion varies depending on the type of data disk.
-     * @param DataDisks Configuration information of the data disk whose capacity is to be expanded. Only in-elastic data disk is supported (which can be obtained from [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) in the returned value: `Portable` is `false` by the API ), and [Data disk type] (/document/api/213/9452#block_device) is: `CLOUD_BASIC`, `CLOUD_PREMIUM`, `CLOUD_SSD`. Data disk capacity unit: GB. Minimum capacity expansion step width: 10G. For the selection of the data disk type, please see the hard disk product intro. The available data disk types are limited by the instance type `InstanceType`. In addition, the maximum capacity allowed for expansion varies depending on the type of data disk.
+     * Set The configuration of data disks to be expanded. Currently, you can only use the API to expand non-elastic data disks whose [disk type](https://cloud.tencent.com/document/product/213/15753#DataDisk) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic. Data disk capacity unit: GB; minimum increment: 10 GB. For more information about selecting a data disk type, see the product overview on cloud disks. Available data disk types are subject to the instance type (`InstanceType`). In addition, the maximum capacity allowed for expansion varies by data disk type.
+     * @param DataDisks The configuration of data disks to be expanded. Currently, you can only use the API to expand non-elastic data disks whose [disk type](https://cloud.tencent.com/document/product/213/15753#DataDisk) is `CLOUD_BASIC`, `CLOUD_PREMIUM`, or `CLOUD_SSD`. You can use [`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315) to check whether a disk is elastic. If the `Portable` field in the response is `false`, it means that the disk is non-elastic. Data disk capacity unit: GB; minimum increment: 10 GB. For more information about selecting a data disk type, see the product overview on cloud disks. Available data disk types are subject to the instance type (`InstanceType`). In addition, the maximum capacity allowed for expansion varies by data disk type.
      */
     public void setDataDisks(DataDisk [] DataDisks) {
         this.DataDisks = DataDisks;
     }
 
     /**
-     * Understand whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Values:<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
-     * @return ForceStop Whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Values:<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
+     * Get Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally. 
+     * @return ForceStop Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally.
      */
     public Boolean getForceStop() {
         return this.ForceStop;
     }
 
     /**
-     * Configure whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Values:<br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
-     * @param ForceStop Whether to perform forced shutdown on the running instance. It is recommended to manually shut down the running instance before resetting the user password. Values: <br><li>TRUE: Perform a forced shutdown in case of a failed normal shutdown.<br><li>FALSE: Do not perform a forced shutdown.<br><br>Default: FALSE.<br><br>Just like powering off a physical PC, a forced shutdown may cause data loss or the corruption of file system. Be sure to perform forced shutdown only when the server cannot be shut down normally.
+     * Set Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally.
+     * @param ForceStop Whether to force shut down a running instances. It is recommended to manually shut down a running instance before resetting the user password. Valid values: <br><li>TRUE: force shut down an instance after a normal shutdown fails. <br><li>FALSE: do not force shut down an instance after a normal shutdown fails. <br><br>Default value: FALSE. <br><br>A forced shutdown is similar to switching off the power of a physical computer. It may cause data loss or file system corruption. Be sure to only force shut down a CVM when it cannot be shut down normally.
      */
     public void setForceStop(Boolean ForceStop) {
         this.ForceStop = ForceStop;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class AllocateHostsResponse  extends AbstractModel{
 
     /**
-    * List of IDs of CVM instances newly created on CDH
+    * The ID list of the CVM instances newly created on the CDH.
     */
     @SerializedName("HostIdSet")
     @Expose
     private String [] HostIdSet;
 
     /**
-    * Unique request ID, will return in every request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get list of IDs of CVM instances newly created on CDH
-     * @return HostIdSet List of IDs of CVM instances created on CDH.
+     * Get The ID list of the CVM instances newly created on the CDH. 
+     * @return HostIdSet The ID list of the CVM instances newly created on the CDH.
      */
     public String [] getHostIdSet() {
         return this.HostIdSet;
     }
 
     /**
-     * Set list of IDs of CVM instances newly created on CDH
-     * @param HostIdSet List of IDs of CVM instances newly created on CDH
+     * Set The ID list of the CVM instances newly created on the CDH.
+     * @param HostIdSet The ID list of the CVM instances newly created on the CDH.
      */
     public void setHostIdSet(String [] HostIdSet) {
         this.HostIdSet = HostIdSet;
     }
 
     /**
-     * Get unique request ID, will return in every request, which is required for each troubleshooting case.
-     * @return RequestId unique request ID, will return in every request, which is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique request ID, will return in every request, which is required for each troubleshooting case.
-     * @param RequestId unique request ID, will return in every request, which is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "HostIdSet.", this.HostIdSet);

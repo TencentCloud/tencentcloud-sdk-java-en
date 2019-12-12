@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DescribeInstanceVncUrlRequest  extends AbstractModel{
 
     /**
-    * ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
+    * Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-     * Obtain ID of instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
-     * @return InstanceIds ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * Get Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response. 
+     * @return InstanceId Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * Set ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) in the returned value of API `InstanceId`.
-     * @param InstanceId ID of one instance you are working with, which can be obtained from [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)  in the returned value of API `InstanceId`.The maximum number of instances in a batch for each request is 100.
+     * Set Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
+     * @param InstanceId Instance ID. To obtain the instance IDs, you can call [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) and look for `InstanceId` in the response.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InstanceId", this.InstanceId);

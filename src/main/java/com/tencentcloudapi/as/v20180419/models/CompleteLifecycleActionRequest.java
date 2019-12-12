@@ -30,28 +30,28 @@ public class CompleteLifecycleActionRequest  extends AbstractModel{
     private String LifecycleHookId;
 
     /**
-    * Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
+    * Result of the lifecycle action. Value range: "CONTINUE", "ABANDON"
     */
     @SerializedName("LifecycleActionResult")
     @Expose
     private String LifecycleActionResult;
 
     /**
-    * Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
+    * Instance ID. Either "InstanceId" or "LifecycleActionToken" must be specified
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * Must enter either “InstanceId” or “LifecycleActionToken”
+    * Either "InstanceId" or "LifecycleActionToken" must be specified
     */
     @SerializedName("LifecycleActionToken")
     @Expose
     private String LifecycleActionToken;
 
     /**
-     * Get Lifecycle hook ID
+     * Get Lifecycle hook ID 
      * @return LifecycleHookId Lifecycle hook ID
      */
     public String getLifecycleHookId() {
@@ -67,55 +67,55 @@ public class CompleteLifecycleActionRequest  extends AbstractModel{
     }
 
     /**
-     * Get Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
-     * @return LifecycleActionResult Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
+     * Get Result of the lifecycle action. Value range: "CONTINUE", "ABANDON" 
+     * @return LifecycleActionResult Result of the lifecycle action. Value range: "CONTINUE", "ABANDON"
      */
     public String getLifecycleActionResult() {
         return this.LifecycleActionResult;
     }
 
     /**
-     * Set Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
-     * @param LifecycleActionResult Lifecycle action results. Values include “CONTINUE” or “ABANDON”. 
+     * Set Result of the lifecycle action. Value range: "CONTINUE", "ABANDON"
+     * @param LifecycleActionResult Result of the lifecycle action. Value range: "CONTINUE", "ABANDON"
      */
     public void setLifecycleActionResult(String LifecycleActionResult) {
         this.LifecycleActionResult = LifecycleActionResult;
     }
 
     /**
-     * Get Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
-     * @return InstanceId Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
+     * Get Instance ID. Either "InstanceId" or "LifecycleActionToken" must be specified 
+     * @return InstanceId Instance ID. Either "InstanceId" or "LifecycleActionToken" must be specified
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * Set Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
-     * @param InstanceId Instance ID. Must enter either “InstanceId” or “LifecycleActionToken”
+     * Set Instance ID. Either "InstanceId" or "LifecycleActionToken" must be specified
+     * @param InstanceId Instance ID. Either "InstanceId" or "LifecycleActionToken" must be specified
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * Get Must enter either “InstanceId” or “LifecycleActionToken”
-     * @return LifecycleActionToken Must enter either “InstanceId” or “LifecycleActionToken”
+     * Get Either "InstanceId" or "LifecycleActionToken" must be specified 
+     * @return LifecycleActionToken Either "InstanceId" or "LifecycleActionToken" must be specified
      */
     public String getLifecycleActionToken() {
         return this.LifecycleActionToken;
     }
 
     /**
-     * Set Must enter either “InstanceId” or “LifecycleActionToken”
-     * @param LifecycleActionToken
+     * Set Either "InstanceId" or "LifecycleActionToken" must be specified
+     * @param LifecycleActionToken Either "InstanceId" or "LifecycleActionToken" must be specified
      */
     public void setLifecycleActionToken(String LifecycleActionToken) {
         this.LifecycleActionToken = LifecycleActionToken;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "LifecycleHookId", this.LifecycleHookId);

@@ -23,421 +23,421 @@ import java.util.HashMap;
 public class InquiryPriceRunInstancesRequest  extends AbstractModel{
 
     /**
-    * Instance position. This parameter is used to specify the availability zone and project to which the instance belongs.
+    * Location of the instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.
     */
     @SerializedName("Placement")
     @Expose
     private Placement Placement;
 
     /**
-    * Specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, such as `img-xxx`. There are four types of images:<br/><li>Public Images</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images</li><br/>You can obtain the available image ID by either of the following ways: <br/><li>Query the image ID of a `公共镜像`, `自定义镜像` or `共享镜像` by logging in to the [Console]; query the image ID of a `服务镜像市场` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
+    * [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li>
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * Instance [billing type] (https://cloud.tencent.com/document/product/213/2180).<br><li>PREPAID: Prepaid.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br>Default: POSTPAID_BY_HOUR.
+    * The instance [billing method](https://cloud.tencent.com/document/product/213/2180).<br><li>POSTPAID_BY_HOUR: hourly, pay-as-you-go<br>Default value: POSTPAID_BY_HOUR.
     */
     @SerializedName("InstanceChargeType")
     @Expose
     private String InstanceChargeType;
 
     /**
-    * Relevant parameter settings for the prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
+    * Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances.
     */
     @SerializedName("InstanceChargePrepaid")
     @Expose
     private InstanceChargePrepaid InstanceChargePrepaid;
 
     /**
-    * Instance model. Different instance models specify different resource specifications. Specific values can be found in the latest Specifications by calling the API  [DescribeInstanceTypeConfigs] (https://cloud.tencent.com/document/api/213/15749) or in the [instance configuration] (https://cloud.tencent.com/document/product/213/2177) description. If the parameter is not designated, we model is defaulted as S1.SMALL1.
+    * The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) to retrieve the latest specification list or refer to [Instance Types](https://cloud.tencent.com/document/product/213/11518). If the parameter is not specified, `S1.SMALL1` will be used by default.
     */
     @SerializedName("InstanceType")
     @Expose
     private String InstanceType;
 
     /**
-    * The instance’s system disk configuration of the launch configuration. If this parameter is not specified, the default value is assigned to it.
+    * System disk configuration of the instance. If this parameter is not specified, the default value will be used.
     */
     @SerializedName("SystemDisk")
     @Expose
     private SystemDisk SystemDisk;
 
     /**
-    * Configuration information of the instance data disk. If the parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 11 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, at most 10 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks.
+    * The configuration information of the instance data disk. If this parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 21 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, and at most 20 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks.
     */
     @SerializedName("DataDisks")
     @Expose
     private DataDisk [] DataDisks;
 
     /**
-    * Configuration information of VPC. This parameter is used to specify the VPC ID, subnet ID, etc. If this parameter is not specified, the basic network is used by default. If a VPC IP is specified in this parameter, the parameter InstanceCount can only be 1. 
+    * VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, etc. If this parameter is not specified, the basic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` parameter can only be 1. 
     */
     @SerializedName("VirtualPrivateCloud")
     @Expose
     private VirtualPrivateCloud VirtualPrivateCloud;
 
     /**
-    * Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps.
+    * Configuration of public network bandwidth. If this parameter is not specified, 0 Mbps will be used by default.
     */
     @SerializedName("InternetAccessible")
     @Expose
     private InternetAccessible InternetAccessible;
 
     /**
-    * Number of instances to be purchased. Value range: [1, 100]. Default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user, For more information about quota restrictions, please see [Restrictions on CVM Instance Purchase](https://intl.cloud.tencent.com/document/product/213/2664). |
+    * Number of instances to be purchased. Value range: [1, 100]; default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on quota, see [CVM instance purchase limit](https://intl.cloud.tencent.com/document/product/213/2664).
     */
     @SerializedName("InstanceCount")
     @Expose
-    private Integer InstanceCount;
+    private Long InstanceCount;
 
     /**
-    * The displayed name of the instance.<br><li>If it is not specified, "Not named" is displayed by default.</li><li>If you purchase multiple instances and the pattern string `{R:x}` is specified, display names will be generated based on `n`, where `[x, x+n-1]` is the number of instances purchased. For example, when `server_{R:3}` is specified, the display name will be`server_3` if one instance is purchased, or `server_3` and `server_4` if two instances are purchased. You can specify multiple pattern strings `{R:x}`.</li><li>If you purchase multiple instances and the name pattern string is not specified, the suffix `1、2...n` is appended to the display names, where `n` is the number of instances purchased. For example, when `server_` is specified, the display name will be `server_1` and `server_2` if two instances are purchased.
+    * Instance name to be displayed. <br><li>If this parameter is not specified, "Unnamed" will be displayed by default. </li><li>If you purchase multiple instances at the same time and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string, `server_{R:3}`. If you only purchase 1 instance, the instance will be named `server_3`; if you purchase 2, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`. </li><li>If you purchase multiple instances at the same time and do not specify a pattern string, the instance names will be suffixed by `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase 2 instances and the instance name body is `server_`, the instance names will be `server_1` and `server_2`.
     */
     @SerializedName("InstanceName")
     @Expose
     private String InstanceName;
 
     /**
-    * Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. 
+    * Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center.
     */
     @SerializedName("LoginSettings")
     @Expose
     private LoginSettings LoginSettings;
 
     /**
-    * The security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If this parameter is not specified, the defaul security group is not bounded.
+    * Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default.
     */
     @SerializedName("SecurityGroupIds")
     @Expose
     private String [] SecurityGroupIds;
 
     /**
-    * Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
+    * Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default.
     */
     @SerializedName("EnhancedService")
     @Expose
     private EnhancedService EnhancedService;
 
     /**
-    * A string to ensure the idempotency of the request, which is generated by the client. Each request shall have a unique string with a maximum of 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be ensured.<br>For more information, please see How to Ensure Idempotency.
+    * A string used to ensure the idempotency of the request, which is generated by the user and must be unique to each request. The maximum length is 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be guaranteed. <br>For more information, see “How to ensure idempotency”.
     */
     @SerializedName("ClientToken")
     @Expose
     private String ClientToken;
 
     /**
-    * Server name of CVM.<br><li>Period (.) and hyphen (-) cannot be used as the first and the last character of HostName, and multiple consecutive hyphens (-) or periods (.) are not allowed.<br><li>Windows instance: The name should be a combination of 2 to 15 characters comprised of letters (case insensitive), numbers, and hyphens (-). Period (.) is not supported, and the name cannot be a string of pure numbers.<br><li>Other types (such as Linux) of instances: The name should be a combination of 2 to 30 characters, supporting multiple periods (.). The piece between two periods is composed of letters (case insensitive), numbers, and hyphens (-).
+    * Host name of the CVM. <br><li>Periods (.) or hyphens (-) cannot be the start or end of a host name or appear consecutively in a host name.<br><li>For Windows instances, the host name must be 2-15 characters long and can contain uppercase and lowercase letters, numbers, and hyphens (-). It cannot contain periods (.) or contain only numbers. <br><li>For other instances, such as Linux instances, the host name must be 2-30 characters long. It supports multiple periods (.) and allows uppercase and lowercase letters, numbers, and hyphens (-) between any two periods (.).
     */
     @SerializedName("HostName")
     @Expose
     private String HostName;
 
     /**
-    * Tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances.
+    * The tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances.
     */
     @SerializedName("TagSpecification")
     @Expose
     private TagSpecification [] TagSpecification;
 
     /**
-    * Market-related options for instances, such as parameters related to spot instances |
+    * The market options of the instance.
     */
     @SerializedName("InstanceMarketOptions")
     @Expose
     private InstanceMarketOptionsRequest InstanceMarketOptions;
 
     /**
-     * Obtain the position of the instance. This parameter is used to specify the availability zone and project to which the instance belongs.
-     * @return Placement Location of instance. This parameter is used to specify the availability zone, project and other attributes of the instance.
+     * Get Location of the instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project. 
+     * @return Placement Location of the instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.
      */
     public Placement getPlacement() {
         return this.Placement;
     }
 
     /**
-     * Set the location of the instance. This parameter is used to specify the availability zone and project to which the instance belongs.
-     * @param Placement Location of instance. This parameter is used to specify the availability zone, project and other attributes of the instance.
+     * Set Location of the instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.
+     * @param Placement Location of the instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.
      */
     public void setPlacement(Placement Placement) {
         this.Placement = Placement;
     }
 
     /**
-     * Obtain valid [image] IDs (https://intl.cloud.tencent.com/document/product/213/4940), such as `img-xxx`. There are four types of images:<br/><li>Public Images</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images</li><br/>You can obtain the available image ID by either of the following ways: <br/><li>Query the image ID of a `公共镜像`, `自定义镜像` or `共享镜像` by logging in to the [Console]; query the image ID of a `服务镜像市场` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
-     * @return ImageId Specify valid [image] IDs (https://intl.cloud.tencent.com/document/product/213/4940), such as `img-xxx`. There are four types of images:<br/><li>Public Images</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images</li><br/>You can obtain the available image ID by either of the following ways: <br/><li>Query the image ID of a `公共镜像`, `自定义镜像` or `共享镜像` by logging in to the [Console]; query the image ID of a `服务镜像市场` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
+     * Get [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li> 
+     * @return ImageId [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li>
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * Specifies a valid [image] (https://intl.cloud.tencent.com/document/product/213/4940)ID, such as `img-xxx`. There are four types of images:<br/><li>Public Images</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images</li><br/>You can obtain the available image ID by either of the following ways: <br/><li>Query the image ID of a `公共镜像`, `自定义镜像` or `共享镜像` by logging in to the [Console]; query the image ID of a `服务镜像市场` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
-     * @param ImageId specifies valid [image] IDs (https://intl.cloud.tencent.com/document/product/213/4940), such as `img-xxx`. There are four types of images:<br/><li>Public Images</li><li>Custom image</li><li>Shared Image.</li><li>Service Marketplace Images</li><br/>You can obtain the available image ID by either of the following ways: <br/><li>Query the image ID of a `公共镜像`, `自定义镜像` or `共享镜像` by logging in to the [Console]; query the image ID of a `服务镜像市场` via [Cloud Marketplace] (https://market.cloud.tencent.com/list).</li><li>Utilize API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715) obtain the `ImageId` field value in the returned result.</li>
+     * Set [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li>
+     * @param ImageId [Image](/document/product/213/4940) ID in the format of `img-xxx`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For IDs of `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the information; for IDs of `marketplace images`, go to [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response.</li>
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * Obtain instance [billing type] (https://intl.cloud.tencent.com/document/product/213/2180).<br><li>PREPAID: Prepaid.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br>Default: POSTPAID_BY_HOUR.
-     * @return InstanceChargeType Instance [billing type] (https://int.cloud.tencent.com/document/product/213/2180).<br><li>PREPAID: Prepaid.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br>Default: POSTPAID_BY_HOUR.
+     * Get The instance [billing method](https://cloud.tencent.com/document/product/213/2180).<br><li>POSTPAID_BY_HOUR: hourly, pay-as-you-go<br>Default value: POSTPAID_BY_HOUR. 
+     * @return InstanceChargeType The instance [billing method](https://cloud.tencent.com/document/product/213/2180).<br><li>POSTPAID_BY_HOUR: hourly, pay-as-you-go<br>Default value: POSTPAID_BY_HOUR.
      */
     public String getInstanceChargeType() {
         return this.InstanceChargeType;
     }
 
     /**
-     * Configure instance [billing type] (https://cloud.tencent.com/document/product/213/2180).<br><li>PREPAID: Prepaid.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br>Default: POSTPAID_BY_HOUR.
-     * @param InstanceChargeType Instance [billing type] (https://intl.cloud.tencent.com/document/product/213/2180).<br><li>PREPAID: Prepaid.<br><li>POSTPAID_BY_HOUR: postpaid by hour.<br>Default: POSTPAID_BY_HOUR.
+     * Set The instance [billing method](https://cloud.tencent.com/document/product/213/2180).<br><li>POSTPAID_BY_HOUR: hourly, pay-as-you-go<br>Default value: POSTPAID_BY_HOUR.
+     * @param InstanceChargeType The instance [billing method](https://cloud.tencent.com/document/product/213/2180).<br><li>POSTPAID_BY_HOUR: hourly, pay-as-you-go<br>Default value: POSTPAID_BY_HOUR.
      */
     public void setInstanceChargeType(String InstanceChargeType) {
         this.InstanceChargeType = InstanceChargeType;
     }
 
     /**
-     * Obtain relevant parameter settings for the prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
-     * Relevant parameter settings for the prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
+     * Get Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances. 
+     * @return InstanceChargePrepaid Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances.
      */
     public InstanceChargePrepaid getInstanceChargePrepaid() {
         return this.InstanceChargePrepaid;
     }
 
     /**
-     * Relevant parameter settings for the prepaid mode, as parameter settings for the prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
-     * @param InstanceChargePrepaid parameter settings for the prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal, and other attributes of the instance purchased on a prepaid basis. This parameter is mandatory if the billing method of the specified instance is prepaid.
+     * Set Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances.
+     * @param InstanceChargePrepaid Configuration of prepaid instances. You can use the parameter to specify the attributes of prepaid instances, such as the subscription period and the auto-renewal plan. This parameter is required for prepaid instances.
      */
     public void setInstanceChargePrepaid(InstanceChargePrepaid InstanceChargePrepaid) {
         this.InstanceChargePrepaid = InstanceChargePrepaid;
     }
 
     /**
-     * Obtain Instance model. Different instance models specify different resource specifications. Specific values can be found in the latest Specifications by calling the API  [DescribeInstanceTypeConfigs] (https://cloud.tencent.com/document/api/213/15749) or in the [CVM instance type] (https://cloud.tencent.com/document/product/213/11518) description. If the parameter is not specified, the model is defaulted as S1.SMALL.
-     * @return InstanceType Instance model. Different instance models specify different resource specifications. Specific values can be found in the latest Specifications by calling the API  [DescribeInstanceTypeConfigs] (https://cloud.tencent.com/document/api/213/15749) or in the [CVM instance type] (https://cloud.tencent.com/document/product/213/2177) description. If the parameter is not specified, the model is defaulted as S1.SMALL.
+     * Get The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) to retrieve the latest specification list or refer to [Instance Types](https://cloud.tencent.com/document/product/213/11518). If the parameter is not specified, `S1.SMALL1` will be used by default. 
+     * @return InstanceType The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) to retrieve the latest specification list or refer to [Instance Types](https://cloud.tencent.com/document/product/213/11518). If the parameter is not specified, `S1.SMALL1` will be used by default.
      */
     public String getInstanceType() {
         return this.InstanceType;
     }
 
     /**
-     * Set Instance model. Different instance models specify different resource specifications. Specific values can be found in the latest Specifications by calling the API  [DescribeInstanceTypeConfigs] (https://cloud.tencent.com/document/api/213/15749) or in the [CVM instance type] (https://cloud.tencent.com/document/product/213/2177) description. If the parameter is not specified, the model is defaulted as S1.SMALL.
-     * @param InstanceType Instance model. Different instance models specify different resource specifications. Specific values can be found in the latest Specifications by calling the API  [DescribeInstanceTypeConfigs] (https://cloud.tencent.com/document/api/213/15749) or in the [instance type] (https://cloud.tencent.com/document/product/213/2177) description. If the parameter is not specified, the model is defaulted as S1.SMALL.
+     * Set The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) to retrieve the latest specification list or refer to [Instance Types](https://cloud.tencent.com/document/product/213/11518). If the parameter is not specified, `S1.SMALL1` will be used by default.
+     * @param InstanceType The instance model. Different resource specifications are specified for different models. For specific values, call [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749) to retrieve the latest specification list or refer to [Instance Types](https://cloud.tencent.com/document/product/213/11518). If the parameter is not specified, `S1.SMALL1` will be used by default.
      */
     public void setInstanceType(String InstanceType) {
         this.InstanceType = InstanceType;
     }
 
     /**
-     * Get the instance’s system disk configuration of the launch configuration. If this parameter is not specified, the default value is assigned to it.
-     * @return SystemDisk The instance’s system disk configuration of the launch configuration. If this parameter is not specified, the default value is assigned to it.
+     * Get System disk configuration of the instance. If this parameter is not specified, the default value will be used. 
+     * @return SystemDisk System disk configuration of the instance. If this parameter is not specified, the default value will be used.
      */
     public SystemDisk getSystemDisk() {
         return this.SystemDisk;
     }
 
     /**
-     * Set the instance’s system disk configuration of the launch configuration. If this parameter is not specified, the default value is assigned to it.
-     * @param SystemDisk Configuration information of instance’s system disk. If the parameter is not specified, the default value is assigned to it. |
+     * Set System disk configuration of the instance. If this parameter is not specified, the default value will be used.
+     * @param SystemDisk System disk configuration of the instance. If this parameter is not specified, the default value will be used.
      */
     public void setSystemDisk(SystemDisk SystemDisk) {
         this.SystemDisk = SystemDisk;
     }
 
     /**
-     * Get Configuration information of the instance data disk. If the parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 11 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, at most 10 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks.
-     * @return DataDisks Configuration information of the instance data disk. If the parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 11 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, at most 10 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks.
+     * Get The configuration information of the instance data disk. If this parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 21 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, and at most 20 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks. 
+     * @return DataDisks The configuration information of the instance data disk. If this parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 21 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, and at most 20 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks.
      */
     public DataDisk [] getDataDisks() {
         return this.DataDisks;
     }
 
     /**
-     * Set configuration information of the instance data disk. If the parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 11 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, at most 10 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks.
-     * @param DataDisks Configuration information of the instance data disk. If the parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 11 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, at most 10 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks.
+     * Set The configuration information of the instance data disk. If this parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 21 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, and at most 20 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks.
+     * @param DataDisks The configuration information of the instance data disk. If this parameter is not specified, no data disk will be purchased by default. When purchasing, you can specify 21 data disks, which can contain at most 1 LOCAL_BASIC data disk or LOCAL_SSD data disk, and at most 20 CLOUD_BASIC data disks, CLOUD_PREMIUM data disks, or CLOUD_SSD data disks.
      */
     public void setDataDisks(DataDisk [] DataDisks) {
         this.DataDisks = DataDisks;
     }
 
     /**
-     * Obtain configuration information of VPC. This parameter is used to specify VPC ID and subnet ID, etc. If this parameter is not specified, the basic network is used by default. If a VPC IP is specified in this parameter, it indicates the primary ENI IP of each instance and the value of parameter InstanceCount must be same as the number of VPC IPs. |
-     * @return VirtualPrivateCloud Configuration information of VPC. This parameter is used to specify the VPC ID, subnet ID, etc. If this parameter is not specified, the basic network is used by default. If a VPC IP is specified in this parameter, the parameter InstanceCount can only be 1. 
+     * Get VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, etc. If this parameter is not specified, the basic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` parameter can only be 1.  
+     * @return VirtualPrivateCloud VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, etc. If this parameter is not specified, the basic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` parameter can only be 1. 
      */
     public VirtualPrivateCloud getVirtualPrivateCloud() {
         return this.VirtualPrivateCloud;
     }
 
     /**
-     * Set configuration information of VPC. This parameter is used to specify VPC ID and subnet ID, etc. If this parameter is not specified, the basic network is used by default. If a VPC IP is specified in this parameter, it indicates the value of parameter InstanceCount must be same as the number of VPC IPs. |
-     * @param VirtualPrivateCloud Configuration information of VPC. This parameter is used to specify the VPC ID, subnet ID, etc. If this parameter is not specified, the basic network is used by default. If a VPC IP is specified in this parameter, the parameter InstanceCount can only be 1.
+     * Set VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, etc. If this parameter is not specified, the basic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` parameter can only be 1. 
+     * @param VirtualPrivateCloud VPC configurations. You can use this parameter to specify the VPC ID, subnet ID, etc. If this parameter is not specified, the basic network will be used by default. If a VPC IP is specified in this parameter, the `InstanceCount` parameter can only be 1. 
      */
     public void setVirtualPrivateCloud(VirtualPrivateCloud VirtualPrivateCloud) {
         this.VirtualPrivateCloud = VirtualPrivateCloud;
     }
 
     /**
-     * Obtain configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps.
-     * @return Internet Accessible Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps.
+     * Get Configuration of public network bandwidth. If this parameter is not specified, 0 Mbps will be used by default. 
+     * @return InternetAccessible Configuration of public network bandwidth. If this parameter is not specified, 0 Mbps will be used by default.
      */
     public InternetAccessible getInternetAccessible() {
         return this.InternetAccessible;
     }
 
     /**
-     * Set configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps.
-     * @param InternetAccessible Accessible Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps.
+     * Set Configuration of public network bandwidth. If this parameter is not specified, 0 Mbps will be used by default.
+     * @param InternetAccessible Configuration of public network bandwidth. If this parameter is not specified, 0 Mbps will be used by default.
      */
     public void setInternetAccessible(InternetAccessible InternetAccessible) {
         this.InternetAccessible = InternetAccessible;
     }
 
     /**
-     * Number of instances to be purchased. Value range: [1, 100]. Default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user, For more information about quota restrictions, please see [Restrictions on CVM Instance Purchase](https://intl.cloud.tencent.com/document/product/213/2664). |
-     * @return InstanceCount Number of instances to be purchased. Value range: [1, 100]. Default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user, For more information about quota restrictions, please see [Restrictions on CVM Instance Purchase](https://intl.cloud.tencent.com/document/product/213/2664). |
+     * Get Number of instances to be purchased. Value range: [1, 100]; default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on quota, see [CVM instance purchase limit](https://intl.cloud.tencent.com/document/product/213/2664). 
+     * @return InstanceCount Number of instances to be purchased. Value range: [1, 100]; default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on quota, see [CVM instance purchase limit](https://intl.cloud.tencent.com/document/product/213/2664).
      */
-    public Integer getInstanceCount() {
+    public Long getInstanceCount() {
         return this.InstanceCount;
     }
 
     /**
-     * Number of instances to be purchased. Value range: [1, 100]. Default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user, For more information about quota restrictions, please see [Restrictions on CVM Instance Purchase](https://intl.cloud.tencent.com/document/product/213/2664). |
-     * @param InstanceCount Number of instances to be purchased. Value range: [1, 100]. Default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user, For more information about quota restrictions, please see [Restrictions on CVM Instance Purchase](https://intl.cloud.tencent.com/document/product/213/2664). |
+     * Set Number of instances to be purchased. Value range: [1, 100]; default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on quota, see [CVM instance purchase limit](https://intl.cloud.tencent.com/document/product/213/2664).
+     * @param InstanceCount Number of instances to be purchased. Value range: [1, 100]; default value: 1. The specified number of instances to be purchased cannot exceed the remaining quota allowed for the user. For more information on quota, see [CVM instance purchase limit](https://intl.cloud.tencent.com/document/product/213/2664).
      */
-    public void setInstanceCount(Integer InstanceCount) {
+    public void setInstanceCount(Long InstanceCount) {
         this.InstanceCount = InstanceCount;
     }
 
     /**
-     * Obtain displayed name of an instance.<br><li>If it is not specified, "Not named" is displayed by default.</li><li>If you purchase multiple instances and the pattern string `{R:x}` is specified, display names will be generated based on `n`, where `[x, x+n-1]` is the number of instances purchased. For example, when `server_{R:3}` is specified, the display name will be`server_3` if one instance is purchased, or `server_3` and `server_4` if two instances are purchased. You can specify multiple pattern strings `{R:x}`.</li><li>If you purchase multiple instances and the name pattern string is not specified, the suffix `1、2...n` is appended to the display names, where `n` is the number of instances purchased. For example, when `server_` is specified, the display name will be `server_1` and `server_2` if two instances are purchased.
-     * @return InstanceName Displayed name of an instance.<br><li>If it is not specified, "Not named" is displayed by default.</li><li>If you purchase multiple instances and the pattern string `{R:x}` is specified, display names will be generated based on `n`, where `[x, x+n-1]` is the number of instances purchased. For example, when `server_{R:3}` is specified, the display name will be`server_3` if one instance is purchased, or `server_3` and `server_4` if two instances are purchased. You can specify multiple pattern strings `{R:x}`.</li><li>If you purchase multiple instances and the name pattern string is not specified, the suffix `1、2...n` is appended to the display names, where `n` is the number of instances purchased. For example, when `server_` is specified, the display name will be `server_1` and `server_2` if two instances are purchased.
+     * Get Instance name to be displayed. <br><li>If this parameter is not specified, "Unnamed" will be displayed by default. </li><li>If you purchase multiple instances at the same time and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string, `server_{R:3}`. If you only purchase 1 instance, the instance will be named `server_3`; if you purchase 2, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`. </li><li>If you purchase multiple instances at the same time and do not specify a pattern string, the instance names will be suffixed by `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase 2 instances and the instance name body is `server_`, the instance names will be `server_1` and `server_2`. 
+     * @return InstanceName Instance name to be displayed. <br><li>If this parameter is not specified, "Unnamed" will be displayed by default. </li><li>If you purchase multiple instances at the same time and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string, `server_{R:3}`. If you only purchase 1 instance, the instance will be named `server_3`; if you purchase 2, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`. </li><li>If you purchase multiple instances at the same time and do not specify a pattern string, the instance names will be suffixed by `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase 2 instances and the instance name body is `server_`, the instance names will be `server_1` and `server_2`.
      */
     public String getInstanceName() {
         return this.InstanceName;
     }
 
     /**
-     * Set the displayed name of the instance.<br><li>If it is not specified, "Not named" is displayed by default.</li><li>If you purchase multiple instances and the pattern string `{R:x}` is specified, display names will be generated based on `n`, where `[x, x+n-1]` is the number of instances purchased. For example, when `server_{R:3}` is specified, the display name will be`server_3` if one instance is purchased, or `server_3` and `server_4` if two instances are purchased. You can specify multiple pattern strings `{R:x}`.</li><li>If you purchase multiple instances and the name pattern string is not specified, the suffix `1、2...n` is appended to the display names, where `n` is the number of instances purchased. For example, when `server_` is specified, the display name will be `server_1` and `server_2` if two instances are purchased.
-     * @param InstanceName The displayed name of the instance.<br><li>If it is not specified, "Not named" is displayed by default.</li><li>If you purchase multiple instances and the pattern string `{R:x}` is specified, display names will be generated based on `n`, where `[x, x+n-1]` is the number of instances purchased. For example, when `server_{R:3}` is specified, the display name will be`server_3` if one instance is purchased, or `server_3` and `server_4` if two instances are purchased. You can specify multiple pattern strings `{R:x}`.</li><li>If you purchase multiple instances and the name pattern string is not specified, the suffix `1、2...n` is appended to the display names, where `n` is the number of instances purchased. For example, when `server_` is specified, the display name will be `server_1` and `server_2` if two instances are purchased.
+     * Set Instance name to be displayed. <br><li>If this parameter is not specified, "Unnamed" will be displayed by default. </li><li>If you purchase multiple instances at the same time and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string, `server_{R:3}`. If you only purchase 1 instance, the instance will be named `server_3`; if you purchase 2, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`. </li><li>If you purchase multiple instances at the same time and do not specify a pattern string, the instance names will be suffixed by `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase 2 instances and the instance name body is `server_`, the instance names will be `server_1` and `server_2`.
+     * @param InstanceName Instance name to be displayed. <br><li>If this parameter is not specified, "Unnamed" will be displayed by default. </li><li>If you purchase multiple instances at the same time and specify a pattern string `{R:x}`, numbers `[x, x+n-1]` will be generated, where `n` represents the number of instances purchased. For example, you specify a pattern string, `server_{R:3}`. If you only purchase 1 instance, the instance will be named `server_3`; if you purchase 2, they will be named `server_3` and `server_4`. You can specify multiple pattern strings in the format of `{R:x}`. </li><li>If you purchase multiple instances at the same time and do not specify a pattern string, the instance names will be suffixed by `1, 2...n`, where `n` represents the number of instances purchased. For example, if you purchase 2 instances and the instance name body is `server_`, the instance names will be `server_1` and `server_2`.
      */
     public void setInstanceName(String InstanceName) {
         this.InstanceName = InstanceName;
     }
 
     /**
-     * Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. 
-     * @return LoginSettings Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. 
+     * Get Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center. 
+     * @return LoginSettings Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center.
      */
     public LoginSettings getLoginSettings() {
         return this.LoginSettings;
     }
 
     /**
-     * Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. 
-     * @param LoginSettings Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. 
+     * Set Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center.
+     * @param LoginSettings Login settings of the instance. You can use this parameter to set the login method, password, and key of the instance or keep the login settings of the original image. By default, a random password will be generated and sent to you via the Message Center.
      */
     public void setLoginSettings(LoginSettings LoginSettings) {
         this.LoginSettings = LoginSettings;
     }
 
     /**
-     * Obtain the security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If this parameter is not specified, the defaul security group will not be bounded.
-     * @return SecurityGroupIds The security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If this parameter is not specified, the defaul security group will not be bounded.
+     * Get Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default. 
+     * @return SecurityGroupIds Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default.
      */
     public String [] getSecurityGroupIds() {
         return this.SecurityGroupIds;
     }
 
     /**
-     * The security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If this parameter is not specified, the defaul security group will be bounded.
-     * @param SecurityGroupIds The security group to which the instance belongs. This parameter can be obtained by calling the sgld field in the returned value of [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808). If this parameter is not specified, the defaul security group will be bounded.
+     * Set Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default.
+     * @param SecurityGroupIds Security groups to which the instance belongs. To obtain the security group IDs, you can call [DescribeSecurityGroups](https://intl.cloud.tencent.com/document/api/215/15808) and look for the `sgld` fields in the response. If this parameter is not specified, the instance will not be associated with any security group by default.
      */
     public void setSecurityGroupIds(String [] SecurityGroupIds) {
         this.SecurityGroupIds = SecurityGroupIds;
     }
 
     /**
-     * Obtain enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
-     * @return EnhancedService Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
+     * Get Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default. 
+     * @return EnhancedService Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default.
      */
     public EnhancedService getEnhancedService() {
         return this.EnhancedService;
     }
 
     /**
-     * Set enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
-     * @param EnhancedService Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitoring and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default.
+     * Set Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default.
+     * @param EnhancedService Enhanced services. You can use this parameter to specify whether to enable services such as Cloud Monitor and Cloud Security. If this parameter is not specified, Cloud Monitor and Cloud Security will be enabled by default.
      */
     public void setEnhancedService(EnhancedService EnhancedService) {
         this.EnhancedService = EnhancedService;
     }
 
     /**
-     * A string to ensure the idempotency of the request, which is generated by the client. Each request shall have a unique string with a maximum of 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be ensured.<br>For more information, please see How to Ensure Idempotency.
-     * A string to ensure the idempotency of the request, which is generated by the client. Each request shall have a unique string with a maximum of 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be ensured.<br>For more information, please see How to Ensure Idempotency.
+     * Get A string used to ensure the idempotency of the request, which is generated by the user and must be unique to each request. The maximum length is 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be guaranteed. <br>For more information, see “How to ensure idempotency”. 
+     * @return ClientToken A string used to ensure the idempotency of the request, which is generated by the user and must be unique to each request. The maximum length is 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be guaranteed. <br>For more information, see “How to ensure idempotency”.
      */
     public String getClientToken() {
         return this.ClientToken;
     }
 
     /**
-     * A string to ensure the idempotency of the request, which is generated by the client. Each request shall have a unique string with a maximum of 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be ensured.<br>For more information, please see How to Ensure Idempotency.
-     * @param ClientToken A string to ensure the idempotency of the request, which is generated by the client. Each request shall have a unique string with a maximum of 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be ensured.<br>For more information, please see How to Ensure Idempotency.
+     * Set A string used to ensure the idempotency of the request, which is generated by the user and must be unique to each request. The maximum length is 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be guaranteed. <br>For more information, see “How to ensure idempotency”.
+     * @param ClientToken A string used to ensure the idempotency of the request, which is generated by the user and must be unique to each request. The maximum length is 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be guaranteed. <br>For more information, see “How to ensure idempotency”.
      */
     public void setClientToken(String ClientToken) {
         this.ClientToken = ClientToken;
     }
 
     /**
-     * Obtain the server name of CVM.<br><li>Period (.) and hyphen (-) cannot be used as the first and the last character of HostName, and multiple consecutive hyphens (-) or periods (.) are not allowed.<br><li>Windows instance: The name should be a combination of 2 to 15 characters comprised of letters (case insensitive), numbers, and hyphens (-). Period (.) is not supported, and the name cannot be a string of pure numbers.<br><li>Other types (such as Linux) of instances: The name should be a combination of 2 to 30 characters, supporting multiple periods (.). The piece between two periods is composed of letters (case insensitive), numbers, and hyphens (-).
-     * @return HostName Server name of CVM.<br><li>Period (.) and hyphen (-) cannot be used as the first and the last character of HostName, and multiple consecutive hyphens (-) or periods (.) are not allowed.<br><li>Windows instance: The name should be a combination of 2 to 15 characters comprised of letters (case insensitive), numbers, and hyphens (-). Period (.) is not supported, and the name cannot be a string of pure numbers.<br><li>Other types (such as Linux) of instances: The name should be a combination of 2 to 30 characters, supporting multiple periods (.). The piece between two periods is composed of letters (case insensitive), numbers, and hyphens (-).
+     * Get Host name of the CVM. <br><li>Periods (.) or hyphens (-) cannot be the start or end of a host name or appear consecutively in a host name.<br><li>For Windows instances, the host name must be 2-15 characters long and can contain uppercase and lowercase letters, numbers, and hyphens (-). It cannot contain periods (.) or contain only numbers. <br><li>For other instances, such as Linux instances, the host name must be 2-30 characters long. It supports multiple periods (.) and allows uppercase and lowercase letters, numbers, and hyphens (-) between any two periods (.). 
+     * @return HostName Host name of the CVM. <br><li>Periods (.) or hyphens (-) cannot be the start or end of a host name or appear consecutively in a host name.<br><li>For Windows instances, the host name must be 2-15 characters long and can contain uppercase and lowercase letters, numbers, and hyphens (-). It cannot contain periods (.) or contain only numbers. <br><li>For other instances, such as Linux instances, the host name must be 2-30 characters long. It supports multiple periods (.) and allows uppercase and lowercase letters, numbers, and hyphens (-) between any two periods (.).
      */
     public String getHostName() {
         return this.HostName;
     }
 
     /**
-     * Set the Server name of CVM.<br><li>Period (.) and hyphen (-) cannot be used as the first and the last character of HostName, and multiple consecutive hyphens (-) or periods (.) are not allowed.<br><li>Windows instance: The name should be a combination of 2 to 15 characters comprised of letters (case insensitive), numbers, and hyphens (-). Period (.) is not supported, and the name cannot be a string of pure numbers.<br><li>Other types (such as Linux) of instances: The name should be a combination of 2 to 30 characters, supporting multiple periods (.). The piece between two periods is composed of letters (case insensitive), numbers, and hyphens (-).
-     * @param HostName Server name of CVM.<br><li>Period (.) and hyphen (-) cannot be used as the first and the last character of HostName, and multiple consecutive hyphens (-) or periods (.) are not allowed.<br><li>Windows instance: The name should be a combination of 2 to 15 characters comprised of letters (case insensitive), numbers, and hyphens (-). Period (.) is not supported, and the name cannot be a string of pure numbers.<br><li>Other types (such as Linux) of instances: The name should be a combination of 2 to 30 characters, supporting multiple periods (.). The piece between two periods is composed of letters (case insensitive), numbers, and hyphens (-).
+     * Set Host name of the CVM. <br><li>Periods (.) or hyphens (-) cannot be the start or end of a host name or appear consecutively in a host name.<br><li>For Windows instances, the host name must be 2-15 characters long and can contain uppercase and lowercase letters, numbers, and hyphens (-). It cannot contain periods (.) or contain only numbers. <br><li>For other instances, such as Linux instances, the host name must be 2-30 characters long. It supports multiple periods (.) and allows uppercase and lowercase letters, numbers, and hyphens (-) between any two periods (.).
+     * @param HostName Host name of the CVM. <br><li>Periods (.) or hyphens (-) cannot be the start or end of a host name or appear consecutively in a host name.<br><li>For Windows instances, the host name must be 2-15 characters long and can contain uppercase and lowercase letters, numbers, and hyphens (-). It cannot contain periods (.) or contain only numbers. <br><li>For other instances, such as Linux instances, the host name must be 2-30 characters long. It supports multiple periods (.) and allows uppercase and lowercase letters, numbers, and hyphens (-) between any two periods (.).
      */
     public void setHostName(String HostName) {
         this.HostName = HostName;
     }
 
     /**
-     * Obtain tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances.
-     * @return TagSpecification Tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances.
+     * Get The tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances. 
+     * @return TagSpecification The tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances.
      */
     public TagSpecification [] getTagSpecification() {
         return this.TagSpecification;
     }
 
     /**
-     * Set tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances.
-     * @param TagSpecification Tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances.
+     * Set The tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances.
+     * @param TagSpecification The tag description list. This parameter is used to bind a tag to a resource instance. A tag can only be bound to CVM instances.
      */
     public void setTagSpecification(TagSpecification [] TagSpecification) {
         this.TagSpecification = TagSpecification;
     }
 
     /**
-     * Obtain market-related options for instances, such as parameters related to spot instances |
-     * @return InstanceMarketOptions Market-related options for instances, such as parameters related to spot instances.
+     * Get The market options of the instance. 
+     * @return InstanceMarketOptions The market options of the instance.
      */
     public InstanceMarketOptionsRequest getInstanceMarketOptions() {
         return this.InstanceMarketOptions;
     }
 
     /**
-     * Set market-related options for instances, such as parameters related to spot instances |
-     * @param InstanceMarketOptions Market-related options for instances, such as parameters related to spot instances.
+     * Set The market options of the instance.
+     * @param InstanceMarketOptions The market options of the instance.
      */
     public void setInstanceMarketOptions(InstanceMarketOptionsRequest InstanceMarketOptions) {
         this.InstanceMarketOptions = InstanceMarketOptions;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Placement.", this.Placement);

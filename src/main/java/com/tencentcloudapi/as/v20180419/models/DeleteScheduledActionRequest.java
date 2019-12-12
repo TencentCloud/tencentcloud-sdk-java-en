@@ -30,7 +30,7 @@ public class DeleteScheduledActionRequest  extends AbstractModel{
     private String ScheduledActionId;
 
     /**
-     * Obtain ID of the scheduled task to be deleted.
+     * Get ID of the scheduled task to be deleted. 
      * @return ScheduledActionId ID of the scheduled task to be deleted.
      */
     public String getScheduledActionId() {
@@ -46,7 +46,7 @@ public class DeleteScheduledActionRequest  extends AbstractModel{
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ScheduledActionId", this.ScheduledActionId);

@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class ChargePrepaid  extends AbstractModel{
 
     /**
-    * Purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
+    * 
     */
     @SerializedName("Period")
     @Expose
-    private Integer Period;
+    private Long Period;
 
     /**
-    * Auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
+    * Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>Default value: NOTIFY_AND_AUTO_RENEW. If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient.
     */
     @SerializedName("RenewFlag")
     @Expose
     private String RenewFlag;
 
     /**
-     * Get purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
-     * @return Period Purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
+     * Get  
+     * @return Period 
      */
-    public Integer getPeriod() {
+    public Long getPeriod() {
         return this.Period;
     }
 
     /**
-     * Set purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
-     * @param Period Purchased instance usage period, unit (month). Value range: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]
+     * Set 
+     * @param Period 
      */
-    public void setPeriod(Integer Period) {
+    public void setPeriod(Long Period) {
         this.Period = Period;
     }
 
     /**
-     * Get auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
-     * @return RenewFlag Auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
+     * Get Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>Default value: NOTIFY_AND_AUTO_RENEW. If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient. 
+     * @return RenewFlag Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>Default value: NOTIFY_AND_AUTO_RENEW. If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient.
      */
     public String getRenewFlag() {
         return this.RenewFlag;
     }
 
     /**
-     * Set auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
-     * @param RenewFlag Auto renewal tag. Values:<br><li>NOTIFY_AND_AUTO_RENEW: notify and auto renew<br><li>NOTIFY_AND_AUTO_RENEW: notify and manually renew<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：Disable notify and manual renew<br><br>Default: NOTIFY_AND_AUTO_RENEW. the instance will be automatically renewed on a monthly basis when the account balance is sufficient.
+     * Set Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>Default value: NOTIFY_AND_AUTO_RENEW. If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient.
+     * @param RenewFlag Auto renewal flag. Valid values: <br><li>NOTIFY_AND_AUTO_RENEW: notify upon expiration and renew automatically <br><li>NOTIFY_AND_MANUAL_RENEW: notify upon expiration but do not renew automatically <br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW: neither notify upon expiration nor renew automatically <br><br>Default value: NOTIFY_AND_AUTO_RENEW. If this parameter is specified as NOTIFY_AND_AUTO_RENEW, the instance will be automatically renewed on a monthly basis if the account balance is sufficient.
      */
     public void setRenewFlag(String RenewFlag) {
         this.RenewFlag = RenewFlag;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Period", this.Period);

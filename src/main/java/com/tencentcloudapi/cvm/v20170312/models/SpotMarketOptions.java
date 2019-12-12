@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class SpotMarketOptions  extends AbstractModel{
 
     /**
-    * Bid rate
+    * Bidding price
     */
     @SerializedName("MaxPrice")
     @Expose
     private String MaxPrice;
 
     /**
-    * Spot request type. Only "one-time" is supported.
+    * Bidding request type. Currently only "one-time" is supported.
     */
     @SerializedName("SpotInstanceType")
     @Expose
     private String SpotInstanceType;
 
     /**
-     * Obtain bid rate
-     * @return MaxPrice bid rate
+     * Get Bidding price 
+     * @return MaxPrice Bidding price
      */
     public String getMaxPrice() {
         return this.MaxPrice;
     }
 
     /**
-     * Configure bid rate
-     * @param MaxPrice bid rate
+     * Set Bidding price
+     * @param MaxPrice Bidding price
      */
     public void setMaxPrice(String MaxPrice) {
         this.MaxPrice = MaxPrice;
     }
 
     /**
-     * Obtain spot request type. Only "one-time" is supported.
-     * @return SpotInstanceType Spot request type. Only "one-time" is supported.
+     * Get Bidding request type. Currently only "one-time" is supported. 
+     * @return SpotInstanceType Bidding request type. Currently only "one-time" is supported.
      */
     public String getSpotInstanceType() {
         return this.SpotInstanceType;
     }
 
     /**
-     * Configure spot request type. Only "one-time" is supported.
-     * @param SpotInstanceType Spot request type. Only "one-time" is supported.
+     * Set Bidding request type. Currently only "one-time" is supported.
+     * @param SpotInstanceType Bidding request type. Currently only "one-time" is supported.
      */
     public void setSpotInstanceType(String SpotInstanceType) {
         this.SpotInstanceType = SpotInstanceType;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "MaxPrice", this.MaxPrice);

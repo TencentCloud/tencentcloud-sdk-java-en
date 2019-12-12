@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class HostItem  extends AbstractModel{
 
     /**
-    * Location of the CDH instance. This parameter is used to specify the availability zone and project to which the instance belongs.
+    * Location of the CDH instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.
     */
     @SerializedName("Placement")
     @Expose
@@ -51,42 +51,42 @@ public class HostItem  extends AbstractModel{
     private String HostName;
 
     /**
-    * Billing type of a CDH instance
+    * Billing method of the CDH instance
     */
     @SerializedName("HostChargeType")
     @Expose
     private String HostChargeType;
 
     /**
-    * Auto renewal flag of a CDH instance
+    * Auto renewal flag of the CDH instance
     */
     @SerializedName("RenewFlag")
     @Expose
     private String RenewFlag;
 
     /**
-    * Creation time of a CDH instance
+    * Creation time of the CDH instance
     */
     @SerializedName("CreatedTime")
     @Expose
     private String CreatedTime;
 
     /**
-    * Expiration time of a CDH instance
+    * Expiration time of the CDH instance
     */
     @SerializedName("ExpiredTime")
     @Expose
     private String ExpiredTime;
 
     /**
-    * List of IDs of CVM instances created on CDH
+    * List of IDs of CVM instances created on the CDH
     */
     @SerializedName("InstanceIds")
     @Expose
     private String [] InstanceIds;
 
     /**
-    * CDH instance status
+    * CDH instance state
     */
     @SerializedName("HostState")
     @Expose
@@ -100,37 +100,38 @@ public class HostItem  extends AbstractModel{
     private String HostIp;
 
     /**
-    * The resource information of a CDH instance
+    * Resource information of the CDH instance
     */
     @SerializedName("HostResource")
     @Expose
     private HostResource HostResource;
 
     /**
-    * Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
+    * Cage ID of the CDH instance. This parameter is only valid for CDH instances in the cages of finance availability zones.
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("CageId")
     @Expose
     private String CageId;
 
     /**
-     * Get location of the CDH instance. This parameter is used to specify the availability zone and project to which the instance belongs.
-     * @return Placement Location of CDH instance. This parameter is used to specify the availability zone, project and other attributes of the instance.
+     * Get Location of the CDH instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project. 
+     * @return Placement Location of the CDH instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.
      */
     public Placement getPlacement() {
         return this.Placement;
     }
 
     /**
-     * Set location of the CDH instance. This parameter is used to specify the availability zone and project to which the instance belongs.
-     * @param Placement Location of CDH instance. This parameter is used to specify the availability zone, project and other attributes of the instance.
+     * Set Location of the CDH instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.
+     * @param Placement Location of the CDH instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.
      */
     public void setPlacement(Placement Placement) {
         this.Placement = Placement;
     }
 
     /**
-     * Get CDH instance ID
+     * Get CDH instance ID 
      * @return HostId CDH instance ID
      */
     public String getHostId() {
@@ -146,7 +147,7 @@ public class HostItem  extends AbstractModel{
     }
 
     /**
-     * Get CDH instance type
+     * Get CDH instance type 
      * @return HostType CDH instance type
      */
     public String getHostType() {
@@ -162,7 +163,7 @@ public class HostItem  extends AbstractModel{
     }
 
     /**
-     * Get CDH instance name
+     * Get CDH instance name 
      * @return HostName CDH instance name
      */
     public String getHostName() {
@@ -178,103 +179,103 @@ public class HostItem  extends AbstractModel{
     }
 
     /**
-     * Get billing type of a CDH instance
-     * @return HostChargeType Billing type of a CDH instance
+     * Get Billing method of the CDH instance 
+     * @return HostChargeType Billing method of the CDH instance
      */
     public String getHostChargeType() {
         return this.HostChargeType;
     }
 
     /**
-     * Set billing type of a CDH instance
-     * @param HostChargeType Billing type of a CDH instance
+     * Set Billing method of the CDH instance
+     * @param HostChargeType Billing method of the CDH instance
      */
     public void setHostChargeType(String HostChargeType) {
         this.HostChargeType = HostChargeType;
     }
 
     /**
-     * Get auto renewal flag of a CDH instance
-     * @return RenewFlag Auto renewal flag of a CDH instance
+     * Get Auto renewal flag of the CDH instance 
+     * @return RenewFlag Auto renewal flag of the CDH instance
      */
     public String getRenewFlag() {
         return this.RenewFlag;
     }
 
     /**
-     * Set auto renewal flag of a CDH instance
-     * @param RenewFlag Auto renewal flag of a CDH instance
+     * Set Auto renewal flag of the CDH instance
+     * @param RenewFlag Auto renewal flag of the CDH instance
      */
     public void setRenewFlag(String RenewFlag) {
         this.RenewFlag = RenewFlag;
     }
 
     /**
-     * Get creation time of a CDH instance
-     * @return CreatedTime Creation time of a CDH instance
+     * Get Creation time of the CDH instance 
+     * @return CreatedTime Creation time of the CDH instance
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * Set creation time of a CDH instance
-     * @param CreatedTime Creation time of a CDH instance
+     * Set Creation time of the CDH instance
+     * @param CreatedTime Creation time of the CDH instance
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * Get expiration time of a CDH instance
-     * @return ExpiredTime Expiration time of a CDH instance
+     * Get Expiration time of the CDH instance 
+     * @return ExpiredTime Expiration time of the CDH instance
      */
     public String getExpiredTime() {
         return this.ExpiredTime;
     }
 
     /**
-     * Set expiration time of a CDH instance
-     * @param ExpiredTime Expiration time of a CDH instance
+     * Set Expiration time of the CDH instance
+     * @param ExpiredTime Expiration time of the CDH instance
      */
     public void setExpiredTime(String ExpiredTime) {
         this.ExpiredTime = ExpiredTime;
     }
 
     /**
-     * Get list of IDs of CVM instances created on CDH
-     * @return InstanceIds List of IDs of CVM instances created on CDH
+     * Get List of IDs of CVM instances created on the CDH 
+     * @return InstanceIds List of IDs of CVM instances created on the CDH
      */
     public String [] getInstanceIds() {
         return this.InstanceIds;
     }
 
     /**
-     * Set list of IDs of CVM instances created on CDH
-     * @param InstanceIds List of IDs of CVM instances created on CDH
+     * Set List of IDs of CVM instances created on the CDH
+     * @param InstanceIds List of IDs of CVM instances created on the CDH
      */
     public void setInstanceIds(String [] InstanceIds) {
         this.InstanceIds = InstanceIds;
     }
 
     /**
-     * Get CDH instance status
-     * @return HostState CDH instance status
+     * Get CDH instance state 
+     * @return HostState CDH instance state
      */
     public String getHostState() {
         return this.HostState;
     }
 
     /**
-     * Set CDH instance status
-     * @param HostState CDH instance status
+     * Set CDH instance state
+     * @param HostState CDH instance state
      */
     public void setHostState(String HostState) {
         this.HostState = HostState;
     }
 
     /**
-     * Get CDH instance IP
+     * Get CDH instance IP 
      * @return HostIp CDH instance IP
      */
     public String getHostIp() {
@@ -290,39 +291,43 @@ public class HostItem  extends AbstractModel{
     }
 
     /**
-     * Get the resource information of a CDH instance
-     * @return HostResource The resource information of a CDH instance
+     * Get Resource information of the CDH instance 
+     * @return HostResource Resource information of the CDH instance
      */
     public HostResource getHostResource() {
         return this.HostResource;
     }
 
     /**
-     * Set the resource information of a CDH instance
-     * @param HostResource The resource information of a CDH instance
+     * Set Resource information of the CDH instance
+     * @param HostResource Resource information of the CDH instance
      */
     public void setHostResource(HostResource HostResource) {
         this.HostResource = HostResource;
     }
 
     /**
-     * Get Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
-     * @return CageId Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
+     * Get Cage ID of the CDH instance. This parameter is only valid for CDH instances in the cages of finance availability zones.
+Note: This field may return null, indicating that no valid value is found. 
+     * @return CageId Cage ID of the CDH instance. This parameter is only valid for CDH instances in the cages of finance availability zones.
+Note: This field may return null, indicating that no valid value is found.
      */
     public String getCageId() {
         return this.CageId;
     }
 
     /**
-     * Set Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
-     * @param CageId Cage ID of the CDH instance. This parameter only applies to CDH in financial zone. Note: This field may return null, indicating that no valid value was found.
+     * Set Cage ID of the CDH instance. This parameter is only valid for CDH instances in the cages of finance availability zones.
+Note: This field may return null, indicating that no valid value is found.
+     * @param CageId Cage ID of the CDH instance. This parameter is only valid for CDH instances in the cages of finance availability zones.
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setCageId(String CageId) {
         this.CageId = CageId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Placement.", this.Placement);

@@ -23,30 +23,30 @@ import java.util.HashMap;
 public class DescribeImageSharePermissionRequest  extends AbstractModel{
 
     /**
-    * The id of the image to be shared
+    * The ID of the image to be shared
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-     * Obtain the ID of the image to be shared 
-     * @return ImageId The id of the image to be shared
+     * Get The ID of the image to be shared 
+     * @return ImageId The ID of the image to be shared
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * Set the ID of the image to be shared
-     * @param ImageId The id of the image to be shared
+     * Set The ID of the image to be shared
+     * @param ImageId The ID of the image to be shared
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ImageId", this.ImageId);

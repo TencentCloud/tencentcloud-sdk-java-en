@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class InstanceTypeQuotaItem  extends AbstractModel{
 
     /**
-    * Availability Zone
+    * Availability zone.
     */
     @SerializedName("Zone")
     @Expose
@@ -37,42 +37,43 @@ public class InstanceTypeQuotaItem  extends AbstractModel{
     private String InstanceType;
 
     /**
-    * Instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
+    * Instance billing method. Valid values: <br><li>`PREPAID`: prepaid, i.e., monthly subscription <br><li>`POSTPAID_BY_HOUR`: pay-as-you-go <br><li>`CDHPAID`: you are only billed for the [CDH](https://cloud.tencent.com/document/product/416) instances, not the CVMs running on the CDHs. <br><li>`SPOTPAID`: you are billed based on your bid.
     */
     @SerializedName("InstanceChargeType")
     @Expose
     private String InstanceChargeType;
 
     /**
-    *  ENI type. For example, 25 represents an ENI of 25 GB.
+    * ENI type. For example, 25 represents an ENI of 25 GB.
     */
     @SerializedName("NetworkCard")
     @Expose
-    private Integer NetworkCard;
+    private Long NetworkCard;
 
     /**
-    * Scaled attributes. Note: This field may return null, indicating that no valid value was found.
+    * Additional data.
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("Externals")
     @Expose
     private Externals Externals;
 
     /**
-    * Number of CPU cores in an instance (in core).
+    * Number of CPU cores of an instance model.
     */
     @SerializedName("Cpu")
     @Expose
-    private Integer Cpu;
+    private Long Cpu;
 
     /**
-    * Size of the memory of instance, in `GB`.
+    * Instance memory capacity; unit: `GB`.
     */
     @SerializedName("Memory")
     @Expose
-    private Integer Memory;
+    private Long Memory;
 
     /**
-    * Instance model series.
+    * Instance model family.
     */
     @SerializedName("InstanceFamily")
     @Expose
@@ -86,44 +87,44 @@ public class InstanceTypeQuotaItem  extends AbstractModel{
     private String TypeName;
 
     /**
-    * List of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
+    * List of local disk specifications. If the parameter returns null, it means that local disks cannot be created.
     */
     @SerializedName("LocalDiskTypeList")
     @Expose
     private LocalDiskType [] LocalDiskTypeList;
 
     /**
-    * Sell instance or not. Value range: <br><li>SELL：instance can be sold.<br><li>SOLD_OUT：instance is sold out.
+    * Whether an instance model is available. Valid values: <br><li>SELL: available <br><li>SOLD_OUT: sold out
     */
     @SerializedName("Status")
     @Expose
     private String Status;
 
     /**
-    * Price of an instance.
+    * Price of an instance model.
     */
     @SerializedName("Price")
     @Expose
     private ItemPrice Price;
 
     /**
-     * Obtain the Availability Zone.
-     * @return Zone Availability Zone.
+     * Get Availability zone. 
+     * @return Zone Availability zone.
      */
     public String getZone() {
         return this.Zone;
     }
 
     /**
-     * Configure the Availability Zone.
-     * @param Zone Availability Zone.
+     * Set Availability zone.
+     * @param Zone Availability zone.
      */
     public void setZone(String Zone) {
         this.Zone = Zone;
     }
 
     /**
-     * Obtain the instance model.
+     * Get Instance model. 
      * @return InstanceType Instance model.
      */
     public String getInstanceType() {
@@ -131,7 +132,7 @@ public class InstanceTypeQuotaItem  extends AbstractModel{
     }
 
     /**
-     * Configure the instance model.
+     * Set Instance model.
      * @param InstanceType Instance model.
      */
     public void setInstanceType(String InstanceType) {
@@ -139,26 +140,26 @@ public class InstanceTypeQuotaItem  extends AbstractModel{
     }
 
     /**
-     * Get instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
-     * @return InstanceChargeType Instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
+     * Get Instance billing method. Valid values: <br><li>`PREPAID`: prepaid, i.e., monthly subscription <br><li>`POSTPAID_BY_HOUR`: pay-as-you-go <br><li>`CDHPAID`: you are only billed for the [CDH](https://cloud.tencent.com/document/product/416) instances, not the CVMs running on the CDHs. <br><li>`SPOTPAID`: you are billed based on your bid. 
+     * @return InstanceChargeType Instance billing method. Valid values: <br><li>`PREPAID`: prepaid, i.e., monthly subscription <br><li>`POSTPAID_BY_HOUR`: pay-as-you-go <br><li>`CDHPAID`: you are only billed for the [CDH](https://cloud.tencent.com/document/product/416) instances, not the CVMs running on the CDHs. <br><li>`SPOTPAID`: you are billed based on your bid.
      */
     public String getInstanceChargeType() {
         return this.InstanceChargeType;
     }
 
     /**
-     * Set instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
-     * @param InstanceChargeType Instance billing method. Value range: <br><li>PREPAID: Prepaid. Monthly Subscription.<br><li>POSTPAID_BY_HOUR: Postpaid, by usage<br><li>CDHPAID: [CDH](https://cloud.tencent.com/document/product/416) paid, i.e., only pay for CDH, excluding instances on the CDH.
+     * Set Instance billing method. Valid values: <br><li>`PREPAID`: prepaid, i.e., monthly subscription <br><li>`POSTPAID_BY_HOUR`: pay-as-you-go <br><li>`CDHPAID`: you are only billed for the [CDH](https://cloud.tencent.com/document/product/416) instances, not the CVMs running on the CDHs. <br><li>`SPOTPAID`: you are billed based on your bid.
+     * @param InstanceChargeType Instance billing method. Valid values: <br><li>`PREPAID`: prepaid, i.e., monthly subscription <br><li>`POSTPAID_BY_HOUR`: pay-as-you-go <br><li>`CDHPAID`: you are only billed for the [CDH](https://cloud.tencent.com/document/product/416) instances, not the CVMs running on the CDHs. <br><li>`SPOTPAID`: you are billed based on your bid.
      */
     public void setInstanceChargeType(String InstanceChargeType) {
         this.InstanceChargeType = InstanceChargeType;
     }
 
     /**
-     * Get ENI type. For example, 25 represents an ENI of 25 GB.
+     * Get ENI type. For example, 25 represents an ENI of 25 GB. 
      * @return NetworkCard ENI type. For example, 25 represents an ENI of 25 GB.
      */
-    public Integer getNetworkCard() {
+    public Long getNetworkCard() {
         return this.NetworkCard;
     }
 
@@ -166,76 +167,80 @@ public class InstanceTypeQuotaItem  extends AbstractModel{
      * Set ENI type. For example, 25 represents an ENI of 25 GB.
      * @param NetworkCard ENI type. For example, 25 represents an ENI of 25 GB.
      */
-    public void setNetworkCard(Integer NetworkCard) {
+    public void setNetworkCard(Long NetworkCard) {
         this.NetworkCard = NetworkCard;
     }
 
     /**
-     * Set scaled attributes. Note: This field may return null, indicating that no valid value was found.
-     * @return Externals Scaled attributes. Note: This field may return null, indicating that no valid value was found.
+     * Get Additional data.
+Note: This field may return null, indicating that no valid value is found. 
+     * @return Externals Additional data.
+Note: This field may return null, indicating that no valid value is found.
      */
     public Externals getExternals() {
         return this.Externals;
     }
 
     /**
-     * Set scaled attributes. Note: This field may return null, indicating that no valid value was found.
-     * @param Externals Scaled attributes. Note: This field may return null, indicating that no valid value was found.
+     * Set Additional data.
+Note: This field may return null, indicating that no valid value is found.
+     * @param Externals Additional data.
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setExternals(Externals Externals) {
         this.Externals = Externals;
     }
 
     /**
-     * Get number of CPU cores in an instance (in core).
-     * @return Cpu number of CPU cores in an instance (in core).
+     * Get Number of CPU cores of an instance model. 
+     * @return Cpu Number of CPU cores of an instance model.
      */
-    public Integer getCpu() {
+    public Long getCpu() {
         return this.Cpu;
     }
 
     /**
-     * Set number of CPU cores in an instance (in core).
-     * @param Cpu number of CPU cores in an instance (in core).
+     * Set Number of CPU cores of an instance model.
+     * @param Cpu Number of CPU cores of an instance model.
      */
-    public void setCpu(Integer Cpu) {
+    public void setCpu(Long Cpu) {
         this.Cpu = Cpu;
     }
 
     /**
-     * Get instance memory capacity (in `GB`).
-     * @return Memory Instance memory capacity (in `GB`).
+     * Get Instance memory capacity; unit: `GB`. 
+     * @return Memory Instance memory capacity; unit: `GB`.
      */
-    public Integer getMemory() {
+    public Long getMemory() {
         return this.Memory;
     }
 
     /**
-     * Set instance memory capacity (in `GB`).
-     * @param Memory Instance memory capacity (in `GB`).
+     * Set Instance memory capacity; unit: `GB`.
+     * @param Memory Instance memory capacity; unit: `GB`.
      */
-    public void setMemory(Integer Memory) {
+    public void setMemory(Long Memory) {
         this.Memory = Memory;
     }
 
     /**
-     * Obtain the list of instance model series.
-     * @return InstanceFamily Instance model series.
+     * Get Instance model family. 
+     * @return InstanceFamily Instance model family.
      */
     public String getInstanceFamily() {
         return this.InstanceFamily;
     }
 
     /**
-     * Configure the instance model series.
-     * @param InstanceFamily instance model series.
+     * Set Instance model family.
+     * @param InstanceFamily Instance model family.
      */
     public void setInstanceFamily(String InstanceFamily) {
         this.InstanceFamily = InstanceFamily;
     }
 
     /**
-     * Get model name.
+     * Get Model name. 
      * @return TypeName Model name.
      */
     public String getTypeName() {
@@ -243,7 +248,7 @@ public class InstanceTypeQuotaItem  extends AbstractModel{
     }
 
     /**
-     * Set model name.
+     * Set Model name.
      * @param TypeName Model name.
      */
     public void setTypeName(String TypeName) {
@@ -251,55 +256,55 @@ public class InstanceTypeQuotaItem  extends AbstractModel{
     }
 
     /**
-     * Get list of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
-     * @return LocalDiskTypeList List of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
+     * Get List of local disk specifications. If the parameter returns null, it means that local disks cannot be created. 
+     * @return LocalDiskTypeList List of local disk specifications. If the parameter returns null, it means that local disks cannot be created.
      */
     public LocalDiskType [] getLocalDiskTypeList() {
         return this.LocalDiskTypeList;
     }
 
     /**
-     * Set list of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
-     * @param LocalDiskTypeList list of local disk specifications. When the parameter returns null, indicates it cannot create local disk in this situation.
+     * Set List of local disk specifications. If the parameter returns null, it means that local disks cannot be created.
+     * @param LocalDiskTypeList List of local disk specifications. If the parameter returns null, it means that local disks cannot be created.
      */
     public void setLocalDiskTypeList(LocalDiskType [] LocalDiskTypeList) {
         this.LocalDiskTypeList = LocalDiskTypeList;
     }
 
     /**
-     * Get whether an instance is sold. Value range: <br><li>SELL：indicates the instance can be sold or not.<br><li>SOLD_OUT：indicates the instance is sold out.
-     * @return Status whether an instance is sold. Value range: <br><li>SELL：indicates the instance can be sold or not.<br><li>SOLD_OUT：indicates the instance is sold out.
+     * Get Whether an instance model is available. Valid values: <br><li>SELL: available <br><li>SOLD_OUT: sold out 
+     * @return Status Whether an instance model is available. Valid values: <br><li>SELL: available <br><li>SOLD_OUT: sold out
      */
     public String getStatus() {
         return this.Status;
     }
 
     /**
-     * Set whether an instance is sold. Value range: <br><li>SELL：indicates the instance can be sold or not.<br><li>SOLD_OUT：indicates the instance is sold out.
-     * @param Status whether an instance is sold. Value range: <br><li>SELL：indicates the instance can be sold or not.<br><li>SOLD_OUT：indicates the instance is sold out.
+     * Set Whether an instance model is available. Valid values: <br><li>SELL: available <br><li>SOLD_OUT: sold out
+     * @param Status Whether an instance model is available. Valid values: <br><li>SELL: available <br><li>SOLD_OUT: sold out
      */
     public void setStatus(String Status) {
         this.Status = Status;
     }
 
     /**
-     * Get price of an instance.
-     * @return Price price of an instance.
+     * Get Price of an instance model. 
+     * @return Price Price of an instance model.
      */
     public ItemPrice getPrice() {
         return this.Price;
     }
 
     /**
-     * Set price of an instance.
-     * @param Price price of an instance.
+     * Set Price of an instance model.
+     * @param Price Price of an instance model.
      */
     public void setPrice(ItemPrice Price) {
         this.Price = Price;
     }
 
     /**
-     * For internal use only
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Zone", this.Zone);

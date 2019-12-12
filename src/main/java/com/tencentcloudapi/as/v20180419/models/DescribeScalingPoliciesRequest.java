@@ -23,119 +23,119 @@ import java.util.HashMap;
 public class DescribeScalingPoliciesRequest  extends AbstractModel{
 
     /**
-    * ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
+    * Queries by one or more alarm policy IDs in the format of asp-i9vkg894. The maximum number of instances per request is 100. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time.
     */
     @SerializedName("AutoScalingPolicyIds")
     @Expose
     private String [] AutoScalingPolicyIds;
 
     /**
-    * Filter conditions.
-<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-<li> scaling-policy-name - String - Required: No - (Filter condition) Filter by Alarm policy name.</li>
-The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
+    * Filter.
+<li> auto-scaling-policy-id - String - Required: No - (Filter) Filter by alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> scaling-policy-name - String - Required: No - (Filter) Filter by alarm policy name.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time.
     */
     @SerializedName("Filters")
     @Expose
     private Filter [] Filters;
 
     /**
-    * Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+    * Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Limit")
     @Expose
-    private Integer Limit;
+    private Long Limit;
 
     /**
-    * Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+    * Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
     */
     @SerializedName("Offset")
     @Expose
-    private Integer Offset;
+    private Long Offset;
 
     /**
-     * Obtain ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
-     * @return AutoScalingPolicyIds ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
+     * Get Queries by one or more alarm policy IDs in the format of asp-i9vkg894. The maximum number of instances per request is 100. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time. 
+     * @return AutoScalingPolicyIds Queries by one or more alarm policy IDs in the format of asp-i9vkg894. The maximum number of instances per request is 100. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time.
      */
     public String [] getAutoScalingPolicyIds() {
         return this.AutoScalingPolicyIds;
     }
 
     /**
-     * Set ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
-     * @param AutoScalingPolicyIds ID(s) of the Alarm policy to be queried, such as `asp-i9vkg894`. A maximum of 100 instances are allowed for each request. You cannot specify both `AutoScalingPolicyIds` and `Filters`.
+     * Set Queries by one or more alarm policy IDs in the format of asp-i9vkg894. The maximum number of instances per request is 100. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time.
+     * @param AutoScalingPolicyIds Queries by one or more alarm policy IDs in the format of asp-i9vkg894. The maximum number of instances per request is 100. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time.
      */
     public void setAutoScalingPolicyIds(String [] AutoScalingPolicyIds) {
         this.AutoScalingPolicyIds = AutoScalingPolicyIds;
     }
 
     /**
-     * Get filter conditions.
-<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-<li> scaling-policy-name - String - Required: No - (Filter condition) Filter by Alarm policy name.</li>
-The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
-     * @return Filters Filter Conditions
-<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
+     * Get Filter.
+<li> auto-scaling-policy-id - String - Required: No - (Filter) Filter by alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> scaling-policy-name - String - Required: No - (Filter) Filter by alarm policy name.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time. 
+     * @return Filters Filter.
+<li> auto-scaling-policy-id - String - Required: No - (Filter) Filter by alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> scaling-policy-name - String - Required: No - (Filter) Filter by alarm policy name.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time.
      */
     public Filter [] getFilters() {
         return this.Filters;
     }
 
     /**
-     * Set filter conditions
-<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
-     * @param Filters Filter conditions.
-<li> auto-scaling-policy-id - String - Required: No - (Filter condition) Filter by Alarm policy ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-<li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by scaling group ID.</li>
-The upper limit of each request of `Filters` is10，while `Filter.Values` is 5. `AutoScalingPolicyIds` and `Filters` cannot be assigned at same time.
+     * Set Filter.
+<li> auto-scaling-policy-id - String - Required: No - (Filter) Filter by alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> scaling-policy-name - String - Required: No - (Filter) Filter by alarm policy name.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time.
+     * @param Filters Filter.
+<li> auto-scaling-policy-id - String - Required: No - (Filter) Filter by alarm policy ID.</li>
+<li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID.</li>
+<li> scaling-policy-name - String - Required: No - (Filter) Filter by alarm policy name.</li>
+The maximum number of `Filters` per request is 10. The upper limit for `Filter.Values` is 5. This parameter does not support specifying both `AutoScalingPolicyIds` and `Filters` at the same time.
      */
     public void setFilters(Filter [] Filters) {
         this.Filters = Filters;
     }
 
     /**
-     * Obtain number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @return Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getLimit() {
+    public Long getLimit() {
         return this.Limit;
     }
 
     /**
-     * Set number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Limit Number of returned results. It defaults to 20. The maximum is 100. For more information on `Limit`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Limit Number of returned results. Default value: 20. Maximum value: 100. For more information on `Limit`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setLimit(Integer Limit) {
+    public void setLimit(Long Limit) {
         this.Limit = Limit;
     }
 
     /**
-     * Obtain offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @return Offset Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Get Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688). 
+     * @return Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public Integer getOffset() {
+    public Long getOffset() {
         return this.Offset;
     }
 
     /**
-     * Set offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
-     * @param Offset Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Overview](https://intl.cloud.tencent.com/document/product/377).
+     * Set Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
+     * @param Offset Offset. Default value: 0. For more information on `Offset`, see the relevant section in the API [overview](https://cloud.tencent.com/document/api/213/15688).
      */
-    public void setOffset(Integer Offset) {
+    public void setOffset(Long Offset) {
         this.Offset = Offset;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "AutoScalingPolicyIds.", this.AutoScalingPolicyIds);

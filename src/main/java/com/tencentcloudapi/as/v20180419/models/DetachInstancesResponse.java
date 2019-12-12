@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class DetachInstancesResponse  extends AbstractModel{
 
     /**
-    * ID of the current scaling activity.
+    * Scaling activity ID
     */
     @SerializedName("ActivityId")
     @Expose
     private String ActivityId;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain ID of the current scaling activity.
-     * @return ActivityId ID of the current scaling activity.
+     * Get Scaling activity ID 
+     * @return ActivityId Scaling activity ID
      */
     public String getActivityId() {
         return this.ActivityId;
     }
 
     /**
-     * Configure ID of the current scaling activity.
-     * @param ActivityId ID of the current scaling activity.
+     * Set Scaling activity ID
+     * @param ActivityId Scaling activity ID
      */
     public void setActivityId(String ActivityId) {
         this.ActivityId = ActivityId;
     }
 
     /**
-     * Obtain unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ActivityId", this.ActivityId);

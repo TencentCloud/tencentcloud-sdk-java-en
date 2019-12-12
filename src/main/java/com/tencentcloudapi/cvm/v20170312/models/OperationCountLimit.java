@@ -23,99 +23,99 @@ import java.util.HashMap;
 public class OperationCountLimit  extends AbstractModel{
 
     /**
-    * The opeartion of instance
+    * Operations on an instance.
     */
     @SerializedName("Operation")
     @Expose
     private String Operation;
 
     /**
-    * Instance ID
+    * Instance ID.
     */
     @SerializedName("InstanceId")
     @Expose
     private String InstanceId;
 
     /**
-    * The number have been used, -1 in return means no number limited of this operation.
+    * Number of operations already performed. If it returns `-1`, it means there is no limit on the times of the operation.
     */
     @SerializedName("CurrentCount")
     @Expose
-    private Integer CurrentCount;
+    private Long CurrentCount;
 
     /**
-    * Maximum number of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
+    * Maximum number of times you can perform an operation. If it returns `-1`, it means there is no limit on the times of the operation. If it returns `0`, it means that configuration modification is not supported.
     */
     @SerializedName("LimitCount")
     @Expose
-    private Integer LimitCount;
+    private Long LimitCount;
 
     /**
-     * Obtain the instance
-     * @return Operation The opeartion of instance.
+     * Get Operations on an instance. 
+     * @return Operation Operations on an instance.
      */
     public String getOperation() {
         return this.Operation;
     }
 
     /**
-     * The operation of setting instance
-     * @param Operation The opeartion of instance.
+     * Set Operations on an instance.
+     * @param Operation Operations on an instance.
      */
     public void setOperation(String Operation) {
         this.Operation = Operation;
     }
 
     /**
-     * Obtain instance ID
-     * @return InstanceIds instance IDs
+     * Get Instance ID. 
+     * @return InstanceId Instance ID.
      */
     public String getInstanceId() {
         return this.InstanceId;
     }
 
     /**
-     * Setting the ID of instance
-     * @param InstanceId instance IDs
+     * Set Instance ID.
+     * @param InstanceId Instance ID.
      */
     public void setInstanceId(String InstanceId) {
         this.InstanceId = InstanceId;
     }
 
     /**
-     * Getting the number have been used, -1 in return means no number limited of this operation.
-     * @return CurrentCount the number have been used, -1 in return means no number limited of this operation.
+     * Get Number of operations already performed. If it returns `-1`, it means there is no limit on the times of the operation. 
+     * @return CurrentCount Number of operations already performed. If it returns `-1`, it means there is no limit on the times of the operation.
      */
-    public Integer getCurrentCount() {
+    public Long getCurrentCount() {
         return this.CurrentCount;
     }
 
     /**
-     * Setting the number have been used, -1 in return means no number limited of this operation.
-     * @param CurrentCount the number have been used, -1 in return means no number limited of this operation.
+     * Set Number of operations already performed. If it returns `-1`, it means there is no limit on the times of the operation.
+     * @param CurrentCount Number of operations already performed. If it returns `-1`, it means there is no limit on the times of the operation.
      */
-    public void setCurrentCount(Integer CurrentCount) {
+    public void setCurrentCount(Long CurrentCount) {
         this.CurrentCount = CurrentCount;
     }
 
     /**
-     * Geting the maximum amount of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
-     * @return LimitCount The maximum amount of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
+     * Get Maximum number of times you can perform an operation. If it returns `-1`, it means there is no limit on the times of the operation. If it returns `0`, it means that configuration modification is not supported. 
+     * @return LimitCount Maximum number of times you can perform an operation. If it returns `-1`, it means there is no limit on the times of the operation. If it returns `0`, it means that configuration modification is not supported.
      */
-    public Integer getLimitCount() {
+    public Long getLimitCount() {
         return this.LimitCount;
     }
 
     /**
-     * Setting the maximum amount of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
-     * @param LimitCount The maximum amount of operations,-1 in return means no number limited of this operation,0 in return means Configuration adjust not supported.
+     * Set Maximum number of times you can perform an operation. If it returns `-1`, it means there is no limit on the times of the operation. If it returns `0`, it means that configuration modification is not supported.
+     * @param LimitCount Maximum number of times you can perform an operation. If it returns `-1`, it means there is no limit on the times of the operation. If it returns `0`, it means that configuration modification is not supported.
      */
-    public void setLimitCount(Integer LimitCount) {
+    public void setLimitCount(Long LimitCount) {
         this.LimitCount = LimitCount;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Operation", this.Operation);

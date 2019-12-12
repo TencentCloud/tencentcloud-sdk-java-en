@@ -30,7 +30,7 @@ public class Image  extends AbstractModel{
     private String ImageId;
 
     /**
-    * Image's operating system
+    * Operating system of the image
     */
     @SerializedName("OsName")
     @Expose
@@ -44,7 +44,7 @@ public class Image  extends AbstractModel{
     private String ImageType;
 
     /**
-    * Creation time of image
+    * Creation time of the image
     */
     @SerializedName("CreatedTime")
     @Expose
@@ -69,7 +69,7 @@ public class Image  extends AbstractModel{
     */
     @SerializedName("ImageSize")
     @Expose
-    private Integer ImageSize;
+    private Long ImageSize;
 
     /**
     * Image architecture
@@ -79,14 +79,14 @@ public class Image  extends AbstractModel{
     private String Architecture;
 
     /**
-    * Image status
+    * Image state
     */
     @SerializedName("ImageState")
     @Expose
     private String ImageState;
 
     /**
-    * Image source platform
+    * Source platform of the image
     */
     @SerializedName("Platform")
     @Expose
@@ -107,28 +107,31 @@ public class Image  extends AbstractModel{
     private String ImageSource;
 
     /**
-    * Image sync percentageNote: This field may return null, indicating that no valid value was found.
+    * Synchronization percentage
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("SyncPercent")
     @Expose
-    private Integer SyncPercent;
+    private Long SyncPercent;
 
     /**
-    * Whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
+    * Whether the image supports cloud-init
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("IsSupportCloudinit")
     @Expose
     private Boolean IsSupportCloudinit;
 
     /**
-    * Details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
+    * Information on the snapshots associated with the image
+Note: This field may return null, indicating that no valid value is found.
     */
     @SerializedName("SnapshotSet")
     @Expose
     private Snapshot [] SnapshotSet;
 
     /**
-     * Get image ID
+     * Get Image ID 
      * @return ImageId Image ID
      */
     public String getImageId() {
@@ -136,7 +139,7 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Set image ID
+     * Set Image ID
      * @param ImageId Image ID
      */
     public void setImageId(String ImageId) {
@@ -144,23 +147,23 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Get image’s operating system
-     * @return OsName Image's operating system
+     * Get Operating system of the image 
+     * @return OsName Operating system of the image
      */
     public String getOsName() {
         return this.OsName;
     }
 
     /**
-     * Set image’s operating system
-     * @param OsName Image's operating system
+     * Set Operating system of the image
+     * @param OsName Operating system of the image
      */
     public void setOsName(String OsName) {
         this.OsName = OsName;
     }
 
     /**
-     * Get image type
+     * Get Image type 
      * @return ImageType Image type
      */
     public String getImageType() {
@@ -168,7 +171,7 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Set image type
+     * Set Image type
      * @param ImageType Image type
      */
     public void setImageType(String ImageType) {
@@ -176,39 +179,39 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Get creation time of image
-     * @return CreatedTime Creation time of image
+     * Get Creation time of the image 
+     * @return CreatedTime Creation time of the image
      */
     public String getCreatedTime() {
         return this.CreatedTime;
     }
 
     /**
-     * Set creation time of image
-     * @param CreatedTime Creation time of image
+     * Set Creation time of the image
+     * @param CreatedTime Creation time of the image
      */
     public void setCreatedTime(String CreatedTime) {
         this.CreatedTime = CreatedTime;
     }
 
     /**
-     * Get image name
-     * @return ImageName Image Name
+     * Get Image name 
+     * @return ImageName Image name
      */
     public String getImageName() {
         return this.ImageName;
     }
 
     /**
-     * Set image name
-     * @param ImageName Image Name
+     * Set Image name
+     * @param ImageName Image name
      */
     public void setImageName(String ImageName) {
         this.ImageName = ImageName;
     }
 
     /**
-     * Get image description
+     * Get Image description 
      * @return ImageDescription Image description
      */
     public String getImageDescription() {
@@ -216,7 +219,7 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Set image description
+     * Set Image description
      * @param ImageDescription Image description
      */
     public void setImageDescription(String ImageDescription) {
@@ -224,23 +227,23 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Get image Size
+     * Get Image size 
      * @return ImageSize Image size
      */
-    public Integer getImageSize() {
+    public Long getImageSize() {
         return this.ImageSize;
     }
 
     /**
-     * Set image size
+     * Set Image size
      * @param ImageSize Image size
      */
-    public void setImageSize(Integer ImageSize) {
+    public void setImageSize(Long ImageSize) {
         this.ImageSize = ImageSize;
     }
 
     /**
-     * Get image architecture
+     * Get Image architecture 
      * @return Architecture Image architecture
      */
     public String getArchitecture() {
@@ -248,7 +251,7 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Set image architecture
+     * Set Image architecture
      * @param Architecture Image architecture
      */
     public void setArchitecture(String Architecture) {
@@ -256,39 +259,39 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Get image status
-     * @return ImageState Image status
+     * Get Image state 
+     * @return ImageState Image state
      */
     public String getImageState() {
         return this.ImageState;
     }
 
     /**
-     * Set image status
-     * @param ImageState Image status
+     * Set Image state
+     * @param ImageState Image state
      */
     public void setImageState(String ImageState) {
         this.ImageState = ImageState;
     }
 
     /**
-     * Get image source platform
-     * @return Platform Image source platform
+     * Get Source platform of the image 
+     * @return Platform Source platform of the image
      */
     public String getPlatform() {
         return this.Platform;
     }
 
     /**
-     * Set image source platform
-     * @param Platform Image source Platform
+     * Set Source platform of the image
+     * @param Platform Source platform of the image
      */
     public void setPlatform(String Platform) {
         this.Platform = Platform;
     }
 
     /**
-     * Get image creator
+     * Get Image creator 
      * @return ImageCreator Image creator
      */
     public String getImageCreator() {
@@ -296,7 +299,7 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Set image creator
+     * Set Image creator
      * @param ImageCreator Image creator
      */
     public void setImageCreator(String ImageCreator) {
@@ -304,7 +307,7 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Get image source
+     * Get Image source 
      * @return ImageSource Image source
      */
     public String getImageSource() {
@@ -312,7 +315,7 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Set image source
+     * Set Image source
      * @param ImageSource Image source
      */
     public void setImageSource(String ImageSource) {
@@ -320,55 +323,67 @@ public class Image  extends AbstractModel{
     }
 
     /**
-     * Get image sync percentageNote: This field may return null, indicating that no valid value was found.
-     * @return SyncPercent Image sync percentageNote: This field may return null, indicating that no valid value was found.
+     * Get Synchronization percentage
+Note: This field may return null, indicating that no valid value is found. 
+     * @return SyncPercent Synchronization percentage
+Note: This field may return null, indicating that no valid value is found.
      */
-    public Integer getSyncPercent() {
+    public Long getSyncPercent() {
         return this.SyncPercent;
     }
 
     /**
-     * Set image sync percentageNote: This field may return null, indicating that no valid value was found.
-     * @param SyncPercent Image sync percentageNote: This field may return null, indicating that no valid value was found.
+     * Set Synchronization percentage
+Note: This field may return null, indicating that no valid value is found.
+     * @param SyncPercent Synchronization percentage
+Note: This field may return null, indicating that no valid value is found.
      */
-    public void setSyncPercent(Integer SyncPercent) {
+    public void setSyncPercent(Long SyncPercent) {
         this.SyncPercent = SyncPercent;
     }
 
     /**
-     * Get whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
-     * @return IsSupportCloudinit Whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
+     * Get Whether the image supports cloud-init
+Note: This field may return null, indicating that no valid value is found. 
+     * @return IsSupportCloudinit Whether the image supports cloud-init
+Note: This field may return null, indicating that no valid value is found.
      */
     public Boolean getIsSupportCloudinit() {
         return this.IsSupportCloudinit;
     }
 
     /**
-     * Set whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
-     * @param IsSupportCloudinit Whether image support cloud-initNote: This field may return null, indicating that no valid value was found.
+     * Set Whether the image supports cloud-init
+Note: This field may return null, indicating that no valid value is found.
+     * @param IsSupportCloudinit Whether the image supports cloud-init
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setIsSupportCloudinit(Boolean IsSupportCloudinit) {
         this.IsSupportCloudinit = IsSupportCloudinit;
     }
 
     /**
-     * Get details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
-     * @return SnapshotSet Details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
+     * Get Information on the snapshots associated with the image
+Note: This field may return null, indicating that no valid value is found. 
+     * @return SnapshotSet Information on the snapshots associated with the image
+Note: This field may return null, indicating that no valid value is found.
      */
     public Snapshot [] getSnapshotSet() {
         return this.SnapshotSet;
     }
 
     /**
-     * Set details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
-     * @param SnapshotSet Details of snapshot(s) associated with imageNote: This field may return null, indicating that no valid value was found.
+     * Set Information on the snapshots associated with the image
+Note: This field may return null, indicating that no valid value is found.
+     * @param SnapshotSet Information on the snapshots associated with the image
+Note: This field may return null, indicating that no valid value is found.
      */
     public void setSnapshotSet(Snapshot [] SnapshotSet) {
         this.SnapshotSet = SnapshotSet;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ImageId", this.ImageId);

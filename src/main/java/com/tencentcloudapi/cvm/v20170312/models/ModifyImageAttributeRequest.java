@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class ModifyImageAttributeRequest  extends AbstractModel{
 
     /**
-    * Image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
+    * Image ID such as `img-gvbnzy6f`. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image).
     */
     @SerializedName("ImageId")
     @Expose
     private String ImageId;
 
     /**
-    * Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 64 characters.<br> <li> It must be unique.
+    * New image name, which must meet the following requirements: <br> <li>No more than 20 characters. <br> <li>Must be unique.
     */
     @SerializedName("ImageName")
     @Expose
     private String ImageName;
 
     /**
-    * Set a new image description, which must meet the following requirements:<br> <li> It cannot exceed 60 characters.
+    * New image description, which must meet the following requirement: <br> <li> No more than 60 characters.
     */
     @SerializedName("ImageDescription")
     @Expose
     private String ImageDescription;
 
     /**
-     * Obtain image ID list like `img-gvbnzy6f`. Image ID can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
-     * @return ImageIds Image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
+     * Get Image ID such as `img-gvbnzy6f`. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image). 
+     * @return ImageId Image ID such as `img-gvbnzy6f`. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image).
      */
     public String getImageId() {
         return this.ImageId;
     }
 
     /**
-     * Set up image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
-     * @param ImageId Image ID like `img-gvbnzy6f` that can be obtained by either of the following ways:<br><li>Obtain field `ImageId` in the returned result by calling API [DescribeImages](https://intl.cloud.tencent.com/document/api/213/15715).<br><li>Obtain by logging in to the [Image Console](https://console.cloud.tencent.com/cvm/image).
+     * Set Image ID such as `img-gvbnzy6f`. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image).
+     * @param ImageId Image ID such as `img-gvbnzy6f`. You can obtain the image IDs in two ways: <br><li>Call [DescribeImages](https://cloud.tencent.com/document/api/213/15715) and look for `ImageId` in the response. <br><li>Look for the information in the [Image Console](https://console.cloud.tencent.com/cvm/image).
      */
     public void setImageId(String ImageId) {
         this.ImageId = ImageId;
     }
 
     /**
-     * Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 20 characters.<br> <li> Image name cannot be the same as present image names.
-     * @return ImageName Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 20 characters.<br> <li> Image name cannot be the same as present image names.
+     * Get New image name, which must meet the following requirements: <br> <li>No more than 20 characters. <br> <li>Must be unique. 
+     * @return ImageName New image name, which must meet the following requirements: <br> <li>No more than 20 characters. <br> <li>Must be unique.
      */
     public String getImageName() {
         return this.ImageName;
     }
 
     /**
-     * Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 20 characters.<br> <li> Image name cannot be the same as present image names.
-     * @param ImageName Set a new image name, which must meet the following requirements:<br> <li> It cannot exceed 20 characters.<br> <li> Image name cannot be the same as present image names.
+     * Set New image name, which must meet the following requirements: <br> <li>No more than 20 characters. <br> <li>Must be unique.
+     * @param ImageName New image name, which must meet the following requirements: <br> <li>No more than 20 characters. <br> <li>Must be unique.
      */
     public void setImageName(String ImageName) {
         this.ImageName = ImageName;
     }
 
     /**
-     * Set a new image description, which must meet the following requirements:<br> <li> It cannot exceed 60 characters.
-     * @return ImageDescription Set a new image description, which must meet the following requirements:<br> <li>  It cannot exceed 60 characters.
+     * Get New image description, which must meet the following requirement: <br> <li> No more than 60 characters. 
+     * @return ImageDescription New image description, which must meet the following requirement: <br> <li> No more than 60 characters.
      */
     public String getImageDescription() {
         return this.ImageDescription;
     }
 
     /**
-     * Set a new image description, which must meet the following requirements:<br> <li>  It cannot exceed 60 characters.
-     * @param ImageDescription Set a new image name, which must meet the following requirements:<br> <li>  It cannot exceed 60 characters.
+     * Set New image description, which must meet the following requirement: <br> <li> No more than 60 characters.
+     * @param ImageDescription New image description, which must meet the following requirement: <br> <li> No more than 60 characters.
      */
     public void setImageDescription(String ImageDescription) {
         this.ImageDescription = ImageDescription;
     }
 
     /**
-     * Internally realized, users have no permission for it 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "ImageId", this.ImageId);

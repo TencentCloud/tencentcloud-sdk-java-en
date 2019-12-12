@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InternetChargeTypeConfig  extends AbstractModel{
 
     /**
-    * Network Billing Method
+    * Network billing method.
     */
     @SerializedName("InternetChargeType")
     @Expose
     private String InternetChargeType;
 
     /**
-    * Description of network billing method
+    * Description of the network billing method.
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-     * Get network Billing Method
-     * @return InternetChargeType Network billing type.
+     * Get Network billing method. 
+     * @return InternetChargeType Network billing method.
      */
     public String getInternetChargeType() {
         return this.InternetChargeType;
     }
 
     /**
-     * Set description of Network Billing Method.
-     * @param InternetChargeType Network billing type.
+     * Set Network billing method.
+     * @param InternetChargeType Network billing method.
      */
     public void setInternetChargeType(String InternetChargeType) {
         this.InternetChargeType = InternetChargeType;
     }
 
     /**
-     * Get description of network billing method.
-     * @return Description description of network billing method.
+     * Get Description of the network billing method. 
+     * @return Description Description of the network billing method.
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * Set description of network billing method.
-     * @param Description description of network billing method.
+     * Set Description of the network billing method.
+     * @param Description Description of the network billing method.
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * Internal implementation, reserved from use 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "InternetChargeType", this.InternetChargeType);

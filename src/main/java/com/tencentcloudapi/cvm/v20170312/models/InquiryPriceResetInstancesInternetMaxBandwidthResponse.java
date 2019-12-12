@@ -23,53 +23,53 @@ import java.util.HashMap;
 public class InquiryPriceResetInstancesInternetMaxBandwidthResponse  extends AbstractModel{
 
     /**
-    * Indicates the price of the adjusted bandwidth.
+    * Price of the new bandwidth
     */
     @SerializedName("Price")
     @Expose
     private Price Price;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get indicates the price of the adjusted bandwidth.
-     * @return Price Indicates the price of the adjusted bandwidth.
+     * Get Price of the new bandwidth 
+     * @return Price Price of the new bandwidth
      */
     public Price getPrice() {
         return this.Price;
     }
 
     /**
-     * Set indicates the price of the adjusted bandwidth.
-     * @param Price Indicates the price of the adjusted bandwidth.
+     * Set Price of the new bandwidth
+     * @param Price Price of the new bandwidth
      */
     public void setPrice(Price Price) {
         this.Price = Price;
     }
 
     /**
-     * Get unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamObj(map, prefix + "Price.", this.Price);

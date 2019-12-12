@@ -23,105 +23,129 @@ import java.util.HashMap;
 public class VirtualPrivateCloud  extends AbstractModel{
 
     /**
-    * Private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+    * 
     */
     @SerializedName("VpcId")
     @Expose
     private String VpcId;
 
     /**
-    * Private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+    * VPC subnet ID in the format `subnet-xxx`. To obtain valid subnet IDs, you can log in to the [console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or call [DescribeSubnets](/document/api/215/15784) and look for the `unSubnetId` fields in the response. If you specify `DEFAULT` for both `SubnetId` and `VpcId` when creating an instance, the default VPC will be used.
     */
     @SerializedName("SubnetId")
     @Expose
     private String SubnetId;
 
     /**
-    * The public gateway can be used only when the instance has a public IP and resides in a VPC. Value range:<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
+    * Whether to use an instance as a public gateway. An instance can be used as a public gateway only when it has a public IP and resides in a VPC. Valid values: <br><li>TRUE: use the instance as a public gateway <br><li>FALSE: do not use the instance as a public gateway <br><br>Default value: FALSE.
     */
     @SerializedName("AsVpcGateway")
     @Expose
     private Boolean AsVpcGateway;
 
     /**
-    * Array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
+    * Array of VPC subnet IPs. You can use this parameter when creating instances or modifying VPC attributes of instances. Currently you can specify multiple IPs in one subnet only when creating multiple instances at the same time.
     */
     @SerializedName("PrivateIpAddresses")
     @Expose
     private String [] PrivateIpAddresses;
 
     /**
-     * Obtain private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
-     * @return VpcId Private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+    * 
+    */
+    @SerializedName("Ipv6AddressCount")
+    @Expose
+    private Long Ipv6AddressCount;
+
+    /**
+     * Get  
+     * @return VpcId 
      */
     public String getVpcId() {
         return this.VpcId;
     }
 
     /**
-     * Set private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
-     * @param VpcId Private network ID, such as `vpc-xxx`. A valid VpcId can be queried by logging in to the [Console] (https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned via the API [DescribeVpcEx](/document/api/215/1372). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+     * Set 
+     * @param VpcId 
      */
     public void setVpcId(String VpcId) {
         this.VpcId = VpcId;
     }
 
     /**
-     * Obtain private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
-     * @return SubnetId Private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+     * Get VPC subnet ID in the format `subnet-xxx`. To obtain valid subnet IDs, you can log in to the [console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or call [DescribeSubnets](/document/api/215/15784) and look for the `unSubnetId` fields in the response. If you specify `DEFAULT` for both `SubnetId` and `VpcId` when creating an instance, the default VPC will be used. 
+     * @return SubnetId VPC subnet ID in the format `subnet-xxx`. To obtain valid subnet IDs, you can log in to the [console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or call [DescribeSubnets](/document/api/215/15784) and look for the `unSubnetId` fields in the response. If you specify `DEFAULT` for both `SubnetId` and `VpcId` when creating an instance, the default VPC will be used.
      */
     public String getSubnetId() {
         return this.SubnetId;
     }
 
     /**
-     * Set private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
-     * @param SubnetId Private network ID, such as `subnet-xxx`. A valid SubnetId can be queried by logging in to the [Console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned via the API [DescribeSubnets](/document/api/215/15784). If VpcId and SubnetId are both passed to `DEFAULT` while creating a CVM, then VPC network is used by default.
+     * Set VPC subnet ID in the format `subnet-xxx`. To obtain valid subnet IDs, you can log in to the [console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or call [DescribeSubnets](/document/api/215/15784) and look for the `unSubnetId` fields in the response. If you specify `DEFAULT` for both `SubnetId` and `VpcId` when creating an instance, the default VPC will be used.
+     * @param SubnetId VPC subnet ID in the format `subnet-xxx`. To obtain valid subnet IDs, you can log in to the [console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or call [DescribeSubnets](/document/api/215/15784) and look for the `unSubnetId` fields in the response. If you specify `DEFAULT` for both `SubnetId` and `VpcId` when creating an instance, the default VPC will be used.
      */
     public void setSubnetId(String SubnetId) {
         this.SubnetId = SubnetId;
     }
 
     /**
-     * Obtain whether used as a public gateway. The public gateway can be used only when the instance has a public IP and is in VPC. Value range:<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
-     * @return AsVpcGateway Whether used as a public gateway. The public gateway can be used only when the instance has a public IP and resides in a VPC. Value range:<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
+     * Get Whether to use an instance as a public gateway. An instance can be used as a public gateway only when it has a public IP and resides in a VPC. Valid values: <br><li>TRUE: use the instance as a public gateway <br><li>FALSE: do not use the instance as a public gateway <br><br>Default value: FALSE. 
+     * @return AsVpcGateway Whether to use an instance as a public gateway. An instance can be used as a public gateway only when it has a public IP and resides in a VPC. Valid values: <br><li>TRUE: use the instance as a public gateway <br><li>FALSE: do not use the instance as a public gateway <br><br>Default value: FALSE.
      */
     public Boolean getAsVpcGateway() {
         return this.AsVpcGateway;
     }
 
     /**
-     * Set whether used as a public gateway. The public gateway can be used only when the instance has a public IP and resides in a VPC. Value range<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
-     * @param AsVpcGateway Whether used as a public gateway. The public gateway can be used only when the instance has a public IP and resides in a VPC. Value range<br><li>TRUE: Used as a public gateway.<br><li>FALSE: Do not used as a public gateway.<br><br>Default: FALSE.
+     * Set Whether to use an instance as a public gateway. An instance can be used as a public gateway only when it has a public IP and resides in a VPC. Valid values: <br><li>TRUE: use the instance as a public gateway <br><li>FALSE: do not use the instance as a public gateway <br><br>Default value: FALSE.
+     * @param AsVpcGateway Whether to use an instance as a public gateway. An instance can be used as a public gateway only when it has a public IP and resides in a VPC. Valid values: <br><li>TRUE: use the instance as a public gateway <br><li>FALSE: do not use the instance as a public gateway <br><br>Default value: FALSE.
      */
     public void setAsVpcGateway(Boolean AsVpcGateway) {
         this.AsVpcGateway = AsVpcGateway;
     }
 
     /**
-     * Obtain array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
-     * @return PrivateIpAddresses Array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
+     * Get Array of VPC subnet IPs. You can use this parameter when creating instances or modifying VPC attributes of instances. Currently you can specify multiple IPs in one subnet only when creating multiple instances at the same time. 
+     * @return PrivateIpAddresses Array of VPC subnet IPs. You can use this parameter when creating instances or modifying VPC attributes of instances. Currently you can specify multiple IPs in one subnet only when creating multiple instances at the same time.
      */
     public String [] getPrivateIpAddresses() {
         return this.PrivateIpAddresses;
     }
 
     /**
-     * Set array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
-     * @param PrivateIpAddresses Array of VPC subnet IPs. This parameter can be used to create instances and modify VPC attributes for instances.
+     * Set Array of VPC subnet IPs. You can use this parameter when creating instances or modifying VPC attributes of instances. Currently you can specify multiple IPs in one subnet only when creating multiple instances at the same time.
+     * @param PrivateIpAddresses Array of VPC subnet IPs. You can use this parameter when creating instances or modifying VPC attributes of instances. Currently you can specify multiple IPs in one subnet only when creating multiple instances at the same time.
      */
     public void setPrivateIpAddresses(String [] PrivateIpAddresses) {
         this.PrivateIpAddresses = PrivateIpAddresses;
     }
 
     /**
-     * For internal use only.
+     * Get  
+     * @return Ipv6AddressCount 
+     */
+    public Long getIpv6AddressCount() {
+        return this.Ipv6AddressCount;
+    }
+
+    /**
+     * Set 
+     * @param Ipv6AddressCount 
+     */
+    public void setIpv6AddressCount(Long Ipv6AddressCount) {
+        this.Ipv6AddressCount = Ipv6AddressCount;
+    }
+
+    /**
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "VpcId", this.VpcId);
         this.setParamSimple(map, prefix + "SubnetId", this.SubnetId);
         this.setParamSimple(map, prefix + "AsVpcGateway", this.AsVpcGateway);
         this.setParamArraySimple(map, prefix + "PrivateIpAddresses.", this.PrivateIpAddresses);
+        this.setParamSimple(map, prefix + "Ipv6AddressCount", this.Ipv6AddressCount);
 
     }
 }

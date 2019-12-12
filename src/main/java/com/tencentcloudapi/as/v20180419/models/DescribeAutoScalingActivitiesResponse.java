@@ -23,76 +23,76 @@ import java.util.HashMap;
 public class DescribeAutoScalingActivitiesResponse  extends AbstractModel{
 
     /**
-    * Number of scaling activities that meet the condition.
+    * Number of eligible scaling activities.
     */
     @SerializedName("TotalCount")
     @Expose
-    private Integer TotalCount;
+    private Long TotalCount;
 
     /**
-    * Information of scaling activities configurations matching the condition.
+    * Information set of eligible scaling activities.
     */
     @SerializedName("ActivitySet")
     @Expose
     private Activity [] ActivitySet;
 
     /**
-    * The unique ID of a request, which is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain number of scaling activities that meet the condition.
-     * @return TotalCount Number of scaling activities that meet the condition.
+     * Get Number of eligible scaling activities. 
+     * @return TotalCount Number of eligible scaling activities.
      */
-    public Integer getTotalCount() {
+    public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Set number of scaling activities that meet the condition.
-     * @param TotalCount Number of scaling activities that meet the condition.
+     * Set Number of eligible scaling activities.
+     * @param TotalCount Number of eligible scaling activities.
      */
-    public void setTotalCount(Integer TotalCount) {
+    public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain information of scaling activities configurations matching the condition.
-     * @return ActivitySet Information of scaling activities configurations matching the condition.
+     * Get Information set of eligible scaling activities. 
+     * @return ActivitySet Information set of eligible scaling activities.
      */
     public Activity [] getActivitySet() {
         return this.ActivitySet;
     }
 
     /**
-     * Set information of scaling activities configurations matching the condition.
-     * @param ActivitySet Information of scaling activities configurations matching the condition.
+     * Set Information set of eligible scaling activities.
+     * @param ActivitySet Information set of eligible scaling activities.
      */
     public void setActivitySet(Activity [] ActivitySet) {
         this.ActivitySet = ActivitySet;
     }
 
     /**
-     * Obtain the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
-     * @return RequestId the unique ID of a request which will be gotten from each request and it is required for each troubleshooting case.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * set the unique ID of a request, which is required for each troubleshooting case.
-     * @param RequestId the unique ID of a request which will be gotten from each request, and it is required for each troubleshooting case.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);
