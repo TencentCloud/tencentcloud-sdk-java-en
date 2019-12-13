@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateSecurityPolicyResponse  extends AbstractModel{
+public class CreateSecurityPolicyResponse extends AbstractModel{
 
     /**
     * Security policy ID

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateSnapshotRequest  extends AbstractModel{
+public class CreateSnapshotRequest extends AbstractModel{
 
     /**
     * ID of the cloud disk, for which a snapshot needs to be created. It can be queried via the API [DescribeDisks](/document/product/362/16315).

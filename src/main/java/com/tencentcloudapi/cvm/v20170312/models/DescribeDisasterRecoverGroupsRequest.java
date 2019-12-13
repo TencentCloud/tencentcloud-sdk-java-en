@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeDisasterRecoverGroupsRequest  extends AbstractModel{
+public class DescribeDisasterRecoverGroupsRequest extends AbstractModel{
 
     /**
     * List of spread placement group IDs.

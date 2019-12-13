@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeZoneInstanceConfigInfosResponse  extends AbstractModel{
+public class DescribeZoneInstanceConfigInfosResponse extends AbstractModel{
 
     /**
     * List of model configurations for the availability zone.

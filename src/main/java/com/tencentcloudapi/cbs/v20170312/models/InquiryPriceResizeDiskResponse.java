@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class InquiryPriceResizeDiskResponse  extends AbstractModel{
+public class InquiryPriceResizeDiskResponse extends AbstractModel{
 
     /**
     * Describes the price of expanding the cloud disk.

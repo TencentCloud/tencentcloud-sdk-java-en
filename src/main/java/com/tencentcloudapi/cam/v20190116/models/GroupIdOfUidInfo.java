@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class GroupIdOfUidInfo  extends AbstractModel{
+public class GroupIdOfUidInfo extends AbstractModel{
 
     /**
     * Sub-user UID
@@ -30,46 +30,46 @@ public class GroupIdOfUidInfo  extends AbstractModel{
     private Long Uid;
 
     /**
-    * User group ID
+    * User Group ID
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-     * Obtain sub-user UID
-     * @return Uid Sub-user User ID
+     * Get Sub-user UID 
+     * @return Uid Sub-user UID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * Configure Sub-user UID
-     * @param Uid sub-user UID
+     * Set Sub-user UID
+     * @param Uid Sub-user UID
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * Obtain user group ID
-     * @return GroupId user group ID
+     * Get User Group ID 
+     * @return GroupId User Group ID
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * Set user group ID
-     * @param GroupId user group ID
+     * Set User Group ID
+     * @param GroupId User Group ID
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uid", this.Uid);

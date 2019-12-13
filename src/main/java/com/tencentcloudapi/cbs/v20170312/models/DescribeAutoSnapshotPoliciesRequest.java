@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeAutoSnapshotPoliciesRequest  extends AbstractModel{
+public class DescribeAutoSnapshotPoliciesRequest extends AbstractModel{
 
     /**
     * List of scheduled snapshot policy IDs to be queried. The parameter does not support specifying both `SnapshotIds` and `Filters`.

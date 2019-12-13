@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class RedirectLocalInfo  extends AbstractModel{
+public class RedirectLocalInfo extends AbstractModel{
 
     /**
     * Standard output redirection local path

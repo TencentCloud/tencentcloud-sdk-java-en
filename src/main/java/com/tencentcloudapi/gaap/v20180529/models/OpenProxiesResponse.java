@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class OpenProxiesResponse  extends AbstractModel{
+public class OpenProxiesResponse extends AbstractModel{
 
     /**
     * The connection instance ID list cannot be enabled if it’s not disabled.

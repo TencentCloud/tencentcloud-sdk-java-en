@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeComputeEnvActivitiesResponse  extends AbstractModel{
+public class DescribeComputeEnvActivitiesResponse extends AbstractModel{
 
     /**
     * List of activities in the compute environment

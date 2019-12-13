@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeProjectSecurityGroupRequest  extends AbstractModel{
+public class DescribeProjectSecurityGroupRequest extends AbstractModel{
 
     /**
     * 0: default project; -1: all projects; >0: specified project

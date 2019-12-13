@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeProxyGroupListRequest  extends AbstractModel{
+public class DescribeProxyGroupListRequest extends AbstractModel{
 
     /**
     * Offset. The default value is 0.

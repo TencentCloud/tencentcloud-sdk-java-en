@@ -20,148 +20,148 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class GetSAMLProviderResponse  extends AbstractModel{
+public class GetSAMLProviderResponse extends AbstractModel{
 
     /**
-    * SAML IdP Name
+    * SAML identity provider name
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * SAML IdP Description
+    * SAML identity provider description
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * SAML IdP Creation Time
+    * Time SAML identity provider created
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * SAML IdP Latest Modified Time
+    * Time SAML identity provider last modified
     */
     @SerializedName("ModifyTime")
     @Expose
     private String ModifyTime;
 
     /**
-    * SAML IdP Metadata Document
+    * SAML identity provider metadata document
     */
     @SerializedName("SAMLMetadata")
     @Expose
     private String SAMLMetadata;
 
     /**
-    * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Getting SAML IdP Name
-     * @return Name SAML IdP Name
+     * Get SAML identity provider name 
+     * @return Name SAML identity provider name
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Configuring SAML IdP Name
-     * @param Name SAML IdP Name
+     * Set SAML identity provider name
+     * @param Name SAML identity provider name
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * SAML IdP Description
-     * @return Description SAML IdP Description
+     * Get SAML identity provider description 
+     * @return Description SAML identity provider description
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * SAML IdP Description
-     * @param Description SAML IdP description
+     * Set SAML identity provider description
+     * @param Description SAML identity provider description
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * Getting SAML IdP Creation Time
-     * @return CreateTime  SAML IdP creation time
+     * Get Time SAML identity provider created 
+     * @return CreateTime Time SAML identity provider created
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * Setting SAML IdP Creation Time
-     * @param CreateTime  SAML IdP creation time
+     * Set Time SAML identity provider created
+     * @param CreateTime Time SAML identity provider created
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * Getting SAML IdP Latest Modified Time
-     * @return ModifyTime SAML IdP last modified time.
+     * Get Time SAML identity provider last modified 
+     * @return ModifyTime Time SAML identity provider last modified
      */
     public String getModifyTime() {
         return this.ModifyTime;
     }
 
     /**
-     * Configuring SAML IdP Latest Modified Time
-     * @param ModifyTime SAML IdP lastest modified time
+     * Set Time SAML identity provider last modified
+     * @param ModifyTime Time SAML identity provider last modified
      */
     public void setModifyTime(String ModifyTime) {
         this.ModifyTime = ModifyTime;
     }
 
     /**
-     * Getting SAML IdP Metadata File
-     * @return SAMLMetadata SAML IdP metadata file
+     * Get SAML identity provider metadata document 
+     * @return SAMLMetadata SAML identity provider metadata document
      */
     public String getSAMLMetadata() {
         return this.SAMLMetadata;
     }
 
     /**
-     * Configuring SAML IdP Metadata File
-     * @param SAMLMetadata SAML IdP metadata file
+     * Set SAML identity provider metadata document
+     * @param SAMLMetadata SAML identity provider metadata document
      */
     public void setSAMLMetadata(String SAMLMetadata) {
         this.SAMLMetadata = SAMLMetadata;
     }
 
     /**
-     * Getting RequestId, the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configuring RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. 
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

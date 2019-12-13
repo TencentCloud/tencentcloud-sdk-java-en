@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class SubAccountInfo  extends AbstractModel{
+public class SubAccountInfo extends AbstractModel{
 
     /**
     * Sub-user user ID
@@ -44,14 +44,14 @@ public class SubAccountInfo  extends AbstractModel{
     private Long Uid;
 
     /**
-    * Sub-user note
+    * Sub-user remarks
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-    * Whether sub-user can login to Console
+    * If sub-user can log in to the console
     */
     @SerializedName("ConsoleLogin")
     @Expose
@@ -65,7 +65,7 @@ public class SubAccountInfo  extends AbstractModel{
     private String PhoneNum;
 
     /**
-    * Area code
+    * Country/Area code
     */
     @SerializedName("CountryCode")
     @Expose
@@ -79,135 +79,135 @@ public class SubAccountInfo  extends AbstractModel{
     private String Email;
 
     /**
-     * Obtain sub-user user ID
-     * @return Uin sub-user user ID
+     * Get Sub-user user ID 
+     * @return Uin Sub-user user ID
      */
     public Long getUin() {
         return this.Uin;
     }
 
     /**
-     * Set up sub-user user ID
-     * @param Uin sub-user user ID
+     * Set Sub-user user ID
+     * @param Uin Sub-user user ID
      */
     public void setUin(Long Uin) {
         this.Uin = Uin;
     }
 
     /**
-     * Obtain sub-user username
-     * @return Name sub-user username
+     * Get Sub-user username 
+     * @return Name Sub-user username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Set sub-user username
-     * @param Name sub-user username
+     * Set Sub-user username
+     * @param Name Sub-user username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Obtain sub-user UID
-     * @return Uin sub-user ID
+     * Get Sub-user UID 
+     * @return Uid Sub-user UID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * Set sub-user UID
-     * @param Uid sub-user UID
+     * Set Sub-user UID
+     * @param Uid Sub-user UID
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * Obtain sub-user note
-     * @return Remark sub-user note
+     * Get Sub-user remarks 
+     * @return Remark Sub-user remarks
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * Set up sub-user note
-     * @param Remark sub-user note
+     * Set Sub-user remarks
+     * @param Remark Sub-user remarks
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * Get whether sub-user can log in to the console 
-     * @return ConsoleLogin Whether the sub-user can log in to the Console
+     * Get If sub-user can log in to the console 
+     * @return ConsoleLogin If sub-user can log in to the console
      */
     public Long getConsoleLogin() {
         return this.ConsoleLogin;
     }
 
     /**
-     * Set whether sub-user can log in to Console
-     * @param ConsoleLogin whether sub-user can log in to Console
+     * Set If sub-user can log in to the console
+     * @param ConsoleLogin If sub-user can log in to the console
      */
     public void setConsoleLogin(Long ConsoleLogin) {
         this.ConsoleLogin = ConsoleLogin;
     }
 
     /**
-     * Obtain mobile number 
-     * @return PhoneNum mobile number
+     * Get Mobile number 
+     * @return PhoneNum Mobile number
      */
     public String getPhoneNum() {
         return this.PhoneNum;
     }
 
     /**
-     * Set mobile number
-     * @param PhoneNum set mobile phone number.
+     * Set Mobile number
+     * @param PhoneNum Mobile number
      */
     public void setPhoneNum(String PhoneNum) {
         this.PhoneNum = PhoneNum;
     }
 
     /**
-     * Obtain area code
-     * @return CountryCode area code
+     * Get Country/Area code 
+     * @return CountryCode Country/Area code
      */
     public String getCountryCode() {
         return this.CountryCode;
     }
 
     /**
-     * Set area code
-     * @param CountryCode area code
+     * Set Country/Area code
+     * @param CountryCode Country/Area code
      */
     public void setCountryCode(String CountryCode) {
         this.CountryCode = CountryCode;
     }
 
     /**
-     * Obtain email
-     * @return Email email
+     * Get Email 
+     * @return Email Email
      */
     public String getEmail() {
         return this.Email;
     }
 
     /**
-     * Configure Mailbox
-     * @param Email mailbox
+     * Set Email
+     * @param Email Email
      */
     public void setEmail(String Email) {
         this.Email = Email;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uin", this.Uin);

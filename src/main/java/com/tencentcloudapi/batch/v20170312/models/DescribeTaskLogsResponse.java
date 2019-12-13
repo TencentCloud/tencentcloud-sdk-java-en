@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeTaskLogsResponse  extends AbstractModel{
+public class DescribeTaskLogsResponse extends AbstractModel{
 
     /**
     * Total number of task instances

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeTagsRequest  extends AbstractModel{
+public class DescribeTagsRequest extends AbstractModel{
 
     /**
     * Tag key. Either exists or does not exist alongside the tag value. If it does not exist, all of the user’s tags will be queried.

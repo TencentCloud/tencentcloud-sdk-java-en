@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateLaunchConfigurationResponse  extends AbstractModel{
+public class CreateLaunchConfigurationResponse extends AbstractModel{
 
     /**
     * This parameter is returned when a launch configuration is created through this API, indicating the launch configuration ID.

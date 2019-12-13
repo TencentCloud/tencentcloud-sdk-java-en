@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class GetPolicyRequest  extends AbstractModel{
+public class GetPolicyRequest extends AbstractModel{
 
     /**
     * Policy ID
@@ -30,7 +30,7 @@ public class GetPolicyRequest  extends AbstractModel{
     private Long PolicyId;
 
     /**
-     * Getting Policy ID
+     * Get Policy ID 
      * @return PolicyId Policy ID
      */
     public Long getPolicyId() {
@@ -38,7 +38,7 @@ public class GetPolicyRequest  extends AbstractModel{
     }
 
     /**
-     * Configuring Policy ID
+     * Set Policy ID
      * @param PolicyId Policy ID
      */
     public void setPolicyId(Long PolicyId) {
@@ -46,7 +46,7 @@ public class GetPolicyRequest  extends AbstractModel{
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

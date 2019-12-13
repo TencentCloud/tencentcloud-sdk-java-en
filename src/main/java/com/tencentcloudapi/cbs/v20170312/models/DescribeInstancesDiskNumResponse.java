@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeInstancesDiskNumResponse  extends AbstractModel{
+public class DescribeInstancesDiskNumResponse extends AbstractModel{
 
     /**
     * The quantity of mounted and mountable elastic cloud disks for each cloud virtual machine

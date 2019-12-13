@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class Authentication  extends AbstractModel{
+public class Authentication extends AbstractModel{
 
     /**
     * Authentication scenario such as COS

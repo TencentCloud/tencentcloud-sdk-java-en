@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateLaunchConfigurationRequest  extends AbstractModel{
+public class CreateLaunchConfigurationRequest extends AbstractModel{
 
     /**
     * Display name of the launch configuration, which can contain Chinese characters, letters, numbers, underscores, separators ("-"), and decimal points with a maximum length of 60 bytes.

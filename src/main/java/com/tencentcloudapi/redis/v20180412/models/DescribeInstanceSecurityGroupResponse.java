@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeInstanceSecurityGroupResponse  extends AbstractModel{
+public class DescribeInstanceSecurityGroupResponse extends AbstractModel{
 
     /**
     * Security group information of an instance

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListGroupsForUserRequest  extends AbstractModel{
+public class ListGroupsForUserRequest extends AbstractModel{
 
     /**
     * Sub-user UID
@@ -30,29 +30,29 @@ public class ListGroupsForUserRequest  extends AbstractModel{
     private Long Uid;
 
     /**
-    * Number each page. Default is 20.
+    * Number of entries per page; default is 20
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-    * Page number. Default is 1.
+    * Page number; default is 1
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-     * Getting Sub-user User ID
-     * @return Uid Sub-user User ID
+     * Get Sub-user UID 
+     * @return Uid Sub-user UID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * Configuring Sub-user UID
+     * Set Sub-user UID
      * @param Uid Sub-user UID
      */
     public void setUid(Long Uid) {
@@ -60,39 +60,39 @@ public class ListGroupsForUserRequest  extends AbstractModel{
     }
 
     /**
-     * Obtain number per page. Default is 20.
-     * @return Rp number per page. Default is 20.
+     * Get Number of entries per page; default is 20 
+     * @return Rp Number of entries per page; default is 20
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * Set number per page. Default is 20.
-     * @param Rp number per page. Default is 20.
+     * Set Number of entries per page; default is 20
+     * @param Rp Number of entries per page; default is 20
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * Obtain page number. Default is 1.
-     * @return Page page number. Default is 1.
+     * Get Page number; default is 1 
+     * @return Page Page number; default is 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * Set page number. Default is 1.
-     * @param Page page number. Default is 1.
+     * Set Page number; default is 1
+     * @param Page Page number; default is 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uid", this.Uid);

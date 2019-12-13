@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ImportImageRequest  extends AbstractModel{
+public class ImportImageRequest extends AbstractModel{
 
     /**
     * OS architecture of the image to be imported, `x86_64` or `i386`.

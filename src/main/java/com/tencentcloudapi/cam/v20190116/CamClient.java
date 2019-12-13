@@ -29,27 +29,16 @@ public class CamClient extends AbstractClient{
     private static String endpoint = "cam.tencentcloudapi.com";
     private static String version = "2019-01-16";
 
-    /**
-     * Creating Client
-     * @param credential Security credentials
-     * @param region Availability regions
-     */
     public CamClient(Credential credential, String region) {
         this(credential, region, new ClientProfile());
     }
 
-    /**
-     * Creating Client
-     * @param credential Security credentials
-     * @param region Availability regions
-     * @param profile Configured instances
-     */
     public CamClient(Credential credential, String region, ClientProfile profile) {
         super(CamClient.endpoint, CamClient.version, credential, region, profile);
     }
 
     /**
-     *Adding Sub-accounts
+     *This API is used to add sub-users.
      * @param req AddUserRequest
      * @return AddUserResponse
      * @throws TencentCloudSDKException
@@ -67,9 +56,9 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Adding Users to User Group
+     *This API is used to add users to a user group.
      * @param req AddUserToGroupRequest
-     * @return AddUserResponse
+     * @return AddUserToGroupResponse
      * @throws TencentCloudSDKException
      */
     public AddUserToGroupResponse AddUserToGroup(AddUserToGroupRequest req) throws TencentCloudSDKException{
@@ -85,7 +74,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (AttachGroupPolicy) associates a policy to a user group.
+     *This API (AttachGroupPolicy) is used to associate a policy with a user group.
      * @param req AttachGroupPolicyRequest
      * @return AttachGroupPolicyResponse
      * @throws TencentCloudSDKException
@@ -103,7 +92,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (AttachUserPolicy) associates a policy to a user.
+     *This API (AttachRolePolicy) is used to associate a policy with a role.
+     * @param req AttachRolePolicyRequest
+     * @return AttachRolePolicyResponse
+     * @throws TencentCloudSDKException
+     */
+    public AttachRolePolicyResponse AttachRolePolicy(AttachRolePolicyRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<AttachRolePolicyResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<AttachRolePolicyResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "AttachRolePolicy"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API (AttachUserPolicy) is used to associates a policy with a user.
      * @param req AttachUserPolicyRequest
      * @return AttachUserPolicyResponse
      * @throws TencentCloudSDKException
@@ -121,7 +128,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Creating a User Group
+     *This API is used to verify a custom multi-factor Token.
+     * @param req ConsumeCustomMFATokenRequest
+     * @return ConsumeCustomMFATokenResponse
+     * @throws TencentCloudSDKException
+     */
+    public ConsumeCustomMFATokenResponse ConsumeCustomMFAToken(ConsumeCustomMFATokenRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<ConsumeCustomMFATokenResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<ConsumeCustomMFATokenResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "ConsumeCustomMFAToken"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API is used to create a user group.
      * @param req CreateGroupRequest
      * @return CreateGroupResponse
      * @throws TencentCloudSDKException
@@ -139,7 +164,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (CreatePolicy) creates a policy.
+     *This API (CreatePolicy) is used to create a policy.
      * @param req CreatePolicyRequest
      * @return CreatePolicyResponse
      * @throws TencentCloudSDKException
@@ -157,7 +182,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Creating SAML IdP
+     *This API (CreateRole) is used to create a role.
+     * @param req CreateRoleRequest
+     * @return CreateRoleResponse
+     * @throws TencentCloudSDKException
+     */
+    public CreateRoleResponse CreateRole(CreateRoleRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<CreateRoleResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<CreateRoleResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "CreateRole"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API is used to create a SAML identity provider.
      * @param req CreateSAMLProviderRequest
      * @return CreateSAMLProviderResponse
      * @throws TencentCloudSDKException
@@ -175,7 +218,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Deleting a User Group
+     *This API is used to delete a user group.
      * @param req DeleteGroupRequest
      * @return DeleteGroupResponse
      * @throws TencentCloudSDKException
@@ -193,7 +236,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (DeletePolicy) deletes a policy.
+     *This API (DeletePolicy) is used to delete a policy.
      * @param req DeletePolicyRequest
      * @return DeletePolicyResponse
      * @throws TencentCloudSDKException
@@ -211,7 +254,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Deleting SAML IdP
+     *This API (DeleteRole) is used to delete a specified role.
+     * @param req DeleteRoleRequest
+     * @return DeleteRoleResponse
+     * @throws TencentCloudSDKException
+     */
+    public DeleteRoleResponse DeleteRole(DeleteRoleRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<DeleteRoleResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<DeleteRoleResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "DeleteRole"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API is used to delete a SAML identity provider.
      * @param req DeleteSAMLProviderRequest
      * @return DeleteSAMLProviderResponse
      * @throws TencentCloudSDKException
@@ -229,8 +290,8 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Deleting a Sub-user
-     * @param req DeleteGroupRequest
+     *This API is used to delete a sub-user.
+     * @param req DeleteUserRequest
      * @return DeleteUserResponse
      * @throws TencentCloudSDKException
      */
@@ -247,7 +308,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (DetachGroupPolicy) detaches a policy from a user group.
+     *This API (DescribeRoleList) is used to get the role list under the account.
+     * @param req DescribeRoleListRequest
+     * @return DescribeRoleListResponse
+     * @throws TencentCloudSDKException
+     */
+    public DescribeRoleListResponse DescribeRoleList(DescribeRoleListRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<DescribeRoleListResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<DescribeRoleListResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "DescribeRoleList"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API (DetachGroupPolicy) is used to unassociate a policy and a user group.
      * @param req DetachGroupPolicyRequest
      * @return DetachGroupPolicyResponse
      * @throws TencentCloudSDKException
@@ -265,7 +344,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (DetachUserPolicy) detaches a policy from a user.
+     *This API (DetachRolePolicy) is used to unassociate a policy and a role.
+     * @param req DetachRolePolicyRequest
+     * @return DetachRolePolicyResponse
+     * @throws TencentCloudSDKException
+     */
+    public DetachRolePolicyResponse DetachRolePolicy(DetachRolePolicyRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<DetachRolePolicyResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<DetachRolePolicyResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "DetachRolePolicy"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API (DetachUserPolicy) is used to unassociate a policy and a user.
      * @param req DetachUserPolicyRequest
      * @return DetachUserPolicyResponse
      * @throws TencentCloudSDKException
@@ -283,7 +380,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Querying User Group Details
+     *This API is used to get information associated with a custom multi-factor Token
+     * @param req GetCustomMFATokenInfoRequest
+     * @return GetCustomMFATokenInfoResponse
+     * @throws TencentCloudSDKException
+     */
+    public GetCustomMFATokenInfoResponse GetCustomMFATokenInfo(GetCustomMFATokenInfoRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<GetCustomMFATokenInfoResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<GetCustomMFATokenInfoResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "GetCustomMFATokenInfo"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API is used to query user group details.
      * @param req GetGroupRequest
      * @return GetGroupResponse
      * @throws TencentCloudSDKException
@@ -301,7 +416,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (GetPolicy) queries policy details.
+     *This API (GetPolicy) is used to query and view policy details.
      * @param req GetPolicyRequest
      * @return GetPolicyResponse
      * @throws TencentCloudSDKException
@@ -319,7 +434,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Querying SAML IdP Details
+     *This API (GetRole) is used to get the details of a specified role.
+     * @param req GetRoleRequest
+     * @return GetRoleResponse
+     * @throws TencentCloudSDKException
+     */
+    public GetRoleResponse GetRole(GetRoleRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<GetRoleResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<GetRoleResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "GetRole"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API is used to query SAML identity provider details.
      * @param req GetSAMLProviderRequest
      * @return GetSAMLProviderResponse
      * @throws TencentCloudSDKException
@@ -337,9 +470,9 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Querying Sub-users
+     *This API is used to query sub-users.
      * @param req GetUserRequest
-     * @return AddUserResponse
+     * @return GetUserResponse
      * @throws TencentCloudSDKException
      */
     public GetUserResponse GetUser(GetUserRequest req) throws TencentCloudSDKException{
@@ -355,7 +488,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (ListAttachedGroupPolicies) queries the list of policies associated with a user group.
+     *This API (ListAttachedGroupPolicies) is used to query the list of policies associated with a user group.
      * @param req ListAttachedGroupPoliciesRequest
      * @return ListAttachedGroupPoliciesResponse
      * @throws TencentCloudSDKException
@@ -373,7 +506,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (ListAttachedUserPolicies) queries the list of policies associated with a sub-user.
+     *This API (ListAttachedRolePolicies) is used to obtain the list of the policies associated with a role.
+     * @param req ListAttachedRolePoliciesRequest
+     * @return ListAttachedRolePoliciesResponse
+     * @throws TencentCloudSDKException
+     */
+    public ListAttachedRolePoliciesResponse ListAttachedRolePolicies(ListAttachedRolePoliciesRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<ListAttachedRolePoliciesResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<ListAttachedRolePoliciesResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "ListAttachedRolePolicies"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API (ListAttachedUserPolicies) is used to query the list of policies associated with a sub-account.
      * @param req ListAttachedUserPoliciesRequest
      * @return ListAttachedUserPoliciesResponse
      * @throws TencentCloudSDKException
@@ -391,7 +542,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (ListEntitiesForPolicy) queries the list of instances associated with a policy.
+     *This API (ListEntitiesForPolicy) is used to query the list of entities associated with a policy.
      * @param req ListEntitiesForPolicyRequest
      * @return ListEntitiesForPolicyResponse
      * @throws TencentCloudSDKException
@@ -409,7 +560,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Querying List of User Groups
+     *This API is used to query the list of user groups.
      * @param req ListGroupsRequest
      * @return ListGroupsResponse
      * @throws TencentCloudSDKException
@@ -427,7 +578,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Getting a List of User Groups Associated with a User
+     *This API is used to list user groups associated with a user.
      * @param req ListGroupsForUserRequest
      * @return ListGroupsForUserResponse
      * @throws TencentCloudSDKException
@@ -445,7 +596,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (ListPolicies) queries a list of policies.
+     *This API (ListPolicies) is used to query the list of policies.
      * @param req ListPoliciesRequest
      * @return ListPoliciesResponse
      * @throws TencentCloudSDKException
@@ -463,7 +614,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Querying a List of SAML IdPs
+     *This API is used to query the list of SAML identity providers.
      * @param req ListSAMLProvidersRequest
      * @return ListSAMLProvidersResponse
      * @throws TencentCloudSDKException
@@ -481,7 +632,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Getting a List of Sub-users
+     *This API is used to pull sub-users.
      * @param req ListUsersRequest
      * @return ListUsersResponse
      * @throws TencentCloudSDKException
@@ -499,7 +650,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Querying List of Users Associated with a User Group
+     *This API is used to query the list of users associated with a user group.
      * @param req ListUsersForGroupRequest
      * @return ListUsersForGroupResponse
      * @throws TencentCloudSDKException
@@ -517,7 +668,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Deleting Users from User Group 
+     *This API is used to delete users from a user group.
      * @param req RemoveUserFromGroupRequest
      * @return RemoveUserFromGroupResponse
      * @throws TencentCloudSDKException
@@ -535,7 +686,43 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Updating User Group Information
+     *This API is used to set user login, sensitive operations and async login.
+     * @param req SetFlagRequest
+     * @return SetFlagResponse
+     * @throws TencentCloudSDKException
+     */
+    public SetFlagResponse SetFlag(SetFlagRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<SetFlagResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<SetFlagResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "SetFlag"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API (UpdateAssumeRolePolicy) is used to modify the trust policy of a role.
+     * @param req UpdateAssumeRolePolicyRequest
+     * @return UpdateAssumeRolePolicyResponse
+     * @throws TencentCloudSDKException
+     */
+    public UpdateAssumeRolePolicyResponse UpdateAssumeRolePolicy(UpdateAssumeRolePolicyRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<UpdateAssumeRolePolicyResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<UpdateAssumeRolePolicyResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "UpdateAssumeRolePolicy"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API is used to update a user group.
      * @param req UpdateGroupRequest
      * @return UpdateGroupResponse
      * @throws TencentCloudSDKException
@@ -553,7 +740,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *This API (UpdatePolicy) updates a policy.
+     *This API (UpdatePolicy) is used to update a policy.
      * @param req UpdatePolicyRequest
      * @return UpdatePolicyResponse
      * @throws TencentCloudSDKException
@@ -571,7 +758,25 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Updating SAML IdP Information
+     *This API (UpdateRoleDescription) is used to modify the description of a role.
+     * @param req UpdateRoleDescriptionRequest
+     * @return UpdateRoleDescriptionResponse
+     * @throws TencentCloudSDKException
+     */
+    public UpdateRoleDescriptionResponse UpdateRoleDescription(UpdateRoleDescriptionRequest req) throws TencentCloudSDKException{
+        JsonResponseModel<UpdateRoleDescriptionResponse> rsp = null;
+        try {
+                Type type = new TypeToken<JsonResponseModel<UpdateRoleDescriptionResponse>>() {
+                }.getType();
+                rsp  = gson.fromJson(this.internalRequest(req, "UpdateRoleDescription"), type);
+        } catch (JsonSyntaxException e) {
+            throw new TencentCloudSDKException(e.getMessage());
+        }
+        return rsp.response;
+    }
+
+    /**
+     *This API is used to update SAML identity provider information.
      * @param req UpdateSAMLProviderRequest
      * @return UpdateSAMLProviderResponse
      * @throws TencentCloudSDKException
@@ -589,7 +794,7 @@ public class CamClient extends AbstractClient{
     }
 
     /**
-     *Updating Sub-user Information
+     *This API is used to update a sub-user.
      * @param req UpdateUserRequest
      * @return UpdateUserResponse
      * @throws TencentCloudSDKException

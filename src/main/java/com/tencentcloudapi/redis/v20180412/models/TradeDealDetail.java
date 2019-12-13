@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class TradeDealDetail  extends AbstractModel{
+public class TradeDealDetail extends AbstractModel{
 
     /**
     * Order ID, which is used when a TencentCloud API is called

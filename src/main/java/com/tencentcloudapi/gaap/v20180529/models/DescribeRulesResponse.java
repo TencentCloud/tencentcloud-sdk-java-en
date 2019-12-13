@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeRulesResponse  extends AbstractModel{
+public class DescribeRulesResponse extends AbstractModel{
 
     /**
     * Rule information list classified by domain name type

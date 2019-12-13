@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class RealtimeSpeechConf  extends AbstractModel{
+public class RealtimeSpeechConf extends AbstractModel{
 
     /**
     * Voice chat status. Valid values: open, close

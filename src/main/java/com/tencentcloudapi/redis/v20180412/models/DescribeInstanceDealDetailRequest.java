@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeInstanceDealDetailRequest  extends AbstractModel{
+public class DescribeInstanceDealDetailRequest extends AbstractModel{
 
     /**
     * Array of order IDs

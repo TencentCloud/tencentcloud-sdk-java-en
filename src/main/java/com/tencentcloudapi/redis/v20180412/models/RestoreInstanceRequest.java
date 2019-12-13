@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class RestoreInstanceRequest  extends AbstractModel{
+public class RestoreInstanceRequest extends AbstractModel{
 
     /**
     * ID of the instance to be operated on, which can be obtained through the `redisId` field in the return value of the DescribeRedis API.

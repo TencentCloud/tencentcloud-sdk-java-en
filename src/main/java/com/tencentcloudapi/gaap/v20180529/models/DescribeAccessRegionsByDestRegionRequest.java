@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeAccessRegionsByDestRegionRequest  extends AbstractModel{
+public class DescribeAccessRegionsByDestRegionRequest extends AbstractModel{
 
     /**
     * Origin server region: the DescribeDestRegions API returns the value of `RegionId` field of `DestRegionSet`.

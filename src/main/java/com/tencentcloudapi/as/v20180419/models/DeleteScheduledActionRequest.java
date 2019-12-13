@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteScheduledActionRequest  extends AbstractModel{
+public class DeleteScheduledActionRequest extends AbstractModel{
 
     /**
     * ID of the scheduled task to be deleted.

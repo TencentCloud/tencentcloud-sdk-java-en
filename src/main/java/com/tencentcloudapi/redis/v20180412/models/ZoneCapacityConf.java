@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ZoneCapacityConf  extends AbstractModel{
+public class ZoneCapacityConf extends AbstractModel{
 
     /**
     * AZ ID, such as ap-guangzhou-3

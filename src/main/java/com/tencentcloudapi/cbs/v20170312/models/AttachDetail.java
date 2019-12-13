@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class AttachDetail  extends AbstractModel{
+public class AttachDetail extends AbstractModel{
 
     /**
     * Instance ID

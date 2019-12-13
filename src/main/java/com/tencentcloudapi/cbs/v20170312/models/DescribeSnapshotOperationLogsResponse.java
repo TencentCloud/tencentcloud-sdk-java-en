@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeSnapshotOperationLogsResponse  extends AbstractModel{
+public class DescribeSnapshotOperationLogsResponse extends AbstractModel{
 
     /**
     * List of snapshot operation logs.

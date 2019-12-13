@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeSnapshotSharePermissionRequest  extends AbstractModel{
+public class DescribeSnapshotSharePermissionRequest extends AbstractModel{
 
     /**
     * The ID of the snapshot to be queried. You can obtain this by using [DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647).

@@ -20,56 +20,56 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreatePolicyResponse  extends AbstractModel{
+public class CreatePolicyResponse extends AbstractModel{
 
     /**
-    * Newly Added Policy ID
+    * Newly added policy ID
     */
     @SerializedName("PolicyId")
     @Expose
     private Long PolicyId;
 
     /**
-    * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Getting Newly Added Policy ID
-     * @return PolicyId Newly Added Policy ID
+     * Get Newly added policy ID 
+     * @return PolicyId Newly added policy ID
      */
     public Long getPolicyId() {
         return this.PolicyId;
     }
 
     /**
-     * Configuring Newly Added Policy ID
-     * @param PolicyId Newly Added Policy ID
+     * Set Newly added policy ID
+     * @param PolicyId Newly added policy ID
      */
     public void setPolicyId(Long PolicyId) {
         this.PolicyId = PolicyId;
     }
 
     /**
-     * Getting RequestId, the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configuring RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. 
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

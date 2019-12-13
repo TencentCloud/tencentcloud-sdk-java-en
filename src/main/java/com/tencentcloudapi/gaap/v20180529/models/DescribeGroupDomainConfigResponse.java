@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeGroupDomainConfigResponse  extends AbstractModel{
+public class DescribeGroupDomainConfigResponse extends AbstractModel{
 
     /**
     * Nearest access configuration list of domain name resolution.

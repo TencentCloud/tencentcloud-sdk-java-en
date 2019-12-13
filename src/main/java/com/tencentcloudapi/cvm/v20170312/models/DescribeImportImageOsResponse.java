@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeImportImageOsResponse  extends AbstractModel{
+public class DescribeImportImageOsResponse extends AbstractModel{
 
     /**
     * Supported operating system types of imported images.

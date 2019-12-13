@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class GroupMemberInfo  extends AbstractModel{
+public class GroupMemberInfo extends AbstractModel{
 
     /**
     * Sub-user UID
@@ -37,7 +37,7 @@ public class GroupMemberInfo  extends AbstractModel{
     private Long Uin;
 
     /**
-    * Sub-user name.
+    * Sub-user name
     */
     @SerializedName("Name")
     @Expose
@@ -51,232 +51,232 @@ public class GroupMemberInfo  extends AbstractModel{
     private String PhoneNum;
 
     /**
-    * Mobile number area code.
+    * Mobile number country/area code
     */
     @SerializedName("CountryCode")
     @Expose
     private String CountryCode;
 
     /**
-    * Whether mobile number is verified.
+    * If mobile number has been verified
     */
     @SerializedName("PhoneFlag")
     @Expose
     private Long PhoneFlag;
 
     /**
-    * Email
+    * Email address
     */
     @SerializedName("Email")
     @Expose
     private String Email;
 
     /**
-    * If email has been verified.
+    * If email has been verified
     */
     @SerializedName("EmailFlag")
     @Expose
     private Long EmailFlag;
 
     /**
-    * User type.
+    * User type
     */
     @SerializedName("UserType")
     @Expose
     private Long UserType;
 
     /**
-    * Creation time.
+    * Time policy created
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * If it is the main message receiver.
+    * If the user is the main message recipient
     */
     @SerializedName("IsReceiverOwner")
     @Expose
     private Long IsReceiverOwner;
 
     /**
-     * Obtain sub-user Uid.
-     * @return Uid sub-user Uid.
+     * Get Sub-user UID 
+     * @return Uid Sub-user UID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * Set sub-user Uid.
-     * @param Uid sub-user Uid.
+     * Set Sub-user UID
+     * @param Uid Sub-user UID
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * Obtain sub-user Uin.
-     * @return Uin sub-user Uin.
+     * Get Sub-user UIN 
+     * @return Uin Sub-user UIN
      */
     public Long getUin() {
         return this.Uin;
     }
 
     /**
-     * Set sub-user Uin.
-     * @param Uin sub-user Uin.
+     * Set Sub-user UIN
+     * @param Uin Sub-user UIN
      */
     public void setUin(Long Uin) {
         this.Uin = Uin;
     }
 
     /**
-     * Obtain sub-user name.
-     * @return Name sub-user name.
+     * Get Sub-user name 
+     * @return Name Sub-user name
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Set sub-user name.
-     * @param Name sub-user name.
+     * Set Sub-user name
+     * @param Name Sub-user name
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Obtain mobile number 
-     * @return PhoneNum return cell phone number.
+     * Get Mobile number 
+     * @return PhoneNum Mobile number
      */
     public String getPhoneNum() {
         return this.PhoneNum;
     }
 
     /**
-     * Set mobile number
-     * @param PhoneNum set cell phone number.
+     * Set Mobile number
+     * @param PhoneNum Mobile number
      */
     public void setPhoneNum(String PhoneNum) {
         this.PhoneNum = PhoneNum;
     }
 
     /**
-     * Obtain mobile number area code.
-     * @return CountryCode mobile number area code.
+     * Get Mobile number country/area code 
+     * @return CountryCode Mobile number country/area code
      */
     public String getCountryCode() {
         return this.CountryCode;
     }
 
     /**
-     * Set obile phone area code.
-     * @param CountryCode mobile phone area code.
+     * Set Mobile number country/area code
+     * @param CountryCode Mobile number country/area code
      */
     public void setCountryCode(String CountryCode) {
         this.CountryCode = CountryCode;
     }
 
     /**
-     * Get whether mobile number has been verified.
-     * @return PhoneFlag whether mobile number has been verified.
+     * Get If mobile number has been verified 
+     * @return PhoneFlag If mobile number has been verified
      */
     public Long getPhoneFlag() {
         return this.PhoneFlag;
     }
 
     /**
-     * Set whether mobile number has been verified.
-     * @param PhoneFlag whether mobile number has been verified.
+     * Set If mobile number has been verified
+     * @param PhoneFlag If mobile number has been verified
      */
     public void setPhoneFlag(Long PhoneFlag) {
         this.PhoneFlag = PhoneFlag;
     }
 
     /**
-     * Obtain email address.
-     * @return Email address
+     * Get Email address 
+     * @return Email Email address
      */
     public String getEmail() {
         return this.Email;
     }
 
     /**
-     * Set email address.
-     * @param Email email address.
+     * Set Email address
+     * @param Email Email address
      */
     public void setEmail(String Email) {
         this.Email = Email;
     }
 
     /**
-     * Obtain wether email has been verified.
-     * @return EmailFlag whether email has been verified.
+     * Get If email has been verified 
+     * @return EmailFlag If email has been verified
      */
     public Long getEmailFlag() {
         return this.EmailFlag;
     }
 
     /**
-     * Set whether email has been verified.
-     * @param EmailFlag whether email has been verified.
+     * Set If email has been verified
+     * @param EmailFlag If email has been verified
      */
     public void setEmailFlag(Long EmailFlag) {
         this.EmailFlag = EmailFlag;
     }
 
     /**
-     * Obtain user type.
-     * @return UserType.
+     * Get User type 
+     * @return UserType User type
      */
     public Long getUserType() {
         return this.UserType;
     }
 
     /**
-     * Set user type.
-     * @param UserType user type.
+     * Set User type
+     * @param UserType User type
      */
     public void setUserType(Long UserType) {
         this.UserType = UserType;
     }
 
     /**
-     * Obtain creation time.
-     * @return CreateTime return creation time.
+     * Get Time policy created 
+     * @return CreateTime Time policy created
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * Set creation time.
-     * @param CreateTime creation time.
+     * Set Time policy created
+     * @param CreateTime Time policy created
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * Obtain whether it is main message receiver.
-     * @return IsReceiverOwner whether it is the main message receiver.
+     * Get If the user is the main message recipient 
+     * @return IsReceiverOwner If the user is the main message recipient
      */
     public Long getIsReceiverOwner() {
         return this.IsReceiverOwner;
     }
 
     /**
-     * Set whether it is the main message receiver.
-     * @param IsReceiverOwner whether it is the main message receiver.
+     * Set If the user is the main message recipient
+     * @param IsReceiverOwner If the user is the main message recipient
      */
     public void setIsReceiverOwner(Long IsReceiverOwner) {
         this.IsReceiverOwner = IsReceiverOwner;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uid", this.Uid);

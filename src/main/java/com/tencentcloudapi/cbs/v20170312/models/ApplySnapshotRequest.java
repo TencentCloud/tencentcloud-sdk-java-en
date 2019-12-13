@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ApplySnapshotRequest  extends AbstractModel{
+public class ApplySnapshotRequest extends AbstractModel{
 
     /**
     * Snapshot ID, which can be queried via [DescribeSnapshots](/document/product/362/15647).

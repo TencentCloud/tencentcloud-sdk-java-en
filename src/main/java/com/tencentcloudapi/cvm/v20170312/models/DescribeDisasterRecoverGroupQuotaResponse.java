@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeDisasterRecoverGroupQuotaResponse  extends AbstractModel{
+public class DescribeDisasterRecoverGroupQuotaResponse extends AbstractModel{
 
     /**
     * The maximum number of placement groups that can be created.

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class SecurityPolicyRuleIn  extends AbstractModel{
+public class SecurityPolicyRuleIn extends AbstractModel{
 
     /**
     * Source IP or IP range of the request.

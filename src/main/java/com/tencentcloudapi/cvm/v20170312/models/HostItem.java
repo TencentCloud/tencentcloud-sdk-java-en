@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class HostItem  extends AbstractModel{
+public class HostItem extends AbstractModel{
 
     /**
     * Location of the CDH instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.

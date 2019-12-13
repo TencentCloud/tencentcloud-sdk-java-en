@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeInternetChargeTypeConfigsRequest  extends AbstractModel{
+public class DescribeInternetChargeTypeConfigsRequest extends AbstractModel{
 
     /**
      * Internal implementation, normal users should not use it.

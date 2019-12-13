@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeCountryAreaMappingResponse  extends AbstractModel{
+public class DescribeCountryAreaMappingResponse extends AbstractModel{
 
     /**
     * Country/region code mapping table

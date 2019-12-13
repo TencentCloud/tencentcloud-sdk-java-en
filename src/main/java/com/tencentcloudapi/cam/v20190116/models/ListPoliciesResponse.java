@@ -20,102 +20,137 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListPoliciesResponse  extends AbstractModel{
+public class ListPoliciesResponse extends AbstractModel{
 
     /**
-    * Total policy number
+    * Total number of policies
     */
     @SerializedName("TotalNum")
     @Expose
     private Long TotalNum;
 
     /**
-    * Policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. policyId: policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
+    * Policy array. Each item in the array has the fields `policyId`, `policyName`, `addTime`, `type`, `description`, and `createMode` 
+`policyId`: Policy ID 
+`policyName`: Policy name
+`addTime`: Time policy created
+`type`: 1 is custom policy; 2 is preset policy 
+`description`: Policy description 
+`createMode`: 1 indicates a policy created based on business permissions, while other values indicate that the policy syntax can be viewed and the policy can be updated using the policy syntax.
     */
     @SerializedName("List")
     @Expose
     private StrategyInfo [] List;
 
     /**
-    * Reserved fieldNote: This field may return null, indicating that no valid value was found.
+    * Reserved field
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("ServiceTypeList")
     @Expose
     private String [] ServiceTypeList;
 
     /**
-    * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Getting total number of policies
-     * @return TotalNum total number of policies
+     * Get Total number of policies 
+     * @return TotalNum Total number of policies
      */
     public Long getTotalNum() {
         return this.TotalNum;
     }
 
     /**
-     * Configuring total number of policies
-     * @param TotalNum total number of policies
+     * Set Total number of policies
+     * @param TotalNum Total number of policies
      */
     public void setTotalNum(Long TotalNum) {
         this.TotalNum = TotalNum;
     }
 
     /**
-     * Getting policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. Among which: policyId：policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
-     * @return List policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. Among which:  policyId: policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
+     * Get Policy array. Each item in the array has the fields `policyId`, `policyName`, `addTime`, `type`, `description`, and `createMode` 
+`policyId`: Policy ID 
+`policyName`: Policy name
+`addTime`: Time policy created
+`type`: 1 is custom policy; 2 is preset policy 
+`description`: Policy description 
+`createMode`: 1 indicates a policy created based on business permissions, while other values indicate that the policy syntax can be viewed and the policy can be updated using the policy syntax. 
+     * @return List Policy array. Each item in the array has the fields `policyId`, `policyName`, `addTime`, `type`, `description`, and `createMode` 
+`policyId`: Policy ID 
+`policyName`: Policy name
+`addTime`: Time policy created
+`type`: 1 is custom policy; 2 is preset policy 
+`description`: Policy description 
+`createMode`: 1 indicates a policy created based on business permissions, while other values indicate that the policy syntax can be viewed and the policy can be updated using the policy syntax.
      */
     public StrategyInfo [] getList() {
         return this.List;
     }
 
     /**
-     * Set policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. Among which: policyId：policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
-     * @param List policy array. Each array contains fields such as policyId, policyName, addTime, type, description, and createMode. Among which:  policyId：policy ID policyName：policy nameaddTime: creation time of the policy.type：1 is custom policy; 2 is predefined policy. description：policy description createMode: 1 indicates a policy created according to business permissions, while other values indicate you can view policy syntax and update a policy through the policy syntax.
+     * Set Policy array. Each item in the array has the fields `policyId`, `policyName`, `addTime`, `type`, `description`, and `createMode` 
+`policyId`: Policy ID 
+`policyName`: Policy name
+`addTime`: Time policy created
+`type`: 1 is custom policy; 2 is preset policy 
+`description`: Policy description 
+`createMode`: 1 indicates a policy created based on business permissions, while other values indicate that the policy syntax can be viewed and the policy can be updated using the policy syntax.
+     * @param List Policy array. Each item in the array has the fields `policyId`, `policyName`, `addTime`, `type`, `description`, and `createMode` 
+`policyId`: Policy ID 
+`policyName`: Policy name
+`addTime`: Time policy created
+`type`: 1 is custom policy; 2 is preset policy 
+`description`: Policy description 
+`createMode`: 1 indicates a policy created based on business permissions, while other values indicate that the policy syntax can be viewed and the policy can be updated using the policy syntax.
      */
     public void setList(StrategyInfo [] List) {
         this.List = List;
     }
 
     /**
-     * Getting reserved fieldNote: This field may return null, indicating that no valid value was found.
-     * @return ServiceTypeList reserved fieldsNote: This field may return null, indicating that no valid value was found.
+     * Get Reserved field
+Note: This field may return null, indicating that no valid value was found. 
+     * @return ServiceTypeList Reserved field
+Note: This field may return null, indicating that no valid value was found.
      */
     public String [] getServiceTypeList() {
         return this.ServiceTypeList;
     }
 
     /**
-     * Setting reserved fieldsNote: This field may return null, indicating that no valid value was found.
-     * @param ServiceTypeList reserved fieldsNote: This field may return null, indicating that no valid value was found.
+     * Set Reserved field
+Note: This field may return null, indicating that no valid value was found.
+     * @param ServiceTypeList Reserved field
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setServiceTypeList(String [] ServiceTypeList) {
         this.ServiceTypeList = ServiceTypeList;
     }
 
     /**
-     * Obtain the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalNum", this.TotalNum);

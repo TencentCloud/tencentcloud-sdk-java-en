@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class AgentRunningMode  extends AbstractModel{
+public class AgentRunningMode extends AbstractModel{
 
     /**
     * Scenario type. Windows is supported

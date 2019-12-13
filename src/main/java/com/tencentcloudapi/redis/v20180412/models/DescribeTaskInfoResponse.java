@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeTaskInfoResponse  extends AbstractModel{
+public class DescribeTaskInfoResponse extends AbstractModel{
 
     /**
     * Task status. preparing: to be run; running: running; succeed: succeeded; failed: failed; error: running error.

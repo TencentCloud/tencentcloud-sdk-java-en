@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeAccessRegionsByDestRegionResponse  extends AbstractModel{
+public class DescribeAccessRegionsByDestRegionResponse extends AbstractModel{
 
     /**
     * The number of available acceleration regions

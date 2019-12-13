@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteImagesRequest  extends AbstractModel{
+public class DeleteImagesRequest extends AbstractModel{
 
     /**
     * List of the IDs of the instances to be deleted.

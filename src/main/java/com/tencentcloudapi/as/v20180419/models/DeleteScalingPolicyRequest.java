@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteScalingPolicyRequest  extends AbstractModel{
+public class DeleteScalingPolicyRequest extends AbstractModel{
 
     /**
     * ID of the alarm policy to be deleted.

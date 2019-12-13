@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyInstanceParamsResponse  extends AbstractModel{
+public class ModifyInstanceParamsResponse extends AbstractModel{
 
     /**
     * Whether a modification is successfully made.

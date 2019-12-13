@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class VoiceMessageStatisticsItem  extends AbstractModel{
+public class VoiceMessageStatisticsItem extends AbstractModel{
 
     /**
     * DAU of voice messaging and speech-to-text

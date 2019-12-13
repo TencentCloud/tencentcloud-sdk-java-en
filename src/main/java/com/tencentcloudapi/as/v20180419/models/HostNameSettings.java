@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class HostNameSettings  extends AbstractModel{
+public class HostNameSettings extends AbstractModel{
 
     /**
     * Host name of a CVM.

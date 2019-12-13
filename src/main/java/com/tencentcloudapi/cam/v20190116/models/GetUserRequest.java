@@ -20,33 +20,33 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class GetUserRequest  extends AbstractModel{
+public class GetUserRequest extends AbstractModel{
 
     /**
-    * Sub-user’s Username
+    * Sub-user username
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-     * Getting Sub-user’s Username
-     * @return Name Sub-user’s Username
+     * Get Sub-user username 
+     * @return Name Sub-user username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Configuring Sub-user’s Username
-     * @param Name Sub-user’s Username
+     * Set Sub-user username
+     * @param Name Sub-user username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

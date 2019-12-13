@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyDisksRenewFlagRequest  extends AbstractModel{
+public class ModifyDisksRenewFlagRequest extends AbstractModel{
 
     /**
     * IDs of one or more cloud disks to be operated.

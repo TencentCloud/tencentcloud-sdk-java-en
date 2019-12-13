@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteTagRequest  extends AbstractModel{
+public class DeleteTagRequest extends AbstractModel{
 
     /**
     * The tag key to be deleted.

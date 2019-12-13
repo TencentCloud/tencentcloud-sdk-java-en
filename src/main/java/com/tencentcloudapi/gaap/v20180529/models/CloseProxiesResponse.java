@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CloseProxiesResponse  extends AbstractModel{
+public class CloseProxiesResponse extends AbstractModel{
 
     /**
     * Only the running connection instance ID lists can be enabled.

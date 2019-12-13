@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DiskConfig  extends AbstractModel{
+public class DiskConfig extends AbstractModel{
 
     /**
     * Whether the configuration is available.

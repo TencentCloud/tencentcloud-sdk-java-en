@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeTaskTemplatesResponse  extends AbstractModel{
+public class DescribeTaskTemplatesResponse extends AbstractModel{
 
     /**
     * List of job templates

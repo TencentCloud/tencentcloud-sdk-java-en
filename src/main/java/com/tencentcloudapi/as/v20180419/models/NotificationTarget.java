@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class NotificationTarget  extends AbstractModel{
+public class NotificationTarget extends AbstractModel{
 
     /**
     * Target type. Value range: `CMQ_QUEUE`, `CMQ_TOPIC`.

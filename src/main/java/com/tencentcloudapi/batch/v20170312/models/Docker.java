@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class Docker  extends AbstractModel{
+public class Docker extends AbstractModel{
 
     /**
     * Docker Hub username or Tencent Registry username

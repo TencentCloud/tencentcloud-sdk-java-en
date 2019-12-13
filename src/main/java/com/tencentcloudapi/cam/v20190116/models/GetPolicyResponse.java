@@ -20,171 +20,201 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class GetPolicyResponse  extends AbstractModel{
+public class GetPolicyResponse extends AbstractModel{
 
     /**
-    * Policy NameNote: This field may return null, indicating that no valid value was found.
+    * Policy name
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("PolicyName")
     @Expose
     private String PolicyName;
 
     /**
-    * Policy DescriptionNote: This field may return null, indicating that no valid value was found.
+    * Policy description
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
+    * 1: Custom policy; 2: Preset policy
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Type")
     @Expose
     private Long Type;
 
     /**
-    * Policy Creation TimeNote: This field may return null, indicating that no valid value was found.
+    * Time created
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("AddTime")
     @Expose
     private String AddTime;
 
     /**
-    * Latest Update TimeNote: This field may return null, indicating that no valid value was found.
+    * Time of latest update
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("UpdateTime")
     @Expose
     private String UpdateTime;
 
     /**
-    * Policy DocumentationNote: This field may return null, indicating that no valid value was found.
+    * Policy document
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("PolicyDocument")
     @Expose
     private String PolicyDocument;
 
     /**
-    * The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Getting Policy NameNote: This field may return null, indicating that no valid value was found.
-     * @return PolicyName Policy NameNote: This field may return null, indicating that no valid value was found.
+     * Get Policy name
+Note: This field may return null, indicating that no valid value was found. 
+     * @return PolicyName Policy name
+Note: This field may return null, indicating that no valid value was found.
      */
     public String getPolicyName() {
         return this.PolicyName;
     }
 
     /**
-     * Configuring Policy NameNote: This field may return null, indicating that no valid value was found.
-     * @param PolicyName Policy NameNote: This field may return null, indicating that no valid value was found.
+     * Set Policy name
+Note: This field may return null, indicating that no valid value was found.
+     * @param PolicyName Policy name
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setPolicyName(String PolicyName) {
         this.PolicyName = PolicyName;
     }
 
     /**
-     * Getting Policy DescriptionNote: This field may return null, indicating that no valid value was found.
-     * @return Description Policy descriptionNote: This field may return null, indicating that no valid value was found.
+     * Get Policy description
+Note: This field may return null, indicating that no valid value was found. 
+     * @return Description Policy description
+Note: This field may return null, indicating that no valid value was found.
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * Configuring Policy DescriptionNote: This field may return null, indicating that no valid value was found.
-     * @param Description Policy descriptionNote: This field may return null, indicating that no valid value was found.
+     * Set Policy description
+Note: This field may return null, indicating that no valid value was found.
+     * @param Description Policy description
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
-     * @return Type 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
+     * Get 1: Custom policy; 2: Preset policy
+Note: This field may return null, indicating that no valid value was found. 
+     * @return Type 1: Custom policy; 2: Preset policy
+Note: This field may return null, indicating that no valid value was found.
      */
     public Long getType() {
         return this.Type;
     }
 
     /**
-     * 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
-     * @param Type 1: custom policy; 2: predefined policy.Note: This field may return null, indicating that no valid value was found.
+     * Set 1: Custom policy; 2: Preset policy
+Note: This field may return null, indicating that no valid value was found.
+     * @param Type 1: Custom policy; 2: Preset policy
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setType(Long Type) {
         this.Type = Type;
     }
 
     /**
-     * Getting Policy Creation Time.Note: This field may return null, indicating that no valid value was found.
-     * @return AddTime Policy Creation TimeNote: This field may return null, indicating that no valid value was found.
+     * Get Time created
+Note: This field may return null, indicating that no valid value was found. 
+     * @return AddTime Time created
+Note: This field may return null, indicating that no valid value was found.
      */
     public String getAddTime() {
         return this.AddTime;
     }
 
     /**
-     * Configuring Policy Creation TimeNote: This field may return null, indicating that no valid value was found.
-     * @param AddTime Policy creation timeNote: This field may return null, indicating that no valid value was found.
+     * Set Time created
+Note: This field may return null, indicating that no valid value was found.
+     * @param AddTime Time created
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setAddTime(String AddTime) {
         this.AddTime = AddTime;
     }
 
     /**
-     * Getting Latest Update TimeNote: This field may return null, indicating that no valid value was found.
-     * @return UpdateTime Time of the latest updateNote: This field may return null, indicating that no valid value was found.
+     * Get Time of latest update
+Note: This field may return null, indicating that no valid value was found. 
+     * @return UpdateTime Time of latest update
+Note: This field may return null, indicating that no valid value was found.
      */
     public String getUpdateTime() {
         return this.UpdateTime;
     }
 
     /**
-     * Setting Latest Update TimeNote: This field may return null, indicating that no valid value was found.
-     * @param UpdateTime Time of the latest updateNote: This field may return null, indicating that no valid value was found.
+     * Set Time of latest update
+Note: This field may return null, indicating that no valid value was found.
+     * @param UpdateTime Time of latest update
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setUpdateTime(String UpdateTime) {
         this.UpdateTime = UpdateTime;
     }
 
     /**
-     * Getting Policy DocumentationNote: This field may return null, indicating that no valid value was found.
-     * @return PolicyDocument Policy documentationNote: This field may return null, indicating that no valid value was found.
+     * Get Policy document
+Note: This field may return null, indicating that no valid value was found. 
+     * @return PolicyDocument Policy document
+Note: This field may return null, indicating that no valid value was found.
      */
     public String getPolicyDocument() {
         return this.PolicyDocument;
     }
 
     /**
-     * Configuring Policy DocumentationNote: This field may return null, indicating that no valid value was found.
-     * @param PolicyDocument Policy documentationNote: This field may return null, indicating that no valid value was found.
+     * Set Policy document
+Note: This field may return null, indicating that no valid value was found.
+     * @param PolicyDocument Policy document
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setPolicyDocument(String PolicyDocument) {
         this.PolicyDocument = PolicyDocument;
     }
 
     /**
-     * Getting unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configuring RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyName", this.PolicyName);

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class PrepayPrice  extends AbstractModel{
+public class PrepayPrice extends AbstractModel{
 
     /**
     * Original price of the advanced payment for a prepaid cloud disk or snapshot (in CNY).

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class SubmitJobRequest  extends AbstractModel{
+public class SubmitJobRequest extends AbstractModel{
 
     /**
     * Location information of the submitted job. This parameter allows you to specify information such as the availability zone of the CVM instance with which the job is associated.

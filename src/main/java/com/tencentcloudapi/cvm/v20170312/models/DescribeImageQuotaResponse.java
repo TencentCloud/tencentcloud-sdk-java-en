@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeImageQuotaResponse  extends AbstractModel{
+public class DescribeImageQuotaResponse extends AbstractModel{
 
     /**
     * The image quota of an account

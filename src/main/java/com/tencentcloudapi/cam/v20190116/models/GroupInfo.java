@@ -20,102 +20,102 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class GroupInfo  extends AbstractModel{
+public class GroupInfo extends AbstractModel{
 
     /**
-    * User group ID.
+    * User group ID
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-    * User group name.
+    * User Group name
     */
     @SerializedName("GroupName")
     @Expose
     private String GroupName;
 
     /**
-    * User group creation time.
+    * Time User Group created
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * User group description.
+    * User Group description
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-     * Obtain user group ID.
-     * @return GroupId user group ID.
+     * Get User group ID 
+     * @return GroupId User group ID
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * Set user group ID.
-     * @param GroupId user group ID.
+     * Set User group ID
+     * @param GroupId User group ID
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * Obtain user group name.
-     * @return GroupName user group name.
+     * Get User Group name 
+     * @return GroupName User Group name
      */
     public String getGroupName() {
         return this.GroupName;
     }
 
     /**
-     * Set user group name.
-     * @param GroupName user group name.
+     * Set User Group name
+     * @param GroupName User Group name
      */
     public void setGroupName(String GroupName) {
         this.GroupName = GroupName;
     }
 
     /**
-     * Obtain user group creation time.
-     * @return CreateTime user group creation time.
+     * Get Time User Group created 
+     * @return CreateTime Time User Group created
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * Set user group creation time.
-     * @param CreateTime user group creation time.
+     * Set Time User Group created
+     * @param CreateTime Time User Group created
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * Obtain user group description.
-     * @return Remark user group description.
+     * Get User Group description 
+     * @return Remark User Group description
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * Set user group description.
-     * @param Remark user group description.
+     * Set User Group description
+     * @param Remark User Group description
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupId", this.GroupId);

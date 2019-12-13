@@ -3,7 +3,7 @@
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
- * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
  *    http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -20,10 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class GetUserResponse  extends AbstractModel{
+public class GetUserResponse extends AbstractModel{
 
     /**
-    * Sub-user User ID
+    * Sub-user user ID
     */
     @SerializedName("Uin")
     @Expose
@@ -44,14 +44,14 @@ public class GetUserResponse  extends AbstractModel{
     private Long Uid;
 
     /**
-    * Sub-user note
+    * Sub-user remarks
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-    * Whether sub-user can login to Console
+    * If sub-user can log in to the Console
     */
     @SerializedName("ConsoleLogin")
     @Expose
@@ -65,7 +65,7 @@ public class GetUserResponse  extends AbstractModel{
     private String PhoneNum;
 
     /**
-    * Area Code
+    * Country/Area code
     */
     @SerializedName("CountryCode")
     @Expose
@@ -79,158 +79,158 @@ public class GetUserResponse  extends AbstractModel{
     private String Email;
 
     /**
-    * The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain sub-user User ID
-     * @return Uin Sub-user User ID
+     * Get Sub-user user ID 
+     * @return Uin Sub-user user ID
      */
     public Long getUin() {
         return this.Uin;
     }
 
     /**
-     * Set up sub-user User ID
-     * @param Uin Sub-user User ID
+     * Set Sub-user user ID
+     * @param Uin Sub-user user ID
      */
     public void setUin(Long Uin) {
         this.Uin = Uin;
     }
 
     /**
-     * Obtain sub-user username
-     * @return Name sub-user username
+     * Get Sub-user username 
+     * @return Name Sub-user username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Set sub-user username
-     * @param Name sub-user username
+     * Set Sub-user username
+     * @param Name Sub-user username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Obtain sub-user UID
-     * @return Uid Sub-user User ID
+     * Get Sub-user UID 
+     * @return Uid Sub-user UID
      */
     public Long getUid() {
         return this.Uid;
     }
 
     /**
-     * Configuring Sub-user UID
-     * @param Uid sub-user UID
+     * Set Sub-user UID
+     * @param Uid Sub-user UID
      */
     public void setUid(Long Uid) {
         this.Uid = Uid;
     }
 
     /**
-     * Obtain sub-user note
-     * @return Remark sub-user note
+     * Get Sub-user remarks 
+     * @return Remark Sub-user remarks
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * Set up sub-user note
-     * @param Remark sub-user note
+     * Set Sub-user remarks
+     * @param Remark Sub-user remarks
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * Get whether sub-user can log in to the console 
-     * @return ConsoleLogin whether sub-user can log in to Console
+     * Get If sub-user can log in to the Console 
+     * @return ConsoleLogin If sub-user can log in to the Console
      */
     public Long getConsoleLogin() {
         return this.ConsoleLogin;
     }
 
     /**
-     * Set whether sub-user can log in to the console
-     * @param ConsoleLogin whether sub-user can log in to the console
+     * Set If sub-user can log in to the Console
+     * @param ConsoleLogin If sub-user can log in to the Console
      */
     public void setConsoleLogin(Long ConsoleLogin) {
         this.ConsoleLogin = ConsoleLogin;
     }
 
     /**
-     * Obtain mobile number 
-     * @return PhoneNum mobile number
+     * Get Mobile number 
+     * @return PhoneNum Mobile number
      */
     public String getPhoneNum() {
         return this.PhoneNum;
     }
 
     /**
-     * Set mobile number
-     * @param PhoneNum mobile number
+     * Set Mobile number
+     * @param PhoneNum Mobile number
      */
     public void setPhoneNum(String PhoneNum) {
         this.PhoneNum = PhoneNum;
     }
 
     /**
-     * Obtain area code
-     * @return CountryCode area code
+     * Get Country/Area code 
+     * @return CountryCode Country/Area code
      */
     public String getCountryCode() {
         return this.CountryCode;
     }
 
     /**
-     * Set area code
-     * @param CountryCode area code
+     * Set Country/Area code
+     * @param CountryCode Country/Area code
      */
     public void setCountryCode(String CountryCode) {
         this.CountryCode = CountryCode;
     }
 
     /**
-     * Obtain email
-     * @return Email email
+     * Get Email 
+     * @return Email Email
      */
     public String getEmail() {
         return this.Email;
     }
 
     /**
-     * Configure mailbox
-     * @param Email mailbox
+     * Set Email
+     * @param Email Email
      */
     public void setEmail(String Email) {
         this.Email = Email;
     }
 
     /**
-     * Obtain the unique ID of request, which will be returned for each request. and is required for each troubleshooting case.
-     * @return RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
-     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uin", this.Uin);

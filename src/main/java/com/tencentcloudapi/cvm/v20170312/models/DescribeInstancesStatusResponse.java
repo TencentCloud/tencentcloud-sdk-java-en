@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeInstancesStatusResponse  extends AbstractModel{
+public class DescribeInstancesStatusResponse extends AbstractModel{
 
     /**
     * Number of instance states meeting the filtering conditions.

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class RemoveRealServersRequest  extends AbstractModel{
+public class RemoveRealServersRequest extends AbstractModel{
 
     /**
     * List of origin server IDs

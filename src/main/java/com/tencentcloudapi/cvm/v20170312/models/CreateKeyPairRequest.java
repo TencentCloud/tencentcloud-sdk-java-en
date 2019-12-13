@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateKeyPairRequest  extends AbstractModel{
+public class CreateKeyPairRequest extends AbstractModel{
 
     /**
     * Name of the key pair, which can contain numbers, letters, and underscores, with a maximum length of 25 characters.

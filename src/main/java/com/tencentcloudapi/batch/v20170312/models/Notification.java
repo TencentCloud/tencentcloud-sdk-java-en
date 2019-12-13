@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class Notification  extends AbstractModel{
+public class Notification extends AbstractModel{
 
     /**
     * CMQ topic name which should be valid and associated with a subscription

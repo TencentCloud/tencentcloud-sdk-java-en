@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeDisksResponse  extends AbstractModel{
+public class DescribeDisksResponse extends AbstractModel{
 
     /**
     * The quantity of cloud disks meeting the conditions.

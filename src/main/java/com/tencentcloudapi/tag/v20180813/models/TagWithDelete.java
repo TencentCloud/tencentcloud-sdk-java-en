@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class TagWithDelete  extends AbstractModel{
+public class TagWithDelete extends AbstractModel{
 
     /**
     * Tag key.

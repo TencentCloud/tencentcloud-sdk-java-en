@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListEntitiesForPolicyRequest  extends AbstractModel{
+public class ListEntitiesForPolicyRequest extends AbstractModel{
 
     /**
     * Policy ID
@@ -30,7 +30,7 @@ public class ListEntitiesForPolicyRequest  extends AbstractModel{
     private Long PolicyId;
 
     /**
-    * Page number, which starts from 1. Default is 1.
+    * Page number, which starts from 1. Default is 1
     */
     @SerializedName("Page")
     @Expose
@@ -44,14 +44,14 @@ public class ListEntitiesForPolicyRequest  extends AbstractModel{
     private Long Rp;
 
     /**
-    * Valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
+    * Valid values: `All`, `User`, `Group`, and `Role`. `All` means all entity types will be returned; `User` means only sub-accounts will be returned; `Group` means only User Groups will be returned; `Role` means only roles will be returned. `All` is the default value.
     */
     @SerializedName("EntityFilter")
     @Expose
     private String EntityFilter;
 
     /**
-     * Getting Policy ID
+     * Get Policy ID 
      * @return PolicyId Policy ID
      */
     public Long getPolicyId() {
@@ -59,7 +59,7 @@ public class ListEntitiesForPolicyRequest  extends AbstractModel{
     }
 
     /**
-     * Configuring Policy ID
+     * Set Policy ID
      * @param PolicyId Policy ID
      */
     public void setPolicyId(Long PolicyId) {
@@ -67,55 +67,55 @@ public class ListEntitiesForPolicyRequest  extends AbstractModel{
     }
 
     /**
-     * Obtain page number, which starts from 1. Default is 1.
-     * @return Page page number. Default value is 1; starting from 1
+     * Get Page number, which starts from 1. Default is 1 
+     * @return Page Page number, which starts from 1. Default is 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * Set page number. Default value is 1; starting from 1
-     * @param Page page number. Default value is 1; starting from 1
+     * Set Page number, which starts from 1. Default is 1
+     * @param Page Page number, which starts from 1. Default is 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * Obtain each page size. Default value is 20
-     * @return Rp each page size. Default value is 20
+     * Get Number of entries per page; 20 by default 
+     * @return Rp Number of entries per page; 20 by default
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * Set each page size. Default value is 20
-     * @param Rp the number of entries per page; 20 by default
+     * Set Number of entries per page; 20 by default
+     * @param Rp Number of entries per page; 20 by default
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * Obtain valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
-     * @return EntityFilter Valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
+     * Get Valid values: `All`, `User`, `Group`, and `Role`. `All` means all entity types will be returned; `User` means only sub-accounts will be returned; `Group` means only User Groups will be returned; `Role` means only roles will be returned. `All` is the default value. 
+     * @return EntityFilter Valid values: `All`, `User`, `Group`, and `Role`. `All` means all entity types will be returned; `User` means only sub-accounts will be returned; `Group` means only User Groups will be returned; `Role` means only roles will be returned. `All` is the default value.
      */
     public String getEntityFilter() {
         return this.EntityFilter;
     }
 
     /**
-     * Set valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
-     * @param EntityFilter valid values: All, User, Group, and Role. "All" means all entity types will be returned; "User" means only sub-accounts will be returned; "Group" means only user groups will be returned; "Role" means only roles will be returned. "All" is the default value.
+     * Set Valid values: `All`, `User`, `Group`, and `Role`. `All` means all entity types will be returned; `User` means only sub-accounts will be returned; `Group` means only User Groups will be returned; `Role` means only roles will be returned. `All` is the default value.
+     * @param EntityFilter Valid values: `All`, `User`, `Group`, and `Role`. `All` means all entity types will be returned; `User` means only sub-accounts will be returned; `Group` means only User Groups will be returned; `Role` means only roles will be returned. `All` is the default value.
      */
     public void setEntityFilter(String EntityFilter) {
         this.EntityFilter = EntityFilter;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

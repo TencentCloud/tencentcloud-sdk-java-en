@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CloseSecurityPolicyResponse  extends AbstractModel{
+public class CloseSecurityPolicyResponse extends AbstractModel{
 
     /**
     * Async Process ID. Using DescribeAsyncTaskStatus to query process and status.

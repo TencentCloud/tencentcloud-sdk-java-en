@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class InquiryPriceResetInstanceResponse  extends AbstractModel{
+public class InquiryPriceResetInstanceResponse extends AbstractModel{
 
     /**
     * Price of reinstalling the instance with the specified configuration.

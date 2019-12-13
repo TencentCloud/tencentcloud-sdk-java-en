@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class OutputMappingConfig  extends AbstractModel{
+public class OutputMappingConfig extends AbstractModel{
 
     /**
     * Storage type. Only COS is supported

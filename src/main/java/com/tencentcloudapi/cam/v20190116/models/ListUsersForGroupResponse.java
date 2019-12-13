@@ -20,79 +20,79 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListUsersForGroupResponse  extends AbstractModel{
+public class ListUsersForGroupResponse extends AbstractModel{
 
     /**
-    * Total number of users associated with the user group.
+    * Total number of users associated with the User Group
     */
     @SerializedName("TotalNum")
     @Expose
     private Long TotalNum;
 
     /**
-    * Sub-user information.
+    * Sub-user information
     */
     @SerializedName("UserInfo")
     @Expose
     private GroupMemberInfo [] UserInfo;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain total number of users associated with the user group.
-     * @return TotalNum total user group number.
+     * Get Total number of users associated with the User Group 
+     * @return TotalNum Total number of users associated with the User Group
      */
     public Long getTotalNum() {
         return this.TotalNum;
     }
 
     /**
-     * Configure total number of users associated with the user group.
-     * @param TotalNum total user group number.
+     * Set Total number of users associated with the User Group
+     * @param TotalNum Total number of users associated with the User Group
      */
     public void setTotalNum(Long TotalNum) {
         this.TotalNum = TotalNum;
     }
 
     /**
-     * Obtain sub-user information.
-     * @return UserInfo sub-user information.
+     * Get Sub-user information 
+     * @return UserInfo Sub-user information
      */
     public GroupMemberInfo [] getUserInfo() {
         return this.UserInfo;
     }
 
     /**
-     * Configure sub-user information.
-     * @param UserInfo sub-user information.
+     * Set Sub-user information
+     * @param UserInfo Sub-user information
      */
     public void setUserInfo(GroupMemberInfo [] UserInfo) {
         this.UserInfo = UserInfo;
     }
 
     /**
-     * Obtain the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalNum", this.TotalNum);

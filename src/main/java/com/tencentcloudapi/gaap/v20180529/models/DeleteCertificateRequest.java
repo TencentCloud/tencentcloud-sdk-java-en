@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteCertificateRequest  extends AbstractModel{
+public class DeleteCertificateRequest extends AbstractModel{
 
     /**
     * ID of the certificate to be deleted.

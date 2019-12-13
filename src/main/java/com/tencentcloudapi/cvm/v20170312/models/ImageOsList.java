@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ImageOsList  extends AbstractModel{
+public class ImageOsList extends AbstractModel{
 
     /**
     * Supported Windows OS

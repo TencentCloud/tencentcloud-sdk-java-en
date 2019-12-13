@@ -20,102 +20,102 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListPoliciesRequest  extends AbstractModel{
+public class ListPoliciesRequest extends AbstractModel{
 
     /**
-    * Number of items on each page: must be greater than 0 and no greater than 200. The default is 20
+    * Number of entries per page: must be greater than 0 and no greater than 200. Default is 20
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-    * Page number: start from 1 and less than 200. Default is 1.
+    * Page number. Starts from 1 and cannot be greater than 200. Default is 1
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * Valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
+    * Valid values: `All`, `QCS`, and `Local`. `All` means all policies will be returned; `QCS` means only preset policies will be returned; `Local` means only custom policies will be returned. `All` is the default value
     */
     @SerializedName("Scope")
     @Expose
     private String Scope;
 
     /**
-    * Filter by policy name.
+    * Filter by policy name
     */
     @SerializedName("Keyword")
     @Expose
     private String Keyword;
 
     /**
-     * Obtain the number of items on each page: must be greater than 0 and no greater than 200. The default is 20
-     * @return Rp number of items on each page: must be greater than 0 and no greater than 200. The default is 20
+     * Get Number of entries per page: must be greater than 0 and no greater than 200. Default is 20 
+     * @return Rp Number of entries per page: must be greater than 0 and no greater than 200. Default is 20
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * Set the number of items on each page: must be greater than 0 and no greater than 200. The default is 20
-     * @param Rp the number of items on each page: must be greater than 0 and no greater than 200. The default is 20
+     * Set Number of entries per page: must be greater than 0 and no greater than 200. Default is 20
+     * @param Rp Number of entries per page: must be greater than 0 and no greater than 200. Default is 20
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * Obtain page number, which starts from 1 and cannot be greater than 200. Default is 1
-     * @return Page page number, which starts from 1 and cannot be greater than 200. Default is 1
+     * Get Page number. Starts from 1 and cannot be greater than 200. Default is 1 
+     * @return Page Page number. Starts from 1 and cannot be greater than 200. Default is 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * Set page number, which starts from 1 and cannot be greater than 200. Default is 1
-     * @param Page page number, which starts from 1 and cannot be greater than 200
+     * Set Page number. Starts from 1 and cannot be greater than 200. Default is 1
+     * @param Page Page number. Starts from 1 and cannot be greater than 200. Default is 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * Obtain valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
-     * @return Scope valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
+     * Get Valid values: `All`, `QCS`, and `Local`. `All` means all policies will be returned; `QCS` means only preset policies will be returned; `Local` means only custom policies will be returned. `All` is the default value 
+     * @return Scope Valid values: `All`, `QCS`, and `Local`. `All` means all policies will be returned; `QCS` means only preset policies will be returned; `Local` means only custom policies will be returned. `All` is the default value
      */
     public String getScope() {
         return this.Scope;
     }
 
     /**
-     * Configure valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
-     * @param Scope valid values: All, QCS, and Local. "All" means to all policies will be returned; "QCS" means only predefined policies will be returned; "Local" means only custom policies will be returned. "All" is the default value.
+     * Set Valid values: `All`, `QCS`, and `Local`. `All` means all policies will be returned; `QCS` means only preset policies will be returned; `Local` means only custom policies will be returned. `All` is the default value
+     * @param Scope Valid values: `All`, `QCS`, and `Local`. `All` means all policies will be returned; `QCS` means only preset policies will be returned; `Local` means only custom policies will be returned. `All` is the default value
      */
     public void setScope(String Scope) {
         this.Scope = Scope;
     }
 
     /**
-     * Obtain filter by policy name
-     * @return Keyword filter by policy name
+     * Get Filter by policy name 
+     * @return Keyword Filter by policy name
      */
     public String getKeyword() {
         return this.Keyword;
     }
 
     /**
-     * Configure filter by policy name
-     * @param Keyword filter by policy name
+     * Set Filter by policy name
+     * @param Keyword Filter by policy name
      */
     public void setKeyword(String Keyword) {
         this.Keyword = Keyword;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Rp", this.Rp);

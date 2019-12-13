@@ -20,79 +20,79 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListGroupsRequest  extends AbstractModel{
+public class ListGroupsRequest extends AbstractModel{
 
     /**
-    * Page number. Default is 1.
+    * Page number; default is 1
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * Number each page. Default is 20.
+    * Number of entries per page; default is 20
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-    * Filter by user group name.
+    * Filter by User Group name
     */
     @SerializedName("Keyword")
     @Expose
     private String Keyword;
 
     /**
-     * Obtain page number. Default is 1.
-     * @return Page page number. Default is 1.
+     * Get Page number; default is 1 
+     * @return Page Page number; default is 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * Set page number. Default is 1.
-     * @param Page page number. Default is 1.
+     * Set Page number; default is 1
+     * @param Page Page number; default is 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * Obtain number per page. Default is 20.
-     * @return Rp number per page. Default is 20.
+     * Get Number of entries per page; default is 20 
+     * @return Rp Number of entries per page; default is 20
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * Set number per page. Default is 20.
-     * @param Rp number per page. Default is 20.
+     * Set Number of entries per page; default is 20
+     * @param Rp Number of entries per page; default is 20
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * Obtain filter by user group name.
-     * @return Keyword filter by user group name.
+     * Get Filter by User Group name 
+     * @return Keyword Filter by User Group name
      */
     public String getKeyword() {
         return this.Keyword;
     }
 
     /**
-     * Configure filter by user group name.
-     * @param Keyword filter by user group name.
+     * Set Filter by User Group name
+     * @param Keyword Filter by User Group name
      */
     public void setKeyword(String Keyword) {
         this.Keyword = Keyword;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Page", this.Page);

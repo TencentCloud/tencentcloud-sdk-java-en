@@ -20,79 +20,79 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListGroupsResponse  extends AbstractModel{
+public class ListGroupsResponse extends AbstractModel{
 
     /**
-    * Total user group number.
+    * Total number of User Groups
     */
     @SerializedName("TotalNum")
     @Expose
     private Long TotalNum;
 
     /**
-    * User group array information.
+    * User group information array
     */
     @SerializedName("GroupInfo")
     @Expose
     private GroupInfo [] GroupInfo;
 
     /**
-    * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain total user group number.
-     * @return TotalNum total user group number.
+     * Get Total number of User Groups 
+     * @return TotalNum Total number of User Groups
      */
     public Long getTotalNum() {
         return this.TotalNum;
     }
 
     /**
-     * Set total user group number.
-     * @param TotalNum total user group number.
+     * Set Total number of User Groups
+     * @param TotalNum Total number of User Groups
      */
     public void setTotalNum(Long TotalNum) {
         this.TotalNum = TotalNum;
     }
 
     /**
-     * Obtain total user group array information.
-     * @return GroupInfo total user group array information.
+     * Get User group information array 
+     * @return GroupInfo User group information array
      */
     public GroupInfo [] getGroupInfo() {
         return this.GroupInfo;
     }
 
     /**
-     * Configure user group array information.
-     * @param GroupInfo user group array information.
+     * Set User group information array
+     * @param GroupInfo User group information array
      */
     public void setGroupInfo(GroupInfo [] GroupInfo) {
         this.GroupInfo = GroupInfo;
     }
 
     /**
-     * Obtain the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
-     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalNum", this.TotalNum);

@@ -20,79 +20,79 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateSAMLProviderRequest  extends AbstractModel{
+public class CreateSAMLProviderRequest extends AbstractModel{
 
     /**
-    * SAML IdP Name
+    * SAML identity provider name
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * SAML IdP Description
+    * SAML identity provider description
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * SAML IdP Metadata (Base64)
+    * SAML identity provider metadata document (Base64)
     */
     @SerializedName("SAMLMetadataDocument")
     @Expose
     private String SAMLMetadataDocument;
 
     /**
-     * Getting SAML IdP Name
-     * @return Name SAML IdP Name
+     * Get SAML identity provider name 
+     * @return Name SAML identity provider name
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Configuring SAML IdP Name
-     * @param Name SAML IdP Name
+     * Set SAML identity provider name
+     * @param Name SAML identity provider name
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Getting SAML IdP Description
-     * @return Description SAML IdP Description
+     * Get SAML identity provider description 
+     * @return Description SAML identity provider description
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * Configuring SAML IdP Description
-     * @param Description SAML IdP Description
+     * Set SAML identity provider description
+     * @param Description SAML identity provider description
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * Getting SAML IdP Base64 Encoded Metadata Document
-     * @return SAMLMetadataDocument  Base64-encoded metadata document of the SAML identity provider (IdP)
+     * Get SAML identity provider metadata document (Base64) 
+     * @return SAMLMetadataDocument SAML identity provider metadata document (Base64)
      */
     public String getSAMLMetadataDocument() {
         return this.SAMLMetadataDocument;
     }
 
     /**
-     * Configuring SAML IdP Base64 Encoded Metadata Document
-     * @param SAMLMetadataDocument Base64-encoded metadata document of the SAML identity provider (IdP)
+     * Set SAML identity provider metadata document (Base64)
+     * @param SAMLMetadataDocument SAML identity provider metadata document (Base64)
      */
     public void setSAMLMetadataDocument(String SAMLMetadataDocument) {
         this.SAMLMetadataDocument = SAMLMetadataDocument;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

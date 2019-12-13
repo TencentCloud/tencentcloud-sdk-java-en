@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeDiskAssociatedAutoSnapshotPolicyRequest  extends AbstractModel{
+public class DescribeDiskAssociatedAutoSnapshotPolicyRequest extends AbstractModel{
 
     /**
     * The ID of the queried cloud disk.

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateHTTPSListenerResponse  extends AbstractModel{
+public class CreateHTTPSListenerResponse extends AbstractModel{
 
     /**
     * Created listener ID

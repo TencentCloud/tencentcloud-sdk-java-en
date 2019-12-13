@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class TerminateDisksRequest  extends AbstractModel{
+public class TerminateDisksRequest extends AbstractModel{
 
     /**
     * List of cloud disk IDs required to be returned.

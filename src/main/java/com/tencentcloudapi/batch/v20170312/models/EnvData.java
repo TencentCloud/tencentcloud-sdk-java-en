@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class EnvData  extends AbstractModel{
+public class EnvData extends AbstractModel{
 
     /**
     * CVM instance type, which cannot be present together with InstanceTypes or InstanceTypeOptions at the same time.

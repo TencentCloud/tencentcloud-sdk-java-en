@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateAutoSnapshotPolicyRequest  extends AbstractModel{
+public class CreateAutoSnapshotPolicyRequest extends AbstractModel{
 
     /**
     * The policy for executing the scheduled snapshot.

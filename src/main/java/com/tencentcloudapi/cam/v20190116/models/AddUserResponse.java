@@ -20,38 +20,38 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class AddUserResponse  extends AbstractModel{
+public class AddUserResponse extends AbstractModel{
 
     /**
-    * Sub-user UID
+    * Sub-user UIN
     */
     @SerializedName("Uin")
     @Expose
     private Long Uin;
 
     /**
-    * Sub-user’s Username
+    * Sub-user username
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * Configuring Password: If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
+    * If the combination of input parameters indicates that a random password should be generated, the generated password is returned
     */
     @SerializedName("Password")
     @Expose
     private String Password;
 
     /**
-    * Sub-user’s Key ID
+    * Sub-user’s key ID
     */
     @SerializedName("SecretId")
     @Expose
     private String SecretId;
 
     /**
-    * Sub-user’s Key
+    * Sub-user’s secret key
     */
     @SerializedName("SecretKey")
     @Expose
@@ -65,14 +65,14 @@ public class AddUserResponse  extends AbstractModel{
     private Long Uid;
 
     /**
-    * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Getting Sub-user UIN
+     * Get Sub-user UIN 
      * @return Uin Sub-user UIN
      */
     public Long getUin() {
@@ -80,7 +80,7 @@ public class AddUserResponse  extends AbstractModel{
     }
 
     /**
-     * Configuring Sub-user UIN
+     * Set Sub-user UIN
      * @param Uin Sub-user UIN
      */
     public void setUin(Long Uin) {
@@ -88,71 +88,71 @@ public class AddUserResponse  extends AbstractModel{
     }
 
     /**
-     * Getting Sub-user’s Username
-     * @return Name Sub-user’s Username
+     * Get Sub-user username 
+     * @return Name Sub-user username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Configuring Sub-user’s Username
-     * @param Name Sub-user’s Username
+     * Set Sub-user username
+     * @param Name Sub-user username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Getting Password: If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
-     * @return Password If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
+     * Get If the combination of input parameters indicates that a random password should be generated, the generated password is returned 
+     * @return Password If the combination of input parameters indicates that a random password should be generated, the generated password is returned
      */
     public String getPassword() {
         return this.Password;
     }
 
     /**
-     * Configuring Password: If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
-     * @param Password If the combination of input parameters indicates to automatically generate a random password, the generated password is returned.
+     * Set If the combination of input parameters indicates that a random password should be generated, the generated password is returned
+     * @param Password If the combination of input parameters indicates that a random password should be generated, the generated password is returned
      */
     public void setPassword(String Password) {
         this.Password = Password;
     }
 
     /**
-     * Getting Sub-user’s Key ID
-     * @return SecretId Sub-user’s Key ID
+     * Get Sub-user’s key ID 
+     * @return SecretId Sub-user’s key ID
      */
     public String getSecretId() {
         return this.SecretId;
     }
 
     /**
-     * Configuring Sub-user’s Key ID
-     * @param SecretId Sub-user’s Key ID
+     * Set Sub-user’s key ID
+     * @param SecretId Sub-user’s key ID
      */
     public void setSecretId(String SecretId) {
         this.SecretId = SecretId;
     }
 
     /**
-     * Getting Sub-user’s Key
-     * @return SecretKey Sub-user’s Key
+     * Get Sub-user’s secret key 
+     * @return SecretKey Sub-user’s secret key
      */
     public String getSecretKey() {
         return this.SecretKey;
     }
 
     /**
-     * Configuring Sub-user’s Key
-     * @param SecretKey Sub-user’s Key
+     * Set Sub-user’s secret key
+     * @param SecretKey Sub-user’s secret key
      */
     public void setSecretKey(String SecretKey) {
         this.SecretKey = SecretKey;
     }
 
     /**
-     * Getting Sub-user UID
+     * Get Sub-user UID 
      * @return Uid Sub-user UID
      */
     public Long getUid() {
@@ -160,7 +160,7 @@ public class AddUserResponse  extends AbstractModel{
     }
 
     /**
-     * Configuring Sub-user UID
+     * Set Sub-user UID
      * @param Uid Sub-user UID
      */
     public void setUid(Long Uid) {
@@ -168,23 +168,23 @@ public class AddUserResponse  extends AbstractModel{
     }
 
     /**
-     * The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configure RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Uin", this.Uin);

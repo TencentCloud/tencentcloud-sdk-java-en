@@ -20,56 +20,56 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateGroupRequest  extends AbstractModel{
+public class CreateGroupRequest extends AbstractModel{
 
     /**
-    * User Group Name
+    * User Group name
     */
     @SerializedName("GroupName")
     @Expose
     private String GroupName;
 
     /**
-    * User Group Description
+    * User Group description
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-     * Getting User Group Name
-     * @return GroupName Name of the user group
+     * Get User Group name 
+     * @return GroupName User Group name
      */
     public String getGroupName() {
         return this.GroupName;
     }
 
     /**
-     * Configuring User Group Name
-     * @param GroupName Name of the user group
+     * Set User Group name
+     * @param GroupName User Group name
      */
     public void setGroupName(String GroupName) {
         this.GroupName = GroupName;
     }
 
     /**
-     * Getting User Group Description
-     * @return Remark User group description
+     * Get User Group description 
+     * @return Remark User Group description
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * Configuring User Group Description
-     * @param Remark User group description
+     * Set User Group description
+     * @param Remark User Group description
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupName", this.GroupName);

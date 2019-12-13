@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class TaskInstanceMetrics  extends AbstractModel{
+public class TaskInstanceMetrics extends AbstractModel{
 
     /**
     * Submitted count

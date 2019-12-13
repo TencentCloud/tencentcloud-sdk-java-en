@@ -20,79 +20,79 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListAttachedUserPoliciesRequest  extends AbstractModel{
+public class ListAttachedUserPoliciesRequest extends AbstractModel{
 
     /**
-    * Sub-account uin
+    * Sub-account UIN
     */
     @SerializedName("TargetUin")
     @Expose
     private Long TargetUin;
 
     /**
-    * Page number. Default value is 1. Start from 1
+    * Page number, which starts from 1. Default is 1
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * Per page size. Default value is 20
+    * Number of entries per page; 20 by default
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-     * Obtain sub-account uin
-     * @return TargetUin sub-account uin
+     * Get Sub-account UIN 
+     * @return TargetUin Sub-account UIN
      */
     public Long getTargetUin() {
         return this.TargetUin;
     }
 
     /**
-     * Set sub-account uin
-     * @param TargetUin sub-account uin
+     * Set Sub-account UIN
+     * @param TargetUin Sub-account UIN
      */
     public void setTargetUin(Long TargetUin) {
         this.TargetUin = TargetUin;
     }
 
     /**
-     * Obtain page number. Default value is 1. Start from 1
-     * @return Page page number. Default value is 1; starting from 1
+     * Get Page number, which starts from 1. Default is 1 
+     * @return Page Page number, which starts from 1. Default is 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * Set page number. Default value is 1; starting from 1
-     * @param Page page number. Default value is 1; starting from 1
+     * Set Page number, which starts from 1. Default is 1
+     * @param Page Page number, which starts from 1. Default is 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * Obtain each page size. Default value is 20
-     * @return Rp each page size. Default value is 20
+     * Get Number of entries per page; 20 by default 
+     * @return Rp Number of entries per page; 20 by default
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * Set each page size. Default value is 20
-     * @param Rp each page size. Default value is 20
+     * Set Number of entries per page; 20 by default
+     * @param Rp Number of entries per page; 20 by default
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TargetUin", this.TargetUin);

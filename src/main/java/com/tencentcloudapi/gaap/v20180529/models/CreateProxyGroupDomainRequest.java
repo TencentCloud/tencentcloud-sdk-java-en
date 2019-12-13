@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateProxyGroupDomainRequest  extends AbstractModel{
+public class CreateProxyGroupDomainRequest extends AbstractModel{
 
     /**
     * Connection group ID of the domain name to be enabled.

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class InquiryPriceRunInstancesRequest  extends AbstractModel{
+public class InquiryPriceRunInstancesRequest extends AbstractModel{
 
     /**
     * Location of the instance. You can use this parameter to specify the attributes of the instance, such as its availability zone and project.

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class AutoScalingGroup  extends AbstractModel{
+public class AutoScalingGroup extends AbstractModel{
 
     /**
     * Auto scaling group ID

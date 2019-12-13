@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class VoiceFilterStatisticsItem  extends AbstractModel{
+public class VoiceFilterStatisticsItem extends AbstractModel{
 
     /**
     * Total duration of phrase filtering

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class SubmitJobResponse  extends AbstractModel{
+public class SubmitJobResponse extends AbstractModel{
 
     /**
     * When a job is submitted through this API, this parameter is returned and indicates the job ID. Returning the list of job IDs does not mean that the job is parsed/executed successfully. The job state can be queried using the DescribeJob API.

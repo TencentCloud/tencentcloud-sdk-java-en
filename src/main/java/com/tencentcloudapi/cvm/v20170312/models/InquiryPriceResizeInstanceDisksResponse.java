@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class InquiryPriceResizeInstanceDisksResponse  extends AbstractModel{
+public class InquiryPriceResizeInstanceDisksResponse extends AbstractModel{
 
     /**
     * Price of the disks after being expanded to the specified configurations

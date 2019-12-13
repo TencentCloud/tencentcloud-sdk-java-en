@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeProxyDetailRequest  extends AbstractModel{
+public class DescribeProxyDetailRequest extends AbstractModel{
 
     /**
     * Connection ID to be queried.

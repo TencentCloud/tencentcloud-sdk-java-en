@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class AssociateSecurityGroupsRequest  extends AbstractModel{
+public class AssociateSecurityGroupsRequest extends AbstractModel{
 
     /**
     * ID of the security group to be associated, such as `sg-efil73jd`. Only one security group can be associated.

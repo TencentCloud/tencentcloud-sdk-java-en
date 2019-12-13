@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class BindRealServerInfo  extends AbstractModel{
+public class BindRealServerInfo extends AbstractModel{
 
     /**
     * Origin server IP or domain name

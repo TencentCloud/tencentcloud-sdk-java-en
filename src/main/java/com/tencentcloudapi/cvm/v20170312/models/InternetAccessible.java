@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class InternetAccessible  extends AbstractModel{
+public class InternetAccessible extends AbstractModel{
 
     /**
     * Network billing method. Valid values: <br><li>BANDWIDTH_PREPAID: prepaid; billed by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: pay-as-you-go; billed by traffic on an hourly basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: pay-as-you-go; billed by bandwidth on an hourly basis <br><li>BANDWIDTH_PACKAGE: for bandwidth package users <br>Default value: same as the instance billing method for non-bandwidth package users.

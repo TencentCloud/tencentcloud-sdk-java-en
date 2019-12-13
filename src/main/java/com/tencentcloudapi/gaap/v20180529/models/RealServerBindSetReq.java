@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class RealServerBindSetReq  extends AbstractModel{
+public class RealServerBindSetReq extends AbstractModel{
 
     /**
     * Origin server ID

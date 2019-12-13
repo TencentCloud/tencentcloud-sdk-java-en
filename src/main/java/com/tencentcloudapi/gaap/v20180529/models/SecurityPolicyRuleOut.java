@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class SecurityPolicyRuleOut  extends AbstractModel{
+public class SecurityPolicyRuleOut extends AbstractModel{
 
     /**
     * Policy: Allow (ACCEPT) or reject (DROP).

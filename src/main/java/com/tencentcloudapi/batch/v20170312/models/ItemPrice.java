@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ItemPrice  extends AbstractModel{
+public class ItemPrice extends AbstractModel{
 
     /**
     * Subsequent unit price (in RMB).

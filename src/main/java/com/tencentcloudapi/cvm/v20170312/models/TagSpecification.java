@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class TagSpecification  extends AbstractModel{
+public class TagSpecification extends AbstractModel{
 
     /**
     * Type of the resources associated with the tags. Currently only "instance" and "host" are supported.

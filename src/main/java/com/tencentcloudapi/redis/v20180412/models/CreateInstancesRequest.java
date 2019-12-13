@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateInstancesRequest  extends AbstractModel{
+public class CreateInstancesRequest extends AbstractModel{
 
     /**
     * ID of the AZ where the instance resides

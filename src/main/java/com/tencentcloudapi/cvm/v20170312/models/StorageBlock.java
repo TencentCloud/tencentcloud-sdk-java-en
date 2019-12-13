@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class StorageBlock  extends AbstractModel{
+public class StorageBlock extends AbstractModel{
 
     /**
     * Local HDD storage type. Value: LOCAL_PRO.

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyCertificateAttributesRequest  extends AbstractModel{
+public class ModifyCertificateAttributesRequest extends AbstractModel{
 
     /**
     * Certificate ID.

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyProxiesAttributeRequest  extends AbstractModel{
+public class ModifyProxiesAttributeRequest extends AbstractModel{
 
     /**
     * ID of one or multiple connections to be operated; It’s an old parameter, please switch to ProxyIds.

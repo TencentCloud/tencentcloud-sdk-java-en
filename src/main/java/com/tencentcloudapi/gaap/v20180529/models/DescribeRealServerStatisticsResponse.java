@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeRealServerStatisticsResponse  extends AbstractModel{
+public class DescribeRealServerStatisticsResponse extends AbstractModel{
 
     /**
     * Origin server status statistics

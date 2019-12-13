@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyDisksChargeTypeRequest  extends AbstractModel{
+public class ModifyDisksChargeTypeRequest extends AbstractModel{
 
     /**
     * The ID(s) of one or multiple cloud disks to be operated. The maximum number of cloud disks per request is 100.

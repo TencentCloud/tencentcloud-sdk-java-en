@@ -20,79 +20,79 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListAttachedGroupPoliciesRequest  extends AbstractModel{
+public class ListAttachedGroupPoliciesRequest extends AbstractModel{
 
     /**
-    * User group ID
+    * User Group ID
     */
     @SerializedName("TargetGroupId")
     @Expose
     private Long TargetGroupId;
 
     /**
-    * Page number. Default value is 1; starting from 1
+    * Page number, which starts from 1. Default is 1
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * Per page size. Default value is 20
+    * Number of entries per page; 20 by default
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-     * Obtain user group ID
-     * @return TargetGroupId user group ID
+     * Get User Group ID 
+     * @return TargetGroupId User Group ID
      */
     public Long getTargetGroupId() {
         return this.TargetGroupId;
     }
 
     /**
-     * Set user group ID
-     * @param TargetGroupId user group ID
+     * Set User Group ID
+     * @param TargetGroupId User Group ID
      */
     public void setTargetGroupId(Long TargetGroupId) {
         this.TargetGroupId = TargetGroupId;
     }
 
     /**
-     * Obtain page number. Default value is 1; starting from 1
-     * @return Page page number. Default value is 1; starting from 1
+     * Get Page number, which starts from 1. Default is 1 
+     * @return Page Page number, which starts from 1. Default is 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * Set page number. Default value is 1; starting from 1
-     * @param Page page number. Default value is 1; starting from 1
+     * Set Page number, which starts from 1. Default is 1
+     * @param Page Page number, which starts from 1. Default is 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * Obtain each page size. Default value is 20
-     * @return Rp each page size. Default value is 20
+     * Get Number of entries per page; 20 by default 
+     * @return Rp Number of entries per page; 20 by default
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * Set each page size. Default value is 20
-     * @param Rp each page size. Default value is 20
+     * Set Number of entries per page; 20 by default
+     * @param Rp Number of entries per page; 20 by default
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TargetGroupId", this.TargetGroupId);

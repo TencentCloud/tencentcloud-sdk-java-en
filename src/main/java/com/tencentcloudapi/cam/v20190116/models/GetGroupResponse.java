@@ -20,171 +20,171 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class GetGroupResponse  extends AbstractModel{
+public class GetGroupResponse extends AbstractModel{
 
     /**
-    * User group ID
+    * User Group ID
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-    * User Group Name
+    * User Group name
     */
     @SerializedName("GroupName")
     @Expose
     private String GroupName;
 
     /**
-    * Number of Members in User Group
+    * Number of members in the User Group
     */
     @SerializedName("GroupNum")
     @Expose
     private Long GroupNum;
 
     /**
-    * User Group Description.
+    * User Group description
     */
     @SerializedName("Remark")
     @Expose
     private String Remark;
 
     /**
-    * User Group Creation Time.
+    * Time User Group created
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * User Group Member Information
+    * User Group member information
     */
     @SerializedName("UserInfo")
     @Expose
     private GroupMemberInfo [] UserInfo;
 
     /**
-    * The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Getting user group ID
-     * @return GroupId user group ID
+     * Get User Group ID 
+     * @return GroupId User Group ID
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * Setting user group ID
-     * @param GroupId user group ID.
+     * Set User Group ID
+     * @param GroupId User Group ID
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * Obtaining user group name.
-     * @return GroupName user group name.
+     * Get User Group name 
+     * @return GroupName User Group name
      */
     public String getGroupName() {
         return this.GroupName;
     }
 
     /**
-     * Creating user group name.
-     * @param GroupName user group name.
+     * Set User Group name
+     * @param GroupName User Group name
      */
     public void setGroupName(String GroupName) {
         this.GroupName = GroupName;
     }
 
     /**
-     * Getting the number of members in the user group
-     * @return GroupNum Number of members in the user group
+     * Get Number of members in the User Group 
+     * @return GroupNum Number of members in the User Group
      */
     public Long getGroupNum() {
         return this.GroupNum;
     }
 
     /**
-     * Setting the number of members allowed in the user group
-     * @param GroupNum The number of members allowed in the user group
+     * Set Number of members in the User Group
+     * @param GroupNum Number of members in the User Group
      */
     public void setGroupNum(Long GroupNum) {
         this.GroupNum = GroupNum;
     }
 
     /**
-     * Obtaining user group description.
-     * @return Remark user group description.
+     * Get User Group description 
+     * @return Remark User Group description
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * Setting user group description.
-     * @param Remark user group description.
+     * Set User Group description
+     * @param Remark User Group description
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * Obtaining user group creation time.
-     * @return CreateTime user group creation time.
+     * Get Time User Group created 
+     * @return CreateTime Time User Group created
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * Setting user group creation time.
-     * @param CreateTime user group creation time.
+     * Set Time User Group created
+     * @param CreateTime Time User Group created
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * Getting user group member information
-     * @return UserInfo user group member information
+     * Get User Group member information 
+     * @return UserInfo User Group member information
      */
     public GroupMemberInfo [] getUserInfo() {
         return this.UserInfo;
     }
 
     /**
-     * Configuring user group member information settings
-     * @param UserInfo user group member information
+     * Set User Group member information
+     * @param UserInfo User Group member information
      */
     public void setUserInfo(GroupMemberInfo [] UserInfo) {
         this.UserInfo = UserInfo;
     }
 
     /**
-     * Getting unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId, the unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Configuring RequestId. RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. 
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupId", this.GroupId);

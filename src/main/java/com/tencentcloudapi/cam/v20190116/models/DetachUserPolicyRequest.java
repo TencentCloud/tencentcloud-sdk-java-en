@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DetachUserPolicyRequest  extends AbstractModel{
+public class DetachUserPolicyRequest extends AbstractModel{
 
     /**
     * Policy ID
@@ -37,7 +37,7 @@ public class DetachUserPolicyRequest  extends AbstractModel{
     private Long DetachUin;
 
     /**
-     * Getting Policy ID
+     * Get Policy ID 
      * @return PolicyId Policy ID
      */
     public Long getPolicyId() {
@@ -45,7 +45,7 @@ public class DetachUserPolicyRequest  extends AbstractModel{
     }
 
     /**
-     * Configuring Policy ID
+     * Set Policy ID
      * @param PolicyId Policy ID
      */
     public void setPolicyId(Long PolicyId) {
@@ -53,7 +53,7 @@ public class DetachUserPolicyRequest  extends AbstractModel{
     }
 
     /**
-     * Getting Sub-account UIN
+     * Get Sub-account UIN 
      * @return DetachUin Sub-account UIN
      */
     public Long getDetachUin() {
@@ -61,7 +61,7 @@ public class DetachUserPolicyRequest  extends AbstractModel{
     }
 
     /**
-     * Configuring Sub-account UIN
+     * Set Sub-account UIN
      * @param DetachUin Sub-account UIN
      */
     public void setDetachUin(Long DetachUin) {
@@ -69,7 +69,7 @@ public class DetachUserPolicyRequest  extends AbstractModel{
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyId", this.PolicyId);

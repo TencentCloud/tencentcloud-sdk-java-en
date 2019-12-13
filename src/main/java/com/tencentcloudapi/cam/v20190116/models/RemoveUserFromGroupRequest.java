@@ -20,33 +20,33 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class RemoveUserFromGroupRequest  extends AbstractModel{
+public class RemoveUserFromGroupRequest extends AbstractModel{
 
     /**
-    * UID of the user to be removed and the array corresponding to the user group ID
+    * The UID of the user to be deleted and an array corresponding to the User Group IDs
     */
     @SerializedName("Info")
     @Expose
     private GroupIdOfUidInfo [] Info;
 
     /**
-     * Obtain UID of the user to be removed and the array corresponding to the user group ID
-     * @return Info UID of the user to be removed and the array corresponding to the user group ID
+     * Get The UID of the user to be deleted and an array corresponding to the User Group IDs 
+     * @return Info The UID of the user to be deleted and an array corresponding to the User Group IDs
      */
     public GroupIdOfUidInfo [] getInfo() {
         return this.Info;
     }
 
     /**
-     * Configure UID of the user to be removed and the array corresponding to the user group ID
-     * @param Info UID of the user to be removed and the array corresponding to the user group ID
+     * Set The UID of the user to be deleted and an array corresponding to the User Group IDs
+     * @param Info The UID of the user to be deleted and an array corresponding to the User Group IDs
      */
     public void setInfo(GroupIdOfUidInfo [] Info) {
         this.Info = Info;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Info.", this.Info);

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteProxyGroupRequest  extends AbstractModel{
+public class DeleteProxyGroupRequest extends AbstractModel{
 
     /**
     * ID of the connection group to be deleted.

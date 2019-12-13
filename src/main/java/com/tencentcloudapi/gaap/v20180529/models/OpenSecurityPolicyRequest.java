@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class OpenSecurityPolicyRequest  extends AbstractModel{
+public class OpenSecurityPolicyRequest extends AbstractModel{
 
     /**
     * ID of the connections requiring enabled security policies.

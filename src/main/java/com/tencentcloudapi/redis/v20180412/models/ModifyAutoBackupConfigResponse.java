@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyAutoBackupConfigResponse  extends AbstractModel{
+public class ModifyAutoBackupConfigResponse extends AbstractModel{
 
     /**
     * Auto backup type: 1 "scheduled rollback"

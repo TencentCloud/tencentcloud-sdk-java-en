@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteDisasterRecoverGroupsRequest  extends AbstractModel{
+public class DeleteDisasterRecoverGroupsRequest extends AbstractModel{
 
     /**
     * List of spread placement group IDs, which can be obtained by calling the [DescribeDisasterRecoverGroups](https://cloud.tencent.com/document/api/213/17810) API.

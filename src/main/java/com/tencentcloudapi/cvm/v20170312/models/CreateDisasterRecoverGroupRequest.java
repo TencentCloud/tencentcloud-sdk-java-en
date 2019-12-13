@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateDisasterRecoverGroupRequest  extends AbstractModel{
+public class CreateDisasterRecoverGroupRequest extends AbstractModel{
 
     /**
     * Name of the spread placement group. The name must be 1-60 characters long and can contain both Chinese characters and English letters.

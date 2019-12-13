@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeInternetChargeTypeConfigsResponse  extends AbstractModel{
+public class DescribeInternetChargeTypeConfigsResponse extends AbstractModel{
 
     /**
     * List of network billing methods.

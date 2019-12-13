@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateProxyResponse  extends AbstractModel{
+public class CreateProxyResponse extends AbstractModel{
 
     /**
     * Instance ID of connection.

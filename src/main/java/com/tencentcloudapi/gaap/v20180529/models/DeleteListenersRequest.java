@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteListenersRequest  extends AbstractModel{
+public class DeleteListenersRequest extends AbstractModel{
 
     /**
     * ID list of listeners to be deleted

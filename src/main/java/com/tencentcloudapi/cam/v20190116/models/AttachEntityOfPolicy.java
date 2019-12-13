@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class AttachEntityOfPolicy  extends AbstractModel{
+public class AttachEntityOfPolicy extends AbstractModel{
 
     /**
     * Entity ID
@@ -30,28 +30,30 @@ public class AttachEntityOfPolicy  extends AbstractModel{
     private String Id;
 
     /**
-    * Entity NameNote: This field may return null, indicating that no valid value was found.
+    * Entity Name
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * Entity UINNote: This field may return null, indicating that no valid value was found.
+    * Entity UIN
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("Uin")
     @Expose
     private Long Uin;
 
     /**
-    * Type of entity association. 1 Associate by Users ； 2 Associate by User Groups
+    * Type of entity association. 1: Associate by users; 2: Associate by User Groups
     */
     @SerializedName("RelatedType")
     @Expose
     private Long RelatedType;
 
     /**
-     * Getting Entity ID
+     * Get Entity ID 
      * @return Id Entity ID
      */
     public String getId() {
@@ -59,7 +61,7 @@ public class AttachEntityOfPolicy  extends AbstractModel{
     }
 
     /**
-     * Configuring Entity ID
+     * Set Entity ID
      * @param Id Entity ID
      */
     public void setId(String Id) {
@@ -67,55 +69,63 @@ public class AttachEntityOfPolicy  extends AbstractModel{
     }
 
     /**
-     * Getting Entity NameNote: This field may return null, indicating that no valid value was found.
-     * @return Name: Entity NameNote: This field may return null, indicating that no valid value was found.
+     * Get Entity Name
+Note: This field may return null, indicating that no valid value was found. 
+     * @return Name Entity Name
+Note: This field may return null, indicating that no valid value was found.
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Configuring Entity Name Note: This field may return null, indicating that no valid value was found.
-     * @param Name Entity NameNote: This field may return null, indicating that no valid value was found.
+     * Set Entity Name
+Note: This field may return null, indicating that no valid value was found.
+     * @param Name Entity Name
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Getting Entity UINNote: This field may return null, indicating that no valid value was found.
-     * @return Uin Entity UINNote: This field may return null, indicating that no valid value was found.
+     * Get Entity UIN
+Note: This field may return null, indicating that no valid value was found. 
+     * @return Uin Entity UIN
+Note: This field may return null, indicating that no valid value was found.
      */
     public Long getUin() {
         return this.Uin;
     }
 
     /**
-     * Configuring Entity UINNote: This field may return null, indicating that no valid value was found.
-     * @param Uin Entity UINNote: This field may return null, indicating that no valid value was found.
+     * Set Entity UIN
+Note: This field may return null, indicating that no valid value was found.
+     * @param Uin Entity UIN
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setUin(Long Uin) {
         this.Uin = Uin;
     }
 
     /**
-     * Getting Type of Entity Association
-     * @return RelatedType Type of entity association. 1 Associate by Users; 2 Associate by User Groups
+     * Get Type of entity association. 1: Associate by users; 2: Associate by User Groups 
+     * @return RelatedType Type of entity association. 1: Associate by users; 2: Associate by User Groups
      */
     public Long getRelatedType() {
         return this.RelatedType;
     }
 
     /**
-     * Configuring type of entity association. 1 Associate by Users; 2 Associate by User Groups
-     * @param RelatedType Type of entity association. 1 Associate by Users; 2 Associate by User Groups
+     * Set Type of entity association. 1: Associate by users; 2: Associate by User Groups
+     * @param RelatedType Type of entity association. 1: Associate by users; 2: Associate by User Groups
      */
     public void setRelatedType(Long RelatedType) {
         this.RelatedType = RelatedType;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Id", this.Id);

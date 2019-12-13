@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeRegionAndPriceResponse  extends AbstractModel{
+public class DescribeRegionAndPriceResponse extends AbstractModel{
 
     /**
     * Total number of origin server regions

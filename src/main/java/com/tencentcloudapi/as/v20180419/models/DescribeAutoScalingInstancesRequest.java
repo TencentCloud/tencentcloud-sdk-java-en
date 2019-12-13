@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeAutoScalingInstancesRequest  extends AbstractModel{
+public class DescribeAutoScalingInstancesRequest extends AbstractModel{
 
     /**
     * ID of the CVM instance to be queried. This parameter does not support specifying both InstanceIds and Filters at the same time.

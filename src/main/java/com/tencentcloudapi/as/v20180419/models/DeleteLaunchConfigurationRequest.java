@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteLaunchConfigurationRequest  extends AbstractModel{
+public class DeleteLaunchConfigurationRequest extends AbstractModel{
 
     /**
     * ID of the launch configuration to be deleted.

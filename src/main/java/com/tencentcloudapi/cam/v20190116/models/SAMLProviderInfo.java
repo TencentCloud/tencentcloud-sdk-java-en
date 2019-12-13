@@ -20,102 +20,102 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class SAMLProviderInfo  extends AbstractModel{
+public class SAMLProviderInfo extends AbstractModel{
 
     /**
-    * SAML IdP name
+    * SAML identity provider name
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-    * SAML IdP description
+    * SAML identity provider description
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-    * SAML IdP Created Time
+    * Time SAML identity provider created
     */
     @SerializedName("CreateTime")
     @Expose
     private String CreateTime;
 
     /**
-    * Last modified time of the SAML IdP
+    * Time SAML identity provider last modified
     */
     @SerializedName("ModifyTime")
     @Expose
     private String ModifyTime;
 
     /**
-     * Getting SAML IdP Name
-     * @return Name SAML IdP Name
+     * Get SAML identity provider name 
+     * @return Name SAML identity provider name
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Configuring SAML IdP Name
-     * @param Name SAML IdP Name
+     * Set SAML identity provider name
+     * @param Name SAML identity provider name
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Getting SAML IdP Description
-     * @return Description SAML IdP Description
+     * Get SAML identity provider description 
+     * @return Description SAML identity provider description
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * Configuring SAML IdP Description
-     * @param Description SAML IdP Description
+     * Set SAML identity provider description
+     * @param Description SAML identity provider description
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * Getting SAML IdP Created Time
-     * @return CreateTime SAML IdP Created Time
+     * Get Time SAML identity provider created 
+     * @return CreateTime Time SAML identity provider created
      */
     public String getCreateTime() {
         return this.CreateTime;
     }
 
     /**
-     * Setting SAML IdP Created Time
-     * @param CreateTime IdP Created Time
+     * Set Time SAML identity provider created
+     * @param CreateTime Time SAML identity provider created
      */
     public void setCreateTime(String CreateTime) {
         this.CreateTime = CreateTime;
     }
 
     /**
-     * Getting last modified time of SAML IdP
-     * @return ModifyTime last modified time of SAML IdP
+     * Get Time SAML identity provider last modified 
+     * @return ModifyTime Time SAML identity provider last modified
      */
     public String getModifyTime() {
         return this.ModifyTime;
     }
 
     /**
-     * Configuring last modified time of SAML IdP
-     * @param ModifyTime last modified time of SAML IdP
+     * Set Time SAML identity provider last modified
+     * @param ModifyTime Time SAML identity provider last modified
      */
     public void setModifyTime(String ModifyTime) {
         this.ModifyTime = ModifyTime;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

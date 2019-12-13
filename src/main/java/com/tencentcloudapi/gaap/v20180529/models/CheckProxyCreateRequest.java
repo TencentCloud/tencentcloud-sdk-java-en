@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CheckProxyCreateRequest  extends AbstractModel{
+public class CheckProxyCreateRequest extends AbstractModel{
 
     /**
     * Access (acceleration) region of the connection. The value can be obtained via the DescribeAccessRegionsByDestRegion API.

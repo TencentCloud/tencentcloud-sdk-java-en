@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateImageRequest  extends AbstractModel{
+public class CreateImageRequest extends AbstractModel{
 
     /**
     * Image name

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeBackupUrlResponse  extends AbstractModel{
+public class DescribeBackupUrlResponse extends AbstractModel{
 
     /**
     * Download address on the public network (valid for 6 hours)

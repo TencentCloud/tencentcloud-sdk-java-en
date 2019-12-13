@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateComputeEnvRequest  extends AbstractModel{
+public class CreateComputeEnvRequest extends AbstractModel{
 
     /**
     * Compute environment information

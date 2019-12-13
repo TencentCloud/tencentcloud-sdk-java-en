@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListUsersResponse  extends AbstractModel{
+public class ListUsersResponse extends AbstractModel{
 
     /**
     * Sub-user information
@@ -30,46 +30,46 @@ public class ListUsersResponse  extends AbstractModel{
     private SubAccountInfo [] Data;
 
     /**
-    * The unique ID of request, which will be returned for each request and is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Get sub-user information
-     * @return Data sub-user information
+     * Get Sub-user information 
+     * @return Data Sub-user information
      */
     public SubAccountInfo [] getData() {
         return this.Data;
     }
 
     /**
-     * Configure sub-user information
-     * @param Data sub-user information 
+     * Set Sub-user information
+     * @param Data Sub-user information
      */
     public void setData(SubAccountInfo [] Data) {
         this.Data = Data;
     }
 
     /**
-     * Get the unique ID of request, which will be returned for each request, and is required for each troubleshooting case.
-     * @return RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
-     * @param RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Data.", this.Data);

@@ -20,79 +20,79 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreatePolicyRequest  extends AbstractModel{
+public class CreatePolicyRequest extends AbstractModel{
 
     /**
-    * Policy Name
+    * Policy name
     */
     @SerializedName("PolicyName")
     @Expose
     private String PolicyName;
 
     /**
-    * Policy Documentation
+    * Policy document
     */
     @SerializedName("PolicyDocument")
     @Expose
     private String PolicyDocument;
 
     /**
-    * Policy Description
+    * Policy description
     */
     @SerializedName("Description")
     @Expose
     private String Description;
 
     /**
-     * Getting Policy Name
-     * @return PolicyName Policy Name
+     * Get Policy name 
+     * @return PolicyName Policy name
      */
     public String getPolicyName() {
         return this.PolicyName;
     }
 
     /**
-     * Configuring Policy Name
-     * @param PolicyName Policy Name
+     * Set Policy name
+     * @param PolicyName Policy name
      */
     public void setPolicyName(String PolicyName) {
         this.PolicyName = PolicyName;
     }
 
     /**
-     * Getting Policy Documentation
-     * @return PolicyDocument Policy Documentation
+     * Get Policy document 
+     * @return PolicyDocument Policy document
      */
     public String getPolicyDocument() {
         return this.PolicyDocument;
     }
 
     /**
-     * Configuring Policy Documentation
-     * @param PolicyDocument Policy Documentation
+     * Set Policy document
+     * @param PolicyDocument Policy document
      */
     public void setPolicyDocument(String PolicyDocument) {
         this.PolicyDocument = PolicyDocument;
     }
 
     /**
-     * Getting Policy Description
-     * @return Description Policy Description
+     * Get Policy description 
+     * @return Description Policy description
      */
     public String getDescription() {
         return this.Description;
     }
 
     /**
-     * Configuring Policy Description
-     * @param Description Policy Description
+     * Set Policy description
+     * @param Description Policy description
      */
     public void setDescription(String Description) {
         this.Description = Description;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "PolicyName", this.PolicyName);

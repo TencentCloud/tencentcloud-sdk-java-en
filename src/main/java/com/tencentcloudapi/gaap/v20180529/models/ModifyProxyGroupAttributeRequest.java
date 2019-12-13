@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyProxyGroupAttributeRequest  extends AbstractModel{
+public class ModifyProxyGroupAttributeRequest extends AbstractModel{
 
     /**
     * ID of the connection group to be modified.

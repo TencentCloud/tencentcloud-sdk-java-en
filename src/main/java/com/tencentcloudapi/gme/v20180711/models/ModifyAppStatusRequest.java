@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyAppStatusRequest  extends AbstractModel{
+public class ModifyAppStatusRequest extends AbstractModel{
 
     /**
     * Application ID, which is generated and returned by the backend after application creation

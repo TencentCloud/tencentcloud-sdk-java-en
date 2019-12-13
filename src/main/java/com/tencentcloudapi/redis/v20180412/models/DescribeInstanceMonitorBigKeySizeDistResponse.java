@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeInstanceMonitorBigKeySizeDistResponse  extends AbstractModel{
+public class DescribeInstanceMonitorBigKeySizeDistResponse extends AbstractModel{
 
     /**
     * Big key size distribution details

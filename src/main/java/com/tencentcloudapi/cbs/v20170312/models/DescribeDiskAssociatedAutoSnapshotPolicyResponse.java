@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeDiskAssociatedAutoSnapshotPolicyResponse  extends AbstractModel{
+public class DescribeDiskAssociatedAutoSnapshotPolicyResponse extends AbstractModel{
 
     /**
     * The quantity of scheduled snapshots binded to cloud disk.

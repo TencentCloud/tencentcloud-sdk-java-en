@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class RunMonitorServiceEnabled  extends AbstractModel{
+public class RunMonitorServiceEnabled extends AbstractModel{
 
     /**
     * Whether to enable the [Cloud Monitor](https://cloud.tencent.com/document/product/248) service. Value range: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |

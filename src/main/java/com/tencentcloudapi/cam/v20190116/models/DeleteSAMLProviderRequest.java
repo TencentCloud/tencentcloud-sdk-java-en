@@ -20,33 +20,33 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteSAMLProviderRequest  extends AbstractModel{
+public class DeleteSAMLProviderRequest extends AbstractModel{
 
     /**
-    * SAML IdP Name
+    * SAML identity provider name
     */
     @SerializedName("Name")
     @Expose
     private String Name;
 
     /**
-     * Getting SAML IdP Name
-     * @return Name SAML IdP Name
+     * Get SAML identity provider name 
+     * @return Name SAML identity provider name
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Configuring SAML IdP Name
-     * @param Name SAML IdP Name
+     * Set SAML identity provider name
+     * @param Name SAML identity provider name
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

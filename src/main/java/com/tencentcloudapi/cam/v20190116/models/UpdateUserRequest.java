@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class UpdateUserRequest  extends AbstractModel{
+public class UpdateUserRequest extends AbstractModel{
 
     /**
     * Sub-user username
@@ -30,7 +30,7 @@ public class UpdateUserRequest  extends AbstractModel{
     private String Name;
 
     /**
-    * Sub-user note
+    * Sub-user remarks
     */
     @SerializedName("Remark")
     @Expose
@@ -44,28 +44,28 @@ public class UpdateUserRequest  extends AbstractModel{
     private Long ConsoleLogin;
 
     /**
-    * Sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
+    * Sub-user’s console login password. If no password rules have been set, the default rules require the password to have at least 8 characters, at least one lowercase letter, one uppercase letter, one number, and one special character. This value is valid only when the sub-user is allowed to log in to the console. If no value is specified, and console login is allowed, the system will automatically generate a password. The automatically generated passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters.
     */
     @SerializedName("Password")
     @Expose
     private String Password;
 
     /**
-    * If the sub-user needs to reset the password to re-login the console. 0: No; 1: Yes
+    * If the sub-user needs to reset their password when they next log in to the console. 0: No; 1: Yes.
     */
     @SerializedName("NeedResetPassword")
     @Expose
     private Long NeedResetPassword;
 
     /**
-    * Mobile Number
+    * Mobile number
     */
     @SerializedName("PhoneNum")
     @Expose
     private String PhoneNum;
 
     /**
-    * Area Code
+    * Country/Area Code
     */
     @SerializedName("CountryCode")
     @Expose
@@ -79,39 +79,39 @@ public class UpdateUserRequest  extends AbstractModel{
     private String Email;
 
     /**
-     * Obtain sub-user username
-     * @return Name sub-user username
+     * Get Sub-user username 
+     * @return Name Sub-user username
      */
     public String getName() {
         return this.Name;
     }
 
     /**
-     * Set sub-user username
-     * @param Name sub-user username
+     * Set Sub-user username
+     * @param Name Sub-user username
      */
     public void setName(String Name) {
         this.Name = Name;
     }
 
     /**
-     * Obtain sub-user note
-     * @return Remark sub-user note
+     * Get Sub-user remarks 
+     * @return Remark Sub-user remarks
      */
     public String getRemark() {
         return this.Remark;
     }
 
     /**
-     * Set up sub-user note
-     * @param Remark sub-user note
+     * Set Sub-user remarks
+     * @param Remark Sub-user remarks
      */
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
 
     /**
-     * Whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
+     * Get Whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes. 
      * @return ConsoleLogin Whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
      */
     public Long getConsoleLogin() {
@@ -119,7 +119,7 @@ public class UpdateUserRequest  extends AbstractModel{
     }
 
     /**
-     * Set whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
+     * Set Whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
      * @param ConsoleLogin Whether or not the sub-user is allowed to log in to the console. 0: No; 1: Yes.
      */
     public void setConsoleLogin(Long ConsoleLogin) {
@@ -127,87 +127,87 @@ public class UpdateUserRequest  extends AbstractModel{
     }
 
     /**
-     * Sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
-     * @return Password Sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
+     * Get Sub-user’s console login password. If no password rules have been set, the default rules require the password to have at least 8 characters, at least one lowercase letter, one uppercase letter, one number, and one special character. This value is valid only when the sub-user is allowed to log in to the console. If no value is specified, and console login is allowed, the system will automatically generate a password. The automatically generated passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
+     * @return Password Sub-user’s console login password. If no password rules have been set, the default rules require the password to have at least 8 characters, at least one lowercase letter, one uppercase letter, one number, and one special character. This value is valid only when the sub-user is allowed to log in to the console. If no value is specified, and console login is allowed, the system will automatically generate a password. The automatically generated passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters.
      */
     public String getPassword() {
         return this.Password;
     }
 
     /**
-     * Set sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
-     * @param Password Sub-user’s password to login to the console. If you have not set up password rules, the default rules are: 1. have to be at least 8 characters long; 2. must contain at least one lower case letter, one upper case letter, one digit, and one special characters. This value is valid only when the sub-user is allowed to use console. If no value is specified, and console login is allowed, the system will automatically generate passwords. The auto-passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters. 
+     * Set Sub-user’s console login password. If no password rules have been set, the default rules require the password to have at least 8 characters, at least one lowercase letter, one uppercase letter, one number, and one special character. This value is valid only when the sub-user is allowed to log in to the console. If no value is specified, and console login is allowed, the system will automatically generate a password. The automatically generated passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters.
+     * @param Password Sub-user’s console login password. If no password rules have been set, the default rules require the password to have at least 8 characters, at least one lowercase letter, one uppercase letter, one number, and one special character. This value is valid only when the sub-user is allowed to log in to the console. If no value is specified, and console login is allowed, the system will automatically generate a password. The automatically generated passwords are 32 characters long and contain letters (both upper and lower cases), numbers, and special characters.
      */
     public void setPassword(String Password) {
         this.Password = Password;
     }
 
     /**
-     * Obtain whether sub-users need to reset passwords to re-login to the console. 0: No; 1: Yes.
-     * @return NeedResetPassword Whether sub-users need to reset passwords to re-login to the console. 0: No; 1: Yes.
+     * Get If the sub-user needs to reset their password when they next log in to the console. 0: No; 1: Yes. 
+     * @return NeedResetPassword If the sub-user needs to reset their password when they next log in to the console. 0: No; 1: Yes.
      */
     public Long getNeedResetPassword() {
         return this.NeedResetPassword;
     }
 
     /**
-     * Configure whether sub-users need to reset passwords to re-login to the console. 0: No; 1: Yes.
-     * @param NeedResetPassword Whether sub-users need to reset passwords to re-login to the console. 0: No; 1: Yes.
+     * Set If the sub-user needs to reset their password when they next log in to the console. 0: No; 1: Yes.
+     * @param NeedResetPassword If the sub-user needs to reset their password when they next log in to the console. 0: No; 1: Yes.
      */
     public void setNeedResetPassword(Long NeedResetPassword) {
         this.NeedResetPassword = NeedResetPassword;
     }
 
     /**
-     * Obtain mobile number 
-     * @return PhoneNum mobile number
+     * Get Mobile number 
+     * @return PhoneNum Mobile number
      */
     public String getPhoneNum() {
         return this.PhoneNum;
     }
 
     /**
-     * Set mobile number
-     * @param PhoneNum set mobile phone number.
+     * Set Mobile number
+     * @param PhoneNum Mobile number
      */
     public void setPhoneNum(String PhoneNum) {
         this.PhoneNum = PhoneNum;
     }
 
     /**
-     * Obtain area code
-     * @return CountryCode area code
+     * Get Country/Area Code 
+     * @return CountryCode Country/Area Code
      */
     public String getCountryCode() {
         return this.CountryCode;
     }
 
     /**
-     * Set area code
-     * @param CountryCode area code
+     * Set Country/Area Code
+     * @param CountryCode Country/Area Code
      */
     public void setCountryCode(String CountryCode) {
         this.CountryCode = CountryCode;
     }
 
     /**
-     * Obtain email
-     * @return Email email
+     * Get Email 
+     * @return Email Email
      */
     public String getEmail() {
         return this.Email;
     }
 
     /**
-     * Configure Emailbox
-     * @param Email mailbox
+     * Set Email
+     * @param Email Email
      */
     public void setEmail(String Email) {
         this.Email = Email;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "Name", this.Name);

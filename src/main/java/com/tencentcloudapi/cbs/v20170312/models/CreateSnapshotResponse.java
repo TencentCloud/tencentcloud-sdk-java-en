@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateSnapshotResponse  extends AbstractModel{
+public class CreateSnapshotResponse extends AbstractModel{
 
     /**
     * ID of the new snapshot.

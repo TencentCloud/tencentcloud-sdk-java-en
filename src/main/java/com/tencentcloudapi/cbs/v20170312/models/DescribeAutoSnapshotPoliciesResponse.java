@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeAutoSnapshotPoliciesResponse  extends AbstractModel{
+public class DescribeAutoSnapshotPoliciesResponse extends AbstractModel{
 
     /**
     * The quantity of valid scheduled snapshot policies.

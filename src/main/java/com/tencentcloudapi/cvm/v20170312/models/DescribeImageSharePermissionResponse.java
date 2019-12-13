@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeImageSharePermissionResponse  extends AbstractModel{
+public class DescribeImageSharePermissionResponse extends AbstractModel{
 
     /**
     * Information on image sharing.

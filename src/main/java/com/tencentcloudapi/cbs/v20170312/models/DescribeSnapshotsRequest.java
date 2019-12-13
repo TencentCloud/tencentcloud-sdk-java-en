@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeSnapshotsRequest  extends AbstractModel{
+public class DescribeSnapshotsRequest extends AbstractModel{
 
     /**
     * List of snapshot IDs to be queried. The parameter does not support specifying both `SnapshotIds` and `Filters`.

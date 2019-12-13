@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class UnbindAutoSnapshotPolicyRequest  extends AbstractModel{
+public class UnbindAutoSnapshotPolicyRequest extends AbstractModel{
 
     /**
     * List of cloud disk IDs scheduled snapshot policy to be unbound from.

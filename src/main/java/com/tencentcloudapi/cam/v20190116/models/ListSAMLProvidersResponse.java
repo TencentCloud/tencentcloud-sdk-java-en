@@ -20,79 +20,79 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListSAMLProvidersResponse  extends AbstractModel{
+public class ListSAMLProvidersResponse extends AbstractModel{
 
     /**
-    * Total number of SAML identity provider
+    * Total number of SAML identity providers
     */
     @SerializedName("TotalCount")
     @Expose
     private Long TotalCount;
 
     /**
-    * List of SAML identity provider
+    * List of SAML identity providers
     */
     @SerializedName("SAMLProviderSet")
     @Expose
     private SAMLProviderInfo [] SAMLProviderSet;
 
     /**
-    * Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Getting total number of SAML identity provider
-     * @return TotalCount total number of SAML identity provider
+     * Get Total number of SAML identity providers 
+     * @return TotalCount Total number of SAML identity providers
      */
     public Long getTotalCount() {
         return this.TotalCount;
     }
 
     /**
-     * Configuring total number of SAML identity provider
-     * @param TotalCount total number of SAML identity provider.
+     * Set Total number of SAML identity providers
+     * @param TotalCount Total number of SAML identity providers
      */
     public void setTotalCount(Long TotalCount) {
         this.TotalCount = TotalCount;
     }
 
     /**
-     * Obtain SAML identity provider list.
-     * @return SAMLProviderSet SAML identity provider list.
+     * Get List of SAML identity providers 
+     * @return SAMLProviderSet List of SAML identity providers
      */
     public SAMLProviderInfo [] getSAMLProviderSet() {
         return this.SAMLProviderSet;
     }
 
     /**
-     * Configuring SAML identity provider list.
-     * @param SAMLProviderSet SAML identity provider list.
+     * Set List of SAML identity providers
+     * @param SAMLProviderSet List of SAML identity providers
      */
     public void setSAMLProviderSet(SAMLProviderInfo [] SAMLProviderSet) {
         this.SAMLProviderSet = SAMLProviderSet;
     }
 
     /**
-     * Getting unique request ID. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
-     * @param RequestId is the ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalCount", this.TotalCount);

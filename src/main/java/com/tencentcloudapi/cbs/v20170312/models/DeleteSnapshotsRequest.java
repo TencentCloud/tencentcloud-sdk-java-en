@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteSnapshotsRequest  extends AbstractModel{
+public class DeleteSnapshotsRequest extends AbstractModel{
 
     /**
     * List of IDs of snapshots to be deleted, which can be queried via [DescribeSnapshots](/document/product/362/15647).

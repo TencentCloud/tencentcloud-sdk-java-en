@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListAttachedGroupPoliciesResponse  extends AbstractModel{
+public class ListAttachedGroupPoliciesResponse extends AbstractModel{
 
     /**
     * Total number of policies
@@ -30,69 +30,69 @@ public class ListAttachedGroupPoliciesResponse  extends AbstractModel{
     private Long TotalNum;
 
     /**
-    * List of policies
+    * Policy list
     */
     @SerializedName("List")
     @Expose
     private AttachPolicyInfo [] List;
 
     /**
-    * The unique ID of request, which will be returned for each request and is required for each troubleshooting case.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Getting total number of policies
-     * @return TotalNum total number of policies
+     * Get Total number of policies 
+     * @return TotalNum Total number of policies
      */
     public Long getTotalNum() {
         return this.TotalNum;
     }
 
     /**
-     * Configuring total number of policies
-     * @param TotalNum total number of policies
+     * Set Total number of policies
+     * @param TotalNum Total number of policies
      */
     public void setTotalNum(Long TotalNum) {
         this.TotalNum = TotalNum;
     }
 
     /**
-     * Obtain list of policies
-     * @return List list of policies
+     * Get Policy list 
+     * @return List Policy list
      */
     public AttachPolicyInfo [] getList() {
         return this.List;
     }
 
     /**
-     * Set list of policies 
-     * @param List list of policies
+     * Set Policy list
+     * @param List Policy list
      */
     public void setList(AttachPolicyInfo [] List) {
         this.List = List;
     }
 
     /**
-     * Obtain the unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
-     * @return RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
-     * @param RequestId unique ID of request, which will be returned for each request. The corresponding RequestId is required for troubleshooting.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalNum", this.TotalNum);

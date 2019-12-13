@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeSnapshotOperationLogsRequest  extends AbstractModel{
+public class DescribeSnapshotOperationLogsRequest extends AbstractModel{
 
     /**
     * Filter conditions. The following conditions are supported:

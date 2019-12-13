@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeUDPListenersRequest  extends AbstractModel{
+public class DescribeUDPListenersRequest extends AbstractModel{
 
     /**
     * Connection ID; Either `ProxyId` or `GroupId` must be set, but you cannot set both.

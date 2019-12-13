@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class InquiryPriceResizeDiskRequest  extends AbstractModel{
+public class InquiryPriceResizeDiskRequest extends AbstractModel{
 
     /**
     * ID of the cloud disk, which can be queried via the API [DescribeDisks](/document/product/362/16315).

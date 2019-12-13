@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeHostsResponse  extends AbstractModel{
+public class DescribeHostsResponse extends AbstractModel{
 
     /**
     * Total number of CDH instances meeting the query conditions

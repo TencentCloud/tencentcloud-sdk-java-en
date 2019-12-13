@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class AnonymousComputeEnv  extends AbstractModel{
+public class AnonymousComputeEnv extends AbstractModel{
 
     /**
     * Compute environment management type

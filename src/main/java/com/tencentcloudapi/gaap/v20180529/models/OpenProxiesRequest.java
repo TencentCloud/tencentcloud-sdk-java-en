@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class OpenProxiesRequest  extends AbstractModel{
+public class OpenProxiesRequest extends AbstractModel{
 
     /**
     * List of connection instance IDs; It’s an old parameter, please switch to ProxyIds.

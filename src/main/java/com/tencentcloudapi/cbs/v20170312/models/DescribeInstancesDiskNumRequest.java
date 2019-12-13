@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeInstancesDiskNumRequest  extends AbstractModel{
+public class DescribeInstancesDiskNumRequest extends AbstractModel{
 
     /**
     * ID of the CVM instance can be queried via the API [DescribeInstances](/document/product/213/15728).

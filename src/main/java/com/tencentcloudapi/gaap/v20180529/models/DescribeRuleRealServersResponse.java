@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeRuleRealServersResponse  extends AbstractModel{
+public class DescribeRuleRealServersResponse extends AbstractModel{
 
     /**
     * Quantity of origin servers that can be bound

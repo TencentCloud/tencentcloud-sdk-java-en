@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeImagesResponse  extends AbstractModel{
+public class DescribeImagesResponse extends AbstractModel{
 
     /**
     * Information on an image, including its state and attributes.

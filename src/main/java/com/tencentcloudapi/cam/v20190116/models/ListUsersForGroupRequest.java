@@ -8,7 +8,7 @@
  *    http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
@@ -20,79 +20,79 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListUsersForGroupRequest  extends AbstractModel{
+public class ListUsersForGroupRequest extends AbstractModel{
 
     /**
-    * User group ID.
+    * User group ID
     */
     @SerializedName("GroupId")
     @Expose
     private Long GroupId;
 
     /**
-    * Page number. Default is 1.
+    * Page number; default is 1
     */
     @SerializedName("Page")
     @Expose
     private Long Page;
 
     /**
-    * Number each page. Default is 20.
+    * Number of entries per page; default is 20
     */
     @SerializedName("Rp")
     @Expose
     private Long Rp;
 
     /**
-     * Obtain user group ID
-     * @return GroupId user group ID.
+     * Get User group ID 
+     * @return GroupId User group ID
      */
     public Long getGroupId() {
         return this.GroupId;
     }
 
     /**
-     * Set user group ID.
-     * @param GroupId user group ID.
+     * Set User group ID
+     * @param GroupId User group ID
      */
     public void setGroupId(Long GroupId) {
         this.GroupId = GroupId;
     }
 
     /**
-     * Obtain page number. Default is 1.
-     * @return Page page number. Default is 1.
+     * Get Page number; default is 1 
+     * @return Page Page number; default is 1
      */
     public Long getPage() {
         return this.Page;
     }
 
     /**
-     * Set page number. Default is 1.
-     * @param Page page number. Default is 1.
+     * Set Page number; default is 1
+     * @param Page Page number; default is 1
      */
     public void setPage(Long Page) {
         this.Page = Page;
     }
 
     /**
-     * Obtain number per page. Default is 20.
-     * @return Rp number per page. Default is 20.
+     * Get Number of entries per page; default is 20 
+     * @return Rp Number of entries per page; default is 20
      */
     public Long getRp() {
         return this.Rp;
     }
 
     /**
-     * Set number per page. Default is 20.
-     * @param Rp number per page. Default is 20.
+     * Set Number of entries per page; default is 20
+     * @param Rp Number of entries per page; default is 20
      */
     public void setRp(Long Rp) {
         this.Rp = Rp;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "GroupId", this.GroupId);

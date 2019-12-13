@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeCertificatesResponse  extends AbstractModel{
+public class DescribeCertificatesResponse extends AbstractModel{
 
     /**
     * Server certificate list, which includes certificate ID and certificate name.

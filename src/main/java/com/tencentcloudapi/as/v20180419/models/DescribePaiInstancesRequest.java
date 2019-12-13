@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribePaiInstancesRequest  extends AbstractModel{
+public class DescribePaiInstancesRequest extends AbstractModel{
 
     /**
     * Queries by PAI instance ID.

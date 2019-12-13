@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class OperationCountLimit  extends AbstractModel{
+public class OperationCountLimit extends AbstractModel{
 
     /**
     * Operations on an instance.

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class VoiceFilterConf  extends AbstractModel{
+public class VoiceFilterConf extends AbstractModel{
 
     /**
     * Phrase filtering status. Valid values: open, close

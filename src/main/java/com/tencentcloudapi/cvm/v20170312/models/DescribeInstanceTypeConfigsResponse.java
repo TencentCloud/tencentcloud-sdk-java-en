@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DescribeInstanceTypeConfigsResponse  extends AbstractModel{
+public class DescribeInstanceTypeConfigsResponse extends AbstractModel{
 
     /**
     * List of instance model families

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyNetworkConfigResponse  extends AbstractModel{
+public class ModifyNetworkConfigResponse extends AbstractModel{
 
     /**
     * Execution status: true or false

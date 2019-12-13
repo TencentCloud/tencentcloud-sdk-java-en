@@ -20,33 +20,33 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeletePolicyRequest  extends AbstractModel{
+public class DeletePolicyRequest extends AbstractModel{
 
     /**
-    * Array. Array elements are policy IDs. Policies can be deleted in batch
+    * Array. Array elements are policy IDs. Policies can be deleted in a batch
     */
     @SerializedName("PolicyId")
     @Expose
     private Long [] PolicyId;
 
     /**
-     * Getting Array. Array elements are policy IDs. Policies can be deleted in batch
-     * @return PolicyId Array. Array elements are policy IDs. Policies can be deleted in batch
+     * Get Array. Array elements are policy IDs. Policies can be deleted in a batch 
+     * @return PolicyId Array. Array elements are policy IDs. Policies can be deleted in a batch
      */
     public Long [] getPolicyId() {
         return this.PolicyId;
     }
 
     /**
-     * Configuring an array. Array elements are policy IDs. Policies can be deleted in batch
-     * @param PolicyId Array. Array elements are policy IDs. Policies can be deleted in batch
+     * Set Array. Array elements are policy IDs. Policies can be deleted in a batch
+     * @param PolicyId Array. Array elements are policy IDs. Policies can be deleted in a batch
      */
     public void setPolicyId(Long [] PolicyId) {
         this.PolicyId = PolicyId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArraySimple(map, prefix + "PolicyId.", this.PolicyId);

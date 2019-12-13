@@ -20,79 +20,89 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ListEntitiesForPolicyResponse  extends AbstractModel{
+public class ListEntitiesForPolicyResponse extends AbstractModel{
 
     /**
-    * Number of entitiesNote: This field may return null, indicating that no valid value was found.
+    * Number of entities
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("TotalNum")
     @Expose
     private Long TotalNum;
 
     /**
-    * List of entitiesNote: This field may return null, indicating that no valid value was found.
+    * Entity list
+Note: This field may return null, indicating that no valid value was found.
     */
     @SerializedName("List")
     @Expose
     private AttachEntityOfPolicy [] List;
 
     /**
-    * The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+    * The unique request ID, which is returned for each request. RequestId is required for locating a problem.
     */
     @SerializedName("RequestId")
     @Expose
     private String RequestId;
 
     /**
-     * Obtain number of entities.Note: This field may return null, indicating that no valid value was found.
-     * @return TotalNum total number of entitiesNote: This field may return null, indicating that no valid value was found.
+     * Get Number of entities
+Note: This field may return null, indicating that no valid value was found. 
+     * @return TotalNum Number of entities
+Note: This field may return null, indicating that no valid value was found.
      */
     public Long getTotalNum() {
         return this.TotalNum;
     }
 
     /**
-     * Set total number of entitiesNote: This field may return null, indicating that no valid value was found.
-     * @param TotalNum total number of entitiesNote: This field may return null, indicating that no valid value was found.
+     * Set Number of entities
+Note: This field may return null, indicating that no valid value was found.
+     * @param TotalNum Number of entities
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setTotalNum(Long TotalNum) {
         this.TotalNum = TotalNum;
     }
 
     /**
-     * Obtain list of entitiesNote: This field may return null, indicating that no valid value was found.
-     * @return List list of entitiesNote: This field may return null, indicating that no valid value was found.
+     * Get Entity list
+Note: This field may return null, indicating that no valid value was found. 
+     * @return List Entity list
+Note: This field may return null, indicating that no valid value was found.
      */
     public AttachEntityOfPolicy [] getList() {
         return this.List;
     }
 
     /**
-     * Set list of entitiesNote: This field may return null, indicating that no valid value was found.
-     * @param List list of entitiesNote: This field may return null, indicating that no valid value was found.
+     * Set Entity list
+Note: This field may return null, indicating that no valid value was found.
+     * @param List Entity list
+Note: This field may return null, indicating that no valid value was found.
      */
     public void setList(AttachEntityOfPolicy [] List) {
         this.List = List;
     }
 
     /**
-     * Obtain the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @return RequestId The unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Get The unique request ID, which is returned for each request. RequestId is required for locating a problem. 
+     * @return RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public String getRequestId() {
         return this.RequestId;
     }
 
     /**
-     * Set the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
-     * @param RequestId the unique ID of a request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.
+     * Set The unique request ID, which is returned for each request. RequestId is required for locating a problem.
+     * @param RequestId The unique request ID, which is returned for each request. RequestId is required for locating a problem.
      */
     public void setRequestId(String RequestId) {
         this.RequestId = RequestId;
     }
 
     /**
-     * For internal use only.
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamSimple(map, prefix + "TotalNum", this.TotalNum);

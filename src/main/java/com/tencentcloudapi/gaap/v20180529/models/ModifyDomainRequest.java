@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyDomainRequest  extends AbstractModel{
+public class ModifyDomainRequest extends AbstractModel{
 
     /**
     * Layer-7 listener ID

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class ModifyProxiesProjectRequest  extends AbstractModel{
+public class ModifyProxiesProjectRequest extends AbstractModel{
 
     /**
     * The target project ID.

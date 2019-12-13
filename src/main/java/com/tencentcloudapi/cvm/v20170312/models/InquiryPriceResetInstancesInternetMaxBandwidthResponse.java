@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class InquiryPriceResetInstancesInternetMaxBandwidthResponse  extends AbstractModel{
+public class InquiryPriceResetInstancesInternetMaxBandwidthResponse extends AbstractModel{
 
     /**
     * Price of the new bandwidth

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class EnableReplicaReadonlyRequest  extends AbstractModel{
+public class EnableReplicaReadonlyRequest extends AbstractModel{
 
     /**
     * Serial ID of an instance

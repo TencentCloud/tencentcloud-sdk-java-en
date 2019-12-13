@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class InstanceParamHistory  extends AbstractModel{
+public class InstanceParamHistory extends AbstractModel{
 
     /**
     * Parameter name

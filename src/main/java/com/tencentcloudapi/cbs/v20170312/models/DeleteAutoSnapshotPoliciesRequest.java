@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class DeleteAutoSnapshotPoliciesRequest  extends AbstractModel{
+public class DeleteAutoSnapshotPoliciesRequest extends AbstractModel{
 
     /**
     * List of scheduled snapshot policy IDs to be deleted.

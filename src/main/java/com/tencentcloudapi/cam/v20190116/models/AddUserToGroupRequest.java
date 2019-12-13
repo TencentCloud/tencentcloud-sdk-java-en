@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class AddUserToGroupRequest  extends AbstractModel{
+public class AddUserToGroupRequest extends AbstractModel{
 
     /**
     * How sub-user UIDs are associated with the ID of the user group they are added to.
@@ -30,23 +30,23 @@ public class AddUserToGroupRequest  extends AbstractModel{
     private GroupIdOfUidInfo [] Info;
 
     /**
-     * Getting information about how sub-user UIDs are associated with the ID of the user group they are added to.
-     * @return Info how sub-user UIDs are associated with the ID of the user group they are added to.
+     * Get How sub-user UIDs are associated with the ID of the user group they are added to. 
+     * @return Info How sub-user UIDs are associated with the ID of the user group they are added to.
      */
     public GroupIdOfUidInfo [] getInfo() {
         return this.Info;
     }
 
     /**
-     * Configuring how sub-user UIDs are associated with the ID of the user group they are added to
-     * @param Info how sub-user UIDs are associated with the ID of the user group they are added to
+     * Set How sub-user UIDs are associated with the ID of the user group they are added to.
+     * @param Info How sub-user UIDs are associated with the ID of the user group they are added to.
      */
     public void setInfo(GroupIdOfUidInfo [] Info) {
         this.Info = Info;
     }
 
     /**
-     * For internal use only. 
+     * Internal implementation, normal users should not use it.
      */
     public void toMap(HashMap<String, String> map, String prefix) {
         this.setParamArrayObj(map, prefix + "Info.", this.Info);

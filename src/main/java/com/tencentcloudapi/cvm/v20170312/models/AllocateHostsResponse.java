@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class AllocateHostsResponse  extends AbstractModel{
+public class AllocateHostsResponse extends AbstractModel{
 
     /**
     * The ID list of the CVM instances newly created on the CDH.

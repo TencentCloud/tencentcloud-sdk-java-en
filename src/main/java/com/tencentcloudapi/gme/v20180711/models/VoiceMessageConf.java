@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class VoiceMessageConf  extends AbstractModel{
+public class VoiceMessageConf extends AbstractModel{
 
     /**
     * Voice messaging and speech-to-text status. Valid values: open, close

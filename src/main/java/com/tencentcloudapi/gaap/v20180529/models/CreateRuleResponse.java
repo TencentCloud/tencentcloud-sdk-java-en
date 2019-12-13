@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class CreateRuleResponse  extends AbstractModel{
+public class CreateRuleResponse extends AbstractModel{
 
     /**
     * The ID of the successfully created forwarding rule

@@ -20,7 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.annotations.Expose;
 import java.util.HashMap;
 
-public class RestoreInstanceResponse  extends AbstractModel{
+public class RestoreInstanceResponse extends AbstractModel{
 
     /**
     * Task ID, which can be used to query the task execution status through the DescribeTaskInfo API
